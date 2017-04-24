@@ -1,0 +1,8 @@
+prefix=/home/ros/catkin_ws/devel
+
+Name: nav2d_karto
+Description: Description of nav2d_karto
+Version: 0.3.0
+Cflags: -I/home/ros/catkin_ws/src/navigation_2d/nav2d_karto/include
+Libs: -L/home/ros/catkin_ws/devel/lib -lOpenKarto -lMultiMapper
+Requires: roscpp tf nav_msgs geometry_msgs visualization_msgs nav2d_msgs nav2d_localizer

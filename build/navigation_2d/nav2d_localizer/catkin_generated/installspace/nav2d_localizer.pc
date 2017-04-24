@@ -1,0 +1,8 @@
+prefix=/home/ros/catkin_ws/install
+
+Name: nav2d_localizer
+Description: Description of nav2d_localizer
+Version: 0.3.0
+Cflags: -I/home/ros/catkin_ws/install/include
+Libs: -L/home/ros/catkin_ws/install/lib -lSelfLocalizer
+Requires: roscpp tf nav_msgs sensor_msgs geometry_msgs

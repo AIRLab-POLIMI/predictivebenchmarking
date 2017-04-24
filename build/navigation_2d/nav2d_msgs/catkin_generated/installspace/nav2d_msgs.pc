@@ -1,0 +1,8 @@
+prefix=/home/ros/catkin_ws/install
+
+Name: nav2d_msgs
+Description: Description of nav2d_msgs
+Version: 0.3.0
+Cflags: -I/home/ros/catkin_ws/install/include
+Libs: -L/home/ros/catkin_ws/install/lib 
+Requires: message_runtime std_msgs sensor_msgs geometry_msgs

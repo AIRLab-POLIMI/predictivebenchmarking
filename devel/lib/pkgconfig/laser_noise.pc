@@ -1,0 +1,8 @@
+prefix=/home/ros/catkin_ws/devel
+
+Name: laser_noise
+Description: Description of laser_noise
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ros/catkin_ws/devel/lib 
+Requires: 

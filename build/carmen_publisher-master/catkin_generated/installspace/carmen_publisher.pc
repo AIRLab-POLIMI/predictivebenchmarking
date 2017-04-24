@@ -1,0 +1,8 @@
+prefix=/home/ros/catkin_ws/install
+
+Name: carmen_publisher
+Description: Description of carmen_publisher
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ros/catkin_ws/install/lib 
+Requires: 
