@@ -340,7 +340,7 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 							dx = math.fabs(xp1-xp2)
 							dy = math.fabs(yp1-yp2)
 							# Euclidean distance
-							distance += math.sqrt(math.pow(dx,2)+math.pow(dy,2))	
+							distance = math.sqrt(math.pow(dx,2)+math.pow(dy,2))	
 						# let's check how far we've come against a predefined threshold
 						#print distance
 						if distance > 5: # then we have actually found a loop, add the relation

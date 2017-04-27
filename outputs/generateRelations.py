@@ -177,6 +177,7 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 	elif typeOfRelations=='AllLoops':
 		#builds relations file with ordered time
 		groundSorted=sorted(ground)
+		moved=False
 		'''firststamp=groundSorted[1]
 		secondstamp=0
 		while secondstamp < groundSorted[-1]:
@@ -192,6 +193,8 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 
 				relationsfile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 			firststamp=secondstamp '''
+
+		#finds all the loops in the log file
 		firststamp=groundSorted[1]
 		for i in range(1,len(groundSorted)):
 			for j in range(i,len(groundSorted),10):
@@ -223,7 +226,9 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 	elif typeOfRelations=='Smart':
 		groundSorted=sorted(ground)
 		loops={}
+		moved=False
 
+		#ordered relations
 		firststamp=groundSorted[1]
 		secondstamp=0
 		while secondstamp < groundSorted[-1]:
@@ -240,6 +245,7 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 				relationsfile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 			firststamp=secondstamp
 
+		#finds all the loops
 		firststamp=groundSorted[1]
 		for i in range(1,len(groundSorted)):
 			for j in range(i,len(groundSorted),10):
@@ -253,6 +259,8 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 
 				xdelta=math.fabs(x1-x2)
 				ydelta=math.fabs(y1-y2)
+
+				#moved condition
 				if xdelta > 0.5 or ydelta > 0.5 and not moved:
 					moved=True
 
@@ -267,6 +275,7 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 
 					loops[stamp1]=[stamp1,stamp2,x,y,theta]
         
+        #group relations too close temporally
 		sortedloops=sorted(loops)
 		finalLoops=[]
 		base=sortedloops[0]
@@ -276,13 +285,15 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 				base = loop
 				finalLoops.append(base)
 
+		#writes relations
 		for loop in finalLoops:
 			relationsfile.write(str(loops[loop][0])+" "+str(loops[loop][1])+" "+str(loops[loop][2])+" "+str(loops[loop][3])+" 0.000000 0.000000 0.000000 "+str(loops[loop][4])+"\n")
 
+		#find and writes relations every 10 meters
 		firststamp=groundSorted[1]
 		for stamp in groundSorted:
 			dist = math.sqrt(math.pow((ground[firststamp][0] - ground[stamp][0]),2) + math.pow((ground[firststamp][1] - ground[stamp][1]),2))
-			if dist > 10:
+			if dist > 5:
 				rel=getMatrixDiff(ground[firststamp],ground[stamp])
 
 				x = rel[0,3]
