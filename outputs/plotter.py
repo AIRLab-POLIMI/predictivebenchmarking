@@ -590,6 +590,59 @@ def histoErrorAvg(relations,errors):
 	plt.title('Error by relation')
 	plt.legend((p1[0], p2[0]), ('Ordered', 'Random'))
 
+def histoErrorAvgRot(relations,errors):
+	relationsFile=open(relations,'r')
+	errorFile=open(errors,'r')
+	deltaTimes={}
+
+	errors={}
+
+	errorRange=[0,0.1,0.2,0.3,0.4,0.6,1,1.5,2,3]
+
+	i=0
+	for line in relationsFile:
+		words=line.split(' ')
+		if i not in deltaTimes:
+			deltaTimes[i]=[float(words[1])-float(words[0])]
+		i+=1
+
+	i=0
+	for line in errorFile:
+		words=line.split(' ')
+		deltaTimes[i].append(float(words[0]))
+		i+=1
+
+	for d in deltaTimes:
+		for e in range(1,len(errorRange)):
+
+			if e not in errors:
+				errors[e]=[0,0,0,0]
+
+			if deltaTimes[d][1] < errorRange[e] and deltaTimes[d][1] > errorRange[e-1]:
+				if deltaTimes[d][0] > 1:
+					errors[e][0] += deltaTimes[d][1]
+				else:
+					errors[e][2] += deltaTimes[d][1]
+
+
+	orderedAvg=[]
+	randomAvg=[]
+
+	for e in errors:
+		orderedAvg.append(errors[e][2]/i)
+		randomAvg.append(errors[e][0]/i)
+
+	N=7
+	errorRange=[0.1,0.2,0.3,0.4,0.6,1,1.5,2,3]
+	ind = errorRange
+	width = 0.1
+	p1 = plt.bar(ind, orderedAvg, width, color=(0.2588,0.4433,1.0))
+	p2 = plt.bar(ind, randomAvg, width, color=(1.0,0.5,0.62),bottom=orderedAvg)
+	plt.ylabel('Error Avg')
+	plt.xlabel('Error of Relation')
+	plt.title('Error by relation')
+	plt.legend((p1[0], p2[0]), ('Ordered', 'Random'))
+
 
 if __name__=='__main__':	
 	#plotRelation3d(sys.argv[1],sys.argv[2],float(sys.argv[3]),float(sys.argv[4]))
@@ -607,6 +660,8 @@ if __name__=='__main__':
 		histoErrorNum(sys.argv[1],sys.argv[2])
 	elif sys.argv[3] == 'Avg':
 		histoErrorAvg(sys.argv[1],sys.argv[2])
+	elif sys.argv[3] =='AvgR':
+		histoErrorAvgRot(sys.argv[1],sys.argv[2])
 	plt.show()
 	#calcTime(sys.argv[1])
 	#calcError(sys.argv[1])
