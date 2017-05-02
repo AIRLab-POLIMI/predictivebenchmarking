@@ -416,6 +416,21 @@ def calcTime(relations):
 	print totdif/c
 	file.close()
 
+def calcError(unsorted):
+	file=open(unsorted,'r')
+	error=0
+	num=0
+	for line in file:
+		words = line.split(" ")
+		if float(words[0]) > 10:
+			print float(words[0])
+			error+=float(words[0])
+			num+=1
+	print error
+	print num
+	print error/num
+	file.close()
+
 def histoErrorNum(relations,errors):
 	relationsFile=open(relations,'r')
 	errorFile=open(errors,'r')
@@ -423,7 +438,7 @@ def histoErrorNum(relations,errors):
 
 	errors={}
 
-	errorRange=[0,0.1,0.6,1,2,5,10,20]
+	errorRange=[0,0.1,0.6,1,2,5,10,20,30]
 
 	i=0
 	for line in relationsFile:
@@ -444,7 +459,7 @@ def histoErrorNum(relations,errors):
 			if e not in errors:
 				errors[e]=[0,0,0,0]
 
-			if deltaTimes[d][1] < e and deltaTimes[d][1] > e-1:
+			if deltaTimes[d][1] < errorRange[e] and deltaTimes[d][1] > errorRange[e-1]:
 				if deltaTimes[d][0] > 1:
 					errors[e][1] += 1
 				else:
@@ -459,7 +474,7 @@ def histoErrorNum(relations,errors):
 		randomNum.append(errors[e][1])
 
 	N=7
-	errorRange=[0.1,0.6,1,2,5,10,20]
+	errorRange=[0.1,0.6,1,2,5,10,20,30]
 	ind = errorRange
 	width = 0.35
 	p1 = plt.bar(ind, orderedNum, width, color=(0.2588,0.4433,1.0))
@@ -475,7 +490,7 @@ def histoErrorSum(relations,errors):
 
 	errors={}
 
-	errorRange=[0,0.1,0.3,0.6,1,2,5,10,20]
+	errorRange=[0,0.1,0.3,0.6,1,2,5,10,20,30]
 
 	i=0
 	for line in relationsFile:
@@ -496,7 +511,7 @@ def histoErrorSum(relations,errors):
 			if e not in errors:
 				errors[e]=[0,0,0,0]
 
-			if deltaTimes[d][1] < e and deltaTimes[d][1] > e-1:
+			if deltaTimes[d][1] < errorRange[e] and deltaTimes[d][1] > errorRange[e-1]:
 				if deltaTimes[d][0] > 1:
 					errors[e][0] += deltaTimes[d][1]
 				else:
@@ -512,7 +527,7 @@ def histoErrorSum(relations,errors):
 		randomError.append(errors[e][0])
 
 	N=7
-	errorRange=[0.1,0.3,0.6,1,2,5,10,20]
+	errorRange=[0.1,0.3,0.6,1,2,5,10,20,30]
 	ind = errorRange
 	width = 0.35
 	p1 = plt.bar(ind, orderedError, width, color=(0.2588,0.4433,1.0))
@@ -529,7 +544,7 @@ def histoErrorAvg(relations,errors):
 
 	errors={}
 
-	errorRange=[0,0.1,0.3,0.6,1,2,5,10,20]
+	errorRange=[0,0.1,0.3,0.6,1,2,5,10,20,30]
 
 	i=0
 	for line in relationsFile:
@@ -550,35 +565,27 @@ def histoErrorAvg(relations,errors):
 			if e not in errors:
 				errors[e]=[0,0,0,0]
 
-			if deltaTimes[d][1] < e and deltaTimes[d][1] > e-1:
+			if deltaTimes[d][1] < errorRange[e] and deltaTimes[d][1] > errorRange[e-1]:
 				if deltaTimes[d][0] > 1:
 					errors[e][0] += deltaTimes[d][1]
-					errors[e][1] += 1
 				else:
 					errors[e][2] += deltaTimes[d][1]
-					errors[e][3] += 1
 
 
 	orderedAvg=[]
 	randomAvg=[]
 
 	for e in errors:
-		if errors[e][3] != 0:
-			orderedAvg.append(errors[e][2]/errors[e][3])
-		else:
-			orderedAvg.append(errors[e][2])
-		if errors[e][1] != 0:
-			randomAvg.append(errors[e][0]/errors[e][1])
-		else:
-			randomAvg.append(errors[e][0])
+		orderedAvg.append(errors[e][2]/i)
+		randomAvg.append(errors[e][0]/i)
 
 	N=7
-	errorRange=[0.1,0.3,0.6,1,2,5,10,20]
+	errorRange=[0.1,0.3,0.6,1,2,5,10,20,30]
 	ind = errorRange
 	width = 0.35
 	p1 = plt.bar(ind, orderedAvg, width, color=(0.2588,0.4433,1.0))
 	p2 = plt.bar(ind, randomAvg, width, color=(1.0,0.5,0.62),bottom=orderedAvg)
-	plt.ylabel('Error Sum')
+	plt.ylabel('Error Avg')
 	plt.xlabel('Error of Relation')
 	plt.title('Error by relation')
 	plt.legend((p1[0], p2[0]), ('Ordered', 'Random'))
@@ -602,3 +609,4 @@ if __name__=='__main__':
 		histoErrorAvg(sys.argv[1],sys.argv[2])
 	plt.show()
 	#calcTime(sys.argv[1])
+	#calcError(sys.argv[1])
