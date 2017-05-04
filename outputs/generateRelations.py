@@ -97,7 +97,7 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 	#builds relations file taking random ground truth and computing the difference
 	if typeOfRelations=='R':
 		i=0
-		while i < ( len(ground.keys()) / 7 ):
+		while i < len(ground.keys())*2:
 				firststamp=float(random.choice(ground.keys()))
 				secondstamp=float(random.choice(ground.keys()))
 				if firststamp > secondstamp:
@@ -153,7 +153,7 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 
 				relationsfile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 			firststamp=secondstamp 
-
+		
 		i=0
 		while i < ( len(ground.keys()) / 10 ):
 				firststamp=float(random.choice(ground.keys()))

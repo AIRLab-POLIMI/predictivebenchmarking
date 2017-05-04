@@ -643,6 +643,21 @@ def histoErrorAvgRot(relations,errors):
 	plt.title('Error by relation')
 	plt.legend((p1[0], p2[0]), ('Ordered', 'Random'))
 
+def plotRandomErrors(fileRandomErrors):
+	file=open(fileRandomErrors,'r')
+	x=[]
+	yMean=[]
+	yStd=[]
+	yMax=[]
+	for line in file:
+		words=line.split(', ')
+		x.append(float(words[4]))
+		yMean.append(float(words[0]))
+		yStd.append(float(words[1]))
+		#yMax.append(float(words[3]))
+
+	plt.plot(x,yMean,'g',x,yStd,'r')
+
 
 if __name__=='__main__':	
 	#plotRelation3d(sys.argv[1],sys.argv[2],float(sys.argv[3]),float(sys.argv[4]))
@@ -654,6 +669,7 @@ if __name__=='__main__':
 	#plotOdom(sys.argv[3])
 	#plotGTRawSeeds(sys.argv[1])
 	#plotOdomRawSeeds(sys.argv[2])
+	'''
 	if sys.argv[3] == 'Sum':
 		histoErrorSum(sys.argv[1],sys.argv[2])
 	elif sys.argv[3] == 'Num':
@@ -662,6 +678,8 @@ if __name__=='__main__':
 		histoErrorAvg(sys.argv[1],sys.argv[2])
 	elif sys.argv[3] =='AvgR':
 		histoErrorAvgRot(sys.argv[1],sys.argv[2])
+	'''
+	plotRandomErrors(sys.argv[1])
 	plt.show()
 	#calcTime(sys.argv[1])
 	#calcError(sys.argv[1])
