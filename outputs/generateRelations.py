@@ -135,6 +135,50 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 				relationsfile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 			firststamp=secondstamp
 
+	elif typeOfRelations=='OandR':
+		relationsRandomFile=open(output+"Random.relations","w")
+		relationsOrderedFile=open(output+"Ordered.relations","w")
+
+		i=0
+		while i < len(ground.keys())/2:
+				firststamp=float(random.choice(ground.keys()))
+				secondstamp=float(random.choice(ground.keys()))
+				if firststamp > secondstamp:
+					temp=firststamp
+					firststamp=secondstamp
+					secondstamp=temp
+				firstpos=ground[firststamp]
+				secondpos=ground[secondstamp]
+
+				rel=getMatrixDiff(firstpos,secondpos)
+
+				x = rel[0,3]
+				y = rel[1,3]
+				theta = math.atan2(rel[1,0],rel[0,0])
+
+				relationsRandomFile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
+				i+=1 
+
+		groundSorted=sorted(ground)
+		firststamp=groundSorted[1]
+		secondstamp=0
+		while secondstamp < groundSorted[-1]:
+			secondstamp=round(firststamp+float(seconds),1)
+			firstpos=ground[firststamp]
+			if secondstamp in ground.keys():
+				secondpos=ground[secondstamp]
+				rel=getMatrixDiff(firstpos,secondpos)
+
+				x = rel[0,3]
+				y = rel[1,3]
+				theta = math.atan2(rel[1,0],rel[0,0])
+
+				relationsOrderedFile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
+			firststamp=secondstamp
+
+		relationsOrderedFile.close()
+		relationsRandomFile.close()
+
 	elif typeOfRelations=='O+R':
 		#builds relations file with ordered time
 		groundSorted=sorted(ground)
