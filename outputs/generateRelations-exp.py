@@ -303,12 +303,14 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 			firststamp=secondstamp
 
 		firststamp=groundSorted[1]
-		#print len(groundSorted)
+		print "Sorted completed"
+		print len(groundSorted)
 		found = False
 		i = 1
-		while i < len(groundSorted):
+		print "Beginning loop detection"
+		while i < 0:#len(groundSorted):
 		#for i in range(1,len(groundSorted)):
-			#print i
+			print i
 			for j in range(i,len(groundSorted)):
 				# check if their time difference is over a min
 				# threshold to avoid recognizing false movements
@@ -340,7 +342,7 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 							dx = math.fabs(xp1-xp2)
 							dy = math.fabs(yp1-yp2)
 							# Euclidean distance
-							distance = math.sqrt(math.pow(dx,2)+math.pow(dy,2))	
+							distance += math.sqrt(math.pow(dx,2)+math.pow(dy,2))	
 						# let's check how far we've come against a predefined threshold
 						#print distance
 						if distance > 5: # then we have actually found a loop, add the relation
@@ -376,10 +378,11 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 				theta = math.atan2(rel[1,0],rel[0,0])
 				relationsfile.write(str(firststamp)+" "+str(stamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 				firststamp=stamp'''
+		print "Beginning distance check"
 		firststamp=groundSorted[1]
-		for i in range(1,len(groundSorted),50):
+		for i in range(1,len(groundSorted),5):
 			print i
-			for j in range(i,len(groundSorted),50):
+			for j in range(i,len(groundSorted),5):
 				stamp1=groundSorted[i]
 				stamp2=groundSorted[j]
 
@@ -391,7 +394,7 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 				dx=math.fabs(x1-x2)
 				dy=math.fabs(y1-y2)
 				distance = math.sqrt(math.pow(dx,2)+math.pow(dy,2))
-				if distance > 2:
+				if distance > 0:
 					rel=getMatrixDiff(ground[stamp1],ground[stamp2])
 
 					x = rel[0,3]

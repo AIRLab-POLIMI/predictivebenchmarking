@@ -8,6 +8,8 @@ import roslib
 import tf
 import math
 import numpy as np
+from subprocess import call
+from scipy.stats import t
 
 def writeGroundTruth(data,outputFile):
 
@@ -71,7 +73,7 @@ def writeGroundTruth(data,outputFile):
 		odom.write(str(data.header.stamp)[:-9]+"."+str(data.header.stamp)[-9:]+" "+str(position.x)+" "+str(position.y)+" "+str(rot[2])+"\n")
 	'''
 
-def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
+def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1,SLAMFile=None):
 
 	if seconds=='0':
 		print 'Error: Seconds 0'
@@ -96,8 +98,9 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 
 	#builds relations file taking random ground truth and computing the difference
 	if typeOfRelations=='R':
+		n_samples = len(ground.keys())/2
 		i=0
-		while i < len(ground.keys())*2:
+		while i < n_samples:
 				firststamp=float(random.choice(ground.keys()))
 				secondstamp=float(random.choice(ground.keys()))
 				if firststamp > secondstamp:
@@ -115,6 +118,67 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 
 				relationsfile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 				i+=1 
+
+	#builds relations file taking random ground truth and computing the difference
+	elif typeOfRelations=='RE': # experimental
+		n_samples = 500
+		i=0
+		
+		while i < n_samples:
+				firststamp=float(random.choice(ground.keys()))
+				secondstamp=float(random.choice(ground.keys()))
+				if firststamp > secondstamp:
+					temp=firststamp
+					firststamp=secondstamp
+					secondstamp=temp
+				firstpos=ground[firststamp]
+				secondpos=ground[secondstamp]
+
+				rel=getMatrixDiff(firstpos,secondpos)
+
+				x = rel[0,3]
+				y = rel[1,3]
+				theta = math.atan2(rel[1,0],rel[0,0])
+
+				relationsfile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
+				i+=1 
+		relationsfile.close()
+		# now we invoke the metric evaluator on this relations file, we read the sample standard 
+		# deviation and we exploit it to rebuild a better sample
+		call(["../metricEvaluator/metricEvaluator", "-s",SLAMFile, "-r",output+".relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e","summary.error"])
+		errorfile = open("summary.error", "r")
+		content = errorfile.readlines()
+		words = content[1].split(", ")
+		std = float(words[1])
+		var = math.pow(std,2)
+		# now we can estimate the size of the 99% confidence sample
+		z_a_2 = t.ppf(0.99,n_samples-1)#2.58
+		print z_a_2
+		delta = 0.05
+		n_samples = math.pow(z_a_2,2)*var/math.pow(delta,2)
+		print var
+		print n_samples
+		relationsfile = open(output+"-corr.relations","w")
+		i=0
+		while i < n_samples:
+				firststamp=float(random.choice(ground.keys()))
+				secondstamp=float(random.choice(ground.keys()))
+				if firststamp > secondstamp:
+					temp=firststamp
+					firststamp=secondstamp
+					secondstamp=temp
+				firstpos=ground[firststamp]
+				secondpos=ground[secondstamp]
+
+				rel=getMatrixDiff(firstpos,secondpos)
+
+				x = rel[0,3]
+				y = rel[1,3]
+				theta = math.atan2(rel[1,0],rel[0,0])
+
+				relationsfile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
+				i+=1 
+	
 
 	elif typeOfRelations=='O':
 		#builds relations file with ordered time
@@ -347,5 +411,7 @@ if __name__ == '__main__':
 
 	#takes output file created by the previous function and the range of seconds to generate the relations
 	#generateRelations(sys.argv[2],sys.argv[3])
-
-	generateRelationsMatrices(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+	if len(sys.argv)==5:
+		generateRelationsMatrices(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+	else:
+		generateRelationsMatrices(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
