@@ -8,6 +8,8 @@ import roslib
 import tf
 import math
 import numpy as np
+from subprocess import call
+from scipy.stats import t
 
 def writeGroundTruth(data,outputFile):
 
@@ -71,7 +73,7 @@ def writeGroundTruth(data,outputFile):
 		odom.write(str(data.header.stamp)[:-9]+"."+str(data.header.stamp)[-9:]+" "+str(position.x)+" "+str(position.y)+" "+str(rot[2])+"\n")
 	'''
 
-def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
+def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1,SLAMFile=None):
 
 	if seconds=='0':
 		print 'Error: Seconds 0'
@@ -96,8 +98,9 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 
 	#builds relations file taking random ground truth and computing the difference
 	if typeOfRelations=='R':
+		n_samples = len(ground.keys())/2
 		i=0
-		while i < ( len(ground.keys()) / 7 ):
+		while i < n_samples:
 				firststamp=float(random.choice(ground.keys()))
 				secondstamp=float(random.choice(ground.keys()))
 				if firststamp > secondstamp:
@@ -116,12 +119,21 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 				relationsfile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 				i+=1 
 
+<<<<<<< HEAD
 	elif typeOfRelations=='OandR':
 		relationsRandomFile=open(output+"Random.relations","w")
 		relationsOrderedFile=open(output+"Ordered.relations","w")
 
 		i=0
 		while i < len(ground.keys())/2:
+=======
+	#builds relations file taking random ground truth and computing the difference
+	elif typeOfRelations=='RE': # experimental
+		n_samples = 500
+		i=0
+		
+		while i < n_samples:
+>>>>>>> 8b9e73610c84832a5cf142c499d30a7fef7d28b0
 				firststamp=float(random.choice(ground.keys()))
 				secondstamp=float(random.choice(ground.keys()))
 				if firststamp > secondstamp:
@@ -137,6 +149,7 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 				y = rel[1,3]
 				theta = math.atan2(rel[1,0],rel[0,0])
 
+<<<<<<< HEAD
 				relationsRandomFile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 				i+=1 
 
@@ -152,12 +165,45 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 			firstpos=ground[firststamp]
 			if secondstamp in ground.keys():
 				secondpos=ground[secondstamp]
+=======
+				relationsfile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
+				i+=1 
+		relationsfile.close()
+		# now we invoke the metric evaluator on this relations file, we read the sample standard 
+		# deviation and we exploit it to rebuild a better sample
+		call(["../metricEvaluator/metricEvaluator", "-s",SLAMFile, "-r",output+".relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e","summary.error"])
+		errorfile = open("summary.error", "r")
+		content = errorfile.readlines()
+		words = content[1].split(", ")
+		std = float(words[1])
+		var = math.pow(std,2)
+		# now we can estimate the size of the 99% confidence sample
+		z_a_2 = t.ppf(0.99,n_samples-1)#2.58
+		print z_a_2
+		delta = 0.05
+		n_samples = math.pow(z_a_2,2)*var/math.pow(delta,2)
+		print var
+		print n_samples
+		relationsfile = open(output+"-corr.relations","w")
+		i=0
+		while i < n_samples:
+				firststamp=float(random.choice(ground.keys()))
+				secondstamp=float(random.choice(ground.keys()))
+				if firststamp > secondstamp:
+					temp=firststamp
+					firststamp=secondstamp
+					secondstamp=temp
+				firstpos=ground[firststamp]
+				secondpos=ground[secondstamp]
+
+>>>>>>> 8b9e73610c84832a5cf142c499d30a7fef7d28b0
 				rel=getMatrixDiff(firstpos,secondpos)
 
 				x = rel[0,3]
 				y = rel[1,3]
 				theta = math.atan2(rel[1,0],rel[0,0])
 
+<<<<<<< HEAD
 				relationsOrderedFile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 			firststamp=secondstamp
 
@@ -167,6 +213,11 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 
 		relationsOrderedFile.close()
 		relationsRandomFile.close()
+=======
+				relationsfile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
+				i+=1 
+	
+>>>>>>> 8b9e73610c84832a5cf142c499d30a7fef7d28b0
 
 	elif typeOfRelations=='O':
 		#builds relations file with ordered time
@@ -205,7 +256,7 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 
 				relationsfile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 			firststamp=secondstamp 
-
+		
 		i=0
 		while i < ( len(ground.keys()) / 10 ):
 				firststamp=float(random.choice(ground.keys()))
@@ -229,10 +280,11 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 	elif typeOfRelations=='AllLoops':
 		#builds relations file with ordered time
 		groundSorted=sorted(ground)
-		firststamp=groundSorted[1]
+		moved=False
+		'''firststamp=groundSorted[1]
 		secondstamp=0
 		while secondstamp < groundSorted[-1]:
-			secondstamp=round(firststamp+float(seconds),1)
+			secondstamp=firststamp+seconds
 			firstpos=ground[firststamp]
 			if secondstamp in ground.keys():
 				secondpos=ground[secondstamp]
@@ -243,10 +295,9 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 				theta = math.atan2(rel[1,0],rel[0,0])
 
 				relationsfile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
-			firststamp=secondstamp 
+			firststamp=secondstamp '''
 
 		#finds all the loops in the log file
-		'''
 		firststamp=groundSorted[1]
 		for i in range(1,len(groundSorted)):
 			for j in range(i,len(groundSorted),10):
@@ -272,70 +323,13 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 					y = rel[1,3]
 					theta = math.atan2(rel[1,0],rel[0,0])
 
-					relationsfile.write(str(stamp1)+" "+str(stamp2)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")'''
-		firststamp=groundSorted[1]
-		#print len(groundSorted)
-		found = False
-		i = 1
-		while i < len(groundSorted):
-		#for i in range(1,len(groundSorted)):
-			#print i
-			for j in range(i,len(groundSorted)):
-				# check if their time difference is over a min
-				# threshold to avoid recognizing false movements
-				stamp1=groundSorted[i]
-				stamp2=groundSorted[j]
-				if stamp2-stamp1 > 5:
-					# if so we should have actually moved, so 
-					# let's see how far apart the two points are
-					x1 = ground[stamp1][0]
-					y1 = ground[stamp1][1]
-					x2 = ground[stamp2][0]
-					y2 = ground[stamp2][1]
+					relationsfile.write(str(stamp1)+" "+str(stamp2)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 
-					xdelta=math.fabs(x1-x2)
-					ydelta=math.fabs(y1-y2)	 
-					if xdelta <= 0.3 and ydelta <= 0.5: 	
-						# looks like it's a good candidate for loop closing,
-						# but have we actually moved or have we just stayed here?
-						#print "Candidate loop found"
-						distance = 0
-						for k in range(i,j): # p stands for progressive
-							sp1 = groundSorted[k]
-							sp2 = groundSorted[k+1]
-							xp1	= ground[sp1][0]
-							yp1 = ground[sp1][1]
-							xp2 = ground[sp2][0]
-							yp2 = ground[sp2][1]
-							
-							dx = math.fabs(xp1-xp2)
-							dy = math.fabs(yp1-yp2)
-							# Euclidean distance
-							distance += math.sqrt(math.pow(dx,2)+math.pow(dy,2))	
-						# let's check how far we've come against a predefined threshold
-						#print distance
-						if distance > 5: # then we have actually found a loop, add the relation
-							rel=getMatrixDiff(ground[stamp1],ground[stamp2])
 
-							x = rel[0,3]
-							y = rel[1,3]
-							theta = math.atan2(rel[1,0],rel[0,0])
-
-							relationsfile.write(str(stamp1)+" "+str(stamp2)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
-							# note that at this point, the next timestamp will also be considered 
-							# as a loop: to avoid this, we need to introduce a form of delay operator
-							# cheap approach (to be improved): skip j forward of a few positions
-							j += 50
-							found = True
-							#print "Found"
-			if found: # let's skip over the immediately following timestamps
-				i += 50
-				found = False
-			else:
-				i += 1	
 	elif typeOfRelations=='Smart':
 		groundSorted=sorted(ground)
 		loops={}
+		moved=False
 
 		#ordered relations
 		firststamp=groundSorted[1]
@@ -354,87 +348,10 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 				relationsfile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 			firststamp=secondstamp
 
+		#finds all the loops
 		firststamp=groundSorted[1]
-		print "Sorted completed"
-		print len(groundSorted)
-		found = False
-		i = 1
-		print "Beginning loop detection"
-		while i < 0:#len(groundSorted):
-		#for i in range(1,len(groundSorted)):
-			print i
-			for j in range(i,len(groundSorted)):
-				# check if their time difference is over a min
-				# threshold to avoid recognizing false movements
-				stamp1=groundSorted[i]
-				stamp2=groundSorted[j]
-				if stamp2-stamp1 > 5:
-					# if so we should have actually moved, so 
-					# let's see how far apart the two points are
-					x1 = ground[stamp1][0]
-					y1 = ground[stamp1][1]
-					x2 = ground[stamp2][0]
-					y2 = ground[stamp2][1]
-
-					xdelta=math.fabs(x1-x2)
-					ydelta=math.fabs(y1-y2)	 
-					if xdelta <= 0.3 and ydelta <= 0.5: 	
-						# looks like it's a good candidate for loop closing,
-						# but have we actually moved or have we just stayed here?
-						#print "Candidate loop found"
-						distance = 0
-						for k in range(i,j): # p stands for progressive
-							sp1 = groundSorted[k]
-							sp2 = groundSorted[k+1]
-							xp1	= ground[sp1][0]
-							yp1 = ground[sp1][1]
-							xp2 = ground[sp2][0]
-							yp2 = ground[sp2][1]
-							
-							dx = math.fabs(xp1-xp2)
-							dy = math.fabs(yp1-yp2)
-							# Euclidean distance
-							distance += math.sqrt(math.pow(dx,2)+math.pow(dy,2))	
-						# let's check how far we've come against a predefined threshold
-						#print distance
-						if distance > 5: # then we have actually found a loop, add the relation
-							rel=getMatrixDiff(ground[stamp1],ground[stamp2])
-
-							x = rel[0,3]
-							y = rel[1,3]
-							theta = math.atan2(rel[1,0],rel[0,0])
-
-							relationsfile.write(str(stamp1)+" "+str(stamp2)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
-							# note that at this point, the next timestamp will also be considered 
-							# as a loop: to avoid this, we need to introduce a form of delay operator
-							# cheap approach (to be improved): skip j forward of a few positions
-							j += 50
-							found = True
-							#print "Found"
-			if found: # let's skip over the immediately following timestamps
-				i += 50
-				found = False
-			else:
-				i += 1	
-
-		#find and writes relations every 10 meters
-		'''
-		firststamp=groundSorted[1]
-		for stamp in groundSorted:
-			dist = math.sqrt(math.pow((ground[firststamp][0] - ground[stamp][0]),2) + math.pow((ground[firststamp][1] - ground[stamp][1]),2))
-			if dist > 10:
-				rel=getMatrixDiff(ground[firststamp],ground[stamp])
-
-				x = rel[0,3]
-				y = rel[1,3]
-				theta = math.atan2(rel[1,0],rel[0,0])
-				relationsfile.write(str(firststamp)+" "+str(stamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
-				firststamp=stamp'''
-		print "Beginning distance check"
-		firststamp=groundSorted[1]
-		for i in range(1,len(groundSorted),5):
-			print i
-			for j in range(i,len(groundSorted),5):
+		for i in range(1,len(groundSorted)):
+			for j in range(i,len(groundSorted),10):
 				stamp1=groundSorted[i]
 				stamp2=groundSorted[j]
 
@@ -443,17 +360,51 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1):
 				x2 = ground[stamp2][0]
 				y2 = ground[stamp2][1]
 
-				dx=math.fabs(x1-x2)
-				dy=math.fabs(y1-y2)
-				distance = math.sqrt(math.pow(dx,2)+math.pow(dy,2))
-				if distance > 0:
+				xdelta=math.fabs(x1-x2)
+				ydelta=math.fabs(y1-y2)
+
+				#moved condition
+				if xdelta > 0.5 or ydelta > 0.5 and not moved:
+					moved=True
+
+				#loop closing condition
+				if xdelta < 0.3 and ydelta < 0.3 and stamp2 -  stamp1 > 20 and moved:
+					moved=False
 					rel=getMatrixDiff(ground[stamp1],ground[stamp2])
 
 					x = rel[0,3]
 					y = rel[1,3]
 					theta = math.atan2(rel[1,0],rel[0,0])
 
-					relationsfile.write(str(stamp1)+" "+str(stamp2)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
+					loops[stamp1]=[stamp1,stamp2,x,y,theta]
+        
+        #group relations too close temporally
+		sortedloops=sorted(loops)
+		finalLoops=[]
+		base=sortedloops[0]
+		finalLoops.append(base)
+		for loop in sortedloops:
+			if loop - base > 20:
+				base = loop
+				finalLoops.append(base)
+
+		#writes relations
+		for loop in finalLoops:
+			relationsfile.write(str(loops[loop][0])+" "+str(loops[loop][1])+" "+str(loops[loop][2])+" "+str(loops[loop][3])+" 0.000000 0.000000 0.000000 "+str(loops[loop][4])+"\n")
+
+		#find and writes relations every 10 meters
+		firststamp=groundSorted[1]
+		for stamp in groundSorted:
+			dist = math.sqrt(math.pow((ground[firststamp][0] - ground[stamp][0]),2) + math.pow((ground[firststamp][1] - ground[stamp][1]),2))
+			if dist > 5:
+				rel=getMatrixDiff(ground[firststamp],ground[stamp])
+
+				x = rel[0,3]
+				y = rel[1,3]
+				theta = math.atan2(rel[1,0],rel[0,0])
+				relationsfile.write(str(firststamp)+" "+str(stamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
+				firststamp=stamp
+
 
 
 
@@ -499,5 +450,7 @@ if __name__ == '__main__':
 
 	#takes output file created by the previous function and the range of seconds to generate the relations
 	#generateRelations(sys.argv[2],sys.argv[3])
-
-	generateRelationsMatrices(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+	if len(sys.argv)==5:
+		generateRelationsMatrices(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+	else:
+		generateRelationsMatrices(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
