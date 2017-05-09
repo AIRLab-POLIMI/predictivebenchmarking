@@ -7,6 +7,5 @@
 # new environment variables
 
 # modified environment variables
-export PKG_CONFIG_PATH="/home/ros/catkin_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PWD="/home/ros/catkin_ws/build"
-export PYTHONPATH="/home/ros/catkin_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export PWD="/home/ros/slambenchmarking/build"
+export ROS_PACKAGE_PATH="/home/ros/catkin_ws/src:/home/ros/slambenchmarking/src:/opt/ros/kinetic/share"

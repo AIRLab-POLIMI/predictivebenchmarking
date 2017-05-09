@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/SelfLocalizer.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/SelfLocalizer.h
 string
 -
 ros/ros.h
@@ -26,37 +26,37 @@ nav2d_localizer/pf.h
 nav2d_localizer/pf_pdf.h
 -
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/map.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/map.h
 stdint.h
 -
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/pf.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/pf.h
 nav2d_localizer/pf_vector.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/nav2d_localizer/pf_vector.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/nav2d_localizer/pf_vector.h
 nav2d_localizer/pf_kdtree.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/nav2d_localizer/pf_kdtree.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/nav2d_localizer/pf_kdtree.h
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/pf_kdtree.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/pf_kdtree.h
 rtk.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/rtk.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/rtk.h
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/pf_pdf.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/pf_pdf.h
 nav2d_localizer/pf_vector.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/nav2d_localizer/pf_vector.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/nav2d_localizer/pf_vector.h
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/pf_vector.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/include/nav2d_localizer/pf_vector.h
 stdio.h
 -
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/src/LocalizerNode.cpp
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/src/LocalizerNode.cpp
 ros/ros.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/src/ros/ros.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/src/ros/ros.h
 tf/transform_broadcaster.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/src/tf/transform_broadcaster.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/src/tf/transform_broadcaster.h
 nav_msgs/GetMap.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/src/nav_msgs/GetMap.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/src/nav_msgs/GetMap.h
 nav2d_localizer/SelfLocalizer.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/src/nav2d_localizer/SelfLocalizer.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/src/nav2d_localizer/SelfLocalizer.h
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string

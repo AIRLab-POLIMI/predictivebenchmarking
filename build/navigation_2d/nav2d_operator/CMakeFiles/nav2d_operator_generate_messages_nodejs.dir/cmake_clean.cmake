@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/nav2d_operator_generate_messages_nodejs"
-  "/home/ros/catkin_ws/devel/share/gennodejs/ros/nav2d_operator/msg/cmd.js"
+  "/home/ros/slambenchmarking/devel/share/gennodejs/ros/nav2d_operator/msg/cmd.js"
 )
 
 # Per-language clean rules from dependency scanning.

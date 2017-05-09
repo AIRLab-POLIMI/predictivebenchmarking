@@ -1,8 +1,8 @@
-prefix=/home/ros/catkin_ws/devel
+prefix=/home/ros/slambenchmarking/devel
 
 Name: tf_listener
 Description: Description of tf_listener
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/ros/catkin_ws/devel/lib 
+Libs: -L/home/ros/slambenchmarking/devel/lib 
 Requires: 

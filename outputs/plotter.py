@@ -664,8 +664,8 @@ if __name__=='__main__':
 	#plotSlam3d(sys.argv[2])
 	#plotRelationsRT(sys.argv[1])
 	#plotRelationsTR(sys.argv[1])
-	#plotGroundTruth(sys.argv[1])
-	#plotSlam(sys.argv[2])
+	plotGroundTruth(sys.argv[1])
+	plotSlam(sys.argv[2])
 	#plotOdom(sys.argv[3])
 	#plotGTRawSeeds(sys.argv[1])
 	#plotOdomRawSeeds(sys.argv[2])
@@ -679,7 +679,7 @@ if __name__=='__main__':
 	elif sys.argv[3] =='AvgR':
 		histoErrorAvgRot(sys.argv[1],sys.argv[2])
 	'''
-	plotRandomErrors(sys.argv[1])
+	#plotRandomErrors(sys.argv[1])
 	plt.show()
 	#calcTime(sys.argv[1])
 	#calcError(sys.argv[1])

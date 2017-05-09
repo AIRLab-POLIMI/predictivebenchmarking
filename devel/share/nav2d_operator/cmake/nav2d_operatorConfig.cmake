@@ -67,14 +67,14 @@ set(nav2d_operator_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(nav2d_operator_SOURCE_PREFIX /home/ros/catkin_ws/src/navigation_2d/nav2d_operator)
-  set(nav2d_operator_DEVEL_PREFIX /home/ros/catkin_ws/devel)
+  set(nav2d_operator_SOURCE_PREFIX /home/ros/slambenchmarking/src/navigation_2d/nav2d_operator)
+  set(nav2d_operator_DEVEL_PREFIX /home/ros/slambenchmarking/devel)
   set(nav2d_operator_INSTALL_PREFIX "")
   set(nav2d_operator_PREFIX ${nav2d_operator_DEVEL_PREFIX})
 else()
   set(nav2d_operator_SOURCE_PREFIX "")
   set(nav2d_operator_DEVEL_PREFIX "")
-  set(nav2d_operator_INSTALL_PREFIX /home/ros/catkin_ws/install)
+  set(nav2d_operator_INSTALL_PREFIX /home/ros/slambenchmarking/install)
   set(nav2d_operator_PREFIX ${nav2d_operator_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(nav2d_operator_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/ros/catkin_ws/devel/include;/home/ros/catkin_ws/src/navigation_2d/nav2d_operator/include " STREQUAL " ")
+if(NOT "/home/ros/slambenchmarking/devel/include;/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/include " STREQUAL " ")
   set(nav2d_operator_INCLUDE_DIRS "")
-  set(_include_dirs "/home/ros/catkin_ws/devel/include;/home/ros/catkin_ws/src/navigation_2d/nav2d_operator/include")
+  set(_include_dirs "/home/ros/slambenchmarking/devel/include;/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -103,7 +103,7 @@ if(NOT "/home/ros/catkin_ws/devel/include;/home/ros/catkin_ws/src/navigation_2d/
         message(FATAL_ERROR "Project 'nav2d_operator' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'Sebastian Kasperski <sebastian.kasperski@dfki.de>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'nav2d_operator' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ros/catkin_ws/src/navigation_2d/nav2d_operator/${idir}'.  Ask the maintainer 'Sebastian Kasperski <sebastian.kasperski@dfki.de>' to fix it.")
+      message(FATAL_ERROR "Project 'nav2d_operator' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/${idir}'.  Ask the maintainer 'Sebastian Kasperski <sebastian.kasperski@dfki.de>' to fix it.")
     endif()
     _list_append_unique(nav2d_operator_INCLUDE_DIRS ${include})
   endforeach()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ros/catkin_ws/devel/lib;/home/ros/catkin_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/ros/slambenchmarking/devel/lib;/home/ros/slambenchmarking/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

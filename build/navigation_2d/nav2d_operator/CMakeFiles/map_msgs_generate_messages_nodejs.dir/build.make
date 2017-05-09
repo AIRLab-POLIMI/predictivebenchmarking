@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/ros/slambenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/catkin_ws/build
+CMAKE_BINARY_DIR = /home/ros/slambenchmarking/build
 
 # Utility rule file for map_msgs_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ navigation_2d/nav2d_operator/CMakeFiles/map_msgs_generate_messages_nodejs.dir/bu
 .PHONY : navigation_2d/nav2d_operator/CMakeFiles/map_msgs_generate_messages_nodejs.dir/build
 
 navigation_2d/nav2d_operator/CMakeFiles/map_msgs_generate_messages_nodejs.dir/clean:
-	cd /home/ros/catkin_ws/build/navigation_2d/nav2d_operator && $(CMAKE_COMMAND) -P CMakeFiles/map_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/ros/slambenchmarking/build/navigation_2d/nav2d_operator && $(CMAKE_COMMAND) -P CMakeFiles/map_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : navigation_2d/nav2d_operator/CMakeFiles/map_msgs_generate_messages_nodejs.dir/clean
 
 navigation_2d/nav2d_operator/CMakeFiles/map_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/ros/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/catkin_ws/src /home/ros/catkin_ws/src/navigation_2d/nav2d_operator /home/ros/catkin_ws/build /home/ros/catkin_ws/build/navigation_2d/nav2d_operator /home/ros/catkin_ws/build/navigation_2d/nav2d_operator/CMakeFiles/map_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slambenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slambenchmarking/src /home/ros/slambenchmarking/src/navigation_2d/nav2d_operator /home/ros/slambenchmarking/build /home/ros/slambenchmarking/build/navigation_2d/nav2d_operator /home/ros/slambenchmarking/build/navigation_2d/nav2d_operator/CMakeFiles/map_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation_2d/nav2d_operator/CMakeFiles/map_msgs_generate_messages_nodejs.dir/depend
 

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/ros/slambenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/catkin_ws/build
+CMAKE_BINARY_DIR = /home/ros/slambenchmarking/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,28 +78,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -110,6 +88,17 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target test
 test:
@@ -135,14 +124,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ros/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ros/catkin_ws/build/CMakeFiles /home/ros/catkin_ws/build/navigation_2d/nav2d_tutorials/CMakeFiles/progress.marks
-	cd /home/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_tutorials/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/catkin_ws/build/CMakeFiles 0
+	cd /home/ros/slambenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slambenchmarking/build/CMakeFiles /home/ros/slambenchmarking/build/navigation_2d/nav2d_tutorials/CMakeFiles/progress.marks
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_tutorials/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slambenchmarking/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_tutorials/clean
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_tutorials/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,17 +141,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_tutorials/preinstall
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_tutorials/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_tutorials/preinstall
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_tutorials/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ros/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ros/slambenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -173,9 +162,8 @@ help:
 	@echo "... depend"
 	@echo "... list_install_components"
 	@echo "... install"
-	@echo "... rebuild_cache"
-	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... edit_cache"
 .PHONY : help
@@ -189,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ros/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ros/slambenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

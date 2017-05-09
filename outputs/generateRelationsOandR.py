@@ -55,6 +55,9 @@ def generateRelationsMatrices(gtfile,output,seconds=1,SLAMFile=None,folder=None)
 			relationsRandomFile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 			i+=1 
 
+	call(["../metricEvaluator/metricEvaluator", "-s",SLAMFile, "-r",output+"Random.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder+"TRandom.error","-eu",folder+"TRandom-unsorted.error"])
+	call(["../metricEvaluator/metricEvaluator", "-s",SLAMFile, "-r",output+"Random.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder+"RRandom.error","-eu",folder+"RRandom-unsorted.error"])
+
 	groundSorted=sorted(ground)
 	firststamp=groundSorted[1]
 	secondstamp=0
@@ -71,6 +74,9 @@ def generateRelationsMatrices(gtfile,output,seconds=1,SLAMFile=None,folder=None)
 
 			relationsOrderedFile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 		firststamp=secondstamp
+
+	call(["../metricEvaluator/metricEvaluator", "-s",SLAMFile, "-r",output+"Ordered.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder+"TOrdered.error","-eu",folder+"TOrdered-unsorted.error"])
+	call(["../metricEvaluator/metricEvaluator", "-s",SLAMFile, "-r",output+"Ordered.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder+"ROrdered.error","-eu",folder+"ROrdered-unsorted.error"])
 
 	relationsOrderedFile.close()
 	relationsRandomFile.close()

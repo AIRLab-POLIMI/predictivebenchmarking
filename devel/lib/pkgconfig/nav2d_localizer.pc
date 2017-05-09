@@ -1,8 +1,8 @@
-prefix=/home/ros/catkin_ws/devel
+prefix=/home/ros/slambenchmarking/devel
 
 Name: nav2d_localizer
 Description: Description of nav2d_localizer
 Version: 0.3.0
-Cflags: -I/home/ros/catkin_ws/src/navigation_2d/nav2d_localizer/include
-Libs: -L/home/ros/catkin_ws/devel/lib -lSelfLocalizer
+Cflags: -I/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/include
+Libs: -L/home/ros/slambenchmarking/devel/lib -lSelfLocalizer
 Requires: roscpp tf nav_msgs sensor_msgs geometry_msgs

@@ -1,8 +1,8 @@
-# Install script for directory: /home/ros/catkin_ws/src/navigation_2d/nav2d_karto
+# Install script for directory: /home/ros/slambenchmarking/src/navigation_2d/nav2d_karto
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ros/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ros/slambenchmarking/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,81 +33,37 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ros/catkin_ws/build/navigation_2d/nav2d_karto/catkin_generated/installspace/nav2d_karto.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ros/slambenchmarking/build/navigation_2d/nav2d_karto/catkin_generated/installspace/nav2d_karto.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nav2d_karto/cmake" TYPE FILE FILES
-    "/home/ros/catkin_ws/build/navigation_2d/nav2d_karto/catkin_generated/installspace/nav2d_kartoConfig.cmake"
-    "/home/ros/catkin_ws/build/navigation_2d/nav2d_karto/catkin_generated/installspace/nav2d_kartoConfig-version.cmake"
+    "/home/ros/slambenchmarking/build/navigation_2d/nav2d_karto/catkin_generated/installspace/nav2d_kartoConfig.cmake"
+    "/home/ros/slambenchmarking/build/navigation_2d/nav2d_karto/catkin_generated/installspace/nav2d_kartoConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nav2d_karto" TYPE FILE FILES "/home/ros/catkin_ws/src/navigation_2d/nav2d_karto/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nav2d_karto" TYPE FILE FILES "/home/ros/slambenchmarking/src/navigation_2d/nav2d_karto/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libOpenKarto.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libOpenKarto.so")
-    file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libOpenKarto.so"
-         RPATH "")
-  endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ros/catkin_ws/devel/lib/libOpenKarto.so")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libOpenKarto.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libOpenKarto.so")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libOpenKarto.so")
-    endif()
-  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ros/slambenchmarking/build/navigation_2d/nav2d_karto/CMakeFiles/CMakeRelink.dir/libOpenKarto.so")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libMultiMapper.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libMultiMapper.so")
-    file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libMultiMapper.so"
-         RPATH "")
-  endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ros/catkin_ws/devel/lib/libMultiMapper.so")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libMultiMapper.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libMultiMapper.so")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libMultiMapper.so"
-         OLD_RPATH "/home/ros/catkin_ws/devel/lib:/opt/ros/kinetic/lib:"
-         NEW_RPATH "")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libMultiMapper.so")
-    endif()
-  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ros/slambenchmarking/build/navigation_2d/nav2d_karto/CMakeFiles/CMakeRelink.dir/libMultiMapper.so")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/nav2d_karto/mapper" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/nav2d_karto/mapper")
-    file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/nav2d_karto/mapper"
-         RPATH "")
-  endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/nav2d_karto" TYPE EXECUTABLE FILES "/home/ros/catkin_ws/devel/lib/nav2d_karto/mapper")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/nav2d_karto/mapper" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/nav2d_karto/mapper")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/nav2d_karto/mapper"
-         OLD_RPATH "/home/ros/catkin_ws/devel/lib:/opt/ros/kinetic/lib:"
-         NEW_RPATH "")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/nav2d_karto/mapper")
-    endif()
-  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/nav2d_karto" TYPE EXECUTABLE FILES "/home/ros/slambenchmarking/build/navigation_2d/nav2d_karto/CMakeFiles/CMakeRelink.dir/mapper")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/nav2d_karto" TYPE DIRECTORY FILES "/home/ros/catkin_ws/src/navigation_2d/nav2d_karto/OpenKarto/source/OpenKarto" FILES_MATCHING REGEX "/[^/]*\\.h$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/nav2d_karto" TYPE DIRECTORY FILES "/home/ros/slambenchmarking/src/navigation_2d/nav2d_karto/OpenKarto/source/OpenKarto" FILES_MATCHING REGEX "/[^/]*\\.h$")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/nav2d_karto" TYPE DIRECTORY FILES "/home/ros/catkin_ws/src/navigation_2d/nav2d_karto/include/nav2d_karto/" FILES_MATCHING REGEX "/[^/]*\\.h$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/nav2d_karto" TYPE DIRECTORY FILES "/home/ros/slambenchmarking/src/navigation_2d/nav2d_karto/include/nav2d_karto/" FILES_MATCHING REGEX "/[^/]*\\.h$")
 endif()
 

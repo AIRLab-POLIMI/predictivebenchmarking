@@ -1,8 +1,8 @@
-prefix=/home/ros/catkin_ws/devel
+prefix=/home/ros/slambenchmarking/devel
 
 Name: nav2d_navigator
 Description: Description of nav2d_navigator
 Version: 0.3.0
-Cflags: -I/home/ros/catkin_ws/devel/include -I/home/ros/catkin_ws/src/navigation_2d/nav2d_navigator/include
-Libs: -L/home/ros/catkin_ws/devel/lib -lRobotNavigator -lMapInflationTool
+Cflags: -I/home/ros/slambenchmarking/devel/include -I/home/ros/slambenchmarking/src/navigation_2d/nav2d_navigator/include
+Libs: -L/home/ros/slambenchmarking/devel/lib -lRobotNavigator -lMapInflationTool
 Requires: roscpp message_runtime tf actionlib actionlib_msgs geometry_msgs nav2d_msgs nav2d_operator

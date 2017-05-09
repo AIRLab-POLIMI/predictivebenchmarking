@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ros/catkin_ws/devel/include/nav2d_operator/cmd.h
+/home/ros/slambenchmarking/devel/include/nav2d_operator/cmd.h
 string
 -
 vector
@@ -22,7 +22,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_operator/include/nav2d_operator/RobotOperator.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/include/nav2d_operator/RobotOperator.h
 ros/ros.h
 -
 costmap_2d/costmap_2d_ros.h
@@ -34,7 +34,7 @@ nav2d_operator/cmd.h
 string
 -
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_operator/src/node.cpp
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/src/node.cpp
 ros/ros.h
 -
 tf/transform_listener.h

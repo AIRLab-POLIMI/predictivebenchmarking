@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/nav2d_operator_generate_messages_eus"
-  "/home/ros/catkin_ws/devel/share/roseus/ros/nav2d_operator/msg/cmd.l"
-  "/home/ros/catkin_ws/devel/share/roseus/ros/nav2d_operator/manifest.l"
+  "/home/ros/slambenchmarking/devel/share/roseus/ros/nav2d_operator/msg/cmd.l"
+  "/home/ros/slambenchmarking/devel/share/roseus/ros/nav2d_operator/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

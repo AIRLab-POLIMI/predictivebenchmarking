@@ -1,8 +1,8 @@
-# Install script for directory: /home/ros/catkin_ws/src/navigation_2d/nav2d_tutorials
+# Install script for directory: /home/ros/slambenchmarking/src/navigation_2d/nav2d_tutorials
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ros/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ros/slambenchmarking/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,25 +33,25 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ros/catkin_ws/build/navigation_2d/nav2d_tutorials/catkin_generated/installspace/nav2d_tutorials.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ros/slambenchmarking/build/navigation_2d/nav2d_tutorials/catkin_generated/installspace/nav2d_tutorials.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nav2d_tutorials/cmake" TYPE FILE FILES
-    "/home/ros/catkin_ws/build/navigation_2d/nav2d_tutorials/catkin_generated/installspace/nav2d_tutorialsConfig.cmake"
-    "/home/ros/catkin_ws/build/navigation_2d/nav2d_tutorials/catkin_generated/installspace/nav2d_tutorialsConfig-version.cmake"
+    "/home/ros/slambenchmarking/build/navigation_2d/nav2d_tutorials/catkin_generated/installspace/nav2d_tutorialsConfig.cmake"
+    "/home/ros/slambenchmarking/build/navigation_2d/nav2d_tutorials/catkin_generated/installspace/nav2d_tutorialsConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nav2d_tutorials" TYPE FILE FILES "/home/ros/catkin_ws/src/navigation_2d/nav2d_tutorials/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nav2d_tutorials" TYPE FILE FILES "/home/ros/slambenchmarking/src/navigation_2d/nav2d_tutorials/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nav2d_tutorials" TYPE DIRECTORY FILES
-    "/home/ros/catkin_ws/src/navigation_2d/nav2d_tutorials/launch"
-    "/home/ros/catkin_ws/src/navigation_2d/nav2d_tutorials/param"
-    "/home/ros/catkin_ws/src/navigation_2d/nav2d_tutorials/world"
+    "/home/ros/slambenchmarking/src/navigation_2d/nav2d_tutorials/launch"
+    "/home/ros/slambenchmarking/src/navigation_2d/nav2d_tutorials/param"
+    "/home/ros/slambenchmarking/src/navigation_2d/nav2d_tutorials/world"
     )
 endif()
 

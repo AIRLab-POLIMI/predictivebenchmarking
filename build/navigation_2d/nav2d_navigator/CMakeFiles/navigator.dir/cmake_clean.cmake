@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/navigator.dir/src/navigator.cpp.o"
   "CMakeFiles/navigator.dir/src/RobotNavigator.cpp.o"
-  "/home/ros/catkin_ws/devel/lib/nav2d_navigator/navigator.pdb"
-  "/home/ros/catkin_ws/devel/lib/nav2d_navigator/navigator"
+  "/home/ros/slambenchmarking/devel/lib/nav2d_navigator/navigator.pdb"
+  "/home/ros/slambenchmarking/devel/lib/nav2d_navigator/navigator"
+  "/home/ros/slambenchmarking/devel/lib/nav2d_navigator/navigator.pdb"
+  "CMakeFiles/CMakeRelink.dir/navigator"
 )
 
 # Per-language clean rules from dependency scanning.

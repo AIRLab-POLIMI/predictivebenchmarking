@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/nav2d_msgs_generate_messages_nodejs"
-  "/home/ros/catkin_ws/devel/share/gennodejs/ros/nav2d_msgs/msg/RobotPose.js"
-  "/home/ros/catkin_ws/devel/share/gennodejs/ros/nav2d_msgs/msg/LocalizedScan.js"
+  "/home/ros/slambenchmarking/devel/share/gennodejs/ros/nav2d_msgs/msg/LocalizedScan.js"
+  "/home/ros/slambenchmarking/devel/share/gennodejs/ros/nav2d_msgs/msg/RobotPose.js"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -31,8 +31,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/OpenKarto.dir/OpenKarto/source/SensorRegistry.cpp.o"
   "CMakeFiles/OpenKarto.dir/OpenKarto/source/String.cpp.o"
   "CMakeFiles/OpenKarto.dir/OpenKarto/source/StringHelper.cpp.o"
-  "/home/ros/catkin_ws/devel/lib/libOpenKarto.pdb"
-  "/home/ros/catkin_ws/devel/lib/libOpenKarto.so"
+  "/home/ros/slambenchmarking/devel/lib/libOpenKarto.pdb"
+  "/home/ros/slambenchmarking/devel/lib/libOpenKarto.so"
+  "/home/ros/slambenchmarking/devel/lib/libOpenKarto.pdb"
+  "CMakeFiles/CMakeRelink.dir/libOpenKarto.so"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,8 +1,8 @@
-prefix=/home/ros/catkin_ws/devel
+prefix=/home/ros/slambenchmarking/devel
 
 Name: nav2d_msgs
 Description: Description of nav2d_msgs
 Version: 0.3.0
-Cflags: -I/home/ros/catkin_ws/devel/include
-Libs: -L/home/ros/catkin_ws/devel/lib 
+Cflags: -I/home/ros/slambenchmarking/devel/include
+Libs: -L/home/ros/slambenchmarking/devel/lib 
 Requires: message_runtime std_msgs sensor_msgs geometry_msgs

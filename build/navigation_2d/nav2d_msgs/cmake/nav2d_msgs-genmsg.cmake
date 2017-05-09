@@ -2,7 +2,7 @@
 
 message(STATUS "nav2d_msgs: 2 messages, 0 services")
 
-set(MSG_I_FLAGS "-Inav2d_msgs:/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Inav2d_msgs:/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,14 +17,14 @@ add_custom_target(nav2d_msgs_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg" NAME_WE)
 add_custom_target(_nav2d_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "nav2d_msgs" "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg" "geometry_msgs/Pose2D:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "nav2d_msgs" "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg" "sensor_msgs/LaserScan:std_msgs/Header"
 )
 
-get_filename_component(_filename "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg" NAME_WE)
 add_custom_target(_nav2d_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "nav2d_msgs" "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg" "sensor_msgs/LaserScan:std_msgs/Header"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "nav2d_msgs" "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg" "geometry_msgs/Pose2D:std_msgs/Header"
 )
 
 #
@@ -34,15 +34,15 @@ add_custom_target(_nav2d_msgs_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(nav2d_msgs
-  "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg"
+  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose2D.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/LaserScan.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/nav2d_msgs
 )
 _generate_msg_cpp(nav2d_msgs
-  "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg"
+  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/LaserScan.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose2D.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/nav2d_msgs
 )
 
@@ -60,9 +60,9 @@ add_custom_target(nav2d_msgs_generate_messages_cpp
 add_dependencies(nav2d_msgs_generate_messages nav2d_msgs_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg" NAME_WE)
 add_dependencies(nav2d_msgs_generate_messages_cpp _nav2d_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg" NAME_WE)
 add_dependencies(nav2d_msgs_generate_messages_cpp _nav2d_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -75,15 +75,15 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS nav2d_msgs_generate_messages_cpp)
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(nav2d_msgs
-  "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg"
+  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose2D.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/LaserScan.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/nav2d_msgs
 )
 _generate_msg_eus(nav2d_msgs
-  "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg"
+  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/LaserScan.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose2D.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/nav2d_msgs
 )
 
@@ -101,9 +101,9 @@ add_custom_target(nav2d_msgs_generate_messages_eus
 add_dependencies(nav2d_msgs_generate_messages nav2d_msgs_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg" NAME_WE)
 add_dependencies(nav2d_msgs_generate_messages_eus _nav2d_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg" NAME_WE)
 add_dependencies(nav2d_msgs_generate_messages_eus _nav2d_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -116,15 +116,15 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS nav2d_msgs_generate_messages_eus)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(nav2d_msgs
-  "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg"
+  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose2D.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/LaserScan.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/nav2d_msgs
 )
 _generate_msg_lisp(nav2d_msgs
-  "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg"
+  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/LaserScan.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose2D.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/nav2d_msgs
 )
 
@@ -142,9 +142,9 @@ add_custom_target(nav2d_msgs_generate_messages_lisp
 add_dependencies(nav2d_msgs_generate_messages nav2d_msgs_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg" NAME_WE)
 add_dependencies(nav2d_msgs_generate_messages_lisp _nav2d_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg" NAME_WE)
 add_dependencies(nav2d_msgs_generate_messages_lisp _nav2d_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -157,15 +157,15 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS nav2d_msgs_generate_messages_lisp)
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(nav2d_msgs
-  "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg"
+  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose2D.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/LaserScan.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/nav2d_msgs
 )
 _generate_msg_nodejs(nav2d_msgs
-  "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg"
+  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/LaserScan.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose2D.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/nav2d_msgs
 )
 
@@ -183,9 +183,9 @@ add_custom_target(nav2d_msgs_generate_messages_nodejs
 add_dependencies(nav2d_msgs_generate_messages nav2d_msgs_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg" NAME_WE)
 add_dependencies(nav2d_msgs_generate_messages_nodejs _nav2d_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg" NAME_WE)
 add_dependencies(nav2d_msgs_generate_messages_nodejs _nav2d_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -198,15 +198,15 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS nav2d_msgs_generate_messages_nodejs
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(nav2d_msgs
-  "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg"
+  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose2D.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/LaserScan.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/nav2d_msgs
 )
 _generate_msg_py(nav2d_msgs
-  "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg"
+  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/kinetic/share/sensor_msgs/cmake/../msg/LaserScan.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose2D.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/nav2d_msgs
 )
 
@@ -224,9 +224,9 @@ add_custom_target(nav2d_msgs_generate_messages_py
 add_dependencies(nav2d_msgs_generate_messages nav2d_msgs_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg" NAME_WE)
 add_dependencies(nav2d_msgs_generate_messages_py _nav2d_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/ros/catkin_ws/src/navigation_2d/nav2d_msgs/msg/LocalizedScan.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs/msg/RobotPose.msg" NAME_WE)
 add_dependencies(nav2d_msgs_generate_messages_py _nav2d_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

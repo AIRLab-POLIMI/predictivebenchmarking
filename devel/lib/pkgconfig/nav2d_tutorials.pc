@@ -1,8 +1,8 @@
-prefix=/home/ros/catkin_ws/devel
+prefix=/home/ros/slambenchmarking/devel
 
 Name: nav2d_tutorials
 Description: Description of nav2d_tutorials
 Version: 0.3.0
 Cflags: 
-Libs: -L/home/ros/catkin_ws/devel/lib 
+Libs: -L/home/ros/slambenchmarking/devel/lib 
 Requires: 

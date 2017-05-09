@@ -1,8 +1,8 @@
-prefix=/home/ros/catkin_ws/install
+prefix=/home/ros/slambenchmarking/install
 
 Name: nav2d_remote
 Description: Description of nav2d_remote
 Version: 0.3.0
 Cflags: 
-Libs: -L/home/ros/catkin_ws/install/lib 
+Libs: -L/home/ros/slambenchmarking/install/lib 
 Requires: nav2d_navigator nav2d_operator roscpp sensor_msgs

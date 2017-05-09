@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MultiMapper.dir/src/MultiMapper.cpp.o"
-  "/home/ros/catkin_ws/devel/lib/libMultiMapper.pdb"
-  "/home/ros/catkin_ws/devel/lib/libMultiMapper.so"
+  "/home/ros/slambenchmarking/devel/lib/libMultiMapper.pdb"
+  "/home/ros/slambenchmarking/devel/lib/libMultiMapper.so"
+  "/home/ros/slambenchmarking/devel/lib/libMultiMapper.pdb"
+  "CMakeFiles/CMakeRelink.dir/libMultiMapper.so"
 )
 
 # Per-language clean rules from dependency scanning.

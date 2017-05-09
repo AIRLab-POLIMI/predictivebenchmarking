@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/ros/slambenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/catkin_ws/build
+CMAKE_BINARY_DIR = /home/ros/slambenchmarking/build
 
 # Utility rule file for run_tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 CMakeFiles/run_tests.dir/depend:
-	cd /home/ros/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/catkin_ws/src /home/ros/catkin_ws/src /home/ros/catkin_ws/build /home/ros/catkin_ws/build /home/ros/catkin_ws/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slambenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slambenchmarking/src /home/ros/slambenchmarking/src /home/ros/slambenchmarking/build /home/ros/slambenchmarking/build /home/ros/slambenchmarking/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_tests.dir/depend
 

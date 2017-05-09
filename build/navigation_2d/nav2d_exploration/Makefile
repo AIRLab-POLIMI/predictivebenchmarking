@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/catkin_ws/src
+CMAKE_SOURCE_DIR = /home/ros/slambenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/catkin_ws/build
+CMAKE_BINARY_DIR = /home/ros/slambenchmarking/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,17 +100,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -135,14 +124,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ros/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ros/catkin_ws/build/CMakeFiles /home/ros/catkin_ws/build/navigation_2d/nav2d_exploration/CMakeFiles/progress.marks
-	cd /home/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/catkin_ws/build/CMakeFiles 0
+	cd /home/ros/slambenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slambenchmarking/build/CMakeFiles /home/ros/slambenchmarking/build/navigation_2d/nav2d_exploration/CMakeFiles/progress.marks
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slambenchmarking/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/clean
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +141,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/preinstall
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/preinstall
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ros/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ros/slambenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/rule:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/rule
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/rule
 .PHONY : navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/rule
 
 # Convenience name for target.
@@ -177,8 +166,13 @@ ExplorationPlugins: navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugin
 
 # fast build rule for target.
 ExplorationPlugins/fast:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build
 .PHONY : ExplorationPlugins/fast
+
+# Manual pre-install relink rule for target.
+ExplorationPlugins/preinstall:
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/preinstall
+.PHONY : ExplorationPlugins/preinstall
 
 src/MinPosPlanner.o: src/MinPosPlanner.cpp.o
 
@@ -186,7 +180,7 @@ src/MinPosPlanner.o: src/MinPosPlanner.cpp.o
 
 # target to build an object file
 src/MinPosPlanner.cpp.o:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MinPosPlanner.cpp.o
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MinPosPlanner.cpp.o
 .PHONY : src/MinPosPlanner.cpp.o
 
 src/MinPosPlanner.i: src/MinPosPlanner.cpp.i
@@ -195,7 +189,7 @@ src/MinPosPlanner.i: src/MinPosPlanner.cpp.i
 
 # target to preprocess a source file
 src/MinPosPlanner.cpp.i:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MinPosPlanner.cpp.i
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MinPosPlanner.cpp.i
 .PHONY : src/MinPosPlanner.cpp.i
 
 src/MinPosPlanner.s: src/MinPosPlanner.cpp.s
@@ -204,7 +198,7 @@ src/MinPosPlanner.s: src/MinPosPlanner.cpp.s
 
 # target to generate assembly for a file
 src/MinPosPlanner.cpp.s:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MinPosPlanner.cpp.s
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MinPosPlanner.cpp.s
 .PHONY : src/MinPosPlanner.cpp.s
 
 src/MultiWavefrontPlanner.o: src/MultiWavefrontPlanner.cpp.o
@@ -213,7 +207,7 @@ src/MultiWavefrontPlanner.o: src/MultiWavefrontPlanner.cpp.o
 
 # target to build an object file
 src/MultiWavefrontPlanner.cpp.o:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MultiWavefrontPlanner.cpp.o
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MultiWavefrontPlanner.cpp.o
 .PHONY : src/MultiWavefrontPlanner.cpp.o
 
 src/MultiWavefrontPlanner.i: src/MultiWavefrontPlanner.cpp.i
@@ -222,7 +216,7 @@ src/MultiWavefrontPlanner.i: src/MultiWavefrontPlanner.cpp.i
 
 # target to preprocess a source file
 src/MultiWavefrontPlanner.cpp.i:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MultiWavefrontPlanner.cpp.i
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MultiWavefrontPlanner.cpp.i
 .PHONY : src/MultiWavefrontPlanner.cpp.i
 
 src/MultiWavefrontPlanner.s: src/MultiWavefrontPlanner.cpp.s
@@ -231,7 +225,7 @@ src/MultiWavefrontPlanner.s: src/MultiWavefrontPlanner.cpp.s
 
 # target to generate assembly for a file
 src/MultiWavefrontPlanner.cpp.s:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MultiWavefrontPlanner.cpp.s
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MultiWavefrontPlanner.cpp.s
 .PHONY : src/MultiWavefrontPlanner.cpp.s
 
 src/NearestFrontierPlanner.o: src/NearestFrontierPlanner.cpp.o
@@ -240,7 +234,7 @@ src/NearestFrontierPlanner.o: src/NearestFrontierPlanner.cpp.o
 
 # target to build an object file
 src/NearestFrontierPlanner.cpp.o:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/NearestFrontierPlanner.cpp.o
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/NearestFrontierPlanner.cpp.o
 .PHONY : src/NearestFrontierPlanner.cpp.o
 
 src/NearestFrontierPlanner.i: src/NearestFrontierPlanner.cpp.i
@@ -249,7 +243,7 @@ src/NearestFrontierPlanner.i: src/NearestFrontierPlanner.cpp.i
 
 # target to preprocess a source file
 src/NearestFrontierPlanner.cpp.i:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/NearestFrontierPlanner.cpp.i
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/NearestFrontierPlanner.cpp.i
 .PHONY : src/NearestFrontierPlanner.cpp.i
 
 src/NearestFrontierPlanner.s: src/NearestFrontierPlanner.cpp.s
@@ -258,7 +252,7 @@ src/NearestFrontierPlanner.s: src/NearestFrontierPlanner.cpp.s
 
 # target to generate assembly for a file
 src/NearestFrontierPlanner.cpp.s:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/NearestFrontierPlanner.cpp.s
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/NearestFrontierPlanner.cpp.s
 .PHONY : src/NearestFrontierPlanner.cpp.s
 
 src/exploration_plugins.o: src/exploration_plugins.cpp.o
@@ -267,7 +261,7 @@ src/exploration_plugins.o: src/exploration_plugins.cpp.o
 
 # target to build an object file
 src/exploration_plugins.cpp.o:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/exploration_plugins.cpp.o
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/exploration_plugins.cpp.o
 .PHONY : src/exploration_plugins.cpp.o
 
 src/exploration_plugins.i: src/exploration_plugins.cpp.i
@@ -276,7 +270,7 @@ src/exploration_plugins.i: src/exploration_plugins.cpp.i
 
 # target to preprocess a source file
 src/exploration_plugins.cpp.i:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/exploration_plugins.cpp.i
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/exploration_plugins.cpp.i
 .PHONY : src/exploration_plugins.cpp.i
 
 src/exploration_plugins.s: src/exploration_plugins.cpp.s
@@ -285,7 +279,7 @@ src/exploration_plugins.s: src/exploration_plugins.cpp.s
 
 # target to generate assembly for a file
 src/exploration_plugins.cpp.s:
-	cd /home/ros/catkin_ws/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/exploration_plugins.cpp.s
+	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/exploration_plugins.cpp.s
 .PHONY : src/exploration_plugins.cpp.s
 
 # Help Target
@@ -297,9 +291,8 @@ help:
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... ExplorationPlugins"
-	@echo "... install/strip"
+	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... test"
 	@echo "... src/MinPosPlanner.o"
@@ -325,6 +318,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ros/catkin_ws/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ros/slambenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

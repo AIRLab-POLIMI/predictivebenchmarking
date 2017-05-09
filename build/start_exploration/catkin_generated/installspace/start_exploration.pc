@@ -1,8 +1,8 @@
-prefix=/home/ros/catkin_ws/install
+prefix=/home/ros/slambenchmarking/install
 
 Name: start_exploration
 Description: Description of start_exploration
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/ros/catkin_ws/install/lib 
+Libs: -L/home/ros/slambenchmarking/install/lib 
 Requires: 

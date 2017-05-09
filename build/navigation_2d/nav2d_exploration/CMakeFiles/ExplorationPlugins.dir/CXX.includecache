@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ros/catkin_ws/devel/include/nav2d_msgs/RobotPose.h
+/home/ros/slambenchmarking/devel/include/nav2d_msgs/RobotPose.h
 string
 -
 vector
@@ -26,49 +26,49 @@ std_msgs/Header.h
 geometry_msgs/Pose2D.h
 -
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_exploration/include/nav2d_exploration/MinPosPlanner.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration/include/nav2d_exploration/MinPosPlanner.h
 nav2d_navigator/ExplorationPlanner.h
 -
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_exploration/include/nav2d_exploration/MultiWavefrontPlanner.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration/include/nav2d_exploration/MultiWavefrontPlanner.h
 nav2d_navigator/ExplorationPlanner.h
 -
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_exploration/include/nav2d_exploration/NearestFrontierPlanner.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration/include/nav2d_exploration/NearestFrontierPlanner.h
 nav2d_navigator/ExplorationPlanner.h
 -
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_exploration/src/MinPosPlanner.cpp
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration/src/MinPosPlanner.cpp
 MinPosPlanner.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_exploration/src/MinPosPlanner.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration/src/MinPosPlanner.h
 visualization_msgs/Marker.h
 -
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_exploration/src/MultiWavefrontPlanner.cpp
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration/src/MultiWavefrontPlanner.cpp
 MultiWavefrontPlanner.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_exploration/src/MultiWavefrontPlanner.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration/src/MultiWavefrontPlanner.h
 geometry_msgs/Pose2D.h
 -
 nav_msgs/GridCells.h
 -
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_exploration/src/NearestFrontierPlanner.cpp
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration/src/NearestFrontierPlanner.cpp
 NearestFrontierPlanner.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_exploration/src/NearestFrontierPlanner.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration/src/NearestFrontierPlanner.h
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_exploration/src/exploration_plugins.cpp
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration/src/exploration_plugins.cpp
 pluginlib/class_list_macros.h
 -
 nav2d_navigator/ExplorationPlanner.h
 -
 NearestFrontierPlanner.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_exploration/src/NearestFrontierPlanner.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration/src/NearestFrontierPlanner.h
 MultiWavefrontPlanner.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_exploration/src/MultiWavefrontPlanner.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration/src/MultiWavefrontPlanner.h
 MinPosPlanner.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_exploration/src/MinPosPlanner.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration/src/MinPosPlanner.h
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_navigator/include/nav2d_navigator/ExplorationPlanner.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_navigator/include/nav2d_navigator/ExplorationPlanner.h
 string
 -
 tf/transform_listener.h
@@ -78,11 +78,11 @@ nav2d_msgs/RobotPose.h
 nav2d_navigator/GridMap.h
 -
 
-/home/ros/catkin_ws/src/navigation_2d/nav2d_navigator/include/nav2d_navigator/GridMap.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_navigator/include/nav2d_navigator/GridMap.h
 ros/ros.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_navigator/include/nav2d_navigator/ros/ros.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_navigator/include/nav2d_navigator/ros/ros.h
 nav_msgs/OccupancyGrid.h
-/home/ros/catkin_ws/src/navigation_2d/nav2d_navigator/include/nav2d_navigator/nav_msgs/OccupancyGrid.h
+/home/ros/slambenchmarking/src/navigation_2d/nav2d_navigator/include/nav2d_navigator/nav_msgs/OccupancyGrid.h
 
 /opt/ros/kinetic/include/class_loader/class_loader.h
 boost/shared_ptr.hpp

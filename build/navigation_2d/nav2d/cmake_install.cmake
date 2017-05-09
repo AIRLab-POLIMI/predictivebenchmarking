@@ -1,8 +1,8 @@
-# Install script for directory: /home/ros/catkin_ws/src/navigation_2d/nav2d
+# Install script for directory: /home/ros/slambenchmarking/src/navigation_2d/nav2d
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ros/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ros/slambenchmarking/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,6 +33,6 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nav2d" TYPE FILE FILES "/home/ros/catkin_ws/src/navigation_2d/nav2d/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nav2d" TYPE FILE FILES "/home/ros/slambenchmarking/src/navigation_2d/nav2d/package.xml")
 endif()
 
