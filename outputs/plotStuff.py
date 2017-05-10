@@ -643,6 +643,37 @@ def histoErrorAvgRot(relations,errors):
 	plt.title('Error by relation')
 	plt.legend((p1[0], p2[0]), ('Ordered', 'Random'))
 
+def plotGaussianError(path, numFiles):
+	errors = {}
+	numFiles = int(numFiles)
+	minError = 100000000000000
+	maxError = 0
+	for i in range(1,numFiles+1):
+		errorFile = open(path+"Terror"+str(i)+".error","r")
+		content = errorFile.readlines()
+		words = content[1].split(", ")
+		mean = round(float(words[0]),2) # retrieve the rounded mean mean
+		if mean > maxError:
+			maxError = mean
+		if mean < minError:
+			minError = mean
+		errors[mean] = errors.get(mean, 0) + 1
+		errorFile.close()
+	print minError
+	print maxError
+	errorRange = [round(x,2) for x in np.arange(minError,maxError+0.01,0.01,dtype=np.float64)]
+	print errorRange
+	values = []
+	for e in errorRange:
+		values.append(errors.get(e,0))
+	ind = errorRange
+	width = 0.01
+	p1 = plt.bar(ind, values, width, color=(0.2588,0.4433,1.0))
+	plt.ylabel('N. of occurrences')
+	plt.xlabel('Error mean')
+	plt.title('Error mean distribution')
+
+		
 
 if __name__=='__main__':	
 	#plotRelation3d(sys.argv[1],sys.argv[2],float(sys.argv[3]),float(sys.argv[4]))
@@ -654,17 +685,19 @@ if __name__=='__main__':
 	#plotOdom(sys.argv[3])
 	#plotGTRawSeeds(sys.argv[1])
 	#plotOdomRawSeeds(sys.argv[2])
-	if sys.argv[3] == 'Sum':
-		histoErrorSum(sys.argv[1],sys.argv[2])
-	elif sys.argv[3] == 'Num':
-		histoErrorNum(sys.argv[1],sys.argv[2])
-	elif sys.argv[3] == 'Avg':
-		histoErrorAvg(sys.argv[1],sys.argv[2])
-	elif sys.argv[3] =='AvgR':
-		histoErrorAvgRot(sys.argv[1],sys.argv[2])
-	elif sys.argv[3] == 'SLAMGT':
-		plotSlam(sys.argv[1])
-		plotGroundTruth(sys.argv[2])
+	if sys.argv[1] == 'Sum':
+		histoErrorSum(sys.argv[2],sys.argv[3])
+	elif sys.argv[1] == 'Num':
+		histoErrorNum(sys.argv[2],sys.argv[3])
+	elif sys.argv[1] == 'Avg':
+		histoErrorAvg(sys.argv[2],sys.argv[3])
+	elif sys.argv[1] =='AvgR':
+		histoErrorAvgRot(sys.argv[2],sys.argv[3])
+	elif sys.argv[1] == 'SLAMGT':
+		plotSlam(sys.argv[2])
+		plotGroundTruth(sys.argv[3])
+	elif sys.argv[1] == 'Gauss':
+		plotGaussianError(sys.argv[2],sys.argv[3])
 	plt.show()
 	#calcTime(sys.argv[1])
 	#calcError(sys.argv[1])
