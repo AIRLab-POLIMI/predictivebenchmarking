@@ -13,7 +13,7 @@ threads                 2
 floorplan
 ( 
   name "lab_a"
-  bitmap "/home/ros/catkin_ws/nav2dfiles/lab_a_scan.png"
+  bitmap "lab_a_scan.png"
   size [82.4 70.8 1.0]
   pose [0 0 0 0]
 )

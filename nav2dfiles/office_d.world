@@ -13,7 +13,7 @@ threads                 2
 floorplan
 ( 
   name "office_d"
-  bitmap "/home/ros/catkin_ws/nav2dfiles/office_d.png"
+  bitmap "office_d.png"
   size [68.0 66.1 1.0]
   pose [0 0 0 0]
 )

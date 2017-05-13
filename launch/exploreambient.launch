@@ -42,5 +42,5 @@
 	<node name="RVIZ" pkg="rviz" type="rviz" args=" -d $(find nav2d_tutorials)/param/tutorial3.rviz" />
 
 	<!-- Start exploration of ambient -->
-	<node name="exploration" pkg="start_exploration" type="startexploration.py" />
+	<!-- <node name="exploration" pkg="start_exploration" type="startexploration.py" /> -->
 </launch>

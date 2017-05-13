@@ -13,7 +13,7 @@ threads                 2
 floorplan
 ( 
   name "autolab"
-  bitmap "/home/ros/catkin_ws/nav2dfiles/autolab.png"
+  bitmap "autolab.png"
   size [40.45 34.45 1.0]
   pose [0 0 0 0]
 )

@@ -14,7 +14,7 @@ floorplan
 ( 
   boundary 1
   name "office_h"
-  bitmap "/home/ros/catkin_ws/nav2dfiles/office_h.png"
+  bitmap "office_h.png"
   size [51.500 51.400 1.0]
   pose [0 0 0 0]
 )

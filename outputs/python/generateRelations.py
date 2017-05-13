@@ -73,7 +73,7 @@ def writeGroundTruth(data,outputFile):
 		odom.write(str(data.header.stamp)[:-9]+"."+str(data.header.stamp)[-9:]+" "+str(position.x)+" "+str(position.y)+" "+str(rot[2])+"\n")
 	'''
 
-def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1,SLAMFile=None,errorMode=None,alpha=None,maxError=None):
+def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1,SLAMFile=None,errorMode=None,alpha=None,maxError=None,path=None,errorNo=0):
 
 	if seconds=='0':
 		print 'Error: Seconds 0'
@@ -182,7 +182,10 @@ def generateRelationsMatrices(gtfile,output,typeOfRelations,seconds=1,SLAMFile=N
 
 				relationsfile.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 				i+=1 
-	
+		if errorNo!=0: # fast chain building
+			relationsfile.close()
+			call(["../metricEvaluator/metricEvaluator", "-s",SLAMFile, "-r",output+".relations","-w",errorWeights, "-e",path+"Terror"+str(errorNo)+".error"])
+			relationsfile = open(output+".relations","r")
 
 	elif typeOfRelations=='O':
 		#builds relations file with ordered time
@@ -461,5 +464,8 @@ if __name__ == '__main__':
 	#generateRelations(sys.argv[2],sys.argv[3])
 	if len(sys.argv)==5:
 		generateRelationsMatrices(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
-	else:
+	elif len(sys.argv)==9:
 		generateRelationsMatrices(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],float(sys.argv[7]),float(sys.argv[8]))
+	else:
+		for i in range(1,int(sys.argv[9])+1):
+			generateRelationsMatrices(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6],float(sys.argv[7]),float(sys.argv[8]),sys.argv[10],i)
