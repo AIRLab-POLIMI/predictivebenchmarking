@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "nav2d_localizer")
-set(nav2d_localizer_VERSION "0.3.0")
+set(nav2d_localizer_VERSION "0.3.2")
 set(nav2d_localizer_MAINTAINER "Sebastian Kasperski <sebastian.kasperski@dfki.de>")
 set(nav2d_localizer_PACKAGE_FORMAT "1")
 set(nav2d_localizer_BUILD_DEPENDS "roscpp" "tf" "nav_msgs" "sensor_msgs" "geometry_msgs")

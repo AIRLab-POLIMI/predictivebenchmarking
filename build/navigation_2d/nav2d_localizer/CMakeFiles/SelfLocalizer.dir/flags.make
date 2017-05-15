@@ -3,15 +3,15 @@
 
 # compile C with /usr/bin/cc
 # compile CXX with /usr/bin/c++
-C_FLAGS = -fPIC  
+C_FLAGS = -O3 -DNDEBUG -fPIC  
 
 C_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"nav2d_localizer\" -DSelfLocalizer_EXPORTS
 
-C_INCLUDES = -I/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+C_INCLUDES = -I/home/ros/slampbenchmarking/src/navigation_2d/nav2d_localizer/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 
-CXX_FLAGS = -fPIC  
+CXX_FLAGS = -O3 -DNDEBUG -fPIC  
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"nav2d_localizer\" -DSelfLocalizer_EXPORTS
 
-CXX_INCLUDES = -I/home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/ros/slampbenchmarking/src/navigation_2d/nav2d_localizer/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

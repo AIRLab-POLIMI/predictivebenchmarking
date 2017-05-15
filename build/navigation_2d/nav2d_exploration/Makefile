@@ -48,23 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slambenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slambenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -78,27 +68,15 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
+.PHONY : list_install_components/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -122,16 +100,38 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/ros/slambenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slambenchmarking/build/CMakeFiles /home/ros/slambenchmarking/build/navigation_2d/nav2d_exploration/CMakeFiles/progress.marks
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slambenchmarking/build/CMakeFiles 0
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slampbenchmarking/build/CMakeFiles /home/ros/slampbenchmarking/build/navigation_2d/nav2d_exploration/CMakeFiles/progress.marks
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slampbenchmarking/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/clean
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +141,67 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/preinstall
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/preinstall
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ros/slambenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
+navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+.PHONY : navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_nodejs: navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+visualization_msgs_generate_messages_nodejs/fast:
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
+.PHONY : visualization_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+.PHONY : navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_lisp: navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_lisp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_lisp/fast:
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
+.PHONY : visualization_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule:
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+.PHONY : navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_eus: navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_eus
+
+# fast build rule for target.
+visualization_msgs_generate_messages_eus/fast:
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build
+.PHONY : visualization_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
 navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/rule:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/rule
 .PHONY : navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/rule
 
 # Convenience name for target.
@@ -166,13 +211,43 @@ ExplorationPlugins: navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugin
 
 # fast build rule for target.
 ExplorationPlugins/fast:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build
 .PHONY : ExplorationPlugins/fast
 
 # Manual pre-install relink rule for target.
 ExplorationPlugins/preinstall:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/preinstall
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/preinstall
 .PHONY : ExplorationPlugins/preinstall
+
+# Convenience name for target.
+navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule:
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+.PHONY : navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_py: navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_py
+
+# fast build rule for target.
+visualization_msgs_generate_messages_py/fast:
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
+.PHONY : visualization_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+.PHONY : navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_cpp: navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_cpp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_cpp/fast:
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
+.PHONY : visualization_msgs_generate_messages_cpp/fast
 
 src/MinPosPlanner.o: src/MinPosPlanner.cpp.o
 
@@ -180,7 +255,7 @@ src/MinPosPlanner.o: src/MinPosPlanner.cpp.o
 
 # target to build an object file
 src/MinPosPlanner.cpp.o:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MinPosPlanner.cpp.o
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MinPosPlanner.cpp.o
 .PHONY : src/MinPosPlanner.cpp.o
 
 src/MinPosPlanner.i: src/MinPosPlanner.cpp.i
@@ -189,7 +264,7 @@ src/MinPosPlanner.i: src/MinPosPlanner.cpp.i
 
 # target to preprocess a source file
 src/MinPosPlanner.cpp.i:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MinPosPlanner.cpp.i
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MinPosPlanner.cpp.i
 .PHONY : src/MinPosPlanner.cpp.i
 
 src/MinPosPlanner.s: src/MinPosPlanner.cpp.s
@@ -198,7 +273,7 @@ src/MinPosPlanner.s: src/MinPosPlanner.cpp.s
 
 # target to generate assembly for a file
 src/MinPosPlanner.cpp.s:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MinPosPlanner.cpp.s
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MinPosPlanner.cpp.s
 .PHONY : src/MinPosPlanner.cpp.s
 
 src/MultiWavefrontPlanner.o: src/MultiWavefrontPlanner.cpp.o
@@ -207,7 +282,7 @@ src/MultiWavefrontPlanner.o: src/MultiWavefrontPlanner.cpp.o
 
 # target to build an object file
 src/MultiWavefrontPlanner.cpp.o:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MultiWavefrontPlanner.cpp.o
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MultiWavefrontPlanner.cpp.o
 .PHONY : src/MultiWavefrontPlanner.cpp.o
 
 src/MultiWavefrontPlanner.i: src/MultiWavefrontPlanner.cpp.i
@@ -216,7 +291,7 @@ src/MultiWavefrontPlanner.i: src/MultiWavefrontPlanner.cpp.i
 
 # target to preprocess a source file
 src/MultiWavefrontPlanner.cpp.i:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MultiWavefrontPlanner.cpp.i
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MultiWavefrontPlanner.cpp.i
 .PHONY : src/MultiWavefrontPlanner.cpp.i
 
 src/MultiWavefrontPlanner.s: src/MultiWavefrontPlanner.cpp.s
@@ -225,7 +300,7 @@ src/MultiWavefrontPlanner.s: src/MultiWavefrontPlanner.cpp.s
 
 # target to generate assembly for a file
 src/MultiWavefrontPlanner.cpp.s:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MultiWavefrontPlanner.cpp.s
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/MultiWavefrontPlanner.cpp.s
 .PHONY : src/MultiWavefrontPlanner.cpp.s
 
 src/NearestFrontierPlanner.o: src/NearestFrontierPlanner.cpp.o
@@ -234,7 +309,7 @@ src/NearestFrontierPlanner.o: src/NearestFrontierPlanner.cpp.o
 
 # target to build an object file
 src/NearestFrontierPlanner.cpp.o:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/NearestFrontierPlanner.cpp.o
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/NearestFrontierPlanner.cpp.o
 .PHONY : src/NearestFrontierPlanner.cpp.o
 
 src/NearestFrontierPlanner.i: src/NearestFrontierPlanner.cpp.i
@@ -243,7 +318,7 @@ src/NearestFrontierPlanner.i: src/NearestFrontierPlanner.cpp.i
 
 # target to preprocess a source file
 src/NearestFrontierPlanner.cpp.i:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/NearestFrontierPlanner.cpp.i
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/NearestFrontierPlanner.cpp.i
 .PHONY : src/NearestFrontierPlanner.cpp.i
 
 src/NearestFrontierPlanner.s: src/NearestFrontierPlanner.cpp.s
@@ -252,7 +327,7 @@ src/NearestFrontierPlanner.s: src/NearestFrontierPlanner.cpp.s
 
 # target to generate assembly for a file
 src/NearestFrontierPlanner.cpp.s:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/NearestFrontierPlanner.cpp.s
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/NearestFrontierPlanner.cpp.s
 .PHONY : src/NearestFrontierPlanner.cpp.s
 
 src/exploration_plugins.o: src/exploration_plugins.cpp.o
@@ -261,7 +336,7 @@ src/exploration_plugins.o: src/exploration_plugins.cpp.o
 
 # target to build an object file
 src/exploration_plugins.cpp.o:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/exploration_plugins.cpp.o
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/exploration_plugins.cpp.o
 .PHONY : src/exploration_plugins.cpp.o
 
 src/exploration_plugins.i: src/exploration_plugins.cpp.i
@@ -270,7 +345,7 @@ src/exploration_plugins.i: src/exploration_plugins.cpp.i
 
 # target to preprocess a source file
 src/exploration_plugins.cpp.i:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/exploration_plugins.cpp.i
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/exploration_plugins.cpp.i
 .PHONY : src/exploration_plugins.cpp.i
 
 src/exploration_plugins.s: src/exploration_plugins.cpp.s
@@ -279,7 +354,7 @@ src/exploration_plugins.s: src/exploration_plugins.cpp.s
 
 # target to generate assembly for a file
 src/exploration_plugins.cpp.s:
-	cd /home/ros/slambenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/exploration_plugins.cpp.s
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/build.make navigation_2d/nav2d_exploration/CMakeFiles/ExplorationPlugins.dir/src/exploration_plugins.cpp.s
 .PHONY : src/exploration_plugins.cpp.s
 
 # Help Target
@@ -288,13 +363,18 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... list_install_components"
 	@echo "... install"
-	@echo "... rebuild_cache"
-	@echo "... ExplorationPlugins"
-	@echo "... edit_cache"
+	@echo "... visualization_msgs_generate_messages_nodejs"
+	@echo "... list_install_components"
+	@echo "... visualization_msgs_generate_messages_lisp"
+	@echo "... visualization_msgs_generate_messages_eus"
 	@echo "... install/local"
+	@echo "... ExplorationPlugins"
+	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... test"
+	@echo "... edit_cache"
+	@echo "... visualization_msgs_generate_messages_cpp"
+	@echo "... rebuild_cache"
 	@echo "... src/MinPosPlanner.o"
 	@echo "... src/MinPosPlanner.i"
 	@echo "... src/MinPosPlanner.s"
@@ -318,6 +398,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ros/slambenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -7,5 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/ros/slambenchmarking/build"
-export ROS_PACKAGE_PATH="/home/ros/catkin_ws/src:/home/ros/slambenchmarking/src:/opt/ros/kinetic/share"
+export PWD="/home/ros/slampbenchmarking/build"

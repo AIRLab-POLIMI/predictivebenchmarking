@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "nav2d_operator")
-set(nav2d_operator_VERSION "0.3.0")
+set(nav2d_operator_VERSION "0.3.2")
 set(nav2d_operator_MAINTAINER "Sebastian Kasperski <sebastian.kasperski@dfki.de>")
 set(nav2d_operator_PACKAGE_FORMAT "1")
 set(nav2d_operator_BUILD_DEPENDS "roscpp" "message_generation" "tf" "costmap_2d" "sensor_msgs")

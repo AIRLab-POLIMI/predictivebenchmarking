@@ -3,9 +3,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/ExplorationPlugins.dir/src/MultiWavefrontPlanner.cpp.o"
   "CMakeFiles/ExplorationPlugins.dir/src/MinPosPlanner.cpp.o"
   "CMakeFiles/ExplorationPlugins.dir/src/exploration_plugins.cpp.o"
-  "/home/ros/slambenchmarking/devel/lib/libExplorationPlugins.pdb"
-  "/home/ros/slambenchmarking/devel/lib/libExplorationPlugins.so"
-  "/home/ros/slambenchmarking/devel/lib/libExplorationPlugins.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/libExplorationPlugins.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/libExplorationPlugins.so"
+  "/home/ros/slampbenchmarking/devel/lib/libExplorationPlugins.pdb"
   "CMakeFiles/CMakeRelink.dir/libExplorationPlugins.so"
 )
 

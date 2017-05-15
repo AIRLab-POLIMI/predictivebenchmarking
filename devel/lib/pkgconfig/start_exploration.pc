@@ -1,8 +1,8 @@
-prefix=/home/ros/slambenchmarking/devel
+prefix=/home/ros/slampbenchmarking/devel
 
 Name: start_exploration
 Description: Description of start_exploration
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/ros/slambenchmarking/devel/lib 
+Libs: -L/home/ros/slampbenchmarking/devel/lib 
 Requires: 

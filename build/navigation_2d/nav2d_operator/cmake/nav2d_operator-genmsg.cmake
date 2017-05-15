@@ -2,7 +2,7 @@
 
 message(STATUS "nav2d_operator: 1 messages, 0 services")
 
-set(MSG_I_FLAGS "-Inav2d_operator:/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/msg")
+set(MSG_I_FLAGS "-Inav2d_operator:/home/ros/slampbenchmarking/src/navigation_2d/nav2d_operator/msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,9 +17,9 @@ add_custom_target(nav2d_operator_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg" NAME_WE)
 add_custom_target(_nav2d_operator_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "nav2d_operator" "/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "nav2d_operator" "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg" ""
 )
 
 #
@@ -29,7 +29,7 @@ add_custom_target(_nav2d_operator_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(nav2d_operator
-  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg"
+  "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/nav2d_operator
@@ -49,7 +49,7 @@ add_custom_target(nav2d_operator_generate_messages_cpp
 add_dependencies(nav2d_operator_generate_messages nav2d_operator_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg" NAME_WE)
 add_dependencies(nav2d_operator_generate_messages_cpp _nav2d_operator_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -62,7 +62,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS nav2d_operator_generate_messages_cp
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(nav2d_operator
-  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg"
+  "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/nav2d_operator
@@ -82,7 +82,7 @@ add_custom_target(nav2d_operator_generate_messages_eus
 add_dependencies(nav2d_operator_generate_messages nav2d_operator_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg" NAME_WE)
 add_dependencies(nav2d_operator_generate_messages_eus _nav2d_operator_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -95,7 +95,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS nav2d_operator_generate_messages_eu
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(nav2d_operator
-  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg"
+  "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/nav2d_operator
@@ -115,7 +115,7 @@ add_custom_target(nav2d_operator_generate_messages_lisp
 add_dependencies(nav2d_operator_generate_messages nav2d_operator_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg" NAME_WE)
 add_dependencies(nav2d_operator_generate_messages_lisp _nav2d_operator_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -128,7 +128,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS nav2d_operator_generate_messages_li
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(nav2d_operator
-  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg"
+  "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/nav2d_operator
@@ -148,7 +148,7 @@ add_custom_target(nav2d_operator_generate_messages_nodejs
 add_dependencies(nav2d_operator_generate_messages nav2d_operator_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg" NAME_WE)
 add_dependencies(nav2d_operator_generate_messages_nodejs _nav2d_operator_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -161,7 +161,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS nav2d_operator_generate_messages_no
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(nav2d_operator
-  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg"
+  "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/nav2d_operator
@@ -181,7 +181,7 @@ add_custom_target(nav2d_operator_generate_messages_py
 add_dependencies(nav2d_operator_generate_messages nav2d_operator_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_operator/msg/cmd.msg" NAME_WE)
 add_dependencies(nav2d_operator_generate_messages_py _nav2d_operator_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "nav2d")
-set(nav2d_VERSION "0.3.0")
+set(nav2d_VERSION "0.3.2")
 set(nav2d_MAINTAINER "Sebastian Kasperski <sebastian.kasperski@dfki.de>")
 set(nav2d_PACKAGE_FORMAT "1")
 set(nav2d_BUILD_DEPENDS )

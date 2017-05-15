@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "nav2d_msgs")
-set(nav2d_msgs_VERSION "0.3.0")
+set(nav2d_msgs_VERSION "0.3.2")
 set(nav2d_msgs_MAINTAINER "Sebastian Kasperski <sebastian.kasperski@dfki.de>")
 set(nav2d_msgs_PACKAGE_FORMAT "1")
 set(nav2d_msgs_BUILD_DEPENDS "message_generation" "std_msgs" "sensor_msgs" "geometry_msgs")

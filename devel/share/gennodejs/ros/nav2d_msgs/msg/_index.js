@@ -1,10 +1,10 @@
 
 "use strict";
 
-let RobotPose = require('./RobotPose.js');
 let LocalizedScan = require('./LocalizedScan.js');
+let RobotPose = require('./RobotPose.js');
 
 module.exports = {
-  RobotPose: RobotPose,
   LocalizedScan: LocalizedScan,
+  RobotPose: RobotPose,
 };

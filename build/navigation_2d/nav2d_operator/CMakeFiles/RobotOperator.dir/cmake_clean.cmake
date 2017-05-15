@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/RobotOperator.dir/src/RobotOperator.cpp.o"
-  "/home/ros/slambenchmarking/devel/lib/libRobotOperator.pdb"
-  "/home/ros/slambenchmarking/devel/lib/libRobotOperator.so"
-  "/home/ros/slambenchmarking/devel/lib/libRobotOperator.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/libRobotOperator.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/libRobotOperator.so"
+  "/home/ros/slampbenchmarking/devel/lib/libRobotOperator.pdb"
   "CMakeFiles/CMakeRelink.dir/libRobotOperator.so"
 )
 

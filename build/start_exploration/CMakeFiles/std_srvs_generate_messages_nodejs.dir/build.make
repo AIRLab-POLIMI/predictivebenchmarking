@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slambenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slambenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for std_srvs_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ start_exploration/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build: std_sr
 .PHONY : start_exploration/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
 
 start_exploration/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean:
-	cd /home/ros/slambenchmarking/build/start_exploration && $(CMAKE_COMMAND) -P CMakeFiles/std_srvs_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/start_exploration && $(CMAKE_COMMAND) -P CMakeFiles/std_srvs_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : start_exploration/CMakeFiles/std_srvs_generate_messages_nodejs.dir/clean
 
 start_exploration/CMakeFiles/std_srvs_generate_messages_nodejs.dir/depend:
-	cd /home/ros/slambenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slambenchmarking/src /home/ros/slambenchmarking/src/start_exploration /home/ros/slambenchmarking/build /home/ros/slambenchmarking/build/start_exploration /home/ros/slambenchmarking/build/start_exploration/CMakeFiles/std_srvs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/start_exploration /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/start_exploration /home/ros/slampbenchmarking/build/start_exploration/CMakeFiles/std_srvs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : start_exploration/CMakeFiles/std_srvs_generate_messages_nodejs.dir/depend
 

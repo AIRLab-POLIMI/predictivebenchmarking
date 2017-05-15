@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/operator.dir/src/node.cpp.o"
-  "/home/ros/slambenchmarking/devel/lib/nav2d_operator/operator.pdb"
-  "/home/ros/slambenchmarking/devel/lib/nav2d_operator/operator"
-  "/home/ros/slambenchmarking/devel/lib/nav2d_operator/operator.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/nav2d_operator/operator.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/nav2d_operator/operator"
+  "/home/ros/slampbenchmarking/devel/lib/nav2d_operator/operator.pdb"
   "CMakeFiles/CMakeRelink.dir/operator"
 )
 

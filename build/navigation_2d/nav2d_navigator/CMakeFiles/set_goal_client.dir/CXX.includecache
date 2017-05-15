@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ros/slambenchmarking/devel/include/nav2d_navigator/MoveToPosition2DAction.h
+/home/ros/slampbenchmarking/devel/include/nav2d_navigator/MoveToPosition2DAction.h
 string
 -
 vector
@@ -28,7 +28,7 @@ nav2d_navigator/MoveToPosition2DActionResult.h
 nav2d_navigator/MoveToPosition2DActionFeedback.h
 -
 
-/home/ros/slambenchmarking/devel/include/nav2d_navigator/MoveToPosition2DActionFeedback.h
+/home/ros/slampbenchmarking/devel/include/nav2d_navigator/MoveToPosition2DActionFeedback.h
 string
 -
 vector
@@ -50,7 +50,7 @@ actionlib_msgs/GoalStatus.h
 nav2d_navigator/MoveToPosition2DFeedback.h
 -
 
-/home/ros/slambenchmarking/devel/include/nav2d_navigator/MoveToPosition2DActionGoal.h
+/home/ros/slampbenchmarking/devel/include/nav2d_navigator/MoveToPosition2DActionGoal.h
 string
 -
 vector
@@ -72,7 +72,7 @@ actionlib_msgs/GoalID.h
 nav2d_navigator/MoveToPosition2DGoal.h
 -
 
-/home/ros/slambenchmarking/devel/include/nav2d_navigator/MoveToPosition2DActionResult.h
+/home/ros/slampbenchmarking/devel/include/nav2d_navigator/MoveToPosition2DActionResult.h
 string
 -
 vector
@@ -94,7 +94,7 @@ actionlib_msgs/GoalStatus.h
 nav2d_navigator/MoveToPosition2DResult.h
 -
 
-/home/ros/slambenchmarking/devel/include/nav2d_navigator/MoveToPosition2DFeedback.h
+/home/ros/slampbenchmarking/devel/include/nav2d_navigator/MoveToPosition2DFeedback.h
 string
 -
 vector
@@ -110,7 +110,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slambenchmarking/devel/include/nav2d_navigator/MoveToPosition2DGoal.h
+/home/ros/slampbenchmarking/devel/include/nav2d_navigator/MoveToPosition2DGoal.h
 string
 -
 vector
@@ -130,7 +130,7 @@ std_msgs/Header.h
 geometry_msgs/Pose2D.h
 -
 
-/home/ros/slambenchmarking/devel/include/nav2d_navigator/MoveToPosition2DResult.h
+/home/ros/slampbenchmarking/devel/include/nav2d_navigator/MoveToPosition2DResult.h
 string
 -
 vector
@@ -148,9 +148,9 @@ ros/message_operations.h
 geometry_msgs/Pose2D.h
 -
 
-/home/ros/slambenchmarking/src/navigation_2d/nav2d_navigator/include/nav2d_navigator/commands.h
+/home/ros/slampbenchmarking/src/navigation_2d/nav2d_navigator/include/nav2d_navigator/commands.h
 
-/home/ros/slambenchmarking/src/navigation_2d/nav2d_navigator/src/set_goal_client.cpp
+/home/ros/slampbenchmarking/src/navigation_2d/nav2d_navigator/src/set_goal_client.cpp
 ros/ros.h
 -
 actionlib/client/simple_action_client.h

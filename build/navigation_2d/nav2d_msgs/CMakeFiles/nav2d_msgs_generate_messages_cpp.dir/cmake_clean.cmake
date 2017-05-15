@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/nav2d_msgs_generate_messages_cpp"
-  "/home/ros/slambenchmarking/devel/include/nav2d_msgs/LocalizedScan.h"
-  "/home/ros/slambenchmarking/devel/include/nav2d_msgs/RobotPose.h"
+  "/home/ros/slampbenchmarking/devel/include/nav2d_msgs/RobotPose.h"
+  "/home/ros/slampbenchmarking/devel/include/nav2d_msgs/LocalizedScan.h"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/get_map_client.dir/src/get_map_client.cpp.o"
-  "/home/ros/slambenchmarking/devel/lib/nav2d_navigator/get_map_client.pdb"
-  "/home/ros/slambenchmarking/devel/lib/nav2d_navigator/get_map_client"
-  "/home/ros/slambenchmarking/devel/lib/nav2d_navigator/get_map_client.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/nav2d_navigator/get_map_client.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/nav2d_navigator/get_map_client"
+  "/home/ros/slampbenchmarking/devel/lib/nav2d_navigator/get_map_client.pdb"
   "CMakeFiles/CMakeRelink.dir/get_map_client"
 )
 

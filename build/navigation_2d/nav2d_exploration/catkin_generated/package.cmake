@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "nav2d_exploration")
-set(nav2d_exploration_VERSION "0.3.0")
+set(nav2d_exploration_VERSION "0.3.2")
 set(nav2d_exploration_MAINTAINER "Sebastian Kasperski <sebastian.kasperski@dfki.de>")
 set(nav2d_exploration_PACKAGE_FORMAT "1")
 set(nav2d_exploration_BUILD_DEPENDS "roscpp" "tf" "pluginlib" "nav2d_navigator" "geometry_msgs" "nav_msgs" "visualization_msgs")

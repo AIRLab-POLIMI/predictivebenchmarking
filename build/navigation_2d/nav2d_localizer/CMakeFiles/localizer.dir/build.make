@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slambenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slambenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Include any dependencies generated for this target.
 include navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/depend.make
@@ -58,17 +58,17 @@ include navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/progress.make
 include navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/flags.make
 
 navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o: navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/flags.make
-navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o: /home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/src/LocalizerNode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slambenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o"
-	cd /home/ros/slambenchmarking/build/navigation_2d/nav2d_localizer && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o -c /home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/src/LocalizerNode.cpp
+navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o: /home/ros/slampbenchmarking/src/navigation_2d/nav2d_localizer/src/LocalizerNode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o"
+	cd /home/ros/slampbenchmarking/build/navigation_2d/nav2d_localizer && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o -c /home/ros/slampbenchmarking/src/navigation_2d/nav2d_localizer/src/LocalizerNode.cpp
 
 navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/src/LocalizerNode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/localizer.dir/src/LocalizerNode.cpp.i"
-	cd /home/ros/slambenchmarking/build/navigation_2d/nav2d_localizer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/src/LocalizerNode.cpp > CMakeFiles/localizer.dir/src/LocalizerNode.cpp.i
+	cd /home/ros/slampbenchmarking/build/navigation_2d/nav2d_localizer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/slampbenchmarking/src/navigation_2d/nav2d_localizer/src/LocalizerNode.cpp > CMakeFiles/localizer.dir/src/LocalizerNode.cpp.i
 
 navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/src/LocalizerNode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/localizer.dir/src/LocalizerNode.cpp.s"
-	cd /home/ros/slambenchmarking/build/navigation_2d/nav2d_localizer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer/src/LocalizerNode.cpp -o CMakeFiles/localizer.dir/src/LocalizerNode.cpp.s
+	cd /home/ros/slampbenchmarking/build/navigation_2d/nav2d_localizer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/slampbenchmarking/src/navigation_2d/nav2d_localizer/src/LocalizerNode.cpp -o CMakeFiles/localizer.dir/src/LocalizerNode.cpp.s
 
 navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o.requires:
 
@@ -88,39 +88,39 @@ localizer_OBJECTS = \
 # External object files for target localizer
 localizer_EXTERNAL_OBJECTS =
 
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/build.make
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /home/ros/slambenchmarking/devel/lib/libSelfLocalizer.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libtf.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libtf2_ros.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libactionlib.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libmessage_filters.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libroscpp.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libtf2.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/librosconsole.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/librostime.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libcpp_common.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer: navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ros/slambenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer"
-	cd /home/ros/slambenchmarking/build/navigation_2d/nav2d_localizer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/localizer.dir/link.txt --verbose=$(VERBOSE)
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/build.make
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /home/ros/slampbenchmarking/devel/lib/libSelfLocalizer.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libtf.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libtf2_ros.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libactionlib.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libmessage_filters.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libroscpp.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libtf2.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/librosconsole.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/librostime.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /opt/ros/kinetic/lib/libcpp_common.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer: navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer"
+	cd /home/ros/slampbenchmarking/build/navigation_2d/nav2d_localizer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/localizer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/build: /home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer
+navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/build: /home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer
 
 .PHONY : navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/build
 
@@ -133,7 +133,7 @@ localizer_EXTERNAL_OBJECTS =
 
 navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o
 navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/build.make
-navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /home/ros/slambenchmarking/devel/lib/libSelfLocalizer.so
+navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /home/ros/slampbenchmarking/devel/lib/libSelfLocalizer.so
 navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/libtf.so
 navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/libtf2_ros.so
 navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /opt/ros/kinetic/lib/libactionlib.so
@@ -159,8 +159,8 @@ navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86
 navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libpthread.so
 navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
 navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer: navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/relink.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ros/slambenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable CMakeFiles/CMakeRelink.dir/localizer"
-	cd /home/ros/slambenchmarking/build/navigation_2d/nav2d_localizer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/localizer.dir/relink.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable CMakeFiles/CMakeRelink.dir/localizer"
+	cd /home/ros/slampbenchmarking/build/navigation_2d/nav2d_localizer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/localizer.dir/relink.txt --verbose=$(VERBOSE)
 
 # Rule to relink during preinstall.
 navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/preinstall: navigation_2d/nav2d_localizer/CMakeFiles/CMakeRelink.dir/localizer
@@ -172,10 +172,10 @@ navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/requires: navigation_2d/n
 .PHONY : navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/requires
 
 navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/clean:
-	cd /home/ros/slambenchmarking/build/navigation_2d/nav2d_localizer && $(CMAKE_COMMAND) -P CMakeFiles/localizer.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation_2d/nav2d_localizer && $(CMAKE_COMMAND) -P CMakeFiles/localizer.dir/cmake_clean.cmake
 .PHONY : navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/clean
 
 navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/depend:
-	cd /home/ros/slambenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slambenchmarking/src /home/ros/slambenchmarking/src/navigation_2d/nav2d_localizer /home/ros/slambenchmarking/build /home/ros/slambenchmarking/build/navigation_2d/nav2d_localizer /home/ros/slambenchmarking/build/navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation_2d/nav2d_localizer /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation_2d/nav2d_localizer /home/ros/slampbenchmarking/build/navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation_2d/nav2d_localizer/CMakeFiles/localizer.dir/depend
 

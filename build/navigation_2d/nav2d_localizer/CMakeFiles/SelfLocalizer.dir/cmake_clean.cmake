@@ -11,8 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/SelfLocalizer.dir/src/map/map_store.c.o"
   "CMakeFiles/SelfLocalizer.dir/src/map/map_draw.c.o"
   "CMakeFiles/SelfLocalizer.dir/src/map/map_cspace.cpp.o"
-  "/home/ros/slambenchmarking/devel/lib/libSelfLocalizer.pdb"
-  "/home/ros/slambenchmarking/devel/lib/libSelfLocalizer.so"
+  "/home/ros/slampbenchmarking/devel/lib/libSelfLocalizer.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/libSelfLocalizer.so"
 )
 
 # Per-language clean rules from dependency scanning.

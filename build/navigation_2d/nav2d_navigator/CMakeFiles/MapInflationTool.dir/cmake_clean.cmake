@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MapInflationTool.dir/src/MapInflationTool.cpp.o"
-  "/home/ros/slambenchmarking/devel/lib/libMapInflationTool.pdb"
-  "/home/ros/slambenchmarking/devel/lib/libMapInflationTool.so"
+  "/home/ros/slampbenchmarking/devel/lib/libMapInflationTool.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/libMapInflationTool.so"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/set_goal_client.dir/src/set_goal_client.cpp.o"
-  "/home/ros/slambenchmarking/devel/lib/nav2d_navigator/set_goal_client.pdb"
-  "/home/ros/slambenchmarking/devel/lib/nav2d_navigator/set_goal_client"
-  "/home/ros/slambenchmarking/devel/lib/nav2d_navigator/set_goal_client.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/nav2d_navigator/set_goal_client.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/nav2d_navigator/set_goal_client"
+  "/home/ros/slampbenchmarking/devel/lib/nav2d_navigator/set_goal_client.pdb"
   "CMakeFiles/CMakeRelink.dir/set_goal_client"
 )
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slambenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slambenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for sensor_msgs_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ navigation_2d/nav2d_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
 .PHONY : navigation_2d/nav2d_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
 
 navigation_2d/nav2d_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean:
-	cd /home/ros/slambenchmarking/build/navigation_2d/nav2d_msgs && $(CMAKE_COMMAND) -P CMakeFiles/sensor_msgs_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation_2d/nav2d_msgs && $(CMAKE_COMMAND) -P CMakeFiles/sensor_msgs_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : navigation_2d/nav2d_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
 
 navigation_2d/nav2d_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend:
-	cd /home/ros/slambenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slambenchmarking/src /home/ros/slambenchmarking/src/navigation_2d/nav2d_msgs /home/ros/slambenchmarking/build /home/ros/slambenchmarking/build/navigation_2d/nav2d_msgs /home/ros/slambenchmarking/build/navigation_2d/nav2d_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation_2d/nav2d_msgs /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation_2d/nav2d_msgs /home/ros/slampbenchmarking/build/navigation_2d/nav2d_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation_2d/nav2d_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend
 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration
+# Install script for directory: /home/ros/slampbenchmarking/src/navigation_2d/nav2d_exploration
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ros/slambenchmarking/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ros/slampbenchmarking/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "")
+    set(CMAKE_INSTALL_CONFIG_NAME "Release")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -33,25 +33,25 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ros/slambenchmarking/build/navigation_2d/nav2d_exploration/catkin_generated/installspace/nav2d_exploration.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ros/slampbenchmarking/build/navigation_2d/nav2d_exploration/catkin_generated/installspace/nav2d_exploration.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nav2d_exploration/cmake" TYPE FILE FILES
-    "/home/ros/slambenchmarking/build/navigation_2d/nav2d_exploration/catkin_generated/installspace/nav2d_explorationConfig.cmake"
-    "/home/ros/slambenchmarking/build/navigation_2d/nav2d_exploration/catkin_generated/installspace/nav2d_explorationConfig-version.cmake"
+    "/home/ros/slampbenchmarking/build/navigation_2d/nav2d_exploration/catkin_generated/installspace/nav2d_explorationConfig.cmake"
+    "/home/ros/slampbenchmarking/build/navigation_2d/nav2d_exploration/catkin_generated/installspace/nav2d_explorationConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nav2d_exploration" TYPE FILE FILES "/home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nav2d_exploration" TYPE FILE FILES "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_exploration/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ros/slambenchmarking/build/navigation_2d/nav2d_exploration/CMakeFiles/CMakeRelink.dir/libExplorationPlugins.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/ros/slampbenchmarking/build/navigation_2d/nav2d_exploration/CMakeFiles/CMakeRelink.dir/libExplorationPlugins.so")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nav2d_exploration" TYPE FILE FILES "/home/ros/slambenchmarking/src/navigation_2d/nav2d_exploration/exploration.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/nav2d_exploration" TYPE FILE FILES "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_exploration/exploration.xml")
 endif()
 

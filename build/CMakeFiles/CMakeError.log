@@ -108,3 +108,223 @@ Makefile:126: recipe for target 'cmTC_74d75/fast' failed
 make: *** [cmTC_74d75/fast] Error 2
 
 
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ac05b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ac05b.dir/build.make CMakeFiles/cmTC_ac05b.dir/build
+make[1]: ingresso nella directory "/home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_ac05b.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_ac05b.dir/CheckSymbolExists.c.o   -c /home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_ac05b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac05b.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_ac05b.dir/CheckSymbolExists.c.o  -o cmTC_ac05b -rdynamic 
+CMakeFiles/cmTC_ac05b.dir/CheckSymbolExists.c.o: nella funzione "main":
+CheckSymbolExists.c:(.text+0x16): riferimento non definito a "pthread_create"
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_ac05b.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_ac05b" non riuscito
+make[1]: *** [cmTC_ac05b] Errore 1
+make[1]: uscita dalla directory "/home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_ac05b/fast" non riuscito
+make: *** [cmTC_ac05b/fast] Errore 2
+
+File /home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_62a69/fast"
+/usr/bin/make -f CMakeFiles/cmTC_62a69.dir/build.make CMakeFiles/cmTC_62a69.dir/build
+make[1]: ingresso nella directory "/home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_62a69.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_62a69.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_62a69
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_62a69.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_62a69.dir/CheckFunctionExists.c.o  -o cmTC_62a69 -rdynamic -lpthreads 
+/usr/bin/ld: impossibile trovare -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_62a69.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_62a69" non riuscito
+make[1]: *** [cmTC_62a69] Errore 1
+make[1]: uscita dalla directory "/home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_62a69/fast" non riuscito
+make: *** [cmTC_62a69/fast] Errore 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9561f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9561f.dir/build.make CMakeFiles/cmTC_9561f.dir/build
+make[1]: ingresso nella directory "/home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_9561f.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_9561f.dir/CheckSymbolExists.c.o   -c /home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_9561f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9561f.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_9561f.dir/CheckSymbolExists.c.o  -o cmTC_9561f -rdynamic 
+CMakeFiles/cmTC_9561f.dir/CheckSymbolExists.c.o: nella funzione "main":
+CheckSymbolExists.c:(.text+0x16): riferimento non definito a "pthread_create"
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_9561f.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_9561f" non riuscito
+make[1]: *** [cmTC_9561f] Errore 1
+make[1]: uscita dalla directory "/home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_9561f/fast" non riuscito
+make: *** [cmTC_9561f/fast] Errore 2
+
+File /home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e820c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e820c.dir/build.make CMakeFiles/cmTC_e820c.dir/build
+make[1]: ingresso nella directory "/home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_e820c.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e820c.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e820c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e820c.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_e820c.dir/CheckFunctionExists.c.o  -o cmTC_e820c -rdynamic -lpthreads 
+/usr/bin/ld: impossibile trovare -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_e820c.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_e820c" non riuscito
+make[1]: *** [cmTC_e820c] Errore 1
+make[1]: uscita dalla directory "/home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_e820c/fast" non riuscito
+make: *** [cmTC_e820c/fast] Errore 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f4036/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f4036.dir/build.make CMakeFiles/cmTC_f4036.dir/build
+make[1]: ingresso nella directory "/home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_f4036.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_f4036.dir/CheckSymbolExists.c.o   -c /home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_f4036
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f4036.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_f4036.dir/CheckSymbolExists.c.o  -o cmTC_f4036 -rdynamic 
+CMakeFiles/cmTC_f4036.dir/CheckSymbolExists.c.o: nella funzione "main":
+CheckSymbolExists.c:(.text+0x16): riferimento non definito a "pthread_create"
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_f4036.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_f4036" non riuscito
+make[1]: *** [cmTC_f4036] Errore 1
+make[1]: uscita dalla directory "/home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_f4036/fast" non riuscito
+make: *** [cmTC_f4036/fast] Errore 2
+
+File /home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_49b0d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_49b0d.dir/build.make CMakeFiles/cmTC_49b0d.dir/build
+make[1]: ingresso nella directory "/home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_49b0d.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_49b0d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_49b0d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_49b0d.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_49b0d.dir/CheckFunctionExists.c.o  -o cmTC_49b0d -rdynamic -lpthreads 
+/usr/bin/ld: impossibile trovare -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_49b0d.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_49b0d" non riuscito
+make[1]: *** [cmTC_49b0d] Errore 1
+make[1]: uscita dalla directory "/home/ros/slambenchmarking/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_49b0d/fast" non riuscito
+make: *** [cmTC_49b0d/fast] Errore 2
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5351a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5351a.dir/build.make CMakeFiles/cmTC_5351a.dir/build
+make[1]: ingresso nella directory "/home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_5351a.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_5351a.dir/CheckSymbolExists.c.o   -c /home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_5351a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5351a.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_5351a.dir/CheckSymbolExists.c.o  -o cmTC_5351a -rdynamic 
+CMakeFiles/cmTC_5351a.dir/CheckSymbolExists.c.o: nella funzione "main":
+CheckSymbolExists.c:(.text+0x16): riferimento non definito a "pthread_create"
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_5351a.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_5351a" non riuscito
+make[1]: *** [cmTC_5351a] Errore 1
+make[1]: uscita dalla directory "/home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_5351a/fast" non riuscito
+make: *** [cmTC_5351a/fast] Errore 2
+
+File /home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7a411/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7a411.dir/build.make CMakeFiles/cmTC_7a411.dir/build
+make[1]: ingresso nella directory "/home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_7a411.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_7a411.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7a411
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7a411.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_7a411.dir/CheckFunctionExists.c.o  -o cmTC_7a411 -rdynamic -lpthreads 
+/usr/bin/ld: impossibile trovare -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_7a411.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_7a411" non riuscito
+make[1]: *** [cmTC_7a411] Errore 1
+make[1]: uscita dalla directory "/home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_7a411/fast" non riuscito
+make: *** [cmTC_7a411/fast] Errore 2
+
+

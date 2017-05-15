@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/localizer.dir/src/LocalizerNode.cpp.o"
-  "/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer.pdb"
-  "/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer"
-  "/home/ros/slambenchmarking/devel/lib/nav2d_localizer/localizer.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer"
+  "/home/ros/slampbenchmarking/devel/lib/nav2d_localizer/localizer.pdb"
   "CMakeFiles/CMakeRelink.dir/localizer"
 )
 

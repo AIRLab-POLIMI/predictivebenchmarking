@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/src/RobotOperator.cpp" "/home/ros/slambenchmarking/build/navigation_2d/nav2d_operator/CMakeFiles/RobotOperator.dir/src/RobotOperator.cpp.o"
+  "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_operator/src/RobotOperator.cpp" "/home/ros/slampbenchmarking/build/navigation_2d/nav2d_operator/CMakeFiles/RobotOperator.dir/src/RobotOperator.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,8 +17,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/ros/slambenchmarking/devel/include"
-  "/home/ros/slambenchmarking/src/navigation_2d/nav2d_operator/include"
+  "/home/ros/slampbenchmarking/devel/include"
+  "/home/ros/slampbenchmarking/src/navigation_2d/nav2d_operator/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/eigen3"
