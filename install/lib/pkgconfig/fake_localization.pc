@@ -1,0 +1,8 @@
+prefix=/home/valerio/slampbenchmarking/install
+
+Name: fake_localization
+Description: Description of fake_localization
+Version: 1.14.0
+Cflags: 
+Libs: -L/home/valerio/slampbenchmarking/install/lib 
+Requires: roscpp rospy

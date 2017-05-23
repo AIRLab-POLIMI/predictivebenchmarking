@@ -1,0 +1,20 @@
+\subsubsection usage Usage
+\verbatim
+<node name="hector_exploration_planner" pkg="hector_exploration_planner" type="hector_exploration_planner">
+  <param name="security_constant" type="double" value="0.5" />
+  <param name="min_obstacle_dist" type="int" value="10" />
+  <param name="plan_in_unknown" type="bool" value="True" />
+  <param name="explore_close_to_path" type="bool" value="True" />
+  <param name="use_inflated_obstacles" type="bool" value="True" />
+  <param name="goal_angle_penalty" type="int" value="50" />
+  <param name="min_frontier_size" type="int" value="5" />
+  <param name="dist_for_goal_reached" type="double" value="0.25" />
+  <param name="same_frontier_distance" type="double" value="0.25" />
+  <param name="obstacle_cutoff_distance" type="double" value="1.0" />
+  <param name="use_observation_pose_calculation" type="bool" value="True" />
+  <param name="observation_pose_desired_dist" type="double" value="0.5" />
+  <param name="observation_pose_allowed_angle" type="double" value="135.0" />
+  <param name="close_to_path_target_distance" type="double" value="1.2" />
+</node>
+\endverbatim
+

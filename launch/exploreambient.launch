@@ -1,4 +1,24 @@
 <launch>
+	<!-- This file launches:
+	 	* Stage 
+	 	* nav2d 
+	 		-Operator
+	 		-Navigator 
+	 		-GetMap 
+	 		-Explore 
+	 		-SetGoal
+	 		-joystick
+	 		-Remote
+	 		-exploration
+	 	* rosbag record to record the /base_pose_ground_truth topic in a bag file
+	 	* tf listener to write the gmapping tf
+	 	* gmapping
+	 	* RVIZ
+	 	Params:
+	 		-worldfile: the world file for stage
+	 		-bag: the name of the bag file to write the ground truth from stage
+	 		-output: the name of the file to write the gmapping log
+	 	 -->
 
 	<!-- Some general parameters -->
 	<param name="use_sim_time" value="true" />
@@ -12,8 +32,8 @@
 	<!-- Start the Operator to control the simulated robot -->
 	<node name="Operator" pkg="nav2d_operator" type="operator" >
 		<remap from="scan" to="base_scan"/>
-		<rosparam file="$(find nav2d_tutorials)/param/operator.yaml"/>
-		<rosparam file="$(find nav2d_tutorials)/param/costmap.yaml" ns="local_map" />
+		<rosparam file="nav2d/operator.yaml"/>
+		<rosparam file="nav2d/costmap.yaml" ns="local_map" />
 	</node>
 
 	<!-- Record ground truth values -->
@@ -22,12 +42,12 @@
 	<!-- Write log odom gmapping for metricevaluator -->
 	<node name="listener" pkg="tf_listener" type="tf_listener.py" args="$(arg output)" />
 
-	<!-- Start Mapper to genreate map from laser scans -->
-	<node name="Mapper" pkg="gmapping" type="slam_gmapping" args="_xmin:=-150 _ymin:=-150 _ymax:=150 _xmax:=150 _ogain:=3.0 _minimumScore:=0 _angularUpdate:=0.3 _linearUpdate:=0.7 _map_update_interval:=1.0 _odom_frame:=odom _particles:=50 scan:=base_scan"/>
+	<!-- Start Mapper to generate map from laser scans -->
+	<node name="Mapper" pkg="gmapping" type="slam_gmapping" args="_xmin:=-100 _ymin:=-100 _ymax:=100 _xmax:=100 _ogain:=3.0 _minimumScore:=10 _angularUpdate:=0.1 _linearUpdate:=0.2 _map_update_interval:=1.0 _odom_frame:=odom _particles:=30 scan:=base_scan"/>
 
 	<!-- Start the Navigator to move the robot autonomously -->
 	<node name="Navigator" pkg="nav2d_navigator" type="navigator">
-		<rosparam file="$(find nav2d_tutorials)/param/navigator.yaml"/>
+		<rosparam file="nav2d/navigator.yaml"/>
 	</node>
 
 	<node name="GetMap" pkg="nav2d_navigator" type="get_map_client" />

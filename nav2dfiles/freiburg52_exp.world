@@ -1,0 +1,80 @@
+include "p3at.inc"
+include "floorplan.inc"
+
+name                    "Navigation-2D World"
+interval_sim            100
+quit_time                 0
+resolution                0.025
+show_clock                0
+show_clock_interval     100
+threads                 2
+
+# Load an environment bitmap
+floorplan
+( 
+  name "Freiburg"
+  bitmap "freiburg52.png"
+  size [61 30.6 1.0]
+  pose [0 0 0 0]
+)
+
+# Put a single robot into the world
+pioneer3at
+(
+  name "robot"
+  pose [-25 -5 0 0]
+)
+
+define fake_pos position
+(
+	color "blue"          # Default color.
+	drive "diff"         # Differential steering model.
+	gui_nose 1           # Draw a nose on the robot so we can see which way it points
+	obstacle_return 1    # Can hit things.
+	laser_return 1	     # reflects sonar beams
+
+
+	# alternative odometric localization with simple error model
+	localization "odom"                 # Change to "gps" to have impossibly perfect, global odometry
+	#odom_error [0.7  0.7 0.6 0 ]      # Odometry error or slip in X, Y, Z and Theta (Uniform random distribution)   
+ 	odom_error [ 0.01 0.01 0 0.020]
+	#localization "gps"
+
+	# four DOF kinematics limits
+	# [ xmin xmax ymin ymax zmin zmax amin amax ]				
+	velocity_bounds     [-0.5 0.5 0 0 0 0 -70.0 70.0 ]					
+	acceleration_bounds [-0.3 0.3 0 0 0 0 -70.0 70.0 ]
+
+	# Actual size
+	size [0.3 0.3 0.5]
+
+	# The pioneer's center of rotation is offset from its center of area
+	origin [0 0 0 0]
+
+	# Estimated mass in KG
+	mass 40.0 
+
+	# Body shape:
+#	block
+#	( 
+#		points 8
+#		point[0] [-0.18 0.313]
+#		point[1] [0.18 0.313]
+#		point[2] [0.2525 0.18]
+#		point[3] [0.2525 -0.18]
+#		point[4] [0.18 -0.313]
+#		point[5] [-0.18 -0.313]
+#		point[6] [-0.2525 -0.18]
+#		point[7] [-0.2525 0.18]
+#		z [0 1]
+#	)
+
+	#hokuyolaser( pose [0.2 0 0.2 0 ])
+	sicklms200( pose [0.2 0 -0.2 0 ])
+)
+
+fake_pos
+(
+  name "fake"
+  pose [0 0 0 0]
+)

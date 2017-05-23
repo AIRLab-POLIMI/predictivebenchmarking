@@ -7,4 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/ros/slampbenchmarking/build"
+export LD_LIBRARY_PATH="/home/valerio/Scaricati/RosExplorer/devel/lib:/opt/ros/kinetic/lib"
+export PKG_CONFIG_PATH="/home/valerio/Scaricati/RosExplorer/devel/lib/pkgconfig:/opt/ros/kinetic/lib/pkgconfig"
+export PWD="/home/valerio/slampbenchmarking/build"
+export PYTHONPATH="/home/valerio/Scaricati/RosExplorer/devel/lib/python2.7/dist-packages:/opt/ros/kinetic/lib/python2.7/dist-packages"

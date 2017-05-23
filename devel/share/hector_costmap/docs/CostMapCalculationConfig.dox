@@ -1,0 +1,14 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~max_delta_elevation" : \b [double] Max traversable hight min: 0.0, default: 0.1, max: 0.15
+- \b "~use_grid_map" : \b [bool] Use grid map min: False, default: True, max: True
+- \b "~use_elevation_map" : \b [bool] Use elevation map min: False, default: True, max: True
+- \b "~allow_kinect_to_clear_occupied_cells" : \b [bool] Allow kinect to clear occupied cells min: False, default: True, max: True
+- \b "~allow_elevation_map_to_clear_occupied_cells" : \b [bool] Allows elevation map to clear occupied cells min: False, default: True, max: True
+- \b "~max_clear_size" : \b [int] max clear size min: 0, default: 1, max: 9
+- \b "~slize_min_height" : \b [double] cloud slice width min height min: -2.0, default: 0.3, max: 2.0
+- \b "~slize_max_height" : \b [double] cloud slice width max height min: -2.0, default: 0.4, max: 2.0
+- \b "~update_radius_world" : \b [double] window size for generating cost map around robot min: 0.0, default: 5.0, max: 6.0
+

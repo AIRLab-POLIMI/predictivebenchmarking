@@ -1,0 +1,12 @@
+\subsubsection usage Usage
+\verbatim
+<node name="hector_elevation_visualization" pkg="hector_elevation_visualization" type="hector_elevation_visualization">
+  <param name="max_height_levels" type="int" value="10" />
+  <param name="min_height" type="double" value="-1.0" />
+  <param name="max_height" type="double" value="1.5" />
+  <param name="color_factor" type="double" value="0.8" />
+  <param name="use_color_map" type="bool" value="True" />
+  <param name="elevation_map_frame_id" type="str" value="/elevation_map_local" />
+</node>
+\endverbatim
+

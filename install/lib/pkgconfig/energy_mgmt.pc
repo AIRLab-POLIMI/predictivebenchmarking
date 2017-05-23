@@ -1,0 +1,8 @@
+prefix=/home/valerio/slampbenchmarking/install
+
+Name: energy_mgmt
+Description: Description of energy_mgmt
+Version: 0.1.0
+Cflags: -I/home/valerio/slampbenchmarking/install/include
+Libs: -L/home/valerio/slampbenchmarking/install/lib -lbattery -ldocking
+Requires: roscpp rospy std_msgs message_runtime adhoc_communication explorer map_merger

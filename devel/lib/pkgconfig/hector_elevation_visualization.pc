@@ -1,0 +1,8 @@
+prefix=/home/valerio/slampbenchmarking/devel
+
+Name: hector_elevation_visualization
+Description: Description of hector_elevation_visualization
+Version: 0.0.0
+Cflags: -I/home/valerio/slampbenchmarking/devel/include -I/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/include
+Libs: -L/home/valerio/slampbenchmarking/devel/lib 
+Requires: dynamic_reconfigure hector_elevation_msgs hector_map_tools roscpp tf visualization_msgs

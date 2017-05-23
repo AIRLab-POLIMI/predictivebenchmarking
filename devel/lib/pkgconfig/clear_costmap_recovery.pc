@@ -1,0 +1,8 @@
+prefix=/home/valerio/slampbenchmarking/devel
+
+Name: clear_costmap_recovery
+Description: Description of clear_costmap_recovery
+Version: 1.14.0
+Cflags: -I/home/valerio/slampbenchmarking/src/navigation/clear_costmap_recovery/include
+Libs: -L/home/valerio/slampbenchmarking/devel/lib -lclear_costmap_recovery
+Requires: costmap_2d nav_core pluginlib roscpp tf

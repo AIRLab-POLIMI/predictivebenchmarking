@@ -1,0 +1,19 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~security_constant" : \b [double] security_constant min: 0.0, default: 0.5, max: 10000.0
+- \b "~min_obstacle_dist" : \b [int] min_obstacle_dist min: 0, default: 10, max: 1000
+- \b "~plan_in_unknown" : \b [bool] plan_in_unknown min: False, default: True, max: True
+- \b "~explore_close_to_path" : \b [bool] explore_close_to_path min: False, default: True, max: True
+- \b "~use_inflated_obstacles" : \b [bool] use_inflated_obstacle min: False, default: True, max: True
+- \b "~goal_angle_penalty" : \b [int] goal_angle_penalty min: 0, default: 50, max: 10000
+- \b "~min_frontier_size" : \b [int] min_frontier_size min: 0, default: 5, max: 1000
+- \b "~dist_for_goal_reached" : \b [double] dist_for_goal_reached min: 0.0, default: 0.25, max: 10.0
+- \b "~same_frontier_distance" : \b [double] same_frontier_distance min: 0.0, default: 0.25, max: 10.0
+- \b "~obstacle_cutoff_distance" : \b [double] obstacle_cutoff_distance min: 0.0, default: 1.0, max: 100.0
+- \b "~use_observation_pose_calculation" : \b [bool] use observation pose calculation min: False, default: True, max: True
+- \b "~observation_pose_desired_dist" : \b [double] Observation pose desired distance min: 0.0, default: 0.5, max: 10.0
+- \b "~observation_pose_allowed_angle" : \b [double] allowed angle for observation pose adjustment [deg] min: 0.0, default: 135.0, max: 360.0
+- \b "~close_to_path_target_distance" : \b [double] close to path exploration target distance min: 0.0, default: 1.2, max: 10.0
+

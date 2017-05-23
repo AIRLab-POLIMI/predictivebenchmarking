@@ -1,0 +1,8 @@
+(cl:in-package hector_elevation_msgs-msg)
+(cl:export '(HEADER-VAL
+          HEADER
+          INFO-VAL
+          INFO
+          DATA-VAL
+          DATA
+))

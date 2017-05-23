@@ -1,8 +1,8 @@
-prefix=/home/ros/slampbenchmarking/devel
+prefix=/home/valerio/slampbenchmarking/devel
 
 Name: laser_noise
 Description: Description of laser_noise
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/ros/slampbenchmarking/devel/lib 
+Libs: -L/home/valerio/slampbenchmarking/devel/lib 
 Requires: 

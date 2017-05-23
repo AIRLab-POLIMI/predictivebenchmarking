@@ -1,0 +1,8 @@
+prefix=/home/valerio/slampbenchmarking/devel
+
+Name: hector_driving_aid_markers
+Description: Description of hector_driving_aid_markers
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/valerio/slampbenchmarking/devel/lib 
+Requires: roscpp visualization_msgs

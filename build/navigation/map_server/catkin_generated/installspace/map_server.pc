@@ -1,0 +1,8 @@
+prefix=/home/valerio/slampbenchmarking/install
+
+Name: map_server
+Description: Description of map_server
+Version: 1.14.0
+Cflags: -I/home/valerio/slampbenchmarking/install/include -I/usr/include/SDL
+Libs: -L/home/valerio/slampbenchmarking/install/lib -lmap_server_image_loader /usr/lib/x86_64-linux-gnu/libSDLmain.a -l:/usr/lib/x86_64-linux-gnu/libSDL.so -l-lpthread -l:/usr/lib/x86_64-linux-gnu/libSDL_image.so
+Requires: roscpp tf nav_msgs

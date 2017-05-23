@@ -1,0 +1,11 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~max_height_levels" : \b [int] max height levels min: 1, default: 10, max: 20
+- \b "~min_height" : \b [double] max height value min: -5.0, default: -1.0, max: 10.0
+- \b "~max_height" : \b [double] max height value min: -5.0, default: 1.5, max: 10.0
+- \b "~color_factor" : \b [double] color_factor min: 0.0, default: 0.8, max: 1.0
+- \b "~use_color_map" : \b [bool] use_color_map min: False, default: True, max: True
+- \b "~elevation_map_frame_id" : \b [str] elevation_map frame id min: , default: /elevation_map_local, max: 
+

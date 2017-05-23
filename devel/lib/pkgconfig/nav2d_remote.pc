@@ -1,8 +1,0 @@
-prefix=/home/ros/slampbenchmarking/devel
-
-Name: nav2d_remote
-Description: Description of nav2d_remote
-Version: 0.3.2
-Cflags: 
-Libs: -L/home/ros/slampbenchmarking/devel/lib 
-Requires: nav2d_navigator nav2d_operator roscpp sensor_msgs

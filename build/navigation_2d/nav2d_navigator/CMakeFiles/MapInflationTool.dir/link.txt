@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libMapInflationTool.so -o /home/ros/slampbenchmarking/devel/lib/libMapInflationTool.so CMakeFiles/MapInflationTool.dir/src/MapInflationTool.cpp.o 
