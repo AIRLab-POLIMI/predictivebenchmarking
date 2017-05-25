@@ -1,24 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/valerio/slampbenchmarking/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_da6eb/fast"
-/usr/bin/make -f CMakeFiles/cmTC_da6eb.dir/build.make CMakeFiles/cmTC_da6eb.dir/build
-make[1]: ingresso nella directory "/home/valerio/slampbenchmarking/build/CMakeFiles/CMakeTmp"
-Building C object CMakeFiles/cmTC_da6eb.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_da6eb.dir/CheckSymbolExists.c.o   -c /home/valerio/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_da6eb
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da6eb.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_da6eb.dir/CheckSymbolExists.c.o  -o cmTC_da6eb -rdynamic 
-CMakeFiles/cmTC_da6eb.dir/CheckSymbolExists.c.o: nella funzione "main":
+Run Build Command:"/usr/bin/make" "cmTC_327d6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_327d6.dir/build.make CMakeFiles/cmTC_327d6.dir/build
+make[1]: ingresso nella directory "/home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_327d6.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_327d6.dir/CheckSymbolExists.c.o   -c /home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_327d6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_327d6.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_327d6.dir/CheckSymbolExists.c.o  -o cmTC_327d6 -rdynamic 
+CMakeFiles/cmTC_327d6.dir/CheckSymbolExists.c.o: nella funzione "main":
 CheckSymbolExists.c:(.text+0x16): riferimento non definito a "pthread_create"
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_da6eb.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_da6eb" non riuscito
-make[1]: *** [cmTC_da6eb] Errore 1
-make[1]: uscita dalla directory "/home/valerio/slampbenchmarking/build/CMakeFiles/CMakeTmp"
-Makefile:126: set di istruzioni per l'obiettivo "cmTC_da6eb/fast" non riuscito
-make: *** [cmTC_da6eb/fast] Errore 2
+CMakeFiles/cmTC_327d6.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_327d6" non riuscito
+make[1]: *** [cmTC_327d6] Errore 1
+make[1]: uscita dalla directory "/home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_327d6/fast" non riuscito
+make: *** [cmTC_327d6/fast] Errore 2
 
-File /home/valerio/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -34,39 +34,39 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/valerio/slampbenchmarking/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8a60e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_8a60e.dir/build.make CMakeFiles/cmTC_8a60e.dir/build
-make[1]: ingresso nella directory "/home/valerio/slampbenchmarking/build/CMakeFiles/CMakeTmp"
-Building C object CMakeFiles/cmTC_8a60e.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_8a60e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_8a60e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a60e.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_8a60e.dir/CheckFunctionExists.c.o  -o cmTC_8a60e -rdynamic -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_2e469/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2e469.dir/build.make CMakeFiles/cmTC_2e469.dir/build
+make[1]: ingresso nella directory "/home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Building C object CMakeFiles/cmTC_2e469.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_2e469.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_2e469
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e469.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_2e469.dir/CheckFunctionExists.c.o  -o cmTC_2e469 -rdynamic -lpthreads 
 /usr/bin/ld: impossibile trovare -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_8a60e.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_8a60e" non riuscito
-make[1]: *** [cmTC_8a60e] Errore 1
-make[1]: uscita dalla directory "/home/valerio/slampbenchmarking/build/CMakeFiles/CMakeTmp"
-Makefile:126: set di istruzioni per l'obiettivo "cmTC_8a60e/fast" non riuscito
-make: *** [cmTC_8a60e/fast] Errore 2
+CMakeFiles/cmTC_2e469.dir/build.make:97: set di istruzioni per l'obiettivo "cmTC_2e469" non riuscito
+make[1]: *** [cmTC_2e469] Errore 1
+make[1]: uscita dalla directory "/home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_2e469/fast" non riuscito
+make: *** [cmTC_2e469/fast] Errore 2
 
 
 Determining if the include file pgm.h exists failed with the following output:
-Change Dir: /home/valerio/slampbenchmarking/build/CMakeFiles/CMakeTmp
+Change Dir: /home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5766b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5766b.dir/build.make CMakeFiles/cmTC_5766b.dir/build
-make[1]: ingresso nella directory "/home/valerio/slampbenchmarking/build/CMakeFiles/CMakeTmp"
-Building CXX object CMakeFiles/cmTC_5766b.dir/CheckIncludeFile.cxx.o
-/usr/bin/c++      -o CMakeFiles/cmTC_5766b.dir/CheckIncludeFile.cxx.o -c /home/valerio/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
-/home/valerio/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:17: fatal error: pgm.h: File o directory non esistente
+Run Build Command:"/usr/bin/make" "cmTC_4fda6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4fda6.dir/build.make CMakeFiles/cmTC_4fda6.dir/build
+make[1]: ingresso nella directory "/home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Building CXX object CMakeFiles/cmTC_4fda6.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++      -o CMakeFiles/cmTC_4fda6.dir/CheckIncludeFile.cxx.o -c /home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:17: fatal error: pgm.h: File o directory non esistente
 compilation terminated.
-CMakeFiles/cmTC_5766b.dir/build.make:65: set di istruzioni per l'obiettivo "CMakeFiles/cmTC_5766b.dir/CheckIncludeFile.cxx.o" non riuscito
-make[1]: *** [CMakeFiles/cmTC_5766b.dir/CheckIncludeFile.cxx.o] Errore 1
-make[1]: uscita dalla directory "/home/valerio/slampbenchmarking/build/CMakeFiles/CMakeTmp"
-Makefile:126: set di istruzioni per l'obiettivo "cmTC_5766b/fast" non riuscito
-make: *** [cmTC_5766b/fast] Errore 2
+CMakeFiles/cmTC_4fda6.dir/build.make:65: set di istruzioni per l'obiettivo "CMakeFiles/cmTC_4fda6.dir/CheckIncludeFile.cxx.o" non riuscito
+make[1]: *** [CMakeFiles/cmTC_4fda6.dir/CheckIncludeFile.cxx.o] Errore 1
+make[1]: uscita dalla directory "/home/ros/slampbenchmarking/build/CMakeFiles/CMakeTmp"
+Makefile:126: set di istruzioni per l'obiettivo "cmTC_4fda6/fast" non riuscito
+make: *** [cmTC_4fda6/fast] Errore 2
 
 

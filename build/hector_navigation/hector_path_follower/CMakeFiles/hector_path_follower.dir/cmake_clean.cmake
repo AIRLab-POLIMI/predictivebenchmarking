@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.o"
-  "/home/valerio/slampbenchmarking/devel/lib/libhector_path_follower.pdb"
-  "/home/valerio/slampbenchmarking/devel/lib/libhector_path_follower.so"
+  "/home/ros/slampbenchmarking/devel/lib/libhector_path_follower.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/libhector_path_follower.so"
 )
 
 # Per-language clean rules from dependency scanning.

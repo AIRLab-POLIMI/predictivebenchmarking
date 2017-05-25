@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hector_exploration_planner.dir/src/hector_exploration_planner.cpp.o"
-  "/home/valerio/slampbenchmarking/devel/lib/libhector_exploration_planner.pdb"
-  "/home/valerio/slampbenchmarking/devel/lib/libhector_exploration_planner.so"
+  "/home/ros/slampbenchmarking/devel/lib/libhector_exploration_planner.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/libhector_exploration_planner.so"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -43,26 +43,26 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for base_local_planner_generate_messages_nodejs.
 
 # Include the progress variables for this target.
 include navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_nodejs.dir/progress.make
 
-navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_nodejs: /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/base_local_planner/msg/Position2DInt.js
+navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_nodejs: /home/ros/slampbenchmarking/devel/share/gennodejs/ros/base_local_planner/msg/Position2DInt.js
 
 
-/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/base_local_planner/msg/Position2DInt.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/base_local_planner/msg/Position2DInt.js: /home/valerio/slampbenchmarking/src/navigation/base_local_planner/msg/Position2DInt.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from base_local_planner/Position2DInt.msg"
-	cd /home/valerio/slampbenchmarking/build/navigation/base_local_planner && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/valerio/slampbenchmarking/src/navigation/base_local_planner/msg/Position2DInt.msg -Ibase_local_planner:/home/valerio/slampbenchmarking/src/navigation/base_local_planner/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p base_local_planner -o /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/base_local_planner/msg
+/home/ros/slampbenchmarking/devel/share/gennodejs/ros/base_local_planner/msg/Position2DInt.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/ros/slampbenchmarking/devel/share/gennodejs/ros/base_local_planner/msg/Position2DInt.js: /home/ros/slampbenchmarking/src/navigation/base_local_planner/msg/Position2DInt.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from base_local_planner/Position2DInt.msg"
+	cd /home/ros/slampbenchmarking/build/navigation/base_local_planner && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ros/slampbenchmarking/src/navigation/base_local_planner/msg/Position2DInt.msg -Ibase_local_planner:/home/ros/slampbenchmarking/src/navigation/base_local_planner/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p base_local_planner -o /home/ros/slampbenchmarking/devel/share/gennodejs/ros/base_local_planner/msg
 
 base_local_planner_generate_messages_nodejs: navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_nodejs
-base_local_planner_generate_messages_nodejs: /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/base_local_planner/msg/Position2DInt.js
+base_local_planner_generate_messages_nodejs: /home/ros/slampbenchmarking/devel/share/gennodejs/ros/base_local_planner/msg/Position2DInt.js
 base_local_planner_generate_messages_nodejs: navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_nodejs.dir/build.make
 
 .PHONY : base_local_planner_generate_messages_nodejs
@@ -73,10 +73,10 @@ navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_no
 .PHONY : navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_nodejs.dir/build
 
 navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_nodejs.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/base_local_planner && $(CMAKE_COMMAND) -P CMakeFiles/base_local_planner_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/base_local_planner && $(CMAKE_COMMAND) -P CMakeFiles/base_local_planner_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_nodejs.dir/clean
 
 navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_nodejs.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/base_local_planner /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/base_local_planner /home/valerio/slampbenchmarking/build/navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/base_local_planner /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/base_local_planner /home/ros/slampbenchmarking/build/navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_nodejs.dir/depend
 

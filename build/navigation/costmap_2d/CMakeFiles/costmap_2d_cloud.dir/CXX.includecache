@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/valerio/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h
+/home/ros/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h
 string
 -
 vector
@@ -28,7 +28,7 @@ geometry_msgs/Point32.h
 geometry_msgs/Vector3.h
 -
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d_cloud.cpp
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d_cloud.cpp
 ros/ros.h
 -
 sensor_msgs/PointCloud.h
@@ -38,7 +38,7 @@ costmap_2d/VoxelGrid.h
 voxel_grid/voxel_grid.h
 -
 
-/home/valerio/slampbenchmarking/src/navigation/voxel_grid/include/voxel_grid/voxel_grid.h
+/home/ros/slampbenchmarking/src/navigation/voxel_grid/include/voxel_grid/voxel_grid.h
 stdio.h
 -
 string.h

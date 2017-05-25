@@ -1,8 +1,8 @@
-# Install script for directory: /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization
+# Install script for directory: /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/valerio/slampbenchmarking/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ros/slampbenchmarking/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,33 +33,33 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/hector_elevation_visualization" TYPE FILE FILES "/home/valerio/slampbenchmarking/devel/include/hector_elevation_visualization/ElevationVisualizationConfig.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/hector_elevation_visualization" TYPE FILE FILES "/home/ros/slampbenchmarking/devel/include/hector_elevation_visualization/ElevationVisualizationConfig.h")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/hector_elevation_visualization" TYPE FILE FILES "/home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_elevation_visualization/__init__.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/hector_elevation_visualization" TYPE FILE FILES "/home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_elevation_visualization/__init__.py")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_elevation_visualization/cfg")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_elevation_visualization/cfg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/hector_elevation_visualization" TYPE DIRECTORY FILES "/home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_elevation_visualization/cfg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/hector_elevation_visualization" TYPE DIRECTORY FILES "/home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_elevation_visualization/cfg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization/catkin_generated/installspace/hector_elevation_visualization.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization/catkin_generated/installspace/hector_elevation_visualization.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hector_elevation_visualization/cmake" TYPE FILE FILES
-    "/home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization/catkin_generated/installspace/hector_elevation_visualizationConfig.cmake"
-    "/home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization/catkin_generated/installspace/hector_elevation_visualizationConfig-version.cmake"
+    "/home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization/catkin_generated/installspace/hector_elevation_visualizationConfig.cmake"
+    "/home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization/catkin_generated/installspace/hector_elevation_visualizationConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hector_elevation_visualization" TYPE FILE FILES "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hector_elevation_visualization" TYPE FILE FILES "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/package.xml")
 endif()
 

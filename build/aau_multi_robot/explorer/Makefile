@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/valerio/slampbenchmarking/build/CMakeFiles /home/valerio/slampbenchmarking/build/aau_multi_robot/explorer/CMakeFiles/progress.marks
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/valerio/slampbenchmarking/build/CMakeFiles 0
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slampbenchmarking/build/CMakeFiles /home/ros/slampbenchmarking/build/aau_multi_robot/explorer/CMakeFiles/progress.marks
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slampbenchmarking/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/clean
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/preinstall
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/preinstall
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 aau_multi_robot/explorer/CMakeFiles/explorer.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/CMakeFiles/explorer.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/CMakeFiles/explorer.dir/rule
 .PHONY : aau_multi_robot/explorer/CMakeFiles/explorer.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ explorer: aau_multi_robot/explorer/CMakeFiles/explorer.dir/rule
 
 # fast build rule for target.
 explorer/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/explorer.dir/build.make aau_multi_robot/explorer/CMakeFiles/explorer.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/explorer.dir/build.make aau_multi_robot/explorer/CMakeFiles/explorer.dir/build
 .PHONY : explorer/fast
 
 # Convenience name for target.
 aau_multi_robot/explorer/CMakeFiles/munkres.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/CMakeFiles/munkres.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/CMakeFiles/munkres.dir/rule
 .PHONY : aau_multi_robot/explorer/CMakeFiles/munkres.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ munkres: aau_multi_robot/explorer/CMakeFiles/munkres.dir/rule
 
 # fast build rule for target.
 munkres/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/munkres.dir/build.make aau_multi_robot/explorer/CMakeFiles/munkres.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/munkres.dir/build.make aau_multi_robot/explorer/CMakeFiles/munkres.dir/build
 .PHONY : munkres/fast
 
 # Convenience name for target.
 aau_multi_robot/explorer/CMakeFiles/hungarian.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/CMakeFiles/hungarian.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/CMakeFiles/hungarian.dir/rule
 .PHONY : aau_multi_robot/explorer/CMakeFiles/hungarian.dir/rule
 
 # Convenience name for target.
@@ -207,12 +207,12 @@ hungarian: aau_multi_robot/explorer/CMakeFiles/hungarian.dir/rule
 
 # fast build rule for target.
 hungarian/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/hungarian.dir/build.make aau_multi_robot/explorer/CMakeFiles/hungarian.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/hungarian.dir/build.make aau_multi_robot/explorer/CMakeFiles/hungarian.dir/build
 .PHONY : hungarian/fast
 
 # Convenience name for target.
 aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/rule
 .PHONY : aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/rule
 
 # Convenience name for target.
@@ -222,7 +222,7 @@ exploration_planner: aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir
 
 # fast build rule for target.
 exploration_planner/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/build.make aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/build.make aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/build
 .PHONY : exploration_planner/fast
 
 src/ExplorationPlanner.o: src/ExplorationPlanner.cpp.o
@@ -231,7 +231,7 @@ src/ExplorationPlanner.o: src/ExplorationPlanner.cpp.o
 
 # target to build an object file
 src/ExplorationPlanner.cpp.o:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/build.make aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/src/ExplorationPlanner.cpp.o
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/build.make aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/src/ExplorationPlanner.cpp.o
 .PHONY : src/ExplorationPlanner.cpp.o
 
 src/ExplorationPlanner.i: src/ExplorationPlanner.cpp.i
@@ -240,7 +240,7 @@ src/ExplorationPlanner.i: src/ExplorationPlanner.cpp.i
 
 # target to preprocess a source file
 src/ExplorationPlanner.cpp.i:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/build.make aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/src/ExplorationPlanner.cpp.i
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/build.make aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/src/ExplorationPlanner.cpp.i
 .PHONY : src/ExplorationPlanner.cpp.i
 
 src/ExplorationPlanner.s: src/ExplorationPlanner.cpp.s
@@ -249,7 +249,7 @@ src/ExplorationPlanner.s: src/ExplorationPlanner.cpp.s
 
 # target to generate assembly for a file
 src/ExplorationPlanner.cpp.s:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/build.make aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/src/ExplorationPlanner.cpp.s
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/build.make aau_multi_robot/explorer/CMakeFiles/exploration_planner.dir/src/ExplorationPlanner.cpp.s
 .PHONY : src/ExplorationPlanner.cpp.s
 
 src/explorer.o: src/explorer.cpp.o
@@ -258,7 +258,7 @@ src/explorer.o: src/explorer.cpp.o
 
 # target to build an object file
 src/explorer.cpp.o:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/explorer.dir/build.make aau_multi_robot/explorer/CMakeFiles/explorer.dir/src/explorer.cpp.o
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/explorer.dir/build.make aau_multi_robot/explorer/CMakeFiles/explorer.dir/src/explorer.cpp.o
 .PHONY : src/explorer.cpp.o
 
 src/explorer.i: src/explorer.cpp.i
@@ -267,7 +267,7 @@ src/explorer.i: src/explorer.cpp.i
 
 # target to preprocess a source file
 src/explorer.cpp.i:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/explorer.dir/build.make aau_multi_robot/explorer/CMakeFiles/explorer.dir/src/explorer.cpp.i
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/explorer.dir/build.make aau_multi_robot/explorer/CMakeFiles/explorer.dir/src/explorer.cpp.i
 .PHONY : src/explorer.cpp.i
 
 src/explorer.s: src/explorer.cpp.s
@@ -276,7 +276,7 @@ src/explorer.s: src/explorer.cpp.s
 
 # target to generate assembly for a file
 src/explorer.cpp.s:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/explorer.dir/build.make aau_multi_robot/explorer/CMakeFiles/explorer.dir/src/explorer.cpp.s
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/explorer.dir/build.make aau_multi_robot/explorer/CMakeFiles/explorer.dir/src/explorer.cpp.s
 .PHONY : src/explorer.cpp.s
 
 src/hungarian.o: src/hungarian.cpp.o
@@ -285,7 +285,7 @@ src/hungarian.o: src/hungarian.cpp.o
 
 # target to build an object file
 src/hungarian.cpp.o:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/hungarian.dir/build.make aau_multi_robot/explorer/CMakeFiles/hungarian.dir/src/hungarian.cpp.o
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/hungarian.dir/build.make aau_multi_robot/explorer/CMakeFiles/hungarian.dir/src/hungarian.cpp.o
 .PHONY : src/hungarian.cpp.o
 
 src/hungarian.i: src/hungarian.cpp.i
@@ -294,7 +294,7 @@ src/hungarian.i: src/hungarian.cpp.i
 
 # target to preprocess a source file
 src/hungarian.cpp.i:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/hungarian.dir/build.make aau_multi_robot/explorer/CMakeFiles/hungarian.dir/src/hungarian.cpp.i
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/hungarian.dir/build.make aau_multi_robot/explorer/CMakeFiles/hungarian.dir/src/hungarian.cpp.i
 .PHONY : src/hungarian.cpp.i
 
 src/hungarian.s: src/hungarian.cpp.s
@@ -303,7 +303,7 @@ src/hungarian.s: src/hungarian.cpp.s
 
 # target to generate assembly for a file
 src/hungarian.cpp.s:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/hungarian.dir/build.make aau_multi_robot/explorer/CMakeFiles/hungarian.dir/src/hungarian.cpp.s
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/hungarian.dir/build.make aau_multi_robot/explorer/CMakeFiles/hungarian.dir/src/hungarian.cpp.s
 .PHONY : src/hungarian.cpp.s
 
 src/src/munkres.o: src/src/munkres.cpp.o
@@ -312,7 +312,7 @@ src/src/munkres.o: src/src/munkres.cpp.o
 
 # target to build an object file
 src/src/munkres.cpp.o:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/munkres.dir/build.make aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.o
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/munkres.dir/build.make aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.o
 .PHONY : src/src/munkres.cpp.o
 
 src/src/munkres.i: src/src/munkres.cpp.i
@@ -321,7 +321,7 @@ src/src/munkres.i: src/src/munkres.cpp.i
 
 # target to preprocess a source file
 src/src/munkres.cpp.i:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/munkres.dir/build.make aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.i
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/munkres.dir/build.make aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.i
 .PHONY : src/src/munkres.cpp.i
 
 src/src/munkres.s: src/src/munkres.cpp.s
@@ -330,7 +330,7 @@ src/src/munkres.s: src/src/munkres.cpp.s
 
 # target to generate assembly for a file
 src/src/munkres.cpp.s:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/munkres.dir/build.make aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.s
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/explorer/CMakeFiles/munkres.dir/build.make aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.s
 .PHONY : src/src/munkres.cpp.s
 
 # Help Target
@@ -373,6 +373,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

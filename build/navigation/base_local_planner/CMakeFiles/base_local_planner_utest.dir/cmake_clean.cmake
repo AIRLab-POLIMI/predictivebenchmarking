@@ -5,8 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/base_local_planner_utest.dir/test/footprint_helper_test.cpp.o"
   "CMakeFiles/base_local_planner_utest.dir/test/trajectory_generator_test.cpp.o"
   "CMakeFiles/base_local_planner_utest.dir/test/map_grid_test.cpp.o"
-  "/home/valerio/slampbenchmarking/devel/lib/base_local_planner/base_local_planner_utest.pdb"
-  "/home/valerio/slampbenchmarking/devel/lib/base_local_planner/base_local_planner_utest"
+  "/home/ros/slampbenchmarking/devel/lib/base_local_planner/base_local_planner_utest.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/base_local_planner/base_local_planner_utest"
 )
 
 # Per-language clean rules from dependency scanning.

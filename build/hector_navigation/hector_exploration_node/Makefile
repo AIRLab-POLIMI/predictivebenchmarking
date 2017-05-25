@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/valerio/slampbenchmarking/build/CMakeFiles /home/valerio/slampbenchmarking/build/hector_navigation/hector_exploration_node/CMakeFiles/progress.marks
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_node/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/valerio/slampbenchmarking/build/CMakeFiles 0
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slampbenchmarking/build/CMakeFiles /home/ros/slampbenchmarking/build/hector_navigation/hector_exploration_node/CMakeFiles/progress.marks
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_node/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slampbenchmarking/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_node/clean
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_node/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_node/preinstall
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_node/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_node/preinstall
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_node/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/rule
 .PHONY : hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/rule
 
 # Convenience name for target.
@@ -177,7 +177,7 @@ exploration_planner_node: hector_navigation/hector_exploration_node/CMakeFiles/e
 
 # fast build rule for target.
 exploration_planner_node/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/build.make hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/build.make hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/build
 .PHONY : exploration_planner_node/fast
 
 src/exploration_node.o: src/exploration_node.cpp.o
@@ -186,7 +186,7 @@ src/exploration_node.o: src/exploration_node.cpp.o
 
 # target to build an object file
 src/exploration_node.cpp.o:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/build.make hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/src/exploration_node.cpp.o
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/build.make hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/src/exploration_node.cpp.o
 .PHONY : src/exploration_node.cpp.o
 
 src/exploration_node.i: src/exploration_node.cpp.i
@@ -195,7 +195,7 @@ src/exploration_node.i: src/exploration_node.cpp.i
 
 # target to preprocess a source file
 src/exploration_node.cpp.i:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/build.make hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/src/exploration_node.cpp.i
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/build.make hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/src/exploration_node.cpp.i
 .PHONY : src/exploration_node.cpp.i
 
 src/exploration_node.s: src/exploration_node.cpp.s
@@ -204,7 +204,7 @@ src/exploration_node.s: src/exploration_node.cpp.s
 
 # target to generate assembly for a file
 src/exploration_node.cpp.s:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/build.make hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/src/exploration_node.cpp.s
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/build.make hector_navigation/hector_exploration_node/CMakeFiles/exploration_planner_node.dir/src/exploration_node.cpp.s
 .PHONY : src/exploration_node.cpp.s
 
 # Help Target
@@ -235,6 +235,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

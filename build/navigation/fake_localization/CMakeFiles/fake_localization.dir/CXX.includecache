@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/valerio/slampbenchmarking/src/navigation/fake_localization/fake_localization.cpp
+/home/ros/slampbenchmarking/src/navigation/fake_localization/fake_localization.cpp
 ros/ros.h
 -
 ros/time.h
@@ -20,15 +20,15 @@ geometry_msgs/PoseWithCovarianceStamped.h
 angles/angles.h
 -
 ros/console.h
-/home/valerio/slampbenchmarking/src/navigation/fake_localization/ros/console.h
+/home/ros/slampbenchmarking/src/navigation/fake_localization/ros/console.h
 tf/transform_broadcaster.h
-/home/valerio/slampbenchmarking/src/navigation/fake_localization/tf/transform_broadcaster.h
+/home/ros/slampbenchmarking/src/navigation/fake_localization/tf/transform_broadcaster.h
 tf/transform_listener.h
-/home/valerio/slampbenchmarking/src/navigation/fake_localization/tf/transform_listener.h
+/home/ros/slampbenchmarking/src/navigation/fake_localization/tf/transform_listener.h
 tf/message_filter.h
-/home/valerio/slampbenchmarking/src/navigation/fake_localization/tf/message_filter.h
+/home/ros/slampbenchmarking/src/navigation/fake_localization/tf/message_filter.h
 message_filters/subscriber.h
-/home/valerio/slampbenchmarking/src/navigation/fake_localization/message_filters/subscriber.h
+/home/ros/slampbenchmarking/src/navigation/fake_localization/message_filters/subscriber.h
 
 /opt/ros/kinetic/include/angles/angles.h
 algorithm

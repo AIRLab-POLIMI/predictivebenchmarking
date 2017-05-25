@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization.cpp" "/home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.o"
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization_node.cpp" "/home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.o"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization.cpp" "/home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.o"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization_node.cpp" "/home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -18,9 +18,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/valerio/slampbenchmarking/devel/include"
+  "/home/ros/slampbenchmarking/devel/include"
   "/usr/include/eigen3"
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/include"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

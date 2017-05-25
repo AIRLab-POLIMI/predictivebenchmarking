@@ -6,5 +6,5 @@ C_FLAGS = -fPIC
 
 C_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"amcl\" -Damcl_pf_EXPORTS
 
-C_INCLUDES = -I/home/valerio/slampbenchmarking/devel/include -I/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl -I/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/map -I/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/sensors -I/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+C_INCLUDES = -I/home/ros/slampbenchmarking/devel/include -I/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl -I/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/map -I/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/sensors -I/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

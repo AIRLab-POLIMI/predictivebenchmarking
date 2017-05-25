@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Include any dependencies generated for this target.
 include hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/depend.make
@@ -58,17 +58,17 @@ include hector_navigation/hector_elevation_visualization/CMakeFiles/hector_eleva
 include hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/flags.make
 
 hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.o: hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/flags.make
-hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.o: /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization_node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.o"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.o -c /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization_node.cpp
+hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.o: /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.o"
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.o -c /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization_node.cpp
 
 hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.i"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization_node.cpp > CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.i
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization_node.cpp > CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.i
 
 hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.s"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization_node.cpp -o CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.s
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization_node.cpp -o CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.s
 
 hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.o.requires:
 
@@ -82,17 +82,17 @@ hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_vis
 
 
 hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.o: hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/flags.make
-hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.o: /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.o"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.o -c /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization.cpp
+hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.o: /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.o"
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.o -c /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization.cpp
 
 hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.i"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization.cpp > CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.i
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization.cpp > CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.i
 
 hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.s"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization.cpp -o CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.s
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/src/hector_elevation_visualization.cpp -o CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.s
 
 hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.o.requires:
 
@@ -113,40 +113,40 @@ hector_elevation_visualization_node_OBJECTS = \
 # External object files for target hector_elevation_visualization_node
 hector_elevation_visualization_node_EXTERNAL_OBJECTS =
 
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.o
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.o
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/build.make
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libtf.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libtf2_ros.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libactionlib.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libmessage_filters.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libroscpp.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libtf2.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/librosconsole.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/librostime.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libcpp_common.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hector_elevation_visualization_node.dir/link.txt --verbose=$(VERBOSE)
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization_node.cpp.o
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/src/hector_elevation_visualization.cpp.o
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/build.make
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libtf.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libtf2_ros.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libactionlib.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libmessage_filters.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libroscpp.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libtf2.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/librosconsole.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/librostime.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /opt/ros/kinetic/lib/libcpp_common.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node: hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node"
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hector_elevation_visualization_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/build: /home/valerio/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node
+hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/build: /home/ros/slampbenchmarking/devel/lib/hector_elevation_visualization/hector_elevation_visualization_node
 
 .PHONY : hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/build
 
@@ -156,10 +156,10 @@ hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_vis
 .PHONY : hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/requires
 
 hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && $(CMAKE_COMMAND) -P CMakeFiles/hector_elevation_visualization_node.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && $(CMAKE_COMMAND) -P CMakeFiles/hector_elevation_visualization_node.dir/cmake_clean.cmake
 .PHONY : hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/clean
 
 hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : hector_navigation/hector_elevation_visualization/CMakeFiles/hector_elevation_visualization_node.dir/depend
 

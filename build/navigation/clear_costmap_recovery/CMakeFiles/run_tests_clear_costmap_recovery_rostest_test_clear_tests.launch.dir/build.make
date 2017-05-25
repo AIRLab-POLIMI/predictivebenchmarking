@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 include navigation/clear_costmap_recovery/CMakeFiles/run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch.dir/progress.make
 
 navigation/clear_costmap_recovery/CMakeFiles/run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch:
-	cd /home/valerio/slampbenchmarking/build/navigation/clear_costmap_recovery && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/run_tests.py /home/valerio/slampbenchmarking/build/test_results/clear_costmap_recovery/rostest-test_clear_tests.xml /opt/ros/kinetic/share/rostest/cmake/../../../bin/rostest\ --pkgdir=/home/valerio/slampbenchmarking/src/navigation/clear_costmap_recovery\ --package=clear_costmap_recovery\ --results-filename\ test_clear_tests.xml\ --results-base-dir\ "/home/valerio/slampbenchmarking/build/test_results"\ /home/valerio/slampbenchmarking/src/navigation/clear_costmap_recovery/test/clear_tests.launch\ 
+	cd /home/ros/slampbenchmarking/build/navigation/clear_costmap_recovery && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/run_tests.py /home/ros/slampbenchmarking/build/test_results/clear_costmap_recovery/rostest-test_clear_tests.xml /opt/ros/kinetic/share/rostest/cmake/../../../bin/rostest\ --pkgdir=/home/ros/slampbenchmarking/src/navigation/clear_costmap_recovery\ --package=clear_costmap_recovery\ --results-filename\ test_clear_tests.xml\ --results-base-dir\ "/home/ros/slampbenchmarking/build/test_results"\ /home/ros/slampbenchmarking/src/navigation/clear_costmap_recovery/test/clear_tests.launch\ 
 
 run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch: navigation/clear_costmap_recovery/CMakeFiles/run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch
 run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch: navigation/clear_costmap_recovery/CMakeFiles/run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch.dir/build.make
@@ -67,10 +67,10 @@ navigation/clear_costmap_recovery/CMakeFiles/run_tests_clear_costmap_recovery_ro
 .PHONY : navigation/clear_costmap_recovery/CMakeFiles/run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch.dir/build
 
 navigation/clear_costmap_recovery/CMakeFiles/run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/clear_costmap_recovery && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/clear_costmap_recovery && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch.dir/cmake_clean.cmake
 .PHONY : navigation/clear_costmap_recovery/CMakeFiles/run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch.dir/clean
 
 navigation/clear_costmap_recovery/CMakeFiles/run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/clear_costmap_recovery /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/clear_costmap_recovery /home/valerio/slampbenchmarking/build/navigation/clear_costmap_recovery/CMakeFiles/run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/clear_costmap_recovery /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/clear_costmap_recovery /home/ros/slampbenchmarking/build/navigation/clear_costmap_recovery/CMakeFiles/run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/clear_costmap_recovery/CMakeFiles/run_tests_clear_costmap_recovery_rostest_test_clear_tests.launch.dir/depend
 

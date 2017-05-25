@@ -2,7 +2,7 @@
 
 message(STATUS "hector_elevation_msgs: 2 messages, 0 services")
 
-set(MSG_I_FLAGS "-Ihector_elevation_msgs:/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Ihector_elevation_msgs:/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,14 +17,14 @@ add_custom_target(hector_elevation_msgs_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg" NAME_WE)
 add_custom_target(_hector_elevation_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "hector_elevation_msgs" "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg" "geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "hector_elevation_msgs" "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg" "geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point"
 )
 
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg" NAME_WE)
 add_custom_target(_hector_elevation_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "hector_elevation_msgs" "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg" "hector_elevation_msgs/ElevationMapMetaData:geometry_msgs/Pose:geometry_msgs/Quaternion:std_msgs/Header:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "hector_elevation_msgs" "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg" "hector_elevation_msgs/ElevationMapMetaData:geometry_msgs/Pose:geometry_msgs/Quaternion:std_msgs/Header:geometry_msgs/Point"
 )
 
 #
@@ -34,15 +34,15 @@ add_custom_target(_hector_elevation_msgs_generate_messages_check_deps_${_filenam
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(hector_elevation_msgs
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/hector_elevation_msgs
 )
 _generate_msg_cpp(hector_elevation_msgs
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg"
   "${MSG_I_FLAGS}"
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/hector_elevation_msgs
 )
 
@@ -60,9 +60,9 @@ add_custom_target(hector_elevation_msgs_generate_messages_cpp
 add_dependencies(hector_elevation_msgs_generate_messages hector_elevation_msgs_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg" NAME_WE)
 add_dependencies(hector_elevation_msgs_generate_messages_cpp _hector_elevation_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg" NAME_WE)
 add_dependencies(hector_elevation_msgs_generate_messages_cpp _hector_elevation_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -75,15 +75,15 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS hector_elevation_msgs_generate_mess
 ### Section generating for lang: geneus
 ### Generating Messages
 _generate_msg_eus(hector_elevation_msgs
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/hector_elevation_msgs
 )
 _generate_msg_eus(hector_elevation_msgs
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg"
   "${MSG_I_FLAGS}"
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/hector_elevation_msgs
 )
 
@@ -101,9 +101,9 @@ add_custom_target(hector_elevation_msgs_generate_messages_eus
 add_dependencies(hector_elevation_msgs_generate_messages hector_elevation_msgs_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg" NAME_WE)
 add_dependencies(hector_elevation_msgs_generate_messages_eus _hector_elevation_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg" NAME_WE)
 add_dependencies(hector_elevation_msgs_generate_messages_eus _hector_elevation_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -116,15 +116,15 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS hector_elevation_msgs_generate_mess
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(hector_elevation_msgs
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/hector_elevation_msgs
 )
 _generate_msg_lisp(hector_elevation_msgs
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg"
   "${MSG_I_FLAGS}"
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/hector_elevation_msgs
 )
 
@@ -142,9 +142,9 @@ add_custom_target(hector_elevation_msgs_generate_messages_lisp
 add_dependencies(hector_elevation_msgs_generate_messages hector_elevation_msgs_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg" NAME_WE)
 add_dependencies(hector_elevation_msgs_generate_messages_lisp _hector_elevation_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg" NAME_WE)
 add_dependencies(hector_elevation_msgs_generate_messages_lisp _hector_elevation_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -157,15 +157,15 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS hector_elevation_msgs_generate_mess
 ### Section generating for lang: gennodejs
 ### Generating Messages
 _generate_msg_nodejs(hector_elevation_msgs
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/hector_elevation_msgs
 )
 _generate_msg_nodejs(hector_elevation_msgs
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg"
   "${MSG_I_FLAGS}"
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/hector_elevation_msgs
 )
 
@@ -183,9 +183,9 @@ add_custom_target(hector_elevation_msgs_generate_messages_nodejs
 add_dependencies(hector_elevation_msgs_generate_messages hector_elevation_msgs_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg" NAME_WE)
 add_dependencies(hector_elevation_msgs_generate_messages_nodejs _hector_elevation_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg" NAME_WE)
 add_dependencies(hector_elevation_msgs_generate_messages_nodejs _hector_elevation_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -198,15 +198,15 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS hector_elevation_msgs_generate_mess
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(hector_elevation_msgs
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/hector_elevation_msgs
 )
 _generate_msg_py(hector_elevation_msgs
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg"
   "${MSG_I_FLAGS}"
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/hector_elevation_msgs
 )
 
@@ -224,9 +224,9 @@ add_custom_target(hector_elevation_msgs_generate_messages_py
 add_dependencies(hector_elevation_msgs_generate_messages hector_elevation_msgs_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg" NAME_WE)
 add_dependencies(hector_elevation_msgs_generate_messages_py _hector_elevation_msgs_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg" NAME_WE)
 add_dependencies(hector_elevation_msgs_generate_messages_py _hector_elevation_msgs_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

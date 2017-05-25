@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"map_merger\"
 
-CXX_INCLUDES = -I/home/valerio/slampbenchmarking/devel/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/kinetic/include/opencv-3.2.0-dev -isystem /opt/ros/kinetic/include/opencv-3.2.0-dev/opencv 
+CXX_INCLUDES = -I/home/ros/slampbenchmarking/devel/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/kinetic/include/opencv-3.2.0-dev -isystem /opt/ros/kinetic/include/opencv-3.2.0-dev/opencv 
 

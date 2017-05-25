@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for _run_tests_costmap_2d_gtest_array_parser_test.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 include navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_gtest_array_parser_test.dir/progress.make
 
 navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_gtest_array_parser_test:
-	cd /home/valerio/slampbenchmarking/build/navigation/costmap_2d && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/run_tests.py /home/valerio/slampbenchmarking/build/test_results/costmap_2d/gtest-array_parser_test.xml /home/valerio/slampbenchmarking/devel/lib/costmap_2d/array_parser_test\ --gtest_output=xml:/home/valerio/slampbenchmarking/build/test_results/costmap_2d/gtest-array_parser_test.xml
+	cd /home/ros/slampbenchmarking/build/navigation/costmap_2d && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/run_tests.py /home/ros/slampbenchmarking/build/test_results/costmap_2d/gtest-array_parser_test.xml /home/ros/slampbenchmarking/devel/lib/costmap_2d/array_parser_test\ --gtest_output=xml:/home/ros/slampbenchmarking/build/test_results/costmap_2d/gtest-array_parser_test.xml
 
 _run_tests_costmap_2d_gtest_array_parser_test: navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_gtest_array_parser_test
 _run_tests_costmap_2d_gtest_array_parser_test: navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_gtest_array_parser_test.dir/build.make
@@ -67,10 +67,10 @@ navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_gtest_array_parser_test.d
 .PHONY : navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_gtest_array_parser_test.dir/build
 
 navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_gtest_array_parser_test.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/costmap_2d && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_costmap_2d_gtest_array_parser_test.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/costmap_2d && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_costmap_2d_gtest_array_parser_test.dir/cmake_clean.cmake
 .PHONY : navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_gtest_array_parser_test.dir/clean
 
 navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_gtest_array_parser_test.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/costmap_2d /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/costmap_2d /home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_gtest_array_parser_test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/costmap_2d /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/costmap_2d /home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_gtest_array_parser_test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_gtest_array_parser_test.dir/depend
 

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/valerio/slampbenchmarking/build/CMakeFiles /home/valerio/slampbenchmarking/build/hector_navigation/hector_path_follower/CMakeFiles/progress.marks
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_path_follower/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/valerio/slampbenchmarking/build/CMakeFiles 0
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slampbenchmarking/build/CMakeFiles /home/ros/slampbenchmarking/build/hector_navigation/hector_path_follower/CMakeFiles/progress.marks
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_path_follower/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slampbenchmarking/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_path_follower/clean
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_path_follower/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_path_follower/preinstall
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_path_follower/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_path_follower/preinstall
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_path_follower/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/rule
 .PHONY : hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ hector_path_follower: hector_navigation/hector_path_follower/CMakeFiles/hector_p
 
 # fast build rule for target.
 hector_path_follower/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/build
 .PHONY : hector_path_follower/fast
 
 # Convenience name for target.
 hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/rule
 .PHONY : hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/rule
 
 # Convenience name for target.
@@ -192,7 +192,7 @@ hector_path_follower_node: hector_navigation/hector_path_follower/CMakeFiles/hec
 
 # fast build rule for target.
 hector_path_follower_node/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build
 .PHONY : hector_path_follower_node/fast
 
 src/hector_path_follower.o: src/hector_path_follower.cpp.o
@@ -201,8 +201,8 @@ src/hector_path_follower.o: src/hector_path_follower.cpp.o
 
 # target to build an object file
 src/hector_path_follower.cpp.o:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.o
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/src/hector_path_follower.cpp.o
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.o
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/src/hector_path_follower.cpp.o
 .PHONY : src/hector_path_follower.cpp.o
 
 src/hector_path_follower.i: src/hector_path_follower.cpp.i
@@ -211,8 +211,8 @@ src/hector_path_follower.i: src/hector_path_follower.cpp.i
 
 # target to preprocess a source file
 src/hector_path_follower.cpp.i:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.i
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/src/hector_path_follower.cpp.i
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.i
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/src/hector_path_follower.cpp.i
 .PHONY : src/hector_path_follower.cpp.i
 
 src/hector_path_follower.s: src/hector_path_follower.cpp.s
@@ -221,8 +221,8 @@ src/hector_path_follower.s: src/hector_path_follower.cpp.s
 
 # target to generate assembly for a file
 src/hector_path_follower.cpp.s:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.s
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/src/hector_path_follower.cpp.s
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.s
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/src/hector_path_follower.cpp.s
 .PHONY : src/hector_path_follower.cpp.s
 
 src/hector_path_follower_node.o: src/hector_path_follower_node.cpp.o
@@ -231,7 +231,7 @@ src/hector_path_follower_node.o: src/hector_path_follower_node.cpp.o
 
 # target to build an object file
 src/hector_path_follower_node.cpp.o:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/src/hector_path_follower_node.cpp.o
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/src/hector_path_follower_node.cpp.o
 .PHONY : src/hector_path_follower_node.cpp.o
 
 src/hector_path_follower_node.i: src/hector_path_follower_node.cpp.i
@@ -240,7 +240,7 @@ src/hector_path_follower_node.i: src/hector_path_follower_node.cpp.i
 
 # target to preprocess a source file
 src/hector_path_follower_node.cpp.i:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/src/hector_path_follower_node.cpp.i
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/src/hector_path_follower_node.cpp.i
 .PHONY : src/hector_path_follower_node.cpp.i
 
 src/hector_path_follower_node.s: src/hector_path_follower_node.cpp.s
@@ -249,7 +249,7 @@ src/hector_path_follower_node.s: src/hector_path_follower_node.cpp.s
 
 # target to generate assembly for a file
 src/hector_path_follower_node.cpp.s:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/src/hector_path_follower_node.cpp.s
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/build.make hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower_node.dir/src/hector_path_follower_node.cpp.s
 .PHONY : src/hector_path_follower_node.cpp.s
 
 # Help Target
@@ -284,6 +284,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

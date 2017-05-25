@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/valerio/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h
+/home/ros/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h
 dynamic_reconfigure/config_tools.h
 -
 limits
@@ -24,7 +24,7 @@ dynamic_reconfigure/config_init_mutex.h
 boost/any.hpp
 -
 
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h
 string
 -
 vector
@@ -44,7 +44,7 @@ std_msgs/Header.h
 hector_elevation_msgs/ElevationMapMetaData.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h
 string
 -
 vector
@@ -62,7 +62,7 @@ ros/message_operations.h
 geometry_msgs/Pose.h
 -
 
-/home/valerio/slampbenchmarking/src/hector_navigation/hector_costmap/include/hector_costmap/hector_costmap.h
+/home/ros/slampbenchmarking/src/hector_navigation/hector_costmap/include/hector_costmap/hector_costmap.h
 hector_elevation_msgs/ElevationMapMetaData.h
 -
 hector_elevation_msgs/ElevationGrid.h
@@ -98,11 +98,11 @@ dynamic_reconfigure/server.h
 hector_costmap/CostMapCalculationConfig.h
 -
 
-/home/valerio/slampbenchmarking/src/hector_navigation/hector_costmap/src/hector_costmap.cpp
+/home/ros/slampbenchmarking/src/hector_navigation/hector_costmap/src/hector_costmap.cpp
 hector_costmap/hector_costmap.h
 -
 
-/home/valerio/slampbenchmarking/src/hector_navigation/hector_costmap/src/hector_costmap_node.cpp
+/home/ros/slampbenchmarking/src/hector_navigation/hector_costmap/src/hector_costmap_node.cpp
 ros/ros.h
 -
 hector_costmap/hector_costmap.h

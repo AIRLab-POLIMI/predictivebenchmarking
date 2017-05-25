@@ -1,8 +1,8 @@
-prefix=/home/valerio/slampbenchmarking/install
+prefix=/home/ros/slampbenchmarking/install
 
 Name: start_exploration
 Description: Description of start_exploration
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/valerio/slampbenchmarking/install/lib 
+Libs: -L/home/ros/slampbenchmarking/install/lib 
 Requires: 

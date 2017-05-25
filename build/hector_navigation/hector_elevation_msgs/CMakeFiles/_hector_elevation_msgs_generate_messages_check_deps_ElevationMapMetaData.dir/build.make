@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for _hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 include hector_navigation/hector_elevation_msgs/CMakeFiles/_hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData.dir/progress.make
 
 hector_navigation/hector_elevation_msgs/CMakeFiles/_hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData:
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py hector_elevation_msgs /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py hector_elevation_msgs /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point
 
 _hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData: hector_navigation/hector_elevation_msgs/CMakeFiles/_hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData
 _hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData: hector_navigation/hector_elevation_msgs/CMakeFiles/_hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData.dir/build.make
@@ -67,10 +67,10 @@ hector_navigation/hector_elevation_msgs/CMakeFiles/_hector_elevation_msgs_genera
 .PHONY : hector_navigation/hector_elevation_msgs/CMakeFiles/_hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData.dir/build
 
 hector_navigation/hector_elevation_msgs/CMakeFiles/_hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_msgs && $(CMAKE_COMMAND) -P CMakeFiles/_hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_msgs && $(CMAKE_COMMAND) -P CMakeFiles/_hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData.dir/cmake_clean.cmake
 .PHONY : hector_navigation/hector_elevation_msgs/CMakeFiles/_hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData.dir/clean
 
 hector_navigation/hector_elevation_msgs/CMakeFiles/_hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_msgs /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_msgs/CMakeFiles/_hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_msgs /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_msgs/CMakeFiles/_hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : hector_navigation/hector_elevation_msgs/CMakeFiles/_hector_elevation_msgs_generate_messages_check_deps_ElevationMapMetaData.dir/depend
 

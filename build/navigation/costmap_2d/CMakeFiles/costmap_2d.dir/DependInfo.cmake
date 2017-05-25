@@ -4,21 +4,22 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/array_parser.cpp" "/home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/array_parser.cpp.o"
-  "/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d.cpp" "/home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/costmap_2d.cpp.o"
-  "/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d_publisher.cpp" "/home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/costmap_2d_publisher.cpp.o"
-  "/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d_ros.cpp" "/home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/costmap_2d_ros.cpp.o"
-  "/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/costmap_layer.cpp" "/home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/costmap_layer.cpp.o"
-  "/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/costmap_math.cpp" "/home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/costmap_math.cpp.o"
-  "/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/footprint.cpp" "/home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/footprint.cpp.o"
-  "/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/layer.cpp" "/home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/layer.cpp.o"
-  "/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/layered_costmap.cpp" "/home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/layered_costmap.cpp.o"
-  "/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/observation_buffer.cpp" "/home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/observation_buffer.cpp.o"
+  "/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/array_parser.cpp" "/home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/array_parser.cpp.o"
+  "/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d.cpp" "/home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/costmap_2d.cpp.o"
+  "/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d_publisher.cpp" "/home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/costmap_2d_publisher.cpp.o"
+  "/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d_ros.cpp" "/home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/costmap_2d_ros.cpp.o"
+  "/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/costmap_layer.cpp" "/home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/costmap_layer.cpp.o"
+  "/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/costmap_math.cpp" "/home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/costmap_math.cpp.o"
+  "/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/footprint.cpp" "/home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/footprint.cpp.o"
+  "/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/layer.cpp" "/home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/layer.cpp.o"
+  "/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/layered_costmap.cpp" "/home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/layered_costmap.cpp.o"
+  "/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/observation_buffer.cpp" "/home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/observation_buffer.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
+  "DISABLE_OPENNI2"
   "DISABLE_PCAP"
   "DISABLE_PNG"
   "QT_CORE_LIB"
@@ -42,29 +43,28 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/valerio/slampbenchmarking/devel/include"
+  "/home/ros/slampbenchmarking/devel/include"
   "/usr/include/vtk-6.2"
-  "/usr/include/jsoncpp"
+  "/usr/include/x86_64-linux-gnu"
+  "/usr/include/tcl"
   "/usr/include/freetype2"
   "/usr/include/x86_64-linux-gnu/freetype2"
-  "/usr/include/x86_64-linux-gnu"
-  "/usr/include/libxml2"
   "/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent"
   "/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include"
   "/usr/lib/openmpi/include"
   "/usr/lib/openmpi/include/openmpi"
+  "/usr/include/jsoncpp"
   "/usr/include/hdf5/openmpi"
+  "/usr/include/libxml2"
   "/usr/include/python2.7"
-  "/usr/include/tcl"
-  "/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include"
-  "/home/valerio/slampbenchmarking/src/navigation/voxel_grid/include"
+  "/home/ros/slampbenchmarking/src/navigation/costmap_2d/include"
+  "/home/ros/slampbenchmarking/src/navigation/voxel_grid/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/eigen3"
   "/usr/include/pcl-1.7"
   "/usr/include/ni"
-  "/usr/include/openni2"
-  "/home/valerio/slampbenchmarking/src/navigation/costmap_2d/test"
+  "/home/ros/slampbenchmarking/src/navigation/costmap_2d/test"
   "/usr/include/x86_64-linux-gnu/qt5"
   "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"
   "/usr/include/x86_64-linux-gnu/qt5/QtGui"
@@ -74,7 +74,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/valerio/slampbenchmarking/build/navigation/voxel_grid/CMakeFiles/voxel_grid.dir/DependInfo.cmake"
+  "/home/ros/slampbenchmarking/build/navigation/voxel_grid/CMakeFiles/voxel_grid.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for _robot_pose_ekf_generate_messages_check_deps_GetStatus.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 include navigation/robot_pose_ekf/CMakeFiles/_robot_pose_ekf_generate_messages_check_deps_GetStatus.dir/progress.make
 
 navigation/robot_pose_ekf/CMakeFiles/_robot_pose_ekf_generate_messages_check_deps_GetStatus:
-	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py robot_pose_ekf /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv 
+	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py robot_pose_ekf /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv 
 
 _robot_pose_ekf_generate_messages_check_deps_GetStatus: navigation/robot_pose_ekf/CMakeFiles/_robot_pose_ekf_generate_messages_check_deps_GetStatus
 _robot_pose_ekf_generate_messages_check_deps_GetStatus: navigation/robot_pose_ekf/CMakeFiles/_robot_pose_ekf_generate_messages_check_deps_GetStatus.dir/build.make
@@ -67,10 +67,10 @@ navigation/robot_pose_ekf/CMakeFiles/_robot_pose_ekf_generate_messages_check_dep
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/_robot_pose_ekf_generate_messages_check_deps_GetStatus.dir/build
 
 navigation/robot_pose_ekf/CMakeFiles/_robot_pose_ekf_generate_messages_check_deps_GetStatus.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -P CMakeFiles/_robot_pose_ekf_generate_messages_check_deps_GetStatus.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -P CMakeFiles/_robot_pose_ekf_generate_messages_check_deps_GetStatus.dir/cmake_clean.cmake
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/_robot_pose_ekf_generate_messages_check_deps_GetStatus.dir/clean
 
 navigation/robot_pose_ekf/CMakeFiles/_robot_pose_ekf_generate_messages_check_deps_GetStatus.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf/CMakeFiles/_robot_pose_ekf_generate_messages_check_deps_GetStatus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf/CMakeFiles/_robot_pose_ekf_generate_messages_check_deps_GetStatus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/_robot_pose_ekf_generate_messages_check_deps_GetStatus.dir/depend
 

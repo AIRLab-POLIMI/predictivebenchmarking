@@ -1,8 +1,8 @@
-# Install script for directory: /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_mapping
+# Install script for directory: /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_mapping
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/valerio/slampbenchmarking/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ros/slampbenchmarking/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_mapping/catkin_generated/installspace/hector_elevation_mapping.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_mapping/catkin_generated/installspace/hector_elevation_mapping.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hector_elevation_mapping/cmake" TYPE FILE FILES
-    "/home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_mapping/catkin_generated/installspace/hector_elevation_mappingConfig.cmake"
-    "/home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_mapping/catkin_generated/installspace/hector_elevation_mappingConfig-version.cmake"
+    "/home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_mapping/catkin_generated/installspace/hector_elevation_mappingConfig.cmake"
+    "/home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_mapping/catkin_generated/installspace/hector_elevation_mappingConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hector_elevation_mapping" TYPE FILE FILES "/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_mapping/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/hector_elevation_mapping" TYPE FILE FILES "/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_mapping/package.xml")
 endif()
 

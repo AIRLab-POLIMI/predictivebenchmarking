@@ -1,0 +1,8 @@
+prefix=/home/ros/slampbenchmarking/install
+
+Name: nav2d_tutorials
+Description: Description of nav2d_tutorials
+Version: 0.3.2
+Cflags: 
+Libs: -L/home/ros/slampbenchmarking/install/lib 
+Requires: 

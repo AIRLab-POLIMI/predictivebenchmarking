@@ -1,8 +1,8 @@
-prefix=/home/valerio/slampbenchmarking/devel
+prefix=/home/ros/slampbenchmarking/devel
 
 Name: map_merger
 Description: Description of map_merger
 Version: 0.1.6
-Cflags: -I/home/valerio/slampbenchmarking/devel/include
-Libs: -L/home/valerio/slampbenchmarking/devel/lib 
+Cflags: -I/home/ros/slampbenchmarking/devel/include
+Libs: -L/home/ros/slampbenchmarking/devel/lib 
 Requires: message_runtime adhoc_communication nav_msgs roscpp

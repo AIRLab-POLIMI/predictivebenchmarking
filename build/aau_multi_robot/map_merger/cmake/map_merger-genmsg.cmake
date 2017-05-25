@@ -2,7 +2,7 @@
 
 message(STATUS "map_merger: 0 messages, 2 services")
 
-set(MSG_I_FLAGS "-Iadhoc_communication:/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Iadhoc_communication:/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg;-Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -17,14 +17,14 @@ add_custom_target(map_merger_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv" NAME_WE)
 add_custom_target(_map_merger_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "map_merger" "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "map_merger" "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv" ""
 )
 
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv" NAME_WE)
 add_custom_target(_map_merger_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "map_merger" "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv" "adhoc_communication/MmPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "map_merger" "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv" "adhoc_communication/MmPoint"
 )
 
 #
@@ -36,15 +36,15 @@ add_custom_target(_map_merger_generate_messages_check_deps_${_filename}
 
 ### Generating Services
 _generate_srv_cpp(map_merger
-  "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv"
+  "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/map_merger
 )
 _generate_srv_cpp(map_merger
-  "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv"
+  "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv"
   "${MSG_I_FLAGS}"
-  "/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg"
+  "/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/map_merger
 )
 
@@ -60,9 +60,9 @@ add_custom_target(map_merger_generate_messages_cpp
 add_dependencies(map_merger_generate_messages map_merger_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv" NAME_WE)
 add_dependencies(map_merger_generate_messages_cpp _map_merger_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv" NAME_WE)
 add_dependencies(map_merger_generate_messages_cpp _map_merger_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -77,15 +77,15 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS map_merger_generate_messages_cpp)
 
 ### Generating Services
 _generate_srv_eus(map_merger
-  "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv"
+  "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/map_merger
 )
 _generate_srv_eus(map_merger
-  "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv"
+  "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv"
   "${MSG_I_FLAGS}"
-  "/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg"
+  "/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/map_merger
 )
 
@@ -101,9 +101,9 @@ add_custom_target(map_merger_generate_messages_eus
 add_dependencies(map_merger_generate_messages map_merger_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv" NAME_WE)
 add_dependencies(map_merger_generate_messages_eus _map_merger_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv" NAME_WE)
 add_dependencies(map_merger_generate_messages_eus _map_merger_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -118,15 +118,15 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS map_merger_generate_messages_eus)
 
 ### Generating Services
 _generate_srv_lisp(map_merger
-  "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv"
+  "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/map_merger
 )
 _generate_srv_lisp(map_merger
-  "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv"
+  "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv"
   "${MSG_I_FLAGS}"
-  "/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg"
+  "/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/map_merger
 )
 
@@ -142,9 +142,9 @@ add_custom_target(map_merger_generate_messages_lisp
 add_dependencies(map_merger_generate_messages map_merger_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv" NAME_WE)
 add_dependencies(map_merger_generate_messages_lisp _map_merger_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv" NAME_WE)
 add_dependencies(map_merger_generate_messages_lisp _map_merger_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -159,15 +159,15 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS map_merger_generate_messages_lisp)
 
 ### Generating Services
 _generate_srv_nodejs(map_merger
-  "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv"
+  "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/map_merger
 )
 _generate_srv_nodejs(map_merger
-  "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv"
+  "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv"
   "${MSG_I_FLAGS}"
-  "/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg"
+  "/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/map_merger
 )
 
@@ -183,9 +183,9 @@ add_custom_target(map_merger_generate_messages_nodejs
 add_dependencies(map_merger_generate_messages map_merger_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv" NAME_WE)
 add_dependencies(map_merger_generate_messages_nodejs _map_merger_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv" NAME_WE)
 add_dependencies(map_merger_generate_messages_nodejs _map_merger_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -200,15 +200,15 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS map_merger_generate_messages_nodejs
 
 ### Generating Services
 _generate_srv_py(map_merger
-  "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv"
+  "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/map_merger
 )
 _generate_srv_py(map_merger
-  "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv"
+  "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv"
   "${MSG_I_FLAGS}"
-  "/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg"
+  "/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/map_merger
 )
 
@@ -224,9 +224,9 @@ add_custom_target(map_merger_generate_messages_py
 add_dependencies(map_merger_generate_messages map_merger_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv" NAME_WE)
 add_dependencies(map_merger_generate_messages_py _map_merger_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv" NAME_WE)
+get_filename_component(_filename "/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv" NAME_WE)
 add_dependencies(map_merger_generate_messages_py _map_merger_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

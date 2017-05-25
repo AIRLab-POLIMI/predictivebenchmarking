@@ -43,38 +43,38 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for navfn_generate_messages_nodejs.
 
 # Include the progress variables for this target.
 include navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/progress.make
 
-navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs: /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js
-navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs: /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/SetCostmap.js
+navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs: /home/ros/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js
+navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs: /home/ros/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/SetCostmap.js
 
 
-/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js: /home/valerio/slampbenchmarking/src/navigation/navfn/srv/MakeNavPlan.srv
-/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js: /opt/ros/kinetic/share/geometry_msgs/msg/PoseStamped.msg
-/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from navfn/MakeNavPlan.srv"
-	cd /home/valerio/slampbenchmarking/build/navigation/navfn && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/valerio/slampbenchmarking/src/navigation/navfn/srv/MakeNavPlan.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p navfn -o /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv
+/home/ros/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/ros/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js: /home/ros/slampbenchmarking/src/navigation/navfn/srv/MakeNavPlan.srv
+/home/ros/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/ros/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js: /opt/ros/kinetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/ros/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/ros/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/ros/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from navfn/MakeNavPlan.srv"
+	cd /home/ros/slampbenchmarking/build/navigation/navfn && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ros/slampbenchmarking/src/navigation/navfn/srv/MakeNavPlan.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p navfn -o /home/ros/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv
 
-/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/SetCostmap.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/SetCostmap.js: /home/valerio/slampbenchmarking/src/navigation/navfn/srv/SetCostmap.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from navfn/SetCostmap.srv"
-	cd /home/valerio/slampbenchmarking/build/navigation/navfn && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/valerio/slampbenchmarking/src/navigation/navfn/srv/SetCostmap.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p navfn -o /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv
+/home/ros/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/SetCostmap.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/ros/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/SetCostmap.js: /home/ros/slampbenchmarking/src/navigation/navfn/srv/SetCostmap.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from navfn/SetCostmap.srv"
+	cd /home/ros/slampbenchmarking/build/navigation/navfn && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ros/slampbenchmarking/src/navigation/navfn/srv/SetCostmap.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p navfn -o /home/ros/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv
 
 navfn_generate_messages_nodejs: navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs
-navfn_generate_messages_nodejs: /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js
-navfn_generate_messages_nodejs: /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/SetCostmap.js
+navfn_generate_messages_nodejs: /home/ros/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/MakeNavPlan.js
+navfn_generate_messages_nodejs: /home/ros/slampbenchmarking/devel/share/gennodejs/ros/navfn/srv/SetCostmap.js
 navfn_generate_messages_nodejs: navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/build.make
 
 .PHONY : navfn_generate_messages_nodejs
@@ -85,10 +85,10 @@ navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/build: navfn_gene
 .PHONY : navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/build
 
 navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/navfn && $(CMAKE_COMMAND) -P CMakeFiles/navfn_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/navfn && $(CMAKE_COMMAND) -P CMakeFiles/navfn_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/clean
 
 navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/navfn /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/navfn /home/valerio/slampbenchmarking/build/navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/navfn /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/navfn /home/ros/slampbenchmarking/build/navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/navfn/CMakeFiles/navfn_generate_messages_nodejs.dir/depend
 

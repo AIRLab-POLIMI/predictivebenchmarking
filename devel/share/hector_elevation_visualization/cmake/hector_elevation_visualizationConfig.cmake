@@ -67,14 +67,14 @@ set(hector_elevation_visualization_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(hector_elevation_visualization_SOURCE_PREFIX /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization)
-  set(hector_elevation_visualization_DEVEL_PREFIX /home/valerio/slampbenchmarking/devel)
+  set(hector_elevation_visualization_SOURCE_PREFIX /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization)
+  set(hector_elevation_visualization_DEVEL_PREFIX /home/ros/slampbenchmarking/devel)
   set(hector_elevation_visualization_INSTALL_PREFIX "")
   set(hector_elevation_visualization_PREFIX ${hector_elevation_visualization_DEVEL_PREFIX})
 else()
   set(hector_elevation_visualization_SOURCE_PREFIX "")
   set(hector_elevation_visualization_DEVEL_PREFIX "")
-  set(hector_elevation_visualization_INSTALL_PREFIX /home/valerio/slampbenchmarking/install)
+  set(hector_elevation_visualization_INSTALL_PREFIX /home/ros/slampbenchmarking/install)
   set(hector_elevation_visualization_PREFIX ${hector_elevation_visualization_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(hector_elevation_visualization_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/valerio/slampbenchmarking/devel/include;/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/include " STREQUAL " ")
+if(NOT "/home/ros/slampbenchmarking/devel/include;/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/include " STREQUAL " ")
   set(hector_elevation_visualization_INCLUDE_DIRS "")
-  set(_include_dirs "/home/valerio/slampbenchmarking/devel/include;/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/include")
+  set(_include_dirs "/home/ros/slampbenchmarking/devel/include;/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -103,7 +103,7 @@ if(NOT "/home/valerio/slampbenchmarking/devel/include;/home/valerio/slampbenchma
         message(FATAL_ERROR "Project 'hector_elevation_visualization' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'Stefan Kohlbrecher <kohlbrecher@sim.tu-darmstadt.de>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'hector_elevation_visualization' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/${idir}'.  Ask the maintainer 'Stefan Kohlbrecher <kohlbrecher@sim.tu-darmstadt.de>' to fix it.")
+      message(FATAL_ERROR "Project 'hector_elevation_visualization' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/${idir}'.  Ask the maintainer 'Stefan Kohlbrecher <kohlbrecher@sim.tu-darmstadt.de>' to fix it.")
     endif()
     _list_append_unique(hector_elevation_visualization_INCLUDE_DIRS ${include})
   endforeach()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/valerio/slampbenchmarking/devel/lib;/home/valerio/slampbenchmarking/devel/lib;/home/valerio/Scaricati/RosExplorer/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/ros/slampbenchmarking/devel/lib;/home/ros/slampbenchmarking/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

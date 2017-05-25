@@ -43,33 +43,33 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for base_local_planner_generate_messages_py.
 
 # Include the progress variables for this target.
 include navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_py.dir/progress.make
 
-navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_py: /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/_Position2DInt.py
-navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_py: /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/__init__.py
+navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_py: /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/_Position2DInt.py
+navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_py: /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/__init__.py
 
 
-/home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/_Position2DInt.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/_Position2DInt.py: /home/valerio/slampbenchmarking/src/navigation/base_local_planner/msg/Position2DInt.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG base_local_planner/Position2DInt"
-	cd /home/valerio/slampbenchmarking/build/navigation/base_local_planner && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/valerio/slampbenchmarking/src/navigation/base_local_planner/msg/Position2DInt.msg -Ibase_local_planner:/home/valerio/slampbenchmarking/src/navigation/base_local_planner/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p base_local_planner -o /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg
+/home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/_Position2DInt.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/_Position2DInt.py: /home/ros/slampbenchmarking/src/navigation/base_local_planner/msg/Position2DInt.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG base_local_planner/Position2DInt"
+	cd /home/ros/slampbenchmarking/build/navigation/base_local_planner && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/ros/slampbenchmarking/src/navigation/base_local_planner/msg/Position2DInt.msg -Ibase_local_planner:/home/ros/slampbenchmarking/src/navigation/base_local_planner/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p base_local_planner -o /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg
 
-/home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/__init__.py: /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/_Position2DInt.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for base_local_planner"
-	cd /home/valerio/slampbenchmarking/build/navigation/base_local_planner && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg --initpy
+/home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/__init__.py: /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/_Position2DInt.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for base_local_planner"
+	cd /home/ros/slampbenchmarking/build/navigation/base_local_planner && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg --initpy
 
 base_local_planner_generate_messages_py: navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_py
-base_local_planner_generate_messages_py: /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/_Position2DInt.py
-base_local_planner_generate_messages_py: /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/__init__.py
+base_local_planner_generate_messages_py: /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/_Position2DInt.py
+base_local_planner_generate_messages_py: /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/base_local_planner/msg/__init__.py
 base_local_planner_generate_messages_py: navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_py.dir/build.make
 
 .PHONY : base_local_planner_generate_messages_py
@@ -80,10 +80,10 @@ navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_py
 .PHONY : navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_py.dir/build
 
 navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_py.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/base_local_planner && $(CMAKE_COMMAND) -P CMakeFiles/base_local_planner_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/base_local_planner && $(CMAKE_COMMAND) -P CMakeFiles/base_local_planner_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_py.dir/clean
 
 navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_py.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/base_local_planner /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/base_local_planner /home/valerio/slampbenchmarking/build/navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/base_local_planner /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/base_local_planner /home/ros/slampbenchmarking/build/navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/base_local_planner/CMakeFiles/base_local_planner_generate_messages_py.dir/depend
 

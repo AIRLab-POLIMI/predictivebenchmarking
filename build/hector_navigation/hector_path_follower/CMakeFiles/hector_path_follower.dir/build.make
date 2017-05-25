@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Include any dependencies generated for this target.
 include hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/depend.make
@@ -58,17 +58,17 @@ include hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.d
 include hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/flags.make
 
 hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.o: hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/flags.make
-hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.o: /home/valerio/slampbenchmarking/src/hector_navigation/hector_path_follower/src/hector_path_follower.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.o"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_path_follower && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.o -c /home/valerio/slampbenchmarking/src/hector_navigation/hector_path_follower/src/hector_path_follower.cpp
+hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.o: /home/ros/slampbenchmarking/src/hector_navigation/hector_path_follower/src/hector_path_follower.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.o"
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_path_follower && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.o -c /home/ros/slampbenchmarking/src/hector_navigation/hector_path_follower/src/hector_path_follower.cpp
 
 hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.i"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_path_follower && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valerio/slampbenchmarking/src/hector_navigation/hector_path_follower/src/hector_path_follower.cpp > CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.i
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_path_follower && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/slampbenchmarking/src/hector_navigation/hector_path_follower/src/hector_path_follower.cpp > CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.i
 
 hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.s"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_path_follower && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valerio/slampbenchmarking/src/hector_navigation/hector_path_follower/src/hector_path_follower.cpp -o CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.s
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_path_follower && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/slampbenchmarking/src/hector_navigation/hector_path_follower/src/hector_path_follower.cpp -o CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.s
 
 hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.o.requires:
 
@@ -88,14 +88,14 @@ hector_path_follower_OBJECTS = \
 # External object files for target hector_path_follower
 hector_path_follower_EXTERNAL_OBJECTS =
 
-/home/valerio/slampbenchmarking/devel/lib/libhector_path_follower.so: hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.o
-/home/valerio/slampbenchmarking/devel/lib/libhector_path_follower.so: hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/build.make
-/home/valerio/slampbenchmarking/devel/lib/libhector_path_follower.so: hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library /home/valerio/slampbenchmarking/devel/lib/libhector_path_follower.so"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_path_follower && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hector_path_follower.dir/link.txt --verbose=$(VERBOSE)
+/home/ros/slampbenchmarking/devel/lib/libhector_path_follower.so: hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.o
+/home/ros/slampbenchmarking/devel/lib/libhector_path_follower.so: hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/build.make
+/home/ros/slampbenchmarking/devel/lib/libhector_path_follower.so: hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library /home/ros/slampbenchmarking/devel/lib/libhector_path_follower.so"
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_path_follower && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hector_path_follower.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/build: /home/valerio/slampbenchmarking/devel/lib/libhector_path_follower.so
+hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/build: /home/ros/slampbenchmarking/devel/lib/libhector_path_follower.so
 
 .PHONY : hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/build
 
@@ -104,10 +104,10 @@ hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/requi
 .PHONY : hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/requires
 
 hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_path_follower && $(CMAKE_COMMAND) -P CMakeFiles/hector_path_follower.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_path_follower && $(CMAKE_COMMAND) -P CMakeFiles/hector_path_follower.dir/cmake_clean.cmake
 .PHONY : hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/clean
 
 hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/hector_navigation/hector_path_follower /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/hector_navigation/hector_path_follower /home/valerio/slampbenchmarking/build/hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/hector_navigation/hector_path_follower /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/hector_navigation/hector_path_follower /home/ros/slampbenchmarking/build/hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : hector_navigation/hector_path_follower/CMakeFiles/hector_path_follower.dir/depend
 

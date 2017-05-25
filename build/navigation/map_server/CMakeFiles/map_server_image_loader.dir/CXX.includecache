@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/valerio/slampbenchmarking/src/navigation/map_server/include/map_server/image_loader.h
+/home/ros/slampbenchmarking/src/navigation/map_server/include/map_server/image_loader.h
 nav_msgs/GetMap.h
-/home/valerio/slampbenchmarking/src/navigation/map_server/include/map_server/nav_msgs/GetMap.h
+/home/ros/slampbenchmarking/src/navigation/map_server/include/map_server/nav_msgs/GetMap.h
 
-/home/valerio/slampbenchmarking/src/navigation/map_server/src/image_loader.cpp
+/home/ros/slampbenchmarking/src/navigation/map_server/src/image_loader.cpp
 cstring
 -
 stdexcept
@@ -22,7 +22,7 @@ stdio.h
 SDL/SDL_image.h
 -
 map_server/image_loader.h
-/home/valerio/slampbenchmarking/src/navigation/map_server/src/map_server/image_loader.h
+/home/ros/slampbenchmarking/src/navigation/map_server/src/map_server/image_loader.h
 tf/tf.h
 -
 

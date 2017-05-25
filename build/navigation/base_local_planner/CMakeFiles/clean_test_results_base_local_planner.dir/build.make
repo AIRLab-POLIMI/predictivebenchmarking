@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for clean_test_results_base_local_planner.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 include navigation/base_local_planner/CMakeFiles/clean_test_results_base_local_planner.dir/progress.make
 
 navigation/base_local_planner/CMakeFiles/clean_test_results_base_local_planner:
-	cd /home/valerio/slampbenchmarking/build/navigation/base_local_planner && /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/valerio/slampbenchmarking/build/test_results/base_local_planner
+	cd /home/ros/slampbenchmarking/build/navigation/base_local_planner && /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/ros/slampbenchmarking/build/test_results/base_local_planner
 
 clean_test_results_base_local_planner: navigation/base_local_planner/CMakeFiles/clean_test_results_base_local_planner
 clean_test_results_base_local_planner: navigation/base_local_planner/CMakeFiles/clean_test_results_base_local_planner.dir/build.make
@@ -67,10 +67,10 @@ navigation/base_local_planner/CMakeFiles/clean_test_results_base_local_planner.d
 .PHONY : navigation/base_local_planner/CMakeFiles/clean_test_results_base_local_planner.dir/build
 
 navigation/base_local_planner/CMakeFiles/clean_test_results_base_local_planner.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/base_local_planner && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_base_local_planner.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/base_local_planner && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_base_local_planner.dir/cmake_clean.cmake
 .PHONY : navigation/base_local_planner/CMakeFiles/clean_test_results_base_local_planner.dir/clean
 
 navigation/base_local_planner/CMakeFiles/clean_test_results_base_local_planner.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/base_local_planner /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/base_local_planner /home/valerio/slampbenchmarking/build/navigation/base_local_planner/CMakeFiles/clean_test_results_base_local_planner.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/base_local_planner /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/base_local_planner /home/ros/slampbenchmarking/build/navigation/base_local_planner/CMakeFiles/clean_test_results_base_local_planner.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/base_local_planner/CMakeFiles/clean_test_results_base_local_planner.dir/depend
 

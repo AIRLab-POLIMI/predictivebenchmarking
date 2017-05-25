@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/valerio/slampbenchmarking/src/hector_navigation/hector_exploration_controller/src/simple_exploration_controller.cpp
+/home/ros/slampbenchmarking/src/hector_navigation/hector_exploration_controller/src/simple_exploration_controller.cpp
 ros/ros.h
 -
 hector_path_follower/hector_path_follower.h
@@ -14,7 +14,7 @@ hector_path_follower/hector_path_follower.h
 hector_nav_msgs/GetRobotTrajectory.h
 -
 
-/home/valerio/slampbenchmarking/src/hector_navigation/hector_path_follower/include/hector_path_follower/hector_path_follower.h
+/home/ros/slampbenchmarking/src/hector_navigation/hector_path_follower/include/hector_path_follower/hector_path_follower.h
 ros/ros.h
 -
 tf/tf.h

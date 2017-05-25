@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/map_merger_generate_messages_py"
-  "/home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/map_merger/srv/_LogMaps.py"
-  "/home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/map_merger/srv/_TransformPoint.py"
-  "/home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/map_merger/srv/__init__.py"
+  "/home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/map_merger/srv/_LogMaps.py"
+  "/home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/map_merger/srv/_TransformPoint.py"
+  "/home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/map_merger/srv/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.

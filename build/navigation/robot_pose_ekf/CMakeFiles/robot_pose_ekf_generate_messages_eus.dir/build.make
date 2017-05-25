@@ -43,32 +43,32 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for robot_pose_ekf_generate_messages_eus.
 
 # Include the progress variables for this target.
 include navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_eus.dir/progress.make
 
-navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_eus: /home/valerio/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/srv/GetStatus.l
-navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_eus: /home/valerio/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/manifest.l
+navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_eus: /home/ros/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/srv/GetStatus.l
+navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_eus: /home/ros/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/manifest.l
 
 
-/home/valerio/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/srv/GetStatus.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/valerio/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/srv/GetStatus.l: /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from robot_pose_ekf/GetStatus.srv"
-	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p robot_pose_ekf -o /home/valerio/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/srv
+/home/ros/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/srv/GetStatus.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/ros/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/srv/GetStatus.l: /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from robot_pose_ekf/GetStatus.srv"
+	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p robot_pose_ekf -o /home/ros/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/srv
 
-/home/valerio/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for robot_pose_ekf"
-	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/valerio/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf robot_pose_ekf std_msgs
+/home/ros/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for robot_pose_ekf"
+	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/ros/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf robot_pose_ekf std_msgs
 
 robot_pose_ekf_generate_messages_eus: navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_eus
-robot_pose_ekf_generate_messages_eus: /home/valerio/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/srv/GetStatus.l
-robot_pose_ekf_generate_messages_eus: /home/valerio/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/manifest.l
+robot_pose_ekf_generate_messages_eus: /home/ros/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/srv/GetStatus.l
+robot_pose_ekf_generate_messages_eus: /home/ros/slampbenchmarking/devel/share/roseus/ros/robot_pose_ekf/manifest.l
 robot_pose_ekf_generate_messages_eus: navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_eus.dir/build.make
 
 .PHONY : robot_pose_ekf_generate_messages_eus
@@ -79,10 +79,10 @@ navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_eus.dir/bu
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_eus.dir/build
 
 navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_eus.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -P CMakeFiles/robot_pose_ekf_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -P CMakeFiles/robot_pose_ekf_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_eus.dir/clean
 
 navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_eus.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_eus.dir/depend
 

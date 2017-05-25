@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Include any dependencies generated for this target.
 include navigation/amcl/CMakeFiles/amcl_pf.dir/depend.make
@@ -58,17 +58,17 @@ include navigation/amcl/CMakeFiles/amcl_pf.dir/progress.make
 include navigation/amcl/CMakeFiles/amcl_pf.dir/flags.make
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.o: navigation/amcl/CMakeFiles/amcl_pf.dir/flags.make
-navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.o: /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.o"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.o   -c /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf.c
+navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.o: /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.o"
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.o   -c /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf.c
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.i"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf.c > CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.i
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf.c > CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.i
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.s"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf.c -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.s
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf.c -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.s
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.o.requires:
 
@@ -82,17 +82,17 @@ navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.o.provides.build: naviga
 
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.o: navigation/amcl/CMakeFiles/amcl_pf.dir/flags.make
-navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.o: /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_kdtree.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.o"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.o   -c /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_kdtree.c
+navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.o: /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_kdtree.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.o"
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.o   -c /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_kdtree.c
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.i"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_kdtree.c > CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.i
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_kdtree.c > CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.i
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.s"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_kdtree.c -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.s
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_kdtree.c -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.s
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.o.requires:
 
@@ -106,17 +106,17 @@ navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.o.provides.build:
 
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.o: navigation/amcl/CMakeFiles/amcl_pf.dir/flags.make
-navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.o: /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_pdf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.o"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.o   -c /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_pdf.c
+navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.o: /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_pdf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.o"
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.o   -c /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_pdf.c
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.i"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_pdf.c > CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.i
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_pdf.c > CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.i
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.s"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_pdf.c -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.s
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_pdf.c -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.s
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.o.requires:
 
@@ -130,17 +130,17 @@ navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.o.provides.build: na
 
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.o: navigation/amcl/CMakeFiles/amcl_pf.dir/flags.make
-navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.o: /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_vector.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.o"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.o   -c /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_vector.c
+navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.o: /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_vector.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.o"
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.o   -c /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_vector.c
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.i"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_vector.c > CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.i
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_vector.c > CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.i
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.s"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_vector.c -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.s
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_vector.c -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.s
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.o.requires:
 
@@ -154,17 +154,17 @@ navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.o.provides.build:
 
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.o: navigation/amcl/CMakeFiles/amcl_pf.dir/flags.make
-navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.o: /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/eig3.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.o"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.o   -c /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/eig3.c
+navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.o: /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/eig3.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.o"
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.o   -c /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/eig3.c
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.i"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/eig3.c > CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.i
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/eig3.c > CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.i
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.s"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/eig3.c -o CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.s
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/eig3.c -o CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.s
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.o.requires:
 
@@ -178,17 +178,17 @@ navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.o.provides.build: navi
 
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.o: navigation/amcl/CMakeFiles/amcl_pf.dir/flags.make
-navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.o: /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_draw.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.o"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.o   -c /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_draw.c
+navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.o: /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_draw.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.o"
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.o   -c /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_draw.c
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.i"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_draw.c > CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.i
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_draw.c > CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.i
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.s"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_draw.c -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.s
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/pf/pf_draw.c -o CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.s
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.o.requires:
 
@@ -213,19 +213,19 @@ amcl_pf_OBJECTS = \
 # External object files for target amcl_pf
 amcl_pf_EXTERNAL_OBJECTS =
 
-/home/valerio/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.o
-/home/valerio/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.o
-/home/valerio/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.o
-/home/valerio/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.o
-/home/valerio/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.o
-/home/valerio/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.o
-/home/valerio/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/build.make
-/home/valerio/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C shared library /home/valerio/slampbenchmarking/devel/lib/libamcl_pf.so"
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/amcl_pf.dir/link.txt --verbose=$(VERBOSE)
+/home/ros/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf.c.o
+/home/ros/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_kdtree.c.o
+/home/ros/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_pdf.c.o
+/home/ros/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.o
+/home/ros/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.o
+/home/ros/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.o
+/home/ros/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/build.make
+/home/ros/slampbenchmarking/devel/lib/libamcl_pf.so: navigation/amcl/CMakeFiles/amcl_pf.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C shared library /home/ros/slampbenchmarking/devel/lib/libamcl_pf.so"
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/amcl_pf.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-navigation/amcl/CMakeFiles/amcl_pf.dir/build: /home/valerio/slampbenchmarking/devel/lib/libamcl_pf.so
+navigation/amcl/CMakeFiles/amcl_pf.dir/build: /home/ros/slampbenchmarking/devel/lib/libamcl_pf.so
 
 .PHONY : navigation/amcl/CMakeFiles/amcl_pf.dir/build
 
@@ -239,10 +239,10 @@ navigation/amcl/CMakeFiles/amcl_pf.dir/requires: navigation/amcl/CMakeFiles/amcl
 .PHONY : navigation/amcl/CMakeFiles/amcl_pf.dir/requires
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/amcl_pf.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/amcl_pf.dir/cmake_clean.cmake
 .PHONY : navigation/amcl/CMakeFiles/amcl_pf.dir/clean
 
 navigation/amcl/CMakeFiles/amcl_pf.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/amcl /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/amcl /home/valerio/slampbenchmarking/build/navigation/amcl/CMakeFiles/amcl_pf.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/amcl /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/amcl /home/ros/slampbenchmarking/build/navigation/amcl/CMakeFiles/amcl_pf.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/amcl/CMakeFiles/amcl_pf.dir/depend
 

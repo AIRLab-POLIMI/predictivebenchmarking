@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for run_tests_base_local_planner_gtest_base_local_planner_utest.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 include navigation/base_local_planner/CMakeFiles/run_tests_base_local_planner_gtest_base_local_planner_utest.dir/progress.make
 
 navigation/base_local_planner/CMakeFiles/run_tests_base_local_planner_gtest_base_local_planner_utest:
-	cd /home/valerio/slampbenchmarking/build/navigation/base_local_planner && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/run_tests.py /home/valerio/slampbenchmarking/build/test_results/base_local_planner/gtest-base_local_planner_utest.xml /home/valerio/slampbenchmarking/devel/lib/base_local_planner/base_local_planner_utest\ --gtest_output=xml:/home/valerio/slampbenchmarking/build/test_results/base_local_planner/gtest-base_local_planner_utest.xml
+	cd /home/ros/slampbenchmarking/build/navigation/base_local_planner && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/run_tests.py /home/ros/slampbenchmarking/build/test_results/base_local_planner/gtest-base_local_planner_utest.xml /home/ros/slampbenchmarking/devel/lib/base_local_planner/base_local_planner_utest\ --gtest_output=xml:/home/ros/slampbenchmarking/build/test_results/base_local_planner/gtest-base_local_planner_utest.xml
 
 run_tests_base_local_planner_gtest_base_local_planner_utest: navigation/base_local_planner/CMakeFiles/run_tests_base_local_planner_gtest_base_local_planner_utest
 run_tests_base_local_planner_gtest_base_local_planner_utest: navigation/base_local_planner/CMakeFiles/run_tests_base_local_planner_gtest_base_local_planner_utest.dir/build.make
@@ -67,10 +67,10 @@ navigation/base_local_planner/CMakeFiles/run_tests_base_local_planner_gtest_base
 .PHONY : navigation/base_local_planner/CMakeFiles/run_tests_base_local_planner_gtest_base_local_planner_utest.dir/build
 
 navigation/base_local_planner/CMakeFiles/run_tests_base_local_planner_gtest_base_local_planner_utest.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/base_local_planner && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_base_local_planner_gtest_base_local_planner_utest.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/base_local_planner && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_base_local_planner_gtest_base_local_planner_utest.dir/cmake_clean.cmake
 .PHONY : navigation/base_local_planner/CMakeFiles/run_tests_base_local_planner_gtest_base_local_planner_utest.dir/clean
 
 navigation/base_local_planner/CMakeFiles/run_tests_base_local_planner_gtest_base_local_planner_utest.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/base_local_planner /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/base_local_planner /home/valerio/slampbenchmarking/build/navigation/base_local_planner/CMakeFiles/run_tests_base_local_planner_gtest_base_local_planner_utest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/base_local_planner /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/base_local_planner /home/ros/slampbenchmarking/build/navigation/base_local_planner/CMakeFiles/run_tests_base_local_planner_gtest_base_local_planner_utest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/base_local_planner/CMakeFiles/run_tests_base_local_planner_gtest_base_local_planner_utest.dir/depend
 

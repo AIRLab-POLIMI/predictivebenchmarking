@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ install/strip/fast: install/strip
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/valerio/slampbenchmarking/build/CMakeFiles /home/valerio/slampbenchmarking/build/hector_navigation/hector_exploration_planner/CMakeFiles/progress.marks
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_planner/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/valerio/slampbenchmarking/build/CMakeFiles 0
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slampbenchmarking/build/CMakeFiles /home/ros/slampbenchmarking/build/hector_navigation/hector_exploration_planner/CMakeFiles/progress.marks
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_planner/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slampbenchmarking/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_planner/clean
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_planner/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_planner/preinstall
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_planner/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_planner/preinstall
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_planner/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner_gencfg.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner_gencfg.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner_gencfg.dir/rule
 .PHONY : hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner_gencfg.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ hector_exploration_planner_gencfg: hector_navigation/hector_exploration_planner/
 
 # fast build rule for target.
 hector_exploration_planner_gencfg/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner_gencfg.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner_gencfg.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner_gencfg.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner_gencfg.dir/build
 .PHONY : hector_exploration_planner_gencfg/fast
 
 # Convenience name for target.
 hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/rule
 .PHONY : hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ hector_exploration_planner: hector_navigation/hector_exploration_planner/CMakeFi
 
 # fast build rule for target.
 hector_exploration_planner/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/build
 .PHONY : hector_exploration_planner/fast
 
 # Convenience name for target.
 hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/rule
 .PHONY : hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/rule
 
 # Convenience name for target.
@@ -207,7 +207,7 @@ hector_exploration_base_global_planner_plugin: hector_navigation/hector_explorat
 
 # fast build rule for target.
 hector_exploration_base_global_planner_plugin/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/build
 .PHONY : hector_exploration_base_global_planner_plugin/fast
 
 src/hector_exploration_base_global_planner_plugin.o: src/hector_exploration_base_global_planner_plugin.cpp.o
@@ -216,7 +216,7 @@ src/hector_exploration_base_global_planner_plugin.o: src/hector_exploration_base
 
 # target to build an object file
 src/hector_exploration_base_global_planner_plugin.cpp.o:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/src/hector_exploration_base_global_planner_plugin.cpp.o
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/src/hector_exploration_base_global_planner_plugin.cpp.o
 .PHONY : src/hector_exploration_base_global_planner_plugin.cpp.o
 
 src/hector_exploration_base_global_planner_plugin.i: src/hector_exploration_base_global_planner_plugin.cpp.i
@@ -225,7 +225,7 @@ src/hector_exploration_base_global_planner_plugin.i: src/hector_exploration_base
 
 # target to preprocess a source file
 src/hector_exploration_base_global_planner_plugin.cpp.i:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/src/hector_exploration_base_global_planner_plugin.cpp.i
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/src/hector_exploration_base_global_planner_plugin.cpp.i
 .PHONY : src/hector_exploration_base_global_planner_plugin.cpp.i
 
 src/hector_exploration_base_global_planner_plugin.s: src/hector_exploration_base_global_planner_plugin.cpp.s
@@ -234,7 +234,7 @@ src/hector_exploration_base_global_planner_plugin.s: src/hector_exploration_base
 
 # target to generate assembly for a file
 src/hector_exploration_base_global_planner_plugin.cpp.s:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/src/hector_exploration_base_global_planner_plugin.cpp.s
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_base_global_planner_plugin.dir/src/hector_exploration_base_global_planner_plugin.cpp.s
 .PHONY : src/hector_exploration_base_global_planner_plugin.cpp.s
 
 src/hector_exploration_planner.o: src/hector_exploration_planner.cpp.o
@@ -243,7 +243,7 @@ src/hector_exploration_planner.o: src/hector_exploration_planner.cpp.o
 
 # target to build an object file
 src/hector_exploration_planner.cpp.o:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/src/hector_exploration_planner.cpp.o
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/src/hector_exploration_planner.cpp.o
 .PHONY : src/hector_exploration_planner.cpp.o
 
 src/hector_exploration_planner.i: src/hector_exploration_planner.cpp.i
@@ -252,7 +252,7 @@ src/hector_exploration_planner.i: src/hector_exploration_planner.cpp.i
 
 # target to preprocess a source file
 src/hector_exploration_planner.cpp.i:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/src/hector_exploration_planner.cpp.i
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/src/hector_exploration_planner.cpp.i
 .PHONY : src/hector_exploration_planner.cpp.i
 
 src/hector_exploration_planner.s: src/hector_exploration_planner.cpp.s
@@ -261,7 +261,7 @@ src/hector_exploration_planner.s: src/hector_exploration_planner.cpp.s
 
 # target to generate assembly for a file
 src/hector_exploration_planner.cpp.s:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/src/hector_exploration_planner.cpp.s
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/build.make hector_navigation/hector_exploration_planner/CMakeFiles/hector_exploration_planner.dir/src/hector_exploration_planner.cpp.s
 .PHONY : src/hector_exploration_planner.cpp.s
 
 # Help Target
@@ -297,6 +297,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

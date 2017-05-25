@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/BroadcastCMgrRobotUpdate.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/BroadcastCMgrRobotUpdate.h
 ros/service_traits.h
 -
 adhoc_communication/BroadcastCMgrRobotUpdateRequest.h
@@ -14,7 +14,7 @@ adhoc_communication/BroadcastCMgrRobotUpdateRequest.h
 adhoc_communication/BroadcastCMgrRobotUpdateResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/BroadcastCMgrRobotUpdateRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/BroadcastCMgrRobotUpdateRequest.h
 string
 -
 vector
@@ -32,7 +32,7 @@ ros/message_operations.h
 adhoc_communication/CMgrRobotUpdate.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/BroadcastCMgrRobotUpdateResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/BroadcastCMgrRobotUpdateResponse.h
 string
 -
 vector
@@ -48,7 +48,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/BroadcastString.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/BroadcastString.h
 ros/service_traits.h
 -
 adhoc_communication/BroadcastStringRequest.h
@@ -56,7 +56,7 @@ adhoc_communication/BroadcastStringRequest.h
 adhoc_communication/BroadcastStringResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/BroadcastStringRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/BroadcastStringRequest.h
 string
 -
 vector
@@ -72,7 +72,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/BroadcastStringResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/BroadcastStringResponse.h
 string
 -
 vector
@@ -88,7 +88,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/CMgrDimensions.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/CMgrDimensions.h
 string
 -
 vector
@@ -104,7 +104,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/CMgrRobotUpdate.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/CMgrRobotUpdate.h
 string
 -
 vector
@@ -122,7 +122,7 @@ ros/message_operations.h
 adhoc_communication/CMgrDimensions.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ChangeMCMembership.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ChangeMCMembership.h
 ros/service_traits.h
 -
 adhoc_communication/ChangeMCMembershipRequest.h
@@ -130,7 +130,7 @@ adhoc_communication/ChangeMCMembershipRequest.h
 adhoc_communication/ChangeMCMembershipResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ChangeMCMembershipRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ChangeMCMembershipRequest.h
 string
 -
 vector
@@ -146,7 +146,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ChangeMCMembershipResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ChangeMCMembershipResponse.h
 string
 -
 vector
@@ -162,7 +162,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpAuction.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpAuction.h
 string
 -
 vector
@@ -184,7 +184,7 @@ adhoc_communication/ExpCluster.h
 adhoc_communication/ExpCluster.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpAuctionElement.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpAuctionElement.h
 string
 -
 vector
@@ -200,7 +200,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpCluster.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpCluster.h
 string
 -
 vector
@@ -218,7 +218,7 @@ ros/message_operations.h
 adhoc_communication/ExpClusterElement.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpClusterElement.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpClusterElement.h
 string
 -
 vector
@@ -234,7 +234,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpFrontier.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpFrontier.h
 string
 -
 vector
@@ -252,7 +252,7 @@ ros/message_operations.h
 adhoc_communication/ExpFrontierElement.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpFrontierElement.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpFrontierElement.h
 string
 -
 vector
@@ -268,7 +268,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/GetGroupState.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/GetGroupState.h
 ros/service_traits.h
 -
 adhoc_communication/GetGroupStateRequest.h
@@ -276,7 +276,7 @@ adhoc_communication/GetGroupStateRequest.h
 adhoc_communication/GetGroupStateResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/GetGroupStateRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/GetGroupStateRequest.h
 string
 -
 vector
@@ -292,7 +292,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/GetGroupStateResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/GetGroupStateResponse.h
 string
 -
 vector
@@ -308,7 +308,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/GetNeighbors.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/GetNeighbors.h
 ros/service_traits.h
 -
 adhoc_communication/GetNeighborsRequest.h
@@ -316,7 +316,7 @@ adhoc_communication/GetNeighborsRequest.h
 adhoc_communication/GetNeighborsResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/GetNeighborsRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/GetNeighborsRequest.h
 string
 -
 vector
@@ -332,7 +332,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/GetNeighborsResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/GetNeighborsResponse.h
 string
 -
 vector
@@ -348,7 +348,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/MmControl.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/MmControl.h
 string
 -
 vector
@@ -364,7 +364,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/MmListOfPoints.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/MmListOfPoints.h
 string
 -
 vector
@@ -382,7 +382,7 @@ ros/message_operations.h
 adhoc_communication/MmPoint.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/MmMapUpdate.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/MmMapUpdate.h
 string
 -
 vector
@@ -400,7 +400,7 @@ ros/message_operations.h
 nav_msgs/OccupancyGrid.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/MmPoint.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/MmPoint.h
 string
 -
 vector
@@ -416,7 +416,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/MmRobotPosition.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/MmRobotPosition.h
 string
 -
 vector
@@ -434,7 +434,7 @@ ros/message_operations.h
 geometry_msgs/PoseStamped.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/RecvString.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/RecvString.h
 string
 -
 vector
@@ -450,7 +450,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendCMgrRobotUpdate.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendCMgrRobotUpdate.h
 ros/service_traits.h
 -
 adhoc_communication/SendCMgrRobotUpdateRequest.h
@@ -458,7 +458,7 @@ adhoc_communication/SendCMgrRobotUpdateRequest.h
 adhoc_communication/SendCMgrRobotUpdateResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendCMgrRobotUpdateRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendCMgrRobotUpdateRequest.h
 string
 -
 vector
@@ -476,7 +476,7 @@ ros/message_operations.h
 adhoc_communication/CMgrRobotUpdate.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendCMgrRobotUpdateResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendCMgrRobotUpdateResponse.h
 string
 -
 vector
@@ -492,7 +492,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpAuction.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpAuction.h
 ros/service_traits.h
 -
 adhoc_communication/SendExpAuctionRequest.h
@@ -500,7 +500,7 @@ adhoc_communication/SendExpAuctionRequest.h
 adhoc_communication/SendExpAuctionResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpAuctionRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpAuctionRequest.h
 string
 -
 vector
@@ -518,7 +518,7 @@ ros/message_operations.h
 adhoc_communication/ExpAuction.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpAuctionResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpAuctionResponse.h
 string
 -
 vector
@@ -534,7 +534,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpCluster.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpCluster.h
 ros/service_traits.h
 -
 adhoc_communication/SendExpClusterRequest.h
@@ -542,7 +542,7 @@ adhoc_communication/SendExpClusterRequest.h
 adhoc_communication/SendExpClusterResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpClusterRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpClusterRequest.h
 string
 -
 vector
@@ -560,7 +560,7 @@ ros/message_operations.h
 adhoc_communication/ExpCluster.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpClusterResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpClusterResponse.h
 string
 -
 vector
@@ -576,7 +576,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpFrontier.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpFrontier.h
 ros/service_traits.h
 -
 adhoc_communication/SendExpFrontierRequest.h
@@ -584,7 +584,7 @@ adhoc_communication/SendExpFrontierRequest.h
 adhoc_communication/SendExpFrontierResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpFrontierRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpFrontierRequest.h
 string
 -
 vector
@@ -602,7 +602,7 @@ ros/message_operations.h
 adhoc_communication/ExpFrontier.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpFrontierResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpFrontierResponse.h
 string
 -
 vector
@@ -618,7 +618,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmControl.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmControl.h
 ros/service_traits.h
 -
 adhoc_communication/SendMmControlRequest.h
@@ -626,7 +626,7 @@ adhoc_communication/SendMmControlRequest.h
 adhoc_communication/SendMmControlResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmControlRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmControlRequest.h
 string
 -
 vector
@@ -644,7 +644,7 @@ ros/message_operations.h
 adhoc_communication/MmControl.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmControlResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmControlResponse.h
 string
 -
 vector
@@ -660,7 +660,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmMapUpdate.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmMapUpdate.h
 ros/service_traits.h
 -
 adhoc_communication/SendMmMapUpdateRequest.h
@@ -668,7 +668,7 @@ adhoc_communication/SendMmMapUpdateRequest.h
 adhoc_communication/SendMmMapUpdateResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmMapUpdateRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmMapUpdateRequest.h
 string
 -
 vector
@@ -686,7 +686,7 @@ ros/message_operations.h
 adhoc_communication/MmMapUpdate.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmMapUpdateResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmMapUpdateResponse.h
 string
 -
 vector
@@ -702,7 +702,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmPoint.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmPoint.h
 ros/service_traits.h
 -
 adhoc_communication/SendMmPointRequest.h
@@ -710,7 +710,7 @@ adhoc_communication/SendMmPointRequest.h
 adhoc_communication/SendMmPointResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmPointRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmPointRequest.h
 string
 -
 vector
@@ -728,7 +728,7 @@ ros/message_operations.h
 adhoc_communication/MmPoint.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmPointResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmPointResponse.h
 string
 -
 vector
@@ -744,7 +744,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmRobotPosition.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmRobotPosition.h
 ros/service_traits.h
 -
 adhoc_communication/SendMmRobotPositionRequest.h
@@ -752,7 +752,7 @@ adhoc_communication/SendMmRobotPositionRequest.h
 adhoc_communication/SendMmRobotPositionResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmRobotPositionRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmRobotPositionRequest.h
 string
 -
 vector
@@ -770,7 +770,7 @@ ros/message_operations.h
 adhoc_communication/MmRobotPosition.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmRobotPositionResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmRobotPositionResponse.h
 string
 -
 vector
@@ -786,7 +786,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendOccupancyGrid.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendOccupancyGrid.h
 ros/service_traits.h
 -
 adhoc_communication/SendOccupancyGridRequest.h
@@ -794,7 +794,7 @@ adhoc_communication/SendOccupancyGridRequest.h
 adhoc_communication/SendOccupancyGridResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendOccupancyGridRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendOccupancyGridRequest.h
 string
 -
 vector
@@ -812,7 +812,7 @@ ros/message_operations.h
 nav_msgs/OccupancyGrid.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendOccupancyGridResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendOccupancyGridResponse.h
 string
 -
 vector
@@ -828,7 +828,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendQuaternion.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendQuaternion.h
 ros/service_traits.h
 -
 adhoc_communication/SendQuaternionRequest.h
@@ -836,7 +836,7 @@ adhoc_communication/SendQuaternionRequest.h
 adhoc_communication/SendQuaternionResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendQuaternionRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendQuaternionRequest.h
 string
 -
 vector
@@ -854,7 +854,7 @@ ros/message_operations.h
 geometry_msgs/Quaternion.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendQuaternionResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendQuaternionResponse.h
 string
 -
 vector
@@ -870,7 +870,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendString.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendString.h
 ros/service_traits.h
 -
 adhoc_communication/SendStringRequest.h
@@ -878,7 +878,7 @@ adhoc_communication/SendStringRequest.h
 adhoc_communication/SendStringResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendStringRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendStringRequest.h
 string
 -
 vector
@@ -894,7 +894,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendStringResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendStringResponse.h
 string
 -
 vector
@@ -910,7 +910,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendTwist.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendTwist.h
 ros/service_traits.h
 -
 adhoc_communication/SendTwistRequest.h
@@ -918,7 +918,7 @@ adhoc_communication/SendTwistRequest.h
 adhoc_communication/SendTwistResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendTwistRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendTwistRequest.h
 string
 -
 vector
@@ -936,7 +936,7 @@ ros/message_operations.h
 geometry_msgs/Twist.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendTwistResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendTwistResponse.h
 string
 -
 vector
@@ -952,7 +952,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ShutDown.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ShutDown.h
 ros/service_traits.h
 -
 adhoc_communication/ShutDownRequest.h
@@ -960,7 +960,7 @@ adhoc_communication/ShutDownRequest.h
 adhoc_communication/ShutDownResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ShutDownRequest.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ShutDownRequest.h
 string
 -
 vector
@@ -976,7 +976,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ShutDownResponse.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ShutDownResponse.h
 string
 -
 vector
@@ -992,251 +992,251 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckLinkFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckLinkFrame.cpp
 string
 -
 AckLinkFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckLinkFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckLinkFrame.h
 EthernetFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
 defines.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckLinkFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckLinkFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckRoutedFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckRoutedFrame.cpp
 string
 -
 AckRoutedFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckRoutedFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckRoutedFrame.h
 structs.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/structs.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/structs.h
 EthernetFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
 defines.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckRoutedFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckRoutedFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Beacon.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Beacon.cpp
 Beacon.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Beacon.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Beacon.h
 functions.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Beacon.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Beacon.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/DebugFunctions.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/DebugFunctions.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.cpp
 EthernetFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
 defines.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
 functions.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Logging.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Logging.cpp
 Logging.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Logging.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Logging.h
 RouteRequest.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteRequest.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteRequest.h
 RouteResponse.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteResponse.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteResponse.h
 McTree.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McTree.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McTree.h
 EthernetFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
 Packet.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Packet.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Packet.h
 defines.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
 boost/algorithm/string.hpp
 -
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Logging.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Logging.h
 Logging.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Logging.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Logging.h
 ros/ros.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/ros/ros.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/ros/ros.h
 structs.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/structs.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/structs.h
 functions.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
 boost/filesystem.hpp
 -
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McAckFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McAckFrame.cpp
 McAckFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McAckFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McAckFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McAckFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McAckFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McDisconnectFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McDisconnectFrame.cpp
 McDisconnectFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McDisconnectFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McDisconnectFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McDisconnectFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McDisconnectFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McHandler.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McHandler.cpp
 string
 -
 list
 -
 McHandler.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McHandler.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McHandler.h
 defines.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McHandler.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McHandler.h
 McTree.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McTree.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McTree.h
 McTree.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McTree.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McTree.cpp
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McNackFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McNackFrame.cpp
 vector
 -
 McNackFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McNackFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McNackFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McNackFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McNackFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McPosAckObj.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McPosAckObj.cpp
 list
 -
 McPosAckObj.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McPosAckObj.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McPosAckObj.h
 McTree.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McTree.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McTree.h
 structs.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/structs.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/structs.h
 EthernetFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
 functions.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
 header.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/header.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/header.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McPosAckObj.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McPosAckObj.h
 AckRoutedFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckRoutedFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckRoutedFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McRouteActivationFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McRouteActivationFrame.cpp
 McRouteActivationFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McRouteActivationFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McRouteActivationFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McRouteActivationFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McRouteActivationFrame.h
 EthernetFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McTree.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McTree.cpp
 list
 -
 string
 -
 McTree.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McTree.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McTree.h
 structs.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/structs.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/structs.h
 functions.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
 RouteRequest.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteRequest.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteRequest.h
 EthernetFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
 header.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/header.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/header.h
 Logging.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Logging.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Logging.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McTree.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McTree.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/MultiHopBroadcastFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/MultiHopBroadcastFrame.cpp
 string
 -
 MultiHopBroadcastFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/MultiHopBroadcastFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/MultiHopBroadcastFrame.h
 EthernetFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/MultiHopBroadcastFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/MultiHopBroadcastFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Packet.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Packet.cpp
 string
 -
 list
 -
 Packet.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Packet.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Packet.h
 functions.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
 RoutedFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RoutedFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RoutedFrame.h
 EthernetFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Packet.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Packet.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/PositionSubscriber.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/PositionSubscriber.cpp
 PositionSubscriber.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/PositionSubscriber.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/PositionSubscriber.h
 cmath
 -
 string
 -
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/PositionSubscriber.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/PositionSubscriber.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteRequest.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteRequest.cpp
 list
 -
 string
 -
 RouteRequest.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteRequest.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteRequest.h
 defines.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
 EthernetFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteRequest.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteRequest.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteResponse.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteResponse.cpp
 linux/if_ether.h
 -
 RouteResponse.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteResponse.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteResponse.h
 defines.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
 functions.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteResponse.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteResponse.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RoutedFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RoutedFrame.cpp
 string
 -
 RoutedFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RoutedFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RoutedFrame.h
 EthernetFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RoutedFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RoutedFrame.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication.cpp
 header.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/header.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/header.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/header.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/header.h
 ros/ros.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/ros/ros.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/ros/ros.h
 stdint.h
 -
 stdio.h
@@ -1266,135 +1266,135 @@ net/ethernet.h
 asm/types.h
 -
 adhoc_communication/ExpAuction.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/ExpAuction.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/ExpAuction.h
 adhoc_communication/ExpFrontierElement.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/ExpFrontierElement.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/ExpFrontierElement.h
 adhoc_communication/MmListOfPoints.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/MmListOfPoints.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/MmListOfPoints.h
 adhoc_communication/MmRobotPosition.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/MmRobotPosition.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/MmRobotPosition.h
 adhoc_communication/ExpFrontier.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/ExpFrontier.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/ExpFrontier.h
 adhoc_communication/MmMapUpdate.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/MmMapUpdate.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/MmMapUpdate.h
 adhoc_communication/RecvString.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/RecvString.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/RecvString.h
 adhoc_communication/MmControl.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/MmControl.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/MmControl.h
 adhoc_communication/MmPoint.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/MmPoint.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/MmPoint.h
 adhoc_communication/ExpCluster.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/ExpCluster.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/ExpCluster.h
 adhoc_communication/CMgrDimensions.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/CMgrDimensions.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/CMgrDimensions.h
 adhoc_communication/CMgrRobotUpdate.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/CMgrRobotUpdate.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/CMgrRobotUpdate.h
 adhoc_communication/ChangeMCMembership.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/ChangeMCMembership.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/ChangeMCMembership.h
 adhoc_communication/SendExpCluster.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendExpCluster.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendExpCluster.h
 adhoc_communication/SendMmMapUpdate.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendMmMapUpdate.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendMmMapUpdate.h
 adhoc_communication/SendOccupancyGrid.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendOccupancyGrid.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendOccupancyGrid.h
 adhoc_communication/GetNeighbors.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/GetNeighbors.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/GetNeighbors.h
 adhoc_communication/SendExpFrontier.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendExpFrontier.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendExpFrontier.h
 adhoc_communication/SendMmPoint.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendMmPoint.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendMmPoint.h
 adhoc_communication/SendQuaternion.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendQuaternion.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendQuaternion.h
 adhoc_communication/SendExpAuction.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendExpAuction.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendExpAuction.h
 adhoc_communication/SendMmControl.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendMmControl.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendMmControl.h
 adhoc_communication/SendMmRobotPosition.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendMmRobotPosition.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendMmRobotPosition.h
 adhoc_communication/SendString.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendString.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendString.h
 adhoc_communication/SendTwist.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendTwist.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendTwist.h
 adhoc_communication/GetGroupState.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/GetGroupState.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/GetGroupState.h
 adhoc_communication/SendCMgrRobotUpdate.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendCMgrRobotUpdate.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/SendCMgrRobotUpdate.h
 adhoc_communication/ShutDown.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/ShutDown.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/ShutDown.h
 adhoc_communication/BroadcastCMgrRobotUpdate.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/BroadcastCMgrRobotUpdate.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/BroadcastCMgrRobotUpdate.h
 adhoc_communication/BroadcastString.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/BroadcastString.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/adhoc_communication/BroadcastString.h
 nav_msgs/Odometry.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/nav_msgs/Odometry.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/nav_msgs/Odometry.h
 std_msgs/String.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/std_msgs/String.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/std_msgs/String.h
 geometry_msgs/Twist.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/geometry_msgs/Twist.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/geometry_msgs/Twist.h
 functions.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
 defines.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
 EthernetFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.h
 EthernetFrame.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/EthernetFrame.cpp
 structs.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/structs.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/structs.h
 Beacon.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Beacon.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Beacon.cpp
 Beacon.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Beacon.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Beacon.h
 AckLinkFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckLinkFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckLinkFrame.h
 AckLinkFrame.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckLinkFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckLinkFrame.cpp
 McAckFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McAckFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McAckFrame.h
 McAckFrame.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McAckFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McAckFrame.cpp
 RouteRequest.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteRequest.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteRequest.h
 RouteRequest.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteRequest.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteRequest.cpp
 RouteResponse.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteResponse.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteResponse.cpp
 RouteResponse.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteResponse.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RouteResponse.h
 AckRoutedFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckRoutedFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckRoutedFrame.h
 AckRoutedFrame.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckRoutedFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/AckRoutedFrame.cpp
 McRouteActivationFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McRouteActivationFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McRouteActivationFrame.h
 McRouteActivationFrame.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McRouteActivationFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McRouteActivationFrame.cpp
 Packet.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Packet.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Packet.cpp
 PositionSubscriber.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/PositionSubscriber.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/PositionSubscriber.h
 PositionSubscriber.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/PositionSubscriber.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/PositionSubscriber.cpp
 McDisconnectFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McDisconnectFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McDisconnectFrame.h
 McDisconnectFrame.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McDisconnectFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McDisconnectFrame.cpp
 MultiHopBroadcastFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/MultiHopBroadcastFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/MultiHopBroadcastFrame.h
 MultiHopBroadcastFrame.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/MultiHopBroadcastFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/MultiHopBroadcastFrame.cpp
 McNackFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McNackFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McNackFrame.h
 McNackFrame.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McNackFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McNackFrame.cpp
 McHandler.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McHandler.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McHandler.h
 McHandler.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McHandler.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McHandler.cpp
 McPosAckObj.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McPosAckObj.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McPosAckObj.h
 McPosAckObj.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McPosAckObj.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/McPosAckObj.cpp
 execinfo.h
 -
 signal.h
@@ -1404,21 +1404,21 @@ stdlib.h
 unistd.h
 -
 Logging.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Logging.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Logging.h
 Logging.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Logging.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/Logging.cpp
 DebugFunctions.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/DebugFunctions.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/DebugFunctions.h
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/structs.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/structs.h
 functions.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/functions.h
 RoutedFrame.cpp
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RoutedFrame.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RoutedFrame.cpp
 RoutedFrame.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RoutedFrame.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/RoutedFrame.h
 defines.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/src/defines.h
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string

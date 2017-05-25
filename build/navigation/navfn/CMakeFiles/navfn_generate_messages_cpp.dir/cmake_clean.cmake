@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/navfn_generate_messages_cpp"
-  "/home/valerio/slampbenchmarking/devel/include/navfn/MakeNavPlan.h"
-  "/home/valerio/slampbenchmarking/devel/include/navfn/SetCostmap.h"
+  "/home/ros/slampbenchmarking/devel/include/navfn/MakeNavPlan.h"
+  "/home/ros/slampbenchmarking/devel/include/navfn/SetCostmap.h"
 )
 
 # Per-language clean rules from dependency scanning.

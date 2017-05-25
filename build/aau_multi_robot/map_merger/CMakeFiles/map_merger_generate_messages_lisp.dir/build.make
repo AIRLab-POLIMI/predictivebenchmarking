@@ -43,34 +43,34 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for map_merger_generate_messages_lisp.
 
 # Include the progress variables for this target.
 include aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/progress.make
 
-aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp: /home/valerio/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/LogMaps.lisp
-aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp: /home/valerio/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/TransformPoint.lisp
+aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp: /home/ros/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/LogMaps.lisp
+aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp: /home/ros/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/TransformPoint.lisp
 
 
-/home/valerio/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/LogMaps.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
-/home/valerio/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/LogMaps.lisp: /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from map_merger/LogMaps.srv"
-	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv -Iadhoc_communication:/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/valerio/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv
+/home/ros/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/LogMaps.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/ros/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/LogMaps.lisp: /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from map_merger/LogMaps.srv"
+	cd /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv -Iadhoc_communication:/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/ros/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv
 
-/home/valerio/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/TransformPoint.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
-/home/valerio/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/TransformPoint.lisp: /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv
-/home/valerio/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/TransformPoint.lisp: /home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from map_merger/TransformPoint.srv"
-	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv -Iadhoc_communication:/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/valerio/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv
+/home/ros/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/TransformPoint.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/ros/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/TransformPoint.lisp: /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv
+/home/ros/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/TransformPoint.lisp: /home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from map_merger/TransformPoint.srv"
+	cd /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv -Iadhoc_communication:/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/ros/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv
 
 map_merger_generate_messages_lisp: aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp
-map_merger_generate_messages_lisp: /home/valerio/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/LogMaps.lisp
-map_merger_generate_messages_lisp: /home/valerio/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/TransformPoint.lisp
+map_merger_generate_messages_lisp: /home/ros/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/LogMaps.lisp
+map_merger_generate_messages_lisp: /home/ros/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/TransformPoint.lisp
 map_merger_generate_messages_lisp: aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/build.make
 
 .PHONY : map_merger_generate_messages_lisp
@@ -81,10 +81,10 @@ aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/buil
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/build
 
 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger && $(CMAKE_COMMAND) -P CMakeFiles/map_merger_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger && $(CMAKE_COMMAND) -P CMakeFiles/map_merger_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/clean
 
 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/depend
 

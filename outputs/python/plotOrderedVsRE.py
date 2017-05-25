@@ -64,10 +64,10 @@ def plotGraphic(folder):
 
 	#plt.plot(x,yROrdered,'r',x,yTOrdered,'g',x,yRRE,'b',x,yTRE,'y')
 
-#	ax.plot(x,yROrdered,label='Rot Ordered')
-	ax.plot(x,yTOrdered,label='Trans Ordered')
-#	ax.plot(x,yRRE,label='Rot RE')
-	ax.plot(x,yTRE,label='Trans RE')
+	ax.plot(x,yROrdered,label='Rot Ordered')
+#	ax.plot(x,yTOrdered,label='Trans Ordered')
+	ax.plot(x,yRRE,label='Rot RE')
+#	ax.plot(x,yTRE,label='Trans RE')
 	ax.legend()
 
 	plt.show()

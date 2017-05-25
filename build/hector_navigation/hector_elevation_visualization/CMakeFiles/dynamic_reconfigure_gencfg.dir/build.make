@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for dynamic_reconfigure_gencfg.
 
@@ -63,10 +63,10 @@ hector_navigation/hector_elevation_visualization/CMakeFiles/dynamic_reconfigure_
 .PHONY : hector_navigation/hector_elevation_visualization/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
 
 hector_navigation/hector_elevation_visualization/CMakeFiles/dynamic_reconfigure_gencfg.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && $(CMAKE_COMMAND) -P CMakeFiles/dynamic_reconfigure_gencfg.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization && $(CMAKE_COMMAND) -P CMakeFiles/dynamic_reconfigure_gencfg.dir/cmake_clean.cmake
 .PHONY : hector_navigation/hector_elevation_visualization/CMakeFiles/dynamic_reconfigure_gencfg.dir/clean
 
 hector_navigation/hector_elevation_visualization/CMakeFiles/dynamic_reconfigure_gencfg.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_visualization/CMakeFiles/dynamic_reconfigure_gencfg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_visualization/CMakeFiles/dynamic_reconfigure_gencfg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : hector_navigation/hector_elevation_visualization/CMakeFiles/dynamic_reconfigure_gencfg.dir/depend
 

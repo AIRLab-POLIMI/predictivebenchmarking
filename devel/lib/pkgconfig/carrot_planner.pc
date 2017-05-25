@@ -1,8 +1,8 @@
-prefix=/home/valerio/slampbenchmarking/devel
+prefix=/home/ros/slampbenchmarking/devel
 
 Name: carrot_planner
 Description: Description of carrot_planner
 Version: 1.14.0
-Cflags: -I/home/valerio/slampbenchmarking/src/navigation/carrot_planner/include
-Libs: -L/home/valerio/slampbenchmarking/devel/lib -lcarrot_planner
+Cflags: -I/home/ros/slampbenchmarking/src/navigation/carrot_planner/include
+Libs: -L/home/ros/slampbenchmarking/devel/lib -lcarrot_planner
 Requires: roscpp pluginlib costmap_2d base_local_planner nav_core

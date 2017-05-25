@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/test/test_robot_pose_ekf.cpp
+/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/test/test_robot_pose_ekf.cpp
 string
 -
 gtest/gtest.h
 -
 ros/ros.h
-/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/test/ros/ros.h
+/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/test/ros/ros.h
 nav_msgs/Odometry.h
-/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/test/nav_msgs/Odometry.h
+/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/test/nav_msgs/Odometry.h
 geometry_msgs/PoseWithCovarianceStamped.h
-/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/test/geometry_msgs/PoseWithCovarianceStamped.h
+/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/test/geometry_msgs/PoseWithCovarianceStamped.h
 boost/thread.hpp
 -
 

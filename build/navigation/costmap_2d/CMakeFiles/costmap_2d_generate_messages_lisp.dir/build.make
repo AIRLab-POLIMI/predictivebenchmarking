@@ -43,29 +43,29 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for costmap_2d_generate_messages_lisp.
 
 # Include the progress variables for this target.
 include navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_lisp.dir/progress.make
 
-navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_lisp: /home/valerio/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg/VoxelGrid.lisp
+navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_lisp: /home/ros/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg/VoxelGrid.lisp
 
 
-/home/valerio/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg/VoxelGrid.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
-/home/valerio/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg/VoxelGrid.lisp: /home/valerio/slampbenchmarking/src/navigation/costmap_2d/msg/VoxelGrid.msg
-/home/valerio/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg/VoxelGrid.lisp: /opt/ros/kinetic/share/geometry_msgs/msg/Point32.msg
-/home/valerio/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg/VoxelGrid.lisp: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/valerio/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg/VoxelGrid.lisp: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from costmap_2d/VoxelGrid.msg"
-	cd /home/valerio/slampbenchmarking/build/navigation/costmap_2d && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/valerio/slampbenchmarking/src/navigation/costmap_2d/msg/VoxelGrid.msg -Icostmap_2d:/home/valerio/slampbenchmarking/src/navigation/costmap_2d/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Imap_msgs:/opt/ros/kinetic/share/map_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p costmap_2d -o /home/valerio/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg
+/home/ros/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg/VoxelGrid.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/ros/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg/VoxelGrid.lisp: /home/ros/slampbenchmarking/src/navigation/costmap_2d/msg/VoxelGrid.msg
+/home/ros/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg/VoxelGrid.lisp: /opt/ros/kinetic/share/geometry_msgs/msg/Point32.msg
+/home/ros/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg/VoxelGrid.lisp: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/ros/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg/VoxelGrid.lisp: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from costmap_2d/VoxelGrid.msg"
+	cd /home/ros/slampbenchmarking/build/navigation/costmap_2d && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/ros/slampbenchmarking/src/navigation/costmap_2d/msg/VoxelGrid.msg -Icostmap_2d:/home/ros/slampbenchmarking/src/navigation/costmap_2d/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Imap_msgs:/opt/ros/kinetic/share/map_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p costmap_2d -o /home/ros/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg
 
 costmap_2d_generate_messages_lisp: navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_lisp
-costmap_2d_generate_messages_lisp: /home/valerio/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg/VoxelGrid.lisp
+costmap_2d_generate_messages_lisp: /home/ros/slampbenchmarking/devel/share/common-lisp/ros/costmap_2d/msg/VoxelGrid.lisp
 costmap_2d_generate_messages_lisp: navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_lisp.dir/build.make
 
 .PHONY : costmap_2d_generate_messages_lisp
@@ -76,10 +76,10 @@ navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_lisp.dir/build: co
 .PHONY : navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_lisp.dir/build
 
 navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_lisp.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/costmap_2d && $(CMAKE_COMMAND) -P CMakeFiles/costmap_2d_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/costmap_2d && $(CMAKE_COMMAND) -P CMakeFiles/costmap_2d_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_lisp.dir/clean
 
 navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_lisp.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/costmap_2d /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/costmap_2d /home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/costmap_2d /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/costmap_2d /home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_lisp.dir/depend
 

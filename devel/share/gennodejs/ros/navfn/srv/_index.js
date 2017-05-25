@@ -1,10 +1,10 @@
 
 "use strict";
 
-let MakeNavPlan = require('./MakeNavPlan.js')
 let SetCostmap = require('./SetCostmap.js')
+let MakeNavPlan = require('./MakeNavPlan.js')
 
 module.exports = {
-  MakeNavPlan: MakeNavPlan,
   SetCostmap: SetCostmap,
+  MakeNavPlan: MakeNavPlan,
 };

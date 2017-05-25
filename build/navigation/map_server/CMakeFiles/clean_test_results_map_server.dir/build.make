@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for clean_test_results_map_server.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 include navigation/map_server/CMakeFiles/clean_test_results_map_server.dir/progress.make
 
 navigation/map_server/CMakeFiles/clean_test_results_map_server:
-	cd /home/valerio/slampbenchmarking/build/navigation/map_server && /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/valerio/slampbenchmarking/build/test_results/map_server
+	cd /home/ros/slampbenchmarking/build/navigation/map_server && /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/ros/slampbenchmarking/build/test_results/map_server
 
 clean_test_results_map_server: navigation/map_server/CMakeFiles/clean_test_results_map_server
 clean_test_results_map_server: navigation/map_server/CMakeFiles/clean_test_results_map_server.dir/build.make
@@ -67,10 +67,10 @@ navigation/map_server/CMakeFiles/clean_test_results_map_server.dir/build: clean_
 .PHONY : navigation/map_server/CMakeFiles/clean_test_results_map_server.dir/build
 
 navigation/map_server/CMakeFiles/clean_test_results_map_server.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/map_server && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_map_server.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/map_server && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_map_server.dir/cmake_clean.cmake
 .PHONY : navigation/map_server/CMakeFiles/clean_test_results_map_server.dir/clean
 
 navigation/map_server/CMakeFiles/clean_test_results_map_server.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/map_server /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/map_server /home/valerio/slampbenchmarking/build/navigation/map_server/CMakeFiles/clean_test_results_map_server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/map_server /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/map_server /home/ros/slampbenchmarking/build/navigation/map_server/CMakeFiles/clean_test_results_map_server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/map_server/CMakeFiles/clean_test_results_map_server.dir/depend
 

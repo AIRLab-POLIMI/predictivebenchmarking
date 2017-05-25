@@ -1,13 +1,16 @@
 # CMake generated Testfile for 
-# Source directory: /home/valerio/slampbenchmarking/src
-# Build directory: /home/valerio/slampbenchmarking/build
+# Source directory: /home/ros/slampbenchmarking/src
+# Build directory: /home/ros/slampbenchmarking/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
 subdirs(carmen_publisher-master)
+subdirs(navigation_2d/nav2d)
+subdirs(navigation_2d/nav2d_tutorials)
 subdirs(navigation/navigation)
 subdirs(hector_navigation/hector_elevation_msgs)
+subdirs(navigation_2d/nav2d_msgs)
 subdirs(aau_multi_robot/adhoc_communication)
 subdirs(hector_navigation/hector_driving_aid_markers)
 subdirs(laser_noise)
@@ -19,12 +22,17 @@ subdirs(hector_navigation/hector_path_follower)
 subdirs(hector_navigation/hector_exploration_controller)
 subdirs(navigation/map_server)
 subdirs(navigation/amcl)
+subdirs(navigation_2d/nav2d_localizer)
 subdirs(hector_navigation/hector_costmap)
 subdirs(hector_navigation/hector_elevation_mapping)
 subdirs(navigation/robot_pose_ekf)
 subdirs(tf_listener)
 subdirs(navigation/voxel_grid)
 subdirs(navigation/costmap_2d)
+subdirs(navigation_2d/nav2d_operator)
+subdirs(navigation_2d/nav2d_navigator)
+subdirs(navigation_2d/nav2d_exploration)
+subdirs(navigation_2d/nav2d_remote)
 subdirs(navigation/nav_core)
 subdirs(navigation/base_local_planner)
 subdirs(navigation/carrot_planner)

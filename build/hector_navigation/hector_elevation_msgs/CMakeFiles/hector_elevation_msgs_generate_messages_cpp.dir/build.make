@@ -43,43 +43,43 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for hector_elevation_msgs_generate_messages_cpp.
 
 # Include the progress variables for this target.
 include hector_navigation/hector_elevation_msgs/CMakeFiles/hector_elevation_msgs_generate_messages_cpp.dir/progress.make
 
-hector_navigation/hector_elevation_msgs/CMakeFiles/hector_elevation_msgs_generate_messages_cpp: /home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h
-hector_navigation/hector_elevation_msgs/CMakeFiles/hector_elevation_msgs_generate_messages_cpp: /home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h
+hector_navigation/hector_elevation_msgs/CMakeFiles/hector_elevation_msgs_generate_messages_cpp: /home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h
+hector_navigation/hector_elevation_msgs/CMakeFiles/hector_elevation_msgs_generate_messages_cpp: /home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h
 
 
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h: /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from hector_elevation_msgs/ElevationMapMetaData.msg"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg -Ihector_elevation_msgs:/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p hector_elevation_msgs -o /home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h: /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from hector_elevation_msgs/ElevationMapMetaData.msg"
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg -Ihector_elevation_msgs:/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p hector_elevation_msgs -o /home/ros/slampbenchmarking/devel/include/hector_elevation_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from hector_elevation_msgs/ElevationGrid.msg"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg -Ihector_elevation_msgs:/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p hector_elevation_msgs -o /home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationMapMetaData.msg
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from hector_elevation_msgs/ElevationGrid.msg"
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg/ElevationGrid.msg -Ihector_elevation_msgs:/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p hector_elevation_msgs -o /home/ros/slampbenchmarking/devel/include/hector_elevation_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 hector_elevation_msgs_generate_messages_cpp: hector_navigation/hector_elevation_msgs/CMakeFiles/hector_elevation_msgs_generate_messages_cpp
-hector_elevation_msgs_generate_messages_cpp: /home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h
-hector_elevation_msgs_generate_messages_cpp: /home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h
+hector_elevation_msgs_generate_messages_cpp: /home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h
+hector_elevation_msgs_generate_messages_cpp: /home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h
 hector_elevation_msgs_generate_messages_cpp: hector_navigation/hector_elevation_msgs/CMakeFiles/hector_elevation_msgs_generate_messages_cpp.dir/build.make
 
 .PHONY : hector_elevation_msgs_generate_messages_cpp
@@ -90,10 +90,10 @@ hector_navigation/hector_elevation_msgs/CMakeFiles/hector_elevation_msgs_generat
 .PHONY : hector_navigation/hector_elevation_msgs/CMakeFiles/hector_elevation_msgs_generate_messages_cpp.dir/build
 
 hector_navigation/hector_elevation_msgs/CMakeFiles/hector_elevation_msgs_generate_messages_cpp.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_msgs && $(CMAKE_COMMAND) -P CMakeFiles/hector_elevation_msgs_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_msgs && $(CMAKE_COMMAND) -P CMakeFiles/hector_elevation_msgs_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : hector_navigation/hector_elevation_msgs/CMakeFiles/hector_elevation_msgs_generate_messages_cpp.dir/clean
 
 hector_navigation/hector_elevation_msgs/CMakeFiles/hector_elevation_msgs_generate_messages_cpp.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_msgs /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_msgs /home/valerio/slampbenchmarking/build/hector_navigation/hector_elevation_msgs/CMakeFiles/hector_elevation_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_msgs /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_msgs /home/ros/slampbenchmarking/build/hector_navigation/hector_elevation_msgs/CMakeFiles/hector_elevation_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : hector_navigation/hector_elevation_msgs/CMakeFiles/hector_elevation_msgs_generate_messages_cpp.dir/depend
 

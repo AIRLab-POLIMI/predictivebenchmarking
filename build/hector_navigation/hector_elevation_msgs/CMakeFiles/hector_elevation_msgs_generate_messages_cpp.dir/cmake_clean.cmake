@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hector_elevation_msgs_generate_messages_cpp"
-  "/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h"
-  "/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h"
+  "/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h"
+  "/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h"
 )
 
 # Per-language clean rules from dependency scanning.

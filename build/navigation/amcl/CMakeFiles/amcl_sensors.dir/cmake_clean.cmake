@@ -2,8 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/amcl_sensors.dir/src/amcl/sensors/amcl_sensor.cpp.o"
   "CMakeFiles/amcl_sensors.dir/src/amcl/sensors/amcl_odom.cpp.o"
   "CMakeFiles/amcl_sensors.dir/src/amcl/sensors/amcl_laser.cpp.o"
-  "/home/valerio/slampbenchmarking/devel/lib/libamcl_sensors.pdb"
-  "/home/valerio/slampbenchmarking/devel/lib/libamcl_sensors.so"
+  "/home/ros/slampbenchmarking/devel/lib/libamcl_sensors.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/libamcl_sensors.so"
 )
 
 # Per-language clean rules from dependency scanning.

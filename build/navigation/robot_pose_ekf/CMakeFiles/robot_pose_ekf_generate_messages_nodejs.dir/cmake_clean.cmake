@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/robot_pose_ekf_generate_messages_nodejs"
-  "/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/robot_pose_ekf/srv/GetStatus.js"
+  "/home/ros/slampbenchmarking/devel/share/gennodejs/ros/robot_pose_ekf/srv/GetStatus.js"
 )
 
 # Per-language clean rules from dependency scanning.

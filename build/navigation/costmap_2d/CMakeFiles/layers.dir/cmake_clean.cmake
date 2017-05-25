@@ -4,8 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/layers.dir/plugins/static_layer.cpp.o"
   "CMakeFiles/layers.dir/plugins/voxel_layer.cpp.o"
   "CMakeFiles/layers.dir/src/observation_buffer.cpp.o"
-  "/home/valerio/slampbenchmarking/devel/lib/liblayers.pdb"
-  "/home/valerio/slampbenchmarking/devel/lib/liblayers.so"
+  "/home/ros/slampbenchmarking/devel/lib/liblayers.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/liblayers.so"
 )
 
 # Per-language clean rules from dependency scanning.

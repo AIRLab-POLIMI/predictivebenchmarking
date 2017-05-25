@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for _run_tests_amcl_rostest.
 
@@ -63,10 +63,10 @@ navigation/amcl/CMakeFiles/_run_tests_amcl_rostest.dir/build: _run_tests_amcl_ro
 .PHONY : navigation/amcl/CMakeFiles/_run_tests_amcl_rostest.dir/build
 
 navigation/amcl/CMakeFiles/_run_tests_amcl_rostest.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_amcl_rostest.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_amcl_rostest.dir/cmake_clean.cmake
 .PHONY : navigation/amcl/CMakeFiles/_run_tests_amcl_rostest.dir/clean
 
 navigation/amcl/CMakeFiles/_run_tests_amcl_rostest.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/amcl /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/amcl /home/valerio/slampbenchmarking/build/navigation/amcl/CMakeFiles/_run_tests_amcl_rostest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/amcl /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/amcl /home/ros/slampbenchmarking/build/navigation/amcl/CMakeFiles/_run_tests_amcl_rostest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/amcl/CMakeFiles/_run_tests_amcl_rostest.dir/depend
 

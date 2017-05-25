@@ -1,34 +1,34 @@
 
 "use strict";
 
-let ExpAuctionElement = require('./ExpAuctionElement.js');
-let MmMapUpdate = require('./MmMapUpdate.js');
-let MmRobotPosition = require('./MmRobotPosition.js');
-let CMgrDimensions = require('./CMgrDimensions.js');
-let ExpClusterElement = require('./ExpClusterElement.js');
-let ExpAuction = require('./ExpAuction.js');
-let ExpFrontier = require('./ExpFrontier.js');
 let ExpFrontierElement = require('./ExpFrontierElement.js');
-let MmListOfPoints = require('./MmListOfPoints.js');
+let ExpFrontier = require('./ExpFrontier.js');
+let ExpClusterElement = require('./ExpClusterElement.js');
+let ExpAuctionElement = require('./ExpAuctionElement.js');
+let MmRobotPosition = require('./MmRobotPosition.js');
 let MmControl = require('./MmControl.js');
-let MmPoint = require('./MmPoint.js');
+let CMgrDimensions = require('./CMgrDimensions.js');
+let ExpAuction = require('./ExpAuction.js');
+let MmMapUpdate = require('./MmMapUpdate.js');
 let RecvString = require('./RecvString.js');
-let ExpCluster = require('./ExpCluster.js');
+let MmListOfPoints = require('./MmListOfPoints.js');
 let CMgrRobotUpdate = require('./CMgrRobotUpdate.js');
+let MmPoint = require('./MmPoint.js');
+let ExpCluster = require('./ExpCluster.js');
 
 module.exports = {
-  ExpAuctionElement: ExpAuctionElement,
-  MmMapUpdate: MmMapUpdate,
-  MmRobotPosition: MmRobotPosition,
-  CMgrDimensions: CMgrDimensions,
-  ExpClusterElement: ExpClusterElement,
-  ExpAuction: ExpAuction,
-  ExpFrontier: ExpFrontier,
   ExpFrontierElement: ExpFrontierElement,
-  MmListOfPoints: MmListOfPoints,
+  ExpFrontier: ExpFrontier,
+  ExpClusterElement: ExpClusterElement,
+  ExpAuctionElement: ExpAuctionElement,
+  MmRobotPosition: MmRobotPosition,
   MmControl: MmControl,
-  MmPoint: MmPoint,
+  CMgrDimensions: CMgrDimensions,
+  ExpAuction: ExpAuction,
+  MmMapUpdate: MmMapUpdate,
   RecvString: RecvString,
-  ExpCluster: ExpCluster,
+  MmListOfPoints: MmListOfPoints,
   CMgrRobotUpdate: CMgrRobotUpdate,
+  MmPoint: MmPoint,
+  ExpCluster: ExpCluster,
 };

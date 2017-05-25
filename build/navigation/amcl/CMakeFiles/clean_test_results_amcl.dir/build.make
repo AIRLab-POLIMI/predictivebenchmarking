@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for clean_test_results_amcl.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 include navigation/amcl/CMakeFiles/clean_test_results_amcl.dir/progress.make
 
 navigation/amcl/CMakeFiles/clean_test_results_amcl:
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/valerio/slampbenchmarking/build/test_results/amcl
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/ros/slampbenchmarking/build/test_results/amcl
 
 clean_test_results_amcl: navigation/amcl/CMakeFiles/clean_test_results_amcl
 clean_test_results_amcl: navigation/amcl/CMakeFiles/clean_test_results_amcl.dir/build.make
@@ -67,10 +67,10 @@ navigation/amcl/CMakeFiles/clean_test_results_amcl.dir/build: clean_test_results
 .PHONY : navigation/amcl/CMakeFiles/clean_test_results_amcl.dir/build
 
 navigation/amcl/CMakeFiles/clean_test_results_amcl.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_amcl.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_amcl.dir/cmake_clean.cmake
 .PHONY : navigation/amcl/CMakeFiles/clean_test_results_amcl.dir/clean
 
 navigation/amcl/CMakeFiles/clean_test_results_amcl.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/amcl /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/amcl /home/valerio/slampbenchmarking/build/navigation/amcl/CMakeFiles/clean_test_results_amcl.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/amcl /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/amcl /home/ros/slampbenchmarking/build/navigation/amcl/CMakeFiles/clean_test_results_amcl.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/amcl/CMakeFiles/clean_test_results_amcl.dir/depend
 

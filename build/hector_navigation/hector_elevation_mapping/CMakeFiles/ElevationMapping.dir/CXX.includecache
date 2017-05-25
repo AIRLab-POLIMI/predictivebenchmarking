@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationGrid.h
 string
 -
 vector
@@ -26,7 +26,7 @@ std_msgs/Header.h
 hector_elevation_msgs/ElevationMapMetaData.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h
+/home/ros/slampbenchmarking/devel/include/hector_elevation_msgs/ElevationMapMetaData.h
 string
 -
 vector
@@ -44,11 +44,11 @@ ros/message_operations.h
 geometry_msgs/Pose.h
 -
 
-/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_mapping/include/hector_elevation_mapping/hector_elevation_mapping.h
+/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_mapping/include/hector_elevation_mapping/hector_elevation_mapping.h
 pcl_ros/point_cloud.h
-/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_mapping/include/hector_elevation_mapping/pcl_ros/point_cloud.h
+/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_mapping/include/hector_elevation_mapping/pcl_ros/point_cloud.h
 pcl/point_types.h
-/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_mapping/include/hector_elevation_mapping/pcl/point_types.h
+/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_mapping/include/hector_elevation_mapping/pcl/point_types.h
 pcl_ros/transforms.h
 -
 tf/transform_listener.h
@@ -72,7 +72,7 @@ geometry_msgs/PoseWithCovarianceStamped.h
 nodelet/nodelet.h
 -
 
-/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_mapping/src/hector_elevation_mapping.cpp
+/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_mapping/src/hector_elevation_mapping.cpp
 pluginlib/class_list_macros.h
 -
 nodelet/nodelet.h

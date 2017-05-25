@@ -17,8 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/base_local_planner.dir/src/simple_trajectory_generator.cpp.o"
   "CMakeFiles/base_local_planner.dir/src/trajectory.cpp.o"
   "CMakeFiles/base_local_planner.dir/src/voxel_grid_model.cpp.o"
-  "/home/valerio/slampbenchmarking/devel/lib/libbase_local_planner.pdb"
-  "/home/valerio/slampbenchmarking/devel/lib/libbase_local_planner.so"
+  "/home/ros/slampbenchmarking/devel/lib/libbase_local_planner.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/libbase_local_planner.so"
 )
 
 # Per-language clean rules from dependency scanning.

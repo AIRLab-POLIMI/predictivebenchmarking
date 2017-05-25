@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/valerio/slampbenchmarking/src/hector_navigation/hector_path_follower/include/hector_path_follower/hector_path_follower.h
+/home/ros/slampbenchmarking/src/hector_navigation/hector_path_follower/include/hector_path_follower/hector_path_follower.h
 ros/ros.h
 -
 tf/tf.h
@@ -20,7 +20,7 @@ geometry_msgs/PoseStamped.h
 geometry_msgs/Twist.h
 -
 
-/home/valerio/slampbenchmarking/src/hector_navigation/hector_path_follower/src/hector_path_follower.cpp
+/home/ros/slampbenchmarking/src/hector_navigation/hector_path_follower/src/hector_path_follower.cpp
 hector_path_follower/hector_path_follower.h
 -
 

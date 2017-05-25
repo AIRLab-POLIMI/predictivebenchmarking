@@ -43,40 +43,40 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for map_merger_generate_messages_eus.
 
 # Include the progress variables for this target.
 include aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/progress.make
 
-aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus: /home/valerio/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/LogMaps.l
-aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus: /home/valerio/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/TransformPoint.l
-aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus: /home/valerio/slampbenchmarking/devel/share/roseus/ros/map_merger/manifest.l
+aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus: /home/ros/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/LogMaps.l
+aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus: /home/ros/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/TransformPoint.l
+aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus: /home/ros/slampbenchmarking/devel/share/roseus/ros/map_merger/manifest.l
 
 
-/home/valerio/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/LogMaps.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/valerio/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/LogMaps.l: /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from map_merger/LogMaps.srv"
-	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv -Iadhoc_communication:/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/valerio/slampbenchmarking/devel/share/roseus/ros/map_merger/srv
+/home/ros/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/LogMaps.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/ros/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/LogMaps.l: /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from map_merger/LogMaps.srv"
+	cd /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv -Iadhoc_communication:/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/ros/slampbenchmarking/devel/share/roseus/ros/map_merger/srv
 
-/home/valerio/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/TransformPoint.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-/home/valerio/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/TransformPoint.l: /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv
-/home/valerio/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/TransformPoint.l: /home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from map_merger/TransformPoint.srv"
-	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv -Iadhoc_communication:/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/valerio/slampbenchmarking/devel/share/roseus/ros/map_merger/srv
+/home/ros/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/TransformPoint.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/ros/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/TransformPoint.l: /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv
+/home/ros/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/TransformPoint.l: /home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from map_merger/TransformPoint.srv"
+	cd /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv -Iadhoc_communication:/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/ros/slampbenchmarking/devel/share/roseus/ros/map_merger/srv
 
-/home/valerio/slampbenchmarking/devel/share/roseus/ros/map_merger/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for map_merger"
-	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/valerio/slampbenchmarking/devel/share/roseus/ros/map_merger map_merger adhoc_communication
+/home/ros/slampbenchmarking/devel/share/roseus/ros/map_merger/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for map_merger"
+	cd /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/ros/slampbenchmarking/devel/share/roseus/ros/map_merger map_merger adhoc_communication
 
 map_merger_generate_messages_eus: aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus
-map_merger_generate_messages_eus: /home/valerio/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/LogMaps.l
-map_merger_generate_messages_eus: /home/valerio/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/TransformPoint.l
-map_merger_generate_messages_eus: /home/valerio/slampbenchmarking/devel/share/roseus/ros/map_merger/manifest.l
+map_merger_generate_messages_eus: /home/ros/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/LogMaps.l
+map_merger_generate_messages_eus: /home/ros/slampbenchmarking/devel/share/roseus/ros/map_merger/srv/TransformPoint.l
+map_merger_generate_messages_eus: /home/ros/slampbenchmarking/devel/share/roseus/ros/map_merger/manifest.l
 map_merger_generate_messages_eus: aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/build.make
 
 .PHONY : map_merger_generate_messages_eus
@@ -87,10 +87,10 @@ aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/build
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/build
 
 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger && $(CMAKE_COMMAND) -P CMakeFiles/map_merger_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger && $(CMAKE_COMMAND) -P CMakeFiles/map_merger_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/clean
 
 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/depend
 

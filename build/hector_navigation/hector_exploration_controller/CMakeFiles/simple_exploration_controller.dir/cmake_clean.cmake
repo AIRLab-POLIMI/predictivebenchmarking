@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.o"
-  "/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller.pdb"
-  "/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller"
+  "/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller"
 )
 
 # Per-language clean rules from dependency scanning.

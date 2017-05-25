@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for _navfn_generate_messages_check_deps_MakeNavPlan.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 include navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/progress.make
 
 navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan:
-	cd /home/valerio/slampbenchmarking/build/navigation/navfn && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py navfn /home/valerio/slampbenchmarking/src/navigation/navfn/srv/MakeNavPlan.srv geometry_msgs/Quaternion:geometry_msgs/PoseStamped:geometry_msgs/Pose:std_msgs/Header:geometry_msgs/Point
+	cd /home/ros/slampbenchmarking/build/navigation/navfn && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py navfn /home/ros/slampbenchmarking/src/navigation/navfn/srv/MakeNavPlan.srv geometry_msgs/Quaternion:geometry_msgs/PoseStamped:geometry_msgs/Pose:std_msgs/Header:geometry_msgs/Point
 
 _navfn_generate_messages_check_deps_MakeNavPlan: navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan
 _navfn_generate_messages_check_deps_MakeNavPlan: navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/build.make
@@ -67,10 +67,10 @@ navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/
 .PHONY : navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/build
 
 navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/navfn && $(CMAKE_COMMAND) -P CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/navfn && $(CMAKE_COMMAND) -P CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/cmake_clean.cmake
 .PHONY : navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/clean
 
 navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/navfn /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/navfn /home/valerio/slampbenchmarking/build/navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/navfn /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/navfn /home/ros/slampbenchmarking/build/navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/navfn/CMakeFiles/_navfn_generate_messages_check_deps_MakeNavPlan.dir/depend
 

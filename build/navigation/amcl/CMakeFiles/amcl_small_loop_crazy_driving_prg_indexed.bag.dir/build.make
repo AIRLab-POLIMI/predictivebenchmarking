@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for amcl_small_loop_crazy_driving_prg_indexed.bag.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 include navigation/amcl/CMakeFiles/amcl_small_loop_crazy_driving_prg_indexed.bag.dir/progress.make
 
 navigation/amcl/CMakeFiles/amcl_small_loop_crazy_driving_prg_indexed.bag:
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /opt/ros/kinetic/share/catkin/cmake/test/download_checkmd5.py http://download.ros.org/data/amcl/small_loop_crazy_driving_prg_indexed.bag /home/valerio/slampbenchmarking/devel/share/amcl/test/small_loop_crazy_driving_prg_indexed.bag 4a58d1a7962914009d99000d06e5939c --ignore-error
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && /opt/ros/kinetic/share/catkin/cmake/test/download_checkmd5.py http://download.ros.org/data/amcl/small_loop_crazy_driving_prg_indexed.bag /home/ros/slampbenchmarking/devel/share/amcl/test/small_loop_crazy_driving_prg_indexed.bag 4a58d1a7962914009d99000d06e5939c --ignore-error
 
 amcl_small_loop_crazy_driving_prg_indexed.bag: navigation/amcl/CMakeFiles/amcl_small_loop_crazy_driving_prg_indexed.bag
 amcl_small_loop_crazy_driving_prg_indexed.bag: navigation/amcl/CMakeFiles/amcl_small_loop_crazy_driving_prg_indexed.bag.dir/build.make
@@ -67,10 +67,10 @@ navigation/amcl/CMakeFiles/amcl_small_loop_crazy_driving_prg_indexed.bag.dir/bui
 .PHONY : navigation/amcl/CMakeFiles/amcl_small_loop_crazy_driving_prg_indexed.bag.dir/build
 
 navigation/amcl/CMakeFiles/amcl_small_loop_crazy_driving_prg_indexed.bag.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/amcl_small_loop_crazy_driving_prg_indexed.bag.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/amcl_small_loop_crazy_driving_prg_indexed.bag.dir/cmake_clean.cmake
 .PHONY : navigation/amcl/CMakeFiles/amcl_small_loop_crazy_driving_prg_indexed.bag.dir/clean
 
 navigation/amcl/CMakeFiles/amcl_small_loop_crazy_driving_prg_indexed.bag.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/amcl /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/amcl /home/valerio/slampbenchmarking/build/navigation/amcl/CMakeFiles/amcl_small_loop_crazy_driving_prg_indexed.bag.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/amcl /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/amcl /home/ros/slampbenchmarking/build/navigation/amcl/CMakeFiles/amcl_small_loop_crazy_driving_prg_indexed.bag.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/amcl/CMakeFiles/amcl_small_loop_crazy_driving_prg_indexed.bag.dir/depend
 

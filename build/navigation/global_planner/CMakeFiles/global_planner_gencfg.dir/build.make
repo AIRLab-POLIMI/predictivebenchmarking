@@ -43,44 +43,44 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for global_planner_gencfg.
 
 # Include the progress variables for this target.
 include navigation/global_planner/CMakeFiles/global_planner_gencfg.dir/progress.make
 
-navigation/global_planner/CMakeFiles/global_planner_gencfg: /home/valerio/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h
-navigation/global_planner/CMakeFiles/global_planner_gencfg: /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/global_planner/cfg/GlobalPlannerConfig.py
+navigation/global_planner/CMakeFiles/global_planner_gencfg: /home/ros/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h
+navigation/global_planner/CMakeFiles/global_planner_gencfg: /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/global_planner/cfg/GlobalPlannerConfig.py
 
 
-/home/valerio/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h: /home/valerio/slampbenchmarking/src/navigation/global_planner/cfg/GlobalPlanner.cfg
-/home/valerio/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.py.template
-/home/valerio/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dynamic reconfigure files from cfg/GlobalPlanner.cfg: /home/valerio/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/global_planner/cfg/GlobalPlannerConfig.py"
-	cd /home/valerio/slampbenchmarking/build/navigation/global_planner && ../../catkin_generated/env_cached.sh /home/valerio/slampbenchmarking/build/navigation/global_planner/setup_custom_pythonpath.sh /home/valerio/slampbenchmarking/src/navigation/global_planner/cfg/GlobalPlanner.cfg /opt/ros/kinetic/share/dynamic_reconfigure/cmake/.. /home/valerio/slampbenchmarking/devel/share/global_planner /home/valerio/slampbenchmarking/devel/include/global_planner /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/global_planner
+/home/ros/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h: /home/ros/slampbenchmarking/src/navigation/global_planner/cfg/GlobalPlanner.cfg
+/home/ros/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.py.template
+/home/ros/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dynamic reconfigure files from cfg/GlobalPlanner.cfg: /home/ros/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/global_planner/cfg/GlobalPlannerConfig.py"
+	cd /home/ros/slampbenchmarking/build/navigation/global_planner && ../../catkin_generated/env_cached.sh /home/ros/slampbenchmarking/build/navigation/global_planner/setup_custom_pythonpath.sh /home/ros/slampbenchmarking/src/navigation/global_planner/cfg/GlobalPlanner.cfg /opt/ros/kinetic/share/dynamic_reconfigure/cmake/.. /home/ros/slampbenchmarking/devel/share/global_planner /home/ros/slampbenchmarking/devel/include/global_planner /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/global_planner
 
-/home/valerio/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig.dox: /home/valerio/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig.dox
+/home/ros/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig.dox: /home/ros/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig.dox
 
-/home/valerio/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig-usage.dox: /home/valerio/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig-usage.dox
+/home/ros/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig-usage.dox: /home/ros/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig-usage.dox
 
-/home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/global_planner/cfg/GlobalPlannerConfig.py: /home/valerio/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/global_planner/cfg/GlobalPlannerConfig.py
+/home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/global_planner/cfg/GlobalPlannerConfig.py: /home/ros/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/global_planner/cfg/GlobalPlannerConfig.py
 
-/home/valerio/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig.wikidoc: /home/valerio/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig.wikidoc
+/home/ros/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig.wikidoc: /home/ros/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig.wikidoc
 
 global_planner_gencfg: navigation/global_planner/CMakeFiles/global_planner_gencfg
-global_planner_gencfg: /home/valerio/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h
-global_planner_gencfg: /home/valerio/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig.dox
-global_planner_gencfg: /home/valerio/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig-usage.dox
-global_planner_gencfg: /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/global_planner/cfg/GlobalPlannerConfig.py
-global_planner_gencfg: /home/valerio/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig.wikidoc
+global_planner_gencfg: /home/ros/slampbenchmarking/devel/include/global_planner/GlobalPlannerConfig.h
+global_planner_gencfg: /home/ros/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig.dox
+global_planner_gencfg: /home/ros/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig-usage.dox
+global_planner_gencfg: /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/global_planner/cfg/GlobalPlannerConfig.py
+global_planner_gencfg: /home/ros/slampbenchmarking/devel/share/global_planner/docs/GlobalPlannerConfig.wikidoc
 global_planner_gencfg: navigation/global_planner/CMakeFiles/global_planner_gencfg.dir/build.make
 
 .PHONY : global_planner_gencfg
@@ -91,10 +91,10 @@ navigation/global_planner/CMakeFiles/global_planner_gencfg.dir/build: global_pla
 .PHONY : navigation/global_planner/CMakeFiles/global_planner_gencfg.dir/build
 
 navigation/global_planner/CMakeFiles/global_planner_gencfg.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/global_planner && $(CMAKE_COMMAND) -P CMakeFiles/global_planner_gencfg.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/global_planner && $(CMAKE_COMMAND) -P CMakeFiles/global_planner_gencfg.dir/cmake_clean.cmake
 .PHONY : navigation/global_planner/CMakeFiles/global_planner_gencfg.dir/clean
 
 navigation/global_planner/CMakeFiles/global_planner_gencfg.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/global_planner /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/global_planner /home/valerio/slampbenchmarking/build/navigation/global_planner/CMakeFiles/global_planner_gencfg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/global_planner /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/global_planner /home/ros/slampbenchmarking/build/navigation/global_planner/CMakeFiles/global_planner_gencfg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/global_planner/CMakeFiles/global_planner_gencfg.dir/depend
 

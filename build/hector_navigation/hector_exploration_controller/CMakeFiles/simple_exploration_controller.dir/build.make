@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Include any dependencies generated for this target.
 include hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/depend.make
@@ -58,17 +58,17 @@ include hector_navigation/hector_exploration_controller/CMakeFiles/simple_explor
 include hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/flags.make
 
 hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.o: hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/flags.make
-hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.o: /home/valerio/slampbenchmarking/src/hector_navigation/hector_exploration_controller/src/simple_exploration_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.o"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_exploration_controller && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.o -c /home/valerio/slampbenchmarking/src/hector_navigation/hector_exploration_controller/src/simple_exploration_controller.cpp
+hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.o: /home/ros/slampbenchmarking/src/hector_navigation/hector_exploration_controller/src/simple_exploration_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.o"
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_exploration_controller && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.o -c /home/ros/slampbenchmarking/src/hector_navigation/hector_exploration_controller/src/simple_exploration_controller.cpp
 
 hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.i"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_exploration_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valerio/slampbenchmarking/src/hector_navigation/hector_exploration_controller/src/simple_exploration_controller.cpp > CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.i
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_exploration_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/slampbenchmarking/src/hector_navigation/hector_exploration_controller/src/simple_exploration_controller.cpp > CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.i
 
 hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.s"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_exploration_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valerio/slampbenchmarking/src/hector_navigation/hector_exploration_controller/src/simple_exploration_controller.cpp -o CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.s
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_exploration_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/slampbenchmarking/src/hector_navigation/hector_exploration_controller/src/simple_exploration_controller.cpp -o CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.s
 
 hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.o.requires:
 
@@ -88,39 +88,39 @@ simple_exploration_controller_OBJECTS = \
 # External object files for target simple_exploration_controller
 simple_exploration_controller_EXTERNAL_OBJECTS =
 
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.o
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/build.make
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /home/valerio/slampbenchmarking/devel/lib/libhector_path_follower.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libtf.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libtf2_ros.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libactionlib.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libmessage_filters.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libroscpp.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libtf2.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/librosconsole.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/librostime.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libcpp_common.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_exploration_controller && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/simple_exploration_controller.dir/link.txt --verbose=$(VERBOSE)
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.o
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/build.make
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /home/ros/slampbenchmarking/devel/lib/libhector_path_follower.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libtf.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libtf2_ros.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libactionlib.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libmessage_filters.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libroscpp.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libtf2.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/librosconsole.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/librostime.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /opt/ros/kinetic/lib/libcpp_common.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller: hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller"
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_exploration_controller && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/simple_exploration_controller.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/build: /home/valerio/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller
+hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/build: /home/ros/slampbenchmarking/devel/lib/hector_exploration_controller/simple_exploration_controller
 
 .PHONY : hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/build
 
@@ -129,10 +129,10 @@ hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_co
 .PHONY : hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/requires
 
 hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_exploration_controller && $(CMAKE_COMMAND) -P CMakeFiles/simple_exploration_controller.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_exploration_controller && $(CMAKE_COMMAND) -P CMakeFiles/simple_exploration_controller.dir/cmake_clean.cmake
 .PHONY : hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/clean
 
 hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/hector_navigation/hector_exploration_controller /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/hector_navigation/hector_exploration_controller /home/valerio/slampbenchmarking/build/hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/hector_navigation/hector_exploration_controller /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/hector_navigation/hector_exploration_controller /home/ros/slampbenchmarking/build/hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/depend
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -63,10 +63,10 @@ carmen_publisher-master/CMakeFiles/_catkin_empty_exported_target.dir/build: _cat
 .PHONY : carmen_publisher-master/CMakeFiles/_catkin_empty_exported_target.dir/build
 
 carmen_publisher-master/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/carmen_publisher-master && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/carmen_publisher-master && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
 .PHONY : carmen_publisher-master/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 carmen_publisher-master/CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/carmen_publisher-master /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/carmen_publisher-master /home/valerio/slampbenchmarking/build/carmen_publisher-master/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/carmen_publisher-master /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/carmen_publisher-master /home/ros/slampbenchmarking/build/carmen_publisher-master/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : carmen_publisher-master/CMakeFiles/_catkin_empty_exported_target.dir/depend
 

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/valerio/slampbenchmarking/devel/include/costmap_2d/Costmap2DConfig.h
+/home/ros/slampbenchmarking/devel/include/costmap_2d/Costmap2DConfig.h
 dynamic_reconfigure/config_tools.h
 -
 limits
@@ -24,7 +24,7 @@ dynamic_reconfigure/config_init_mutex.h
 boost/any.hpp
 -
 
-/home/valerio/slampbenchmarking/src/hector_navigation/hector_exploration_node/src/exploration_node.cpp
+/home/ros/slampbenchmarking/src/hector_navigation/hector_exploration_node/src/exploration_node.cpp
 ros/ros.h
 -
 hector_exploration_planner/hector_exploration_planner.h
@@ -34,7 +34,7 @@ costmap_2d/costmap_2d_ros.h
 hector_nav_msgs/GetRobotTrajectory.h
 -
 
-/home/valerio/slampbenchmarking/src/hector_navigation/hector_exploration_planner/include/hector_exploration_planner/exploration_transform_vis.h
+/home/ros/slampbenchmarking/src/hector_navigation/hector_exploration_planner/include/hector_exploration_planner/exploration_transform_vis.h
 sensor_msgs/PointCloud.h
 -
 ros/ros.h
@@ -42,7 +42,7 @@ ros/ros.h
 costmap_2d/costmap_2d.h
 -
 
-/home/valerio/slampbenchmarking/src/hector_navigation/hector_exploration_planner/include/hector_exploration_planner/hector_exploration_planner.h
+/home/ros/slampbenchmarking/src/hector_navigation/hector_exploration_planner/include/hector_exploration_planner/hector_exploration_planner.h
 ros/ros.h
 -
 costmap_2d/costmap_2d.h
@@ -58,9 +58,9 @@ hector_exploration_planner/exploration_transform_vis.h
 boost/shared_array.hpp
 -
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/cost_values.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/cost_values.h
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d.h
 vector
 -
 queue
@@ -70,7 +70,7 @@ geometry_msgs/Point.h
 boost/thread.hpp
 -
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_publisher.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_publisher.h
 ros/ros.h
 -
 costmap_2d/costmap_2d.h
@@ -82,7 +82,7 @@ map_msgs/OccupancyGridUpdate.h
 tf/transform_datatypes.h
 -
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_ros.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_ros.h
 costmap_2d/layered_costmap.h
 -
 costmap_2d/layer.h
@@ -102,7 +102,7 @@ dynamic_reconfigure/server.h
 pluginlib/class_loader.h
 -
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/footprint.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/footprint.h
 ros/ros.h
 -
 geometry_msgs/Polygon.h
@@ -114,7 +114,7 @@ geometry_msgs/Point.h
 geometry_msgs/Point32.h
 -
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layer.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layer.h
 costmap_2d/costmap_2d.h
 -
 costmap_2d/layered_costmap.h
@@ -126,7 +126,7 @@ tf/tf.h
 tf/transform_listener.h
 -
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layered_costmap.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layered_costmap.h
 costmap_2d/cost_values.h
 -
 costmap_2d/layer.h

@@ -43,44 +43,44 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for hector_costmap_gencfg.
 
 # Include the progress variables for this target.
 include hector_navigation/hector_costmap/CMakeFiles/hector_costmap_gencfg.dir/progress.make
 
-hector_navigation/hector_costmap/CMakeFiles/hector_costmap_gencfg: /home/valerio/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h
-hector_navigation/hector_costmap/CMakeFiles/hector_costmap_gencfg: /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_costmap/cfg/CostMapCalculationConfig.py
+hector_navigation/hector_costmap/CMakeFiles/hector_costmap_gencfg: /home/ros/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h
+hector_navigation/hector_costmap/CMakeFiles/hector_costmap_gencfg: /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_costmap/cfg/CostMapCalculationConfig.py
 
 
-/home/valerio/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h: /home/valerio/slampbenchmarking/src/hector_navigation/hector_costmap/cfg/CostMapCalculation.cfg
-/home/valerio/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.py.template
-/home/valerio/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dynamic reconfigure files from cfg/CostMapCalculation.cfg: /home/valerio/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_costmap/cfg/CostMapCalculationConfig.py"
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_costmap && ../../catkin_generated/env_cached.sh /home/valerio/slampbenchmarking/build/hector_navigation/hector_costmap/setup_custom_pythonpath.sh /home/valerio/slampbenchmarking/src/hector_navigation/hector_costmap/cfg/CostMapCalculation.cfg /opt/ros/kinetic/share/dynamic_reconfigure/cmake/.. /home/valerio/slampbenchmarking/devel/share/hector_costmap /home/valerio/slampbenchmarking/devel/include/hector_costmap /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_costmap
+/home/ros/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h: /home/ros/slampbenchmarking/src/hector_navigation/hector_costmap/cfg/CostMapCalculation.cfg
+/home/ros/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.py.template
+/home/ros/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dynamic reconfigure files from cfg/CostMapCalculation.cfg: /home/ros/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_costmap/cfg/CostMapCalculationConfig.py"
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_costmap && ../../catkin_generated/env_cached.sh /home/ros/slampbenchmarking/build/hector_navigation/hector_costmap/setup_custom_pythonpath.sh /home/ros/slampbenchmarking/src/hector_navigation/hector_costmap/cfg/CostMapCalculation.cfg /opt/ros/kinetic/share/dynamic_reconfigure/cmake/.. /home/ros/slampbenchmarking/devel/share/hector_costmap /home/ros/slampbenchmarking/devel/include/hector_costmap /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_costmap
 
-/home/valerio/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig.dox: /home/valerio/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig.dox
+/home/ros/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig.dox: /home/ros/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig.dox
 
-/home/valerio/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig-usage.dox: /home/valerio/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig-usage.dox
+/home/ros/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig-usage.dox: /home/ros/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig-usage.dox
 
-/home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_costmap/cfg/CostMapCalculationConfig.py: /home/valerio/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_costmap/cfg/CostMapCalculationConfig.py
+/home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_costmap/cfg/CostMapCalculationConfig.py: /home/ros/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_costmap/cfg/CostMapCalculationConfig.py
 
-/home/valerio/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig.wikidoc: /home/valerio/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig.wikidoc
+/home/ros/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig.wikidoc: /home/ros/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig.wikidoc
 
 hector_costmap_gencfg: hector_navigation/hector_costmap/CMakeFiles/hector_costmap_gencfg
-hector_costmap_gencfg: /home/valerio/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h
-hector_costmap_gencfg: /home/valerio/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig.dox
-hector_costmap_gencfg: /home/valerio/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig-usage.dox
-hector_costmap_gencfg: /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_costmap/cfg/CostMapCalculationConfig.py
-hector_costmap_gencfg: /home/valerio/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig.wikidoc
+hector_costmap_gencfg: /home/ros/slampbenchmarking/devel/include/hector_costmap/CostMapCalculationConfig.h
+hector_costmap_gencfg: /home/ros/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig.dox
+hector_costmap_gencfg: /home/ros/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig-usage.dox
+hector_costmap_gencfg: /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/hector_costmap/cfg/CostMapCalculationConfig.py
+hector_costmap_gencfg: /home/ros/slampbenchmarking/devel/share/hector_costmap/docs/CostMapCalculationConfig.wikidoc
 hector_costmap_gencfg: hector_navigation/hector_costmap/CMakeFiles/hector_costmap_gencfg.dir/build.make
 
 .PHONY : hector_costmap_gencfg
@@ -91,10 +91,10 @@ hector_navigation/hector_costmap/CMakeFiles/hector_costmap_gencfg.dir/build: hec
 .PHONY : hector_navigation/hector_costmap/CMakeFiles/hector_costmap_gencfg.dir/build
 
 hector_navigation/hector_costmap/CMakeFiles/hector_costmap_gencfg.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/hector_navigation/hector_costmap && $(CMAKE_COMMAND) -P CMakeFiles/hector_costmap_gencfg.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/hector_navigation/hector_costmap && $(CMAKE_COMMAND) -P CMakeFiles/hector_costmap_gencfg.dir/cmake_clean.cmake
 .PHONY : hector_navigation/hector_costmap/CMakeFiles/hector_costmap_gencfg.dir/clean
 
 hector_navigation/hector_costmap/CMakeFiles/hector_costmap_gencfg.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/hector_navigation/hector_costmap /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/hector_navigation/hector_costmap /home/valerio/slampbenchmarking/build/hector_navigation/hector_costmap/CMakeFiles/hector_costmap_gencfg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/hector_navigation/hector_costmap /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/hector_navigation/hector_costmap /home/ros/slampbenchmarking/build/hector_navigation/hector_costmap/CMakeFiles/hector_costmap_gencfg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : hector_navigation/hector_costmap/CMakeFiles/hector_costmap_gencfg.dir/depend
 

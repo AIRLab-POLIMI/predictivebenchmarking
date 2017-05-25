@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/valerio/slampbenchmarking/build/CMakeFiles /home/valerio/slampbenchmarking/build/hector_navigation/hector_exploration_controller/CMakeFiles/progress.marks
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/valerio/slampbenchmarking/build/CMakeFiles 0
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slampbenchmarking/build/CMakeFiles /home/ros/slampbenchmarking/build/hector_navigation/hector_exploration_controller/CMakeFiles/progress.marks
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slampbenchmarking/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/clean
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/preinstall
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/preinstall
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_lisp.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_lisp.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_lisp.dir/rule
 .PHONY : hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ hector_nav_msgs_generate_messages_lisp: hector_navigation/hector_exploration_con
 
 # fast build rule for target.
 hector_nav_msgs_generate_messages_lisp/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_lisp.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_lisp.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_lisp.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_lisp.dir/build
 .PHONY : hector_nav_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_eus.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_eus.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_eus.dir/rule
 .PHONY : hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ hector_nav_msgs_generate_messages_eus: hector_navigation/hector_exploration_cont
 
 # fast build rule for target.
 hector_nav_msgs_generate_messages_eus/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_eus.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_eus.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_eus.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_eus.dir/build
 .PHONY : hector_nav_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_nodejs.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_nodejs.dir/rule
 .PHONY : hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -207,12 +207,12 @@ hector_nav_msgs_generate_messages_nodejs: hector_navigation/hector_exploration_c
 
 # fast build rule for target.
 hector_nav_msgs_generate_messages_nodejs/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_nodejs.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_nodejs.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_nodejs.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_nodejs.dir/build
 .PHONY : hector_nav_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_cpp.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_cpp.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_cpp.dir/rule
 .PHONY : hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -222,12 +222,12 @@ hector_nav_msgs_generate_messages_cpp: hector_navigation/hector_exploration_cont
 
 # fast build rule for target.
 hector_nav_msgs_generate_messages_cpp/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_cpp.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_cpp.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_cpp.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_cpp.dir/build
 .PHONY : hector_nav_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/rule
 .PHONY : hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/rule
 
 # Convenience name for target.
@@ -237,12 +237,12 @@ simple_exploration_controller: hector_navigation/hector_exploration_controller/C
 
 # fast build rule for target.
 simple_exploration_controller/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/build
 .PHONY : simple_exploration_controller/fast
 
 # Convenience name for target.
 hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_py.dir/rule:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_py.dir/rule
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_py.dir/rule
 .PHONY : hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -252,7 +252,7 @@ hector_nav_msgs_generate_messages_py: hector_navigation/hector_exploration_contr
 
 # fast build rule for target.
 hector_nav_msgs_generate_messages_py/fast:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_py.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_py.dir/build
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_py.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/hector_nav_msgs_generate_messages_py.dir/build
 .PHONY : hector_nav_msgs_generate_messages_py/fast
 
 src/simple_exploration_controller.o: src/simple_exploration_controller.cpp.o
@@ -261,7 +261,7 @@ src/simple_exploration_controller.o: src/simple_exploration_controller.cpp.o
 
 # target to build an object file
 src/simple_exploration_controller.cpp.o:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.o
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.o
 .PHONY : src/simple_exploration_controller.cpp.o
 
 src/simple_exploration_controller.i: src/simple_exploration_controller.cpp.i
@@ -270,7 +270,7 @@ src/simple_exploration_controller.i: src/simple_exploration_controller.cpp.i
 
 # target to preprocess a source file
 src/simple_exploration_controller.cpp.i:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.i
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.i
 .PHONY : src/simple_exploration_controller.cpp.i
 
 src/simple_exploration_controller.s: src/simple_exploration_controller.cpp.s
@@ -279,7 +279,7 @@ src/simple_exploration_controller.s: src/simple_exploration_controller.cpp.s
 
 # target to generate assembly for a file
 src/simple_exploration_controller.cpp.s:
-	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.s
+	cd /home/ros/slampbenchmarking/build && $(MAKE) -f hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/build.make hector_navigation/hector_exploration_controller/CMakeFiles/simple_exploration_controller.dir/src/simple_exploration_controller.cpp.s
 .PHONY : src/simple_exploration_controller.cpp.s
 
 # Help Target
@@ -315,6 +315,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

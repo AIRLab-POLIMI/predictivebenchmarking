@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for std_srvs_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ start_exploration/CMakeFiles/std_srvs_generate_messages_lisp.dir/build: std_srvs
 .PHONY : start_exploration/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
 
 start_exploration/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/start_exploration && $(CMAKE_COMMAND) -P CMakeFiles/std_srvs_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/start_exploration && $(CMAKE_COMMAND) -P CMakeFiles/std_srvs_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : start_exploration/CMakeFiles/std_srvs_generate_messages_lisp.dir/clean
 
 start_exploration/CMakeFiles/std_srvs_generate_messages_lisp.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/start_exploration /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/start_exploration /home/valerio/slampbenchmarking/build/start_exploration/CMakeFiles/std_srvs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/start_exploration /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/start_exploration /home/ros/slampbenchmarking/build/start_exploration/CMakeFiles/std_srvs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : start_exploration/CMakeFiles/std_srvs_generate_messages_lisp.dir/depend
 

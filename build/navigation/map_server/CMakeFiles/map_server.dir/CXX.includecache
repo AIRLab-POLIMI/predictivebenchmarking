@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/valerio/slampbenchmarking/src/navigation/map_server/include/map_server/image_loader.h
+/home/ros/slampbenchmarking/src/navigation/map_server/include/map_server/image_loader.h
 nav_msgs/GetMap.h
-/home/valerio/slampbenchmarking/src/navigation/map_server/include/map_server/nav_msgs/GetMap.h
+/home/ros/slampbenchmarking/src/navigation/map_server/include/map_server/nav_msgs/GetMap.h
 
-/home/valerio/slampbenchmarking/src/navigation/map_server/src/main.cpp
+/home/ros/slampbenchmarking/src/navigation/map_server/src/main.cpp
 stdio.h
 -
 stdlib.h
@@ -20,15 +20,15 @@ libgen.h
 fstream
 -
 ros/ros.h
-/home/valerio/slampbenchmarking/src/navigation/map_server/src/ros/ros.h
+/home/ros/slampbenchmarking/src/navigation/map_server/src/ros/ros.h
 ros/console.h
-/home/valerio/slampbenchmarking/src/navigation/map_server/src/ros/console.h
+/home/ros/slampbenchmarking/src/navigation/map_server/src/ros/console.h
 map_server/image_loader.h
-/home/valerio/slampbenchmarking/src/navigation/map_server/src/map_server/image_loader.h
+/home/ros/slampbenchmarking/src/navigation/map_server/src/map_server/image_loader.h
 nav_msgs/MapMetaData.h
-/home/valerio/slampbenchmarking/src/navigation/map_server/src/nav_msgs/MapMetaData.h
+/home/ros/slampbenchmarking/src/navigation/map_server/src/nav_msgs/MapMetaData.h
 yaml-cpp/yaml.h
-/home/valerio/slampbenchmarking/src/navigation/map_server/src/yaml-cpp/yaml.h
+/home/ros/slampbenchmarking/src/navigation/map_server/src/yaml-cpp/yaml.h
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string

@@ -43,38 +43,38 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for map_merger_generate_messages_cpp.
 
 # Include the progress variables for this target.
 include aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/progress.make
 
-aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp: /home/valerio/slampbenchmarking/devel/include/map_merger/LogMaps.h
-aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp: /home/valerio/slampbenchmarking/devel/include/map_merger/TransformPoint.h
+aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp: /home/ros/slampbenchmarking/devel/include/map_merger/LogMaps.h
+aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp: /home/ros/slampbenchmarking/devel/include/map_merger/TransformPoint.h
 
 
-/home/valerio/slampbenchmarking/devel/include/map_merger/LogMaps.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/valerio/slampbenchmarking/devel/include/map_merger/LogMaps.h: /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv
-/home/valerio/slampbenchmarking/devel/include/map_merger/LogMaps.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-/home/valerio/slampbenchmarking/devel/include/map_merger/LogMaps.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from map_merger/LogMaps.srv"
-	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv -Iadhoc_communication:/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/valerio/slampbenchmarking/devel/include/map_merger -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/ros/slampbenchmarking/devel/include/map_merger/LogMaps.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/ros/slampbenchmarking/devel/include/map_merger/LogMaps.h: /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv
+/home/ros/slampbenchmarking/devel/include/map_merger/LogMaps.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/ros/slampbenchmarking/devel/include/map_merger/LogMaps.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from map_merger/LogMaps.srv"
+	cd /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv -Iadhoc_communication:/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/ros/slampbenchmarking/devel/include/map_merger -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/valerio/slampbenchmarking/devel/include/map_merger/TransformPoint.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/valerio/slampbenchmarking/devel/include/map_merger/TransformPoint.h: /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv
-/home/valerio/slampbenchmarking/devel/include/map_merger/TransformPoint.h: /home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg
-/home/valerio/slampbenchmarking/devel/include/map_merger/TransformPoint.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-/home/valerio/slampbenchmarking/devel/include/map_merger/TransformPoint.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from map_merger/TransformPoint.srv"
-	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv -Iadhoc_communication:/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/valerio/slampbenchmarking/devel/include/map_merger -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/ros/slampbenchmarking/devel/include/map_merger/TransformPoint.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/ros/slampbenchmarking/devel/include/map_merger/TransformPoint.h: /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv
+/home/ros/slampbenchmarking/devel/include/map_merger/TransformPoint.h: /home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg
+/home/ros/slampbenchmarking/devel/include/map_merger/TransformPoint.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/ros/slampbenchmarking/devel/include/map_merger/TransformPoint.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from map_merger/TransformPoint.srv"
+	cd /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv -Iadhoc_communication:/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/ros/slampbenchmarking/devel/include/map_merger -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 map_merger_generate_messages_cpp: aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp
-map_merger_generate_messages_cpp: /home/valerio/slampbenchmarking/devel/include/map_merger/LogMaps.h
-map_merger_generate_messages_cpp: /home/valerio/slampbenchmarking/devel/include/map_merger/TransformPoint.h
+map_merger_generate_messages_cpp: /home/ros/slampbenchmarking/devel/include/map_merger/LogMaps.h
+map_merger_generate_messages_cpp: /home/ros/slampbenchmarking/devel/include/map_merger/TransformPoint.h
 map_merger_generate_messages_cpp: aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/build.make
 
 .PHONY : map_merger_generate_messages_cpp
@@ -85,10 +85,10 @@ aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/build
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/build
 
 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger && $(CMAKE_COMMAND) -P CMakeFiles/map_merger_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger && $(CMAKE_COMMAND) -P CMakeFiles/map_merger_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/clean
 
 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/depend
 

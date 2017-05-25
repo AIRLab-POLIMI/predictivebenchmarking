@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"hector_elevation_visualization\"
 
-CXX_INCLUDES = -I/home/valerio/slampbenchmarking/devel/include -I/usr/include/eigen3 -I/home/valerio/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/ros/slampbenchmarking/devel/include -I/usr/include/eigen3 -I/home/ros/slampbenchmarking/src/hector_navigation/hector_elevation_visualization/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

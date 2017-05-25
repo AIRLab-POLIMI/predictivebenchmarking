@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 
 # Utility rule file for download_data_zero_covariance.bag.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 include navigation/robot_pose_ekf/CMakeFiles/download_data_zero_covariance.bag.dir/progress.make
 
 navigation/robot_pose_ekf/CMakeFiles/download_data_zero_covariance.bag:
-	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && /opt/ros/kinetic/share/catkin/cmake/test/download_checkmd5.py http://download.ros.org/data/robot_pose_ekf/zero_covariance_indexed.bag /home/valerio/slampbenchmarking/devel/share/robot_pose_ekf/test/zero_covariance_indexed.bag 1f1f4e361a9e0b0f6b1379b2dd011088 --ignore-error
+	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && /opt/ros/kinetic/share/catkin/cmake/test/download_checkmd5.py http://download.ros.org/data/robot_pose_ekf/zero_covariance_indexed.bag /home/ros/slampbenchmarking/devel/share/robot_pose_ekf/test/zero_covariance_indexed.bag 1f1f4e361a9e0b0f6b1379b2dd011088 --ignore-error
 
 download_data_zero_covariance.bag: navigation/robot_pose_ekf/CMakeFiles/download_data_zero_covariance.bag
 download_data_zero_covariance.bag: navigation/robot_pose_ekf/CMakeFiles/download_data_zero_covariance.bag.dir/build.make
@@ -67,10 +67,10 @@ navigation/robot_pose_ekf/CMakeFiles/download_data_zero_covariance.bag.dir/build
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/download_data_zero_covariance.bag.dir/build
 
 navigation/robot_pose_ekf/CMakeFiles/download_data_zero_covariance.bag.dir/clean:
-	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -P CMakeFiles/download_data_zero_covariance.bag.dir/cmake_clean.cmake
+	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -P CMakeFiles/download_data_zero_covariance.bag.dir/cmake_clean.cmake
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/download_data_zero_covariance.bag.dir/clean
 
 navigation/robot_pose_ekf/CMakeFiles/download_data_zero_covariance.bag.dir/depend:
-	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf/CMakeFiles/download_data_zero_covariance.bag.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf/CMakeFiles/download_data_zero_covariance.bag.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/download_data_zero_covariance.bag.dir/depend
 

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/exploration_planner_node.dir/src/exploration_node.cpp.o"
-  "/home/valerio/slampbenchmarking/devel/lib/hector_exploration_node/exploration_planner_node.pdb"
-  "/home/valerio/slampbenchmarking/devel/lib/hector_exploration_node/exploration_planner_node"
+  "/home/ros/slampbenchmarking/devel/lib/hector_exploration_node/exploration_planner_node.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/hector_exploration_node/exploration_planner_node"
 )
 
 # Per-language clean rules from dependency scanning.

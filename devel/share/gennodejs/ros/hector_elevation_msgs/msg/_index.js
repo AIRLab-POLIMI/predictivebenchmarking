@@ -1,10 +1,10 @@
 
 "use strict";
 
-let ElevationMapMetaData = require('./ElevationMapMetaData.js');
 let ElevationGrid = require('./ElevationGrid.js');
+let ElevationMapMetaData = require('./ElevationMapMetaData.js');
 
 module.exports = {
-  ElevationMapMetaData: ElevationMapMetaData,
   ElevationGrid: ElevationGrid,
+  ElevationMapMetaData: ElevationMapMetaData,
 };

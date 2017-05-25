@@ -1,8 +1,8 @@
-prefix=/home/valerio/slampbenchmarking/install
+prefix=/home/ros/slampbenchmarking/install
 
 Name: hector_path_follower
 Description: Description of hector_path_follower
 Version: 0.0.0
-Cflags: -I/home/valerio/slampbenchmarking/install/include
-Libs: -L/home/valerio/slampbenchmarking/install/lib -lhector_path_follower
+Cflags: -I/home/ros/slampbenchmarking/install/include
+Libs: -L/home/ros/slampbenchmarking/install/lib -lhector_path_follower
 Requires: nav_msgs roscpp tf

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpAuction.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpAuction.h
 string
 -
 vector
@@ -28,7 +28,7 @@ adhoc_communication/ExpCluster.h
 adhoc_communication/ExpCluster.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpAuctionElement.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpAuctionElement.h
 string
 -
 vector
@@ -44,7 +44,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpCluster.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpCluster.h
 string
 -
 vector
@@ -62,7 +62,7 @@ ros/message_operations.h
 adhoc_communication/ExpClusterElement.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpClusterElement.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpClusterElement.h
 string
 -
 vector
@@ -78,7 +78,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpFrontier.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpFrontier.h
 string
 -
 vector
@@ -96,7 +96,7 @@ ros/message_operations.h
 adhoc_communication/ExpFrontierElement.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpFrontierElement.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpFrontierElement.h
 string
 -
 vector
@@ -112,7 +112,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/MmListOfPoints.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/MmListOfPoints.h
 string
 -
 vector
@@ -130,7 +130,7 @@ ros/message_operations.h
 adhoc_communication/MmPoint.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/adhoc_communication/MmPoint.h
+/home/ros/slampbenchmarking/devel/include/adhoc_communication/MmPoint.h
 string
 -
 vector
@@ -146,7 +146,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/costmap_2d/Costmap2DConfig.h
+/home/ros/slampbenchmarking/devel/include/costmap_2d/Costmap2DConfig.h
 dynamic_reconfigure/config_tools.h
 -
 limits
@@ -164,7 +164,7 @@ dynamic_reconfigure/config_init_mutex.h
 boost/any.hpp
 -
 
-/home/valerio/slampbenchmarking/devel/include/map_merger/LogMaps.h
+/home/ros/slampbenchmarking/devel/include/map_merger/LogMaps.h
 ros/service_traits.h
 -
 map_merger/LogMapsRequest.h
@@ -172,7 +172,7 @@ map_merger/LogMapsRequest.h
 map_merger/LogMapsResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/map_merger/LogMapsRequest.h
+/home/ros/slampbenchmarking/devel/include/map_merger/LogMapsRequest.h
 string
 -
 vector
@@ -188,7 +188,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/map_merger/LogMapsResponse.h
+/home/ros/slampbenchmarking/devel/include/map_merger/LogMapsResponse.h
 string
 -
 vector
@@ -204,7 +204,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/map_merger/TransformPoint.h
+/home/ros/slampbenchmarking/devel/include/map_merger/TransformPoint.h
 ros/service_traits.h
 -
 map_merger/TransformPointRequest.h
@@ -212,7 +212,7 @@ map_merger/TransformPointRequest.h
 map_merger/TransformPointResponse.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/map_merger/TransformPointRequest.h
+/home/ros/slampbenchmarking/devel/include/map_merger/TransformPointRequest.h
 string
 -
 vector
@@ -230,7 +230,7 @@ ros/message_operations.h
 adhoc_communication/MmPoint.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/map_merger/TransformPointResponse.h
+/home/ros/slampbenchmarking/devel/include/map_merger/TransformPointResponse.h
 string
 -
 vector
@@ -248,7 +248,7 @@ ros/message_operations.h
 adhoc_communication/MmPoint.h
 -
 
-/home/valerio/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
+/home/ros/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
 dynamic_reconfigure/config_tools.h
 -
 limits
@@ -266,15 +266,15 @@ dynamic_reconfigure/config_init_mutex.h
 boost/any.hpp
 -
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/include/ExplorationPlanner.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/include/ExplorationPlanner.h
 ExplorationPlanner.h
 -
 navfn/navfn_ros.h
 -
 ros/ros.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/include/ros/ros.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/include/ros/ros.h
 hungarian.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/include/hungarian.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/include/hungarian.h
 ros/console.h
 -
 costmap_2d/costmap_2d_ros.h
@@ -298,17 +298,17 @@ adhoc_communication/MmListOfPoints.h
 map_merger/TransformPoint.h
 -
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/include/hungarian.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/include/hungarian.h
 iostream
 -
 vector
 -
 
-/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/explorer.cpp
+/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/explorer.cpp
 ros/ros.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/ros/ros.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/ros/ros.h
 ExplorationPlanner.h
-/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/ExplorationPlanner.h
+/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/ExplorationPlanner.h
 ros/console.h
 -
 ExplorationPlanner.h
@@ -352,9 +352,9 @@ boost/filesystem.hpp
 map_merger/LogMaps.h
 -
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/cost_values.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/cost_values.h
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d.h
 vector
 -
 queue
@@ -364,7 +364,7 @@ geometry_msgs/Point.h
 boost/thread.hpp
 -
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_publisher.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_publisher.h
 ros/ros.h
 -
 costmap_2d/costmap_2d.h
@@ -376,7 +376,7 @@ map_msgs/OccupancyGridUpdate.h
 tf/transform_datatypes.h
 -
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_ros.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_ros.h
 costmap_2d/layered_costmap.h
 -
 costmap_2d/layer.h
@@ -396,7 +396,7 @@ dynamic_reconfigure/server.h
 pluginlib/class_loader.h
 -
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/footprint.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/footprint.h
 ros/ros.h
 -
 geometry_msgs/Polygon.h
@@ -408,7 +408,7 @@ geometry_msgs/Point.h
 geometry_msgs/Point32.h
 -
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layer.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layer.h
 costmap_2d/costmap_2d.h
 -
 costmap_2d/layered_costmap.h
@@ -420,7 +420,7 @@ tf/tf.h
 tf/transform_listener.h
 -
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layered_costmap.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layered_costmap.h
 costmap_2d/cost_values.h
 -
 costmap_2d/layer.h
@@ -432,7 +432,7 @@ vector
 string
 -
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/observation.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/observation.h
 geometry_msgs/Point.h
 -
 pcl/point_types.h
@@ -440,7 +440,7 @@ pcl/point_types.h
 pcl/point_cloud.h
 -
 
-/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/observation_buffer.h
+/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/observation_buffer.h
 vector
 -
 list
@@ -462,13 +462,13 @@ sensor_msgs/PointCloud2.h
 boost/thread.hpp
 -
 
-/home/valerio/slampbenchmarking/src/navigation/nav_core/include/nav_core/base_global_planner.h
+/home/ros/slampbenchmarking/src/navigation/nav_core/include/nav_core/base_global_planner.h
 geometry_msgs/PoseStamped.h
 -
 costmap_2d/costmap_2d_ros.h
 -
 
-/home/valerio/slampbenchmarking/src/navigation/navfn/include/navfn/navfn.h
+/home/ros/slampbenchmarking/src/navigation/navfn/include/navfn/navfn.h
 math.h
 -
 stdint.h
@@ -478,7 +478,7 @@ string.h
 stdio.h
 -
 
-/home/valerio/slampbenchmarking/src/navigation/navfn/include/navfn/navfn_ros.h
+/home/ros/slampbenchmarking/src/navigation/navfn/include/navfn/navfn_ros.h
 ros/ros.h
 -
 navfn/navfn.h
@@ -504,7 +504,7 @@ navfn/potarr_point.h
 pcl_ros/publisher.h
 -
 
-/home/valerio/slampbenchmarking/src/navigation/navfn/include/navfn/potarr_point.h
+/home/ros/slampbenchmarking/src/navigation/navfn/include/navfn/potarr_point.h
 pcl/register_point_struct.h
 -
 

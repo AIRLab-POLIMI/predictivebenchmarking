@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ElevationMapping.dir/src/hector_elevation_mapping.cpp.o"
-  "/home/valerio/slampbenchmarking/devel/lib/libElevationMapping.pdb"
-  "/home/valerio/slampbenchmarking/devel/lib/libElevationMapping.so"
+  "/home/ros/slampbenchmarking/devel/lib/libElevationMapping.pdb"
+  "/home/ros/slampbenchmarking/devel/lib/libElevationMapping.so"
 )
 
 # Per-language clean rules from dependency scanning.

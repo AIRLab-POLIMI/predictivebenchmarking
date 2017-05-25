@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_driving_aid_markers/src/driving_aid_marker_node.cpp" "/home/valerio/slampbenchmarking/build/hector_navigation/hector_driving_aid_markers/CMakeFiles/hector_driving_aid_markers_node.dir/src/driving_aid_marker_node.cpp.o"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_driving_aid_markers/src/driving_aid_marker_node.cpp" "/home/ros/slampbenchmarking/build/hector_navigation/hector_driving_aid_markers/CMakeFiles/hector_driving_aid_markers_node.dir/src/driving_aid_marker_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,7 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/valerio/slampbenchmarking/src/hector_navigation/hector_driving_aid_markers/include"
+  "/home/ros/slampbenchmarking/src/hector_navigation/hector_driving_aid_markers/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )
