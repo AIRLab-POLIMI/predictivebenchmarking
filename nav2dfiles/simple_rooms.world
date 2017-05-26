@@ -13,7 +13,7 @@ threads                 2
 floorplan
 ( 
   name "simplerooms"
-  bitmap "/home/ros/catkin_ws/nav2dfiles/simple_rooms.png"
+  bitmap "simple_rooms.png"
   size [40.000 30.000 1.0]
   pose [0 0 0 0]
 )
@@ -22,5 +22,5 @@ floorplan
 pioneer3at
 (
   name "robot"
-  pose [-13 10 0 0]
+  pose [-17 0 0 0]
 )

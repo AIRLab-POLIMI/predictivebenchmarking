@@ -14,7 +14,7 @@ floorplan
 ( 
   name "office_e"
   bitmap "office_e.png"
-  size [123.4 72.7 1.0]
+  size [72.7 72.7 1.0]
   pose [0 0 0 0]
 )
 
@@ -22,5 +22,5 @@ floorplan
 pioneer3at
 (
   name "robot"
-  pose [-4 -4 0 0]
+  pose [0 -3 0 0]
 )
