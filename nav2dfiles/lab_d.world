@@ -12,10 +12,9 @@ threads                 2
 # Load an environment bitmap
 floorplan
 ( 
-  boundary 1
-  name "frieburg"
-  bitmap "/home/ros/catkin_ws/nav2dfiles/frieburg.png"
-  size [100.000 89.800 1.0]
+  name "Lab_d"
+  bitmap "lab_d_scan.png"
+  size [84 58.1 1.0]
   pose [0 0 0 0]
 )
 
@@ -23,5 +22,5 @@ floorplan
 pioneer3at
 (
   name "robot"
-  pose [7 7 0 0]
+  pose [30 -12 0 0]
 )

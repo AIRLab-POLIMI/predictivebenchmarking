@@ -13,7 +13,7 @@ threads                 2
 floorplan
 ( 
   name "lab_c"
-  bitmap "/home/ros/catkin_ws/nav2dfiles/lab_c_scan.png"
+  bitmap "lab_c_scan.png"
   size [40.0 27.25 1.0]
   pose [0 0 0 0]
 )
@@ -22,5 +22,5 @@ floorplan
 pioneer3at
 (
   name "robot"
-  pose [10 8 0 0]
+  pose [-2 1.5 0 0]
 )

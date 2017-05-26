@@ -13,7 +13,7 @@ threads                 2
 floorplan
 ( 
   name "lab_intel"
-  bitmap "/home/ros/catkin_ws/nav2dfiles/lab_intel.png"
+  bitmap "lab_intel.png"
   size [76.300 70.800 1.0]
   pose [0 0 0 0]
 )
@@ -22,5 +22,5 @@ floorplan
 pioneer3at
 (
   name "robot"
-  pose [-20 -20 0 0]
+  pose [-5 -4 0 0]
 )

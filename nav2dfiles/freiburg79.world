@@ -12,9 +12,9 @@ threads                 2
 # Load an environment bitmap
 floorplan
 ( 
-  name "lab_b"
-  bitmap "lab_b_scan.png"
-  size [95 28 1.0]
+  name "Freiburg79"
+  bitmap "Freiburg79_scan.png"
+  size [80 54.4 1.0]
   pose [0 0 0 0]
 )
 
@@ -22,5 +22,5 @@ floorplan
 pioneer3at
 (
   name "robot"
-  pose [45 5 0 0]
+  pose [-32 5 0 0]
 )

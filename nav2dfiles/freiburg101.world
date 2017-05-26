@@ -13,7 +13,7 @@ threads                 2
 floorplan
 ( 
   name "Freiburg101"
-  bitmap "/home/ros/catkin_ws/nav2dfiles/Freiburg101_scan.png"
+  bitmap "Freiburg101_scan.png"
   size [100 59.524 1.0]
   pose [0 0 0 0]
 )
@@ -22,5 +22,5 @@ floorplan
 pioneer3at
 (
   name "robot"
-  pose [-4 -4 0 0]
+  pose [49 -5 0 0]
 )
