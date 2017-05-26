@@ -2,8 +2,8 @@ max_obstacle_height: 0.60  # assume something like an arm is mounted on top of t
 min_obstacle_height: 0.00
 obstacle_range: 5.0
 raytrace_range: 5.0
-footprint: [ [-0.2,-0.2], [0.2, -0.2], [0.2, 0.2], [-0.2,0.2] ]
-footprint_padding: 0.0
+footprint: [ [-0.20,-0.20], [0.20, -0.20], [0.20, 0.20], [-0.20,0.20] ]
+footprint_padding: 0.05
 observation_sources: base_scan
 
 base_scan: {data_type: LaserScan, topic: /base_scan, marking: true, clearing: true, max_obstacle_height: 0.6, min_obstacle_height: 0.00, expected_update_rate: 0.5}
@@ -12,8 +12,9 @@ base_scan: {data_type: LaserScan, topic: /base_scan, marking: true, clearing: tr
 
 inflation_layer:
       enabled:             true
-      cost_scaling_factor: 8 #default value 10; for my work, I have been using values between 40-50
-      inflation_radius:    0.8 #default value 0.55; for my work, I have been using values between 0.8-1.0
+      robot_radius: 0.6
+      cost_scaling_factor: 4 #default value 10; for my work, I have been using values between 40-50
+      inflation_radius:    1.25 #default value 0.55; for my work, I have been using values between 0.8-1.0
 
 # These were for the create, but I think weren't getting used.
 # Can we merge to a common configuration - DJS?

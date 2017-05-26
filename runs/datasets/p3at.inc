@@ -16,7 +16,7 @@ define pioneer3at position
 
 	# four DOF kinematics limits
 	# [ xmin xmax ymin ymax zmin zmax amin amax ]
-	velocity_bounds     [-0.4 0.4 0 0 0 0 -70.0 70.0 ]
+	velocity_bounds     [-0.7 0.7 0 0 0 0 -70.0 70.0 ]
 	acceleration_bounds [-0.4 0.4 0 0 0 0 -70.0 70.0 ]
 
 	# Actual size
