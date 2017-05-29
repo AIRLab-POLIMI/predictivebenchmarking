@@ -23,7 +23,6 @@
 
 	<!-- Some general parameters -->
 	<param name="use_sim_time" value="true" />
-	<rosparam file="param/ros.yaml"/>
 
 	<!-- Start Stage simulator with a given environment -->
 	<node name="Stage" pkg="stage_ros" type="stageros" args="/$(arg worldfile)">
