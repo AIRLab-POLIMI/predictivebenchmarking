@@ -1,0 +1,27 @@
+include "p3at.inc"
+include "floorplan.inc"
+
+name                    "Navigation-2D World"
+interval_sim            100
+quit_time                 0
+resolution                0.025
+show_clock                0
+show_clock_interval     100
+threads                 4
+
+# Load an environment bitmap
+floorplan
+(
+  boundary 0
+  name "office_c"
+  bitmap "office_c.png"
+  size [102.850 32.50 1.0]
+  pose [0 0 0 0]
+)
+
+# Put a single robot into the world
+pioneer3at
+(
+  name "robot"
+  pose [50 0 0 0]
+)

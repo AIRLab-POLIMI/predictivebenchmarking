@@ -20,7 +20,7 @@ define pioneer3at position
 	acceleration_bounds [-0.4 0.4 0 0 0 0 -70.0 70.0 ]
 
 	# Actual size
-	size [0.5 0.5 0.6]
+	size [0.3 0.3 0.4]
 
 	# The pioneer's center of rotation is offset from its center of area
 	origin [0 0 0 0]
@@ -31,19 +31,15 @@ define pioneer3at position
 	# Body shape:
 #	block
 #	(
-#		points 8
-#		point[0] [-0.18 0.313]
-#		point[1] [0.18 0.313]
-#		point[2] [0.2525 0.18]
-#		point[3] [0.2525 -0.18]
-#		point[4] [0.18 -0.313]
-#		point[5] [-0.18 -0.313]
-#		point[6] [-0.2525 -0.18]
-#		point[7] [-0.2525 0.18]
+#		points 4
+#		point[0] [-0.15 -0.15]
+#		point[1] [-0.15 0.15]
+#		point[2] [0.15 0.15]
+#		point[3] [0.15 -0.15]
 #		z [0 1]
 #	)
 
-	hokuyolaser( pose [0.15 0 -0.2 0 ])
+	hokuyolaser( pose [0.05 0 -0.2 0 ])
 )
 
 
