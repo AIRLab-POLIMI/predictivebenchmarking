@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Include any dependencies generated for this target.
 include navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/depend.make
@@ -58,17 +58,17 @@ include navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance
 include navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/flags.make
 
 navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.o: navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/flags.make
-navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.o: /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/test/test_robot_pose_ekf_zero_covariance.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.o"
-	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.o -c /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/test/test_robot_pose_ekf_zero_covariance.cpp
+navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.o: /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/test/test_robot_pose_ekf_zero_covariance.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.o"
+	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.o -c /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/test/test_robot_pose_ekf_zero_covariance.cpp
 
 navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.i"
-	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/test/test_robot_pose_ekf_zero_covariance.cpp > CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.i
+	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/test/test_robot_pose_ekf_zero_covariance.cpp > CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.i
 
 navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.s"
-	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/test/test_robot_pose_ekf_zero_covariance.cpp -o CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.s
+	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/test/test_robot_pose_ekf_zero_covariance.cpp -o CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.s
 
 navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.o.requires:
 
@@ -88,63 +88,63 @@ test_robot_pose_ekf_zero_covariance_OBJECTS = \
 # External object files for target test_robot_pose_ekf_zero_covariance
 test_robot_pose_ekf_zero_covariance_EXTERNAL_OBJECTS =
 
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.o
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/build.make
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libtf.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libtf2_ros.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libactionlib.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libmessage_filters.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libroscpp.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libtf2.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librosconsole.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librostime.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libcpp_common.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: gtest/libgtest.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libtf.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libtf2_ros.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libactionlib.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libmessage_filters.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libroscpp.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libtf2.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librosconsole.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librostime.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libcpp_common.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance"
-	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/link.txt --verbose=$(VERBOSE)
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/test/test_robot_pose_ekf_zero_covariance.cpp.o
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/build.make
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libtf.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libtf2_ros.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libactionlib.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libmessage_filters.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libroscpp.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libtf2.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librosconsole.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librostime.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libcpp_common.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: gtest/libgtest.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libtf.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libtf2_ros.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libactionlib.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libmessage_filters.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libroscpp.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libtf2.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librosconsole.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/librostime.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /opt/ros/kinetic/lib/libcpp_common.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance: navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance"
+	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/build: /home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance
+navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/build: /home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf_zero_covariance
 
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/build
 
@@ -153,10 +153,10 @@ navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/req
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/requires
 
 navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -P CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -P CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/cmake_clean.cmake
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/clean
 
 navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir/depend
 

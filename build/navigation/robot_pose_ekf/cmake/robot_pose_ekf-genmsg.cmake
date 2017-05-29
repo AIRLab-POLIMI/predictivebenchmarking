@@ -17,9 +17,9 @@ add_custom_target(robot_pose_ekf_generate_messages ALL)
 
 
 
-get_filename_component(_filename "/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv" NAME_WE)
+get_filename_component(_filename "/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv" NAME_WE)
 add_custom_target(_robot_pose_ekf_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "robot_pose_ekf" "/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "robot_pose_ekf" "/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv" ""
 )
 
 #
@@ -31,7 +31,7 @@ add_custom_target(_robot_pose_ekf_generate_messages_check_deps_${_filename}
 
 ### Generating Services
 _generate_srv_cpp(robot_pose_ekf
-  "/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv"
+  "/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/robot_pose_ekf
@@ -49,7 +49,7 @@ add_custom_target(robot_pose_ekf_generate_messages_cpp
 add_dependencies(robot_pose_ekf_generate_messages robot_pose_ekf_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv" NAME_WE)
+get_filename_component(_filename "/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv" NAME_WE)
 add_dependencies(robot_pose_ekf_generate_messages_cpp _robot_pose_ekf_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -64,7 +64,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS robot_pose_ekf_generate_messages_cp
 
 ### Generating Services
 _generate_srv_eus(robot_pose_ekf
-  "/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv"
+  "/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/robot_pose_ekf
@@ -82,7 +82,7 @@ add_custom_target(robot_pose_ekf_generate_messages_eus
 add_dependencies(robot_pose_ekf_generate_messages robot_pose_ekf_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv" NAME_WE)
+get_filename_component(_filename "/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv" NAME_WE)
 add_dependencies(robot_pose_ekf_generate_messages_eus _robot_pose_ekf_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -97,7 +97,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS robot_pose_ekf_generate_messages_eu
 
 ### Generating Services
 _generate_srv_lisp(robot_pose_ekf
-  "/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv"
+  "/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/robot_pose_ekf
@@ -115,7 +115,7 @@ add_custom_target(robot_pose_ekf_generate_messages_lisp
 add_dependencies(robot_pose_ekf_generate_messages robot_pose_ekf_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv" NAME_WE)
+get_filename_component(_filename "/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv" NAME_WE)
 add_dependencies(robot_pose_ekf_generate_messages_lisp _robot_pose_ekf_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -130,7 +130,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS robot_pose_ekf_generate_messages_li
 
 ### Generating Services
 _generate_srv_nodejs(robot_pose_ekf
-  "/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv"
+  "/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/robot_pose_ekf
@@ -148,7 +148,7 @@ add_custom_target(robot_pose_ekf_generate_messages_nodejs
 add_dependencies(robot_pose_ekf_generate_messages robot_pose_ekf_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv" NAME_WE)
+get_filename_component(_filename "/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv" NAME_WE)
 add_dependencies(robot_pose_ekf_generate_messages_nodejs _robot_pose_ekf_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -163,7 +163,7 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS robot_pose_ekf_generate_messages_no
 
 ### Generating Services
 _generate_srv_py(robot_pose_ekf
-  "/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv"
+  "/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/robot_pose_ekf
@@ -181,7 +181,7 @@ add_custom_target(robot_pose_ekf_generate_messages_py
 add_dependencies(robot_pose_ekf_generate_messages robot_pose_ekf_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv" NAME_WE)
+get_filename_component(_filename "/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv" NAME_WE)
 add_dependencies(robot_pose_ekf_generate_messages_py _robot_pose_ekf_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

@@ -1,8 +1,0 @@
-prefix=/home/ros/slampbenchmarking/devel
-
-Name: hector_exploration_planner
-Description: Description of hector_exploration_planner
-Version: 0.0.0
-Cflags: -I/home/ros/slampbenchmarking/devel/include -I/home/ros/slampbenchmarking/src/hector_navigation/hector_exploration_planner/include
-Libs: -L/home/ros/slampbenchmarking/devel/lib -lhector_exploration_base_global_planner_plugin -lhector_exploration_planner
-Requires: costmap_2d dynamic_reconfigure geometry_msgs hector_nav_msgs nav_core nav_msgs pluginlib rosconsole roscpp rospy

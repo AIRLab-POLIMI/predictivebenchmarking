@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for _run_tests_clear_costmap_recovery.
 
@@ -63,10 +63,10 @@ navigation/clear_costmap_recovery/CMakeFiles/_run_tests_clear_costmap_recovery.d
 .PHONY : navigation/clear_costmap_recovery/CMakeFiles/_run_tests_clear_costmap_recovery.dir/build
 
 navigation/clear_costmap_recovery/CMakeFiles/_run_tests_clear_costmap_recovery.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/clear_costmap_recovery && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_clear_costmap_recovery.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/clear_costmap_recovery && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_clear_costmap_recovery.dir/cmake_clean.cmake
 .PHONY : navigation/clear_costmap_recovery/CMakeFiles/_run_tests_clear_costmap_recovery.dir/clean
 
 navigation/clear_costmap_recovery/CMakeFiles/_run_tests_clear_costmap_recovery.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/clear_costmap_recovery /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/clear_costmap_recovery /home/ros/slampbenchmarking/build/navigation/clear_costmap_recovery/CMakeFiles/_run_tests_clear_costmap_recovery.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/clear_costmap_recovery /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/clear_costmap_recovery /home/valerio/slampbenchmarking/build/navigation/clear_costmap_recovery/CMakeFiles/_run_tests_clear_costmap_recovery.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/clear_costmap_recovery/CMakeFiles/_run_tests_clear_costmap_recovery.dir/depend
 

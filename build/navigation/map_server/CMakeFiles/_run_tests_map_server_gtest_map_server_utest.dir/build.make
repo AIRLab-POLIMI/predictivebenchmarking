@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for _run_tests_map_server_gtest_map_server_utest.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 include navigation/map_server/CMakeFiles/_run_tests_map_server_gtest_map_server_utest.dir/progress.make
 
 navigation/map_server/CMakeFiles/_run_tests_map_server_gtest_map_server_utest:
-	cd /home/ros/slampbenchmarking/build/navigation/map_server && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/run_tests.py /home/ros/slampbenchmarking/build/test_results/map_server/gtest-map_server_utest.xml /home/ros/slampbenchmarking/devel/lib/map_server/map_server_utest\ --gtest_output=xml:/home/ros/slampbenchmarking/build/test_results/map_server/gtest-map_server_utest.xml
+	cd /home/valerio/slampbenchmarking/build/navigation/map_server && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/run_tests.py /home/valerio/slampbenchmarking/build/test_results/map_server/gtest-map_server_utest.xml /home/valerio/slampbenchmarking/devel/lib/map_server/map_server_utest\ --gtest_output=xml:/home/valerio/slampbenchmarking/build/test_results/map_server/gtest-map_server_utest.xml
 
 _run_tests_map_server_gtest_map_server_utest: navigation/map_server/CMakeFiles/_run_tests_map_server_gtest_map_server_utest
 _run_tests_map_server_gtest_map_server_utest: navigation/map_server/CMakeFiles/_run_tests_map_server_gtest_map_server_utest.dir/build.make
@@ -67,10 +67,10 @@ navigation/map_server/CMakeFiles/_run_tests_map_server_gtest_map_server_utest.di
 .PHONY : navigation/map_server/CMakeFiles/_run_tests_map_server_gtest_map_server_utest.dir/build
 
 navigation/map_server/CMakeFiles/_run_tests_map_server_gtest_map_server_utest.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/map_server && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_map_server_gtest_map_server_utest.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/map_server && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_map_server_gtest_map_server_utest.dir/cmake_clean.cmake
 .PHONY : navigation/map_server/CMakeFiles/_run_tests_map_server_gtest_map_server_utest.dir/clean
 
 navigation/map_server/CMakeFiles/_run_tests_map_server_gtest_map_server_utest.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/map_server /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/map_server /home/ros/slampbenchmarking/build/navigation/map_server/CMakeFiles/_run_tests_map_server_gtest_map_server_utest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/map_server /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/map_server /home/valerio/slampbenchmarking/build/navigation/map_server/CMakeFiles/_run_tests_map_server_gtest_map_server_utest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/map_server/CMakeFiles/_run_tests_map_server_gtest_map_server_utest.dir/depend
 

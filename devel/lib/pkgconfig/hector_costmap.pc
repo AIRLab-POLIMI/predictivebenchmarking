@@ -1,8 +1,0 @@
-prefix=/home/ros/slampbenchmarking/devel
-
-Name: hector_costmap
-Description: Description of hector_costmap
-Version: 0.0.0
-Cflags: -I/home/ros/slampbenchmarking/devel/include
-Libs: -L/home/ros/slampbenchmarking/devel/lib 
-Requires: 

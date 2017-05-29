@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ros/slampbenchmarking/devel/include/costmap_2d/Costmap2DConfig.h
+/home/valerio/slampbenchmarking/devel/include/costmap_2d/Costmap2DConfig.h
 dynamic_reconfigure/config_tools.h
 -
 limits
@@ -24,15 +24,15 @@ dynamic_reconfigure/config_init_mutex.h
 boost/any.hpp
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/array_parser.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/array_parser.h
 vector
 -
 string
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/cost_values.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/cost_values.h
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d.h
 vector
 -
 queue
@@ -42,7 +42,7 @@ geometry_msgs/Point.h
 boost/thread.hpp
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_publisher.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_publisher.h
 ros/ros.h
 -
 costmap_2d/costmap_2d.h
@@ -54,7 +54,7 @@ map_msgs/OccupancyGridUpdate.h
 tf/transform_datatypes.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_ros.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_ros.h
 costmap_2d/layered_costmap.h
 -
 costmap_2d/layer.h
@@ -74,7 +74,7 @@ dynamic_reconfigure/server.h
 pluginlib/class_loader.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_layer.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_layer.h
 ros/ros.h
 -
 costmap_2d/layer.h
@@ -82,7 +82,7 @@ costmap_2d/layer.h
 costmap_2d/layered_costmap.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_math.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_math.h
 math.h
 -
 algorithm
@@ -92,7 +92,7 @@ vector
 geometry_msgs/Point.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/footprint.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/footprint.h
 ros/ros.h
 -
 geometry_msgs/Polygon.h
@@ -104,7 +104,7 @@ geometry_msgs/Point.h
 geometry_msgs/Point32.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layer.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layer.h
 costmap_2d/costmap_2d.h
 -
 costmap_2d/layered_costmap.h
@@ -116,7 +116,7 @@ tf/tf.h
 tf/transform_listener.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layered_costmap.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layered_costmap.h
 costmap_2d/cost_values.h
 -
 costmap_2d/layer.h
@@ -128,7 +128,7 @@ vector
 string
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/observation.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/observation.h
 geometry_msgs/Point.h
 -
 pcl/point_types.h
@@ -136,7 +136,7 @@ pcl/point_types.h
 pcl/point_cloud.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/observation_buffer.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/observation_buffer.h
 vector
 -
 list
@@ -158,7 +158,7 @@ sensor_msgs/PointCloud2.h
 boost/thread.hpp
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/array_parser.cpp
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/array_parser.cpp
 cstdio
 -
 string
@@ -168,13 +168,13 @@ sstream
 vector
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d.cpp
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d.cpp
 costmap_2d/costmap_2d.h
 -
 cstdio
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d_publisher.cpp
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d_publisher.cpp
 boost/bind.hpp
 -
 costmap_2d/costmap_2d_publisher.h
@@ -182,7 +182,7 @@ costmap_2d/costmap_2d_publisher.h
 costmap_2d/cost_values.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d_ros.cpp
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d_ros.cpp
 costmap_2d/layered_costmap.h
 -
 costmap_2d/costmap_2d_ros.h
@@ -196,15 +196,15 @@ algorithm
 vector
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/costmap_layer.cpp
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/costmap_layer.cpp
 costmap_2d/costmap_layer.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/costmap_math.cpp
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/costmap_math.cpp
 costmap_2d/costmap_math.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/footprint.cpp
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/footprint.cpp
 costmap_2d/costmap_math.h
 -
 boost/tokenizer.hpp
@@ -220,11 +220,11 @@ costmap_2d/array_parser.h
 geometry_msgs/Point32.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/layer.cpp
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/layer.cpp
 costmap_2d/layer.h
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d/layer.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/costmap_2d/layer.h
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/layered_costmap.cpp
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/layered_costmap.cpp
 costmap_2d/layered_costmap.h
 -
 costmap_2d/footprint.h
@@ -238,7 +238,7 @@ algorithm
 vector
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/src/observation_buffer.cpp
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/src/observation_buffer.cpp
 costmap_2d/observation_buffer.h
 -
 pcl/point_types.h

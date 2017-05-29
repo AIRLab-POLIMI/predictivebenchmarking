@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpFrontier.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpFrontier.h
 string
 -
 vector
@@ -24,7 +24,7 @@ ros/message_operations.h
 adhoc_communication/ExpFrontierElement.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpFrontierElement.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpFrontierElement.h
 string
 -
 vector
@@ -40,7 +40,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/GetNeighbors.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/GetNeighbors.h
 ros/service_traits.h
 -
 adhoc_communication/GetNeighborsRequest.h
@@ -48,7 +48,7 @@ adhoc_communication/GetNeighborsRequest.h
 adhoc_communication/GetNeighborsResponse.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/GetNeighborsRequest.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/GetNeighborsRequest.h
 string
 -
 vector
@@ -64,7 +64,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/GetNeighborsResponse.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/GetNeighborsResponse.h
 string
 -
 vector
@@ -80,7 +80,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/MmControl.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/MmControl.h
 string
 -
 vector
@@ -96,7 +96,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/MmListOfPoints.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/MmListOfPoints.h
 string
 -
 vector
@@ -114,7 +114,7 @@ ros/message_operations.h
 adhoc_communication/MmPoint.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/MmMapUpdate.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/MmMapUpdate.h
 string
 -
 vector
@@ -132,7 +132,7 @@ ros/message_operations.h
 nav_msgs/OccupancyGrid.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/MmPoint.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/MmPoint.h
 string
 -
 vector
@@ -148,7 +148,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/MmRobotPosition.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/MmRobotPosition.h
 string
 -
 vector
@@ -166,7 +166,7 @@ ros/message_operations.h
 geometry_msgs/PoseStamped.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmControl.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmControl.h
 ros/service_traits.h
 -
 adhoc_communication/SendMmControlRequest.h
@@ -174,7 +174,7 @@ adhoc_communication/SendMmControlRequest.h
 adhoc_communication/SendMmControlResponse.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmControlRequest.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmControlRequest.h
 string
 -
 vector
@@ -192,7 +192,7 @@ ros/message_operations.h
 adhoc_communication/MmControl.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmControlResponse.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmControlResponse.h
 string
 -
 vector
@@ -208,7 +208,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmMapUpdate.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmMapUpdate.h
 ros/service_traits.h
 -
 adhoc_communication/SendMmMapUpdateRequest.h
@@ -216,7 +216,7 @@ adhoc_communication/SendMmMapUpdateRequest.h
 adhoc_communication/SendMmMapUpdateResponse.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmMapUpdateRequest.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmMapUpdateRequest.h
 string
 -
 vector
@@ -234,7 +234,7 @@ ros/message_operations.h
 adhoc_communication/MmMapUpdate.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmMapUpdateResponse.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmMapUpdateResponse.h
 string
 -
 vector
@@ -250,7 +250,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmRobotPosition.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmRobotPosition.h
 ros/service_traits.h
 -
 adhoc_communication/SendMmRobotPositionRequest.h
@@ -258,7 +258,7 @@ adhoc_communication/SendMmRobotPositionRequest.h
 adhoc_communication/SendMmRobotPositionResponse.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmRobotPositionRequest.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmRobotPositionRequest.h
 string
 -
 vector
@@ -276,7 +276,7 @@ ros/message_operations.h
 adhoc_communication/MmRobotPosition.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendMmRobotPositionResponse.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendMmRobotPositionResponse.h
 string
 -
 vector
@@ -292,7 +292,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendOccupancyGrid.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendOccupancyGrid.h
 ros/service_traits.h
 -
 adhoc_communication/SendOccupancyGridRequest.h
@@ -300,7 +300,7 @@ adhoc_communication/SendOccupancyGridRequest.h
 adhoc_communication/SendOccupancyGridResponse.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendOccupancyGridRequest.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendOccupancyGridRequest.h
 string
 -
 vector
@@ -318,7 +318,7 @@ ros/message_operations.h
 nav_msgs/OccupancyGrid.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendOccupancyGridResponse.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendOccupancyGridResponse.h
 string
 -
 vector
@@ -334,7 +334,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/map_merger/LogMaps.h
+/home/valerio/slampbenchmarking/devel/include/map_merger/LogMaps.h
 ros/service_traits.h
 -
 map_merger/LogMapsRequest.h
@@ -342,7 +342,7 @@ map_merger/LogMapsRequest.h
 map_merger/LogMapsResponse.h
 -
 
-/home/ros/slampbenchmarking/devel/include/map_merger/LogMapsRequest.h
+/home/valerio/slampbenchmarking/devel/include/map_merger/LogMapsRequest.h
 string
 -
 vector
@@ -358,7 +358,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/map_merger/LogMapsResponse.h
+/home/valerio/slampbenchmarking/devel/include/map_merger/LogMapsResponse.h
 string
 -
 vector
@@ -374,7 +374,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/map_merger/TransformPoint.h
+/home/valerio/slampbenchmarking/devel/include/map_merger/TransformPoint.h
 ros/service_traits.h
 -
 map_merger/TransformPointRequest.h
@@ -382,7 +382,7 @@ map_merger/TransformPointRequest.h
 map_merger/TransformPointResponse.h
 -
 
-/home/ros/slampbenchmarking/devel/include/map_merger/TransformPointRequest.h
+/home/valerio/slampbenchmarking/devel/include/map_merger/TransformPointRequest.h
 string
 -
 vector
@@ -400,7 +400,7 @@ ros/message_operations.h
 adhoc_communication/MmPoint.h
 -
 
-/home/ros/slampbenchmarking/devel/include/map_merger/TransformPointResponse.h
+/home/valerio/slampbenchmarking/devel/include/map_merger/TransformPointResponse.h
 string
 -
 vector
@@ -418,9 +418,9 @@ ros/message_operations.h
 adhoc_communication/MmPoint.h
 -
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/main.cpp
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/main.cpp
 mapmerger.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapmerger.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapmerger.h
 stdio.h
 -
 execinfo.h
@@ -432,17 +432,17 @@ stdlib.h
 unistd.h
 -
 google/profiler.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/google/profiler.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/google/profiler.h
 google/heap-profiler.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/google/heap-profiler.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/google/heap-profiler.h
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapmerger.cpp
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapmerger.cpp
 mapmerger.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapmerger.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapmerger.h
 numeric
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/numeric
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/numeric
 unistd.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/unistd.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/unistd.h
 boost/filesystem.hpp
 -
 fstream
@@ -450,75 +450,75 @@ fstream
 cerrno
 -
 adhoc_communication/MmPoint.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/MmPoint.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/MmPoint.h
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapmerger.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapmerger.h
 ros/ros.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/ros/ros.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/ros/ros.h
 stdio.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/stdio.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/stdio.h
 updatemanager.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/updatemanager.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/updatemanager.h
 nav_msgs/OccupancyGrid.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/nav_msgs/OccupancyGrid.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/nav_msgs/OccupancyGrid.h
 nav_msgs/Odometry.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/nav_msgs/Odometry.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/nav_msgs/Odometry.h
 std_msgs/String.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/std_msgs/String.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/std_msgs/String.h
 geometry_msgs/Pose.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/geometry_msgs/Pose.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/geometry_msgs/Pose.h
 geometry_msgs/PoseStamped.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/geometry_msgs/PoseStamped.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/geometry_msgs/PoseStamped.h
 nav_msgs/Odometry.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/nav_msgs/Odometry.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/nav_msgs/Odometry.h
 opencv2/imgproc/imgproc.hpp
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/opencv2/imgproc/imgproc.hpp
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/opencv2/imgproc/imgproc.hpp
 opencv2/highgui/highgui.hpp
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/opencv2/highgui/highgui.hpp
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/opencv2/highgui/highgui.hpp
 opencv2/video/tracking.hpp
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/opencv2/video/tracking.hpp
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/opencv2/video/tracking.hpp
 mapstitch.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapstitch.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapstitch.h
 adhoc_communication/SendOccupancyGrid.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/SendOccupancyGrid.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/SendOccupancyGrid.h
 adhoc_communication/SendMmRobotPosition.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/SendMmRobotPosition.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/SendMmRobotPosition.h
 adhoc_communication/MmRobotPosition.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/MmRobotPosition.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/MmRobotPosition.h
 adhoc_communication/MmListOfPoints.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/MmListOfPoints.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/MmListOfPoints.h
 adhoc_communication/MmMapUpdate.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/MmMapUpdate.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/MmMapUpdate.h
 adhoc_communication/MmControl.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/MmControl.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/MmControl.h
 adhoc_communication/SendMmControl.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/SendMmControl.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/SendMmControl.h
 adhoc_communication/SendMmMapUpdate.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/SendMmMapUpdate.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/SendMmMapUpdate.h
 adhoc_communication/GetNeighbors.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/GetNeighbors.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/GetNeighbors.h
 updateentry.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/updateentry.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/updateentry.h
 map_merger/TransformPoint.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/map_merger/TransformPoint.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/map_merger/TransformPoint.h
 map_merger/LogMaps.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/map_merger/LogMaps.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/map_merger/LogMaps.h
 updateentry.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/updateentry.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/updateentry.h
 adhoc_communication/ExpFrontier.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/ExpFrontier.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/ExpFrontier.h
 adhoc_communication/ExpFrontierElement.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/ExpFrontierElement.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/adhoc_communication/ExpFrontierElement.h
 visualization_msgs/MarkerArray.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/visualization_msgs/MarkerArray.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/visualization_msgs/MarkerArray.h
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapstitch.cpp
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapstitch.cpp
 mapstitch.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapstitch.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapstitch.h
 math.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/math.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/math.h
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapstitch.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/mapstitch.h
 stdio.h
 -
 math.h
@@ -526,29 +526,29 @@ math.h
 opencv2/opencv.hpp
 -
 ros/ros.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/ros/ros.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/ros/ros.h
 ros/console.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/ros/console.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/ros/console.h
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/updateentry.cpp
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/updateentry.cpp
 updateentry.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/updateentry.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/updateentry.h
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/updateentry.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/updateentry.h
 ros/console.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/ros/console.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/ros/console.h
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/updatemanager.cpp
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/updatemanager.cpp
 updatemanager.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/updatemanager.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/updatemanager.h
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/updatemanager.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/updatemanager.h
 iostream
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/iostream
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/iostream
 vector
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/vector
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/vector
 ros/console.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/src/ros/console.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/src/ros/console.h
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/test_robot_pose_ekf.dir/test/test_robot_pose_ekf.cpp.o"
-  "/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf.pdb"
-  "/home/ros/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf"
+  "/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf.pdb"
+  "/home/valerio/slampbenchmarking/devel/lib/robot_pose_ekf/test_robot_pose_ekf"
 )
 
 # Per-language clean rules from dependency scanning.

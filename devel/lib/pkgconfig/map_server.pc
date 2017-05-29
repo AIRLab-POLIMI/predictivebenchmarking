@@ -1,8 +1,8 @@
-prefix=/home/ros/slampbenchmarking/devel
+prefix=/home/valerio/slampbenchmarking/devel
 
 Name: map_server
 Description: Description of map_server
 Version: 1.14.0
-Cflags: -I/home/ros/slampbenchmarking/src/navigation/map_server/include -I/usr/include/SDL
-Libs: -L/home/ros/slampbenchmarking/devel/lib -lmap_server_image_loader /usr/lib/x86_64-linux-gnu/libSDLmain.a -l:/usr/lib/x86_64-linux-gnu/libSDL.so -l-lpthread -l:/usr/lib/x86_64-linux-gnu/libSDL_image.so
+Cflags: -I/home/valerio/slampbenchmarking/src/navigation/map_server/include -I/usr/include/SDL
+Libs: -L/home/valerio/slampbenchmarking/devel/lib -lmap_server_image_loader /usr/lib/x86_64-linux-gnu/libSDLmain.a -l:/usr/lib/x86_64-linux-gnu/libSDL.so -l-lpthread -l:/usr/lib/x86_64-linux-gnu/libSDL_image.so
 Requires: roscpp tf nav_msgs

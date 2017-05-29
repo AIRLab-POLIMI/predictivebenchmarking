@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/array_parser_test.dir/test/array_parser_test.cpp.o"
-  "/home/ros/slampbenchmarking/devel/lib/costmap_2d/array_parser_test.pdb"
-  "/home/ros/slampbenchmarking/devel/lib/costmap_2d/array_parser_test"
+  "/home/valerio/slampbenchmarking/devel/lib/costmap_2d/array_parser_test.pdb"
+  "/home/valerio/slampbenchmarking/devel/lib/costmap_2d/array_parser_test"
 )
 
 # Per-language clean rules from dependency scanning.

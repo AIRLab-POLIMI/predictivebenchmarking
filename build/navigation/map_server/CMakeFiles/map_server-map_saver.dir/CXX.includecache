@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/ros/slampbenchmarking/src/navigation/map_server/src/map_saver.cpp
+/home/valerio/slampbenchmarking/src/navigation/map_server/src/map_saver.cpp
 cstdio
 -
 ros/ros.h
-/home/ros/slampbenchmarking/src/navigation/map_server/src/ros/ros.h
+/home/valerio/slampbenchmarking/src/navigation/map_server/src/ros/ros.h
 ros/console.h
-/home/ros/slampbenchmarking/src/navigation/map_server/src/ros/console.h
+/home/valerio/slampbenchmarking/src/navigation/map_server/src/ros/console.h
 nav_msgs/GetMap.h
-/home/ros/slampbenchmarking/src/navigation/map_server/src/nav_msgs/GetMap.h
+/home/valerio/slampbenchmarking/src/navigation/map_server/src/nav_msgs/GetMap.h
 tf/LinearMath/Matrix3x3.h
-/home/ros/slampbenchmarking/src/navigation/map_server/src/tf/LinearMath/Matrix3x3.h
+/home/valerio/slampbenchmarking/src/navigation/map_server/src/tf/LinearMath/Matrix3x3.h
 geometry_msgs/Quaternion.h
-/home/ros/slampbenchmarking/src/navigation/map_server/src/geometry_msgs/Quaternion.h
+/home/valerio/slampbenchmarking/src/navigation/map_server/src/geometry_msgs/Quaternion.h
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string

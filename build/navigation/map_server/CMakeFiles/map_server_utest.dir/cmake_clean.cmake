@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/map_server_utest.dir/test/utest.cpp.o"
   "CMakeFiles/map_server_utest.dir/test/test_constants.cpp.o"
-  "/home/ros/slampbenchmarking/devel/lib/map_server/map_server_utest.pdb"
-  "/home/ros/slampbenchmarking/devel/lib/map_server/map_server_utest"
+  "/home/valerio/slampbenchmarking/devel/lib/map_server/map_server_utest.pdb"
+  "/home/valerio/slampbenchmarking/devel/lib/map_server/map_server_utest"
 )
 
 # Per-language clean rules from dependency scanning.

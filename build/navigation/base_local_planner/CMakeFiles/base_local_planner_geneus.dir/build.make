@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for base_local_planner_geneus.
 
@@ -63,10 +63,10 @@ navigation/base_local_planner/CMakeFiles/base_local_planner_geneus.dir/build: ba
 .PHONY : navigation/base_local_planner/CMakeFiles/base_local_planner_geneus.dir/build
 
 navigation/base_local_planner/CMakeFiles/base_local_planner_geneus.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/base_local_planner && $(CMAKE_COMMAND) -P CMakeFiles/base_local_planner_geneus.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/base_local_planner && $(CMAKE_COMMAND) -P CMakeFiles/base_local_planner_geneus.dir/cmake_clean.cmake
 .PHONY : navigation/base_local_planner/CMakeFiles/base_local_planner_geneus.dir/clean
 
 navigation/base_local_planner/CMakeFiles/base_local_planner_geneus.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/base_local_planner /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/base_local_planner /home/ros/slampbenchmarking/build/navigation/base_local_planner/CMakeFiles/base_local_planner_geneus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/base_local_planner /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/base_local_planner /home/valerio/slampbenchmarking/build/navigation/base_local_planner/CMakeFiles/base_local_planner_geneus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/base_local_planner/CMakeFiles/base_local_planner_geneus.dir/depend
 

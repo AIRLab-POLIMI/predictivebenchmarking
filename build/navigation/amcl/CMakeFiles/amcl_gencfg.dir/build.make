@@ -43,44 +43,44 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for amcl_gencfg.
 
 # Include the progress variables for this target.
 include navigation/amcl/CMakeFiles/amcl_gencfg.dir/progress.make
 
-navigation/amcl/CMakeFiles/amcl_gencfg: /home/ros/slampbenchmarking/devel/include/amcl/AMCLConfig.h
-navigation/amcl/CMakeFiles/amcl_gencfg: /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/amcl/cfg/AMCLConfig.py
+navigation/amcl/CMakeFiles/amcl_gencfg: /home/valerio/slampbenchmarking/devel/include/amcl/AMCLConfig.h
+navigation/amcl/CMakeFiles/amcl_gencfg: /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/amcl/cfg/AMCLConfig.py
 
 
-/home/ros/slampbenchmarking/devel/include/amcl/AMCLConfig.h: /home/ros/slampbenchmarking/src/navigation/amcl/cfg/AMCL.cfg
-/home/ros/slampbenchmarking/devel/include/amcl/AMCLConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.py.template
-/home/ros/slampbenchmarking/devel/include/amcl/AMCLConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dynamic reconfigure files from cfg/AMCL.cfg: /home/ros/slampbenchmarking/devel/include/amcl/AMCLConfig.h /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/amcl/cfg/AMCLConfig.py"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && ../../catkin_generated/env_cached.sh /home/ros/slampbenchmarking/build/navigation/amcl/setup_custom_pythonpath.sh /home/ros/slampbenchmarking/src/navigation/amcl/cfg/AMCL.cfg /opt/ros/kinetic/share/dynamic_reconfigure/cmake/.. /home/ros/slampbenchmarking/devel/share/amcl /home/ros/slampbenchmarking/devel/include/amcl /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/amcl
+/home/valerio/slampbenchmarking/devel/include/amcl/AMCLConfig.h: /home/valerio/slampbenchmarking/src/navigation/amcl/cfg/AMCL.cfg
+/home/valerio/slampbenchmarking/devel/include/amcl/AMCLConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.py.template
+/home/valerio/slampbenchmarking/devel/include/amcl/AMCLConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dynamic reconfigure files from cfg/AMCL.cfg: /home/valerio/slampbenchmarking/devel/include/amcl/AMCLConfig.h /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/amcl/cfg/AMCLConfig.py"
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && ../../catkin_generated/env_cached.sh /home/valerio/slampbenchmarking/build/navigation/amcl/setup_custom_pythonpath.sh /home/valerio/slampbenchmarking/src/navigation/amcl/cfg/AMCL.cfg /opt/ros/kinetic/share/dynamic_reconfigure/cmake/.. /home/valerio/slampbenchmarking/devel/share/amcl /home/valerio/slampbenchmarking/devel/include/amcl /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/amcl
 
-/home/ros/slampbenchmarking/devel/share/amcl/docs/AMCLConfig.dox: /home/ros/slampbenchmarking/devel/include/amcl/AMCLConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/share/amcl/docs/AMCLConfig.dox
+/home/valerio/slampbenchmarking/devel/share/amcl/docs/AMCLConfig.dox: /home/valerio/slampbenchmarking/devel/include/amcl/AMCLConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/share/amcl/docs/AMCLConfig.dox
 
-/home/ros/slampbenchmarking/devel/share/amcl/docs/AMCLConfig-usage.dox: /home/ros/slampbenchmarking/devel/include/amcl/AMCLConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/share/amcl/docs/AMCLConfig-usage.dox
+/home/valerio/slampbenchmarking/devel/share/amcl/docs/AMCLConfig-usage.dox: /home/valerio/slampbenchmarking/devel/include/amcl/AMCLConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/share/amcl/docs/AMCLConfig-usage.dox
 
-/home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/amcl/cfg/AMCLConfig.py: /home/ros/slampbenchmarking/devel/include/amcl/AMCLConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/amcl/cfg/AMCLConfig.py
+/home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/amcl/cfg/AMCLConfig.py: /home/valerio/slampbenchmarking/devel/include/amcl/AMCLConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/amcl/cfg/AMCLConfig.py
 
-/home/ros/slampbenchmarking/devel/share/amcl/docs/AMCLConfig.wikidoc: /home/ros/slampbenchmarking/devel/include/amcl/AMCLConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/share/amcl/docs/AMCLConfig.wikidoc
+/home/valerio/slampbenchmarking/devel/share/amcl/docs/AMCLConfig.wikidoc: /home/valerio/slampbenchmarking/devel/include/amcl/AMCLConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/share/amcl/docs/AMCLConfig.wikidoc
 
 amcl_gencfg: navigation/amcl/CMakeFiles/amcl_gencfg
-amcl_gencfg: /home/ros/slampbenchmarking/devel/include/amcl/AMCLConfig.h
-amcl_gencfg: /home/ros/slampbenchmarking/devel/share/amcl/docs/AMCLConfig.dox
-amcl_gencfg: /home/ros/slampbenchmarking/devel/share/amcl/docs/AMCLConfig-usage.dox
-amcl_gencfg: /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/amcl/cfg/AMCLConfig.py
-amcl_gencfg: /home/ros/slampbenchmarking/devel/share/amcl/docs/AMCLConfig.wikidoc
+amcl_gencfg: /home/valerio/slampbenchmarking/devel/include/amcl/AMCLConfig.h
+amcl_gencfg: /home/valerio/slampbenchmarking/devel/share/amcl/docs/AMCLConfig.dox
+amcl_gencfg: /home/valerio/slampbenchmarking/devel/share/amcl/docs/AMCLConfig-usage.dox
+amcl_gencfg: /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/amcl/cfg/AMCLConfig.py
+amcl_gencfg: /home/valerio/slampbenchmarking/devel/share/amcl/docs/AMCLConfig.wikidoc
 amcl_gencfg: navigation/amcl/CMakeFiles/amcl_gencfg.dir/build.make
 
 .PHONY : amcl_gencfg
@@ -91,10 +91,10 @@ navigation/amcl/CMakeFiles/amcl_gencfg.dir/build: amcl_gencfg
 .PHONY : navigation/amcl/CMakeFiles/amcl_gencfg.dir/build
 
 navigation/amcl/CMakeFiles/amcl_gencfg.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/amcl_gencfg.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/amcl_gencfg.dir/cmake_clean.cmake
 .PHONY : navigation/amcl/CMakeFiles/amcl_gencfg.dir/clean
 
 navigation/amcl/CMakeFiles/amcl_gencfg.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/amcl /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/amcl /home/ros/slampbenchmarking/build/navigation/amcl/CMakeFiles/amcl_gencfg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/amcl /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/amcl /home/valerio/slampbenchmarking/build/navigation/amcl/CMakeFiles/amcl_gencfg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/amcl/CMakeFiles/amcl_gencfg.dir/depend
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for topic_tools_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ navigation/amcl/CMakeFiles/topic_tools_generate_messages_nodejs.dir/build: topic
 .PHONY : navigation/amcl/CMakeFiles/topic_tools_generate_messages_nodejs.dir/build
 
 navigation/amcl/CMakeFiles/topic_tools_generate_messages_nodejs.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/topic_tools_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/topic_tools_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : navigation/amcl/CMakeFiles/topic_tools_generate_messages_nodejs.dir/clean
 
 navigation/amcl/CMakeFiles/topic_tools_generate_messages_nodejs.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/amcl /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/amcl /home/ros/slampbenchmarking/build/navigation/amcl/CMakeFiles/topic_tools_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/amcl /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/amcl /home/valerio/slampbenchmarking/build/navigation/amcl/CMakeFiles/topic_tools_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/amcl/CMakeFiles/topic_tools_generate_messages_nodejs.dir/depend
 

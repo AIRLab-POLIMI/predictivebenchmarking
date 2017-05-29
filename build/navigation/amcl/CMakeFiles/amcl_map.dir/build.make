@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Include any dependencies generated for this target.
 include navigation/amcl/CMakeFiles/amcl_map.dir/depend.make
@@ -58,17 +58,17 @@ include navigation/amcl/CMakeFiles/amcl_map.dir/progress.make
 include navigation/amcl/CMakeFiles/amcl_map.dir/flags.make
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map.c.o: navigation/amcl/CMakeFiles/amcl_map.dir/flags.make
-navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map.c.o: /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map.c.o"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_map.dir/src/amcl/map/map.c.o   -c /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map.c
+navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map.c.o: /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map.c.o"
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_map.dir/src/amcl/map/map.c.o   -c /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map.c
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amcl_map.dir/src/amcl/map/map.c.i"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map.c > CMakeFiles/amcl_map.dir/src/amcl/map/map.c.i
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map.c > CMakeFiles/amcl_map.dir/src/amcl/map/map.c.i
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amcl_map.dir/src/amcl/map/map.c.s"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map.c -o CMakeFiles/amcl_map.dir/src/amcl/map/map.c.s
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map.c -o CMakeFiles/amcl_map.dir/src/amcl/map/map.c.s
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map.c.o.requires:
 
@@ -82,17 +82,17 @@ navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map.c.o.provides.build: nav
 
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.o: navigation/amcl/CMakeFiles/amcl_map.dir/flags.make
-navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.o: /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_cspace.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.o"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.o -c /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_cspace.cpp
+navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.o: /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_cspace.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.o"
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.o -c /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_cspace.cpp
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.i"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_cspace.cpp > CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.i
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_cspace.cpp > CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.i
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.s"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_cspace.cpp -o CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.s
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_cspace.cpp -o CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.s
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.o.requires:
 
@@ -106,17 +106,17 @@ navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.o.provides.b
 
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.o: navigation/amcl/CMakeFiles/amcl_map.dir/flags.make
-navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.o: /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_range.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.o"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.o   -c /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_range.c
+navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.o: /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_range.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.o"
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.o   -c /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_range.c
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.i"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_range.c > CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.i
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_range.c > CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.i
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.s"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_range.c -o CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.s
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_range.c -o CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.s
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.o.requires:
 
@@ -130,17 +130,17 @@ navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.o.provides.buil
 
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.o: navigation/amcl/CMakeFiles/amcl_map.dir/flags.make
-navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.o: /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_store.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.o"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.o   -c /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_store.c
+navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.o: /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_store.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.o"
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.o   -c /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_store.c
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.i"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_store.c > CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.i
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_store.c > CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.i
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.s"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_store.c -o CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.s
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_store.c -o CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.s
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.o.requires:
 
@@ -154,17 +154,17 @@ navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.o.provides.buil
 
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.o: navigation/amcl/CMakeFiles/amcl_map.dir/flags.make
-navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.o: /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_draw.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.o"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.o   -c /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_draw.c
+navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.o: /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_draw.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.o"
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.o   -c /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_draw.c
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.i"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_draw.c > CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.i
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_draw.c > CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.i
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.s"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_draw.c -o CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.s
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/map/map_draw.c -o CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.s
 
 navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.o.requires:
 
@@ -188,18 +188,18 @@ amcl_map_OBJECTS = \
 # External object files for target amcl_map
 amcl_map_EXTERNAL_OBJECTS =
 
-/home/ros/slampbenchmarking/devel/lib/libamcl_map.so: navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map.c.o
-/home/ros/slampbenchmarking/devel/lib/libamcl_map.so: navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.o
-/home/ros/slampbenchmarking/devel/lib/libamcl_map.so: navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.o
-/home/ros/slampbenchmarking/devel/lib/libamcl_map.so: navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.o
-/home/ros/slampbenchmarking/devel/lib/libamcl_map.so: navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.o
-/home/ros/slampbenchmarking/devel/lib/libamcl_map.so: navigation/amcl/CMakeFiles/amcl_map.dir/build.make
-/home/ros/slampbenchmarking/devel/lib/libamcl_map.so: navigation/amcl/CMakeFiles/amcl_map.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library /home/ros/slampbenchmarking/devel/lib/libamcl_map.so"
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/amcl_map.dir/link.txt --verbose=$(VERBOSE)
+/home/valerio/slampbenchmarking/devel/lib/libamcl_map.so: navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map.c.o
+/home/valerio/slampbenchmarking/devel/lib/libamcl_map.so: navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_cspace.cpp.o
+/home/valerio/slampbenchmarking/devel/lib/libamcl_map.so: navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_range.c.o
+/home/valerio/slampbenchmarking/devel/lib/libamcl_map.so: navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_store.c.o
+/home/valerio/slampbenchmarking/devel/lib/libamcl_map.so: navigation/amcl/CMakeFiles/amcl_map.dir/src/amcl/map/map_draw.c.o
+/home/valerio/slampbenchmarking/devel/lib/libamcl_map.so: navigation/amcl/CMakeFiles/amcl_map.dir/build.make
+/home/valerio/slampbenchmarking/devel/lib/libamcl_map.so: navigation/amcl/CMakeFiles/amcl_map.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library /home/valerio/slampbenchmarking/devel/lib/libamcl_map.so"
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/amcl_map.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-navigation/amcl/CMakeFiles/amcl_map.dir/build: /home/ros/slampbenchmarking/devel/lib/libamcl_map.so
+navigation/amcl/CMakeFiles/amcl_map.dir/build: /home/valerio/slampbenchmarking/devel/lib/libamcl_map.so
 
 .PHONY : navigation/amcl/CMakeFiles/amcl_map.dir/build
 
@@ -212,10 +212,10 @@ navigation/amcl/CMakeFiles/amcl_map.dir/requires: navigation/amcl/CMakeFiles/amc
 .PHONY : navigation/amcl/CMakeFiles/amcl_map.dir/requires
 
 navigation/amcl/CMakeFiles/amcl_map.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/amcl_map.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/amcl_map.dir/cmake_clean.cmake
 .PHONY : navigation/amcl/CMakeFiles/amcl_map.dir/clean
 
 navigation/amcl/CMakeFiles/amcl_map.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/amcl /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/amcl /home/ros/slampbenchmarking/build/navigation/amcl/CMakeFiles/amcl_map.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/amcl /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/amcl /home/valerio/slampbenchmarking/build/navigation/amcl/CMakeFiles/amcl_map.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/amcl/CMakeFiles/amcl_map.dir/depend
 

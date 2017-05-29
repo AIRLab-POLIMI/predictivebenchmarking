@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for run_tests_robot_pose_ekf.
 
@@ -63,10 +63,10 @@ navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf.dir/build: run_tes
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf.dir/build
 
 navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_robot_pose_ekf.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_robot_pose_ekf.dir/cmake_clean.cmake
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf.dir/clean
 
 navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf.dir/depend
 

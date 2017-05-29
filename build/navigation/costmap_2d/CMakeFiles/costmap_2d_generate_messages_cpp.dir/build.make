@@ -43,30 +43,30 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for costmap_2d_generate_messages_cpp.
 
 # Include the progress variables for this target.
 include navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_cpp.dir/progress.make
 
-navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_cpp: /home/ros/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h
+navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_cpp: /home/valerio/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h
 
 
-/home/ros/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/ros/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h: /home/ros/slampbenchmarking/src/navigation/costmap_2d/msg/VoxelGrid.msg
-/home/ros/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point32.msg
-/home/ros/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/ros/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
-/home/ros/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from costmap_2d/VoxelGrid.msg"
-	cd /home/ros/slampbenchmarking/build/navigation/costmap_2d && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/ros/slampbenchmarking/src/navigation/costmap_2d/msg/VoxelGrid.msg -Icostmap_2d:/home/ros/slampbenchmarking/src/navigation/costmap_2d/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Imap_msgs:/opt/ros/kinetic/share/map_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p costmap_2d -o /home/ros/slampbenchmarking/devel/include/costmap_2d -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/valerio/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/valerio/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h: /home/valerio/slampbenchmarking/src/navigation/costmap_2d/msg/VoxelGrid.msg
+/home/valerio/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point32.msg
+/home/valerio/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/valerio/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
+/home/valerio/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from costmap_2d/VoxelGrid.msg"
+	cd /home/valerio/slampbenchmarking/build/navigation/costmap_2d && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/valerio/slampbenchmarking/src/navigation/costmap_2d/msg/VoxelGrid.msg -Icostmap_2d:/home/valerio/slampbenchmarking/src/navigation/costmap_2d/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Imap_msgs:/opt/ros/kinetic/share/map_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p costmap_2d -o /home/valerio/slampbenchmarking/devel/include/costmap_2d -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 costmap_2d_generate_messages_cpp: navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_cpp
-costmap_2d_generate_messages_cpp: /home/ros/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h
+costmap_2d_generate_messages_cpp: /home/valerio/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h
 costmap_2d_generate_messages_cpp: navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_cpp.dir/build.make
 
 .PHONY : costmap_2d_generate_messages_cpp
@@ -77,10 +77,10 @@ navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_cpp.dir/build: cos
 .PHONY : navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_cpp.dir/build
 
 navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_cpp.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/costmap_2d && $(CMAKE_COMMAND) -P CMakeFiles/costmap_2d_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/costmap_2d && $(CMAKE_COMMAND) -P CMakeFiles/costmap_2d_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_cpp.dir/clean
 
 navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_cpp.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/costmap_2d /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/costmap_2d /home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/costmap_2d /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/costmap_2d /home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_cpp.dir/depend
 

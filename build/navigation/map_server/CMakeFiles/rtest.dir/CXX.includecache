@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ros/slampbenchmarking/src/navigation/map_server/test/rtest.cpp
+/home/valerio/slampbenchmarking/src/navigation/map_server/test/rtest.cpp
 gtest/gtest.h
 -
 ros/service.h
@@ -20,13 +20,13 @@ nav_msgs/OccupancyGrid.h
 nav_msgs/MapMetaData.h
 -
 test_constants.h
-/home/ros/slampbenchmarking/src/navigation/map_server/test/test_constants.h
+/home/valerio/slampbenchmarking/src/navigation/map_server/test/test_constants.h
 
-/home/ros/slampbenchmarking/src/navigation/map_server/test/test_constants.cpp
+/home/valerio/slampbenchmarking/src/navigation/map_server/test/test_constants.cpp
 test_constants.h
-/home/ros/slampbenchmarking/src/navigation/map_server/test/test_constants.h
+/home/valerio/slampbenchmarking/src/navigation/map_server/test/test_constants.h
 
-/home/ros/slampbenchmarking/src/navigation/map_server/test/test_constants.h
+/home/valerio/slampbenchmarking/src/navigation/map_server/test/test_constants.h
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string

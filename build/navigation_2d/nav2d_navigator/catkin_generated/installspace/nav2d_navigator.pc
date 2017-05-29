@@ -1,8 +1,0 @@
-prefix=/home/ros/slampbenchmarking/install
-
-Name: nav2d_navigator
-Description: Description of nav2d_navigator
-Version: 0.3.2
-Cflags: -I/home/ros/slampbenchmarking/install/include
-Libs: -L/home/ros/slampbenchmarking/install/lib -lRobotNavigator -lMapInflationTool
-Requires: roscpp message_runtime tf actionlib actionlib_msgs geometry_msgs nav2d_msgs nav2d_operator

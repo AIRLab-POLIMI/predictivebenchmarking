@@ -43,34 +43,34 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for map_merger_generate_messages_nodejs.
 
 # Include the progress variables for this target.
 include aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/progress.make
 
-aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs: /home/ros/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/LogMaps.js
-aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs: /home/ros/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/TransformPoint.js
+aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs: /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/LogMaps.js
+aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs: /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/TransformPoint.js
 
 
-/home/ros/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/LogMaps.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/ros/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/LogMaps.js: /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from map_merger/LogMaps.srv"
-	cd /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv -Iadhoc_communication:/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/ros/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv
+/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/LogMaps.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/LogMaps.js: /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from map_merger/LogMaps.srv"
+	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/LogMaps.srv -Iadhoc_communication:/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv
 
-/home/ros/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/TransformPoint.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/ros/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/TransformPoint.js: /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv
-/home/ros/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/TransformPoint.js: /home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from map_merger/TransformPoint.srv"
-	cd /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv -Iadhoc_communication:/home/ros/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/ros/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv
+/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/TransformPoint.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/TransformPoint.js: /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv
+/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/TransformPoint.js: /home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg/MmPoint.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from map_merger/TransformPoint.srv"
+	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger/srv/TransformPoint.srv -Iadhoc_communication:/home/valerio/slampbenchmarking/src/aau_multi_robot/adhoc_communication/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p map_merger -o /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv
 
 map_merger_generate_messages_nodejs: aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs
-map_merger_generate_messages_nodejs: /home/ros/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/LogMaps.js
-map_merger_generate_messages_nodejs: /home/ros/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/TransformPoint.js
+map_merger_generate_messages_nodejs: /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/LogMaps.js
+map_merger_generate_messages_nodejs: /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/map_merger/srv/TransformPoint.js
 map_merger_generate_messages_nodejs: aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/build.make
 
 .PHONY : map_merger_generate_messages_nodejs
@@ -81,10 +81,10 @@ aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/bu
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/build
 
 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/clean:
-	cd /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger && $(CMAKE_COMMAND) -P CMakeFiles/map_merger_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger && $(CMAKE_COMMAND) -P CMakeFiles/map_merger_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/clean
 
 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/aau_multi_robot/map_merger /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/aau_multi_robot/map_merger /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/depend
 

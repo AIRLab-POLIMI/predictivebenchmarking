@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/map_merger_generate_messages_lisp"
-  "/home/ros/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/LogMaps.lisp"
-  "/home/ros/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/TransformPoint.lisp"
+  "/home/valerio/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/LogMaps.lisp"
+  "/home/valerio/slampbenchmarking/devel/share/common-lisp/ros/map_merger/srv/TransformPoint.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/explorer.dir/src/explorer.cpp.o"
-  "/home/ros/slampbenchmarking/devel/lib/explorer/explorer.pdb"
-  "/home/ros/slampbenchmarking/devel/lib/explorer/explorer"
+  "/home/valerio/slampbenchmarking/devel/lib/explorer/explorer.pdb"
+  "/home/valerio/slampbenchmarking/devel/lib/explorer/explorer"
 )
 
 # Per-language clean rules from dependency scanning.

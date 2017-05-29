@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/costmap_2d_generate_messages_cpp"
-  "/home/ros/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h"
+  "/home/valerio/slampbenchmarking/devel/include/costmap_2d/VoxelGrid.h"
 )
 
 # Per-language clean rules from dependency scanning.

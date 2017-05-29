@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/robot_pose_ekf_generate_messages_cpp"
-  "/home/ros/slampbenchmarking/devel/include/robot_pose_ekf/GetStatus.h"
+  "/home/valerio/slampbenchmarking/devel/include/robot_pose_ekf/GetStatus.h"
 )
 
 # Per-language clean rules from dependency scanning.

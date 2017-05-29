@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ros/slampbenchmarking/devel/include/amcl/AMCLConfig.h
+/home/valerio/slampbenchmarking/devel/include/amcl/AMCLConfig.h
 dynamic_reconfigure/config_tools.h
 -
 limits
@@ -24,45 +24,45 @@ dynamic_reconfigure/config_init_mutex.h
 boost/any.hpp
 -
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/map/map.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/map/map.h
 stdint.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf.h
 pf_vector.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_vector.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_vector.h
 pf_kdtree.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_kdtree.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_kdtree.h
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_kdtree.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_kdtree.h
 rtk.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/rtk.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/rtk.h
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_pdf.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_pdf.h
 pf_vector.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_vector.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_vector.h
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_vector.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_vector.h
 stdio.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_laser.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_laser.h
 amcl_sensor.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_sensor.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_sensor.h
 ../map/map.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/map/map.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/map/map.h
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_odom.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_odom.h
 amcl_sensor.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_sensor.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_sensor.h
 ../pf/pf_pdf.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_pdf.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_pdf.h
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_sensor.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_sensor.h
 ../pf/pf.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf.h
 
-/home/ros/slampbenchmarking/src/navigation/amcl/src/amcl_node.cpp
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl_node.cpp
 algorithm
 -
 vector
@@ -78,45 +78,45 @@ boost/thread/mutex.hpp
 signal.h
 -
 map/map.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/map/map.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/map/map.h
 pf/pf.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/pf/pf.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/pf/pf.h
 sensors/amcl_odom.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/sensors/amcl_odom.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/sensors/amcl_odom.h
 sensors/amcl_laser.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/sensors/amcl_laser.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/sensors/amcl_laser.h
 ros/assert.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/ros/assert.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/ros/assert.h
 ros/ros.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/ros/ros.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/ros/ros.h
 sensor_msgs/LaserScan.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/sensor_msgs/LaserScan.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/sensor_msgs/LaserScan.h
 geometry_msgs/PoseWithCovarianceStamped.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/geometry_msgs/PoseWithCovarianceStamped.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/geometry_msgs/PoseWithCovarianceStamped.h
 geometry_msgs/PoseArray.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/geometry_msgs/PoseArray.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/geometry_msgs/PoseArray.h
 geometry_msgs/Pose.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/geometry_msgs/Pose.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/geometry_msgs/Pose.h
 nav_msgs/GetMap.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/nav_msgs/GetMap.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/nav_msgs/GetMap.h
 nav_msgs/SetMap.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/nav_msgs/SetMap.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/nav_msgs/SetMap.h
 std_srvs/Empty.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/std_srvs/Empty.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/std_srvs/Empty.h
 tf/transform_broadcaster.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/tf/transform_broadcaster.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/tf/transform_broadcaster.h
 tf/transform_listener.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/tf/transform_listener.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/tf/transform_listener.h
 tf/message_filter.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/tf/message_filter.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/tf/message_filter.h
 tf/tf.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/tf/tf.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/tf/tf.h
 message_filters/subscriber.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/message_filters/subscriber.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/message_filters/subscriber.h
 dynamic_reconfigure/server.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/dynamic_reconfigure/server.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/dynamic_reconfigure/server.h
 amcl/AMCLConfig.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/AMCLConfig.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/AMCLConfig.h
 rosbag/bag.h
 -
 rosbag/view.h

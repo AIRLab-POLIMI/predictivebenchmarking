@@ -43,44 +43,44 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for move_base_gencfg.
 
 # Include the progress variables for this target.
 include navigation/move_base/CMakeFiles/move_base_gencfg.dir/progress.make
 
-navigation/move_base/CMakeFiles/move_base_gencfg: /home/ros/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
-navigation/move_base/CMakeFiles/move_base_gencfg: /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/move_base/cfg/MoveBaseConfig.py
+navigation/move_base/CMakeFiles/move_base_gencfg: /home/valerio/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
+navigation/move_base/CMakeFiles/move_base_gencfg: /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/move_base/cfg/MoveBaseConfig.py
 
 
-/home/ros/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h: /home/ros/slampbenchmarking/src/navigation/move_base/cfg/MoveBase.cfg
-/home/ros/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.py.template
-/home/ros/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dynamic reconfigure files from cfg/MoveBase.cfg: /home/ros/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/move_base/cfg/MoveBaseConfig.py"
-	cd /home/ros/slampbenchmarking/build/navigation/move_base && ../../catkin_generated/env_cached.sh /home/ros/slampbenchmarking/build/navigation/move_base/setup_custom_pythonpath.sh /home/ros/slampbenchmarking/src/navigation/move_base/cfg/MoveBase.cfg /opt/ros/kinetic/share/dynamic_reconfigure/cmake/.. /home/ros/slampbenchmarking/devel/share/move_base /home/ros/slampbenchmarking/devel/include/move_base /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/move_base
+/home/valerio/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h: /home/valerio/slampbenchmarking/src/navigation/move_base/cfg/MoveBase.cfg
+/home/valerio/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.py.template
+/home/valerio/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dynamic reconfigure files from cfg/MoveBase.cfg: /home/valerio/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/move_base/cfg/MoveBaseConfig.py"
+	cd /home/valerio/slampbenchmarking/build/navigation/move_base && ../../catkin_generated/env_cached.sh /home/valerio/slampbenchmarking/build/navigation/move_base/setup_custom_pythonpath.sh /home/valerio/slampbenchmarking/src/navigation/move_base/cfg/MoveBase.cfg /opt/ros/kinetic/share/dynamic_reconfigure/cmake/.. /home/valerio/slampbenchmarking/devel/share/move_base /home/valerio/slampbenchmarking/devel/include/move_base /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/move_base
 
-/home/ros/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig.dox: /home/ros/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig.dox
+/home/valerio/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig.dox: /home/valerio/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig.dox
 
-/home/ros/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig-usage.dox: /home/ros/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig-usage.dox
+/home/valerio/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig-usage.dox: /home/valerio/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig-usage.dox
 
-/home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/move_base/cfg/MoveBaseConfig.py: /home/ros/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/move_base/cfg/MoveBaseConfig.py
+/home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/move_base/cfg/MoveBaseConfig.py: /home/valerio/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/move_base/cfg/MoveBaseConfig.py
 
-/home/ros/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig.wikidoc: /home/ros/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/ros/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig.wikidoc
+/home/valerio/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig.wikidoc: /home/valerio/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/valerio/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig.wikidoc
 
 move_base_gencfg: navigation/move_base/CMakeFiles/move_base_gencfg
-move_base_gencfg: /home/ros/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
-move_base_gencfg: /home/ros/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig.dox
-move_base_gencfg: /home/ros/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig-usage.dox
-move_base_gencfg: /home/ros/slampbenchmarking/devel/lib/python2.7/dist-packages/move_base/cfg/MoveBaseConfig.py
-move_base_gencfg: /home/ros/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig.wikidoc
+move_base_gencfg: /home/valerio/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
+move_base_gencfg: /home/valerio/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig.dox
+move_base_gencfg: /home/valerio/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig-usage.dox
+move_base_gencfg: /home/valerio/slampbenchmarking/devel/lib/python2.7/dist-packages/move_base/cfg/MoveBaseConfig.py
+move_base_gencfg: /home/valerio/slampbenchmarking/devel/share/move_base/docs/MoveBaseConfig.wikidoc
 move_base_gencfg: navigation/move_base/CMakeFiles/move_base_gencfg.dir/build.make
 
 .PHONY : move_base_gencfg
@@ -91,10 +91,10 @@ navigation/move_base/CMakeFiles/move_base_gencfg.dir/build: move_base_gencfg
 .PHONY : navigation/move_base/CMakeFiles/move_base_gencfg.dir/build
 
 navigation/move_base/CMakeFiles/move_base_gencfg.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/move_base && $(CMAKE_COMMAND) -P CMakeFiles/move_base_gencfg.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/move_base && $(CMAKE_COMMAND) -P CMakeFiles/move_base_gencfg.dir/cmake_clean.cmake
 .PHONY : navigation/move_base/CMakeFiles/move_base_gencfg.dir/clean
 
 navigation/move_base/CMakeFiles/move_base_gencfg.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/move_base /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/move_base /home/ros/slampbenchmarking/build/navigation/move_base/CMakeFiles/move_base_gencfg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/move_base /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/move_base /home/valerio/slampbenchmarking/build/navigation/move_base/CMakeFiles/move_base_gencfg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/move_base/CMakeFiles/move_base_gencfg.dir/depend
 

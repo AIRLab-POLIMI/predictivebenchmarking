@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = ""
-services_str = "/home/ros/slampbenchmarking/src/navigation/navfn/srv/MakeNavPlan.srv;/home/ros/slampbenchmarking/src/navigation/navfn/srv/SetCostmap.srv"
+services_str = "/home/valerio/slampbenchmarking/src/navigation/navfn/srv/MakeNavPlan.srv;/home/valerio/slampbenchmarking/src/navigation/navfn/srv/SetCostmap.srv"
 pkg_name = "navfn"
 dependencies_str = "std_msgs;geometry_msgs;nav_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

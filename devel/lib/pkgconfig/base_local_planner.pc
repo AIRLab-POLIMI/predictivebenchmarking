@@ -1,8 +1,8 @@
-prefix=/home/ros/slampbenchmarking/devel
+prefix=/home/valerio/slampbenchmarking/devel
 
 Name: base_local_planner
 Description: Description of base_local_planner
 Version: 1.14.0
-Cflags: -I/home/ros/slampbenchmarking/devel/include -I/home/ros/slampbenchmarking/src/navigation/base_local_planner/include
-Libs: -L/home/ros/slampbenchmarking/devel/lib -lbase_local_planner -ltrajectory_planner_ros
+Cflags: -I/home/valerio/slampbenchmarking/devel/include -I/home/valerio/slampbenchmarking/src/navigation/base_local_planner/include
+Libs: -L/home/valerio/slampbenchmarking/devel/lib -lbase_local_planner -ltrajectory_planner_ros
 Requires: roscpp dynamic_reconfigure message_generation tf pluginlib costmap_2d nav_core angles

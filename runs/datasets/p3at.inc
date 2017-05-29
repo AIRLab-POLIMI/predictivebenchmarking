@@ -17,7 +17,7 @@ define pioneer3at position
 	# four DOF kinematics limits
 	# [ xmin xmax ymin ymax zmin zmax amin amax ]
 	velocity_bounds     [-0.7 0.7 0 0 0 0 -70.0 70.0 ]
-	acceleration_bounds [-0.4 0.4 0 0 0 0 -70.0 70.0 ]
+	acceleration_bounds [-2.5 2.5 0 0 0 0 -70.0 70.0 ]
 
 	# Actual size
 	size [0.3 0.3 0.4]
@@ -26,7 +26,7 @@ define pioneer3at position
 	origin [0 0 0 0]
 
 	# Estimated mass in KG
-	mass 40.0
+	mass 30.0
 
 	# Body shape:
 #	block

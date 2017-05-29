@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for amcl_rosie_localization_stage.bag.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 include navigation/amcl/CMakeFiles/amcl_rosie_localization_stage.bag.dir/progress.make
 
 navigation/amcl/CMakeFiles/amcl_rosie_localization_stage.bag:
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /opt/ros/kinetic/share/catkin/cmake/test/download_checkmd5.py http://download.ros.org/data/amcl/rosie_localization_stage.bag /home/ros/slampbenchmarking/devel/share/amcl/test/rosie_localization_stage.bag 3347bf3835724cfa45e958c5c1846066 --ignore-error
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /opt/ros/kinetic/share/catkin/cmake/test/download_checkmd5.py http://download.ros.org/data/amcl/rosie_localization_stage.bag /home/valerio/slampbenchmarking/devel/share/amcl/test/rosie_localization_stage.bag 3347bf3835724cfa45e958c5c1846066 --ignore-error
 
 amcl_rosie_localization_stage.bag: navigation/amcl/CMakeFiles/amcl_rosie_localization_stage.bag
 amcl_rosie_localization_stage.bag: navigation/amcl/CMakeFiles/amcl_rosie_localization_stage.bag.dir/build.make
@@ -67,10 +67,10 @@ navigation/amcl/CMakeFiles/amcl_rosie_localization_stage.bag.dir/build: amcl_ros
 .PHONY : navigation/amcl/CMakeFiles/amcl_rosie_localization_stage.bag.dir/build
 
 navigation/amcl/CMakeFiles/amcl_rosie_localization_stage.bag.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/amcl_rosie_localization_stage.bag.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/amcl_rosie_localization_stage.bag.dir/cmake_clean.cmake
 .PHONY : navigation/amcl/CMakeFiles/amcl_rosie_localization_stage.bag.dir/clean
 
 navigation/amcl/CMakeFiles/amcl_rosie_localization_stage.bag.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/amcl /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/amcl /home/ros/slampbenchmarking/build/navigation/amcl/CMakeFiles/amcl_rosie_localization_stage.bag.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/amcl /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/amcl /home/valerio/slampbenchmarking/build/navigation/amcl/CMakeFiles/amcl_rosie_localization_stage.bag.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/amcl/CMakeFiles/amcl_rosie_localization_stage.bag.dir/depend
 

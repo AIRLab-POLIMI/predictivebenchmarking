@@ -1,8 +1,8 @@
-# Install script for directory: /home/ros/slampbenchmarking/src/carmen_publisher-master
+# Install script for directory: /home/valerio/slampbenchmarking/src/carmen_publisher-master
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ros/slampbenchmarking/install")
+  set(CMAKE_INSTALL_PREFIX "/home/valerio/slampbenchmarking/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,21 +33,21 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ros/slampbenchmarking/build/carmen_publisher-master/catkin_generated/installspace/carmen_publisher.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/valerio/slampbenchmarking/build/carmen_publisher-master/catkin_generated/installspace/carmen_publisher.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/carmen_publisher/cmake" TYPE FILE FILES
-    "/home/ros/slampbenchmarking/build/carmen_publisher-master/catkin_generated/installspace/carmen_publisherConfig.cmake"
-    "/home/ros/slampbenchmarking/build/carmen_publisher-master/catkin_generated/installspace/carmen_publisherConfig-version.cmake"
+    "/home/valerio/slampbenchmarking/build/carmen_publisher-master/catkin_generated/installspace/carmen_publisherConfig.cmake"
+    "/home/valerio/slampbenchmarking/build/carmen_publisher-master/catkin_generated/installspace/carmen_publisherConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/carmen_publisher" TYPE FILE FILES "/home/ros/slampbenchmarking/src/carmen_publisher-master/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/carmen_publisher" TYPE FILE FILES "/home/valerio/slampbenchmarking/src/carmen_publisher-master/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/carmen_publisher" TYPE PROGRAM FILES "/home/ros/slampbenchmarking/src/carmen_publisher-master/scripts/carmen2rosbag.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/carmen_publisher" TYPE PROGRAM FILES "/home/valerio/slampbenchmarking/src/carmen_publisher-master/scripts/carmen2rosbag.py")
 endif()
 

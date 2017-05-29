@@ -1,8 +1,0 @@
-prefix=/home/ros/slampbenchmarking/devel
-
-Name: nav2d_localizer
-Description: Description of nav2d_localizer
-Version: 0.3.2
-Cflags: -I/home/ros/slampbenchmarking/src/navigation_2d/nav2d_localizer/include
-Libs: -L/home/ros/slampbenchmarking/devel/lib -lSelfLocalizer
-Requires: roscpp tf nav_msgs sensor_msgs geometry_msgs

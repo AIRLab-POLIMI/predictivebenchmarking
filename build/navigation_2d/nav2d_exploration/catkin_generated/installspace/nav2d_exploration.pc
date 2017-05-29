@@ -1,8 +1,0 @@
-prefix=/home/ros/slampbenchmarking/install
-
-Name: nav2d_exploration
-Description: Description of nav2d_exploration
-Version: 0.3.2
-Cflags: 
-Libs: -L/home/ros/slampbenchmarking/install/lib -lExplorationPlugins
-Requires: roscpp tf pluginlib geometry_msgs nav_msgs visualization_msgs nav2d_navigator

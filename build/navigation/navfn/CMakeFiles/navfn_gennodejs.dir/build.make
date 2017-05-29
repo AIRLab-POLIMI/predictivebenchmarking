@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for navfn_gennodejs.
 
@@ -63,10 +63,10 @@ navigation/navfn/CMakeFiles/navfn_gennodejs.dir/build: navfn_gennodejs
 .PHONY : navigation/navfn/CMakeFiles/navfn_gennodejs.dir/build
 
 navigation/navfn/CMakeFiles/navfn_gennodejs.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/navfn && $(CMAKE_COMMAND) -P CMakeFiles/navfn_gennodejs.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/navfn && $(CMAKE_COMMAND) -P CMakeFiles/navfn_gennodejs.dir/cmake_clean.cmake
 .PHONY : navigation/navfn/CMakeFiles/navfn_gennodejs.dir/clean
 
 navigation/navfn/CMakeFiles/navfn_gennodejs.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/navfn /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/navfn /home/ros/slampbenchmarking/build/navigation/navfn/CMakeFiles/navfn_gennodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/navfn /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/navfn /home/valerio/slampbenchmarking/build/navigation/navfn/CMakeFiles/navfn_gennodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/navfn/CMakeFiles/navfn_gennodejs.dir/depend
 

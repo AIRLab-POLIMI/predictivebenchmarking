@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC   -shared -Wl,-soname,libhector_path_follower.so -o /home/ros/slampbenchmarking/devel/lib/libhector_path_follower.so CMakeFiles/hector_path_follower.dir/src/hector_path_follower.cpp.o 

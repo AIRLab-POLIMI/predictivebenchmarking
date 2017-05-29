@@ -1,8 +1,8 @@
-prefix=/home/ros/slampbenchmarking/devel
+prefix=/home/valerio/slampbenchmarking/devel
 
 Name: move_base
 Description: Description of move_base
 Version: 1.14.0
-Cflags: -I/home/ros/slampbenchmarking/devel/include
-Libs: -L/home/ros/slampbenchmarking/devel/lib 
+Cflags: -I/home/valerio/slampbenchmarking/devel/include
+Libs: -L/home/valerio/slampbenchmarking/devel/lib 
 Requires: roscpp dynamic_reconfigure

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for amcl_willow-full.pgm.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 include navigation/amcl/CMakeFiles/amcl_willow-full.pgm.dir/progress.make
 
 navigation/amcl/CMakeFiles/amcl_willow-full.pgm:
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && /opt/ros/kinetic/share/catkin/cmake/test/download_checkmd5.py http://download.ros.org/data/amcl/willow-full.pgm /home/ros/slampbenchmarking/devel/share/amcl/test/willow-full.pgm b84465cdbbfe3e2fb9eb4579e0bcaf0e --ignore-error
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && /opt/ros/kinetic/share/catkin/cmake/test/download_checkmd5.py http://download.ros.org/data/amcl/willow-full.pgm /home/valerio/slampbenchmarking/devel/share/amcl/test/willow-full.pgm b84465cdbbfe3e2fb9eb4579e0bcaf0e --ignore-error
 
 amcl_willow-full.pgm: navigation/amcl/CMakeFiles/amcl_willow-full.pgm
 amcl_willow-full.pgm: navigation/amcl/CMakeFiles/amcl_willow-full.pgm.dir/build.make
@@ -67,10 +67,10 @@ navigation/amcl/CMakeFiles/amcl_willow-full.pgm.dir/build: amcl_willow-full.pgm
 .PHONY : navigation/amcl/CMakeFiles/amcl_willow-full.pgm.dir/build
 
 navigation/amcl/CMakeFiles/amcl_willow-full.pgm.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/amcl_willow-full.pgm.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/amcl && $(CMAKE_COMMAND) -P CMakeFiles/amcl_willow-full.pgm.dir/cmake_clean.cmake
 .PHONY : navigation/amcl/CMakeFiles/amcl_willow-full.pgm.dir/clean
 
 navigation/amcl/CMakeFiles/amcl_willow-full.pgm.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/amcl /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/amcl /home/ros/slampbenchmarking/build/navigation/amcl/CMakeFiles/amcl_willow-full.pgm.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/amcl /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/amcl /home/valerio/slampbenchmarking/build/navigation/amcl/CMakeFiles/amcl_willow-full.pgm.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/amcl/CMakeFiles/amcl_willow-full.pgm.dir/depend
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Include any dependencies generated for this target.
 include aau_multi_robot/explorer/CMakeFiles/munkres.dir/depend.make
@@ -58,17 +58,17 @@ include aau_multi_robot/explorer/CMakeFiles/munkres.dir/progress.make
 include aau_multi_robot/explorer/CMakeFiles/munkres.dir/flags.make
 
 aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.o: aau_multi_robot/explorer/CMakeFiles/munkres.dir/flags.make
-aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.o: /home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/src/munkres.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.o"
-	cd /home/ros/slampbenchmarking/build/aau_multi_robot/explorer && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/munkres.dir/src/src/munkres.cpp.o -c /home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/src/munkres.cpp
+aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.o: /home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/src/munkres.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.o"
+	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/explorer && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/munkres.dir/src/src/munkres.cpp.o -c /home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/src/munkres.cpp
 
 aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/munkres.dir/src/src/munkres.cpp.i"
-	cd /home/ros/slampbenchmarking/build/aau_multi_robot/explorer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/src/munkres.cpp > CMakeFiles/munkres.dir/src/src/munkres.cpp.i
+	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/explorer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/src/munkres.cpp > CMakeFiles/munkres.dir/src/src/munkres.cpp.i
 
 aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/munkres.dir/src/src/munkres.cpp.s"
-	cd /home/ros/slampbenchmarking/build/aau_multi_robot/explorer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/src/munkres.cpp -o CMakeFiles/munkres.dir/src/src/munkres.cpp.s
+	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/explorer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/src/munkres.cpp -o CMakeFiles/munkres.dir/src/src/munkres.cpp.s
 
 aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.o.requires:
 
@@ -88,14 +88,14 @@ munkres_OBJECTS = \
 # External object files for target munkres
 munkres_EXTERNAL_OBJECTS =
 
-/home/ros/slampbenchmarking/devel/lib/libmunkres.so: aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.o
-/home/ros/slampbenchmarking/devel/lib/libmunkres.so: aau_multi_robot/explorer/CMakeFiles/munkres.dir/build.make
-/home/ros/slampbenchmarking/devel/lib/libmunkres.so: aau_multi_robot/explorer/CMakeFiles/munkres.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library /home/ros/slampbenchmarking/devel/lib/libmunkres.so"
-	cd /home/ros/slampbenchmarking/build/aau_multi_robot/explorer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/munkres.dir/link.txt --verbose=$(VERBOSE)
+/home/valerio/slampbenchmarking/devel/lib/libmunkres.so: aau_multi_robot/explorer/CMakeFiles/munkres.dir/src/src/munkres.cpp.o
+/home/valerio/slampbenchmarking/devel/lib/libmunkres.so: aau_multi_robot/explorer/CMakeFiles/munkres.dir/build.make
+/home/valerio/slampbenchmarking/devel/lib/libmunkres.so: aau_multi_robot/explorer/CMakeFiles/munkres.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library /home/valerio/slampbenchmarking/devel/lib/libmunkres.so"
+	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/explorer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/munkres.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-aau_multi_robot/explorer/CMakeFiles/munkres.dir/build: /home/ros/slampbenchmarking/devel/lib/libmunkres.so
+aau_multi_robot/explorer/CMakeFiles/munkres.dir/build: /home/valerio/slampbenchmarking/devel/lib/libmunkres.so
 
 .PHONY : aau_multi_robot/explorer/CMakeFiles/munkres.dir/build
 
@@ -104,10 +104,10 @@ aau_multi_robot/explorer/CMakeFiles/munkres.dir/requires: aau_multi_robot/explor
 .PHONY : aau_multi_robot/explorer/CMakeFiles/munkres.dir/requires
 
 aau_multi_robot/explorer/CMakeFiles/munkres.dir/clean:
-	cd /home/ros/slampbenchmarking/build/aau_multi_robot/explorer && $(CMAKE_COMMAND) -P CMakeFiles/munkres.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/aau_multi_robot/explorer && $(CMAKE_COMMAND) -P CMakeFiles/munkres.dir/cmake_clean.cmake
 .PHONY : aau_multi_robot/explorer/CMakeFiles/munkres.dir/clean
 
 aau_multi_robot/explorer/CMakeFiles/munkres.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/aau_multi_robot/explorer /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/aau_multi_robot/explorer /home/ros/slampbenchmarking/build/aau_multi_robot/explorer/CMakeFiles/munkres.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/aau_multi_robot/explorer /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/aau_multi_robot/explorer /home/valerio/slampbenchmarking/build/aau_multi_robot/explorer/CMakeFiles/munkres.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : aau_multi_robot/explorer/CMakeFiles/munkres.dir/depend
 

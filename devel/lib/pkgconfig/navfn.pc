@@ -1,8 +1,8 @@
-prefix=/home/ros/slampbenchmarking/devel
+prefix=/home/valerio/slampbenchmarking/devel
 
 Name: navfn
 Description: Description of navfn
 Version: 1.14.0
-Cflags: -I/home/ros/slampbenchmarking/devel/include -I/home/ros/slampbenchmarking/src/navigation/navfn/include
-Libs: -L/home/ros/slampbenchmarking/devel/lib -lnavfn
+Cflags: -I/home/valerio/slampbenchmarking/devel/include -I/home/valerio/slampbenchmarking/src/navigation/navfn/include
+Libs: -L/home/valerio/slampbenchmarking/devel/lib -lnavfn
 Requires: nav_core roscpp pluginlib

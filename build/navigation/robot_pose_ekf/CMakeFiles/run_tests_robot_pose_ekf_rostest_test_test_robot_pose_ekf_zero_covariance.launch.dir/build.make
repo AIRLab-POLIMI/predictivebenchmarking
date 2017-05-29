@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 include navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch.dir/progress.make
 
 navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch:
-	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/run_tests.py /home/ros/slampbenchmarking/build/test_results/robot_pose_ekf/rostest-test_test_robot_pose_ekf_zero_covariance.xml /opt/ros/kinetic/share/rostest/cmake/../../../bin/rostest\ --pkgdir=/home/ros/slampbenchmarking/src/navigation/robot_pose_ekf\ --package=robot_pose_ekf\ --results-filename\ test_test_robot_pose_ekf_zero_covariance.xml\ --results-base-dir\ "/home/ros/slampbenchmarking/build/test_results"\ /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/test/test_robot_pose_ekf_zero_covariance.launch\ 
+	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/run_tests.py /home/valerio/slampbenchmarking/build/test_results/robot_pose_ekf/rostest-test_test_robot_pose_ekf_zero_covariance.xml /opt/ros/kinetic/share/rostest/cmake/../../../bin/rostest\ --pkgdir=/home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf\ --package=robot_pose_ekf\ --results-filename\ test_test_robot_pose_ekf_zero_covariance.xml\ --results-base-dir\ "/home/valerio/slampbenchmarking/build/test_results"\ /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/test/test_robot_pose_ekf_zero_covariance.launch\ 
 
 run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch: navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch
 run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch: navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch.dir/build.make
@@ -67,10 +67,10 @@ navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf_rostest_test_test_
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch.dir/build
 
 navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch.dir/cmake_clean.cmake
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch.dir/clean
 
 navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/run_tests_robot_pose_ekf_rostest_test_test_robot_pose_ekf_zero_covariance.launch.dir/depend
 

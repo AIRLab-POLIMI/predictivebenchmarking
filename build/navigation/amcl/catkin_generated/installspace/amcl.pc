@@ -1,8 +1,8 @@
-prefix=/home/ros/slampbenchmarking/install
+prefix=/home/valerio/slampbenchmarking/install
 
 Name: amcl
 Description: Description of amcl
 Version: 1.14.0
-Cflags: -I/home/ros/slampbenchmarking/install/include
-Libs: -L/home/ros/slampbenchmarking/install/lib -lamcl_sensors -lamcl_map -lamcl_pf
+Cflags: -I/home/valerio/slampbenchmarking/install/include
+Libs: -L/home/valerio/slampbenchmarking/install/lib -lamcl_sensors -lamcl_map -lamcl_pf
 Requires: rosbag roscpp dynamic_reconfigure tf

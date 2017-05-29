@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ros/slampbenchmarking/devel/include/costmap_2d/Costmap2DConfig.h
+/home/valerio/slampbenchmarking/devel/include/costmap_2d/Costmap2DConfig.h
 dynamic_reconfigure/config_tools.h
 -
 limits
@@ -24,7 +24,7 @@ dynamic_reconfigure/config_init_mutex.h
 boost/any.hpp
 -
 
-/home/ros/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
+/home/valerio/slampbenchmarking/devel/include/move_base/MoveBaseConfig.h
 dynamic_reconfigure/config_tools.h
 -
 limits
@@ -42,9 +42,9 @@ dynamic_reconfigure/config_init_mutex.h
 boost/any.hpp
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/cost_values.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/cost_values.h
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d.h
 vector
 -
 queue
@@ -54,7 +54,7 @@ geometry_msgs/Point.h
 boost/thread.hpp
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_publisher.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_publisher.h
 ros/ros.h
 -
 costmap_2d/costmap_2d.h
@@ -66,7 +66,7 @@ map_msgs/OccupancyGridUpdate.h
 tf/transform_datatypes.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_ros.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_ros.h
 costmap_2d/layered_costmap.h
 -
 costmap_2d/layer.h
@@ -86,7 +86,7 @@ dynamic_reconfigure/server.h
 pluginlib/class_loader.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/footprint.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/footprint.h
 ros/ros.h
 -
 geometry_msgs/Polygon.h
@@ -98,7 +98,7 @@ geometry_msgs/Point.h
 geometry_msgs/Point32.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layer.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layer.h
 costmap_2d/costmap_2d.h
 -
 costmap_2d/layered_costmap.h
@@ -110,7 +110,7 @@ tf/tf.h
 tf/transform_listener.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layered_costmap.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layered_costmap.h
 costmap_2d/cost_values.h
 -
 costmap_2d/layer.h
@@ -122,7 +122,7 @@ vector
 string
 -
 
-/home/ros/slampbenchmarking/src/navigation/move_base/include/move_base/move_base.h
+/home/valerio/slampbenchmarking/src/navigation/move_base/include/move_base/move_base.h
 vector
 -
 string
@@ -154,9 +154,9 @@ std_srvs/Empty.h
 dynamic_reconfigure/server.h
 -
 move_base/MoveBaseConfig.h
-/home/ros/slampbenchmarking/src/navigation/move_base/include/move_base/move_base/MoveBaseConfig.h
+/home/valerio/slampbenchmarking/src/navigation/move_base/include/move_base/move_base/MoveBaseConfig.h
 
-/home/ros/slampbenchmarking/src/navigation/move_base/src/move_base.cpp
+/home/valerio/slampbenchmarking/src/navigation/move_base/src/move_base.cpp
 move_base/move_base.h
 -
 cmath
@@ -168,13 +168,13 @@ boost/thread.hpp
 geometry_msgs/Twist.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/nav_core/include/nav_core/base_global_planner.h
+/home/valerio/slampbenchmarking/src/navigation/nav_core/include/nav_core/base_global_planner.h
 geometry_msgs/PoseStamped.h
 -
 costmap_2d/costmap_2d_ros.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/nav_core/include/nav_core/base_local_planner.h
+/home/valerio/slampbenchmarking/src/navigation/nav_core/include/nav_core/base_local_planner.h
 geometry_msgs/PoseStamped.h
 -
 geometry_msgs/Twist.h
@@ -184,7 +184,7 @@ costmap_2d/costmap_2d_ros.h
 tf/transform_listener.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/nav_core/include/nav_core/recovery_behavior.h
+/home/valerio/slampbenchmarking/src/navigation/nav_core/include/nav_core/recovery_behavior.h
 costmap_2d/costmap_2d_ros.h
 -
 tf/transform_listener.h

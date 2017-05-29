@@ -5,8 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_vector.c.o"
   "CMakeFiles/amcl_pf.dir/src/amcl/pf/eig3.c.o"
   "CMakeFiles/amcl_pf.dir/src/amcl/pf/pf_draw.c.o"
-  "/home/ros/slampbenchmarking/devel/lib/libamcl_pf.pdb"
-  "/home/ros/slampbenchmarking/devel/lib/libamcl_pf.so"
+  "/home/valerio/slampbenchmarking/devel/lib/libamcl_pf.pdb"
+  "/home/valerio/slampbenchmarking/devel/lib/libamcl_pf.so"
 )
 
 # Per-language clean rules from dependency scanning.

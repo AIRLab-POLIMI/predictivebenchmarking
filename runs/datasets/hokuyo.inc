@@ -3,10 +3,11 @@ define hokuyolaser ranger
 	sensor
 	(
 		# laser-specific properties
-		# factory settings for LMS200
-		range [ 0.0  30.0 ]
-		fov 180.0
-		samples 180
+		# factory settings for LMS100
+		range [ 0.5  20.0 ]
+		fov 270.0
+		samples 540
+        # for LMS200: fov 180, range 0-30m, samples 180 (1deg resolution)
 	)
 
 	# generic model properties

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -135,14 +135,14 @@ install/strip/fast: install/strip
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slampbenchmarking/build/CMakeFiles /home/ros/slampbenchmarking/build/aau_multi_robot/map_merger/CMakeFiles/progress.marks
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/slampbenchmarking/build/CMakeFiles 0
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/valerio/slampbenchmarking/build/CMakeFiles /home/valerio/slampbenchmarking/build/aau_multi_robot/map_merger/CMakeFiles/progress.marks
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/valerio/slampbenchmarking/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/clean
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/preinstall
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/preinstall
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/rule:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/rule
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/rule
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ map_merger: aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/rule
 
 # fast build rule for target.
 map_merger/fast:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build
 .PHONY : map_merger/fast
 
 # Convenience name for target.
 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_py.dir/rule:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_py.dir/rule
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_py.dir/rule
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ map_merger_generate_messages_py: aau_multi_robot/map_merger/CMakeFiles/map_merge
 
 # fast build rule for target.
 map_merger_generate_messages_py/fast:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_py.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_py.dir/build
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_py.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_py.dir/build
 .PHONY : map_merger_generate_messages_py/fast
 
 # Convenience name for target.
 aau_multi_robot/map_merger/CMakeFiles/map_merger_gennodejs.dir/rule:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_gennodejs.dir/rule
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_gennodejs.dir/rule
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_gennodejs.dir/rule
 
 # Convenience name for target.
@@ -207,12 +207,12 @@ map_merger_gennodejs: aau_multi_robot/map_merger/CMakeFiles/map_merger_gennodejs
 
 # fast build rule for target.
 map_merger_gennodejs/fast:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_gennodejs.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_gennodejs.dir/build
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_gennodejs.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_gennodejs.dir/build
 .PHONY : map_merger_gennodejs/fast
 
 # Convenience name for target.
 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/rule:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/rule
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/rule
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -222,12 +222,12 @@ map_merger_generate_messages_lisp: aau_multi_robot/map_merger/CMakeFiles/map_mer
 
 # fast build rule for target.
 map_merger_generate_messages_lisp/fast:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/build
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_lisp.dir/build
 .PHONY : map_merger_generate_messages_lisp/fast
 
 # Convenience name for target.
 aau_multi_robot/map_merger/CMakeFiles/map_merger_geneus.dir/rule:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_geneus.dir/rule
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_geneus.dir/rule
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_geneus.dir/rule
 
 # Convenience name for target.
@@ -237,12 +237,12 @@ map_merger_geneus: aau_multi_robot/map_merger/CMakeFiles/map_merger_geneus.dir/r
 
 # fast build rule for target.
 map_merger_geneus/fast:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_geneus.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_geneus.dir/build
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_geneus.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_geneus.dir/build
 .PHONY : map_merger_geneus/fast
 
 # Convenience name for target.
 aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_TransformPoint.dir/rule:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_TransformPoint.dir/rule
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_TransformPoint.dir/rule
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_TransformPoint.dir/rule
 
 # Convenience name for target.
@@ -252,12 +252,12 @@ _map_merger_generate_messages_check_deps_TransformPoint: aau_multi_robot/map_mer
 
 # fast build rule for target.
 _map_merger_generate_messages_check_deps_TransformPoint/fast:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_TransformPoint.dir/build.make aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_TransformPoint.dir/build
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_TransformPoint.dir/build.make aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_TransformPoint.dir/build
 .PHONY : _map_merger_generate_messages_check_deps_TransformPoint/fast
 
 # Convenience name for target.
 aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_LogMaps.dir/rule:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_LogMaps.dir/rule
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_LogMaps.dir/rule
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_LogMaps.dir/rule
 
 # Convenience name for target.
@@ -267,12 +267,12 @@ _map_merger_generate_messages_check_deps_LogMaps: aau_multi_robot/map_merger/CMa
 
 # fast build rule for target.
 _map_merger_generate_messages_check_deps_LogMaps/fast:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_LogMaps.dir/build.make aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_LogMaps.dir/build
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_LogMaps.dir/build.make aau_multi_robot/map_merger/CMakeFiles/_map_merger_generate_messages_check_deps_LogMaps.dir/build
 .PHONY : _map_merger_generate_messages_check_deps_LogMaps/fast
 
 # Convenience name for target.
 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/rule:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/rule
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/rule
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -282,12 +282,12 @@ map_merger_generate_messages_cpp: aau_multi_robot/map_merger/CMakeFiles/map_merg
 
 # fast build rule for target.
 map_merger_generate_messages_cpp/fast:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/build
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_cpp.dir/build
 .PHONY : map_merger_generate_messages_cpp/fast
 
 # Convenience name for target.
 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages.dir/rule:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages.dir/rule
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages.dir/rule
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages.dir/rule
 
 # Convenience name for target.
@@ -297,12 +297,12 @@ map_merger_generate_messages: aau_multi_robot/map_merger/CMakeFiles/map_merger_g
 
 # fast build rule for target.
 map_merger_generate_messages/fast:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages.dir/build
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages.dir/build
 .PHONY : map_merger_generate_messages/fast
 
 # Convenience name for target.
 aau_multi_robot/map_merger/CMakeFiles/map_merger_gencpp.dir/rule:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_gencpp.dir/rule
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_gencpp.dir/rule
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_gencpp.dir/rule
 
 # Convenience name for target.
@@ -312,12 +312,12 @@ map_merger_gencpp: aau_multi_robot/map_merger/CMakeFiles/map_merger_gencpp.dir/r
 
 # fast build rule for target.
 map_merger_gencpp/fast:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_gencpp.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_gencpp.dir/build
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_gencpp.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_gencpp.dir/build
 .PHONY : map_merger_gencpp/fast
 
 # Convenience name for target.
 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/rule:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/rule
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/rule
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -327,12 +327,12 @@ map_merger_generate_messages_eus: aau_multi_robot/map_merger/CMakeFiles/map_merg
 
 # fast build rule for target.
 map_merger_generate_messages_eus/fast:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/build
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_eus.dir/build
 .PHONY : map_merger_generate_messages_eus/fast
 
 # Convenience name for target.
 aau_multi_robot/map_merger/CMakeFiles/map_merger_genpy.dir/rule:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_genpy.dir/rule
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_genpy.dir/rule
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_genpy.dir/rule
 
 # Convenience name for target.
@@ -342,12 +342,12 @@ map_merger_genpy: aau_multi_robot/map_merger/CMakeFiles/map_merger_genpy.dir/rul
 
 # fast build rule for target.
 map_merger_genpy/fast:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_genpy.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_genpy.dir/build
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_genpy.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_genpy.dir/build
 .PHONY : map_merger_genpy/fast
 
 # Convenience name for target.
 aau_multi_robot/map_merger/CMakeFiles/map_merger_genlisp.dir/rule:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_genlisp.dir/rule
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_genlisp.dir/rule
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_genlisp.dir/rule
 
 # Convenience name for target.
@@ -357,12 +357,12 @@ map_merger_genlisp: aau_multi_robot/map_merger/CMakeFiles/map_merger_genlisp.dir
 
 # fast build rule for target.
 map_merger_genlisp/fast:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_genlisp.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_genlisp.dir/build
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_genlisp.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_genlisp.dir/build
 .PHONY : map_merger_genlisp/fast
 
 # Convenience name for target.
 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/rule:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/rule
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f CMakeFiles/Makefile2 aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/rule
 .PHONY : aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -372,7 +372,7 @@ map_merger_generate_messages_nodejs: aau_multi_robot/map_merger/CMakeFiles/map_m
 
 # fast build rule for target.
 map_merger_generate_messages_nodejs/fast:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/build
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger_generate_messages_nodejs.dir/build
 .PHONY : map_merger_generate_messages_nodejs/fast
 
 src/main.o: src/main.cpp.o
@@ -381,7 +381,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/main.cpp.o
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -390,7 +390,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/main.cpp.i
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -399,7 +399,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/main.cpp.s
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/mapmerger.o: src/mapmerger.cpp.o
@@ -408,7 +408,7 @@ src/mapmerger.o: src/mapmerger.cpp.o
 
 # target to build an object file
 src/mapmerger.cpp.o:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/mapmerger.cpp.o
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/mapmerger.cpp.o
 .PHONY : src/mapmerger.cpp.o
 
 src/mapmerger.i: src/mapmerger.cpp.i
@@ -417,7 +417,7 @@ src/mapmerger.i: src/mapmerger.cpp.i
 
 # target to preprocess a source file
 src/mapmerger.cpp.i:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/mapmerger.cpp.i
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/mapmerger.cpp.i
 .PHONY : src/mapmerger.cpp.i
 
 src/mapmerger.s: src/mapmerger.cpp.s
@@ -426,7 +426,7 @@ src/mapmerger.s: src/mapmerger.cpp.s
 
 # target to generate assembly for a file
 src/mapmerger.cpp.s:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/mapmerger.cpp.s
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/mapmerger.cpp.s
 .PHONY : src/mapmerger.cpp.s
 
 src/mapstitch.o: src/mapstitch.cpp.o
@@ -435,7 +435,7 @@ src/mapstitch.o: src/mapstitch.cpp.o
 
 # target to build an object file
 src/mapstitch.cpp.o:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/mapstitch.cpp.o
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/mapstitch.cpp.o
 .PHONY : src/mapstitch.cpp.o
 
 src/mapstitch.i: src/mapstitch.cpp.i
@@ -444,7 +444,7 @@ src/mapstitch.i: src/mapstitch.cpp.i
 
 # target to preprocess a source file
 src/mapstitch.cpp.i:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/mapstitch.cpp.i
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/mapstitch.cpp.i
 .PHONY : src/mapstitch.cpp.i
 
 src/mapstitch.s: src/mapstitch.cpp.s
@@ -453,7 +453,7 @@ src/mapstitch.s: src/mapstitch.cpp.s
 
 # target to generate assembly for a file
 src/mapstitch.cpp.s:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/mapstitch.cpp.s
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/mapstitch.cpp.s
 .PHONY : src/mapstitch.cpp.s
 
 src/updateentry.o: src/updateentry.cpp.o
@@ -462,7 +462,7 @@ src/updateentry.o: src/updateentry.cpp.o
 
 # target to build an object file
 src/updateentry.cpp.o:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/updateentry.cpp.o
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/updateentry.cpp.o
 .PHONY : src/updateentry.cpp.o
 
 src/updateentry.i: src/updateentry.cpp.i
@@ -471,7 +471,7 @@ src/updateentry.i: src/updateentry.cpp.i
 
 # target to preprocess a source file
 src/updateentry.cpp.i:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/updateentry.cpp.i
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/updateentry.cpp.i
 .PHONY : src/updateentry.cpp.i
 
 src/updateentry.s: src/updateentry.cpp.s
@@ -480,7 +480,7 @@ src/updateentry.s: src/updateentry.cpp.s
 
 # target to generate assembly for a file
 src/updateentry.cpp.s:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/updateentry.cpp.s
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/updateentry.cpp.s
 .PHONY : src/updateentry.cpp.s
 
 src/updatemanager.o: src/updatemanager.cpp.o
@@ -489,7 +489,7 @@ src/updatemanager.o: src/updatemanager.cpp.o
 
 # target to build an object file
 src/updatemanager.cpp.o:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/updatemanager.cpp.o
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/updatemanager.cpp.o
 .PHONY : src/updatemanager.cpp.o
 
 src/updatemanager.i: src/updatemanager.cpp.i
@@ -498,7 +498,7 @@ src/updatemanager.i: src/updatemanager.cpp.i
 
 # target to preprocess a source file
 src/updatemanager.cpp.i:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/updatemanager.cpp.i
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/updatemanager.cpp.i
 .PHONY : src/updatemanager.cpp.i
 
 src/updatemanager.s: src/updatemanager.cpp.s
@@ -507,7 +507,7 @@ src/updatemanager.s: src/updatemanager.cpp.s
 
 # target to generate assembly for a file
 src/updatemanager.cpp.s:
-	cd /home/ros/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/updatemanager.cpp.s
+	cd /home/valerio/slampbenchmarking/build && $(MAKE) -f aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/build.make aau_multi_robot/map_merger/CMakeFiles/map_merger.dir/src/updatemanager.cpp.s
 .PHONY : src/updatemanager.cpp.s
 
 # Help Target
@@ -563,6 +563,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

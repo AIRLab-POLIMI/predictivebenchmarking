@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for costmap_2d_simple_driving_test_indexed.bag.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 include navigation/costmap_2d/CMakeFiles/costmap_2d_simple_driving_test_indexed.bag.dir/progress.make
 
 navigation/costmap_2d/CMakeFiles/costmap_2d_simple_driving_test_indexed.bag:
-	cd /home/ros/slampbenchmarking/build/navigation/costmap_2d && /opt/ros/kinetic/share/catkin/cmake/test/download_checkmd5.py http://download.ros.org/data/costmap_2d/simple_driving_test_indexed.bag /home/ros/slampbenchmarking/devel/share/costmap_2d/test/simple_driving_test_indexed.bag 61168cff9425b11e093ea3a627c81c8d --ignore-error
+	cd /home/valerio/slampbenchmarking/build/navigation/costmap_2d && /opt/ros/kinetic/share/catkin/cmake/test/download_checkmd5.py http://download.ros.org/data/costmap_2d/simple_driving_test_indexed.bag /home/valerio/slampbenchmarking/devel/share/costmap_2d/test/simple_driving_test_indexed.bag 61168cff9425b11e093ea3a627c81c8d --ignore-error
 
 costmap_2d_simple_driving_test_indexed.bag: navigation/costmap_2d/CMakeFiles/costmap_2d_simple_driving_test_indexed.bag
 costmap_2d_simple_driving_test_indexed.bag: navigation/costmap_2d/CMakeFiles/costmap_2d_simple_driving_test_indexed.bag.dir/build.make
@@ -67,10 +67,10 @@ navigation/costmap_2d/CMakeFiles/costmap_2d_simple_driving_test_indexed.bag.dir/
 .PHONY : navigation/costmap_2d/CMakeFiles/costmap_2d_simple_driving_test_indexed.bag.dir/build
 
 navigation/costmap_2d/CMakeFiles/costmap_2d_simple_driving_test_indexed.bag.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/costmap_2d && $(CMAKE_COMMAND) -P CMakeFiles/costmap_2d_simple_driving_test_indexed.bag.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/costmap_2d && $(CMAKE_COMMAND) -P CMakeFiles/costmap_2d_simple_driving_test_indexed.bag.dir/cmake_clean.cmake
 .PHONY : navigation/costmap_2d/CMakeFiles/costmap_2d_simple_driving_test_indexed.bag.dir/clean
 
 navigation/costmap_2d/CMakeFiles/costmap_2d_simple_driving_test_indexed.bag.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/costmap_2d /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/costmap_2d /home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d_simple_driving_test_indexed.bag.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/costmap_2d /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/costmap_2d /home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d_simple_driving_test_indexed.bag.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/costmap_2d/CMakeFiles/costmap_2d_simple_driving_test_indexed.bag.dir/depend
 

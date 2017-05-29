@@ -43,29 +43,29 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for costmap_2d_generate_messages_nodejs.
 
 # Include the progress variables for this target.
 include navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_nodejs.dir/progress.make
 
-navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_nodejs: /home/ros/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg/VoxelGrid.js
+navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_nodejs: /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg/VoxelGrid.js
 
 
-/home/ros/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg/VoxelGrid.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/ros/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg/VoxelGrid.js: /home/ros/slampbenchmarking/src/navigation/costmap_2d/msg/VoxelGrid.msg
-/home/ros/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg/VoxelGrid.js: /opt/ros/kinetic/share/geometry_msgs/msg/Point32.msg
-/home/ros/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg/VoxelGrid.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/ros/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg/VoxelGrid.js: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from costmap_2d/VoxelGrid.msg"
-	cd /home/ros/slampbenchmarking/build/navigation/costmap_2d && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ros/slampbenchmarking/src/navigation/costmap_2d/msg/VoxelGrid.msg -Icostmap_2d:/home/ros/slampbenchmarking/src/navigation/costmap_2d/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Imap_msgs:/opt/ros/kinetic/share/map_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p costmap_2d -o /home/ros/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg
+/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg/VoxelGrid.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg/VoxelGrid.js: /home/valerio/slampbenchmarking/src/navigation/costmap_2d/msg/VoxelGrid.msg
+/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg/VoxelGrid.js: /opt/ros/kinetic/share/geometry_msgs/msg/Point32.msg
+/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg/VoxelGrid.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg/VoxelGrid.js: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from costmap_2d/VoxelGrid.msg"
+	cd /home/valerio/slampbenchmarking/build/navigation/costmap_2d && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/valerio/slampbenchmarking/src/navigation/costmap_2d/msg/VoxelGrid.msg -Icostmap_2d:/home/valerio/slampbenchmarking/src/navigation/costmap_2d/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Imap_msgs:/opt/ros/kinetic/share/map_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Inav_msgs:/opt/ros/kinetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p costmap_2d -o /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg
 
 costmap_2d_generate_messages_nodejs: navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_nodejs
-costmap_2d_generate_messages_nodejs: /home/ros/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg/VoxelGrid.js
+costmap_2d_generate_messages_nodejs: /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/costmap_2d/msg/VoxelGrid.js
 costmap_2d_generate_messages_nodejs: navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_nodejs.dir/build.make
 
 .PHONY : costmap_2d_generate_messages_nodejs
@@ -76,10 +76,10 @@ navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_nodejs.dir/build: 
 .PHONY : navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_nodejs.dir/build
 
 navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_nodejs.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/costmap_2d && $(CMAKE_COMMAND) -P CMakeFiles/costmap_2d_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/costmap_2d && $(CMAKE_COMMAND) -P CMakeFiles/costmap_2d_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_nodejs.dir/clean
 
 navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_nodejs.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/costmap_2d /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/costmap_2d /home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/costmap_2d /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/costmap_2d /home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/costmap_2d/CMakeFiles/costmap_2d_generate_messages_nodejs.dir/depend
 

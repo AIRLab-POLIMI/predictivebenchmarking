@@ -67,14 +67,14 @@ set(costmap_2d_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(costmap_2d_SOURCE_PREFIX /home/ros/slampbenchmarking/src/navigation/costmap_2d)
-  set(costmap_2d_DEVEL_PREFIX /home/ros/slampbenchmarking/devel)
+  set(costmap_2d_SOURCE_PREFIX /home/valerio/slampbenchmarking/src/navigation/costmap_2d)
+  set(costmap_2d_DEVEL_PREFIX /home/valerio/slampbenchmarking/devel)
   set(costmap_2d_INSTALL_PREFIX "")
   set(costmap_2d_PREFIX ${costmap_2d_DEVEL_PREFIX})
 else()
   set(costmap_2d_SOURCE_PREFIX "")
   set(costmap_2d_DEVEL_PREFIX "")
-  set(costmap_2d_INSTALL_PREFIX /home/ros/slampbenchmarking/install)
+  set(costmap_2d_INSTALL_PREFIX /home/valerio/slampbenchmarking/install)
   set(costmap_2d_PREFIX ${costmap_2d_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(costmap_2d_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/ros/slampbenchmarking/devel/include;/home/ros/slampbenchmarking/src/navigation/costmap_2d/include;/usr/include/eigen3;/usr/include/pcl-1.7;/usr/include;/usr/include/ni;/usr/include/vtk-6.2;/usr/include/x86_64-linux-gnu;/usr/include/tcl;/usr/include/freetype2;/usr/include/x86_64-linux-gnu/freetype2;/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent;/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include;/usr/lib/openmpi/include;/usr/lib/openmpi/include/openmpi;/usr/include/jsoncpp;/usr/include/hdf5/openmpi;/usr/include/libxml2;/usr/include/python2.7 " STREQUAL " ")
+if(NOT "/home/valerio/slampbenchmarking/devel/include;/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include;/usr/include/eigen3;/usr/include/pcl-1.7;/usr/include;/usr/include/ni;/usr/include/vtk-6.2;/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent;/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include;/usr/lib/openmpi/include;/usr/lib/openmpi/include/openmpi;/usr/include/freetype2;/usr/include/x86_64-linux-gnu/freetype2;/usr/include/python2.7;/usr/include/x86_64-linux-gnu;/usr/include/hdf5/openmpi;/usr/include/jsoncpp;/usr/include/libxml2;/usr/include/tcl " STREQUAL " ")
   set(costmap_2d_INCLUDE_DIRS "")
-  set(_include_dirs "/home/ros/slampbenchmarking/devel/include;/home/ros/slampbenchmarking/src/navigation/costmap_2d/include;/usr/include/eigen3;/usr/include/pcl-1.7;/usr/include;/usr/include/ni;/usr/include/vtk-6.2;/usr/include/x86_64-linux-gnu;/usr/include/tcl;/usr/include/freetype2;/usr/include/x86_64-linux-gnu/freetype2;/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent;/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include;/usr/lib/openmpi/include;/usr/lib/openmpi/include/openmpi;/usr/include/jsoncpp;/usr/include/hdf5/openmpi;/usr/include/libxml2;/usr/include/python2.7")
+  set(_include_dirs "/home/valerio/slampbenchmarking/devel/include;/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include;/usr/include/eigen3;/usr/include/pcl-1.7;/usr/include;/usr/include/ni;/usr/include/vtk-6.2;/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent;/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include;/usr/lib/openmpi/include;/usr/lib/openmpi/include/openmpi;/usr/include/freetype2;/usr/include/x86_64-linux-gnu/freetype2;/usr/include/python2.7;/usr/include/x86_64-linux-gnu;/usr/include/hdf5/openmpi;/usr/include/jsoncpp;/usr/include/libxml2;/usr/include/tcl")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -103,7 +103,7 @@ if(NOT "/home/ros/slampbenchmarking/devel/include;/home/ros/slampbenchmarking/sr
         message(FATAL_ERROR "Project 'costmap_2d' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'David V. Lu!! <davidvlu@gmail.com>, Michael Ferguson <mferguson@fetchrobotics.com>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'costmap_2d' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/ros/slampbenchmarking/src/navigation/costmap_2d/${idir}'.  Ask the maintainer 'David V. Lu!! <davidvlu@gmail.com>, Michael Ferguson <mferguson@fetchrobotics.com>' to fix it.")
+      message(FATAL_ERROR "Project 'costmap_2d' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/valerio/slampbenchmarking/src/navigation/costmap_2d/${idir}'.  Ask the maintainer 'David V. Lu!! <davidvlu@gmail.com>, Michael Ferguson <mferguson@fetchrobotics.com>' to fix it.")
     endif()
     _list_append_unique(costmap_2d_INCLUDE_DIRS ${include})
   endforeach()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ros/slampbenchmarking/devel/lib;/home/ros/slampbenchmarking/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/valerio/slampbenchmarking/devel/lib;/home/valerio/slampbenchmarking/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

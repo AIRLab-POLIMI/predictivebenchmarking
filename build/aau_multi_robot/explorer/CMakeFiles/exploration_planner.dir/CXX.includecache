@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpAuction.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpAuction.h
 string
 -
 vector
@@ -28,7 +28,7 @@ adhoc_communication/ExpCluster.h
 adhoc_communication/ExpCluster.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpAuctionElement.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpAuctionElement.h
 string
 -
 vector
@@ -44,7 +44,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpCluster.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpCluster.h
 string
 -
 vector
@@ -62,7 +62,7 @@ ros/message_operations.h
 adhoc_communication/ExpClusterElement.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpClusterElement.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpClusterElement.h
 string
 -
 vector
@@ -78,7 +78,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpFrontier.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpFrontier.h
 string
 -
 vector
@@ -96,7 +96,7 @@ ros/message_operations.h
 adhoc_communication/ExpFrontierElement.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/ExpFrontierElement.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/ExpFrontierElement.h
 string
 -
 vector
@@ -112,7 +112,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/MmListOfPoints.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/MmListOfPoints.h
 string
 -
 vector
@@ -130,7 +130,7 @@ ros/message_operations.h
 adhoc_communication/MmPoint.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/MmPoint.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/MmPoint.h
 string
 -
 vector
@@ -146,7 +146,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpAuction.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpAuction.h
 ros/service_traits.h
 -
 adhoc_communication/SendExpAuctionRequest.h
@@ -154,7 +154,7 @@ adhoc_communication/SendExpAuctionRequest.h
 adhoc_communication/SendExpAuctionResponse.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpAuctionRequest.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpAuctionRequest.h
 string
 -
 vector
@@ -172,7 +172,7 @@ ros/message_operations.h
 adhoc_communication/ExpAuction.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpAuctionResponse.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpAuctionResponse.h
 string
 -
 vector
@@ -188,7 +188,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpCluster.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpCluster.h
 ros/service_traits.h
 -
 adhoc_communication/SendExpClusterRequest.h
@@ -196,7 +196,7 @@ adhoc_communication/SendExpClusterRequest.h
 adhoc_communication/SendExpClusterResponse.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpClusterRequest.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpClusterRequest.h
 string
 -
 vector
@@ -214,7 +214,7 @@ ros/message_operations.h
 adhoc_communication/ExpCluster.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpClusterResponse.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpClusterResponse.h
 string
 -
 vector
@@ -230,7 +230,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpFrontier.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpFrontier.h
 ros/service_traits.h
 -
 adhoc_communication/SendExpFrontierRequest.h
@@ -238,7 +238,7 @@ adhoc_communication/SendExpFrontierRequest.h
 adhoc_communication/SendExpFrontierResponse.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpFrontierRequest.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpFrontierRequest.h
 string
 -
 vector
@@ -256,7 +256,7 @@ ros/message_operations.h
 adhoc_communication/ExpFrontier.h
 -
 
-/home/ros/slampbenchmarking/devel/include/adhoc_communication/SendExpFrontierResponse.h
+/home/valerio/slampbenchmarking/devel/include/adhoc_communication/SendExpFrontierResponse.h
 string
 -
 vector
@@ -272,7 +272,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/base_local_planner/BaseLocalPlannerConfig.h
+/home/valerio/slampbenchmarking/devel/include/base_local_planner/BaseLocalPlannerConfig.h
 dynamic_reconfigure/config_tools.h
 -
 limits
@@ -290,7 +290,7 @@ dynamic_reconfigure/config_init_mutex.h
 boost/any.hpp
 -
 
-/home/ros/slampbenchmarking/devel/include/base_local_planner/Position2DInt.h
+/home/valerio/slampbenchmarking/devel/include/base_local_planner/Position2DInt.h
 string
 -
 vector
@@ -306,7 +306,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/ros/slampbenchmarking/devel/include/costmap_2d/Costmap2DConfig.h
+/home/valerio/slampbenchmarking/devel/include/costmap_2d/Costmap2DConfig.h
 dynamic_reconfigure/config_tools.h
 -
 limits
@@ -324,7 +324,7 @@ dynamic_reconfigure/config_init_mutex.h
 boost/any.hpp
 -
 
-/home/ros/slampbenchmarking/devel/include/map_merger/TransformPoint.h
+/home/valerio/slampbenchmarking/devel/include/map_merger/TransformPoint.h
 ros/service_traits.h
 -
 map_merger/TransformPointRequest.h
@@ -332,7 +332,7 @@ map_merger/TransformPointRequest.h
 map_merger/TransformPointResponse.h
 -
 
-/home/ros/slampbenchmarking/devel/include/map_merger/TransformPointRequest.h
+/home/valerio/slampbenchmarking/devel/include/map_merger/TransformPointRequest.h
 string
 -
 vector
@@ -350,7 +350,7 @@ ros/message_operations.h
 adhoc_communication/MmPoint.h
 -
 
-/home/ros/slampbenchmarking/devel/include/map_merger/TransformPointResponse.h
+/home/valerio/slampbenchmarking/devel/include/map_merger/TransformPointResponse.h
 string
 -
 vector
@@ -368,15 +368,15 @@ ros/message_operations.h
 adhoc_communication/MmPoint.h
 -
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/include/ExplorationPlanner.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/include/ExplorationPlanner.h
 ExplorationPlanner.h
 -
 navfn/navfn_ros.h
 -
 ros/ros.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/include/ros/ros.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/include/ros/ros.h
 hungarian.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/include/hungarian.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/include/hungarian.h
 ros/console.h
 -
 costmap_2d/costmap_2d_ros.h
@@ -400,45 +400,45 @@ adhoc_communication/MmListOfPoints.h
 map_merger/TransformPoint.h
 -
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/include/boost_matrix.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/include/boost_matrix.h
 matrix.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/include/matrix.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/include/matrix.h
 boost/numeric/ublas/matrix.hpp
 -
 ../src/src/adapters/boost_matrix.cpp
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/src/adapters/boost_matrix.cpp
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/src/adapters/boost_matrix.cpp
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/include/hungarian.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/include/hungarian.h
 iostream
 -
 vector
 -
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/include/matrix.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/include/matrix.h
 initializer_list
 -
 ../src/src/matrix.cpp
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/src/matrix.cpp
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/src/matrix.cpp
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/include/munkres.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/include/munkres.h
 matrix.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/include/matrix.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/include/matrix.h
 list
 -
 utility
 -
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/ExplorationPlanner.cpp
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/ExplorationPlanner.cpp
 ExplorationPlanner.h
 -
 ros/ros.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/ros/ros.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/ros/ros.h
 hungarian.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/hungarian.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/hungarian.h
 munkres.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/munkres.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/munkres.h
 boost_matrix.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/boost_matrix.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/boost_matrix.h
 ros/console.h
 -
 costmap_2d/costmap_2d_ros.h
@@ -490,15 +490,15 @@ base_local_planner/trajectory_planner_ros.h
 math.h
 -
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/src/adapters/boost_matrix.cpp
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/src/adapters/boost_matrix.cpp
 boost_matrix.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/src/adapters/boost_matrix.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/src/adapters/boost_matrix.h
 munkres.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/src/adapters/munkres.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/src/adapters/munkres.h
 
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/src/matrix.cpp
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/src/matrix.cpp
 matrix.h
-/home/ros/slampbenchmarking/src/aau_multi_robot/explorer/src/src/matrix.h
+/home/valerio/slampbenchmarking/src/aau_multi_robot/explorer/src/src/matrix.h
 cassert
 -
 cstdlib
@@ -506,9 +506,9 @@ cstdlib
 algorithm
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/cost_values.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/cost_values.h
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d.h
 vector
 -
 queue
@@ -518,7 +518,7 @@ geometry_msgs/Point.h
 boost/thread.hpp
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_publisher.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_publisher.h
 ros/ros.h
 -
 costmap_2d/costmap_2d.h
@@ -530,7 +530,7 @@ map_msgs/OccupancyGridUpdate.h
 tf/transform_datatypes.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_ros.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/costmap_2d_ros.h
 costmap_2d/layered_costmap.h
 -
 costmap_2d/layer.h
@@ -550,7 +550,7 @@ dynamic_reconfigure/server.h
 pluginlib/class_loader.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/footprint.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/footprint.h
 ros/ros.h
 -
 geometry_msgs/Polygon.h
@@ -562,7 +562,7 @@ geometry_msgs/Point.h
 geometry_msgs/Point32.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layer.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layer.h
 costmap_2d/costmap_2d.h
 -
 costmap_2d/layered_costmap.h
@@ -574,7 +574,7 @@ tf/tf.h
 tf/transform_listener.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layered_costmap.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/layered_costmap.h
 costmap_2d/cost_values.h
 -
 costmap_2d/layer.h
@@ -586,7 +586,7 @@ vector
 string
 -
 
-/home/ros/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/observation.h
+/home/valerio/slampbenchmarking/src/navigation/costmap_2d/include/costmap_2d/observation.h
 geometry_msgs/Point.h
 -
 pcl/point_types.h
@@ -594,13 +594,13 @@ pcl/point_types.h
 pcl/point_cloud.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/nav_core/include/nav_core/base_global_planner.h
+/home/valerio/slampbenchmarking/src/navigation/nav_core/include/nav_core/base_global_planner.h
 geometry_msgs/PoseStamped.h
 -
 costmap_2d/costmap_2d_ros.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/nav_core/include/nav_core/base_local_planner.h
+/home/valerio/slampbenchmarking/src/navigation/nav_core/include/nav_core/base_local_planner.h
 geometry_msgs/PoseStamped.h
 -
 geometry_msgs/Twist.h
@@ -610,7 +610,7 @@ costmap_2d/costmap_2d_ros.h
 tf/transform_listener.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/navfn/include/navfn/navfn.h
+/home/valerio/slampbenchmarking/src/navigation/navfn/include/navfn/navfn.h
 math.h
 -
 stdint.h
@@ -620,7 +620,7 @@ string.h
 stdio.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/navfn/include/navfn/navfn_ros.h
+/home/valerio/slampbenchmarking/src/navigation/navfn/include/navfn/navfn_ros.h
 ros/ros.h
 -
 navfn/navfn.h
@@ -646,11 +646,11 @@ navfn/potarr_point.h
 pcl_ros/publisher.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/navfn/include/navfn/potarr_point.h
+/home/valerio/slampbenchmarking/src/navigation/navfn/include/navfn/potarr_point.h
 pcl/register_point_struct.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/voxel_grid/include/voxel_grid/voxel_grid.h
+/home/valerio/slampbenchmarking/src/navigation/voxel_grid/include/voxel_grid/voxel_grid.h
 stdio.h
 -
 string.h

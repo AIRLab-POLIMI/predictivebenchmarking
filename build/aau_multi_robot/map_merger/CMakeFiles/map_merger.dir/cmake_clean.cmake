@@ -4,8 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/map_merger.dir/src/mapstitch.cpp.o"
   "CMakeFiles/map_merger.dir/src/updateentry.cpp.o"
   "CMakeFiles/map_merger.dir/src/updatemanager.cpp.o"
-  "/home/ros/slampbenchmarking/devel/lib/map_merger/map_merger.pdb"
-  "/home/ros/slampbenchmarking/devel/lib/map_merger/map_merger"
+  "/home/valerio/slampbenchmarking/devel/lib/map_merger/map_merger.pdb"
+  "/home/valerio/slampbenchmarking/devel/lib/map_merger/map_merger"
 )
 
 # Per-language clean rules from dependency scanning.

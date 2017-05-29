@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for run_tests_map_server_rostest.
 
@@ -63,10 +63,10 @@ navigation/map_server/CMakeFiles/run_tests_map_server_rostest.dir/build: run_tes
 .PHONY : navigation/map_server/CMakeFiles/run_tests_map_server_rostest.dir/build
 
 navigation/map_server/CMakeFiles/run_tests_map_server_rostest.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/map_server && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_map_server_rostest.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/map_server && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_map_server_rostest.dir/cmake_clean.cmake
 .PHONY : navigation/map_server/CMakeFiles/run_tests_map_server_rostest.dir/clean
 
 navigation/map_server/CMakeFiles/run_tests_map_server_rostest.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/map_server /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/map_server /home/ros/slampbenchmarking/build/navigation/map_server/CMakeFiles/run_tests_map_server_rostest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/map_server /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/map_server /home/valerio/slampbenchmarking/build/navigation/map_server/CMakeFiles/run_tests_map_server_rostest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/map_server/CMakeFiles/run_tests_map_server_rostest.dir/depend
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for clean_test_results_navfn.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 include navigation/navfn/test/CMakeFiles/clean_test_results_navfn.dir/progress.make
 
 navigation/navfn/test/CMakeFiles/clean_test_results_navfn:
-	cd /home/ros/slampbenchmarking/build/navigation/navfn/test && /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/ros/slampbenchmarking/build/test_results/navfn
+	cd /home/valerio/slampbenchmarking/build/navigation/navfn/test && /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/valerio/slampbenchmarking/build/test_results/navfn
 
 clean_test_results_navfn: navigation/navfn/test/CMakeFiles/clean_test_results_navfn
 clean_test_results_navfn: navigation/navfn/test/CMakeFiles/clean_test_results_navfn.dir/build.make
@@ -67,10 +67,10 @@ navigation/navfn/test/CMakeFiles/clean_test_results_navfn.dir/build: clean_test_
 .PHONY : navigation/navfn/test/CMakeFiles/clean_test_results_navfn.dir/build
 
 navigation/navfn/test/CMakeFiles/clean_test_results_navfn.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/navfn/test && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_navfn.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/navfn/test && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_navfn.dir/cmake_clean.cmake
 .PHONY : navigation/navfn/test/CMakeFiles/clean_test_results_navfn.dir/clean
 
 navigation/navfn/test/CMakeFiles/clean_test_results_navfn.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/navfn/test /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/navfn/test /home/ros/slampbenchmarking/build/navigation/navfn/test/CMakeFiles/clean_test_results_navfn.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/navfn/test /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/navfn/test /home/valerio/slampbenchmarking/build/navigation/navfn/test/CMakeFiles/clean_test_results_navfn.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/navfn/test/CMakeFiles/clean_test_results_navfn.dir/depend
 

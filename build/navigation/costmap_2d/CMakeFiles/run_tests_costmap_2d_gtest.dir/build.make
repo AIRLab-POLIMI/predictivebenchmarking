@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for run_tests_costmap_2d_gtest.
 
@@ -63,10 +63,10 @@ navigation/costmap_2d/CMakeFiles/run_tests_costmap_2d_gtest.dir/build: run_tests
 .PHONY : navigation/costmap_2d/CMakeFiles/run_tests_costmap_2d_gtest.dir/build
 
 navigation/costmap_2d/CMakeFiles/run_tests_costmap_2d_gtest.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/costmap_2d && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_costmap_2d_gtest.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/costmap_2d && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_costmap_2d_gtest.dir/cmake_clean.cmake
 .PHONY : navigation/costmap_2d/CMakeFiles/run_tests_costmap_2d_gtest.dir/clean
 
 navigation/costmap_2d/CMakeFiles/run_tests_costmap_2d_gtest.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/costmap_2d /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/costmap_2d /home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/run_tests_costmap_2d_gtest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/costmap_2d /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/costmap_2d /home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/run_tests_costmap_2d_gtest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/costmap_2d/CMakeFiles/run_tests_costmap_2d_gtest.dir/depend
 

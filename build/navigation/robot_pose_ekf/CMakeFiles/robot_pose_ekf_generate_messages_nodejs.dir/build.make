@@ -43,26 +43,26 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for robot_pose_ekf_generate_messages_nodejs.
 
 # Include the progress variables for this target.
 include navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_nodejs.dir/progress.make
 
-navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_nodejs: /home/ros/slampbenchmarking/devel/share/gennodejs/ros/robot_pose_ekf/srv/GetStatus.js
+navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_nodejs: /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/robot_pose_ekf/srv/GetStatus.js
 
 
-/home/ros/slampbenchmarking/devel/share/gennodejs/ros/robot_pose_ekf/srv/GetStatus.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/ros/slampbenchmarking/devel/share/gennodejs/ros/robot_pose_ekf/srv/GetStatus.js: /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ros/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from robot_pose_ekf/GetStatus.srv"
-	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p robot_pose_ekf -o /home/ros/slampbenchmarking/devel/share/gennodejs/ros/robot_pose_ekf/srv
+/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/robot_pose_ekf/srv/GetStatus.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/valerio/slampbenchmarking/devel/share/gennodejs/ros/robot_pose_ekf/srv/GetStatus.js: /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/valerio/slampbenchmarking/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from robot_pose_ekf/GetStatus.srv"
+	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf/srv/GetStatus.srv -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p robot_pose_ekf -o /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/robot_pose_ekf/srv
 
 robot_pose_ekf_generate_messages_nodejs: navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_nodejs
-robot_pose_ekf_generate_messages_nodejs: /home/ros/slampbenchmarking/devel/share/gennodejs/ros/robot_pose_ekf/srv/GetStatus.js
+robot_pose_ekf_generate_messages_nodejs: /home/valerio/slampbenchmarking/devel/share/gennodejs/ros/robot_pose_ekf/srv/GetStatus.js
 robot_pose_ekf_generate_messages_nodejs: navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_nodejs.dir/build.make
 
 .PHONY : robot_pose_ekf_generate_messages_nodejs
@@ -73,10 +73,10 @@ navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_nodejs.dir
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_nodejs.dir/build
 
 navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_nodejs.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -P CMakeFiles/robot_pose_ekf_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf && $(CMAKE_COMMAND) -P CMakeFiles/robot_pose_ekf_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_nodejs.dir/clean
 
 navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_nodejs.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/robot_pose_ekf /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf /home/ros/slampbenchmarking/build/navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/robot_pose_ekf /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf /home/valerio/slampbenchmarking/build/navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages_nodejs.dir/depend
 

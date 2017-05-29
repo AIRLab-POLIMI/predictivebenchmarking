@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC   -shared -Wl,-soname,libhector_exploration_planner.so -o /home/ros/slampbenchmarking/devel/lib/libhector_exploration_planner.so CMakeFiles/hector_exploration_planner.dir/src/hector_exploration_planner.cpp.o 

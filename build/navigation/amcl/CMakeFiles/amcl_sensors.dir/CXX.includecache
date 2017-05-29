@@ -6,45 +6,45 @@
 
 #IncludeRegexTransform: 
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/map/map.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/map/map.h
 stdint.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf.h
 pf_vector.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_vector.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_vector.h
 pf_kdtree.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_kdtree.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_kdtree.h
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_kdtree.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_kdtree.h
 rtk.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/rtk.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/rtk.h
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_pdf.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_pdf.h
 pf_vector.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_vector.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_vector.h
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_vector.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_vector.h
 stdio.h
 -
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_laser.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_laser.h
 amcl_sensor.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_sensor.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_sensor.h
 ../map/map.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/map/map.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/map/map.h
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_odom.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_odom.h
 amcl_sensor.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_sensor.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_sensor.h
 ../pf/pf_pdf.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_pdf.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf_pdf.h
 
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_sensor.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/sensors/amcl_sensor.h
 ../pf/pf.h
-/home/ros/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/include/amcl/pf/pf.h
 
-/home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/sensors/amcl_laser.cpp
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/sensors/amcl_laser.cpp
 sys/types.h
 -
 math.h
@@ -56,9 +56,9 @@ assert.h
 unistd.h
 -
 amcl_laser.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/sensors/amcl_laser.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/sensors/amcl_laser.h
 
-/home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/sensors/amcl_odom.cpp
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/sensors/amcl_odom.cpp
 algorithm
 -
 sys/types.h
@@ -66,9 +66,9 @@ sys/types.h
 math.h
 -
 amcl_odom.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/sensors/amcl_odom.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/sensors/amcl_odom.h
 
-/home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/sensors/amcl_sensor.cpp
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/sensors/amcl_sensor.cpp
 amcl_sensor.h
-/home/ros/slampbenchmarking/src/navigation/amcl/src/amcl/sensors/amcl_sensor.h
+/home/valerio/slampbenchmarking/src/navigation/amcl/src/amcl/sensors/amcl_sensor.h
 

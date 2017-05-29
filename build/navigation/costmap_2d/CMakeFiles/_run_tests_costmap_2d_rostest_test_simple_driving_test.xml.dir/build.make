@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for _run_tests_costmap_2d_rostest_test_simple_driving_test.xml.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 include navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_rostest_test_simple_driving_test.xml.dir/progress.make
 
 navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_rostest_test_simple_driving_test.xml:
-	cd /home/ros/slampbenchmarking/build/navigation/costmap_2d && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/run_tests.py /home/ros/slampbenchmarking/build/test_results/costmap_2d/rostest-test_simple_driving_test.xml /opt/ros/kinetic/share/rostest/cmake/../../../bin/rostest\ --pkgdir=/home/ros/slampbenchmarking/src/navigation/costmap_2d\ --package=costmap_2d\ --results-filename\ test_simple_driving_test.xml\ --results-base-dir\ "/home/ros/slampbenchmarking/build/test_results"\ /home/ros/slampbenchmarking/src/navigation/costmap_2d/test/simple_driving_test.xml\ 
+	cd /home/valerio/slampbenchmarking/build/navigation/costmap_2d && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/run_tests.py /home/valerio/slampbenchmarking/build/test_results/costmap_2d/rostest-test_simple_driving_test.xml /opt/ros/kinetic/share/rostest/cmake/../../../bin/rostest\ --pkgdir=/home/valerio/slampbenchmarking/src/navigation/costmap_2d\ --package=costmap_2d\ --results-filename\ test_simple_driving_test.xml\ --results-base-dir\ "/home/valerio/slampbenchmarking/build/test_results"\ /home/valerio/slampbenchmarking/src/navigation/costmap_2d/test/simple_driving_test.xml\ 
 
 _run_tests_costmap_2d_rostest_test_simple_driving_test.xml: navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_rostest_test_simple_driving_test.xml
 _run_tests_costmap_2d_rostest_test_simple_driving_test.xml: navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_rostest_test_simple_driving_test.xml.dir/build.make
@@ -67,10 +67,10 @@ navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_rostest_test_simple_drivi
 .PHONY : navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_rostest_test_simple_driving_test.xml.dir/build
 
 navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_rostest_test_simple_driving_test.xml.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/costmap_2d && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_costmap_2d_rostest_test_simple_driving_test.xml.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/costmap_2d && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_costmap_2d_rostest_test_simple_driving_test.xml.dir/cmake_clean.cmake
 .PHONY : navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_rostest_test_simple_driving_test.xml.dir/clean
 
 navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_rostest_test_simple_driving_test.xml.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/costmap_2d /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/costmap_2d /home/ros/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_rostest_test_simple_driving_test.xml.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/costmap_2d /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/costmap_2d /home/valerio/slampbenchmarking/build/navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_rostest_test_simple_driving_test.xml.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/costmap_2d/CMakeFiles/_run_tests_costmap_2d_rostest_test_simple_driving_test.xml.dir/depend
 

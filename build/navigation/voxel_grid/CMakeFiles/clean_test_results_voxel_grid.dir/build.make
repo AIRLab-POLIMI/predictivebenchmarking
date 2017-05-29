@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ros/slampbenchmarking/src
+CMAKE_SOURCE_DIR = /home/valerio/slampbenchmarking/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
+CMAKE_BINARY_DIR = /home/valerio/slampbenchmarking/build
 
 # Utility rule file for clean_test_results_voxel_grid.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ros/slampbenchmarking/build
 include navigation/voxel_grid/CMakeFiles/clean_test_results_voxel_grid.dir/progress.make
 
 navigation/voxel_grid/CMakeFiles/clean_test_results_voxel_grid:
-	cd /home/ros/slampbenchmarking/build/navigation/voxel_grid && /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/ros/slampbenchmarking/build/test_results/voxel_grid
+	cd /home/valerio/slampbenchmarking/build/navigation/voxel_grid && /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/valerio/slampbenchmarking/build/test_results/voxel_grid
 
 clean_test_results_voxel_grid: navigation/voxel_grid/CMakeFiles/clean_test_results_voxel_grid
 clean_test_results_voxel_grid: navigation/voxel_grid/CMakeFiles/clean_test_results_voxel_grid.dir/build.make
@@ -67,10 +67,10 @@ navigation/voxel_grid/CMakeFiles/clean_test_results_voxel_grid.dir/build: clean_
 .PHONY : navigation/voxel_grid/CMakeFiles/clean_test_results_voxel_grid.dir/build
 
 navigation/voxel_grid/CMakeFiles/clean_test_results_voxel_grid.dir/clean:
-	cd /home/ros/slampbenchmarking/build/navigation/voxel_grid && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_voxel_grid.dir/cmake_clean.cmake
+	cd /home/valerio/slampbenchmarking/build/navigation/voxel_grid && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_voxel_grid.dir/cmake_clean.cmake
 .PHONY : navigation/voxel_grid/CMakeFiles/clean_test_results_voxel_grid.dir/clean
 
 navigation/voxel_grid/CMakeFiles/clean_test_results_voxel_grid.dir/depend:
-	cd /home/ros/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ros/slampbenchmarking/src /home/ros/slampbenchmarking/src/navigation/voxel_grid /home/ros/slampbenchmarking/build /home/ros/slampbenchmarking/build/navigation/voxel_grid /home/ros/slampbenchmarking/build/navigation/voxel_grid/CMakeFiles/clean_test_results_voxel_grid.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valerio/slampbenchmarking/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valerio/slampbenchmarking/src /home/valerio/slampbenchmarking/src/navigation/voxel_grid /home/valerio/slampbenchmarking/build /home/valerio/slampbenchmarking/build/navigation/voxel_grid /home/valerio/slampbenchmarking/build/navigation/voxel_grid/CMakeFiles/clean_test_results_voxel_grid.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : navigation/voxel_grid/CMakeFiles/clean_test_results_voxel_grid.dir/depend
 
