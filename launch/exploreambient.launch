@@ -43,8 +43,8 @@
 
 	<!-- Start Mapper to generate map from laser scans -->
 	<node name="Mapper" pkg="gmapping" type="slam_gmapping" args="_xmin:=-100 _ymin:=-100 _ymax:=100
-     _xmax:=100 _ogain:=3.0 _minimumScore:=100 _angularUpdate:=0.1 _linearUpdate:=0.2
-     _map_update_interval:=5 _odom_frame:=odom _particles:=30 scan:=base_scan
+     _xmax:=100 _ogain:=3.0 _minimumScore:=100 _angularUpdate:=0.6 _linearUpdate:=2.0
+     _map_update_interval:=10 _temporal_update:=5.0 _odom_frame:=odom _particles:=35 scan:=base_scan
      _srr:=0.01 _srt:=0.02 _str:=0.01 _stt:=0.02 _delta:=0.05 _maxUrange:=30" />
 	<arg name="robot_name" default="turtlebot" />
     <arg name="robot_prefix" default=""/>

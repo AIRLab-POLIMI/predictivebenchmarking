@@ -12,8 +12,10 @@ TrajectoryPlannerROS:
     acc_lim_theta: 3.2
     acc_lim_x: 2.5 #0.50
     acc_lim_y: 2.5 #0.50
-    min_in_place_vel_theta: 0.4
-    escape_vel: -0.2
+    min_in_place_rotational_vel: 0.4 # in the documentation this is called min_in_place_vel_theta
+    escape_vel: -0.1
+    escape_reset_dist: 0.3
+    escape_reset_theta: 0.3
 
     holonomic_robot: false
     yaw_goal_tolerance: 0.8 # nobody cares about angles...
@@ -23,7 +25,7 @@ TrajectoryPlannerROS:
     gdist_scale: 0.8 # 
     meter_scoring: true
 
-    occdist_scale: 0.01 # obstacle avoidance, default 0.01
+    occdist_scale: 0.1 # obstacle avoidance, default 0.01
     oscillation_reset_dist: 0.25
     oscillation_reset_timeout: 5.0
     prune_plan: true
