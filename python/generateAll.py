@@ -10,13 +10,16 @@ import roslib
 import tf
 import math
 import numpy as np
-from subprocess import call
+from subprocess import Popen, check_call
 from scipy.stats import t
-from os import listdir, makedirs
-from os.path import isfile, join, exists
+from os import listdir, makedirs, getcwd
+from os.path import isfile, join, exists, dirname
 
 
 def writeGroundTruth(data,outputFile):
+	'''
+	Given a bag file writes out a .log file with the euclidean poses 
+	'''
 
 	groundtruth=open(outputFile+".log","w")
 
@@ -43,7 +46,11 @@ def writeGroundTruth(data,outputFile):
 	groundtruth.close()
 
 def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T",alpha=0.99,maxError=0.05):
-
+	'''
+	Generates the Ordered and the Random relations files
+	'''
+	project_path = dirname(getcwd())
+	pathToMetricEvaluator=project_path+"/metricEvaluator/metricEvaluator"
 	ground={}	
 	output=gtfile[:-4]
 
@@ -103,7 +110,8 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 		errorWeights = "{1.0,1.0,1.0,0.0,0.0,0.0}"
 	else:
 		errorWeights = "{0.0,0.0,0.0,1.0,1.0,1.0}"
-	call(["../metricEvaluator/metricEvaluator", "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w",errorWeights, "-e","summary.error"])
+	p1=check_call([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w",errorWeights, "-e","summary.error"])
+	#p1.wait()
 	errorfile = open("summary.error", "r")
 	content = errorfile.readlines()
 	words = content[1].split(", ")
@@ -137,8 +145,8 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 
 	if not exists(join(folder,"Errors/RE/")):
 		makedirs(join(folder,"Errors/RE/"))
-	call(["../metricEvaluator/metricEvaluator", "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/RE/T.errors","-eu",folder + "Errors/RE/T-unsorted.errors"])
-	call(["../metricEvaluator/metricEvaluator", "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/RE/R.errors","-eu",folder + "Errors/RE/R-unsorted.errors"])
+	p2=check_call([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/RE/T.errors","-eu",folder + "Errors/RE/T-unsorted.errors"])
+	p3=check_call([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/RE/R.errors","-eu",folder + "Errors/RE/R-unsorted.errors"])
 
 
 
@@ -166,10 +174,16 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 
 	if not exists(join(folder,"Errors/Ordered/")):
 		makedirs(join(folder,"Errors/Ordered/"))
-	call(["../metricEvaluator/metricEvaluator", "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/Ordered/T.errors","-eu",folder + "Errors/Ordered/T-unsorted.errors"])
-	call(["../metricEvaluator/metricEvaluator", "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/Ordered/R.errors","-eu",folder + "Errors/Ordered/R-unsorted.errors"])
-
+	p4=check_call([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/Ordered/T.errors","-eu",folder + "Errors/Ordered/T-unsorted.errors"])
+	p5=check_call([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/Ordered/R.errors","-eu",folder + "Errors/Ordered/R-unsorted.errors"])
+	#p2.wait()
+	#p3.wait()
+	#p4.wait()
+	#p5.wait()
 def getMatrixDiff(p1,p2):
+	'''
+	Computes the rototranslation difference of two points
+	'''
 
 	x1=p1[0]
 	x2=p2[0]
@@ -235,7 +249,44 @@ def savePlot(slam,gt,save):
 	plotGroundTruth(gt)
 	savefig(save)
 
+def savePlot2(slam,gt,save):
+	'''
+	Creates a figure with the trajectories slam and ground truth
+	'''
+	file2=open(slam,'r')
+
+	x=[]
+	y=[]
+
+	for line in file2:
+		words = line.split(" ")
+		x.append(words[5])
+		y.append(words[6])
+
+	file2.close()
+	file=open(gt,'r')
+
+	xGT=[]
+	yGT=[]
+
+	for line in file:
+		words = line.split(" ")
+		xGT.append(words[1])
+		yGT.append(words[2])
+
+	file.close()
+
+	fig,ax=plt.subplots()
+	ax.cla()
+	ax.plot(x,y,'r',xGT,yGT,'g')
+	print 'SAVE'
+	fig.savefig(save)
+	plt.close(fig)
+
 def generateAll(folder):
+	'''
+	Given a folder path if there is a .bag file and an Out.log file generates Relations, errors and trajectories
+	'''
 	for f in listdir(folder):
 		if isfile(join(folder, f)):
 			if f[-4:] == ".bag":
@@ -245,7 +296,7 @@ def generateAll(folder):
 		if isfile(join(folder, f)):
 			if f[-7:] == "Out.log":
 				generateRelationsOandRE(folder,f[:-7]+".log")
-				savePlot(join(folder, f),join(folder, f[:-7]+".log"),join(folder, "trajectories.png"))
+				savePlot2(join(folder, f),join(folder, f[:-7]+".log"),join(folder, "trajectories.png"))
 
 
 if __name__ == '__main__':

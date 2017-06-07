@@ -21,8 +21,8 @@ TrajectoryPlannerROS:
     yaw_goal_tolerance: 0.8 # nobody cares about angles...
     xy_goal_tolerance: 0.55
     latch_xy_goal_tolerance: false # default
-    pdist_scale: 5.0 # 
-    gdist_scale: 0.8 # 
+    pdist_scale: 0.6 # 5.0 
+    gdist_scale: 0.8 # 0.8 
     meter_scoring: true
 
     occdist_scale: 0.1 # obstacle avoidance, default 0.01
@@ -30,7 +30,7 @@ TrajectoryPlannerROS:
     oscillation_reset_timeout: 5.0
     prune_plan: true
 
-    sim_time: 1.8
+    sim_time: 1.0 #1.8
     sim_granularity: 0.025
     vx_samples: 10
     vtheta_samples: 20
