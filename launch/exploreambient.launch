@@ -43,24 +43,24 @@
 
 	<!-- Start Mapper to generate map from laser scans -->
 	<node name="Mapper" pkg="gmapping" type="slam_gmapping" args="_xmin:=-100 _ymin:=-100 _ymax:=100
-     _xmax:=100 _ogain:=3.0 _minimumScore:=100 _angularUpdate:=0.7 _linearUpdate:=2.0
-     _map_update_interval:=10 _temporal_update:=5.0 _odom_frame:=odom _particles:=30 scan:=base_scan
+     _xmax:=100 _ogain:=3.0 _minimumScore:=100 _angularUpdate:=0.75 _linearUpdate:=1.75
+     _map_update_interval:=7.5 _temporal_update:=5.0 _odom_frame:=odom _particles:=40 scan:=base_scan
      _srr:=0.01 _srt:=0.02 _str:=0.01 _stt:=0.02 _delta:=0.05 _maxUrange:=30" />
 	<arg name="robot_name" default="turtlebot" />
     <arg name="robot_prefix" default=""/>
     <arg name="log_path" />
-    <arg name="output" default="screen"/>
+    <arg name="output" default="log"/>
     <arg name="frontier_selection" default="0"/>
     <arg name="use_sim_time" default="true" />
     <param name="use_sim_time"  value="$(arg use_sim_time)"/>
 
 
-	<node pkg="move_base" type="move_base" respawn="true" name="move_base" output="screen" clear_params="true">
-<rosparam file="param/pioneer3at_costmap_common_params.yaml" command="load" ns="global_costmap" />
-    <rosparam file="param/pioneer3at_costmap_common_params.yaml" command="load" ns="local_costmap" />
-    <rosparam file="param/pioneer3at_local_costmap_params.yaml" command="load" />
-    <rosparam file="param/pioneer3at_global_costmap_params.yaml" command="load" />
-    <rosparam file="param/base_local_planner_params.yaml" command="load" />
+	<node pkg="move_base" type="move_base" respawn="true" name="move_base" output="log" clear_params="true">
+<rosparam file="$(find explorer)/param/pioneer3at_costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find explorer)/param/pioneer3at_costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find explorer)/param/pioneer3at_local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find explorer)/param/pioneer3at_global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find explorer)/param/base_local_planner_params.yaml" command="load" />
     <param name="base_global_planner" value="global_planner/GlobalPlanner"/>
     <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
 	</node>
@@ -95,10 +95,10 @@
 
 	<!-- exploration parameters -->
 	<param name="frontier_selection" value="$(arg frontier_selection)" />
-	<rosparam file="param/pioneer3at_costmap_common_params.yaml" command="load" ns="global_costmap" />
-	<rosparam file="param/pioneer3at_costmap_common_params.yaml" command="load" ns="local_costmap" />
-	<rosparam file="param/pioneer3at_local_costmap_params.yaml" command="load" />
-	<rosparam file="param/pioneer3at_global_costmap_params.yaml" command="load" />
+	<rosparam file="$(find explorer)/param/pioneer3at_costmap_common_params.yaml" command="load" ns="global_costmap" />
+	<rosparam file="$(find explorer)/param/pioneer3at_costmap_common_params.yaml" command="load" ns="local_costmap" />
+	<rosparam file="$(find explorer)/param/pioneer3at_local_costmap_params.yaml" command="load" />
+	<rosparam file="$(find explorer)/param/pioneer3at_global_costmap_params.yaml" command="load" />
 
     	<remap from="/$(arg robot_name)/$(arg robot_name)/map" to="/$(arg robot_name)/map" />
     	<!-- <remap from="/$(arg robot_name)/$(arg robot_name)/base_scan" to="/$(arg robot_name)/base_scan" /> -->

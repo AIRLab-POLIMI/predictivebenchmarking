@@ -1,8 +1,0 @@
-prefix=/home/valerio/slampbenchmarking/devel
-
-Name: move_slow_and_clear
-Description: Description of move_slow_and_clear
-Version: 1.14.0
-Cflags: -I/home/valerio/slampbenchmarking/src/navigation/move_slow_and_clear/include
-Libs: -L/home/valerio/slampbenchmarking/devel/lib -lmove_slow_and_clear
-Requires: roscpp pluginlib nav_core

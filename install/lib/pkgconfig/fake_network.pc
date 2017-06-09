@@ -1,8 +1,0 @@
-prefix=/home/valerio/slampbenchmarking/install
-
-Name: fake_network
-Description: Description of fake_network
-Version: 0.1.0
-Cflags: -I/home/valerio/slampbenchmarking/install/include
-Libs: -L/home/valerio/slampbenchmarking/install/lib 
-Requires: roscpp rospy message_runtime

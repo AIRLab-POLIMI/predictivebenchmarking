@@ -11,7 +11,7 @@ from compare_images import compare_images
 minutes=0
 first_time=True
 seconds_mapsave=600
-maxmapsave=14
+maxmapsave=18
 count=0
 global project_path
 
@@ -52,6 +52,7 @@ def getMap(dataset_name,p,folder):
 	else:
 		print 'INSIDE ELSE'
 		print 'MAXMAPSAVE ' + str(maxmapsave)
+		diff = 5
 
 		try:
 			diff = compare_images(folder+"Maps/"+str(minutes)+"Map.pgm",folder+"Maps/"+str(minutes-10)+"Map.pgm")

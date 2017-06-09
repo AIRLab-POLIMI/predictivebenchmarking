@@ -1,1 +1,0 @@
-ExpFrontierElement[] frontier_element

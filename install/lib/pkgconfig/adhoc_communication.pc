@@ -1,8 +1,0 @@
-prefix=/home/valerio/slampbenchmarking/install
-
-Name: adhoc_communication
-Description: Description of adhoc_communication
-Version: 0.1.6
-Cflags: -I/home/valerio/slampbenchmarking/install/include
-Libs: -L/home/valerio/slampbenchmarking/install/lib 
-Requires: message_runtime

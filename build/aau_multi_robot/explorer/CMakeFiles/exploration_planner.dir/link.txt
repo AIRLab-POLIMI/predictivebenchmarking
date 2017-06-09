@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC -std=c++0x   -shared -Wl,-soname,libexploration_planner.so -o /home/valerio/slampbenchmarking/devel/lib/libexploration_planner.so CMakeFiles/exploration_planner.dir/src/ExplorationPlanner.cpp.o 

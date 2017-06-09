@@ -1,8 +1,0 @@
-prefix=/home/valerio/slampbenchmarking/install
-
-Name: navfn
-Description: Description of navfn
-Version: 1.14.0
-Cflags: -I/home/valerio/slampbenchmarking/install/include
-Libs: -L/home/valerio/slampbenchmarking/install/lib -lnavfn
-Requires: nav_core roscpp pluginlib
