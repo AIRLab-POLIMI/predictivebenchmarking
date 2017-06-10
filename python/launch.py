@@ -1,12 +1,13 @@
 import sys
 import signal
 import time
-from os import killpg, getpgid, setsid, makedirs, listdir, getcwd
+from os import killpg, getpgid, setsid, makedirs, listdir, getcwd, remove
 from os.path import basename,join, exists, isfile, dirname
 from subprocess import Popen, PIPE, check_call
 from threading import Timer, Thread
 from generateAll import generateAll
 from compare_images import compare_images
+from PIL import Image
 
 minutes=0
 first_time=True
@@ -44,6 +45,13 @@ def getMap(dataset_name,p,folder):
 	print 'PRIMA DI POPEN'
 	process=check_call(getmapString, shell=True, preexec_fn=setsid)
 	#process.wait()
+	try:
+		Image.open(folder+"Maps/"+str(minutes)+"Map.pgm").save(folder+"Maps/"+str(minutes)+"Map.png")
+		remove(folder+"Maps/"+str(minutes)+"Map.pgm")
+	except IOError:
+		print("cannot convert", infile)
+
+
 	
 	if first_time:
 		minutes+=10
@@ -52,10 +60,10 @@ def getMap(dataset_name,p,folder):
 	else:
 		print 'INSIDE ELSE'
 		print 'MAXMAPSAVE ' + str(maxmapsave)
-		diff = 5
+		diff=5
 
 		try:
-			diff = compare_images(folder+"Maps/"+str(minutes)+"Map.pgm",folder+"Maps/"+str(minutes-10)+"Map.pgm")
+			diff = compare_images(folder+"Maps/"+str(minutes)+"Map.png",folder+"Maps/"+str(minutes-10)+"Map.png")
 			print 'DIFFERENCE VALUE: '+ str(diff)
 		except ValueError:
 			print 'Compare images error'
@@ -65,6 +73,11 @@ def getMap(dataset_name,p,folder):
 			getmapString="rosrun map_server map_saver -f "+folder+"Maps/"+str(minutes)+"Map"
 			process=check_call(getmapString, shell=True, preexec_fn=setsid)
 			#process.wait()
+			try:
+				Image.open(folder+"Maps/"+str(minutes)+"Map.pgm").save(folder+"Maps/"+str(minutes)+"Map.png")
+				remove(folder+"Maps/"+str(minutes)+"Map.pgm")
+			except IOError:
+				print("cannot convert", infile)
 			killProcess(p,folder)
 			return
 		else:

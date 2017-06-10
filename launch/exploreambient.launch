@@ -30,7 +30,7 @@
 	</node>
 
 	<!-- Record ground truth values -->
-	<node name="recorder" pkg="rosbag" type="record" args="-O $(arg bag) /base_pose_ground_truth"/>
+	<node name="recorder" pkg="rosbag" type="record" args="--lz4 -O $(arg bag) /base_pose_ground_truth"/>
 
 	<!-- Write log odom gmapping for metricevaluator -->
 	<node name="listener" pkg="tf_listener" type="tf_listener.py" args="$(arg outputfile)" />

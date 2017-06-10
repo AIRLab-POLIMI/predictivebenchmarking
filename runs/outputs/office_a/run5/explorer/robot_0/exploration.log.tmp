@@ -1,0 +1,22 @@
+[Exploration]
+time_file_written    			= Fri Jun  9 06:04:51 2017
+start_time           			= 6.900000000
+end_time             			= 11452.000000000
+exploration_time    			        = 11445.1
+required_goals       			= 711
+unreachable_goals                            = 19
+travel_path_overall  			= 2177.9
+number_of_completed_auctions                 = 0
+number_of_uncompleted_auctions               = 0
+frontier_selection_strategy                  = 0
+costmap_size                                 = 10
+global costmap iterations                    = 0
+explorer_local_costmap_height 		= 10
+explorer_local_costmap_width 		= 10
+move_base_local_costmap_height 		= 10
+move_base_local_costmap_width 		= 10
+move_base_raytrace_range 		= 5
+move_base_obstacle_range 		= 5
+explorer_raytrace_range 		= 5
+explorer_obstacle_range 		= 5
+complete             			= 0
