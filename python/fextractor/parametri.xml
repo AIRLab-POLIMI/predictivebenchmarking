@@ -1,0 +1,34 @@
+<root>
+	<parametri>
+		<p1 name="minLateralSeparation">7</p1>
+	<p2 name="cv2thresh">150</p2>
+	<p3 name="minVal">90</p3>
+	<p4 name="maxVal">100</p4>
+	<p5 name="rho">1</p5>
+	<p6 name="theta">0.0174532925199</p6>
+	<p7 name="thresholdHough">20</p7>
+	<p8 name="minLineLength">7</p8>
+	<p9 name="maxLineGap">3</p9>
+	<p10 name="eps">0.85</p10>
+	<p11 name="minPts">1</p11>
+	<p12 name="h">0.023</p12>
+	<p13 name="minOffset">1e-05</p13>
+	<p14 name="diagonali">True</p14>
+	<p15 name="m">50</p15>
+	<p16 name="flip_dataset">False</p16>
+	<p17 name="apertureSize">5</p17>
+	<p18 name="t">1</p18>
+	<p19 name="sogliaLateraleClusterMura">10</p19>
+	<p20 name="soglia_q_split">0.2</p20>
+	</parametri>
+<path>
+		<p1 name="INFOLDERS">./data/INPUT/</p1>
+	<p2 name="OUTFOLDERS">./data/OUTPUT/</p2>
+	<p4 name="data_out_path">./data/OUTPUT/</p4>
+	<p5 name="metricMap">./data/INPUT/PARZIALI/battle_creekhs_1_updated72.png</p5>
+	<p6 name="nome_gt">./data/INPUT/XMLs/SCHOOL/battle_creekhs_1_updated.xml</p6>
+	<p7 name="filepath">./</p7>
+	<p8 name="filepath_pickle_layout">./Layout.pkl</p8>
+	<p9 name="filepath_pickle_grafoTopologico">./GrafoTopologico.pkl</p9>
+	</path>
+</root>
