@@ -35,10 +35,6 @@
 	<!-- Write log odom gmapping for metricevaluator -->
 	<node name="listener" pkg="tf_listener" type="tf_listener.py" args="$(arg outputfile)" />
 
-
-	<!-- RVIZ to view the visualization -->
-	<node name="RVIZ" pkg="rviz" type="rviz" args=" -d /home/valerio/slampbenchmarking/launch/custom.rviz" />
-
 	<!-- Start exploration of ambient -->
 
 	<!-- Start Mapper to generate map from laser scans -->
