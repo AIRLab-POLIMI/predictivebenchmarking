@@ -3,12 +3,9 @@ global_costmap:
     robot_base_frame: base_link
     update_frequency: 2
     publish_frequency: 0.2
-    static_map: false
-    rolling_window: true
-    width: 150.0 # maybe too small?
-    height: 150.0
-    resolution: 0.1
-    transform_tolerance: 0.25
+    static_map: true
+    resolution: 0.01
+    transform_tolerance: 0.1
     track_unknown_space: true
     unknown_cost_value: 255
 

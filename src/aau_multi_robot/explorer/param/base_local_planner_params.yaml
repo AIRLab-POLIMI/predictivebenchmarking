@@ -1,9 +1,11 @@
 controller_frequency: 5.0
 recovery_behavior_enabled: true
 clearing_rotation_allowed: true
+planner_patience: 10.0
+controller_patience: 30.0
 TrajectoryPlannerROS:
     max_vel_x: 0.7
-    min_vel_x: 0.2 # set to negative with DWAPlannerROS to allow backward motion, doesn't work with TPR
+    min_vel_x: 0.1 # set to negative with DWAPlannerROS to allow backward motion, doesn't work with TPR
     # NOTE: min_vel_x MUST be positive (cannot be zero) to work with TPR, can be negative with DWA
     # max_vel_y: 0.0 #P3AT is a differantial drive robot
     # min_vel_y: 0.0 #P3AT is a differential drive robot
@@ -12,33 +14,34 @@ TrajectoryPlannerROS:
     acc_lim_theta: 3.2
     acc_lim_x: 2.5 #0.50
     acc_lim_y: 2.5 #0.50
-    min_in_place_rotational_vel: 0.4 # in the documentation this is called min_in_place_vel_theta
+    min_in_place_rotational_vel: 0.1 # in the documentation this is called min_in_place_vel_theta
     escape_vel: -0.1
-    escape_reset_dist: 0.3
+    escape_reset_dist: 0.5
     escape_reset_theta: 0.3
 
     holonomic_robot: false
-    yaw_goal_tolerance: 0.8 # nobody cares about angles...
-    xy_goal_tolerance: 0.55
+    yaw_goal_tolerance: 0.2
+    xy_goal_tolerance: 1.0 # 0.55
     latch_xy_goal_tolerance: false # default
-    pdist_scale: 0.6 # 5.0 
+    pdist_scale: 1.0 # 0.6
     gdist_scale: 0.8 # 0.8 
     meter_scoring: true
 
-    occdist_scale: 0.1 # obstacle avoidance, default 0.01
-    oscillation_reset_dist: 0.25
-    oscillation_reset_timeout: 5.0
+    occdist_scale: 0.05 # obstacle avoidance, default 0.01
+    #oscillation_reset_dist: 0.25
+    #oscillation_reset_timeout: 5.0
     prune_plan: true
 
-    sim_time: 1.0 #1.8
+    sim_time: 1.5 #1.8
     sim_granularity: 0.025
-    vx_samples: 10
+    vx_samples: 20
     vtheta_samples: 20
 
     dwa: true
-GlobalPlanner:
+GlobalReplanner:
     allow_unknown: true
     track_unknown_space: true
     use_dijkstra: true
     use_quadratic: true
     use_grid_path: false
+    default_tolerance: 5.0

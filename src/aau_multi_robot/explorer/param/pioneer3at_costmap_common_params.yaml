@@ -1,4 +1,4 @@
-footprint: [ [-0.125,-0.125], [0.125, -0.125], [0.125, 0.125], [-0.125,0.125] ]
+footprint: [ [-0.25,-0.25], [0.25, -0.25], [0.25, 0.25], [-0.25,0.25] ]
 footprint_padding: 0.0
 observation_sources: base_scan
 
