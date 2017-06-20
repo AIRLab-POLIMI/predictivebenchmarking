@@ -114,8 +114,13 @@ def fiveRuns(world,folder):
 	global minutes
 	global first_time
 	global count
+	maxrun=0
+
+	for f in listdir(folder):
+		if int(f[-1:]) >= maxrun:
+			maxrun=int(f[-1:])
 	
-	for i in range(1,6):
+	for i in range(maxrun+1,maxrun+6):
 		minutes=10
 		first_time=True
 		count=0
