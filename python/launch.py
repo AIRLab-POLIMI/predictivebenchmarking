@@ -1,4 +1,5 @@
 import sys
+import select
 import signal
 import time
 from os import killpg, getpgid, setsid, makedirs, listdir, getcwd, remove
@@ -15,6 +16,7 @@ seconds_mapsave=600
 maxmapsave=18
 count=0
 global project_path
+
 
 def killProcess(p,folder):
 	'''
@@ -92,19 +94,25 @@ def launchNavigation(world,folder):
 	'''
 	Calls the launch file and starts the exploration, waits until the process is done
 	'''
+	try:
+		worldfile=basename(world)
+		launchString="roslaunch "+project_path+"/launch/exploreambient.launch worldfile:="+world+" \
+			outputfile:="+folder+worldfile[:-6]+"Out.log \
+			bag:="+folder+worldfile[:-6]+".bag \
+			log_path:="+folder+""
 
-	worldfile=basename(world)
-	launchString="roslaunch "+project_path+"/launch/exploreambient.launch worldfile:="+world+" \
-		outputfile:="+folder+worldfile[:-6]+"Out.log \
-		bag:="+folder+worldfile[:-6]+".bag \
-		log_path:="+folder+""
-
-	p=Popen(launchString, shell=True, preexec_fn=setsid)
-	Timer(seconds_mapsave,getMap,[folder,p,folder]).start()
-	p.wait()
-	time.sleep(10)
-	generateAll(folder)
-	return
+		p=Popen(launchString, shell=True, preexec_fn=setsid)
+		Timer(seconds_mapsave,getMap,[folder,p,folder]).start()
+		p.wait()
+		time.sleep(20)
+		generateAll(folder)
+		return
+	except KeyboardInterrupt:
+		print 'KILL PROCESS'
+		killProcess(p,folder)
+		time.sleep(20)
+		generateAll(folder)
+		return
 	
 
 def fiveRuns(world,folder):
@@ -114,8 +122,13 @@ def fiveRuns(world,folder):
 	global minutes
 	global first_time
 	global count
+	maxrun=0
+
+	for f in listdir(folder):
+		if int(f[-1:]) >= maxrun:
+			maxrun=int(f[-1:])
 	
-	for i in range(1,6):
+	for i in range(maxrun+1,maxrun+6):
 		minutes=10
 		first_time=True
 		count=0
