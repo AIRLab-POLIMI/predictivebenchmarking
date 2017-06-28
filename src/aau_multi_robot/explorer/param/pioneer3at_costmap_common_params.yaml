@@ -1,4 +1,4 @@
-footprint: [ [-0.275,-0.275], [0.275, -0.275], [0.275, 0.275], [-0.275,0.275] ]
+footprint: [ [-0.15,-0.15], [0.15, -0.15], [0.15, 0.15], [-0.15,0.15] ]
 footprint_padding: 0.0
 observation_sources: base_scan
 
@@ -15,8 +15,8 @@ obstacle_layer:
 
 inflation_layer:
       enabled:             true
-      cost_scaling_factor: 9 # default value 10; for my work, I have been using values between 40-50
-      inflation_radius:    0.35 # 0.35 works more or less fine; default value 0.55
+      cost_scaling_factor: 10 # default value 10; for my work, I have been using values between 40-50
+      inflation_radius:    0.20 # 0.35 works more or less fine; default value 0.55
 
 # These were for the create, but I think weren't getting used.
 # Can we merge to a common configuration - DJS?

@@ -1,8 +1,11 @@
-controller_frequency: 5.0
-recovery_behavior_enabled: false
+controller_frequency: 2.0
+recovery_behavior_enabled: true
 clearing_rotation_allowed: false
-planner_patience: 10.0
-controller_patience: 30.0
+recovery_behaviors: [{name: clear_inner_costmap, type: clear_inner_costmap/ClearInnerCostmap}]
+# recovery_behaviors: [{name: clear_costmap_recovery, type: clear_costmap_recovery/ClearCostmapRecovery}]
+max_replanning_tries: 1
+planner_patience: 3.5
+controller_patience: 7.5
 TrajectoryPlannerROS:
     max_vel_x: 0.7
     min_vel_x: 0.1 # set to negative with DWAPlannerROS to allow backward motion, doesn't work with TPR
@@ -16,12 +19,12 @@ TrajectoryPlannerROS:
     acc_lim_y: 2.5 #0.50
     min_in_place_rotational_vel: 0.1 # in the documentation this is called min_in_place_vel_theta
     escape_vel: -0.1
-    escape_reset_dist: 0.3
-    escape_reset_theta: 0.3
+    escape_reset_dist: 0.15
+    escape_reset_theta: 0.15
 
     holonomic_robot: false
     yaw_goal_tolerance: 0.8 # nobody cares about angles...
-    xy_goal_tolerance: 1.0 # 0.55
+    xy_goal_tolerance: 0.1 # 0.55
     latch_xy_goal_tolerance: false # default
     pdist_scale: 0.6 # 5.0 
     gdist_scale: 0.8 # 0.8 
@@ -41,7 +44,7 @@ TrajectoryPlannerROS:
 GlobalReplanner:
     allow_unknown: true
     track_unknown_space: true
-    use_dijkstra: true
-    use_quadratic: true
-    use_grid_path: false
-    default_tolerance: 5.0
+    use_dijkstra: false
+    use_quadratic: false
+    use_grid_path: true
+    default_tolerance: 0.0
