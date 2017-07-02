@@ -191,6 +191,8 @@ namespace explorationPlanner
 
             ExplorationPlanner(int robot_id, bool robot_prefix_empty, std::string robot_name_parameter);
             void printFrontiers();
+            bool hasLastGoalFailed();
+            void setHasLastGoalFailed(bool failure);
             bool respondToAuction(std::vector<requested_cluster_t> requested_cluster_ids, int auction_id_number);
             bool clusterIdToElementIds(int cluster_id, std::vector<transform_point_t>* occupied_ids);
             bool initialize_auctioning(std::vector<double> *final_goal);
@@ -321,6 +323,7 @@ namespace explorationPlanner
             double p_alpha_;
             double p_dist_for_goal_reached_;
             double p_same_frontier_dist_;
+            bool hasLastGoalFailed_;
 
             //bool p_plan_in_unknown_;
             //bool p_use_inflated_obs_;

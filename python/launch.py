@@ -15,6 +15,8 @@ first_time=True
 seconds_mapsave=600
 maxmapsave=18
 count=0
+threshold=20
+num_runs=10
 global project_path
 
 
@@ -62,7 +64,7 @@ def getMap(dataset_name,p,folder):
 	else:
 		print 'INSIDE ELSE'
 		print 'MAXMAPSAVE ' + str(maxmapsave)
-		diff=5
+		diff=threshold
 
 		try:
 			diff = compare_images(folder+"Maps/"+str(minutes)+"Map.png",folder+"Maps/"+str(minutes-10)+"Map.png")
@@ -70,7 +72,7 @@ def getMap(dataset_name,p,folder):
 		except ValueError:
 			print 'Compare images error'
 
-		if diff < 5 or maxmapsave < count or exists(join(folder,"explorer/robot_0/exploration.log")):
+		if diff < threshold or maxmapsave < count or exists(join(folder,"explorer/robot_0/exploration.log")):
 			print 'KILL PROCESS'
 			getmapString="rosrun map_server map_saver -f "+folder+"Maps/"+str(minutes)+"Map"
 			process=check_call(getmapString, shell=True, preexec_fn=setsid)
@@ -128,7 +130,7 @@ def fiveRuns(world,folder):
 		if int(f[-1:]) >= maxrun:
 			maxrun=int(f[-1:])
 	
-	for i in range(maxrun+1,maxrun+6):
+	for i in range(maxrun+1,maxrun+1+num_runs):
 		minutes=10
 		first_time=True
 		count=0
