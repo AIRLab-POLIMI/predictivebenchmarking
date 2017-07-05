@@ -12,11 +12,11 @@ from PIL import Image
 
 minutes=0
 first_time=True
-seconds_mapsave=600
+seconds_mapsave=240
 maxmapsave=18
 count=0
-threshold=20
-num_runs=10
+threshold=5
+num_runs=5
 global project_path
 
 
@@ -58,7 +58,7 @@ def getMap(dataset_name,p,folder):
 
 	
 	if first_time:
-		minutes+=10
+		minutes+=seconds_mapsave/60
 		first_time=False
 		Timer(seconds_mapsave,getMap,[dataset_name,p,folder]).start()
 	else:
@@ -67,7 +67,7 @@ def getMap(dataset_name,p,folder):
 		diff=threshold
 
 		try:
-			diff = compare_images(folder+"Maps/"+str(minutes)+"Map.png",folder+"Maps/"+str(minutes-10)+"Map.png")
+			diff = compare_images(folder+"Maps/"+str(minutes)+"Map.png",folder+"Maps/"+str(minutes-seconds_mapsave/60)+"Map.png")
 			print 'DIFFERENCE VALUE: '+ str(diff)
 		except ValueError:
 			print 'Compare images error'
@@ -85,7 +85,7 @@ def getMap(dataset_name,p,folder):
 			killProcess(p,folder)
 			return
 		else:
-			minutes+=10
+			minutes+=seconds_mapsave/60
 			Timer(seconds_mapsave,getMap,[dataset_name,p,folder]).start()
 
 
@@ -127,11 +127,11 @@ def fiveRuns(world,folder):
 	maxrun=0
 
 	for f in listdir(folder):
-		if int(f[-1:]) >= maxrun:
-			maxrun=int(f[-1:])
+		if int(f[3:]) >= maxrun:
+			maxrun=int(f[3:])
 	
 	for i in range(maxrun+1,maxrun+1+num_runs):
-		minutes=10
+		minutes=seconds_mapsave/60
 		first_time=True
 		count=0
 		if not exists(join(folder,"run"+str(i)+"/")):

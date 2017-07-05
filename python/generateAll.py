@@ -14,6 +14,7 @@ from subprocess import Popen, check_call
 from scipy.stats import t
 from os import listdir, makedirs, getcwd
 from os.path import isfile, join, exists, dirname
+from writeTextonImage import writeText
 
 
 def writeGroundTruth(data,outputFile):
@@ -110,8 +111,8 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 		errorWeights = "{1.0,1.0,1.0,0.0,0.0,0.0}"
 	else:
 		errorWeights = "{0.0,0.0,0.0,1.0,1.0,1.0}"
-	p1=check_call([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w",errorWeights, "-e","summary.error"])
-	#p1.wait()
+	p1=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w",errorWeights, "-e","summary.error"])
+	p1.wait()
 	errorfile = open("summary.error", "r")
 	content = errorfile.readlines()
 	words = content[1].split(", ")
@@ -145,8 +146,8 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 
 	if not exists(join(folder,"Errors/RE/")):
 		makedirs(join(folder,"Errors/RE/"))
-	p2=check_call([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/RE/T.errors","-eu",folder + "Errors/RE/T-unsorted.errors"])
-	p3=check_call([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/RE/R.errors","-eu",folder + "Errors/RE/R-unsorted.errors"])
+	p2=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/RE/T.errors","-eu",folder + "Errors/RE/T-unsorted.errors"])
+	p3=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/RE/R.errors","-eu",folder + "Errors/RE/R-unsorted.errors"])
 
 
 
@@ -174,8 +175,8 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 
 	if not exists(join(folder,"Errors/Ordered/")):
 		makedirs(join(folder,"Errors/Ordered/"))
-	p4=check_call([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/Ordered/T.errors","-eu",folder + "Errors/Ordered/T-unsorted.errors"])
-	p5=check_call([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/Ordered/R.errors","-eu",folder + "Errors/Ordered/R-unsorted.errors"])
+	p4=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/Ordered/T.errors","-eu",folder + "Errors/Ordered/T-unsorted.errors"])
+	p5=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/Ordered/R.errors","-eu",folder + "Errors/Ordered/R-unsorted.errors"])
 	#p2.wait()
 	#p3.wait()
 	#p4.wait()
@@ -297,6 +298,8 @@ def generateAll(folder):
 			if f[-7:] == "Out.log":
 				generateRelationsOandRE(folder,f[:-7]+".log")
 				savePlot2(join(folder, f),join(folder, f[:-7]+".log"),join(folder, "trajectories.png"))
+	writeText(folder)
+
 
 
 if __name__ == '__main__':
