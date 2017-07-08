@@ -1,0 +1,9 @@
+<library path="lib/librange_proximity_safety_controller_nodelet">
+  <class name="beebot_safety_controller/SafetyControllerNodelet"
+	 type="beebot::SafetyControllerNodelet"
+	 base_class_type="nodelet::Nodelet">
+    <description>
+      Nodelet for Beebot's safety controller
+    </description>  
+    </class>
+</library>

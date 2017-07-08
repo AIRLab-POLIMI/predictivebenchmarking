@@ -20,8 +20,8 @@ def compare_images(imageA, imageB):
 	# index for the images
 	imageA = cv2.imread(imageA)
 	imageB = cv2.imread(imageB)
-	#imageA=cv2.resize(imageA,(0,0),fx=0.25,fy=0.25)
-	#imageB=cv2.resize(imageB,(0,0),fx=0.25,fy=0.25)
+	imageA=cv2.resize(imageA,(0,0),fx=0.25,fy=0.25)
+	imageB=cv2.resize(imageB,(0,0),fx=0.25,fy=0.25)
 	m = mse(imageA, imageB)
 	return m
 	'''

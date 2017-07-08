@@ -51,7 +51,7 @@ Visualization Manager:
       Color: 0; 0; 255
       Enabled: true
       Name: Desired
-      Topic: /move_base/GlobalPlanner/plan
+      Topic: /move_base/GlobalReplanner/plan
       Value: true
     - Alpha: 1
       Class: rviz/GridCells
@@ -119,8 +119,14 @@ Visualization Manager:
       Draw Behind: false
       Enabled: true
       Name: Map
-      Topic: /move_base/global_costmap/costmap
+      Topic: /explorer/global_costmap/costmap
       Value: true
+    - Alpha: 1
+      Class: rviz/Polygon
+      Name: Footprint
+      Topic: /move_base/global_costmap/footprint
+      Value: true
+      Enabled: true
     - Alpha: 1
       Class: rviz/GridCells
       Color: 255; 0; 255

@@ -1,0 +1,7 @@
+<library path="lib/libclear_inner_costmap">
+  <class name="clear_inner_costmap/ClearInnerCostmap" type="clear_inner_costmap::ClearInnerCostmap" base_class_type="nav_core::RecoveryBehavior">
+    <description>
+      A recovery behavior that clears information in the costmap within the circumscribed radius of the robot.
+    </description>
+  </class>
+</library>

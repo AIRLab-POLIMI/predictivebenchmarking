@@ -34,7 +34,8 @@
 boost::mutex costmap_mutex;
 
 #define OPERATE_ON_GLOBAL_MAP true		// global or local costmap as basis for exploration
-#define OPERATE_WITH_GOAL_BACKOFF false	// navigate to a goal point which is close to (but not exactly at) selected goal (in case selected goal is too close to a wall)
+#define OPERATE_WITH_GOAL_BACKOFF true	// navigate to a goal point which is close to (but not exactly at) selected goal (in case selected goal is too close to a wall)
+#define MAX_TIME_BEFORE_GOAL_ABORTION 90
 
 void sleepok(int t, ros::NodeHandle &nh)
 {
@@ -53,6 +54,7 @@ public:
 
         
                 nh.param("frontier_selection",frontier_selection,1); 
+                nh.param("frontier_selection",original_frontier_selection,1);
                 nh.param("local_costmap/width",costmap_width,0); 
                 nh.param<double>("local_costmap/resolution",costmap_resolution,0);
                 nh.param("number_unreachable_for_cluster", number_unreachable_frontiers_for_cluster,3);
@@ -259,11 +261,20 @@ public:
                  * START TAKING THE TIME DURING EXPLORATION     
                  */
                 time_start = ros::Time::now();
-                
-                
+                    
+                        
 		while (exploration_finished == false) 
                 {
-                    Simulation == false; 
+                    Simulation == false;
+                    // check if last exploration failed; if so, temporary switch to random frontier selection phase
+                    if (exploration->hasLastGoalFailed()){ 
+                        frontier_selection = 4; // random  
+                        ROS_INFO("Switching to random frontier selection strategy as previous goal failed.");
+                    }
+                    else{
+                        frontier_selection = original_frontier_selection;
+                        ROS_INFO("Using original frontier selection strategy %d as previous goal succeeded.", frontier_selection);
+                    }
                     if(Simulation == false)
                     {
                         /*
@@ -1444,7 +1455,7 @@ public:
 
                 while (!ac.waitForServer(ros::Duration(10.0)))
 			;
-           
+
 		move_base_msgs::MoveBaseGoal goal_msgs;
 
 		goal_msgs.target_pose.header.seq = seq;	// increase the sequence number
@@ -1459,25 +1470,37 @@ public:
 		goal_msgs.target_pose.pose.orientation.w = 1;
 
 		ac.sendGoal(goal_msgs);
-               
+        float elapsed_time = 0.0;
+        
         //ac.waitForResult(ros::Duration(20)); EDIT Peter: Test if it also works with smaller value!
         ac.waitForResult(ros::Duration(waitForResult)); //here Parameter!
-        while (ac.getState() == actionlib::SimpleClientGoalState::PENDING)
+        elapsed_time+=3;
+        while (ac.getState() == actionlib::SimpleClientGoalState::PENDING && elapsed_time <= MAX_TIME_BEFORE_GOAL_ABORTION)
         {
             ros::Duration(0.5).sleep();
+            elapsed_time+=0.5;
         }
 		ROS_INFO("Not longer PENDING");
 
-	while (ac.getState() == actionlib::SimpleClientGoalState::ACTIVE)
+	while (ac.getState() == actionlib::SimpleClientGoalState::ACTIVE && elapsed_time <= MAX_TIME_BEFORE_GOAL_ABORTION)
         {
             ros::Duration(0.5).sleep();
+            elapsed_time+=0.5;
         }
 		ROS_INFO("Not longer ACTIVE");
 
 		while (ac.getState() != actionlib::SimpleClientGoalState::SUCCEEDED) {
+            if (elapsed_time >= MAX_TIME_BEFORE_GOAL_ABORTION){
+                ROS_INFO("FORCEFULLY ABORTING");
+                ac.cancelAllGoals();
+                exploration->setHasLastGoalFailed(true);
+                exploration->next_auction_position_x = robotPose.getOrigin().getX();
+                exploration->next_auction_position_y = robotPose.getOrigin().getY();
+                return false;
+            }
 			if (ac.getState() == actionlib::SimpleClientGoalState::ABORTED) {
 				ROS_INFO("ABORTED");
-                                
+                                exploration->setHasLastGoalFailed(true);
                                 exploration->next_auction_position_x = robotPose.getOrigin().getX();
                                 exploration->next_auction_position_y = robotPose.getOrigin().getY();
 				return false;
@@ -1497,7 +1520,7 @@ public:
 			 */
 		}
                 ROS_INFO("TARGET REACHED");
-                
+                exploration->setHasLastGoalFailed(false);
                 exploration->next_auction_position_x = robotPose.getOrigin().getX();
                 exploration->next_auction_position_y = robotPose.getOrigin().getY();
 		return true;
@@ -1599,6 +1622,7 @@ public:
         int home_position_x, home_position_y;
         int robot_id, number_of_robots;
         int frontier_selection, costmap_width, global_costmap_iteration, number_unreachable_frontiers_for_cluster;
+        int original_frontier_selection; 
         int counter_waiting_for_clusters;
         
         double robot_home_position_x, robot_home_position_y, costmap_resolution;
@@ -1676,7 +1700,7 @@ int main(int argc, char **argv) {
          * The following thread is only necessary to log simulation results.
          * Otherwise it produces unused output.
          */
-        boost::thread thr_map(boost::bind(&Explorer::map_info, &simple));
+        //boost::thread thr_map(boost::bind(&Explorer::map_info, &simple));
         
         /*
          * FIXME
@@ -1695,11 +1719,11 @@ int main(int argc, char **argv) {
 	}
 
 	thr_explore.interrupt();
-        thr_map.interrupt();
+        //thr_map.interrupt();
 //	thr_frontiers.interrupt();
         
         thr_explore.join();
-        thr_map.join();
+        //thr_map.join();
 //        thr_frontiers.interrupt();
         
 	return 0;

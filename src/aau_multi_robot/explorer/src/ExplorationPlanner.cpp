@@ -32,11 +32,12 @@
 #include <math.h>
 
 #define MAX_DISTANCE 2000			// max distance to starting point
-#define MAX_GOAL_RANGE 1.0			// default 0.2: min distance between frontiers (search)
-#define MINIMAL_FRONTIER_RANGE 0.2	// default 0.2: distance between frontiers (selection)
+#define MAX_GOAL_RANGE 0.2			// default 0.2: min distance between frontiers (search)
+#define MINIMAL_FRONTIER_RANGE 1.5	// default 0.2: distance between frontiers (selection)
 #define INNER_DISTANCE 5			// radius (in cells) around goal point without obstacles (backoff goal point)
 #define MAX_NEIGHBOR_DIST 1			// radius (in cells) around selected goal without obstacles
 #define CLUSTER_MERGING_DIST 0.8	// max (euclidean) distance between clusters that are merged
+#define ACCEPTABLE_GOAL_COST 50
 
 using namespace explorationPlanner;
 
@@ -67,7 +68,7 @@ ExplorationPlanner::ExplorationPlanner(int robot_id, bool robot_prefix_empty, st
 
     trajectory_strategy = "euclidean";
     robot_prefix_empty_param = robot_prefix_empty;
-
+    hasLastGoalFailed_ = false;
 
     responded_t init_responded;
     init_responded.auction_number = 0;
@@ -192,6 +193,16 @@ ExplorationPlanner::ExplorationPlanner(int robot_id, bool robot_prefix_empty, st
 //    }
 
     srand((unsigned)time(0));
+}
+
+bool ExplorationPlanner::hasLastGoalFailed()
+{
+    return hasLastGoalFailed_;
+}
+
+void ExplorationPlanner::setHasLastGoalFailed(bool failed)
+{
+    hasLastGoalFailed_ = failed;
 }
 
 void ExplorationPlanner::Callbacks()
@@ -2449,7 +2460,7 @@ bool ExplorationPlanner::publish_frontier_list()
     }
 
 //    pub_frontiers.publish(frontier_msg);
-    sendToMulticast("mc_",frontier_msg, "frontiers");
+    //sendToMulticast("mc_",frontier_msg, "frontiers");
 
     publish_subscribe_mutex.unlock();
 }
@@ -2477,7 +2488,7 @@ bool ExplorationPlanner::publish_visited_frontier_list()
     }
 
 //    pub_visited_frontiers.publish(visited_frontier_msg);
-    sendToMulticast("mc_",visited_frontier_msg, "visited_frontiers");
+    //sendToMulticast("mc_",visited_frontier_msg, "visited_frontiers");
 
     publish_subscribe_mutex.unlock();
 }
@@ -2860,16 +2871,19 @@ bool ExplorationPlanner::smartGoalBackoff(double x, double y, costmap_2d::Costma
 
     neighbours = getMapNeighbours(mx, my, 40);
 //    ROS_DEBUG("Got neighbours");
+    unsigned char cost;
+    ROS_INFO("ORIGINAL GOAL COST %u", cost);
+    cost = getCost(global_costmap,mx,my);
     for (int j = 0; j< neighbours.size()/2; j++)
     {
 //        ROS_DEBUG("Get neighbours %d and %d",j*2,j*2+1);
         new_mx = neighbours.at(j*2);
         new_my = neighbours.at(j*2+1);
 
-        unsigned char cost;
-	cost = getCost(global_costmap,new_mx, new_my);
 
-        if( cost == costmap_2d::FREE_SPACE)
+	    cost = getCost(global_costmap,new_mx, new_my);
+
+        if( cost <= ACCEPTABLE_GOAL_COST || cost == costmap_2d::NO_INFORMATION)
         {
             bool back_off_goal_found = true;
 
@@ -2882,7 +2896,7 @@ bool ExplorationPlanner::smartGoalBackoff(double x, double y, costmap_2d::Costma
 
                 unsigned char inner_cost;
 		inner_cost = getCost(global_costmap,inner_mx, inner_my);
-                if( inner_cost != costmap_2d::FREE_SPACE)
+                if( inner_cost > ACCEPTABLE_GOAL_COST && inner_cost != costmap_2d::NO_INFORMATION)
                 {
                     back_off_goal_found = false;
                     break;
@@ -2894,6 +2908,7 @@ bool ExplorationPlanner::smartGoalBackoff(double x, double y, costmap_2d::Costma
                 global_costmap->getCostmap()->mapToWorld(new_mx, new_my, wx, wy);
                 new_goal->push_back(wx);
                 new_goal->push_back(wy);
+                ROS_INFO("FOUND BACKOFF GOAL WITH COST %u", cost);
                 return true;
             }
         }

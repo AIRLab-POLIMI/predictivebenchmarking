@@ -20,7 +20,7 @@ define pioneer3at position
 	acceleration_bounds [-2.5 2.5 0 0 0 0 -70.0 70.0 ]
 
 	# Actual size
-	size [0.25 0.25 0.4]
+	size [0.2 0.2 0.4]
 
 	# The pioneer's center of rotation is offset from its center of area
 	origin [0 0 0 0]
