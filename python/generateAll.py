@@ -159,16 +159,17 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 	secondstamp=0
 	while secondstamp < groundSorted[-1]:
 		secondstamp=round(firststamp+float(seconds),1)
-		firstpos=ground[firststamp]
-		if secondstamp in ground.keys():
-			secondpos=ground[secondstamp]
-			rel=getMatrixDiff(firstpos,secondpos)
+		if firststamp in ground.keys():
+			firstpos=ground[firststamp]
+			if secondstamp in ground.keys():
+				secondpos=ground[secondstamp]
+				rel=getMatrixDiff(firstpos,secondpos)
 
-			x = rel[0,3]
-			y = rel[1,3]
-			theta = math.atan2(rel[1,0],rel[0,0])
+				x = rel[0,3]
+				y = rel[1,3]
+				theta = math.atan2(rel[1,0],rel[0,0])
 
-			relationsfileOrdered.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
+				relationsfileOrdered.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 		firststamp=secondstamp
 
 	relationsfileOrdered.close()
