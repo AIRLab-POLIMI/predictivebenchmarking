@@ -285,14 +285,15 @@ def savePlot2(slam,gt,save):
 	fig.savefig(save)
 	plt.close(fig)
 
-def generateAll(folder):
+def generateAll(folder, skipGroundTruthConversion=True):
 	'''
 	Given a folder path if there is a .bag file and an Out.log file generates Relations, errors and trajectories
 	'''
-	for f in listdir(folder):
-		if isfile(join(folder, f)):
-			if f[-4:] == ".bag":
-				writeGroundTruth(join(folder, f),join(folder, f[:-4]))
+	if not(skipGroundTruthConversion):
+		for f in listdir(folder):
+			if isfile(join(folder, f)):
+				if f[-4:] == ".bag":
+					writeGroundTruth(join(folder, f),join(folder, f[:-4]))
 
 	for f in listdir(folder):
 		if isfile(join(folder, f)):
