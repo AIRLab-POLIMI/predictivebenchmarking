@@ -25,7 +25,7 @@
 	<param name="use_sim_time" value="true" />
 
 	<!-- Start Stage simulator with a given environment -->
-	<node name="Stage" pkg="stage_ros" type="stageros" args="/$(arg worldfile)">
+	<node name="Stage" pkg="stage_ros" type="stageros" args="/$(arg worldfile) -g">
 		<param name="base_watchdog_timeout" value="0" />
 	</node>
 
@@ -46,7 +46,7 @@
     <arg name="robot_prefix" default=""/>
     <arg name="log_path" />
     <arg name="output" default="log"/>
-    <arg name="frontier_selection" default="0"/>
+    <arg name="frontier_selection" default="5"/>
     <arg name="use_sim_time" default="true" />
     <param name="use_sim_time"  value="$(arg use_sim_time)"/>
 

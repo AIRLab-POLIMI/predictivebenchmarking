@@ -50,7 +50,7 @@
     <arg name="robot_prefix" default=""/>
     <arg name="log_path" />
     <arg name="output" default="screen"/>
-    <arg name="frontier_selection" default="0"/>
+    <arg name="frontier_selection" default="5"/>
     <arg name="use_sim_time" default="true" />
     <param name="use_sim_time"  value="$(arg use_sim_time)"/>
 

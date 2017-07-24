@@ -2,6 +2,7 @@
 or where the exploration has actually ended, to avoid misleading error values. '''
 
 import sys
+import shutil
 from os import listdir
 from os.path import basename,join, exists, isfile, isdir, dirname
 from generateAll import generateAll
@@ -16,19 +17,23 @@ def adjustMetric(runsPath):
 				# if it's low enough, recompute; otherwise skip it even as it may not be entirely
 				# correct as otherwise it'd take forever to recompute it (and it'd probably be not 
 				# too different anyway)
-				err = open(join(runsPath, d, r,"Errors/RE/T.errors"), "r")
-				first = True
-				for line in err:
-					words = line.split(', ')
-					# skip the very first line, which just contains the name of the fields
-					if first is True:
-						first = False
-					else:
-						mean = float(words[0])
-				err.close()
+				try:
+					err = open(join(runsPath, d, r,"Errors/RE/T.errors"), "r")
+					first = True
+					for line in err:
+						words = line.split(', ')
+						# skip the very first line, which just contains the name of the fields
+						if first is True:
+							first = False
+						else:
+							mean = float(words[0])
+					err.close()
+				except IOError:
+					mean = 0
 				print join(runsPath, d, r,"Errors/RE/T.errors")
 				print mean
-				if mean < 2: # recompute
+				if mean < 2 and not(isfile(join(runsPath, d, r, d)+".log.bak")): # recompute
+					shutil.copy(join(runsPath, d, r, d)+".log", join(runsPath, d, r, d)+".log.bak")
 					gtLog = open(join(runsPath, d, r, d)+".log", "r")
 					print join(runsPath, d, r, d)+".log"
 					newContent = []

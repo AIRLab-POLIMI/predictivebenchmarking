@@ -1,4 +1,6 @@
 import sys
+import matplotlib as mpl
+mpl.use('Agg')
 import matplotlib.pyplot as plt
 from pylab import savefig
 import random
@@ -285,7 +287,7 @@ def savePlot2(slam,gt,save):
 	fig.savefig(save)
 	plt.close(fig)
 
-def generateAll(folder, skipGroundTruthConversion=True):
+def generateAll(folder, skipGroundTruthConversion=False):
 	'''
 	Given a folder path if there is a .bag file and an Out.log file generates Relations, errors and trajectories
 	'''

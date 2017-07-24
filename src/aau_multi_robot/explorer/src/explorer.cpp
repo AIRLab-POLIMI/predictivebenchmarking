@@ -35,7 +35,7 @@ boost::mutex costmap_mutex;
 
 #define OPERATE_ON_GLOBAL_MAP true		// global or local costmap as basis for exploration
 #define OPERATE_WITH_GOAL_BACKOFF true	// navigate to a goal point which is close to (but not exactly at) selected goal (in case selected goal is too close to a wall)
-#define MAX_TIME_BEFORE_GOAL_ABORTION 90
+#define MAX_TIME_BEFORE_GOAL_ABORTION 180
 
 void sleepok(int t, ros::NodeHandle &nh)
 {
@@ -517,8 +517,8 @@ public:
                                          * If negotiation is not needed, simply uncomment
                                          * and set the negotiation to TRUE.
                                          */
-                                        negotiation = exploration->negotiate_Frontier(final_goal.at(0),final_goal.at(1),final_goal.at(2),final_goal.at(3),final_goal.at(4));
-//                                        negotiation = true; 
+                                        //negotiation = exploration->negotiate_Frontier(final_goal.at(0),final_goal.at(1),final_goal.at(2),final_goal.at(3),final_goal.at(4));
+                                        negotiation = true; 
                                         if(negotiation == true)
                                         {
                                             ROS_DEBUG("Negotiation was successful");

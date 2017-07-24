@@ -10,7 +10,7 @@ planner_patience: 5.0
 planner_frequency: 0.2
 controller_patience: 15.0
 TrajectoryPlannerROS:
-    max_vel_x: 1.0
+    max_vel_x: 0.85
     min_vel_x: 0.1 # set to negative with DWAPlannerROS to allow backward motion, doesn't work with TPR
     # NOTE: min_vel_x MUST be positive (cannot be zero) to work with TPR, can be negative with DWA
     # max_vel_y: 0.0 #P3AT is a differantial drive robot

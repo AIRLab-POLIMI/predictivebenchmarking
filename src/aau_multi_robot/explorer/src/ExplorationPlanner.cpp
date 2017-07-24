@@ -32,12 +32,12 @@
 #include <math.h>
 
 #define MAX_DISTANCE 2000			// max distance to starting point
-#define MAX_GOAL_RANGE 0.2			// default 0.2: min distance between frontiers (search)
-#define MINIMAL_FRONTIER_RANGE 1.5	// default 0.2: distance between frontiers (selection)
+#define MAX_GOAL_RANGE 0.5			// default 0.2: min distance between frontiers (search)
+#define MINIMAL_FRONTIER_RANGE 1.0	// default 0.2: distance between frontiers (selection)
 #define INNER_DISTANCE 5			// radius (in cells) around goal point without obstacles (backoff goal point)
 #define MAX_NEIGHBOR_DIST 1			// radius (in cells) around selected goal without obstacles
-#define CLUSTER_MERGING_DIST 0.8	// max (euclidean) distance between clusters that are merged
-#define ACCEPTABLE_GOAL_COST 50
+#define CLUSTER_MERGING_DIST 1.5	// max (euclidean) distance between clusters that are merged
+#define ACCEPTABLE_GOAL_COST 80
 
 using namespace explorationPlanner;
 
@@ -4484,8 +4484,9 @@ bool ExplorationPlanner::determine_goal(int strategy, std::vector<double> *final
 }
 
 bool sortCluster(const ExplorationPlanner::cluster_t &lhs, const ExplorationPlanner::cluster_t &rhs)
-{
-    if(lhs.cluster_element.size() > 1 && rhs.cluster_element.size() > 1)
+{            
+    ROS_INFO("Now sorting %d", lhs.cluster_element.size());
+    if(lhs.cluster_element.size() >= 1 && rhs.cluster_element.size() >= 1)
     {
         return lhs.cluster_element.front().dist_to_robot < rhs.cluster_element.front().dist_to_robot;
     }
@@ -4716,7 +4717,7 @@ void ExplorationPlanner::sort(int strategy)
             }
             ROS_INFO("Starting to sort the clusters itself");
             std::sort(clusters.begin(), clusters.end(), sortCluster);
-
+            ROS_INFO("Sorted, so why am I stalling here?");
 //            if (clusters.size() > 0)
 //            {
 //                    for (int i = clusters.size(); i > 0; i--)
