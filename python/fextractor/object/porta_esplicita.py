@@ -1,3 +1,0 @@
-'''
-porta esplicita
-'''
