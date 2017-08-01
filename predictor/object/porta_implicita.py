@@ -1,0 +1,3 @@
+'''
+porta implicita
+'''
