@@ -32,9 +32,10 @@ def adjustMetric(runsPath):
 					mean = 0
 				print join(runsPath, d, r,"Errors/RE/T.errors")
 				print mean
-				if mean < 2 and not(isfile(join(runsPath, d, r, d)+".log.bak")): # recompute
-					shutil.copy(join(runsPath, d, r, d)+".log", join(runsPath, d, r, d)+".log.bak")
-					gtLog = open(join(runsPath, d, r, d)+".log", "r")
+				if mean < 2:
+					if not(isfile(join(runsPath, d, r, d)+".log.bak")): # recompute
+						shutil.copy(join(runsPath, d, r, d)+".log", join(runsPath, d, r, d)+".log.bak")
+					gtLog = open(join(runsPath, d, r, d)+".log.bak", "r")
 					print join(runsPath, d, r, d)+".log"
 					newContent = []
 					prev_line = ["", "", "", ""]

@@ -48,7 +48,7 @@ def writeGroundTruth(data,outputFile):
 				groundtruth.write(str(msg.header.stamp)[:-9]+"."+str(msg.header.stamp)[-9:]+" "+str(position.x+displacementx)+" "+str(position.y+displacementy)+" "+str(rot[2])+"\n")
 	groundtruth.close()
 
-def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T",alpha=0.99,maxError=0.05):
+def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T",alpha=0.99,maxError=0.02):
 	'''
 	Generates the Ordered and the Random relations files
 	'''
@@ -125,7 +125,7 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 	delta = maxError
 	n_samples = math.pow(z_a_2,2)*var/math.pow(delta,2)
 	relationsfileRE=open(folder+"Relations/"+output+"RE.relations","w")
-	relationsfileRE.seek(0)
+	#relationsfileRE.seek(0)
 	i=0
 	while i < n_samples:
 			firststamp=float(random.choice(ground.keys()))
@@ -145,15 +145,18 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 
 			relationsfileRE.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 			i+=1 
-
+	relationsfileRE.close()
 	if not exists(join(folder,"Errors/RE/")):
 		makedirs(join(folder,"Errors/RE/"))
+	print folder+"Relations/"+output+"RE.relations"
 	p2=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/RE/T.errors","-eu",folder + "Errors/RE/T-unsorted.errors"])
+	p2.wait()
 	p3=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/RE/R.errors","-eu",folder + "Errors/RE/R-unsorted.errors"])
-
+	p3.wait()
 
 
 	#ORDERED
+	
 	relationsfileOrdered=open(folder+"Relations/"+output+"Ordered.relations","w")
 	
 	groundSorted=sorted(ground)
@@ -179,7 +182,10 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 	if not exists(join(folder,"Errors/Ordered/")):
 		makedirs(join(folder,"Errors/Ordered/"))
 	p4=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/Ordered/T.errors","-eu",folder + "Errors/Ordered/T-unsorted.errors"])
+	p4.wait()
 	p5=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/Ordered/R.errors","-eu",folder + "Errors/Ordered/R-unsorted.errors"])
+	p5.wait()
+	
 	#p2.wait()
 	#p3.wait()
 	#p4.wait()
