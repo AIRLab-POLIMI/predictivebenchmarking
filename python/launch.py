@@ -98,7 +98,7 @@ def launchNavigation(world,folder):
 	'''
 	try:
 		worldfile=basename(world)
-		launchString="roslaunch "+project_path+"/launch/exploreambient_headless.launch worldfile:="+world+" \
+		launchString="roslaunch "+project_path+"/launch/exploreambient.launch worldfile:="+world+" \
 			outputfile:="+folder+worldfile[:-6]+"Out.log \
 			bag:="+folder+worldfile[:-6]+".bag \
 			log_path:="+folder+""
