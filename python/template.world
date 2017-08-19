@@ -4,7 +4,7 @@ include "floorplan.inc"
 name                    "Navigation-2D World"
 interval_sim            100
 quit_time                 0
-resolution                0.075
+resolution                0.025
 show_clock                0
 show_clock_interval     100
 threads                 2

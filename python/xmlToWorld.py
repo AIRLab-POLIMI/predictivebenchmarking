@@ -39,7 +39,7 @@ def XMLToWorld(xmlFile,outputPath):
 		# we act according to the specific line
 		action = actions[i]
 		if action=="resolution":
-			line = "resolution "+' '*15+str(round(scalingFactor,5))+'\n'
+			line = "resolution "+' '*15+"0.025"+'\n'
 		elif action=="world_name":
 			line = '  name "'+xmlName+'"\n'
 		elif action=="file_name":

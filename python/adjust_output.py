@@ -13,20 +13,21 @@ def adjustMetric(runsPath):
 		if isdir(join(runsPath, d)):
 			# for each run
 			for r in listdir(join(runsPath, d)):
-				print join(runsPath, d, r, d)+"Out.log"
-				outLog = open(join(runsPath, d, r, d)+"Out.log", "r")
-				lines = outLog.readlines()
-				outLog.close()
-				last_line = len(lines)
-				words = lines[-1].split(" ")
-				try:
-					test = words[8]
-				except IndexError:
-					last_line -= 1
-				outLog = open(join(runsPath, d, r, d)+"Out.log", "w")
-				for i in range(0,last_line):  
-					outLog.write(lines[i])
-				outLog.close()
+				if isdir(join(runsPath, d, r)):
+					print join(runsPath, d, r, d)+"Out.log"
+					outLog = open(join(runsPath, d, r, d)+"Out.log", "r")
+					lines = outLog.readlines()
+					outLog.close()
+					last_line = len(lines)
+					words = lines[-1].split(" ")
+					try:
+						test = words[8]
+					except IndexError:
+						last_line -= 1
+					outLog = open(join(runsPath, d, r, d)+"Out.log", "w")
+					for i in range(0,last_line):  
+						outLog.write(lines[i])
+					outLog.close()
 
 if __name__=='__main__':
 	adjustMetric(sys.argv[1])
