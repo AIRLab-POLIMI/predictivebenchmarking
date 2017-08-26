@@ -23,7 +23,7 @@
 	<url>http://wiki.ros.org/ipa_room_segmentation</url>
 
 	<buildtool_depend>catkin</buildtool_depend>
-	
+
 	<depend>actionlib</depend>
 	<depend>cmake_modules</depend>
 	<depend>cv_bridge</depend>
@@ -32,6 +32,7 @@
 	<depend>libdlib</depend>
 	<depend>opengm</depend>
 	<depend>libopencv-dev</depend>
+    <depend>libgeos++-dev</depend>
 	<depend>roscpp</depend>
 	<depend>roslib</depend>
 	<depend>sensor_msgs</depend>

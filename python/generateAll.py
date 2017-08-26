@@ -48,7 +48,7 @@ def writeGroundTruth(data,outputFile):
 				groundtruth.write(str(msg.header.stamp)[:-9]+"."+str(msg.header.stamp)[-9:]+" "+str(position.x+displacementx)+" "+str(position.y+displacementy)+" "+str(rot[2])+"\n")
 	groundtruth.close()
 
-def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T",alpha=0.99,maxError=0.02):
+def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T",alpha=0.99,maxError=0.02,skipOrderedRecomputation=False):
 	'''
 	Generates the Ordered and the Random relations files
 	'''
@@ -65,6 +65,7 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 		SLAMFile = join(folder,output)+"Out.log"
 
 	gt=open(join(folder,gtfile),"r")
+	print join(folder,gtfile)
 
 	#builds dictionary with all the ground truth
 	for line in gt:
@@ -156,40 +157,36 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 
 
 	#ORDERED
-	
-	relationsfileOrdered=open(folder+"Relations/"+output+"Ordered.relations","w")
-	
-	groundSorted=sorted(ground)
-	firststamp=groundSorted[1]
-	secondstamp=0
-	while secondstamp < groundSorted[-1]:
-		secondstamp=round(firststamp+float(seconds),1)
-		if firststamp in ground.keys():
-			firstpos=ground[firststamp]
-			if secondstamp in ground.keys():
-				secondpos=ground[secondstamp]
-				rel=getMatrixDiff(firstpos,secondpos)
+	if not(skipOrderedRecomputation):
+		relationsfileOrdered=open(folder+"Relations/"+output+"Ordered.relations","w")
+		
+		groundSorted=sorted(ground)
+		firststamp=groundSorted[1]
+		secondstamp=0
+		while secondstamp < groundSorted[-1]:
+			secondstamp=round(firststamp+float(seconds),1)
+			if firststamp in ground.keys():
+				firstpos=ground[firststamp]
+				if secondstamp in ground.keys():
+					secondpos=ground[secondstamp]
+					rel=getMatrixDiff(firstpos,secondpos)
 
-				x = rel[0,3]
-				y = rel[1,3]
-				theta = math.atan2(rel[1,0],rel[0,0])
+					x = rel[0,3]
+					y = rel[1,3]
+					theta = math.atan2(rel[1,0],rel[0,0])
 
-				relationsfileOrdered.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
-		firststamp=secondstamp
+					relationsfileOrdered.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
+			firststamp=secondstamp
 
-	relationsfileOrdered.close()
+		relationsfileOrdered.close()
 
-	if not exists(join(folder,"Errors/Ordered/")):
-		makedirs(join(folder,"Errors/Ordered/"))
-	p4=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/Ordered/T.errors","-eu",folder + "Errors/Ordered/T-unsorted.errors"])
-	p4.wait()
-	p5=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/Ordered/R.errors","-eu",folder + "Errors/Ordered/R-unsorted.errors"])
-	p5.wait()
-	
-	#p2.wait()
-	#p3.wait()
-	#p4.wait()
-	#p5.wait()
+		if not exists(join(folder,"Errors/Ordered/")):
+			makedirs(join(folder,"Errors/Ordered/"))
+		p4=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/Ordered/T.errors","-eu",folder + "Errors/Ordered/T-unsorted.errors"])
+		p4.wait()
+		p5=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/Ordered/R.errors","-eu",folder + "Errors/Ordered/R-unsorted.errors"])
+		p5.wait()
+
 def getMatrixDiff(p1,p2):
 	'''
 	Computes the rototranslation difference of two points
@@ -293,7 +290,7 @@ def savePlot2(slam,gt,save):
 	fig.savefig(save)
 	plt.close(fig)
 
-def generateAll(folder, skipGroundTruthConversion=False):
+def generateAll(folder, skipGroundTruthConversion=False, skipOrderedRecomputation=False):
 	'''
 	Given a folder path if there is a .bag file and an Out.log file generates Relations, errors and trajectories
 	'''
@@ -305,8 +302,8 @@ def generateAll(folder, skipGroundTruthConversion=False):
 
 	for f in listdir(folder):
 		if isfile(join(folder, f)):
-			if f[-7:] == "Out.log":
-				generateRelationsOandRE(folder,f[:-7]+".log")
+			if f[-7:] == "Out.log" and f[0:2]!="._": # to skip hidden macOS files
+				generateRelationsOandRE(folder,f[:-7]+".log",skipOrderedRecomputation=skipOrderedRecomputation)
 				savePlot2(join(folder, f),join(folder, f[:-7]+".log"),join(folder, "trajectories.png"))
 	writeText(folder)
 

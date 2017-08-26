@@ -29,7 +29,7 @@ generate_dynamic_reconfigure_options(
 
 find_package(OpenCV REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system thread filesystem)
-
+find_package(GEOS REQUIRED)
 find_package(OpenMP)
 if(OPENMP_FOUND)
 	message(STATUS "OPENMP FOUND")
@@ -58,6 +58,7 @@ DEPENDS
 	OpenCV
 	Boost
 	OpenMP
+        GEOS
 )
 
 
@@ -74,6 +75,7 @@ include_directories(
 	${catkin_INCLUDE_DIRS}
 	${OpenCV_INCLUDE_DIRS}
 	${Boost_INCLUDE_DIRS}
+        ${GEOS_INCLUDE_DIRS}
 )
 
 ### segmentation action server: see room_segmentation_action_server_params.yaml to change the used method
@@ -109,6 +111,24 @@ add_dependencies(room_segmentation_client
 	${${PROJECT_NAME}_EXPORTED_TARGETS}
 )
 
+### standalone client for testing purpose
+add_executable(room_segmentation_client_standalone 
+    ros/src/room_segmentation_client_standalone.cpp
+	common/src/abstract_voronoi_segmentation.cpp
+	common/src/voronoi_segmentation.cpp
+	common/src/wavefront_region_growing.cpp
+	common/src/contains.cpp common/src/features.cpp
+	common/src/meanshift2d.cpp
+	common/src/room_class.cpp)
+target_link_libraries(room_segmentation_client_standalone
+	${catkin_LIBRARIES} 
+	${OpenCV_LIBRARIES}
+        ${GEOS_LIBRARIES})
+add_dependencies(room_segmentation_client_standalone
+	${catkin_EXPORTED_TARGETS}
+	${${PROJECT_NAME}_EXPORTED_TARGETS}
+)
+
 ### evaluation function for numeric properties and comparison to a given ground truth segmentation
 add_executable(evaluation
 	ros/src/evaluation_numeric_properties.cpp
@@ -126,7 +146,7 @@ add_dependencies(evaluation
 ## Install ##
 #############
 ## Mark executables and/or libraries for installation
-install(TARGETS   room_segmentation_server   room_segmentation_client   evaluation
+install(TARGETS   room_segmentation_server   room_segmentation_client   room_segmentation_client_standalone   evaluation
 	ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 	LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 	RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

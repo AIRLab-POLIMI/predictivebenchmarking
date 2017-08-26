@@ -12,7 +12,7 @@
 
 #include <ipa_room_segmentation/room_class.h>
 
-#define PI 3.14159265
+#define PICONST 3.14159265
 
 // Struct that compares two given points and returns if the y-coordinate of the first is smaller or if they are equal if the
 // x-coordinate of the first is smaller. This is used for sets to easily store cv::Point objects and search for specific objects.

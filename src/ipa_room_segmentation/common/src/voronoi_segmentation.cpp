@@ -13,10 +13,16 @@ VoronoiSegmentation::VoronoiSegmentation()
 
 }
 
+void VoronoiSegmentation::segmentMap(const cv::Mat& map_to_be_labeled, cv::Mat& segmented_map, double map_resolution_from_subscription,
+		double room_area_factor_lower_limit, double room_area_factor_upper_limit, int neighborhood_index, int max_iterations,
+		double min_critical_point_distance_factor, double max_area_for_merging, bool display_map){
+	std::vector<Room> rooms;
+	segmentMap(map_to_be_labeled, segmented_map, map_resolution_from_subscription, room_area_factor_lower_limit, room_area_factor_upper_limit, neighborhood_index, max_iterations, min_critical_point_distance_factor, max_area_for_merging, rooms, display_map);
+}
 
 void VoronoiSegmentation::segmentMap(const cv::Mat& map_to_be_labeled, cv::Mat& segmented_map, double map_resolution_from_subscription,
 		double room_area_factor_lower_limit, double room_area_factor_upper_limit, int neighborhood_index, int max_iterations,
-		double min_critical_point_distance_factor, double max_area_for_merging, bool display_map)
+		double min_critical_point_distance_factor, double max_area_for_merging, std::vector<Room>& rooms, bool display_map)
 {
 	//****************Create the Generalized Voronoi-Diagram**********************
 	//This function takes a given map and segments it with the generalized Voronoi-Diagram. It takes following steps:
@@ -227,7 +233,7 @@ void VoronoiSegmentation::segmentMap(const cv::Mat& map_to_be_labeled, cv::Mat& 
 			}
 		}
 		//calculate angle between the vectors from the critical Point to the found basis-points
-		double current_angle = std::acos((basis_vector_1_x * basis_vector_2_x + basis_vector_1_y * basis_vector_2_y) / (distance_basis_1 * distance_basis_2)) * 180.0 / PI;
+		double current_angle = std::acos((basis_vector_1_x * basis_vector_2_x + basis_vector_1_y * basis_vector_2_y) / (distance_basis_1 * distance_basis_2)) * 180.0 / PICONST;
 
 		//save the critical line with its calculated values
 		basis_points_1.push_back(basis_point_1);
@@ -288,7 +294,7 @@ void VoronoiSegmentation::segmentMap(const cv::Mat& map_to_be_labeled, cv::Mat& 
 
 	std::vector < cv::Vec4i > hierarchy; //variables for coloring the map
 
-	std::vector<Room> rooms; //Vector to save the rooms in this map
+	//std::vector<Room> rooms; //Vector to save the rooms in this map
 
 	//1. Erode map one time, so small gaps are closed
 //	cv::erode(voronoi_map_, voronoi_map_, cv::Mat(), cv::Point(-1, -1), 1);
@@ -331,12 +337,13 @@ void VoronoiSegmentation::segmentMap(const cv::Mat& map_to_be_labeled, cv::Mat& 
 
 	//3.fill the last white areas with the surrounding color
 	wavefrontRegionGrowing(segmented_map);
-
+	std::cout << "Wavefront propagated." << std::endl;
 	if(display_map == true)
 	{
 		cv::imshow("before", segmented_map);
 		cv::waitKey(1);
 	}
+	std::cout << "Image shown, now preparing to merge rooms." << std::endl;
 
 	//4.merge the rooms together if neccessary
 	mergeRooms(segmented_map, rooms, map_resolution_from_subscription, max_area_for_merging, display_map);
