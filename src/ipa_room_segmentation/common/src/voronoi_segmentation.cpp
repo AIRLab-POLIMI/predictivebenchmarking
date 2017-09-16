@@ -6,8 +6,6 @@
 #include <ipa_room_segmentation/timer.h>
 #include <set>
 
-
-
 VoronoiSegmentation::VoronoiSegmentation()
 {
 
@@ -17,10 +15,12 @@ void VoronoiSegmentation::segmentMap(const cv::Mat& map_to_be_labeled, cv::Mat& 
 		double room_area_factor_lower_limit, double room_area_factor_upper_limit, int neighborhood_index, int max_iterations,
 		double min_critical_point_distance_factor, double max_area_for_merging, bool display_map){
 	std::vector<Room> rooms;
-	segmentMap(map_to_be_labeled, segmented_map, map_resolution_from_subscription, room_area_factor_lower_limit, room_area_factor_upper_limit, neighborhood_index, max_iterations, min_critical_point_distance_factor, max_area_for_merging, rooms, display_map);
+    cv::Mat voronoi_map;
+	geos::geom::Geometry* floorPolygon = NULL;
+	segmentMap(map_to_be_labeled, segmented_map, voronoi_map, floorPolygon, map_resolution_from_subscription, room_area_factor_lower_limit, room_area_factor_upper_limit, neighborhood_index, max_iterations, min_critical_point_distance_factor, max_area_for_merging, rooms, display_map);
 }
 
-void VoronoiSegmentation::segmentMap(const cv::Mat& map_to_be_labeled, cv::Mat& segmented_map, double map_resolution_from_subscription,
+void VoronoiSegmentation::segmentMap(const cv::Mat& map_to_be_labeled, cv::Mat& segmented_map, cv::Mat& voronoi_map, geos::geom::Geometry* floorPolygon, double map_resolution_from_subscription,
 		double room_area_factor_lower_limit, double room_area_factor_upper_limit, int neighborhood_index, int max_iterations,
 		double min_critical_point_distance_factor, double max_area_for_merging, std::vector<Room>& rooms, bool display_map)
 {
@@ -58,8 +58,11 @@ void VoronoiSegmentation::segmentMap(const cv::Mat& map_to_be_labeled, cv::Mat& 
 
 	//*********************I. Calculate and draw the Voronoi-Diagram in the given map*****************
 
-	cv::Mat voronoi_map = map_to_be_labeled.clone();
+	voronoi_map = map_to_be_labeled.clone();
 	createVoronoiGraph(voronoi_map); //voronoi-map for the segmentation-algorithm
+
+	//cv::imshow("graph", voronoi_map);
+	//cv::waitKey(1);
 
 	//***************************II. extract the possible candidates for critical Points****************************
 	// 1.extract the node-points that have at least three neighbors on the voronoi diagram
@@ -67,8 +70,23 @@ void VoronoiSegmentation::segmentMap(const cv::Mat& map_to_be_labeled, cv::Mat& 
 	// 2.reduce the side-lines along the voronoi-graph by checking if it has only one neighbor until a node-point is reached
 	//	--> make it white
 	//	repeat a large enough number of times so the graph converges
+	cv::Mat pruned_voronoi_map = voronoi_map;
 	std::set<cv::Point, cv_Point_comp> node_points; //variable for node point extraction
-	pruneVoronoiGraph(voronoi_map, node_points);
+	pruneVoronoiGraph(pruned_voronoi_map, node_points);
+	voronoi_map = pruned_voronoi_map.clone();
+	const geos::geom::GeometryFactory *factory = geos::geom::GeometryFactory::getDefaultInstance();
+	if (floorPolygon!=NULL)
+		for (int v = 0; v < voronoi_map.rows; v++)
+			for (int u = 0; u < voronoi_map.cols; u++)
+				if (voronoi_map.at<unsigned char>(v, u) == 127)
+				{
+					// this is a candidate point, but is it within the dataset boundaries?
+					geos::geom::Point *point = factory->createPoint(geos::geom::Coordinate(u,v));
+					if (!floorPolygon->contains(point))
+						voronoi_map.at<unsigned char>(v, u) = 255;
+				}
+	cv::imshow("graph_pruned", voronoi_map);
+	cv::waitKey();
 
 	//3.find the critical points in the previously calculated generalized Voronoi-graph by searching in a specified
 	//	neighborhood for the local minimum of distance to the nearest black pixel
@@ -347,4 +365,5 @@ void VoronoiSegmentation::segmentMap(const cv::Mat& map_to_be_labeled, cv::Mat& 
 
 	//4.merge the rooms together if neccessary
 	mergeRooms(segmented_map, rooms, map_resolution_from_subscription, max_area_for_merging, display_map);
+	voronoi_map = pruned_voronoi_map;
 }

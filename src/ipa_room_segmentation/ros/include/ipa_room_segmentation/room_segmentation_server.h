@@ -82,6 +82,7 @@
 #include <ipa_room_segmentation/distance_segmentation.h>
 #include <ipa_room_segmentation/morphological_segmentation.h>
 #include <ipa_room_segmentation/voronoi_segmentation.h>
+#include <ipa_room_segmentation/voronoi_graph.h>
 
 class RoomSegmentationServer
 {

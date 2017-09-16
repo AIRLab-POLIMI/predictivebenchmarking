@@ -58,7 +58,7 @@ DEPENDS
 	OpenCV
 	Boost
 	OpenMP
-        GEOS
+    GEOS
 )
 
 
@@ -75,7 +75,7 @@ include_directories(
 	${catkin_INCLUDE_DIRS}
 	${OpenCV_INCLUDE_DIRS}
 	${Boost_INCLUDE_DIRS}
-        ${GEOS_INCLUDE_DIRS}
+    ${GEOS_INCLUDE_DIRS}
 )
 
 ### segmentation action server: see room_segmentation_action_server_params.yaml to change the used method
@@ -85,6 +85,7 @@ add_executable(room_segmentation_server
 	common/src/morphological_segmentation.cpp
 	common/src/abstract_voronoi_segmentation.cpp
 	common/src/voronoi_segmentation.cpp
+	common/src/voronoi_graph.cpp
 	common/src/wavefront_region_growing.cpp
 	common/src/contains.cpp common/src/features.cpp
 	common/src/raycasting.cpp
@@ -99,13 +100,15 @@ target_link_libraries(room_segmentation_server
 	${catkin_LIBRARIES}
 	${Boost_LIBRARIES}
 	${OpenMP_LIBS}
-	${OpenCV_LIBRARIES})
+	${OpenCV_LIBRARIES}
+	${GEOS_LIBRARIES})
 
 ### client for testing purpose
 add_executable(room_segmentation_client ros/src/room_segmentation_client.cpp)
 target_link_libraries(room_segmentation_client
 	${catkin_LIBRARIES} 
-	${OpenCV_LIBRARIES})
+	${OpenCV_LIBRARIES}
+	${GEOS_LIBRARIES})
 add_dependencies(room_segmentation_client
 	${catkin_EXPORTED_TARGETS}
 	${${PROJECT_NAME}_EXPORTED_TARGETS}
@@ -123,8 +126,26 @@ add_executable(room_segmentation_client_standalone
 target_link_libraries(room_segmentation_client_standalone
 	${catkin_LIBRARIES} 
 	${OpenCV_LIBRARIES}
-        ${GEOS_LIBRARIES})
+    ${GEOS_LIBRARIES})
 add_dependencies(room_segmentation_client_standalone
+	${catkin_EXPORTED_TARGETS}
+	${${PROJECT_NAME}_EXPORTED_TARGETS}
+)
+
+### standalone client for testing purpose
+add_executable(voronoi_extractor
+    ros/src/voronoi_extractor.cpp
+	common/src/abstract_voronoi_segmentation.cpp
+	common/src/voronoi_graph.cpp
+	common/src/wavefront_region_growing.cpp
+	common/src/contains.cpp common/src/features.cpp
+	common/src/meanshift2d.cpp
+	common/src/room_class.cpp)
+target_link_libraries(voronoi_extractor
+	${catkin_LIBRARIES} 
+	${OpenCV_LIBRARIES}
+    ${GEOS_LIBRARIES})
+add_dependencies(voronoi_extractor
 	${catkin_EXPORTED_TARGETS}
 	${${PROJECT_NAME}_EXPORTED_TARGETS}
 )
@@ -135,7 +156,8 @@ add_executable(evaluation
 	common/src/evaluation_segmentation.cpp)
 target_link_libraries(evaluation
 	${catkin_LIBRARIES}
-	${OpenCV_LIBRARIES})
+	${OpenCV_LIBRARIES}
+	${GEOS_LIBRARIES})
 add_dependencies(evaluation
 	${catkin_EXPORTED_TARGETS}
 	${${PROJECT_NAME}_EXPORTED_TARGETS}

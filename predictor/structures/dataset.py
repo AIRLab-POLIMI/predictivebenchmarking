@@ -16,6 +16,11 @@ class Dataset():
 		self._perfStats = perfStats
 		self._geometry = None
 		self._topology = None
+		self._voronoi = None
+		self._voronoiStats = None
+		self._voronoiCenter = None
+		self._voronoiTime = 0
+		self._voronoiTopVisits = 0
 
 	@property
 	def name(self):
@@ -49,7 +54,51 @@ class Dataset():
 	def topology(self):
 		""" Returns a copy of the object holding the topological properties of the dataset. """
 		return copy.copy(self._topology)
+
+	@topology.setter
+	def topology(self, value):
+		self._topology = value
+
+	@property
+	def voronoi(self):
+		return copy.copy(self._voronoi)
+
+	@voronoi.setter
+	def voronoi(self, value):
+		self._voronoi = value
+
+	@property
+	def voronoiStats(self):
+		return self._voronoiStats
+
+	@voronoiStats.setter
+	def voronoiStats(self,value):
+		self._voronoiStats = value
+
+	@property
+	def voronoiCenter(self):
+		return self._voronoiCenter
+
+	@voronoiCenter.setter
+	def voronoiCenter(self, value):
+		self._voronoiCenter = value
 		
+	@property
+	def voronoiTime(self):
+		return self._voronoiTime
+
+	@voronoiTime.setter
+	def voronoiTime(self, value):
+		self._voronoiTime = value
+
+	@property
+	def voronoiTopVisits(self):
+		return self._voronoiTopVisits
+
+	@voronoiTopVisits.setter
+	def voronoiTopVisits(self, value):
+		self._voronoiTopVisits = value
+
 	def __repr__(self):
 		return "Printing dataset information. \n"+\
 		"Name: "+self.name+"\n"+\

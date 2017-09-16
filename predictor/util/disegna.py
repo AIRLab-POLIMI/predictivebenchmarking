@@ -1128,25 +1128,31 @@ def disegna_medial_axis(points,b3, savefig = True, format='png', filepath = '.',
 	else :
 		plt.show()
 		
-def plot_nodi_e_stanze(colori,estremi, G, pos, stanze,stanze_collegate, savefig = True, format='pdf', filepath = '.', savename = '16_grafo_topologico', title = False,x_span=0,y_span=0,xmin=0,xmax=0,ymin=0,ymax=0):
+def plot_nodi_e_stanze(colori,estremi, G, pos, spazi,stanze_collegate, savefig = True, format='pdf', filepath = '.', savename = '16_grafo_topologico', title = False,x_span=0,y_span=0,xmin=0,xmax=0,ymin=0,ymax=0):
 	'''
 	disegna le stenze con i nodi corrispondenti
 	'''
 	fig, ax = setup_plot(x_span,y_span,xmin,xmax,ymin,ymax)
 	savename = os.path.join(filepath, savename+'.'+format)
-	print savename
 	xmin = estremi[0]
 	xmax = estremi[1]
 	ymin = estremi[2]
 	ymax = estremi[3]
 	if title :
 		plt.title('12_grafo_topologico')
-		
-	for index,s in enumerate(stanze):
-		f_patch = PolygonPatch(s,fc=colori[index],ec='BLACK')
+	patches = []
+	for index,s in enumerate(spazi):
+		stanza = s.spazio
+		#if len(s.exterior.coords)>12:
+		f_patch = PolygonPatch(stanza,fc=colori[index],ec='BLACK')
+		patches.append(f_patch)
+		#for w in s.enlargedWalls:
+		#	patches.append(PolygonPatch(w,fc='WHITE',ec='BLACK'))
+	for f_patch in reversed(patches):
 		ax.add_patch(f_patch)
-		ax.set_xlim(xmin,xmax)
-		ax.set_ylim(ymin,ymax)
+
+	ax.set_xlim(xmin,xmax)
+	ax.set_ylim(ymin,ymax)
 
 	#plotto il grafo
 	nx.draw_networkx_nodes(G,pos,node_color='w')
@@ -1155,8 +1161,8 @@ def plot_nodi_e_stanze(colori,estremi, G, pos, stanze,stanze_collegate, savefig 
 
 	#plotto gli edges come linee da un representative point a un altro, perche' con solo drawedges non li plotta. Forse sono nascosti dai poligoni.
 	for coppia in stanze_collegate:
-		i1 = stanze[coppia[0]]
-		i2 = stanze[coppia[1]]
+		i1 = spazi[coppia[0]].spazio#stanze
+		i2 = spazi[coppia[1]].spazio
 		p1 = i1.representative_point()
 		p2 = i2.representative_point()
 		plt.plot([p1.x,p2.x],[p1.y,p2.y],color='k',ls = 'dotted', lw=0.5)	

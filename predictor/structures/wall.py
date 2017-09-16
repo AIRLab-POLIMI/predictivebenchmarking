@@ -30,7 +30,7 @@ class Wall():
 		# otherwise we are dealing with a diagonal wall: consider the angular coefficient
 		else:
 			self._lineType = LineTypes.DIAGONAL
-			self._angCoeff = (y2-y1)/(x2-x1)
+			self._angCoeff = (y1-y2)/(x2-x1)
 
 	@property
 	def firstPoint(self):

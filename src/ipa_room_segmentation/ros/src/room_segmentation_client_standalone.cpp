@@ -83,6 +83,7 @@
 
 #define HAVE_INT64_T_64  # Prevents conflict with OpenCV typedef of int64
  #include <geos/geom/Polygon.h>
+ #include <geos/geom/Point.h>
  #include <geos/geom/LinearRing.h>
  #include <geos/geom/CoordinateSequenceFactory.h>
  #include <geos/geom/GeometryFactory.h>
@@ -227,13 +228,34 @@ int main(int argc, char **argv)
 		const cv::Point2d map_origin(goal.map_origin.position.x, goal.map_origin.position.y);
 		//segment the given map
 		cv::Mat segmented_map;
+		cv::Mat voronoi_map;
 		VoronoiSegmentation voronoi_segmentation; //voronoi segmentation method
 		// apply voronoi
 		std::vector<Room> rooms;
 		std::vector<geos::geom::Geometry*> roomPolygons;
-		voronoi_segmentation.segmentMap(original_img, segmented_map, map_resolution, room_lower_limit_voronoi_, room_upper_limit_voronoi_,
+		voronoi_segmentation.segmentMap(original_img, segmented_map, voronoi_map, floorPolygon, map_resolution, room_lower_limit_voronoi_, room_upper_limit_voronoi_,
 			voronoi_neighborhood_index_, max_iterations_, min_critical_point_distance_factor_, max_area_for_merging_, rooms, display_segmented_map_);
 		std::cout << "Received " << rooms.size() << " rooms.\n";
+		const geos::geom::GeometryFactory *factory = geos::geom::GeometryFactory::getDefaultInstance();
+        // filter voronoi map
+		cv::imshow("graph_pruned", voronoi_map);
+		cv::waitKey();
+		for (int v = 0; v < voronoi_map.rows; v++)
+		{
+			for (int u = 0; u < voronoi_map.cols; u++)
+			{
+				if (voronoi_map.at<unsigned char>(v, u) == 127)
+				{
+					// this is a candidate point, but is it within the dataset boundaries?
+					geos::geom::Point *point = factory->createPoint(geos::geom::Coordinate(u,v));
+					if (!floorPolygon->contains(point))
+						voronoi_map.at<unsigned char>(v, u) = 255;
+				}
+			}
+		}
+		cv::imshow("graph_pruned", voronoi_map);
+		cv::waitKey();
+
 		// create polygons from cv2 image
 		int room_color = 255;
  		cv::Mat room_drawing;

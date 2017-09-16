@@ -26,7 +26,7 @@ struct cv_Point_comp
 
 class AbstractVoronoiSegmentation
 {
-protected:
+public:
 
 	// Function to get the ID of a room, when given an index in the storing vector.
 	// This function takes a vector of rooms and an index in this vector and returns the ID of this room, meaning the color it has
@@ -77,8 +77,6 @@ protected:
 	// This function takes the segmented Map from the original Voronoi-segmentation-algorithm and merges rooms together,
 	// that are small enough and have only two or one neighbor.
 	void mergeRooms(cv::Mat& map_to_merge_rooms, std::vector<Room>& rooms, double map_resolution_from_subscription, double max_area_for_merging, bool display_map);
-
-public:
 
 	AbstractVoronoiSegmentation();
 };

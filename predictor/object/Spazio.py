@@ -3,7 +3,7 @@ spazio si intende un ambiente composto da piu' superfici alla quale e' possibile
 Uno spazio infatti puo' essere distinto tra corridoio o stanza
 '''
 from shapely.ops import cascaded_union
-from shapely.geometry import Polygon
+from shapely.geometry import Polygon, LineString
 from object import Extended_segment as ext
 from object import Superficie as fc #prima si chiamava cella 
 from structures.wall import Wall,LineTypes
@@ -45,13 +45,18 @@ class Spazio(object):
 				theta = math.atan(w.angCoeff)
 				dx = width*math.cos(theta)
 				dy = width*math.sin(theta)
-				polygon = Polygon([(w.x1-dx/2,w.y1+dy/2),(w.x1+dx/2,w.y1-dy/2),(w.x2-dx/2,w.y1+dy/2),(w.x2+dx/2,w.y2-dy/2)])
+				##### THIS DOESN'T WORK, MUST BE FIXED!!! 
+				polygon = Polygon([(w.x1-dx/2,w.y1-dy/2),(w.x1+dx/2,w.y1+dy/2),(w.x2+dx/2,w.y2+dy/2),(w.x2-dx/2,w.y2-dy/2)])
 			self.enlargedWalls.append(polygon)
 
 	def setWalls(self,polygon):
 		# to extract the walls, we need to cycle through the individual lines of the
 		# polygon's exterior border
 		coords = list(polygon.exterior.coords)
+		# NOTE: THE EXTERIOR BORDER IS NOT ENOUGH!!! We should also check the interior border!!
+		for interior in polygon.interiors:
+			for c in interior.coords:
+				coords.append(c)
 		# number of walls, as estimated by the polygon identified by the layout extractor
 		numWalls = len(coords)-1
 		# list of all walls

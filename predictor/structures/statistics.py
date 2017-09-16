@@ -3,6 +3,9 @@ Auxiliary class that stores mean and standard deviation of a generic metric.
 *Could* turn out to be a duplicate of RunStats, but for now I'm going to keep them
 separate as they represent different things (RunStats also has min, max, numSamples).'''
 
+import numpy as np
+import networkx as nx
+
 class Stats():
 	def __init__(self, mean, std):
 		self._mean = mean
@@ -94,6 +97,60 @@ class PerfStats():
 		str(self._transError)+ \
 		"Rotational error: "+"\n"+\
 		str(self._rotError)
+
+
+class GraphStats():
+	def __init__(self, G):
+		self._nodes = len(G.nodes())
+		self._edges = len(G.edges())
+		self._density = nx.density(G)
+		self._diameter = nx.diameter(G)
+		self._radius = nx.radius(G)
+		self._avg_shortest_path_length = nx.average_shortest_path_length(G)
+		self._betweenness_centrality = np.array([v for k, v in nx.betweenness_centrality(G).iteritems()])
+		self._katz_centrality = np.array([v for k, v in nx.katz_centrality_numpy(G).iteritems()])
+		self._eigenvector_centrality = np.array([v for k, v in nx.eigenvector_centrality_numpy(G).iteritems()])
+		self._closeness_centrality = np.array([v for k, v in nx.closeness_centrality(G).iteritems()])	
+
+	@property
+	def nodes(self):
+		return self._nodes
+
+	@property
+	def edges(self):
+		return self._edges
+
+	@property
+	def density(self):
+		return self._density
+
+	@property
+	def diameter(self):
+		return self._diameter
+
+	@property
+	def radius(self):
+		return self._radius
+
+	@property
+	def avg_shortest_path_length(self):
+		return self._avg_shortest_path_length
+
+	@property
+	def betweenness_centrality(self):
+		return self._betweenness_centrality
+
+	@property
+	def katz_centrality(self):
+		return self._katz_centrality
+
+	@property
+	def closeness_centrality(self):
+		return self._closeness_centrality
+
+	@property
+	def eigenvector_centrality(self):
+		return self._eigenvector_centrality
 
 ''' RunStats
 Auxiliary class that stores the metricEvaluator statistics over the error of a run. '''

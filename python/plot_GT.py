@@ -6,6 +6,7 @@ from __future__ import division
 import sys
 import math
 import glob
+import cv2
 import matplotlib.pyplot as plt
 import xml.etree.ElementTree as ET
 import networkx as nx
@@ -45,12 +46,15 @@ def plot_XML(xmlFile, outputFolder, removeAxes=True, plotGraph=False, saveResult
 	root = tree.getroot()
 	# parameters
 	doorWidth = 0.9 # meters wide: length of a door (to be sure a 40x40cm robot can travel through it)
+	# a wall should probably be around 30 cm wide
+	wall_width = 0.3 # meters
 	ids = []
 	rooms = []
 	# recover the dataset scale
 	pixelScale = root.find("scale").findall(".//value")[0].text 
 	meterScale = root.find("scale").findall(".//value")[1].text
 	scalingFactor = float(meterScale) / float(pixelScale) / 100 # cm to meters	
+	line_width = (wall_width/scalingFactor)*0.7
 	spaces = root.findall('.//space')
 	centroids = []
 	portals = []
@@ -112,7 +116,6 @@ def plot_XML(xmlFile, outputFolder, removeAxes=True, plotGraph=False, saveResult
 		colors[s_id]='k'
 
 	#----------------PLOT THE GROUND TRUTH ROOM LAYOUT------------------------
-	line_width_ratio = 1/400 # if width is 400 pixels, 1 pixel of width per line is fine
 	# compute the maximum and minimum coordinates of the building 
 	xs = []
 	ys = []
@@ -129,12 +132,12 @@ def plot_XML(xmlFile, outputFolder, removeAxes=True, plotGraph=False, saveResult
 	y_span = ymax_gt-ymin_gt+20
 	print xmin_gt,xmax_gt,ymin_gt,ymax_gt
 	print xmax_gt-xmin_gt,ymax_gt-ymin_gt
-	line_width_ratio = int(round(line_width_ratio*x_span))
 	# start plotting
 	fig,ax=setup_plot(x_span,y_span,xmin_gt,xmax_gt,ymin_gt,ymax_gt)
+	print int(round(line_width))
 	for index,s in enumerate(rooms):
 		x,y = zip(*s)
-		ax.plot(x,y, linestyle='-', color='k', linewidth=line_width_ratio)
+		ax.plot(x,y, linestyle='-', color='k', linewidth=int(round(line_width)))
 
 	#---------BUILD THE TOPOLOGICAL GRAPH-----------------------------------
 
@@ -181,14 +184,14 @@ def plot_XML(xmlFile, outputFolder, removeAxes=True, plotGraph=False, saveResult
 			dy = doorWidth/scalingFactor*math.sin(theta)
 		linex = [x-dx/2,x+dx/2]
 		liney = [y-dy/2,y+dy/2]
-		ax.plot(linex,liney,'w-',linewidth=2*line_width_ratio)
+		ax.plot(linex,liney,'w-',linewidth=(int(round(line_width))))
 	if removeAxes:
 		ax.axis('off')
 		ax.xaxis.set_major_locator(NullLocator())
 		ax.yaxis.set_major_locator(NullLocator())
 
 	if saveResults:
-		fig.savefig(savename,bbox_inches='tight',pad_inches=0,dpi=100)
+		fig.savefig(savename,bbox_inches='tight',pad_inches=0,dpi=100,interpolation='none')
 	else :
 		plt.show()
 

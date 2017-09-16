@@ -42,10 +42,10 @@ warnings.warn("Settare i parametri del lateralLine e cvThresh")
 
 def extractLayout(parametri_obj, path_obj):
 	start_time_main = time.time()
-	parametri_obj.minLateralSeparation=int(round(parametri_obj.minLateralSeparationFactor*parametri_obj.imageScale))
-	parametri_obj.minLineLength=int(round(parametri_obj.minLineLengthFactor*parametri_obj.imageScale))
-	parametri_obj.maxLineGap=int(round(parametri_obj.maxLineGapFactor*parametri_obj.imageScale))
-	parametri_obj.sogliaLateraleClusterMura = int(round(parametri_obj.sogliaLateraleClusterMuraFactor*parametri_obj.imageScale))
+	parametri_obj.minLateralSeparation=int(round(parametri_obj.minLateralSeparationFactor/parametri_obj.imageScale))
+	parametri_obj.minLineLength=int(round(parametri_obj.minLineLengthFactor/parametri_obj.imageScale))
+	parametri_obj.maxLineGap=int(round(parametri_obj.maxLineGapFactor/parametri_obj.imageScale))
+	parametri_obj.sogliaLateraleClusterMura = int(round(parametri_obj.sogliaLateraleClusterMuraFactor/parametri_obj.imageScale))
 	print parametri_obj.minLateralSeparation
 	print parametri_obj.minLineLength
 	print parametri_obj.maxLineGap
@@ -285,11 +285,11 @@ def extractLayout(parametri_obj, path_obj):
 	#--------------------------------fine layout------------------------------------------
 	dsg.disegno_mura_segmenti_stanze(stanze, colori, xmin, ymin, xmax, ymax, cluster_spaziali, walls, format='png',x_span=x_span,y_span=y_span, filepath = path_obj.actualOutputFolder, savename = '14_tutto')
 	dsg.disegna_pareti(edges, format='png',x_span=x_span,y_span=y_span,xmin=xmin,xmax=xmax,ymin=ymin,ymax=ymax, filepath =path_obj.actualOutputFolder, savename = '14_pareti')
-	wallEnlargement = parametri_obj.wallEnlargementFactor*parametri_obj.imageScale
+	wallEnlargement = parametri_obj.wallEnlargementFactor/parametri_obj.imageScale
 	G,pos,connectedRooms = tg.createGraph(path_obj.metricMap,spazi,wallEnlargement)
-	dsg.plot_nodi_e_stanze(colori,estremi,G,pos,stanze,connectedRooms,filepath =path_obj.actualOutputFolder,format='png',x_span=x_span,y_span=y_span,xmin=xmin,xmax=xmax,ymin=ymin,ymax=ymax)
+	dsg.plot_nodi_e_stanze(colori,estremi,G,pos,spazi,connectedRooms,filepath =path_obj.actualOutputFolder,format='png',x_span=x_span,y_span=y_span,xmin=xmin,xmax=xmax,ymin=ymin,ymax=ymax)
 	#creo xml stanze
-	id_stanze = xmlutils.crea_xml(path_obj.outputFileName, spazi, parametri_obj.imageScale, vertici)#id stanze e' ordinato come spazi e possiede l'id univo assegnato alla stanza
+	id_stanze = xmlutils.crea_xml(path_obj.outputFileName, spazi, parametri_obj.imageScale, vertici, connectedRooms)#id stanze e' ordinato come spazi e possiede l'id univo assegnato alla stanza
 
 	#TODO
 

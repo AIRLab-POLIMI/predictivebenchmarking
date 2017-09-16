@@ -5,9 +5,9 @@ from geometry import PolygonProperties
 
 class Room():
 	roomCount = 0
-	def __init__(self, roomPolygon, boundingBox, boundingPolygon, scalingFactor):
+	def __init__(self, roomId, roomPolygon, boundingBox, boundingPolygon, scalingFactor):
 		# dummy room identifier
-		self._roomId = self.assignId()
+		self._roomId = roomId#self.assignId()
 		self._boundingBox = boundingBox
 		self._boundingPolygon = boundingPolygon
 		# scaling factor (1 pixel = n meters)

@@ -1,6 +1,8 @@
 import networkx as nx
 import cv2
 import numpy as np
+from random import seed, randint
+from shapely.geometry import Polygon,Point
 
 ''' Outline of the algorithm.
 1) Detect adjacent/bordering rooms. To do this, we enlarge the walls of each room to full-fledged rectangles 
@@ -14,6 +16,7 @@ otherwise we'd also detect indirect connections (e.g. through corridors) '''
 
 def createGraph(imagePath,rooms,wallEnlargement):
 	''' Creates a topological graph of the image. '''
+	seed()
 	print wallEnlargement
 	# Read a grayscale image
 	image = cv2.imread(imagePath,cv2.IMREAD_GRAYSCALE)
@@ -37,7 +40,7 @@ def createGraph(imagePath,rooms,wallEnlargement):
 							borderingRooms.append([r1_idx,r2_idx])
 	# if two adjacent rooms are also connected by a door, add them to connectedRooms
 	for pair in borderingRooms:
-		if areRoomsConnected(im_th,rooms[pair[0]],rooms[pair[1]]):
+		if areRoomsConnected(im_th,rooms[pair[0]],rooms[pair[1]],wallEnlargement):
 			connectedRooms.append(pair)
 	# create the graph
 	G=nx.Graph()
@@ -53,7 +56,19 @@ def createGraph(imagePath,rooms,wallEnlargement):
 		G.node[n]['pos'] = p
 	return G,pos,connectedRooms
 
-def areRoomsConnected(image,r1,r2):
+def getFreeRepresentativePoint(image,poly,size,maxAttempts):
+	initPoint = poly.representative_point()
+	reprPoint = initPoint
+	count = 0
+	h, w = image.shape[:2]
+	while not (int(reprPoint.x)<w and int(reprPoint.y)<h and image[int(h-reprPoint.y),int(reprPoint.x)]==255 and poly.contains(reprPoint)) and count<maxAttempts: 
+		dx = randint(0,size)-size/2
+		dy = randint(0,size)-size/2
+		reprPoint = Point(initPoint.x+dx,initPoint.y+dy)
+		count += 1
+	return reprPoint
+
+def areRoomsConnected(image,r1,r2,wallEnlargement):
 	''' Tests whether two adjacent rooms are also connected by a door. '''
 	filling_color = 200
 	h, w = image.shape[:2]
@@ -66,6 +81,8 @@ def areRoomsConnected(image,r1,r2):
 	roi_corners = np.array([roi_corners],np.int32)
 	cv2.fillPoly(mask, roi_corners, ignore_mask_color)
 	masked_image_1 = cv2.bitwise_and(image, mask)
+	#cv2.imshow('image',cv2.resize(masked_image_1, (0,0), fx=1.0, fy=1.0))
+	#cv2.waitKey(0)
 	# Then, we "cut" the region of the image where the second room lies
 	mask = np.zeros((h, w), np.uint8)
 	roi_corners =[]
@@ -74,6 +91,8 @@ def areRoomsConnected(image,r1,r2):
 	roi_corners = np.array([roi_corners],np.int32)
 	cv2.fillPoly(mask, roi_corners, ignore_mask_color)
 	masked_image_2 = cv2.bitwise_and(image, mask)
+	#cv2.imshow('image',cv2.resize(masked_image_2, (0,0), fx=1.0, fy=1.0))
+	#cv2.waitKey(0)
 	# Finally, we join them 
 	im_floodfill = cv2.bitwise_or(masked_image_1,masked_image_2)
 	# At this point, im_floodfill retains only the two rooms we are investigating
@@ -81,8 +100,10 @@ def areRoomsConnected(image,r1,r2):
 	# Notice the size needs to be 2 pixels than the image.
 	mask = np.zeros((h+2, w+2), np.uint8)
 	# We retrieve the coordinates of the representative points of the two roms
-	r1_center = (int(r1.spazio.representative_point().coords[0][0]),int(r1.spazio.representative_point().coords[0][1]))
-	r2_center = (int(r2.spazio.representative_point().coords[0][0]),int(r2.spazio.representative_point().coords[0][1]))
+	reprPoint1 = getFreeRepresentativePoint(image, r1.spazio, int(wallEnlargement*2), 100)
+	reprPoint2 = getFreeRepresentativePoint(image, r2.spazio, int(wallEnlargement*2), 100)
+	r1_center = (int(reprPoint1.x),int(reprPoint1.y))
+	r2_center = (int(reprPoint2.x),int(reprPoint2.y))
 	# Flip coordinates to work with image
 	r1_center = (r1_center[0],h-r1_center[1])
 	r2_center = (r2_center[0],h-r2_center[1])
@@ -93,5 +114,9 @@ def areRoomsConnected(image,r1,r2):
 	connected = False
 	if im_floodfill[r2_center[1],r2_center[0]]==filling_color:
 		connected = True
+	#im_floodfill[r1_center[1],r1_center[0]] = 50
+	#im_floodfill[r2_center[1],r2_center[0]] = 50
+	#cv2.imshow('image',cv2.resize(im_floodfill, (0,0), fx=1.0, fy=1.0))
+	#cv2.waitKey(0)
 	return connected
 

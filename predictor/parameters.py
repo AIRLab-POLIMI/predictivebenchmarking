@@ -50,11 +50,11 @@ class Parameter_obj():
 		# image scale (1 pixel = n meters)
 		self.imageScale = 0.05 # dummy value, overwritten on a per-world-file basis
 		# number of pixels for which each wall is enlarged in the base case (imageScale = 0.05)
-		self.baseWallEnlargement = 10 
-		self.wallEnlargementFactor = self.baseWallEnlargement/self.imageScale
+		self.baseWallEnlargement = 10
+		self.wallEnlargementFactor = self.baseWallEnlargement*self.imageScale
 		#distanza massima in pixel per cui 2 segmenti con stesso cluster angolare sono considerati appartenenti anche allo stesso cluster spaziale
 		self.minLateralSeparation = 7#7
-		self.minLateralSeparationFactor = self.minLateralSeparation/self.imageScale
+		self.minLateralSeparationFactor = self.minLateralSeparation*self.imageScale
 		#self.minLateralSeparation = 15
 		#self.cv2thresh = 200
 		self.cv2thresh = 150
@@ -69,12 +69,12 @@ class Parameter_obj():
 		self.theta = np.pi/180
 		self.thresholdHough = 20
 		self.minLineLength = 7#7
-		self.minLineLengthFactor = self.minLineLength/self.imageScale
+		self.minLineLengthFactor = self.minLineLength*self.imageScale
 		self.maxLineGap = 3#3
-		self.maxLineGapFactor = self.maxLineGap/self.imageScale
+		self.maxLineGapFactor = self.maxLineGap*self.imageScale
 
 		#parametri di DBSCAN
-		self.eps = 0.80#0.85#1.5#0.85
+		self.eps = 0.85#0.85#1.5#0.85
 		self.minPts = 1
 
 		#parametri di mean-shift
@@ -97,8 +97,8 @@ class Parameter_obj():
 		self.t =1
 		#self.minimaLunghezzaParete = 40 #TODO: ancora da aggiungere all'XML, non lo sto piu' usando
 		#self.sogliaLateraleClusterMura =8 #(prima era 10, guarda quale valore e' migliore)
-		self.sogliaLateraleClusterMura = 14#10#era 10 rimetterlo cosi
-		self.sogliaLateraleClusterMuraFactor = self.sogliaLateraleClusterMura/self.imageScale
+		self.sogliaLateraleClusterMura = 10#10#era 10 rimetterlo cosi
+		self.sogliaLateraleClusterMuraFactor = self.sogliaLateraleClusterMura*self.imageScale
 		#self.sogliaLateraleClusterMura =20
 		self.soglia_q_split = 0.2
 		#parametro che divide il peso di un edge per attribuire un peso per la matrice L di Mura
