@@ -16,6 +16,7 @@ import datetime as dt
 from scipy.stats import pearsonr
 from sklearn import linear_model
 from sklearn.model_selection import KFold, cross_val_score
+from sklearn.metrics import mean_squared_error
 from shapely.geometry import Polygon, Point
 from skimage.morphology import skeletonize
 from skimage import img_as_ubyte
@@ -152,29 +153,19 @@ def loadGeometry(myDataset, xmlFile):
 	#for i,s in enumerate(rooms):
 	#	G.add_node(i)
 	G.add_edges_from(connectedRooms)
-	myDataset.topology = G
+	Gc = max(nx.connected_component_subgraphs(G), key=len)
+	myDataset.topology = Gc
+	myDataset.topologyStats = GraphStats(Gc)
 
 def loadDataset(datasetName, runsFolder):
 	# load the runs
+	print "Loading runs of "+datasetName
 	runs = loadDatasetRuns(runsFolder, datasetName)
 	# compute the performance statistics
 	perfStats = computePerformanceStats(runs)
 	# create the dataset object
 	myDataset = Dataset(datasetName, runs, perfStats)
-	#print myDataset.perfStats
 	return myDataset
-	# compute geometry
-	# compute topology
-	# correlate
-
-def prova2(dataset):
-	errors = ["transError", "rotError"]
-	attrs = ["mean", "std", "numSamples"]
-	attrStats = ["mean", "std"]
-	for e in errors:
-		for a in attrs:
-			for s in attrStats:
-				print getattr(getattr(getattr(dataset.perfStats, e),a),s)
 
 def getRunStats():
 	runStats = dict()
@@ -201,19 +192,8 @@ def getAttrStats():
 	attrStats["std"] = (lambda attr: attr.std)
 	return attrStats
 
-def timestampedTraversal(voronoi, center):
-	n1=dt.datetime.now()
-	T = nx.dfs_tree(voronoi, center)
-	n2=dt.datetime.now()
-	delta = (n2-n1).microseconds 
-	if delta < 500000:
-		return delta
-	else:
-		return -1
-
 def getPredictors():
 	predictors = dict()
-	#predictors["traversalTime"] = (lambda dataset: timestampedTraversal(dataset.voronoi, dataset.voronoiCenter))
 	predictors["traversalTime"] = (lambda dataset: (dataset.voronoiTime))
 	predictors["area"] = (lambda dataset: (dataset.geometry.shape.area))
 	predictors["perimeter"] = (lambda dataset: (dataset.geometry.shape.perimeter))
@@ -225,48 +205,42 @@ def getPredictors():
 	predictors["avgRoomPerimeter"] = (lambda dataset: np.array([r.shape.perimeter for r in dataset.geometry.rooms]).mean()**2)
 	predictors["avgRoomWallRatio"] = (lambda dataset: np.array([r.shape.wallRatio for r in dataset.geometry.rooms]).mean()**2)
 	predictors["roomPerimeter"] = 	(lambda dataset: np.array([r.shape.perimeter for r in dataset.geometry.rooms]).sum())
-	predictors["nodes"] = (lambda dataset: dataset.voronoiStats.nodes)
-	predictors["edges"] = (lambda dataset: dataset.voronoiStats.edges)
-	predictors["avg_shortest_path_length"] = (lambda dataset : dataset.voronoiStats.avg_shortest_path_length)
-	predictors["density"] = (lambda dataset : dataset.voronoiStats.density)
-	predictors["diameter"] = (lambda dataset: dataset.voronoiStats.diameter)
-	predictors["radius"] = (lambda dataset: dataset.voronoiStats.radius)
-	predictors["numBifurcationPoints"] = (lambda dataset: len(get_bifurcation_points(dataset.voronoi)))
-	predictors["avg_betweenness_centrality"] = (lambda dataset: dataset.voronoiStats.betweenness_centrality.mean())
-	predictors["avg_eigenvector_centrality"] = (lambda dataset: dataset.voronoiStats.eigenvector_centrality.mean())
-	predictors["avg_katz_centrality"] = (lambda dataset: dataset.voronoiStats.katz_centrality.mean())
-	predictors["avg_closeness_centrality"] = (lambda dataset: dataset.voronoiStats.closeness_centrality.mean())
-	predictors["std_betweenness_centrality"] = (lambda dataset: dataset.voronoiStats.betweenness_centrality.std())
-	predictors["std_eigenvector_centrality"] = (lambda dataset: dataset.voronoiStats.eigenvector_centrality.std())
-	predictors["std_katz_centrality"] = (lambda dataset: dataset.voronoiStats.katz_centrality.std())
-	predictors["std_closeness_centrality"] = (lambda dataset: dataset.voronoiStats.closeness_centrality.std())
-	#TODO: provare con la somma dei lati di ogni stanza (quindi un "perimetro" generalizzato)
+	predictors["voronoi_nodes"] = (lambda dataset: dataset.voronoiStats.nodes)
+	predictors["voronoi_edges"] = (lambda dataset: dataset.voronoiStats.edges)
+	predictors["voronoi_avg_shortest_path_length"] = (lambda dataset : dataset.voronoiStats.avg_shortest_path_length)
+	predictors["voronoi_density"] = (lambda dataset : dataset.voronoiStats.density)
+	predictors["voronoi_diameter"] = (lambda dataset: dataset.voronoiStats.diameter)
+	predictors["voronoi_radius"] = (lambda dataset: dataset.voronoiStats.radius)
+	predictors["voronoi_numBifurcationPoints"] = (lambda dataset: len(get_bifurcation_points(dataset.voronoi)))
+	predictors["voronoi_avg_betweenness_centrality"] = (lambda dataset: dataset.voronoiStats.betweenness_centrality.mean())
+	predictors["voronoi_avg_eigenvector_centrality"] = (lambda dataset: dataset.voronoiStats.eigenvector_centrality.mean())
+	predictors["voronoi_avg_katz_centrality"] = (lambda dataset: dataset.voronoiStats.katz_centrality.mean())
+	predictors["voronoi_avg_closeness_centrality"] = (lambda dataset: dataset.voronoiStats.closeness_centrality.mean())
+	predictors["voronoi_std_betweenness_centrality"] = (lambda dataset: dataset.voronoiStats.betweenness_centrality.std())
+	predictors["voronoi_std_eigenvector_centrality"] = (lambda dataset: dataset.voronoiStats.eigenvector_centrality.std())
+	predictors["voronoi_std_katz_centrality"] = (lambda dataset: dataset.voronoiStats.katz_centrality.std())
+	predictors["voronoi_std_closeness_centrality"] = (lambda dataset: dataset.voronoiStats.closeness_centrality.std())
+	predictors["topology_nodes"] = (lambda dataset: dataset.topologyStats.nodes)
+	predictors["topology_edges"] = (lambda dataset: dataset.topologyStats.edges)
+	predictors["topology_avg_shortest_path_length"] = (lambda dataset : dataset.topologyStats.avg_shortest_path_length)
+	predictors["topology_density"] = (lambda dataset : dataset.topologyStats.density)
+	predictors["topology_diameter"] = (lambda dataset: dataset.topologyStats.diameter)
+	predictors["topology_radius"] = (lambda dataset: dataset.topologyStats.radius)
+	predictors["topology_numBifurcationPoints"] = (lambda dataset: len(get_bifurcation_points(dataset.topology)))
+	predictors["topology_avg_betweenness_centrality"] = (lambda dataset: dataset.topologyStats.betweenness_centrality.mean())
+	predictors["topology_avg_eigenvector_centrality"] = (lambda dataset: dataset.topologyStats.eigenvector_centrality.mean())
+	predictors["topology_avg_katz_centrality"] = (lambda dataset: dataset.topologyStats.katz_centrality.mean())
+	predictors["topology_avg_closeness_centrality"] = (lambda dataset: dataset.topologyStats.closeness_centrality.mean())
+	predictors["topology_std_betweenness_centrality"] = (lambda dataset: dataset.topologyStats.betweenness_centrality.std())
+	predictors["topology_std_eigenvector_centrality"] = (lambda dataset: dataset.topologyStats.eigenvector_centrality.std())
+	predictors["topology_std_katz_centrality"] = (lambda dataset: dataset.topologyStats.katz_centrality.std())
+	predictors["topology_std_closeness_centrality"] = (lambda dataset: dataset.topologyStats.closeness_centrality.std())
 	return predictors
 
 def getDummyLambdaStats():
 	dummyLambda = dict()
 	dummyLambda["dummy"] = (lambda x : x)
 	return dummyLambda
-
-def xFunctions():
-	xFunctions = dict()
-	xFunctions["none"] = (lambda x: x)
-	#xFunctions["sqrt"] = (lambda x : math.sqrt(x))
-	#xFunctions["log"] = (lambda x: math.log(x))
-	return xFunctions
-
-def yFunctions():
-	yFunctions = dict()
-	yFunctions["none"] = (lambda y: y)
-	#yFunctions["sqrt"] = (lambda y: math.sqrt(y))
-	#yFunctions["log"] = (lambda y: math.log(y))
-	return yFunctions
-
-def formatFunctionLabel(fun,label):
-	if fun=="none":
-		return label
-	else:
-		return fun+"("+label+")"
 
 def multiCorrelate(datasets, layoutFolder):
 	nsamples = len(datasets)
@@ -284,14 +258,18 @@ def multiCorrelate(datasets, layoutFolder):
 	print xs
 	print ys
 	model = lm.fit(xs,ys)
-	strategy = KFold(n_splits=10,shuffle=True)
+	strategy = KFold(n_splits=5,shuffle=True)
 	rsquared = lm.score(xs,ys)
 	print rsquared
 	mses = np.sqrt(np.abs(cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
 	print mses
 	print mses.mean()
+	rsquareds = cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='r2')
+	print rsquareds
+	print rsquareds.mean()
 
-def plotAndSave(xs,ys,xLabel,yLabel,corrStats,plotFolder,name):
+
+def plotAndSave(xs,ys,xLabel,yLabel,corrStats,plotFolder,name,numFolds,allxs,allys):
 	fig = plt.figure()
 	plt.xlabel(xLabel)
 	plt.ylabel(yLabel)
@@ -305,16 +283,17 @@ def plotAndSave(xs,ys,xLabel,yLabel,corrStats,plotFolder,name):
 	xs = np.array(xs).reshape(nsamples,1)
 	ys = np.array(ys).reshape(nsamples,1)
 	model = lm.fit(xs,ys)
-	strategy = KFold(n_splits=10,shuffle=True)
+	strategy = KFold(n_splits=numFolds,shuffle=True)
 	#prs,pvalue = pearsonr(xs,ys)
-	rsquared = lm.score(xs,ys)
-	corrStats.append([xLabel,yLabel,rsquared])
 	#if abs(prs) > 0.5:
-	print name
-	print rsquared
+	rsquared = lm.score(xs,ys)
 	mses = np.sqrt(np.abs(cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
-	print mses
-	print mses.mean()
+	rsquareds = cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='r2')
+	print name
+	print 'r^2: '+str(rsquared)
+	print 'Avg RMSE: '+str(mses.mean())
+	print 'Avg r^2: '+str(rsquareds.mean())
+	corrStats.append([xLabel,yLabel,rsquared,mses.mean(),rsquareds.mean()])
 	fig.savefig(join(plotFolder,"correlation",name)+".png", bbox_inches='tight')
 	pattern = Image.open(join(plotFolder,"correlation",name)+".png", "r").convert('RGBA')
 	size = width, height = pattern.size
@@ -324,60 +303,78 @@ def plotAndSave(xs,ys,xLabel,yLabel,corrStats,plotFolder,name):
 	#draw.text((500,525), 'P-Value: '+ str(round(pvalue,5)), fill=(0, 0, 0, 255), font = font)
 	pattern.save(join(plotFolder,"correlation",name)+".png")
 	# we must also store the xs and ys in a table
-	buildcsv(join(plotFolder,"correlation",name)+".csv",xLabel,yLabel,xs,ys)
+	buildcsv(join(plotFolder,"correlation",name)+".csv",xLabel,yLabel,xs,ys,mses,rsquareds)
 	plt.close(fig)
+	fig = plt.figure()
+	plt.xlabel(xLabel)
+	plt.ylabel(yLabel)
+	plt.plot(xs,ys, 'ro', support_range, fit_fn(support_range), '-')
+	plt.plot(allxs,allys,'gx')
+	fig.savefig(join(plotFolder,"correlation",name)+"_allpoints.png", bbox_inches='tight')
+	plt.close(fig)
+	return model
 
-def buildcsv(correlationFileName, xLabel, yLabel, xs, ys):
+def buildcsv(correlationFileName, xLabel, yLabel, xs, ys, mses, rsquareds):
 	csv=open(correlationFileName, 'w')
 	csv.write(xLabel+','+yLabel+'\n')
 	for r in range(0, len(xs)):
 		csv.write(str(xs[r][0])+','+str(ys[r][0])+'\n')
+	csv.write('\n')
+	csv.write(str(len(mses))+"-Fold RMSE:,")
+	for r in range(0, len(mses)-1):
+		csv.write(str(mses[r])+',')
+	csv.write(str(mses[r])+'\n')
+	csv.write('Average '+str(len(mses))+'-Fold RMSE:,'+str(mses.mean())+'\n')
+	csv.write('\n')
+	csv.write(str(len(rsquareds))+'-Fold rsquared:,')
+	for r in range(0,len(rsquareds)-1):
+		csv.write(str(rsquareds[r])+',')
+	csv.write(str(rsquareds[r])+'\n')
+	csv.write('Average '+str(len(rsquareds))+'-Fold rsquared:,'+str(rsquareds.mean())+'\n')
 	csv.close()
 
-def plotIterator(datasets,layoutFolder,plotFolder,corrStats,predictedStats,predictedStatsAttrs,isPredictedStatsAttrsDummy):
+def plotIterator(datasets,layoutFolder,plotFolder,corrStats,predictedStats,predictedStatsAttrs,numFolds,meanPerfStats):
 	attrStats = getAttrStats()
 	predictors = getPredictors()
+	meanErrorTypes = dict()
+	meanErrorTypes["transError"] = (lambda meanPerfStats: meanPerfStats.transError)
+	meanErrorTypes["rotError"] = (lambda meanPerfStats: meanPerfStats.rotError)
+	runErrorTypes = dict()
+	runErrorTypes["transError"] = (lambda run: run.transStats)
+	runErrorTypes["rotError"] = (lambda run: run.rotStats)
 	# error stats
-	exclude_datasets = []
 	for eName, eLambda in predictedStats.iteritems():
 		for aName, aLambda in predictedStatsAttrs.iteritems():
 			for sName, sLambda in attrStats.iteritems():
 				for pName, pLambda in predictors.iteritems():
-					for yFName, yFLambda in yFunctions().iteritems():
-						for xFName, xFLambda in xFunctions().iteritems():
-							xs = []
-							ys = []
-							for d in datasets:			
-								if isdir(join(layoutFolder, d.name)) and not (d.name in exclude_datasets):# and d.name[-10:]!="furnitures":
-									#print d.name
-									x = xFLambda(pLambda(d))
-									y = yFLambda(sLambda(aLambda(eLambda(d))))
-									if y != -1:
-										xs.append(x)
-										ys.append(y)
-							#plt.plot(xs,ys,'ro')
-							xLabel = formatFunctionLabel(xFName,pName)
-							if not isPredictedStatsAttrsDummy:
-								yLabel = formatFunctionLabel(yFName,eName+"."+aName+"."+sName)
-								name = xFName+"-"+pName+"-"+yFName+"-"+eName+"."+aName+"."+sName#,prs,pvalue
-							else:
-								yLabel = formatFunctionLabel(yFName,eName+"."+sName)
-								name = xFName+"-"+pName+"-"+yFName+"-"+eName+"."+sName
-							plotAndSave(xs,ys,xLabel,yLabel,corrStats,plotFolder,name)	
+					xs,ys,yc,allxs,allys = [], [], [], [], [] 
+					for d in datasets:			
+						if isdir(join(layoutFolder, d.name)):
+							xs.append(pLambda(d))
+							ys.append(sLambda(aLambda(eLambda(d))))
+							yc.append(sLambda(aLambda(meanErrorTypes[eName](meanPerfStats))))
+							for r in d.runs:
+								allxs.append(pLambda(d))
+								allys.append(aLambda(runErrorTypes[eName](r)))
+					xLabel = pName
+					yLabel = eName+"."+aName+"."+sName
+					name = pName+"-"+eName+"."+aName+"."+sName
+					model = plotAndSave(xs,ys,xLabel,yLabel,corrStats,plotFolder,name,numFolds,allxs,allys)
+					print "Constant baseline RMSE: "+str(np.sqrt(mean_squared_error(ys,yc)))
+					#yp = model.predict(xs)
+					#print "Model RMSE: "+str(np.sqrt(mean_squared_error(ys,yp)))
 
-def plotGraphs(datasets,layoutFolder,plotFolder):
+def plotGraphs(datasets,layoutFolder,plotFolder,meanPerfStats,numFolds):
 	corrStatsFile = open(join(plotFolder, "corrStats.csv"), "w")
-	corrStatsFile.write("x, y, rsquared\n")
+	corrStatsFile.write("x, y, r^2, avg "+str(numFolds)+"-fold RMSE, avg "+str(numFolds)+"-fold r^2 \n")
 	corrStats = []
 	errorTypes = getErrorTypes()
 	runStats = getRunStats()
 	errorAttrs = getErrorAttrs()
-	dummyErrorAttrs = getDummyLambdaStats()
-	plotIterator(datasets,layoutFolder,plotFolder,corrStats,errorTypes,errorAttrs,isPredictedStatsAttrsDummy=False)
-	#plotIterator(datasets,layoutFolder,plotFolder,corrStats,runStats,dummyErrorAttrs,isPredictedStatsAttrsDummy=True)
-	corrStats.sort(key=lambda x:abs(x[2]), reverse=True)
+	plotIterator(datasets,layoutFolder,plotFolder,corrStats,errorTypes,errorAttrs,numFolds,meanPerfStats)
+	corrStats.sort(key=lambda x:x[2], reverse=True)
 	for elem in corrStats:
-		corrStatsFile.write(elem[0]+','+elem[1]+','+str(elem[2])+'\n')
+		corrStatsFile.write(elem[0]+','+elem[1]+','+str(elem[2])+','+str(elem[3])+','+str(elem[4])+'\n')
 	corrStatsFile.close()
 
 ''' Outline of the algorithm (TICK-TOCK mechanism):
@@ -387,49 +384,43 @@ function, looking for the nearest (euclidean distance) black pixel as that's the
 I apply the shortest_path algorithm to identify a set of nodes on the voronoi graph that lead me towards
 the nearest frontier. 
 2) TOCK phase: For each node on the shortest path, I apply a "line-of-sight-visiting-algorithm". That is, 
-I look around them to retrieve all the black pixels that are within a certain (laser) distance; for each of
-them, I ask whether it belongs to the same room (using the TG) of the "current" node on the shortest path
-and if so I assume it's visible, so it gets marked as visited (i.e. colored white on the image).
-Improvement: the line-of-sight mechanism is not very pretty, it doesn't take into account the direction 
-that the robot is facing.'''
+I look around them to retrieve all the black pixels that are within a certain (laser) distance and that
+satisfy the constraints on the laser sensor field of view; for each of the identified black points, I ask
+whether there are no other black pixels (obstacles) on the line joining it with the current
+node on the shortest path, and if so it gets marked as 'seen' (i.e. colored white on the image).'''
 
-def mapPixelsToRooms(myDataset, image, height):
-	pixelRoomMap = {}
+''' Retrieves all pixels that are within a certain range from the current pixel and that
+are within the simulated field of view of the laser scanner. '''
+def retrieveNearbyPixels(image, currentPixel, previousPixel, laserLength):
+	# Retrieve all black pixels (black = occupied)
 	black_pixels = np.argwhere(image == 0)
-	for p in black_pixels:
-		# remember: pixels are in <y,x> format with y increasing as rows
-		r = getRoomOfPixel(myDataset, p, height)
-		pixelRoomMap[height-p[0],p[1]] = r
-	return pixelRoomMap
-
-def getRoomOfPixel(myDataset, currentPixel, height):
-	idx = -1
-	r = 0
-	while r < len(myDataset.geometry.rooms) and idx==-1:
-		if myDataset.geometry.rooms[r].boundingPolygon.polygon.contains(Point(currentPixel[0],height-currentPixel[1])):
-			idx = r
-		r+=1
-	return idx 
-
-def retrieveNearbyPixels(TG, image, currentPixel, previousPixel, laserLength):
-	black_pixels = np.argwhere(image == 0)
+	# Compute the orientation of the robot
 	ref_angle = math.atan2(currentPixel[0]-previousPixel[0], currentPixel[1]-previousPixel[1])
+	# Correct for negative angles
 	if ref_angle < 0:
 		ref_angle += 2*np.pi
+	# Compute the distance between the current pixel and every other black pixel
 	distances = np.sqrt((black_pixels[:,0] - currentPixel[0]) ** 2 + (black_pixels[:,1] - currentPixel[1]) ** 2)
+	# Compute the relative orientation 
 	angles = np.arctan2(black_pixels[:,0] - currentPixel[0], black_pixels[:,1]-currentPixel[1])
 	angles = [a if a > 0 else a+2*np.pi for a in angles]
 	lgt = len(distances)
+	# Return only those pixels that are within the laser range and field of view
 	indices = [i for i in range(0, lgt) if distances[i] < laserLength and (np.pi - math.fabs(math.fabs(ref_angle - angles[i]) - np.pi))<3.0/4.0*np.pi]
 	return black_pixels[indices]
 
-def retrieveVisiblePixels(TG, image, gtImage, totalNodes, currentPixel, previousPixel, laserLength, pixelRoomMap):
+''' Retrieves all pixels that are visible from the current robot location and orientation.
+A pixel is considered to be visible if three conditions hold:
+- it is within the laser range
+- it is within the laser field of view
+- there are no other black pixels on the line connecting it to the current robot location '''
+def retrieveVisiblePixels(image, gtImage, totalNodes, currentPixel, previousPixel, laserLength):
 	height, width = image.shape
-	nearbyPixels = retrieveNearbyPixels(TG, image, currentPixel, previousPixel, laserLength)
-	# but are these actually visible? we approximate this by checking whether they belong to the same room
+	# Retrieve candidate pixels 
+	nearbyPixels = retrieveNearbyPixels(image, currentPixel, previousPixel, laserLength)
 	visiblePixels = []
-	# the idea is the following: if the two pixels are visible from each other, when drawing a white 
-	# line between the two the number of black points at the end should only decrease by two
+	# If two black pixels are visible from each other, it means no other obstacle (black pixel) stands
+	# between them
 	for p in nearbyPixels:
 		pixelsAlongLine = createLineIterator([currentPixel[1],currentPixel[0]],[p[1],p[0]],gtImage)
 		black_pixels = np.argwhere(pixelsAlongLine == 0)
@@ -455,14 +446,17 @@ def pixelsToNodes(pixels, voronoiNodesMap, height):
 		nodes.append(voronoiNodesMap[height-p[0],p[1]])
 	return nodes
 
-def lineOfSight(VG, TG, image, gtImage, totalNodes, currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength, pixelRoomMap):
+''' Retrieve pixels that are visible in line-of-sight given the current robot location and orientation;
+then, set them to gray, set the corresponding nodes as seen and return them.'''
+def lineOfSight(VG, image, gtImage, totalNodes, currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength):
 	height, width = image.shape
-	visiblePixels = retrieveVisiblePixels(TG, image, gtImage, totalNodes, currentPixel, previousPixel, laserLength, pixelRoomMap)
+	visiblePixels = retrieveVisiblePixels(image, gtImage, totalNodes, currentPixel, previousPixel, laserLength)
 	visibleNodes = pixelsToNodes(visiblePixels, voronoiNodesMap, height)
 	markVisiblePixelsAsVisited(image, visiblePixels)
 	nseen = markVisibleNodesAsVisited(VG, visibleNodes)
 	return visibleNodes, nseen
 
+''' Return the nearest frontier, in euclidean distance, from the current robot location.''' 
 def retrieveNearestFrontier(img, currentPixel):
     black_pixels = np.argwhere(img == 0)
     distances = np.sqrt((black_pixels[:,0] - currentPixel[0]) ** 2 + (black_pixels[:,1] - currentPixel[1]) ** 2)
@@ -477,54 +471,43 @@ def initNodeVisitedStatus(VG):
 def getTopVisitedNodes(G,num):
 	return sorted([G.node[n]['nvisits'] for n in G.nodes()],reverse=True)[:num]
 
-def exploreVoronoiGraph(VG, TG, myDataset, image, gtImage, start, voronoiNodesMap, voronoiNodesReverseMap, laserLength, scale, speed):
-	# initialize the correspondence between pixels of the voronoi graph and the room to which they belong
-	height, width = image.shape
-	pixelRoomMap = mapPixelsToRooms(myDataset, image, height)
-	backtorgb = cv2.cvtColor(gtImage,cv2.COLOR_GRAY2RGB) 
+''' Explore the voronoi graph; return the total amount of travelled distance and the sum of the visits
+of the top N visited nodes.''' 
+def exploreVoronoiGraph(VG, image, gtImage, start, voronoiNodesMap, voronoiNodesReverseMap, laserLength, scale, speed, topNVisitedNodes):
+	# set every node as 'not seen' and with zero visits
 	initNodeVisitedStatus(VG)
+	# initialize counting variables
+	height, width = image.shape
 	totalNodes = len(VG.nodes())
 	currentPixel = start
-	numVisitedNodes = 0
-	numSeenNodes = 0
-	totalDistance = 0
-	# line-of-sight: identify and mark as visited the pixels that are visible from the current location
-	visibleNodes, nseen = lineOfSight(VG, TG, image, gtImage, totalNodes, currentPixel, (currentPixel[0]+1,currentPixel[1]), voronoiNodesMap, voronoiNodesReverseMap, laserLength, pixelRoomMap)
+	numVisitedNodes, numSeenNodes, totalDistance = 0, 0, 0
+	# line-of-sight: identify and mark as 'seen' the pixels that are visible from the current location
+	visibleNodes, nseen = lineOfSight(VG, image, gtImage, totalNodes, currentPixel, (currentPixel[0]+1,currentPixel[1]), voronoiNodesMap, voronoiNodesReverseMap, laserLength)
 	numSeenNodes += nseen
-	visitedPixels = []
-	numStops = 0
+	# we proceed until we've seen every single node of the graph 
 	while numSeenNodes < totalNodes:
-		# next frontier
+		# and until then, we keep looking for the next frontier (shortest euclidean distance from current location)
 		nearestPixel = retrieveNearestFrontier(image, currentPixel)
 		nearestNode = voronoiNodesMap[height-nearestPixel[0], nearestPixel[1]]
 		currentNode = voronoiNodesMap[height-currentPixel[0], currentPixel[1]]
+		# then, we follow the shortest path that connects our current location to the identified frontier
 		shortest_path = nx.shortest_path(VG, currentNode, nearestNode)
-		numStops += 1
 		for n in shortest_path:
+			# each node of the path gets visited and its neighboring nodes in line-of-sight are marked as 'seen'
 			previousPixel = currentPixel
 			previousNode = currentNode
 			currentPixel = (height-voronoiNodesReverseMap[n][0],voronoiNodesReverseMap[n][1])
 			currentNode = n
-			visitedPixels.append(currentPixel)
-			visibleNodes, nseen = lineOfSight(VG, TG, image, gtImage, totalNodes,currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength, pixelRoomMap)
+			visibleNodes, nseen = lineOfSight(VG, image, gtImage, totalNodes,currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength)
 			# add to the number of seen nodes the new ones we have actually seen in line of sight
 			numSeenNodes += nseen
 			# and increase the number of times this current node has been visited
 			VG.node[n]['nvisits'] += 1
 			numVisitedNodes += 1
+			# finally, increase the total travelled distance by the amount joining two consecutive nodes on the path
 			totalDistance += node_distance(VG,previousNode,currentNode)
 		currentPixel = nearestPixel
-		#gray_pixels = np.argwhere(image == 127)
-		#backtorgb[currentPixel[0],currentPixel[1]] = (0,255,0)
-		#for p in gray_pixels:
-		#	backtorgb[p[0],p[1]] = (0,0,255)
-		#for p in visitedPixels:
-		#	backtorgb[p[0],p[1]] = (255,0,0)
-		#cv2.imshow("test", backtorgb)
-		#cv2.waitKey(0)
-		# speed : pixel / s
-	#totalTime = totalDistance / speed + numStops*2 # s	
-	return totalDistance/scale, sum(getTopVisitedNodes(VG,40))#40 best
+	return totalDistance/scale, sum(getTopVisitedNodes(VG,topNVisitedNodes))
 
 def createVoronoiGraphFromImage(myDataset, imagePath, worldPath):
 	image = cv2.imread(imagePath,cv2.IMREAD_GRAYSCALE)
@@ -544,11 +527,7 @@ def createVoronoiGraphFromImage(myDataset, imagePath, worldPath):
 	skel = img_as_ubyte(skel)
 	# Invert again
 	_,image = cv2.threshold(skel,127,255,cv2.THRESH_BINARY_INV)
-	#cv2.imshow("test",image)
-	#cv2.waitKey(0)
 	robotX, robotY, scale = retrieveExplorationStartingPoint(worldPath, width, height)
-	#print height
-	#print width
 	voronoiNodesMap = {}
 	voronoiNodesReverseMap = {}
 	idx = 0
@@ -629,15 +608,10 @@ def processVoronoiGraph(myDataset, voronoiPath, worldPath, gtImagePath):
 	nearestNode = voronoiNodesMap[height-nearestPixel[0],nearestPixel[1]]
 	myDataset.voronoi = Gc
 	myDataset.voronoiCenter = nearestNode
-	#plt.clf()
-	#plt.cla()
-	#plt.close()
-	#plt.axis('equal')
-	#nx.draw_networkx_nodes(Gc,pos,node_color='b',node_size=1)
-	#nx.draw_networkx_edges(Gc,pos,edge_color='r',width=1.0)
-	#plt.show()
 	speed = 0.85 # m/s
-	totalTime, topVisits = exploreVoronoiGraph(Gc, myDataset.topology, myDataset, img, gtImage, nearestPixel, voronoiNodesMap, voronoiNodesReverseMap, 30*scale, scale, speed*scale)
+	topNVisitedNodes = 40
+	laserRangeInMeters = 30
+	totalTime, topVisits = exploreVoronoiGraph(Gc, img, gtImage, nearestPixel, voronoiNodesMap, voronoiNodesReverseMap, laserRangeInMeters*scale, scale, speed*scale, topNVisitedNodes)
 	myDataset.voronoiTime = totalTime
 	myDataset.voronoiTopVisits = topVisits
 	myDataset.voronoiStats = GraphStats(Gc)
@@ -692,19 +666,22 @@ def remove_flow_through(graph):
 
 def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, plotFolder):
 	datasets = []
+	runs = []
 	for f in listdir(runsFolder):
 		if isdir(join(runsFolder, f)):# and "furnitures" not in f:
 			datasets.append(loadDataset(f, runsFolder))
 	for d in datasets:
 		if isdir(join(layoutFolder, d.name)):
 			print d.name
+			runs += d.runs
 			loadGeometry(d, join(layoutFolder, d.name, d.name)+".xml")	
 			#if isfile(join(voronoiFolder, d.name)+"_voronoi.png"):
 			processVoronoiGraph(d, voronoiFolder, join(worldFolder, d.name)+".world", join(worldFolder, d.name)+".png")
 			print len(d.runs)
 			#print d.geometry
+	meanPerfStats = computePerformanceStats(runs)
 	#multiCorrelate(datasets, layoutFolder)
-	plotGraphs(datasets,layoutFolder,plotFolder)
+	plotGraphs(datasets,layoutFolder,plotFolder,meanPerfStats,numFolds=5)
 
 def createLineIterator(P1, P2, img):
 	"""

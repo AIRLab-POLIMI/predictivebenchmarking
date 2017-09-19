@@ -16,6 +16,7 @@ class Dataset():
 		self._perfStats = perfStats
 		self._geometry = None
 		self._topology = None
+		self._topologyStats = None
 		self._voronoi = None
 		self._voronoiStats = None
 		self._voronoiCenter = None
@@ -58,6 +59,14 @@ class Dataset():
 	@topology.setter
 	def topology(self, value):
 		self._topology = value
+
+	@property
+	def topologyStats(self):
+		return self._topologyStats
+
+	@topologyStats.setter
+	def topologyStats(self,value):
+		self._topologyStats = value
 
 	@property
 	def voronoi(self):
