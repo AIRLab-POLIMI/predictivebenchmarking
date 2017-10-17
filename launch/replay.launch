@@ -28,7 +28,7 @@
 	<node name="RVIZ" pkg="rviz" type="rviz" args=" -d /home/valerio/slampbenchmarking/launch/custom.rviz" />
 
 	<arg name="srcfile" default="my_file_1" />
-	<node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(arg srcfile)"/>
+	<node pkg="rosbag" type="play" name="player" output="screen" args="-q --clock $(arg srcfile)"/>
 
 	<!-- Record ground truth values -->
 	<node name="recorder" pkg="rosbag" type="record" args="--lz4 -O $(arg bag) /base_pose_ground_truth"/>
