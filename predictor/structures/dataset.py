@@ -20,8 +20,9 @@ class Dataset():
 		self._voronoi = None
 		self._voronoiStats = None
 		self._voronoiCenter = None
-		self._voronoiTime = 0
+		self._voronoiDistance = 0
 		self._voronoiTopVisits = 0
+		self._entropy = 0
 
 	@property
 	def name(self):
@@ -107,6 +108,14 @@ class Dataset():
 	@voronoiTopVisits.setter
 	def voronoiTopVisits(self, value):
 		self._voronoiTopVisits = value
+
+	@property
+	def entropy(self):
+		return self._entropy
+
+	@entropy.setter
+	def entropy(self, value):
+		self._entropy = value
 
 	def __repr__(self):
 		return "Printing dataset information. \n"+\

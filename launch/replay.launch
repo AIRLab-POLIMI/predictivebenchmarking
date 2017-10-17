@@ -1,0 +1,48 @@
+<launch>
+
+	<!-- This file launches:
+	 	* Stage
+	 	* nav2d
+	 		-Operator
+	 		-Navigator
+	 		-GetMap
+	 		-Explore
+	 		-SetGoal
+	 		-joystick
+	 		-Remote
+	 		-exploration
+	 	* rosbag record to record the /base_pose_ground_truth topic in a bag file
+	 	* tf listener to write the gmapping tf
+	 	* gmapping
+	 	* RVIZ
+	 	Params:
+	 		-worldfile: the world file for stage
+	 		-bag: the name of the bag file to write the ground truth from stage
+	 		-output: the name of the file to write the gmapping log
+	 	 -->
+
+	<!-- Some general parameters -->
+	<param name="use_sim_time" value="true" />
+
+	<!-- RVIZ to view the visualization -->
+	<node name="RVIZ" pkg="rviz" type="rviz" args=" -d /home/valerio/slampbenchmarking/launch/custom.rviz" />
+
+	<arg name="srcfile" default="my_file_1" />
+	<node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(arg srcfile)"/>
+
+	<!-- Record ground truth values -->
+	<node name="recorder" pkg="rosbag" type="record" args="--lz4 -O $(arg bag) /base_pose_ground_truth"/>
+
+	<!-- Write log odom gmapping for metricevaluator -->
+	<node name="listener" pkg="tf_listener" type="tf_listener.py" args="$(arg outputfile)" />
+
+	<!-- Start exploration of ambient -->
+
+	<!-- Start Mapper to generate map from laser scans -->
+	<node name="Mapper" pkg="gmapping" type="slam_gmapping" args="_xmin:=-100 _ymin:=-100 _ymax:=100
+     _xmax:=100 _ogain:=3.0 _minimumScore:=50 _angularUpdate:=0.25 _linearUpdate:=1.0
+     _map_update_interval:=5.0 _temporal_update:=5.0 _odom_frame:=odom _particles:=40 scan:=base_scan
+     _srr:=0.01 _srt:=0.02 _str:=0.01 _stt:=0.02 _delta:=0.05 _maxUrange:=50 _maxRange:=80" />
+
+
+</launch>

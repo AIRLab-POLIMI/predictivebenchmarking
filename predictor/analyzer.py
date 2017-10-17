@@ -14,9 +14,12 @@ import math
 import networkx as nx
 import datetime as dt
 from scipy.stats import pearsonr
-from sklearn import linear_model
+from sklearn import linear_model, svm
 from sklearn.model_selection import KFold, cross_val_score
 from sklearn.metrics import mean_squared_error
+from sklearn.decomposition import PCA
+from sklearn import preprocessing, feature_selection
+from sklearn.feature_selection import SelectKBest, f_regression, mutual_info_regression
 from shapely.geometry import Polygon, Point
 from skimage.morphology import skeletonize
 from skimage import img_as_ubyte
@@ -97,6 +100,11 @@ def loadDatasetRuns(runsFolder, datasetName):
 			runs.append(loadDatasetRun(join(datasetPath,r),datasetName))
 	return runs
 		
+def reject_outliers(data, m = 2.):
+    d = np.abs(data - np.median(data))
+    mdev = np.median(d)
+    s = d/mdev if mdev else 0.
+    return data[s<m]
 
 def computeErrorStats(runs, errorType):
 	meansList = []
@@ -194,17 +202,17 @@ def getAttrStats():
 
 def getPredictors():
 	predictors = dict()
-	predictors["traversalTime"] = (lambda dataset: (dataset.voronoiTime))
 	predictors["area"] = (lambda dataset: (dataset.geometry.shape.area))
 	predictors["perimeter"] = (lambda dataset: (dataset.geometry.shape.perimeter))
 	predictors["wallRatio"] = (lambda dataset: (dataset.geometry.shape.wallRatio))
 	predictors["numRooms"] = (lambda dataset: (len(dataset.geometry.rooms)))
-	predictors["totalTime"] = (lambda dataset: (dataset.perfStats.totalTime.mean))
-	predictors["totalLength"] = (lambda dataset : (dataset.perfStats.totalLength.mean))
+	#predictors["totalTime"] = (lambda dataset: (dataset.perfStats.totalTime.mean))
+	#predictors["totalLength"] = (lambda dataset : (dataset.perfStats.totalLength.mean))
 	predictors["avgRoomArea"] = (lambda dataset: np.array([r.shape.area for r in dataset.geometry.rooms]).mean()**2)
 	predictors["avgRoomPerimeter"] = (lambda dataset: np.array([r.shape.perimeter for r in dataset.geometry.rooms]).mean()**2)
 	predictors["avgRoomWallRatio"] = (lambda dataset: np.array([r.shape.wallRatio for r in dataset.geometry.rooms]).mean()**2)
 	predictors["roomPerimeter"] = 	(lambda dataset: np.array([r.shape.perimeter for r in dataset.geometry.rooms]).sum())
+	predictors["voronoi_traversal_distance"] = (lambda dataset: (dataset.voronoiDistance))
 	predictors["voronoi_nodes"] = (lambda dataset: dataset.voronoiStats.nodes)
 	predictors["voronoi_edges"] = (lambda dataset: dataset.voronoiStats.edges)
 	predictors["voronoi_avg_shortest_path_length"] = (lambda dataset : dataset.voronoiStats.avg_shortest_path_length)
@@ -212,6 +220,7 @@ def getPredictors():
 	predictors["voronoi_diameter"] = (lambda dataset: dataset.voronoiStats.diameter)
 	predictors["voronoi_radius"] = (lambda dataset: dataset.voronoiStats.radius)
 	predictors["voronoi_numBifurcationPoints"] = (lambda dataset: len(get_bifurcation_points(dataset.voronoi)))
+	predictors["voronoi_numTerminalPoints"] = (lambda dataset: len(get_terminal_points(dataset.voronoi)))
 	predictors["voronoi_avg_betweenness_centrality"] = (lambda dataset: dataset.voronoiStats.betweenness_centrality.mean())
 	predictors["voronoi_avg_eigenvector_centrality"] = (lambda dataset: dataset.voronoiStats.eigenvector_centrality.mean())
 	predictors["voronoi_avg_katz_centrality"] = (lambda dataset: dataset.voronoiStats.katz_centrality.mean())
@@ -235,6 +244,7 @@ def getPredictors():
 	predictors["topology_std_eigenvector_centrality"] = (lambda dataset: dataset.topologyStats.eigenvector_centrality.std())
 	predictors["topology_std_katz_centrality"] = (lambda dataset: dataset.topologyStats.katz_centrality.std())
 	predictors["topology_std_closeness_centrality"] = (lambda dataset: dataset.topologyStats.closeness_centrality.std())
+	predictors["entropy"] = (lambda dataset: dataset.entropy)
 	return predictors
 
 def getDummyLambdaStats():
@@ -250,7 +260,7 @@ def multiCorrelate(datasets, layoutFolder):
 		d = datasets[i]			
 		if isdir(join(layoutFolder, d.name)):# and d.name[-10:]!="furnitures":
 			print d.name
-			xs[i][0] = d.voronoiTime
+			xs[i][0] = d.voronoiDistance
 			xs[i][1] = d.voronoiTopVisits 
 			xs[i][2] = d.voronoiStats.edges#len(get_bifurcation_points(d.voronoi))
 			ys[i][0] = d.perfStats.transError.mean.mean
@@ -270,22 +280,77 @@ def multiCorrelate(datasets, layoutFolder):
 
 
 def plotAndSave(xs,ys,xLabel,yLabel,corrStats,plotFolder,name,numFolds,allxs,allys):
-	fig = plt.figure()
-	plt.xlabel(xLabel)
-	plt.ylabel(yLabel)
-	fit = np.polyfit(xs,ys,1)
-	fit_fn = np.poly1d(fit)
-	support_range = np.arange(min(xs), max(xs),0.1) 
-	# fit_fn is now a function which takes in x and returns an estimate for y
-	plt.plot(xs,ys, 'ro', support_range, fit_fn(support_range), '-')
+	#cs = [0.00001, 0.0001, 0.001, 0.01, 0.1, 1, 10, 100]
+	#gammas = [0.0000000001,0.000000001,0.00000001,0.0000001, 0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1, 1]
+	#degrees = [1, 2, 3, 4, 5]
+	#cs = [1]
+	#gammas = [1]
+	cs = [1]
+	gammas = [1]
+	degrees = [1]
+	origxs = xs
+	origys = ys
+	for c in cs:
+		for g in gammas:
+			for d in degrees:
+				print "c = "+str(c)+", g = "+str(g)+", d = "+str(d)
+				#lm = svm.SVR(kernel='rbf',max_iter=10000, degree = d, C=c, gamma=g)
+				lm = linear_model.LinearRegression()
+				nsamples = len(origxs)
+				xs = np.array(origxs).reshape(nsamples,1)
+				ys = np.array(origys).reshape(nsamples,1)
+				model = lm.fit(xs,ys)
+				strategy = KFold(n_splits=numFolds,shuffle=True)
+				#prs,pvalue = pearsonr(xs,ys)
+				#if abs(prs) > 0.5:
+				try:
+					rsquared = lm.score(xs,ys)
+					mses = np.sqrt(np.abs(cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
+					rsquareds = cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='r2')
+					print name
+					print 'r^2: '+str(rsquared)
+					print 'Avg RMSE: '+str(mses.mean())
+					print 'Avg r^2: '+str(rsquareds.mean())
+					corrStats.append([xLabel,yLabel,rsquared,mses.mean(),rsquareds.mean()])
+					fig = plt.figure()
+					plt.xlabel(xLabel)
+					plt.ylabel(yLabel)
+					fit = np.polyfit(origxs,origys,1)
+					fit_fn = np.poly1d(fit)
+					support_range = np.arange(min(origxs), max(origxs),0.1) 
+					# fit_fn is now a function which takes in x and returns an estimate for y
+					plt.plot(origxs,origys, 'ro', support_range, fit_fn(support_range), '-')
+					fig.savefig(join(plotFolder,"correlation",name)+".png", bbox_inches='tight')
+					pattern = Image.open(join(plotFolder,"correlation",name)+".png", "r").convert('RGBA')
+					size = width, height = pattern.size
+					draw = ImageDraw.Draw(pattern,'RGBA')
+					font = ImageFont.truetype("OpenSans-Regular.ttf", 16)
+					draw.text((80,525), 'rsquared: ' + str(round(rsquared,3)), fill=(0, 0, 0, 255), font=font)
+					#draw.text((500,525), 'P-Value: '+ str(round(pvalue,5)), fill=(0, 0, 0, 255), font = font)
+					pattern.save(join(plotFolder,"correlation",name)+".png")
+					# we must also store the xs and ys in a table
+					buildcsv(join(plotFolder,"correlation",name)+".csv",xLabel,yLabel,xs,ys,mses,rsquareds)
+					plt.close(fig)
+					fig = plt.figure()
+					plt.xlabel(xLabel)
+					plt.ylabel(yLabel)
+					plt.plot(xs,ys, 'ro', support_range, fit_fn(support_range), '-')
+					plt.plot(allxs,allys,'gx')
+					fig.savefig(join(plotFolder,"correlation",name)+"_allpoints.png", bbox_inches='tight')
+					plt.close(fig)
+				except ValueError:
+					pass
+	return model
+
+def fitLinearModel(xs,ys,xLabel,yLabel,corrStats,plotFolder,name,numFolds,allxs,allys):
 	lm = linear_model.LinearRegression()
 	nsamples = len(xs)
+	orig_xs = xs
+	orig_ys = ys
 	xs = np.array(xs).reshape(nsamples,1)
 	ys = np.array(ys).reshape(nsamples,1)
 	model = lm.fit(xs,ys)
 	strategy = KFold(n_splits=numFolds,shuffle=True)
-	#prs,pvalue = pearsonr(xs,ys)
-	#if abs(prs) > 0.5:
 	rsquared = lm.score(xs,ys)
 	mses = np.sqrt(np.abs(cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
 	rsquareds = cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='r2')
@@ -294,6 +359,14 @@ def plotAndSave(xs,ys,xLabel,yLabel,corrStats,plotFolder,name,numFolds,allxs,all
 	print 'Avg RMSE: '+str(mses.mean())
 	print 'Avg r^2: '+str(rsquareds.mean())
 	corrStats.append([xLabel,yLabel,rsquared,mses.mean(),rsquareds.mean()])
+	fig = plt.figure()
+	plt.xlabel(xLabel)
+	plt.ylabel(yLabel)
+	fit = np.polyfit(orig_xs,orig_ys,1)
+	fit_fn = np.poly1d(fit)
+	support_range = np.arange(min(orig_xs), max(orig_xs),0.1) 
+	# fit_fn is now a function which takes in x and returns an estimate for y
+	plt.plot(orig_xs,orig_ys, 'ro', support_range, fit_fn(support_range), '-')
 	fig.savefig(join(plotFolder,"correlation",name)+".png", bbox_inches='tight')
 	pattern = Image.open(join(plotFolder,"correlation",name)+".png", "r").convert('RGBA')
 	size = width, height = pattern.size
@@ -308,11 +381,11 @@ def plotAndSave(xs,ys,xLabel,yLabel,corrStats,plotFolder,name,numFolds,allxs,all
 	fig = plt.figure()
 	plt.xlabel(xLabel)
 	plt.ylabel(yLabel)
-	plt.plot(xs,ys, 'ro', support_range, fit_fn(support_range), '-')
+	plt.plot(orig_xs,orig_ys, 'ro', support_range, fit_fn(support_range), '-')
 	plt.plot(allxs,allys,'gx')
 	fig.savefig(join(plotFolder,"correlation",name)+"_allpoints.png", bbox_inches='tight')
 	plt.close(fig)
-	return model
+	return model, mses.mean()
 
 def buildcsv(correlationFileName, xLabel, yLabel, xs, ys, mses, rsquareds):
 	csv=open(correlationFileName, 'w')
@@ -343,26 +416,112 @@ def plotIterator(datasets,layoutFolder,plotFolder,corrStats,predictedStats,predi
 	runErrorTypes["transError"] = (lambda run: run.transStats)
 	runErrorTypes["rotError"] = (lambda run: run.rotStats)
 	# error stats
+	models = {}
 	for eName, eLambda in predictedStats.iteritems():
 		for aName, aLambda in predictedStatsAttrs.iteritems():
 			for sName, sLambda in attrStats.iteritems():
+				bestModel = None
+				bestRMSE = float('inf')
 				for pName, pLambda in predictors.iteritems():
-					xs,ys,yc,allxs,allys = [], [], [], [], [] 
+					xs,ys,yc = [], [], []
+					allxs = np.asarray([])
+					allys = np.asarray([])
 					for d in datasets:			
 						if isdir(join(layoutFolder, d.name)):
 							xs.append(pLambda(d))
 							ys.append(sLambda(aLambda(eLambda(d))))
 							yc.append(sLambda(aLambda(meanErrorTypes[eName](meanPerfStats))))
+							runxs, runys = [], []
 							for r in d.runs:
-								allxs.append(pLambda(d))
-								allys.append(aLambda(runErrorTypes[eName](r)))
+								runxs.append(pLambda(d))
+								runys.append(aLambda(runErrorTypes[eName](r)))
+							runxs = np.asarray(runxs)
+							runys = np.asarray(runys)
+							#m = 0.8
+							#d = np.abs(runys - np.median(runys))
+							#mdev = np.median(d)
+							#s = d/mdev if mdev else 0.
+							#runxs = runxs[s>m]
+							#runys = runys[s>m]
+							allxs = np.append(allxs,runxs)
+							allys = np.append(allys,runys)
 					xLabel = pName
 					yLabel = eName+"."+aName+"."+sName
 					name = pName+"-"+eName+"."+aName+"."+sName
-					model = plotAndSave(xs,ys,xLabel,yLabel,corrStats,plotFolder,name,numFolds,allxs,allys)
+					model,avg_rmse = fitLinearModel(xs,ys,xLabel,yLabel,corrStats,plotFolder,name,numFolds,allxs,allys)
 					print "Constant baseline RMSE: "+str(np.sqrt(mean_squared_error(ys,yc)))
+					print "Avg 5-fold RMSE of this model: "+str(avg_rmse)
+					if avg_rmse < bestRMSE:
+						bestModel = model
+						bestRMSE = avg_rmse
 					#yp = model.predict(xs)
 					#print "Model RMSE: "+str(np.sqrt(mean_squared_error(ys,yp)))
+				models[eName+"."+aName+"."+sName] = (model, avg_rmse)
+	return models
+
+
+def PCAAnalyzer(datasets,layoutFolder,plotFolder,corrStats,predictedStats,predictedStatsAttrs,numFolds,meanPerfStats):
+	attrStats = getAttrStats()
+	predictors = getPredictors()
+	meanErrorTypes = dict()
+	meanErrorTypes["transError"] = (lambda meanPerfStats: meanPerfStats.transError)
+	meanErrorTypes["rotError"] = (lambda meanPerfStats: meanPerfStats.rotError)
+	runErrorTypes = dict()
+	runErrorTypes["transError"] = (lambda run: run.transStats)
+	runErrorTypes["rotError"] = (lambda run: run.rotStats)
+	# error stats
+	nsamples = len(datasets)
+	X = []	
+	ys = np.empty([nsamples,1])
+	for pName, pLambda in predictors.iteritems():
+		print pName
+		xp = []
+		for i in range(0, nsamples):
+			d = datasets[i]
+			xp.append(pLambda(d))
+			ys[i][0] = d.perfStats.transError.mean.mean
+		xp = preprocessing.scale(xp)
+		X.append(xp)
+	X = np.transpose(np.array(X))
+	pca = PCA(n_components=5)
+	X_pca = pca.fit_transform(X)
+	print "PCA:"
+	print pca.explained_variance_ratio_ 
+	fs = SelectKBest(f_regression, k=3)
+	X_new = fs.fit_transform(X, ys)
+	print zip(fs.get_support(),predictors.iteritems())
+	# now we try to predict
+	cs = [0.00001, 0.0001, 0.001, 0.01, 0.1, 1, 10, 100]
+	gammas = [0.0000000001,0.000000001,0.00000001,0.0000001, 0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1, 1]
+	#degrees = [1, 2, 3, 4, 5]
+	degrees = [1]
+	#for al in range(1,11):
+	#	alpha = al*0.01
+		#print "Alpha: "+str(float(alpha))
+	for c in cs:
+		for g in gammas:
+			for d in degrees:
+				print "c = "+str(c)+", g = "+str(g)+", d = "+str(d)
+				#lm = linear_model.LinearRegression()#linear_model.Lasso(alpha=alpha)#LinearRegression()
+				lm = svm.SVR(kernel='rbf',max_iter=10000, degree = d, C=c, gamma=g)#linear_model.LinearRegression()
+				model = lm.fit(X_new,ys)
+				strategy = KFold(n_splits=5,shuffle=True)
+				rsquared = lm.score(X_new,ys)
+				print rsquared
+				all_mses = []
+				all_rsquareds = []
+				for i in range(0, 20):
+					mses = np.sqrt(np.abs(cross_val_score(lm, X_new, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
+					rsquareds = cross_val_score(lm, X_new, ys, cv=strategy, n_jobs = -1, scoring='r2')
+					all_mses += mses.tolist()
+					all_rsquareds += rsquareds.tolist()
+				print "Final average:"
+				print np.asarray(all_mses).mean()
+				print np.asarray(all_rsquareds).mean()
+	#print "Additional test:"
+ 	#F, pval = feature_selection.f_regression(X, ys, center=False)
+ 	#print F
+ 	#print pval
 
 def plotGraphs(datasets,layoutFolder,plotFolder,meanPerfStats,numFolds):
 	corrStatsFile = open(join(plotFolder, "corrStats.csv"), "w")
@@ -371,11 +530,12 @@ def plotGraphs(datasets,layoutFolder,plotFolder,meanPerfStats,numFolds):
 	errorTypes = getErrorTypes()
 	runStats = getRunStats()
 	errorAttrs = getErrorAttrs()
-	plotIterator(datasets,layoutFolder,plotFolder,corrStats,errorTypes,errorAttrs,numFolds,meanPerfStats)
+	models = plotIterator(datasets,layoutFolder,plotFolder,corrStats,errorTypes,errorAttrs,numFolds,meanPerfStats)
 	corrStats.sort(key=lambda x:x[2], reverse=True)
 	for elem in corrStats:
 		corrStatsFile.write(elem[0]+','+elem[1]+','+str(elem[2])+','+str(elem[3])+','+str(elem[4])+'\n')
 	corrStatsFile.close()
+	return models
 
 ''' Outline of the algorithm (TICK-TOCK mechanism):
 # black == occupied, white == free
@@ -509,7 +669,8 @@ def exploreVoronoiGraph(VG, image, gtImage, start, voronoiNodesMap, voronoiNodes
 		currentPixel = nearestPixel
 	return totalDistance/scale, sum(getTopVisitedNodes(VG,topNVisitedNodes))
 
-def createVoronoiGraphFromImage(myDataset, imagePath, worldPath):
+def createVoronoiGraphFromImage(imagePath, worldPath):
+	print imagePath
 	image = cv2.imread(imagePath,cv2.IMREAD_GRAYSCALE)
 	height, width = image.shape
 	# Invert
@@ -579,43 +740,61 @@ def createVoronoiGraphFromImage(myDataset, imagePath, worldPath):
 	Gc = max(nx.connected_component_subgraphs(G), key=len)
 	return Gc
 
-def loadVoronoiGraph(myDataset, voronoiPath, worldPath):
-	pickleFile = join(voronoiPath, "pickle",myDataset.name)+"_voronoi.pickle"
-	imageFile = join(voronoiPath, "images",myDataset.name)+"_voronoi.png"
+def loadVoronoiGraph(datasetName, voronoiPath, worldPath):
+	pickleFile = join(voronoiPath, "pickle",datasetName)+"_voronoi.pickle"
+	imageFile = join(voronoiPath, "images",datasetName)+"_voronoi.png"
 	if exists(pickleFile):
 		Gc = nx.read_gpickle(pickleFile)
 	else:
-		Gc = createVoronoiGraphFromImage(myDataset, imageFile, worldPath)
+		Gc = createVoronoiGraphFromImage(imageFile, worldPath)
 		nx.write_gpickle(Gc, pickleFile)
 	return Gc
 
-
-def processVoronoiGraph(myDataset, voronoiPath, worldPath, gtImagePath):
-	Gc = loadVoronoiGraph(myDataset, voronoiPath, worldPath)
+def processVoronoiGraph(datasetName, voronoiPath, worldPath, gtImagePath):
+	VG = loadVoronoiGraph(datasetName, voronoiPath, worldPath)
 	gtImage = cv2.imread(gtImagePath,cv2.IMREAD_GRAYSCALE)
 	height, width = gtImage.shape
 	robotX, robotY, scale = retrieveExplorationStartingPoint(worldPath, width, height)
 	voronoiNodesReverseMap = {}
 	voronoiNodesMap = {}
 	img = np.full((height, width), 255, np.uint8)
-	for n in Gc.nodes():
-		voronoiNodesReverseMap[n] = Gc.node[n]['pos'][1], Gc.node[n]['pos'][0]
+	for n in VG.nodes():
+		voronoiNodesReverseMap[n] = VG.node[n]['pos'][1], VG.node[n]['pos'][0]
 	for k,v in voronoiNodesReverseMap.iteritems():
 		voronoiNodesMap[v] = k
 		img[height-v[0],v[1]] = 0
 	# we also need to figure out which node is the closest to the starting point of the exploration
 	nearestPixel = find_nearest_node(img, robotX, robotY)
-	nearestNode = voronoiNodesMap[height-nearestPixel[0],nearestPixel[1]]
-	myDataset.voronoi = Gc
-	myDataset.voronoiCenter = nearestNode
+	voronoiCenter = voronoiNodesMap[height-nearestPixel[0],nearestPixel[1]]
 	speed = 0.85 # m/s
 	topNVisitedNodes = 40
 	laserRangeInMeters = 30
-	totalTime, topVisits = exploreVoronoiGraph(Gc, img, gtImage, nearestPixel, voronoiNodesMap, voronoiNodesReverseMap, laserRangeInMeters*scale, scale, speed*scale, topNVisitedNodes)
-	myDataset.voronoiTime = totalTime
-	myDataset.voronoiTopVisits = topVisits
-	myDataset.voronoiStats = GraphStats(Gc)
-	print "Voronoi Time "+str(totalTime)
+	totalDistance, topVisits = exploreVoronoiGraph(VG, img, gtImage, nearestPixel, voronoiNodesMap, voronoiNodesReverseMap, laserRangeInMeters*scale, scale, speed*scale, topNVisitedNodes)
+	print "Voronoi Distance "+str(totalDistance)
+	return VG, voronoiCenter, totalDistance, topVisits, GraphStats(VG)
+
+def computeDatasetEntropy(myDataset, gtImagePath):
+	gtImage = cv2.imread(gtImagePath,cv2.IMREAD_GRAYSCALE)
+	height, width = gtImage.shape
+	# Black is obstacle, white is free space
+	_,thresh = cv2.threshold(gtImage,127,255,cv2.THRESH_BINARY)
+	# Convert to zeros and ones
+	gtImage[gtImage == 255] = 1
+	# Apply kernel
+	densities = {}
+	total = 0
+	for r in range(0,height-1):
+		for c in range(0, width-1):
+			occupancy = (gtImage[r,c]+gtImage[r+1,c]+gtImage[r+1,c+1]+gtImage[r,c+1])/4
+			if not (occupancy in densities):
+				densities[occupancy] = 0
+			densities[occupancy] += 1
+			total += 1
+	entropy = 0
+	for occupancy, numTimes in densities.iteritems():
+		frequency = float(numTimes) / total
+		entropy += -frequency * np.log(frequency)
+	myDataset.entropy = entropy
 
 def node_distance(G,u,v): 
 	return np.sqrt((G.node[u]['pos'][0]-G.node[v]['pos'][0])**2+(G.node[u]['pos'][1]-G.node[v]['pos'][1])**2)
@@ -655,6 +834,13 @@ def get_bifurcation_points(graph):
 			bif.append(n)
 	return bif
 
+def get_terminal_points(graph):
+	term = []
+	for n in graph.nodes():
+		if len(graph.neighbors(n))==1:
+			term.append(n)
+	return term
+
 def remove_flow_through(graph):
 	for n in graph.nodes():
 		neighbors = graph.neighbors(n)
@@ -663,6 +849,13 @@ def remove_flow_through(graph):
 			w2 = graph.get_edge_data(n,neighbors[1])['weight']
 			graph.remove_node(n)
 			graph.add_edge(neighbors[0], neighbors[1],weight=w1+w2)
+
+def setVoronoiProperties(myDataset, voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiStats):
+	myDataset.voronoi = voronoi
+	myDataset.voronoiCenter = voronoiCenter
+	myDataset.voronoiDistance = voronoiDistance
+	myDataset.voronoiTopVisits = voronoiTopVisits
+	myDataset.voronoiStats = voronoiStats	
 
 def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, plotFolder):
 	datasets = []
@@ -676,12 +869,23 @@ def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, plotFo
 			runs += d.runs
 			loadGeometry(d, join(layoutFolder, d.name, d.name)+".xml")	
 			#if isfile(join(voronoiFolder, d.name)+"_voronoi.png"):
-			processVoronoiGraph(d, voronoiFolder, join(worldFolder, d.name)+".world", join(worldFolder, d.name)+".png")
+			voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiStats = processVoronoiGraph(d.name, voronoiFolder, join(worldFolder, d.name)+".world", join(worldFolder, d.name)+".png")
+			setVoronoiProperties(d, voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiStats)
+			computeDatasetEntropy(d, join(worldFolder, d.name)+".png")
 			print len(d.runs)
 			#print d.geometry
 	meanPerfStats = computePerformanceStats(runs)
 	#multiCorrelate(datasets, layoutFolder)
-	plotGraphs(datasets,layoutFolder,plotFolder,meanPerfStats,numFolds=5)
+	models = plotGraphs(datasets,layoutFolder,plotFolder,meanPerfStats,numFolds=5)
+	return models
+
+def predictDatasets(predictFolder, models):
+	for f in listdir(predictFolder):
+		if isfile(join(predictFolder,f)) and f[-5:]=="world":
+			datasetName = f[:-6]
+			voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiStats = processVoronoiGraph(datasetName, join(predictFolder, "voronoi"), join(predictFolder, datasetName)+".world", join(predictFolder, datasetName)+".png")
+			print voronoiDistance
+			print models["transError.mean.mean"][0].predict(voronoiDistance)
 
 def createLineIterator(P1, P2, img):
 	"""
@@ -758,4 +962,5 @@ def createLineIterator(P1, P2, img):
 
 if __name__ == '__main__':
 	#buildcsv(sys.argv[1])
-	analyzeDatasets(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
+	models = analyzeDatasets(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
+	predictDatasets(sys.argv[6], models)
