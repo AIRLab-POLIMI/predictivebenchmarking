@@ -1,4 +1,4 @@
-import sys
+import sys,argparse
 from os import listdir
 from os.path import join,exists, isdir
 
@@ -38,4 +38,7 @@ def buildcsv(outputs):
 	csv.close()
 
 if __name__ == '__main__':
-	buildcsv(sys.argv[1])
+	parser = argparse.ArgumentParser(description='Given the general runs output folder, i.e. the one containing all the explored datasets in it, it produces a summary csv file containing, for each run of each dataset, its performance measures.')
+	parser.add_argument('runs_output_folder',help='the folder containing all the explored datasets runs')
+	args = parser.parse_args()
+	buildcsv(args.runs_output_folder)

@@ -1,0 +1,4 @@
+#Udev rules needed by the robocom 
+#Nova core
+SUBSYSTEMS=="usb", KERNEL=="ttyACM[0-9]*", ACTION=="add" , ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", SYMLINK+="novaCore", GROUP="dialout"
+

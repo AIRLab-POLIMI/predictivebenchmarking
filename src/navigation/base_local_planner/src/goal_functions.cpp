@@ -105,9 +105,9 @@ namespace base_local_planner {
       tf::StampedTransform plan_to_global_transform;
       tf.waitForTransform(global_frame, ros::Time::now(),
                           plan_pose.header.frame_id, plan_pose.header.stamp,
-                          plan_pose.header.frame_id, ros::Duration(0.5));
+                          plan_pose.header.frame_id, ros::Duration(5.0));
       tf.lookupTransform(global_frame, ros::Time(),
-                         plan_pose.header.frame_id, plan_pose.header.stamp, 
+                         plan_pose.header.frame_id, plan_pose.header.stamp,
                          plan_pose.header.frame_id, plan_to_global_transform);
 
       //let's get the pose of the robot in the frame of the plan
@@ -246,9 +246,9 @@ namespace base_local_planner {
     return false;
   }
 
-  bool stopped(const nav_msgs::Odometry& base_odom, 
+  bool stopped(const nav_msgs::Odometry& base_odom,
       const double& rot_stopped_velocity, const double& trans_stopped_velocity){
-    return fabs(base_odom.twist.twist.angular.z) <= rot_stopped_velocity 
+    return fabs(base_odom.twist.twist.angular.z) <= rot_stopped_velocity
       && fabs(base_odom.twist.twist.linear.x) <= trans_stopped_velocity
       && fabs(base_odom.twist.twist.linear.y) <= trans_stopped_velocity;
   }

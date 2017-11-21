@@ -1,0 +1,41 @@
+<launch>
+	<arg name="teleop" default="1" />
+	<arg name="record" default="1" />
+	<arg name="laser" default="1" />
+	<arg name="laserID" default="H0707625"/>
+	
+	<!-- rosserial launch file for nova core -->
+	<include file="$(find rosserial_core)/launch/serial_node.launch">
+		<arg name="port" value="/dev/novaCore" />
+	</include>
+	
+	<!-- status node -->
+	<node pkg="robocom" type="status.py" name="status"/>
+
+	<!-- joy node -->
+	<node respawn="true" pkg="joy" type="joy_node" name="joy_node" if="$(arg teleop)">
+		<param name="dev" type="string" value="/dev/input/js0" />
+		<param name="deadzone" value="0.0" />
+		<param name="autorepeat_rate" value="100.0" />
+	</node>
+
+	<!-- robocom teleop node -->
+	<rosparam file="$(find robocom)/params/teleop.yaml" command="load" ns="robocom_teleop" if="$(arg teleop)"/>
+	<node pkg="teleop_twist_joy" type="teleop_node" name="robocom_teleop" if="$(arg teleop)"/>
+	
+	<!-- robocom pixy teleop node -->
+	<rosparam file="$(find robocom)/params/pixy.yaml" command="load" ns="robocom_pixy" if="$(arg teleop)"/>
+	<node pkg="robocom" type="teleop_pixy_joy" name="robocom_pixy" if="$(arg teleop)"/>
+	
+	<!-- record node launch file -->
+	<include file="$(find record_ros)/launch/record_ros.launch" if="$(arg record)">
+		<arg name="path_save" value="/home/airlab/test" />
+		<arg name="file_name" value="robocom" />
+	</include>
+	
+	<!-- laser node -->
+	<node pkg="hokuyo_node" type="hokuyo_node" name="hokuyo_node" if="$(arg laser)">
+		<param name="port" type="string" value="/dev/sensors/hokuyo_$(arg laserID)" />
+	</node>
+	
+</launch> 

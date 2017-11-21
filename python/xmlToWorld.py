@@ -1,5 +1,5 @@
 
-import sys
+import sys,argparse
 import xml.etree.ElementTree as ET
 from os import listdir
 from os.path import join,exists,isdir,isfile
@@ -26,8 +26,8 @@ def XMLToWorld(xmlFile,outputPath):
 	xs = []
 	ys = []
 	for punto in root.findall('*//point'):
-		xs.append(int(punto.get('x')))
-		ys.append(int(punto.get('y')))
+		xs.append(int(float(punto.get('x'))))
+		ys.append(int(float(punto.get('y'))))
 	width = round((max(xs)-min(xs))*scalingFactor,2)
 	height = round((max(ys)-min(ys))*scalingFactor,2)
 	# we then use a world template to generate the world file
@@ -62,5 +62,9 @@ def convertXMLInDirectory(xmlPath,outputPath):
 			XMLToWorld(join(xmlPath,f),outputPath)
 
 if __name__ == '__main__':
-	convertXMLInDirectory(sys.argv[1],sys.argv[2])
+	parser = argparse.ArgumentParser(description='For each XML file inside the specified <xml_input_folder>, this tool produces a corresponding .world file inside <world_output_folder>.')
+	parser.add_argument('xml_input_folder',help='the path containing the XML files for which the accompanying world files must be generated')
+	parser.add_argument('world_output_folder',help='the path where the world files will be saved')
+	args = parser.parse_args()
+	convertXMLInDirectory(args.xml_input_folder,args.world_output_folder)
 

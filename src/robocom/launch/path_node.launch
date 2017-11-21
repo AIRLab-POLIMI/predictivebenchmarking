@@ -1,0 +1,10 @@
+<launch>
+	<!-- path node -->
+	<node respawn="true" pkg="triskar" type="path" name="path" output="screen">
+		<param name="period" value="0.01" />
+		<rosparam param="tfPosTargetFrames">['/world', '/world']</rosparam>
+		<rosparam param="tfPosSourceFrames">['/base_link', '/Robot_2/base_link']</rosparam>
+		<rosparam param="pathHeaderFrameIds">['world', 'world']</rosparam>
+		<rosparam param="pathTopics">['/trajectory_odom', '/trajectory_opti']</rosparam>	
+	</node>
+</launch>

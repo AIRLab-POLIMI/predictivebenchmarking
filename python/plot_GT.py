@@ -3,7 +3,7 @@
 Legge i file XML ottenuto originariamente e plotta tutto
 '''
 from __future__ import division
-import sys
+import sys,argparse
 import math
 import glob
 import cv2
@@ -37,7 +37,7 @@ def setup_plot(x_span,y_span,xmin_gt,xmax_gt,ymin_gt,ymax_gt):
 	ax.set_ylim(ymin_gt-10,ymax_gt+10)
 	return fig,ax
 
-def plot_XML(xmlFile, outputFolder, removeAxes=True, plotGraph=False, saveResults=True):
+def plot_XML(xmlFile, outputFolder, plotAxes=False, plotGraph=False, saveResults=True):
 	# extract the xmlName
 	xmlName = xmlFile.split('/')[-1]
 	savename =join(outputFolder,xmlName.split('.')[0])+'.png'
@@ -185,7 +185,7 @@ def plot_XML(xmlFile, outputFolder, removeAxes=True, plotGraph=False, saveResult
 		linex = [x-dx/2,x+dx/2]
 		liney = [y-dy/2,y+dy/2]
 		ax.plot(linex,liney,'w-',linewidth=(int(round(line_width))))
-	if removeAxes:
+	if not plotAxes:
 		ax.axis('off')
 		ax.xaxis.set_major_locator(NullLocator())
 		ax.yaxis.set_major_locator(NullLocator())
@@ -194,7 +194,7 @@ def plot_XML(xmlFile, outputFolder, removeAxes=True, plotGraph=False, saveResult
 		fig.savefig(savename,bbox_inches='tight',pad_inches=0,dpi=100,interpolation='none')
 	else :
 		plt.show()
-
+	plt.close(fig)
 
 def fig2data (fig):
     """
@@ -225,14 +225,14 @@ def fig2img (fig):
     w, h, d = buf.shape
     return Image.frombytes("RGBA", ( w ,h ), buf.tostring( ))
 
-def all(xmlPath,outputFolder,removeAxes,plotGraph) :
+def all(xmlPath,outputFolder,plotAxes,plotGraph) :
 	# carico le label ordinate per label e pere numero (letters e numebers rispettivamente)
 	#(letters,numbers) = get_label_dict()
 	#----------CREO STANZE GROUND TRUTH ------------------
 	for xmlFile in glob.glob(join(xmlPath,'*.xml')):
 		# for diagnostic purposes, show which file is being processed at the moment
 		print xmlFile
-		plot_XML(xmlFile,outputFolder,removeAxes,plotGraph)
+		plot_XML(xmlFile,outputFolder,plotAxes,plotGraph)
 
 def one() :
 		# carico le label ordinate per label e pere numero (letters e numebers rispettivamente)
@@ -245,7 +245,13 @@ def one() :
 if __name__ == '__main__':
 	removeAxes = True if len(sys.argv)<4 else sys.argv[3]
 	plotGraph = False if len(sys.argv)<5 else sys.argv[4]
-	all(sys.argv[1],sys.argv[2],removeAxes,plotGraph)
+	parser = argparse.ArgumentParser(description='Plots the XML files contained in <xml_input_path> in <output_path>. This only works with M.Luperto file format; to plot XML files in MIT format, please refer to the plot_MIT.py script.')
+	parser.add_argument('xml_input_path',help='the folder containing the xml files to be plotted')
+	parser.add_argument('output_path', help='the folder in which the plotted maps are saved')
+	parser.add_argument('-a','--plot_axes',action='store_true',help='draws the axes on top of the map')
+	parser.add_argument('-g','--plot_graph',action='store_true',help='draws the topological graph (nodes are rooms, edges are connections between rooms)')
+	args = parser.parse_args()
+	all(args.xml_input_path,args.output_path,args.plot_axes,args.plot_graph)
 	#if len(sys.argv)==3:
 	#	all(sys.argv[1],sys.argv[2])
     #all(sys.argv[1],sys.argv[2]xmlPath,outputFolder)

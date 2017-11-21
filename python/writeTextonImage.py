@@ -1,7 +1,7 @@
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
-import sys
+import sys,argparse
 from os import listdir
 from os.path import join, isdir, exists
 
@@ -45,4 +45,7 @@ def writeText(path):
             pattern.save(path+'/errorMap.png')
 
 if __name__=='__main__':
-    writeText(sys.argv[1])
+    parser = argparse.ArgumentParser(description='This tool takes the last available map snapshot from the Maps folder within <individual_run_folder> and overlays it with the value of the mean translation error, as computed by the Freiburg Metric Evaluator on the randomly sampled relations. Under normal conditions, there is no need to manually execute this component, as it is automatically invoked by generateAll.py at the end of its computation. However, it can also be executed manually.')
+    parser.add_argument('individual_run_folder',help='the folder containing the data (Errors, Maps, ...) of a single run')
+    args = parser.parse_args()
+    writeText(args.individual_run_folder)

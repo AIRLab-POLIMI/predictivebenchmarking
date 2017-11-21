@@ -1,4 +1,4 @@
-import sys
+import sys,argparse
 import select
 import signal
 import time
@@ -157,4 +157,7 @@ if __name__ == '__main__':
     # retrieve current path
 	global project_path
 	project_path = dirname(getcwd())
-	exploreWorlds(sys.argv[1])
+	parser = argparse.ArgumentParser(description='Given a directory containing the .world and .png files of the datasets to explore and the necessary .inc files for Stage, it launches an automatic exploration process that performs multiple autonomous explorations for each dataset. By modifying the internal parameters of this file it is possible to set the number of runs to perform for each dataset (num_runs), the amount of time to wait between snapshots (seconds_mapsave), the overall maximum number of snapshots (maxmapsave) and the threshold for the image comparison algorithm below which the exploration process is halted.')
+	parser.add_argument('runs_datasets_folder',help='the folder that contains the .world and .png files of the datasets to explore and Stage .inc files')
+	args = parser.parse_args()
+	exploreWorlds(args.runs_datasets_folder)

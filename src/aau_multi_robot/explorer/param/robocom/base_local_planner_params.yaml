@@ -1,0 +1,54 @@
+controller_frequency: 5.0
+recovery_behavior_enabled: true
+clearing_rotation_allowed: false
+# recovery_behaviors: [{name: clear_inner_costmap, type: clear_inner_costmap/ClearInnerCostmap}]
+recovery_behaviors: [{name: aggressive_clearance, type: clear_costmap_recovery/ClearCostmapRecovery}]
+aggressive_clearance:
+    reset_distance: 0.0
+max_replanning_tries: 1
+planner_patience: 5.0
+planner_frequency: 0.5
+controller_patience: 5.0
+TrajectoryPlannerROS:
+    max_vel_x: 0.2
+    min_vel_x: 0.1 # set to negative with DWAPlannerROS to allow backward motion, doesn't work with TPR
+    # NOTE: min_vel_x MUST be positive (cannot be zero) to work with TPR, can be negative with DWA
+    # max_vel_y: 0.0 #P3AT is a differantial drive robot
+    # min_vel_y: 0.0 #P3AT is a differential drive robot
+    max_vel_theta: 0.2
+    min_vel_theta: -0.3
+    acc_lim_theta: 0.2
+    acc_lim_x: 0.1 #0.50
+    acc_lim_y: 0.1 #0.50
+    min_in_place_rotational_vel: 0.2 # in the documentation this is called min_in_place_vel_theta
+    escape_vel: -0.05 # maybe this should be disabled
+    escape_reset_dist: 0.25
+    escape_reset_theta: 0.25
+
+    holonomic_robot: false
+    yaw_goal_tolerance: 0.2
+    xy_goal_tolerance: 0.3 # 0.55
+    latch_xy_goal_tolerance: false # default
+    pdist_scale: 0.2 # 0.6 
+    gdist_scale: 0.8 # 0.8 
+    meter_scoring: true
+
+    occdist_scale: 0.05 # obstacle avoidance, default 0.01
+    oscillation_reset_dist: 0.25
+    oscillation_reset_timeout: 20.0
+    prune_plan: false
+
+    sim_time: 1.5 #1.8
+    sim_granularity: 0.025
+    vx_samples: 10
+    vtheta_samples: 20
+
+    dwa: true
+GlobalReplanner:
+    old_navfn_behavior: true
+    allow_unknown: true
+    track_unknown_space: true
+    #use_dijkstra: false
+    #use_quadratic: true
+    #use_grid_path: true
+    default_tolerance: 0.0

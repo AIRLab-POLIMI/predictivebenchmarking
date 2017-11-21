@@ -1,0 +1,10 @@
+<launch>
+        <!-- odometry node -->
+	<node respawn="true" pkg="robocom" type="odometry" name="odometry" output="screen">
+		<param name="period" value="0.01" />
+		<param name="subscriber" type="string" value="/vel" />
+		<param name="odometry_type" type="string" value="rungekutta4" /> <!-- possible types: eulero, rungekutta4 -->
+		<param name="header_frame_id" type="string" value="odom" />
+		<param name="child_frame_id" type="string" value="base_link" />
+	</node>
+</launch> 

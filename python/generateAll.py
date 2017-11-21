@@ -1,4 +1,4 @@
-import sys
+import sys,argparse
 import matplotlib as mpl
 mpl.use('Agg')
 import matplotlib.pyplot as plt
@@ -161,10 +161,13 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 		relationsfileOrdered=open(folder+"Relations/"+output+"Ordered.relations","w")
 		
 		groundSorted=sorted(ground)
-		firststamp=groundSorted[1]
+		idx = 1
+		idx_delta = 10
+		firststamp=groundSorted[idx]
 		secondstamp=0
-		while secondstamp < groundSorted[-1]:
-			secondstamp=round(firststamp+float(seconds),1)
+		#while secondstamp < groundSorted[-1]:
+		while idx+idx_delta < len(groundSorted):
+			secondstamp=groundSorted[idx+idx_delta]#round(firststamp+float(seconds),1)
 			if firststamp in ground.keys():
 				firstpos=ground[firststamp]
 				if secondstamp in ground.keys():
@@ -177,6 +180,7 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 
 					relationsfileOrdered.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 			firststamp=secondstamp
+			idx += idx_delta
 
 		relationsfileOrdered.close()
 
@@ -253,7 +257,11 @@ def plotGroundTruth(groundtruth):
 
 def savePlot(slam,gt,save):
 	plotSlam(slam)
+	savefig(save+"_slam.png")
+	plt.clf()
 	plotGroundTruth(gt)
+	savefig(save+"_gt.png")
+	plotSlam(slam)
 	savefig(save)
 
 def savePlot2(slam,gt,save):
@@ -310,5 +318,10 @@ def generateAll(folder, skipGroundTruthConversion=False, skipOrderedRecomputatio
 
 
 if __name__ == '__main__':
-
-	generateAll(sys.argv[1])
+	#skipGroundTruthConversion = (sys.argv[2]=="True")
+	parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter,description='Given the directory of an individual output run, this tool generates all the support files that are necessary for the RPPF to actually train the models and perform predictions. More specifically:\n\n\t1. If the second (optional) parameter is set to True, it converts the .bag ground truth trajectory data into a .log ground truth trajectory data. Otherwise, the .log file is assumed to be already present and the conversion is skipped;\n\t2. It creates a Relations folder and generates both the ordered and randomly sampled relations files;\n\t3. It invokes the Freiburg Metric Evaluator tool on the generated relations, storing the corresponding error files in an Error folder;\n\t4. It plots a trajectories.png file overlaying the ground truth trajectory (in green) with the estimated SLAM trajectory (in red);\n\t5. It uses the last available map snapshot and the freshly computed mean translation error from the randomly sampled relations to generate an overlayed errorMap.png file.\n\nUnder normal conditions, there is no need to manually execute this component, as it is automatically invoked by launch.py at the end of each exploration run. However, it can also be executed manually, for instance to compute the relations associated with existing real world datasets (e.g. the RAWSEEDS Bicocca indoor datasets).')
+	parser.add_argument('folder_of_individual_output_run',help='the folder that contains the output exploration data of an individual run')
+	parser.add_argument('-s','--skip_ground_truth_conversion',action='store_true',help='skips the conversion of the ground truth data from the bag file to the log file and forces the re-usage of the existing ground truth log file; if the ground truth log file does not exist, the program will crash')
+	args = parser.parse_args()
+	generateAll(args.folder_of_individual_output_run,args.skip_ground_truth_conversion)
+	#generateAll(sys.argv[1],skipGroundTruthConversion)

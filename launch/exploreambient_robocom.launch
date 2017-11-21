@@ -1,0 +1,80 @@
+<launch>
+
+	<!-- This file launches:
+	 	* Stage
+	 	* nav2d
+	 		-Operator
+	 		-Navigator
+	 		-GetMap
+	 		-Explore
+	 		-SetGoal
+	 		-joystick
+	 		-Remote
+	 		-exploration
+	 	* rosbag record to record the /base_pose_ground_truth topic in a bag file
+	 	* tf listener to write the gmapping tf
+	 	* gmapping
+	 	* RVIZ
+	 	params:
+	 		-worldfile: the world file for stage
+	 		-bag: the name of the bag file to write the ground truth from stage
+	 		-output: the name of the file to write the gmapping log
+	 	 -->
+
+	<!-- Some general parameters -->
+	<param name="use_sim_time" value="false" />
+
+	<!-- Write log odom gmapping for metricevaluator -->
+	<node name="listener" pkg="tf_listener" type="tf_listener.py" args="$(arg outputfile)" />
+
+
+	<!-- RVIZ to view the visualization -->
+	<node name="RVIZ" pkg="rviz" type="rviz" args=" -d /home/valerio/slampbenchmarking/launch/custom.rviz" />
+
+	<!-- Start exploration of ambient -->
+
+	<!-- Start Mapper to generate map from laser scans -->
+	<node name="Mapper" pkg="gmapping" type="slam_gmapping" args="_xmin:=-20 _ymin:=-20 _ymax:=20
+     _xmax:=20 _ogain:=3.0 _minimumScore:=0 _angularUpdate:=0.25 _linearUpdate:=1.0
+     _map_update_interval:=5.0 _temporal_update:=5.0 _odom_frame:=odom _base_frame:=laser_base _particles:=40 scan:=scan
+     _srr:=0.01 _srt:=0.02 _str:=0.01 _stt:=0.02 _delta:=0.05 _maxUrange:=30 _maxRange:=60" />
+	<arg name="robot_name" default="robocom" />
+    <arg name="robot_prefix" default=""/>
+    <arg name="log_path" />
+    <arg name="output" default="screen"/>
+    <arg name="frontier_selection" default="5"/>
+
+	<node pkg="move_base" type="move_base" respawn="true" name="move_base" output="log" clear_params="true">
+<rosparam file="$(find explorer)/param/robocom/robocom_costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find explorer)/param/robocom/robocom_costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find explorer)/param/robocom/robocom_local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find explorer)/param/robocom/robocom_global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find explorer)/param/robocom/base_local_planner_params.yaml" command="load" />
+    <param name="base_global_planner" value="global_replanner/GlobalReplanner"/>
+    <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
+	</node>
+
+
+    <!-- SIMULATION -->
+    <node pkg="explorer" type="explorer" name="explorer" output="$(arg output)" respawn="true" clear_params="true">
+
+	<!-- simulation parameters -->
+        <param name="log_path" value="$(arg log_path)" />
+	<param name="robot_name" value="$(arg robot_name)" />
+
+	<!-- move_base -->
+	<param name="base_link" value="/base_link" />
+	<param name="move_base_frame" value="/map" />
+
+
+	<!-- exploration parameters -->
+	<param name="frontier_selection" value="$(arg frontier_selection)" />
+	<rosparam file="$(find explorer)/param/robocom/robocom_costmap_common_params.yaml" command="load" ns="global_costmap" />
+	<rosparam file="$(find explorer)/param/robocom/robocom_costmap_common_params.yaml" command="load" ns="local_costmap" />
+	<rosparam file="$(find explorer)/param/robocom/robocom_local_costmap_params.yaml" command="load" />
+	<rosparam file="$(find explorer)/param/robocom/robocom_global_costmap_params.yaml" command="load" />
+
+    	<remap from="/$(arg robot_name)/$(arg robot_name)/map" to="/$(arg robot_name)/map" />
+    </node>
+
+</launch>

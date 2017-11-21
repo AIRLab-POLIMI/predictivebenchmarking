@@ -1,7 +1,7 @@
 ''' Filters the redundant data within each run when the robot is stuck somewhere "thinking" where to go,
 or where the exploration has actually ended, to avoid misleading error values. '''
 
-import sys
+import sys,argparse
 import shutil
 from os import listdir
 from os.path import basename,join, exists, isfile, isdir, dirname
@@ -30,4 +30,7 @@ def adjustMetric(runsPath):
 					outLog.close()
 
 if __name__=='__main__':
-	adjustMetric(sys.argv[1])
+	parser = argparse.ArgumentParser(description='This tool removes the last line of the SLAM output log file from each run in <runs_outputs_folder>, in order to avoid parsing errors due to untimely termination of the exploration process.')
+	parser.add_argument('runs_output_folder',help='the path where the runs of each dataset are located')
+	args = parser.parse_args()
+	adjustMetric(args.runs_output_folder)

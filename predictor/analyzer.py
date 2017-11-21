@@ -1,4 +1,4 @@
-import sys
+import sys,argparse
 import cv2
 from PIL import Image,ImageDraw,ImageFont
 from os import listdir
@@ -23,6 +23,7 @@ from sklearn.feature_selection import SelectKBest, f_regression, mutual_info_reg
 from shapely.geometry import Polygon, Point
 from skimage.morphology import skeletonize
 from skimage import img_as_ubyte
+from copy import deepcopy
 
 ''' Dataset Analyzer 
 This script essentially performs the following operations:
@@ -202,17 +203,20 @@ def getAttrStats():
 
 def getPredictors():
 	predictors = dict()
+	#predictors["totalTime"] = (lambda dataset: (dataset.perfStats.totalTime.mean))
+	#predictors["totalLength"] = (lambda dataset : (dataset.perfStats.totalLength.mean))
+	'''
 	predictors["area"] = (lambda dataset: (dataset.geometry.shape.area))
 	predictors["perimeter"] = (lambda dataset: (dataset.geometry.shape.perimeter))
 	predictors["wallRatio"] = (lambda dataset: (dataset.geometry.shape.wallRatio))
 	predictors["numRooms"] = (lambda dataset: (len(dataset.geometry.rooms)))
-	#predictors["totalTime"] = (lambda dataset: (dataset.perfStats.totalTime.mean))
-	#predictors["totalLength"] = (lambda dataset : (dataset.perfStats.totalLength.mean))
 	predictors["avgRoomArea"] = (lambda dataset: np.array([r.shape.area for r in dataset.geometry.rooms]).mean()**2)
 	predictors["avgRoomPerimeter"] = (lambda dataset: np.array([r.shape.perimeter for r in dataset.geometry.rooms]).mean()**2)
 	predictors["avgRoomWallRatio"] = (lambda dataset: np.array([r.shape.wallRatio for r in dataset.geometry.rooms]).mean()**2)
 	predictors["roomPerimeter"] = 	(lambda dataset: np.array([r.shape.perimeter for r in dataset.geometry.rooms]).sum())
+	'''
 	predictors["voronoi_traversal_distance"] = (lambda dataset: (dataset.voronoiDistance))
+	'''
 	predictors["voronoi_nodes"] = (lambda dataset: dataset.voronoiStats.nodes)
 	predictors["voronoi_edges"] = (lambda dataset: dataset.voronoiStats.edges)
 	predictors["voronoi_avg_shortest_path_length"] = (lambda dataset : dataset.voronoiStats.avg_shortest_path_length)
@@ -244,7 +248,7 @@ def getPredictors():
 	predictors["topology_std_eigenvector_centrality"] = (lambda dataset: dataset.topologyStats.eigenvector_centrality.std())
 	predictors["topology_std_katz_centrality"] = (lambda dataset: dataset.topologyStats.katz_centrality.std())
 	predictors["topology_std_closeness_centrality"] = (lambda dataset: dataset.topologyStats.closeness_centrality.std())
-	predictors["entropy"] = (lambda dataset: dataset.entropy)
+	predictors["entropy"] = (lambda dataset: dataset.entropy)'''
 	return predictors
 
 def getDummyLambdaStats():
@@ -349,7 +353,7 @@ def fitLinearModel(xs,ys,xLabel,yLabel,corrStats,plotFolder,name,numFolds,allxs,
 	orig_ys = ys
 	xs = np.array(xs).reshape(nsamples,1)
 	ys = np.array(ys).reshape(nsamples,1)
-	model = lm.fit(xs,ys)
+	model = deepcopy(lm.fit(xs,ys))
 	strategy = KFold(n_splits=numFolds,shuffle=True)
 	rsquared = lm.score(xs,ys)
 	mses = np.sqrt(np.abs(cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
@@ -456,7 +460,7 @@ def plotIterator(datasets,layoutFolder,plotFolder,corrStats,predictedStats,predi
 						bestRMSE = avg_rmse
 					#yp = model.predict(xs)
 					#print "Model RMSE: "+str(np.sqrt(mean_squared_error(ys,yp)))
-				models[eName+"."+aName+"."+sName] = (model, avg_rmse)
+				models[eName+"."+aName+"."+sName] = (bestModel, bestRMSE)
 	return models
 
 
@@ -566,7 +570,7 @@ def retrieveNearbyPixels(image, currentPixel, previousPixel, laserLength):
 	angles = [a if a > 0 else a+2*np.pi for a in angles]
 	lgt = len(distances)
 	# Return only those pixels that are within the laser range and field of view
-	indices = [i for i in range(0, lgt) if distances[i] < laserLength and (np.pi - math.fabs(math.fabs(ref_angle - angles[i]) - np.pi))<3.0/4.0*np.pi]
+	indices = [i for i in range(0, lgt) if distances[i] < laserLength and (np.pi - math.fabs(math.fabs(ref_angle - angles[i]) - np.pi))<3.0/4.0*np.pi] 
 	return black_pixels[indices]
 
 ''' Retrieves all pixels that are visible from the current robot location and orientation.
@@ -884,6 +888,7 @@ def predictDatasets(predictFolder, models):
 		if isfile(join(predictFolder,f)) and f[-5:]=="world":
 			datasetName = f[:-6]
 			voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiStats = processVoronoiGraph(datasetName, join(predictFolder, "voronoi"), join(predictFolder, datasetName)+".world", join(predictFolder, datasetName)+".png")
+			print datasetName
 			print voronoiDistance
 			print models["transError.mean.mean"][0].predict(voronoiDistance)
 
@@ -962,5 +967,13 @@ def createLineIterator(P1, P2, img):
 
 if __name__ == '__main__':
 	#buildcsv(sys.argv[1])
-	models = analyzeDatasets(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5])
-	predictDatasets(sys.argv[6], models)
+    parser = argparse.ArgumentParser(description='This is the main tool of the RPPF. Its task is to analyze the error data of the different runs of the training datasets, correlate it with properties extracted from such datasets, build a prediction model and use it to predict the error data of the desired test datasets. Please refer to the wiki for extended documentation.')
+    parser.add_argument('runs_folder',help='the folder in which all the training datasets and their respective runs are stored')
+    parser.add_argument('layouts_folder',help='the folder in which the layout information of each training dataset, as extracted by the Layout Extractor, is stored')
+    parser.add_argument('voronoi_folder',help='the folder in which the data related to the voronoi graph of each training dataset, as extracted by the Voronoi Extractor, is stored')
+    parser.add_argument('world_folder',help='the folder in which the Stage data of each training dataset, as used to perform the Stage simulations, is stored')
+    parser.add_argument('plot_folder',help='he output folder in which the tool stores the results of the correlation analyses performed on the training dataset')
+    parser.add_argument('datasets_to_predict_folder',help='the folder in which all the data related to the datasets of the test set for which the tool must perform predictions is stored')
+    args = parser.parse_args()
+    models = analyzeDatasets(args.runs_folder,args.layouts_folder,args.voronoi_folder,args.world_folder,args.plot_folder)
+    predictDatasets(args.datasets_to_predict_folder, models)

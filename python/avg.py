@@ -1,4 +1,4 @@
-import sys
+import sys,argparse
 import numpy as np
 
 def avgDatasets(filerrors):
@@ -86,4 +86,7 @@ def avgDatasets(filerrors):
     file.close()
 
 if __name__=='__main__':
-    avgDatasets(sys.argv[1])
+    parser = argparse.ArgumentParser(description='This tool aggregates the performance data of the individual runs for each of the datasets contained in the <errors.csv> (produced by writecsv.py) and writes a corresponding <avg.csv> file.')
+    parser.add_argument('errorFile',help='the csv error summary file produced by writecsv.py')
+    args = parser.parse_args()
+    avgDatasets(args.errorFile)
