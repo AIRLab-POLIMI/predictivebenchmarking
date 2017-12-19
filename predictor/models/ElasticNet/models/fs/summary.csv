@@ -1,0 +1,13 @@
+predictedFeature, predictor, avg 5-fold RMSE, avg 5-fold r^2 
+rotError.mean.mean,voronoi_traversal_distance;roomPerimeter;avgRoomArea;voronoi_traversal_rotation,0.00233798238221,0.0676310136421
+rotError.mean.std,avgRoomArea;voronoi_traversal_rotation,0.00127425605239,-0.067438609777
+rotError.numSamples.mean,voronoi_traversal_distance;voronoi_nodes;roomPerimeter;numRooms;voronoi_edges;avgRoomWallRatio;avgRoomArea,1379.15601353,0.306300493594
+rotError.numSamples.std,voronoi_traversal_distance;voronoi_numTerminalPoints;voronoi_nodes;topology_edges;topology_numBifurcationPoints;numRooms;avgRoomPerimeter;voronoi_edges;topology_nodes;avgRoomArea,3292.20924546,-0.52212437327
+rotError.std.mean,roomPerimeter;voronoi_edges;avgRoomArea;voronoi_traversal_rotation,0.00319265569796,0.103569432817
+rotError.std.std,voronoi_traversal_distance,0.00419561981107,-0.097741958297
+transError.mean.mean,voronoi_traversal_distance;roomPerimeter;avgRoomArea,0.0670580018447,0.688187803497
+transError.mean.std,voronoi_traversal_distance,0.0195744381816,0.456503218344
+transError.numSamples.mean,voronoi_traversal_distance;voronoi_nodes;roomPerimeter;numRooms;voronoi_edges;avgRoomWallRatio;avgRoomArea,1568.40201574,0.534963848266
+transError.numSamples.std,voronoi_traversal_distance;voronoi_numTerminalPoints;voronoi_nodes;topology_edges;topology_numBifurcationPoints;numRooms;avgRoomPerimeter;voronoi_edges;topology_nodes;avgRoomArea,2566.98827582,-1.24325814034
+transError.std.mean,voronoi_traversal_distance;avgRoomArea,0.0831870035761,0.670742379966
+transError.std.std,voronoi_traversal_distance;avgRoomArea,0.0636068035166,0.402602860543

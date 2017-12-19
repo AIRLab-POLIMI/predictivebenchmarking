@@ -11,7 +11,7 @@ define pioneer3at position
 
 	# alternative odometric localization with simple error model
 	localization "odom"                 # Change to "gps" to have impossibly perfect, global odometry
-	odom_error [ 0.01 0.01 0.02 0 ]      # Odometry error or slip in X, Y and Theta (Uniform random distribution)
+	odom_error [ 0.01 0.01 0 0.02]      # Odometry error or slip in X, Y and Theta (Uniform random distribution)
 	#localization "gps"
 
 	# four DOF kinematics limits

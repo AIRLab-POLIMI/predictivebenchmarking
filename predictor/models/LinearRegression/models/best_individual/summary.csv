@@ -1,0 +1,13 @@
+predictedFeature, predictor, avg 5-fold RMSE, avg 5-fold r^2 
+rotError.mean.mean,voronoi_nodes,0.00214247747512,2
+rotError.mean.std,voronoi_std_katz_centrality,0.00124794875365,2
+rotError.numSamples.mean,voronoi_traversal_distance,1284.05197072,2
+rotError.numSamples.std,voronoi_traversal_distance,2764.76853031,2
+rotError.std.mean,voronoi_edges,0.00276166634374,2
+rotError.std.std,voronoi_std_katz_centrality,0.00383948749446,2
+transError.mean.mean,voronoi_traversal_distance,0.0702060599242,2
+transError.mean.std,voronoi_traversal_distance,0.0196227263736,2
+transError.numSamples.mean,voronoi_traversal_distance,1292.84705749,2
+transError.numSamples.std,voronoi_traversal_distance,2607.92878576,2
+transError.std.mean,voronoi_traversal_distance,0.0804645740306,2
+transError.std.std,voronoi_traversal_distance,0.0620674739623,2

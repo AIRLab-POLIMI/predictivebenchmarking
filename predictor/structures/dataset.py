@@ -22,6 +22,7 @@ class Dataset():
 		self._voronoiCenter = None
 		self._voronoiDistance = 0
 		self._voronoiTopVisits = 0
+		self._voronoiRotation = 0
 		self._entropy = 0
 
 	@property
@@ -94,12 +95,12 @@ class Dataset():
 		self._voronoiCenter = value
 		
 	@property
-	def voronoiTime(self):
-		return self._voronoiTime
+	def voronoiDistance(self):
+		return self._voronoiDistance
 
-	@voronoiTime.setter
-	def voronoiTime(self, value):
-		self._voronoiTime = value
+	@voronoiDistance.setter
+	def voronoiDistance(self, value):
+		self._voronoiDistance = value
 
 	@property
 	def voronoiTopVisits(self):
@@ -108,6 +109,14 @@ class Dataset():
 	@voronoiTopVisits.setter
 	def voronoiTopVisits(self, value):
 		self._voronoiTopVisits = value
+
+	@property
+	def voronoiRotation(self):
+		return self._voronoiRotation
+
+	@voronoiRotation.setter
+	def voronoiRotation(self, value):
+		self._voronoiRotation = value
 
 	@property
 	def entropy(self):

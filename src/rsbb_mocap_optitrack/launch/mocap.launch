@@ -1,0 +1,22 @@
+<launch>
+	
+	<!-- TODO include map, and optitrack or vicon launchfiles -->
+	<arg name="mocap_config_file" default="$(find rsbb_mocap_optitrack)/config/mocap_optitrack.yaml" />
+
+	<node pkg="rsbb_mocap_optitrack"
+			type="mocap_node"
+			name="mocap_node"
+			output="screen"
+			respawn="false"
+			launch-prefix=""
+			required="true">
+		<rosparam file="$(arg mocap_config_file)" command="load" />
+	</node>
+  
+	<node name="marker_odom"
+		pkg="tf"
+		type="static_transform_publisher"
+		args="-0.19 -0.06 0 0 0 0 /base_link /robot_markerset 100"
+	/>
+	
+</launch>

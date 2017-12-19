@@ -1,7 +1,7 @@
 import sys,argparse
 import cv2
 from PIL import Image,ImageDraw,ImageFont
-from os import listdir
+from os import listdir,makedirs
 from os.path import join,exists, isdir,isfile
 from structures.run import Run
 from structures.dataset import Dataset
@@ -13,17 +13,19 @@ import matplotlib.pyplot as plt
 import math
 import networkx as nx
 import datetime as dt
+from sklearn.externals import joblib
 from scipy.stats import pearsonr
 from sklearn import linear_model, svm
-from sklearn.model_selection import KFold, cross_val_score
+from sklearn.model_selection import KFold, RepeatedKFold, RepeatedStratifiedKFold, cross_val_score
 from sklearn.metrics import mean_squared_error
 from sklearn.decomposition import PCA
 from sklearn import preprocessing, feature_selection
-from sklearn.feature_selection import SelectKBest, f_regression, mutual_info_regression
+from sklearn.feature_selection import SelectKBest, f_regression, mutual_info_regression, RFECV, RFE
 from shapely.geometry import Polygon, Point
 from skimage.morphology import skeletonize
 from skimage import img_as_ubyte
 from copy import deepcopy
+from itertools import product
 
 ''' Dataset Analyzer 
 This script essentially performs the following operations:
@@ -205,7 +207,6 @@ def getPredictors():
 	predictors = dict()
 	#predictors["totalTime"] = (lambda dataset: (dataset.perfStats.totalTime.mean))
 	#predictors["totalLength"] = (lambda dataset : (dataset.perfStats.totalLength.mean))
-	'''
 	predictors["area"] = (lambda dataset: (dataset.geometry.shape.area))
 	predictors["perimeter"] = (lambda dataset: (dataset.geometry.shape.perimeter))
 	predictors["wallRatio"] = (lambda dataset: (dataset.geometry.shape.wallRatio))
@@ -214,9 +215,8 @@ def getPredictors():
 	predictors["avgRoomPerimeter"] = (lambda dataset: np.array([r.shape.perimeter for r in dataset.geometry.rooms]).mean()**2)
 	predictors["avgRoomWallRatio"] = (lambda dataset: np.array([r.shape.wallRatio for r in dataset.geometry.rooms]).mean()**2)
 	predictors["roomPerimeter"] = 	(lambda dataset: np.array([r.shape.perimeter for r in dataset.geometry.rooms]).sum())
-	'''
 	predictors["voronoi_traversal_distance"] = (lambda dataset: (dataset.voronoiDistance))
-	'''
+	predictors["voronoi_traversal_rotation"] = (lambda dataset: (dataset.voronoiRotation))
 	predictors["voronoi_nodes"] = (lambda dataset: dataset.voronoiStats.nodes)
 	predictors["voronoi_edges"] = (lambda dataset: dataset.voronoiStats.edges)
 	predictors["voronoi_avg_shortest_path_length"] = (lambda dataset : dataset.voronoiStats.avg_shortest_path_length)
@@ -248,7 +248,7 @@ def getPredictors():
 	predictors["topology_std_eigenvector_centrality"] = (lambda dataset: dataset.topologyStats.eigenvector_centrality.std())
 	predictors["topology_std_katz_centrality"] = (lambda dataset: dataset.topologyStats.katz_centrality.std())
 	predictors["topology_std_closeness_centrality"] = (lambda dataset: dataset.topologyStats.closeness_centrality.std())
-	predictors["entropy"] = (lambda dataset: dataset.entropy)'''
+	predictors["entropy"] = (lambda dataset: dataset.entropy)
 	return predictors
 
 def getDummyLambdaStats():
@@ -391,6 +391,19 @@ def fitLinearModel(xs,ys,xLabel,yLabel,corrStats,plotFolder,name,numFolds,allxs,
 	plt.close(fig)
 	return model, mses.mean()
 
+def fitModel(lm,xs,ys,numFolds):
+	nsamples = len(xs)
+	orig_xs = xs
+	orig_ys = ys
+	xs = np.array(xs).reshape(nsamples,1)
+	ys = np.array(ys).reshape(nsamples,1)
+	model = deepcopy(lm.fit(xs,ys))
+	strategy = KFold(n_splits=numFolds,shuffle=True)
+	rsquared = lm.score(xs,ys)
+	mses = np.sqrt(np.abs(cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
+	rsquareds = cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='r2')
+	return model, mses.mean(), rsquareds.mean()
+
 def buildcsv(correlationFileName, xLabel, yLabel, xs, ys, mses, rsquareds):
 	csv=open(correlationFileName, 'w')
 	csv.write(xLabel+','+yLabel+'\n')
@@ -409,6 +422,180 @@ def buildcsv(correlationFileName, xLabel, yLabel, xs, ys, mses, rsquareds):
 	csv.write(str(rsquareds[r])+'\n')
 	csv.write('Average '+str(len(rsquareds))+'-Fold rsquared:,'+str(rsquareds.mean())+'\n')
 	csv.close()
+
+def selectModelClass(modelClass):
+	if modelClass=='LinearRegression':
+		lm = linear_model.LinearRegression()
+	elif modelClass=='ElasticNet':
+		lm = linear_model.ElasticNet()
+	return lm
+
+def loadFeaturesFromFile(featureString):
+	predictors = getPredictors()
+	usedPredictors = {}
+	featureFile = open(featureString,'r')
+	for l in featureFile.readlines():
+		line = l.strip()
+		tokens = line.split('=')
+		if tokens[0] in predictors and tokens[1]=='True':
+			usedPredictors[tokens[0]] = predictors[tokens[0]]
+	return usedPredictors
+
+def selectFeaturesToUse(featureString):
+	# fetch all possible predictors
+	allPredictors = getPredictors()
+	usedPredictors = {}
+	if featureString=='overrideAll':
+		# we have to load all possible features
+		usedPredictors = allPredictors
+	elif featureString in allPredictors:
+		# select a single feature from the dictionary
+		usedPredictors[featureString] = allPredictors[featureString]
+	else:
+		# try to interpret the feature string as a configuration file
+		try:
+			usedPredictors = loadFeaturesFromFile(featureString)
+		except IOError:
+			print "The feature string you specified is neither an override option, nor a valid string, nor a configuration file. Exiting."
+			exit()
+	return usedPredictors
+	# in the end, we have to build a dictionary of features 
+
+def rmse_cv(model,xs,ys,kf):
+    rmse= np.sqrt(-cross_val_score(model, xs, ys, scoring="neg_mean_squared_error", cv = kf))
+    return(rmse)
+
+def ElasticNetTraining(xs, ys, featuresArray, numFolds, fsFolder, predictedFeature):
+	#kf = KFold(n_splits=numFolds, shuffle=True)
+	kf = RepeatedKFold(n_splits=numFolds, n_repeats=10)
+	l1_ratios = [.1, .5, .7, .9, .95, .99, 1]
+	alphas = [0.0001, 0.0003, 0.0005, 0.001, 0.01, 0.03, 0.05, 0.1, 0.3, 0.5, 1, 3, 5, 10, 30, 50, 100]
+	# First we identify the best l1 ratio and alpha with cross validation (hyperparameters tuning)
+	cv_elastic = [rmse_cv(linear_model.ElasticNet(alpha = alpha, l1_ratio=l1_ratio),xs,ys,kf).mean() 
+            for (alpha, l1_ratio) in product(alphas, l1_ratios)]
+	idx = list(product(alphas, l1_ratios))
+	best_idx = np.argmin(cv_elastic)
+	best_pair = idx[best_idx]
+	best_alpha = best_pair[0]
+	best_l1_ratio = best_pair[1]
+	#estimator = linear_model.ElasticNetCV(l1_ratio=l1_ratios,alphas=alphas,cv=kf)
+	#estimator.fit(xs,ys)
+	print predictedFeature
+	print "Best l1 ratio found is " + str(best_l1_ratio)
+	print "Best alpha found is " + str(best_alpha)
+	# Then we fit the estimator with the hyperparameters identified by cross validation
+	estimator = linear_model.ElasticNet(l1_ratio=best_l1_ratio,alpha=best_alpha)
+	model = deepcopy(estimator.fit(xs,ys))
+	usedFeaturesIdx = [idx for idx,value in enumerate(estimator.coef_) if value > 0]
+	usedFeatures = [feature for idx,feature in enumerate(featuresArray) if idx in usedFeaturesIdx]
+	# Finally, we validate keeping l1_ratio and alpha fixed (model validation)
+	strategy = KFold(n_splits=numFolds,shuffle=True)
+	mses = np.sqrt(np.abs(cross_val_score(estimator, xs, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
+	rsquareds = cross_val_score(estimator, xs, ys, cv=strategy, n_jobs = -1, scoring='r2')
+	return model, usedFeatures, mses.mean(), rsquareds.mean()	
+
+def KBestFeatureSelection(xs, ys, featuresArray, numFolds, n_features):
+	estimator = LinearRegression()
+	n_repeats = 100
+	# in order to properly perform feature selection, we must perform cross validation as the outer loop 
+	selected_features_per_fold = np.empty([n_repeats*numFolds,len(featuresArray)])
+	kf = KFold(n_splits=numFolds, shuffle=True)
+	i = 0
+	for r in range(0,n_repeats):
+		for train, test in kf.split(xs):
+			x_train = xs[train]
+			y_train = ys[train]
+			x_test = xs[test]
+			y_test = ys[test]
+			# perform feature selection
+			fs = SelectKBest(f_regression, k=n_features).fit(x_train, y_train)
+			# take note of which features have been selected
+			support = [1 if v else 0 for v in fs.get_support()]
+			np.copyto(selected_features_per_fold[i], support)
+			i+=1
+	# now, we have to get the most voted k features
+	selected_features_total = np.sum(selected_features_per_fold,axis=0)
+	usedFeaturesIdx = np.argpartition(selected_features_total, -n_features)[-n_features:]
+	usedFeatures = [feature for idx,feature in enumerate(featuresArray) if idx in usedFeaturesIdx]
+	# now we can train the final model and get a cv estimate of its performance
+	xr = xs[:,usedFeaturesIdx]
+	model = deepcopy(estimator.fit(xr,ys))
+	# validate
+	strategy = KFold(n_splits=numFolds,shuffle=True)
+	mses = np.sqrt(np.abs(cross_val_score(estimator, xr, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
+	rsquareds = cross_val_score(estimator, xr, ys, cv=strategy, n_jobs = -1, scoring='r2')
+	return model, usedFeatures, mses.mean(), rsquareds.mean()
+
+def ParametrizedKBestFeatureSelection(xs, ys, featuresArray, numFolds, fsFolder, predictedFeature):
+	# I want to explore how the cross-validated RMSE varies when increasing the number of top k features
+	n_features = len(featuresArray)
+	models = []
+	xp = np.arange(start=1,stop=n_features+1,step=1)
+	yp = np.empty(n_features)
+	for k in xp:
+		model, usedFeatures, rmse, r2 = KBestFeatureSelection(xs, ys, featuresArray, numFolds, k)
+		models.append((model, usedFeatures, rmse, r2))
+		yp[k-1] = rmse
+	fig = plt.figure()
+	plt.xlabel("Number of features, in order of decreasing relevance")
+	plt.ylabel("RMSE")
+	plt.plot(xp,yp, 'b-')
+	fig.savefig(join(fsFolder,predictedFeature,"krmse.png"))
+	plt.close(fig)
+	saveCVKFoldFile(join(fsFolder,predictedFeature),models, numFolds)
+	return getBestIndividualModel(models)
+
+def saveCVKFoldFile(path, models, numFolds):
+	summaryFile = open(join(path, "summary.csv"), "w")
+	summaryFile.write("n. features, avg "+str(numFolds)+"-fold RMSE, avg "+str(numFolds)+"-fold r^2, usedFeatures \n")
+	models.sort(key=lambda x:x[2], reverse=False)
+	for (model,usedFeatures,rmse,r2) in models:
+		summaryFile.write(str(len(usedFeatures))+','+str(rmse)+','+str(r2)+','+'-'.join(usedFeatures)+'\n')
+	summaryFile.close()
+
+def performFeatureSelection(datasets,layoutFolder,fsFolder,predictedStats,predictedStatsAttrs,numFolds,predictors,function):
+	attrStats = getAttrStats()
+	# error stats
+	models = {}
+	nsamples = len(datasets)
+	featuresArray = list(predictors.keys())
+	xs = np.empty([nsamples,len(featuresArray)])
+	ys = np.empty([nsamples,1])
+	for eName, eLambda in predictedStats.iteritems():
+		for aName, aLambda in predictedStatsAttrs.iteritems():
+			for sName, sLambda in attrStats.iteritems():
+				bestModel = None
+				bestRMSE = float('inf')
+				for i in range(0,nsamples):
+					d = datasets[i]			
+					ys[i][0] = sLambda(aLambda(eLambda(d)))
+					for k in range(0,len(featuresArray)):
+						pName = featuresArray[k]
+						pLambda = predictors[featuresArray[k]]
+						xs[i][k] = pLambda(d)
+				predictedFeature = eName+"."+aName+"."+sName
+				model, selectedFeatures, mse, r2 = function([xs, ys, featuresArray, numFolds, fsFolder, predictedFeature])
+				#model, selectedFeatures, mse, r2 = ParametrizedKBestFeatureSelection(estimator, xs, ys, featuresArray, numFolds, fsFolder, predictedFeature)
+				models[predictedFeature] = (model, selectedFeatures, mse, r2)
+	return models	
+
+def performIndividualFeatureTraining(datasets,layoutFolder,predictedStats,predictedStatsAttrs,numFolds,estimator,predictors):
+	attrStats = getAttrStats()
+	# error stats
+	models = {}
+	for eName, eLambda in predictedStats.iteritems():
+		for aName, aLambda in predictedStatsAttrs.iteritems():
+			for sName, sLambda in attrStats.iteritems():
+				models[eName+"."+aName+"."+sName] = []
+				for pName, pLambda in predictors.iteritems():
+					xs,ys = [], []
+					for d in datasets:			
+						if isdir(join(layoutFolder, d.name)):
+							xs.append(pLambda(d))
+							ys.append(sLambda(aLambda(eLambda(d))))
+					model, rmse, r2 = fitModel(estimator,xs,ys,numFolds)
+					models[eName+"."+aName+"."+sName].append((model, pName, rmse, r2))
+	return models
 
 def plotIterator(datasets,layoutFolder,plotFolder,corrStats,predictedStats,predictedStatsAttrs,numFolds,meanPerfStats):
 	attrStats = getAttrStats()
@@ -553,24 +740,27 @@ satisfy the constraints on the laser sensor field of view; for each of the ident
 whether there are no other black pixels (obstacles) on the line joining it with the current
 node on the shortest path, and if so it gets marked as 'seen' (i.e. colored white on the image).'''
 
+''' Correction for negative angles '''
+def correct_angle(angle):
+	if angle < 0:
+		angle += 2*np.pi
+	return angle
+
 ''' Retrieves all pixels that are within a certain range from the current pixel and that
 are within the simulated field of view of the laser scanner. '''
 def retrieveNearbyPixels(image, currentPixel, previousPixel, laserLength):
 	# Retrieve all black pixels (black = occupied)
 	black_pixels = np.argwhere(image == 0)
 	# Compute the orientation of the robot
-	ref_angle = math.atan2(currentPixel[0]-previousPixel[0], currentPixel[1]-previousPixel[1])
-	# Correct for negative angles
-	if ref_angle < 0:
-		ref_angle += 2*np.pi
+	ref_angle = correct_angle(math.atan2(currentPixel[0]-previousPixel[0], currentPixel[1]-previousPixel[1]))
 	# Compute the distance between the current pixel and every other black pixel
 	distances = np.sqrt((black_pixels[:,0] - currentPixel[0]) ** 2 + (black_pixels[:,1] - currentPixel[1]) ** 2)
 	# Compute the relative orientation 
 	angles = np.arctan2(black_pixels[:,0] - currentPixel[0], black_pixels[:,1]-currentPixel[1])
-	angles = [a if a > 0 else a+2*np.pi for a in angles]
+	angles = [correct_angle(a) for a in angles]
 	lgt = len(distances)
 	# Return only those pixels that are within the laser range and field of view
-	indices = [i for i in range(0, lgt) if distances[i] < laserLength and (np.pi - math.fabs(math.fabs(ref_angle - angles[i]) - np.pi))<3.0/4.0*np.pi] 
+	indices = [i for i in range(0, lgt) if distances[i] < laserLength and (np.pi - math.fabs(math.fabs(ref_angle - angles[i]) - np.pi))<=3.0/4.0*np.pi] 
 	return black_pixels[indices]
 
 ''' Retrieves all pixels that are visible from the current robot location and orientation.
@@ -644,9 +834,10 @@ def exploreVoronoiGraph(VG, image, gtImage, start, voronoiNodesMap, voronoiNodes
 	height, width = image.shape
 	totalNodes = len(VG.nodes())
 	currentPixel = start
-	numVisitedNodes, numSeenNodes, totalDistance = 0, 0, 0
+	previousPixel = (currentPixel[0]+1,currentPixel[1])
+	numVisitedNodes, numSeenNodes, totalDistance, totalAngle = 0, 0, 0, 0
 	# line-of-sight: identify and mark as 'seen' the pixels that are visible from the current location
-	visibleNodes, nseen = lineOfSight(VG, image, gtImage, totalNodes, currentPixel, (currentPixel[0]+1,currentPixel[1]), voronoiNodesMap, voronoiNodesReverseMap, laserLength)
+	visibleNodes, nseen = lineOfSight(VG, image, gtImage, totalNodes, currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength)
 	numSeenNodes += nseen
 	# we proceed until we've seen every single node of the graph 
 	while numSeenNodes < totalNodes:
@@ -658,10 +849,13 @@ def exploreVoronoiGraph(VG, image, gtImage, start, voronoiNodesMap, voronoiNodes
 		shortest_path = nx.shortest_path(VG, currentNode, nearestNode)
 		for n in shortest_path:
 			# each node of the path gets visited and its neighboring nodes in line-of-sight are marked as 'seen'
+			newPixel = (height-voronoiNodesReverseMap[n][0],voronoiNodesReverseMap[n][1])
+			newNode = n 
+			totalAngle += node_angle(previousPixel, currentPixel, newPixel)
 			previousPixel = currentPixel
 			previousNode = currentNode
-			currentPixel = (height-voronoiNodesReverseMap[n][0],voronoiNodesReverseMap[n][1])
-			currentNode = n
+			currentPixel = newPixel
+			currentNode = newNode
 			visibleNodes, nseen = lineOfSight(VG, image, gtImage, totalNodes,currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength)
 			# add to the number of seen nodes the new ones we have actually seen in line of sight
 			numSeenNodes += nseen
@@ -671,7 +865,7 @@ def exploreVoronoiGraph(VG, image, gtImage, start, voronoiNodesMap, voronoiNodes
 			# finally, increase the total travelled distance by the amount joining two consecutive nodes on the path
 			totalDistance += node_distance(VG,previousNode,currentNode)
 		currentPixel = nearestPixel
-	return totalDistance/scale, sum(getTopVisitedNodes(VG,topNVisitedNodes))
+	return totalDistance/scale, sum(getTopVisitedNodes(VG,topNVisitedNodes)), totalAngle
 
 def createVoronoiGraphFromImage(imagePath, worldPath):
 	print imagePath
@@ -773,9 +967,10 @@ def processVoronoiGraph(datasetName, voronoiPath, worldPath, gtImagePath):
 	speed = 0.85 # m/s
 	topNVisitedNodes = 40
 	laserRangeInMeters = 30
-	totalDistance, topVisits = exploreVoronoiGraph(VG, img, gtImage, nearestPixel, voronoiNodesMap, voronoiNodesReverseMap, laserRangeInMeters*scale, scale, speed*scale, topNVisitedNodes)
+	totalDistance, topVisits, totalAngle = exploreVoronoiGraph(VG, img, gtImage, nearestPixel, voronoiNodesMap, voronoiNodesReverseMap, laserRangeInMeters*scale, scale, speed*scale, topNVisitedNodes)
 	print "Voronoi Distance "+str(totalDistance)
-	return VG, voronoiCenter, totalDistance, topVisits, GraphStats(VG)
+	print "Voronoi Angle "+str(totalAngle)
+	return VG, voronoiCenter, totalDistance, topVisits,totalAngle, GraphStats(VG)
 
 def computeDatasetEntropy(myDataset, gtImagePath):
 	gtImage = cv2.imread(gtImagePath,cv2.IMREAD_GRAYSCALE)
@@ -802,6 +997,16 @@ def computeDatasetEntropy(myDataset, gtImagePath):
 
 def node_distance(G,u,v): 
 	return np.sqrt((G.node[u]['pos'][0]-G.node[v]['pos'][0])**2+(G.node[u]['pos'][1]-G.node[v]['pos'][1])**2)
+
+def node_angle(previousPixel, currentPixel, newPixel):
+	# Compute the orientation of the robot
+	ref_angle = correct_angle(math.atan2(currentPixel[0]-previousPixel[0], currentPixel[1]-previousPixel[1]))
+	# Compute the absolute orientation between the new pixel and the current pixel
+	angle = correct_angle(math.atan2(newPixel[0]-currentPixel[0], newPixel[1]-currentPixel[1]))
+	# Compute the relative orientation between the new pixel and the current pixel, accounting for 
+	# the initial orientation of the robot (between 0 and pi, always assume smallest rotation)
+	angle = (np.pi - math.fabs(math.fabs(ref_angle - angle) - np.pi))	
+	return angle
 
 def find_nearest_node(img, robotX, robotY):
     black_pixels = np.argwhere(img == 0)
@@ -854,14 +1059,15 @@ def remove_flow_through(graph):
 			graph.remove_node(n)
 			graph.add_edge(neighbors[0], neighbors[1],weight=w1+w2)
 
-def setVoronoiProperties(myDataset, voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiStats):
+def setVoronoiProperties(myDataset, voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiRotation, voronoiStats):
 	myDataset.voronoi = voronoi
 	myDataset.voronoiCenter = voronoiCenter
 	myDataset.voronoiDistance = voronoiDistance
 	myDataset.voronoiTopVisits = voronoiTopVisits
+	myDataset.voronoiRotation = voronoiRotation
 	myDataset.voronoiStats = voronoiStats	
 
-def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, plotFolder):
+def analyzeDatasetsOld(runsFolder, layoutFolder, voronoiFolder, worldFolder, plotFolder):
 	datasets = []
 	runs = []
 	for f in listdir(runsFolder):
@@ -873,8 +1079,8 @@ def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, plotFo
 			runs += d.runs
 			loadGeometry(d, join(layoutFolder, d.name, d.name)+".xml")	
 			#if isfile(join(voronoiFolder, d.name)+"_voronoi.png"):
-			voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiStats = processVoronoiGraph(d.name, voronoiFolder, join(worldFolder, d.name)+".world", join(worldFolder, d.name)+".png")
-			setVoronoiProperties(d, voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiStats)
+			voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiRotation, voronoiStats = processVoronoiGraph(d.name, voronoiFolder, join(worldFolder, d.name)+".world", join(worldFolder, d.name)+".png")
+			setVoronoiProperties(d, voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiRotation, voronoiStats)
 			computeDatasetEntropy(d, join(worldFolder, d.name)+".png")
 			print len(d.runs)
 			#print d.geometry
@@ -883,14 +1089,156 @@ def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, plotFo
 	models = plotGraphs(datasets,layoutFolder,plotFolder,meanPerfStats,numFolds=5)
 	return models
 
-def predictDatasets(predictFolder, models):
-	for f in listdir(predictFolder):
-		if isfile(join(predictFolder,f)) and f[-5:]=="world":
-			datasetName = f[:-6]
-			voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiStats = processVoronoiGraph(datasetName, join(predictFolder, "voronoi"), join(predictFolder, datasetName)+".world", join(predictFolder, datasetName)+".png")
-			print datasetName
-			print voronoiDistance
-			print models["transError.mean.mean"][0].predict(voronoiDistance)
+# bisogna distinguere due modi d'uso: singola feature o multiple features (feature selection)
+# se singola feature, posso scegliere di far calcolare:
+# a) un modello per ogni feature individuale
+# b) un modello solo per alcune features (abilitate da sezioni True / False)
+# c) solo un modello (default)
+# in questo caso l'output e' dato da tanti modelli quanti se ne sono selezionati
+# se multiple features, allora viene fatta feature selection e in output salviamo UN solo modello
+# in cui indichiamo anche quali features sono state mantenute
+
+# tre scelte da fare:
+# 1) modello da usare (LinearRegression / ElasticNet / ...)
+# 2) singola feature / multiple features
+# 3) SE singola feature, posso scegliere se calcolare un default, un overrideAll, oppure un selectFromFile
+# 3) SE multiple features, posso scegliere se fare recursive feature elimination o specificare un goal
+# 4) per alcuni modelli e' possibile specificare parametri addizionali (es. elastic net vuole i parametri di penalty)
+
+def setupFeatureSelection(datasets,layoutFolder,fsFolder,numFolds,predictors):
+	errorTypes = getErrorTypes()
+	runStats = getRunStats()
+	errorAttrs = getErrorAttrs()
+	function = (lambda paramList: ParametrizedKBestFeatureSelection(*paramList))
+	models = performFeatureSelection(datasets,layoutFolder,fsFolder,errorTypes,errorAttrs,numFolds,predictors,function)
+	return models
+
+def setupIndividualFeatureTraining(datasets,layoutFolder,numFolds,estimator,predictors):
+	errorTypes = getErrorTypes()
+	runStats = getRunStats()
+	errorAttrs = getErrorAttrs()
+	models = performIndividualFeatureTraining(datasets,layoutFolder,errorTypes,errorAttrs,numFolds,estimator,predictors)
+	bestModels = getBestModels(models)
+	return models, bestModels
+
+def setupElasticNetTraining(datasets,layoutFolder,fsFolder,numFolds,predictors):
+	errorTypes = getErrorTypes()
+	runStats = getRunStats()
+	errorAttrs = getErrorAttrs()
+	function = (lambda paramList: ElasticNetTraining(*paramList))
+	models = performFeatureSelection(datasets,layoutFolder,fsFolder,errorTypes,errorAttrs,numFolds,predictors,function)
+	return models
+
+def getBestModels(models):
+	bestModels = {}
+	for predictedFeature, availableModels in models.iteritems():
+		bestModel, bestName, bestRMSE, bestR2 = getBestIndividualModel(availableModels)
+		bestModels[predictedFeature] = (bestModel, bestName, bestRMSE, bestR2)
+	return bestModels
+
+def getBestIndividualModel(models):
+	bestModel = None
+	bestName = ''
+	bestRMSE = float('inf')
+	bestR2 = float('-inf')
+	for model, name, rmse, r2 in models:
+		if rmse < bestRMSE:
+			bestModel = model
+			bestName = name
+			bestRMSE = rmse
+			bestR2 = r2
+	return bestModel, bestName, bestRMSE, bestR2
+
+def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, plotFolder, modelsFolder, modelClass, useMode, featureString):
+	datasets = []
+	runs = []
+	for f in listdir(runsFolder):
+		if isdir(join(runsFolder, f)):# and "furnitures" not in f:
+			datasets.append(loadDataset(f, runsFolder))
+	for d in datasets:
+		if isdir(join(layoutFolder, d.name)):
+			print d.name
+			runs += d.runs
+			loadGeometry(d, join(layoutFolder, d.name, d.name)+".xml")	
+			#if isfile(join(voronoiFolder, d.name)+"_voronoi.png"):
+			voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiRotation, voronoiStats = processVoronoiGraph(d.name, voronoiFolder, join(worldFolder, d.name)+".world", join(worldFolder, d.name)+".png")
+			setVoronoiProperties(d, voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiRotation, voronoiStats)
+			computeDatasetEntropy(d, join(worldFolder, d.name)+".png")
+			print len(d.runs)
+			#print d.geometry
+	meanPerfStats = computePerformanceStats(runs)
+	# select which model class should be used (LinearRegression, ElasticNet, ...)
+	estimator = selectModelClass(modelClass)
+	# select whether we should perform feature selection or use single features 
+	if useMode=='feature_selection':
+		# in this mode, we first identify, for each subset of k features, which are the k features that correlate
+		# best with our data; then we identify the best number of features k 
+		fsFolder = join(modelsFolder,modelClass,'models','fs')
+		models = setupFeatureSelection(datasets,layoutFolder,fsFolder,5,getPredictors())
+		saveFSModels(models,fsFolder,5)
+	elif useMode=='linear_regression':
+		# in this mode, we directly fit a simple non-penalized linear regression model on the given features
+		usedPredictors = selectFeaturesToUse(featureString)
+		models,bestModels = setupIndividualFeatureTraining(datasets,layoutFolder,5,estimator,usedPredictors)
+		saveIndividualModels(models, join(modelsFolder,modelClass,'models','individual'), 5)
+		saveBestModels(bestModels,join(modelsFolder,modelClass,'models','best_individual'), 5)
+	elif useMode=='elastic_net':
+		# in this mode, we use cross validation to find the best hyperparameters of an elastic net model
+		fsFolder = join(modelsFolder,'ElasticNet','models','fs')
+		models = setupElasticNetTraining(datasets,layoutFolder,fsFolder,5,getPredictors())
+		saveFSModels(models,fsFolder,5)	
+
+
+	#multiCorrelate(datasets, layoutFolder)
+	
+	#models = plotGraphs(datasets,layoutFolder,plotFolder,meanPerfStats,numFolds=5)
+
+def saveSummaryFile(path, corrStats, numFolds):
+	summaryFile = open(join(path, "summary.csv"), "w")
+	summaryFile.write("predictedFeature, predictor, avg "+str(numFolds)+"-fold RMSE, avg "+str(numFolds)+"-fold r^2 \n")
+	corrStats.sort(key=lambda x:x[0], reverse=False)
+	for elem in corrStats:
+		summaryFile.write(elem[0]+','+elem[1]+','+str(elem[2])+','+str(elem[3])+'\n')
+	summaryFile.close()
+
+def saveBestModels(models, path, numFolds):
+	corrStats = []
+	for predictedFeature, (model, name, rmse, r2) in models.iteritems():
+		if not exists(join(path,predictedFeature)):
+			makedirs(join(path,predictedFeature))
+		joblib.dump(model, join(path,predictedFeature,name)+'.mdl')
+		corrStats.append((predictedFeature,name,rmse,r2))
+	saveSummaryFile(path,corrStats, numFolds)
+		# save somewhere name, rmse, r2
+
+def saveIndividualModels(models,path, numFolds):
+	corrStats = []
+	for predictedFeature, modelList in models.iteritems():
+		if not exists(join(path,predictedFeature)):
+			makedirs(join(path,predictedFeature))
+		for model, name, rmse, r2 in modelList:
+			joblib.dump(model, join(path,predictedFeature,name)+'.mdl')
+			corrStats.append((predictedFeature,name,rmse,r2))
+			# save somewhere names, rmse, r2
+	saveSummaryFile(path,corrStats, numFolds)
+
+def saveFSModels(models, path, numFolds):
+	corrStats = []
+	for predictedFeature, (model, featuresArray, rmse, r2) in models.iteritems():
+		if not exists(join(path,predictedFeature)):
+			makedirs(join(path,predictedFeature))
+		joblib.dump(model, join(path,predictedFeature,'model')+'.mdl')
+		corrStats.append((predictedFeature,';'.join(featuresArray),rmse,r2))
+		# save somewhere in a text file the featuresArray and also rmse, r2
+	saveSummaryFile(path,corrStats, numFolds)
+
+def loadModels(path):
+	models = {}
+	for f in listdir(path):
+		if isfile(join(path,f)) and f[-3:]=="mdl":
+			predictedFeature = f[:-4]
+			models[predictedFeature]=joblib.load(join(path,f))
+	return models	
 
 def createLineIterator(P1, P2, img):
 	"""
@@ -972,8 +1320,9 @@ if __name__ == '__main__':
     parser.add_argument('layouts_folder',help='the folder in which the layout information of each training dataset, as extracted by the Layout Extractor, is stored')
     parser.add_argument('voronoi_folder',help='the folder in which the data related to the voronoi graph of each training dataset, as extracted by the Voronoi Extractor, is stored')
     parser.add_argument('world_folder',help='the folder in which the Stage data of each training dataset, as used to perform the Stage simulations, is stored')
-    parser.add_argument('plot_folder',help='he output folder in which the tool stores the results of the correlation analyses performed on the training dataset')
+    parser.add_argument('models_folder',help='the output folder in which the tool stores the trained models')
+    parser.add_argument('plot_folder',help='the output folder in which the tool stores the results of the correlation analyses performed on the training dataset')
     parser.add_argument('datasets_to_predict_folder',help='the folder in which all the data related to the datasets of the test set for which the tool must perform predictions is stored')
     args = parser.parse_args()
-    models = analyzeDatasets(args.runs_folder,args.layouts_folder,args.voronoi_folder,args.world_folder,args.plot_folder)
-    predictDatasets(args.datasets_to_predict_folder, models)
+    analyzeDatasets(args.runs_folder,args.layouts_folder,args.voronoi_folder,args.world_folder,args.plot_folder,args.models_folder,'LinearRegression', 'elastic_net', 'overrideAll')
+    

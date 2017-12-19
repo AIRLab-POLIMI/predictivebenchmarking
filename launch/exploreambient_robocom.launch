@@ -24,6 +24,12 @@
 	<!-- Some general parameters -->
 	<param name="use_sim_time" value="false" />
 
+	<!-- rosserial launch file for nova core -->
+	<include file="$(find rsbb_mocap_optitrack)/launch/mocap.launch"/>
+
+	<!-- Record ground truth values -->
+	<node name="recorder" pkg="rosbag" type="record" args="--lz4 -O $(arg bag) /pose /ground_pose /odom /scan"/>
+
 	<!-- Write log odom gmapping for metricevaluator -->
 	<node name="listener" pkg="tf_listener" type="tf_listener.py" args="$(arg outputfile)" />
 
@@ -65,7 +71,6 @@
 	<!-- move_base -->
 	<param name="base_link" value="/base_link" />
 	<param name="move_base_frame" value="/map" />
-
 
 	<!-- exploration parameters -->
 	<param name="frontier_selection" value="$(arg frontier_selection)" />
