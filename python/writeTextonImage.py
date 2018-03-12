@@ -17,8 +17,8 @@ def writeText(path):
         draw = ImageDraw.Draw(pattern,'RGBA')
         font = ImageFont.truetype("OpenSans-Regular.ttf", 100)
 
-        if exists(join(path,'Errors/RE/T.errors')):
-            tEr=open(join(path,'Errors/RE/T.errors'),'r')
+        if exists(join(path,'Errors/Original/RE/T.errors')):
+            tEr=open(join(path,'Errors/Original/RE/T.errors'),'r')
             first=True
             for line in tEr:
                 if first:
@@ -30,7 +30,7 @@ def writeText(path):
                     textmaxT=words[3]
                     textnumMes=words[4]
 
-            rEr=open(join(path,'Errors/RE/R.errors'),'r')
+            rEr=open(join(path,'Errors/Original/RE/R.errors'),'r')
             first=True
             for line in rEr:
                 if first:

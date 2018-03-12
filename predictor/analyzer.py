@@ -51,7 +51,6 @@ def extractRunStatsFromErrorFile(errorFile):
 		file.close()
 		return runStats
 	else:
-		print errorFile
 		raise IOError('Error file '+errorFile+ ' not found.')
 
 def extractTimestampedPose(words):
@@ -59,14 +58,16 @@ def extractTimestampedPose(words):
 	pose["t"] = float(words[0])
 	pose["x"] = float(words[1])
 	pose["y"] = float(words[2])
+	pose["theta"] = float(words[3])
 	return pose
 
 def extractRunStatsFromGTLog(gtLog):
 	if exists(gtLog):
 		file = open(gtLog,'r')
 		first = True
-		prevPose = extractTimestampedPose([0]*3)
+		prevPose = extractTimestampedPose([0]*4)
 		totalLength = 0
+		totalRot = 0
 		for line in file:
 			words = line.split(' ')
 			if first is True:
@@ -75,23 +76,23 @@ def extractRunStatsFromGTLog(gtLog):
 			else:
 				curPose = extractTimestampedPose(words)
 				totalLength += math.sqrt(math.pow(curPose["x"]-prevPose["x"],2)+math.pow(curPose["y"]-prevPose["y"],2))
+				totalRot += (np.pi - math.fabs(math.fabs(correct_angle(curPose["theta"]) - correct_angle(prevPose["theta"])) - np.pi))
 				prevPose = curPose
 		totalTime = float(line.split(' ')[0])
-		return totalTime, totalLength
+		return totalTime, totalLength, totalRot
 	else:
 		raise IOError('Ground Truth log '+gtLog+' not found.')
 
 def loadDatasetRun(datasetRunPath,datasetName):
 	# for the specified dataset, load the metricEvaluator errors of that run
 	try:
-		tstats = extractRunStatsFromErrorFile(join(datasetRunPath+'/Errors/RE/T.errors'))
-		rstats = extractRunStatsFromErrorFile(join(datasetRunPath+'/Errors/RE/R.errors'))
-		totalTime, totalLength = extractRunStatsFromGTLog(join(datasetRunPath,datasetName)+'.log')
+		tstats = extractRunStatsFromErrorFile(join(datasetRunPath+'/Errors/Original/RE/T.errors'))
+		rstats = extractRunStatsFromErrorFile(join(datasetRunPath+'/Errors/Original/RE/R.errors'))
+		totalTime, totalLength, totalRot = extractRunStatsFromGTLog(join(datasetRunPath,datasetName)+'.log')
 	except IOError as err:
 		raise RuntimeError("Error while loading the dataset runs! Trouble at "+join(datasetRunPath,datasetName))
 	# if we are here, we successfully loaded the error stats from file
-	myRun = Run(tstats,rstats,totalTime,totalLength)
-	#print myRun
+	myRun = Run(tstats,rstats,totalTime,totalLength,totalRot)
 	return myRun
 
 def loadDatasetRuns(runsFolder, datasetName):
@@ -102,12 +103,6 @@ def loadDatasetRuns(runsFolder, datasetName):
 		if r[:3]=="run":
 			runs.append(loadDatasetRun(join(datasetPath,r),datasetName))
 	return runs
-		
-def reject_outliers(data, m = 2.):
-    d = np.abs(data - np.median(data))
-    mdev = np.median(d)
-    s = d/mdev if mdev else 0.
-    return data[s<m]
 
 def computeErrorStats(runs, errorType):
 	meansList = []
@@ -134,25 +129,29 @@ def computeErrorStats(runs, errorType):
 def computeRunStats(runs):
 	totalTimesList = []
 	totalLengthsList = []
+	totalRotsList = []
 	''' For each run, add the mean and standard deviation of the selected error type, and the number
 	of samples, to a list '''
 	for r in runs:
 		totalTimesList.append(r.totalTime)
 		totalLengthsList.append(r.totalLength)
+		totalRotsList.append(r.totalRot)
 	''' Convert the lists to numpy arrays '''
 	totalTimesArray = np.array(totalTimesList)
 	totalLengthsArray = np.array(totalLengthsList)
+	totalRotsArray = np.array(totalRotsList)
 	''' For each of them compute mean and standard deviation '''
 	totalTime = Stats(totalTimesArray.mean(), totalTimesArray.std())
 	totalLength = Stats(totalLengthsArray.mean(), totalLengthsArray.std())
+	totalRot = Stats(totalRotsArray.mean(), totalRotsArray.std())
 	# build an errorStats object and return it
-	return totalTime, totalLength
+	return totalTime, totalLength, totalRot
 
 def computePerformanceStats(runs):
 	transErrorStats = computeErrorStats(runs, errorType="trans")
 	rotErrorStats = computeErrorStats(runs, errorType="rot")
-	totalTime, totalLength = computeRunStats(runs)
-	return PerfStats(transErrorStats,rotErrorStats,totalTime,totalLength)
+	totalTime, totalLength, totalRot = computeRunStats(runs)
+	return PerfStats(transErrorStats,rotErrorStats,totalTime,totalLength,totalRot)
 
 def loadGeometry(myDataset, xmlFile):
 	# load and parse the xml of the layout
@@ -161,8 +160,6 @@ def loadGeometry(myDataset, xmlFile):
 	myDataset.geometry = datasetGeometry
 	# create the topological graph
 	G=nx.Graph()
-	#for i,s in enumerate(rooms):
-	#	G.add_node(i)
 	G.add_edges_from(connectedRooms)
 	Gc = max(nx.connected_component_subgraphs(G), key=len)
 	myDataset.topology = Gc
@@ -170,8 +167,10 @@ def loadGeometry(myDataset, xmlFile):
 
 def loadDataset(datasetName, runsFolder):
 	# load the runs
-	print "Loading runs of "+datasetName
+	print "Loading runs of "+datasetName+"...",
+	sys.stdout.flush()
 	runs = loadDatasetRuns(runsFolder, datasetName)
+	print "[DONE, "+str(len(runs))+" runs loaded]"
 	# compute the performance statistics
 	perfStats = computePerformanceStats(runs)
 	# create the dataset object
@@ -203,10 +202,7 @@ def getAttrStats():
 	attrStats["std"] = (lambda attr: attr.std)
 	return attrStats
 
-def getPredictors():
-	predictors = dict()
-	#predictors["totalTime"] = (lambda dataset: (dataset.perfStats.totalTime.mean))
-	#predictors["totalLength"] = (lambda dataset : (dataset.perfStats.totalLength.mean))
+def addGeometricalPredictors(predictors):
 	predictors["area"] = (lambda dataset: (dataset.geometry.shape.area))
 	predictors["perimeter"] = (lambda dataset: (dataset.geometry.shape.perimeter))
 	predictors["wallRatio"] = (lambda dataset: (dataset.geometry.shape.wallRatio))
@@ -215,6 +211,33 @@ def getPredictors():
 	predictors["avgRoomPerimeter"] = (lambda dataset: np.array([r.shape.perimeter for r in dataset.geometry.rooms]).mean()**2)
 	predictors["avgRoomWallRatio"] = (lambda dataset: np.array([r.shape.wallRatio for r in dataset.geometry.rooms]).mean()**2)
 	predictors["roomPerimeter"] = 	(lambda dataset: np.array([r.shape.perimeter for r in dataset.geometry.rooms]).sum())
+	return predictors
+
+def getGeometricalPredictors():
+	return addGeometricalPredictors({}).keys()
+
+def addTopologicalPredictors(predictors):
+	predictors["topology_nodes"] = (lambda dataset: dataset.topologyStats.nodes)
+	predictors["topology_edges"] = (lambda dataset: dataset.topologyStats.edges)
+	predictors["topology_avg_shortest_path_length"] = (lambda dataset : dataset.topologyStats.avg_shortest_path_length)
+	predictors["topology_density"] = (lambda dataset : dataset.topologyStats.density)
+	predictors["topology_diameter"] = (lambda dataset: dataset.topologyStats.diameter)
+	predictors["topology_radius"] = (lambda dataset: dataset.topologyStats.radius)
+	predictors["topology_numBifurcationPoints"] = (lambda dataset: len(get_bifurcation_points(dataset.topology)))
+	predictors["topology_avg_betweenness_centrality"] = (lambda dataset: dataset.topologyStats.betweenness_centrality.mean())
+	predictors["topology_avg_eigenvector_centrality"] = (lambda dataset: dataset.topologyStats.eigenvector_centrality.mean())
+	predictors["topology_avg_katz_centrality"] = (lambda dataset: dataset.topologyStats.katz_centrality.mean())
+	predictors["topology_avg_closeness_centrality"] = (lambda dataset: dataset.topologyStats.closeness_centrality.mean())
+	predictors["topology_std_betweenness_centrality"] = (lambda dataset: dataset.topologyStats.betweenness_centrality.std())
+	predictors["topology_std_eigenvector_centrality"] = (lambda dataset: dataset.topologyStats.eigenvector_centrality.std())
+	predictors["topology_std_katz_centrality"] = (lambda dataset: dataset.topologyStats.katz_centrality.std())
+	predictors["topology_std_closeness_centrality"] = (lambda dataset: dataset.topologyStats.closeness_centrality.std())
+	return predictors
+
+def getTopologicalPredictors():
+	return addTopologicalPredictors({}).keys()
+
+def addVoronoiGraphPredictors(predictors):
 	predictors["voronoi_traversal_distance"] = (lambda dataset: (dataset.voronoiDistance))
 	predictors["voronoi_traversal_rotation"] = (lambda dataset: (dataset.voronoiRotation))
 	predictors["voronoi_nodes"] = (lambda dataset: dataset.voronoiStats.nodes)
@@ -233,163 +256,30 @@ def getPredictors():
 	predictors["voronoi_std_eigenvector_centrality"] = (lambda dataset: dataset.voronoiStats.eigenvector_centrality.std())
 	predictors["voronoi_std_katz_centrality"] = (lambda dataset: dataset.voronoiStats.katz_centrality.std())
 	predictors["voronoi_std_closeness_centrality"] = (lambda dataset: dataset.voronoiStats.closeness_centrality.std())
-	predictors["topology_nodes"] = (lambda dataset: dataset.topologyStats.nodes)
-	predictors["topology_edges"] = (lambda dataset: dataset.topologyStats.edges)
-	predictors["topology_avg_shortest_path_length"] = (lambda dataset : dataset.topologyStats.avg_shortest_path_length)
-	predictors["topology_density"] = (lambda dataset : dataset.topologyStats.density)
-	predictors["topology_diameter"] = (lambda dataset: dataset.topologyStats.diameter)
-	predictors["topology_radius"] = (lambda dataset: dataset.topologyStats.radius)
-	predictors["topology_numBifurcationPoints"] = (lambda dataset: len(get_bifurcation_points(dataset.topology)))
-	predictors["topology_avg_betweenness_centrality"] = (lambda dataset: dataset.topologyStats.betweenness_centrality.mean())
-	predictors["topology_avg_eigenvector_centrality"] = (lambda dataset: dataset.topologyStats.eigenvector_centrality.mean())
-	predictors["topology_avg_katz_centrality"] = (lambda dataset: dataset.topologyStats.katz_centrality.mean())
-	predictors["topology_avg_closeness_centrality"] = (lambda dataset: dataset.topologyStats.closeness_centrality.mean())
-	predictors["topology_std_betweenness_centrality"] = (lambda dataset: dataset.topologyStats.betweenness_centrality.std())
-	predictors["topology_std_eigenvector_centrality"] = (lambda dataset: dataset.topologyStats.eigenvector_centrality.std())
-	predictors["topology_std_katz_centrality"] = (lambda dataset: dataset.topologyStats.katz_centrality.std())
-	predictors["topology_std_closeness_centrality"] = (lambda dataset: dataset.topologyStats.closeness_centrality.std())
-	predictors["entropy"] = (lambda dataset: dataset.entropy)
 	return predictors
 
-def getDummyLambdaStats():
-	dummyLambda = dict()
-	dummyLambda["dummy"] = (lambda x : x)
-	return dummyLambda
+def getVoronoiGraphPredictors():
+	return addVoronoiGraphPredictors({}).keys()
 
-def multiCorrelate(datasets, layoutFolder):
-	nsamples = len(datasets)
-	xs = np.empty([nsamples,3])
-	ys = np.empty([nsamples,1])
-	for i in range(0,nsamples):
-		d = datasets[i]			
-		if isdir(join(layoutFolder, d.name)):# and d.name[-10:]!="furnitures":
-			print d.name
-			xs[i][0] = d.voronoiDistance
-			xs[i][1] = d.voronoiTopVisits 
-			xs[i][2] = d.voronoiStats.edges#len(get_bifurcation_points(d.voronoi))
-			ys[i][0] = d.perfStats.transError.mean.mean
-	lm = linear_model.LinearRegression()
-	print xs
-	print ys
-	model = lm.fit(xs,ys)
-	strategy = KFold(n_splits=5,shuffle=True)
-	rsquared = lm.score(xs,ys)
-	print rsquared
-	mses = np.sqrt(np.abs(cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
-	print mses
-	print mses.mean()
-	rsquareds = cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='r2')
-	print rsquareds
-	print rsquareds.mean()
+def addVoronoiTraversalPredictors(predictors):
+	predictors["voronoi_traversal_distance"] = (lambda dataset: (dataset.voronoiDistance))
+	predictors["voronoi_traversal_rotation"] = (lambda dataset: (dataset.voronoiRotation))
+	return predictors
 
+def getVoronoiTraversalPredictors():
+	return addVoronoiTraversalPredictors({}).keys()
 
-def plotAndSave(xs,ys,xLabel,yLabel,corrStats,plotFolder,name,numFolds,allxs,allys):
-	#cs = [0.00001, 0.0001, 0.001, 0.01, 0.1, 1, 10, 100]
-	#gammas = [0.0000000001,0.000000001,0.00000001,0.0000001, 0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1, 1]
-	#degrees = [1, 2, 3, 4, 5]
-	#cs = [1]
-	#gammas = [1]
-	cs = [1]
-	gammas = [1]
-	degrees = [1]
-	origxs = xs
-	origys = ys
-	for c in cs:
-		for g in gammas:
-			for d in degrees:
-				print "c = "+str(c)+", g = "+str(g)+", d = "+str(d)
-				#lm = svm.SVR(kernel='rbf',max_iter=10000, degree = d, C=c, gamma=g)
-				lm = linear_model.LinearRegression()
-				nsamples = len(origxs)
-				xs = np.array(origxs).reshape(nsamples,1)
-				ys = np.array(origys).reshape(nsamples,1)
-				model = lm.fit(xs,ys)
-				strategy = KFold(n_splits=numFolds,shuffle=True)
-				#prs,pvalue = pearsonr(xs,ys)
-				#if abs(prs) > 0.5:
-				try:
-					rsquared = lm.score(xs,ys)
-					mses = np.sqrt(np.abs(cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
-					rsquareds = cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='r2')
-					print name
-					print 'r^2: '+str(rsquared)
-					print 'Avg RMSE: '+str(mses.mean())
-					print 'Avg r^2: '+str(rsquareds.mean())
-					corrStats.append([xLabel,yLabel,rsquared,mses.mean(),rsquareds.mean()])
-					fig = plt.figure()
-					plt.xlabel(xLabel)
-					plt.ylabel(yLabel)
-					fit = np.polyfit(origxs,origys,1)
-					fit_fn = np.poly1d(fit)
-					support_range = np.arange(min(origxs), max(origxs),0.1) 
-					# fit_fn is now a function which takes in x and returns an estimate for y
-					plt.plot(origxs,origys, 'ro', support_range, fit_fn(support_range), '-')
-					fig.savefig(join(plotFolder,"correlation",name)+".png", bbox_inches='tight')
-					pattern = Image.open(join(plotFolder,"correlation",name)+".png", "r").convert('RGBA')
-					size = width, height = pattern.size
-					draw = ImageDraw.Draw(pattern,'RGBA')
-					font = ImageFont.truetype("OpenSans-Regular.ttf", 16)
-					draw.text((80,525), 'rsquared: ' + str(round(rsquared,3)), fill=(0, 0, 0, 255), font=font)
-					#draw.text((500,525), 'P-Value: '+ str(round(pvalue,5)), fill=(0, 0, 0, 255), font = font)
-					pattern.save(join(plotFolder,"correlation",name)+".png")
-					# we must also store the xs and ys in a table
-					buildcsv(join(plotFolder,"correlation",name)+".csv",xLabel,yLabel,xs,ys,mses,rsquareds)
-					plt.close(fig)
-					fig = plt.figure()
-					plt.xlabel(xLabel)
-					plt.ylabel(yLabel)
-					plt.plot(xs,ys, 'ro', support_range, fit_fn(support_range), '-')
-					plt.plot(allxs,allys,'gx')
-					fig.savefig(join(plotFolder,"correlation",name)+"_allpoints.png", bbox_inches='tight')
-					plt.close(fig)
-				except ValueError:
-					pass
-	return model
-
-def fitLinearModel(xs,ys,xLabel,yLabel,corrStats,plotFolder,name,numFolds,allxs,allys):
-	lm = linear_model.LinearRegression()
-	nsamples = len(xs)
-	orig_xs = xs
-	orig_ys = ys
-	xs = np.array(xs).reshape(nsamples,1)
-	ys = np.array(ys).reshape(nsamples,1)
-	model = deepcopy(lm.fit(xs,ys))
-	strategy = KFold(n_splits=numFolds,shuffle=True)
-	rsquared = lm.score(xs,ys)
-	mses = np.sqrt(np.abs(cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
-	rsquareds = cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='r2')
-	print name
-	print 'r^2: '+str(rsquared)
-	print 'Avg RMSE: '+str(mses.mean())
-	print 'Avg r^2: '+str(rsquareds.mean())
-	corrStats.append([xLabel,yLabel,rsquared,mses.mean(),rsquareds.mean()])
-	fig = plt.figure()
-	plt.xlabel(xLabel)
-	plt.ylabel(yLabel)
-	fit = np.polyfit(orig_xs,orig_ys,1)
-	fit_fn = np.poly1d(fit)
-	support_range = np.arange(min(orig_xs), max(orig_xs),0.1) 
-	# fit_fn is now a function which takes in x and returns an estimate for y
-	plt.plot(orig_xs,orig_ys, 'ro', support_range, fit_fn(support_range), '-')
-	fig.savefig(join(plotFolder,"correlation",name)+".png", bbox_inches='tight')
-	pattern = Image.open(join(plotFolder,"correlation",name)+".png", "r").convert('RGBA')
-	size = width, height = pattern.size
-	draw = ImageDraw.Draw(pattern,'RGBA')
-	font = ImageFont.truetype("OpenSans-Regular.ttf", 16)
-	draw.text((80,525), 'rsquared: ' + str(round(rsquared,3)), fill=(0, 0, 0, 255), font=font)
-	#draw.text((500,525), 'P-Value: '+ str(round(pvalue,5)), fill=(0, 0, 0, 255), font = font)
-	pattern.save(join(plotFolder,"correlation",name)+".png")
-	# we must also store the xs and ys in a table
-	buildcsv(join(plotFolder,"correlation",name)+".csv",xLabel,yLabel,xs,ys,mses,rsquareds)
-	plt.close(fig)
-	fig = plt.figure()
-	plt.xlabel(xLabel)
-	plt.ylabel(yLabel)
-	plt.plot(orig_xs,orig_ys, 'ro', support_range, fit_fn(support_range), '-')
-	plt.plot(allxs,allys,'gx')
-	fig.savefig(join(plotFolder,"correlation",name)+"_allpoints.png", bbox_inches='tight')
-	plt.close(fig)
-	return model, mses.mean()
+def getPredictors(debugMode):
+	predictors = dict()
+	if debugMode > 0:
+		predictors["totalLength"] = (lambda dataset : (dataset.perfStats.totalLength.mean))
+		predictors["totalRot"] = (lambda dataset : (dataset.perfStats.totalRot.mean))
+	if debugMode < 2:
+		predictors = addGeometricalPredictors(predictors)
+		predictors = addTopologicalPredictors(predictors)
+		predictors = addVoronoiGraphPredictors(predictors)
+		predictors = addVoronoiTraversalPredictors(predictors)
+	return predictors
 
 def fitModel(lm,xs,ys,numFolds):
 	nsamples = len(xs)
@@ -400,50 +290,18 @@ def fitModel(lm,xs,ys,numFolds):
 	model = deepcopy(lm.fit(xs,ys))
 	strategy = KFold(n_splits=numFolds,shuffle=True)
 	rsquared = lm.score(xs,ys)
-	mses = np.sqrt(np.abs(cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
+	mses = np.abs(cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error'))
 	rsquareds = cross_val_score(lm, xs, ys, cv=strategy, n_jobs = -1, scoring='r2')
-	return model, mses.mean(), rsquareds.mean()
+	#plot
+	y_pred = model.predict(xs)
+	fig = plt.figure()
+	plt.scatter(orig_xs, orig_ys,  color='black')
+	plt.plot(orig_xs, y_pred, color='blue', linewidth=3)
+	return model, np.sqrt(mses.sum()/numFolds), rsquareds.mean(), fig
 
-def buildcsv(correlationFileName, xLabel, yLabel, xs, ys, mses, rsquareds):
-	csv=open(correlationFileName, 'w')
-	csv.write(xLabel+','+yLabel+'\n')
-	for r in range(0, len(xs)):
-		csv.write(str(xs[r][0])+','+str(ys[r][0])+'\n')
-	csv.write('\n')
-	csv.write(str(len(mses))+"-Fold RMSE:,")
-	for r in range(0, len(mses)-1):
-		csv.write(str(mses[r])+',')
-	csv.write(str(mses[r])+'\n')
-	csv.write('Average '+str(len(mses))+'-Fold RMSE:,'+str(mses.mean())+'\n')
-	csv.write('\n')
-	csv.write(str(len(rsquareds))+'-Fold rsquared:,')
-	for r in range(0,len(rsquareds)-1):
-		csv.write(str(rsquareds[r])+',')
-	csv.write(str(rsquareds[r])+'\n')
-	csv.write('Average '+str(len(rsquareds))+'-Fold rsquared:,'+str(rsquareds.mean())+'\n')
-	csv.close()
-
-def selectModelClass(modelClass):
-	if modelClass=='LinearRegression':
-		lm = linear_model.LinearRegression()
-	elif modelClass=='ElasticNet':
-		lm = linear_model.ElasticNet()
-	return lm
-
-def loadFeaturesFromFile(featureString):
-	predictors = getPredictors()
-	usedPredictors = {}
-	featureFile = open(featureString,'r')
-	for l in featureFile.readlines():
-		line = l.strip()
-		tokens = line.split('=')
-		if tokens[0] in predictors and tokens[1]=='True':
-			usedPredictors[tokens[0]] = predictors[tokens[0]]
-	return usedPredictors
-
-def selectFeaturesToUse(featureString):
+def selectFeaturesToUse(featureString, debugMode):
 	# fetch all possible predictors
-	allPredictors = getPredictors()
+	allPredictors = getPredictors(debugMode)
 	usedPredictors = {}
 	if featureString=='overrideAll':
 		# we have to load all possible features
@@ -452,12 +310,8 @@ def selectFeaturesToUse(featureString):
 		# select a single feature from the dictionary
 		usedPredictors[featureString] = allPredictors[featureString]
 	else:
-		# try to interpret the feature string as a configuration file
-		try:
-			usedPredictors = loadFeaturesFromFile(featureString)
-		except IOError:
-			print "The feature string you specified is neither an override option, nor a valid string, nor a configuration file. Exiting."
-			exit()
+		print "The feature string you specified is neither an override option nor a valid predictor. Exiting."
+		exit()
 	return usedPredictors
 	# in the end, we have to build a dictionary of features 
 
@@ -466,10 +320,11 @@ def rmse_cv(model,xs,ys,kf):
     return(rmse)
 
 def ElasticNetTraining(xs, ys, featuresArray, numFolds, fsFolder, predictedFeature):
-	#kf = KFold(n_splits=numFolds, shuffle=True)
+	print "Computing ElasticNet model for "+predictedFeature+"...",
+	sys.stdout.flush()
 	kf = RepeatedKFold(n_splits=numFolds, n_repeats=10)
 	l1_ratios = [.1, .5, .7, .9, .95, .99, 1]
-	alphas = [0.0001, 0.0003, 0.0005, 0.001, 0.01, 0.03, 0.05, 0.1, 0.3, 0.5, 1, 3, 5, 10, 30, 50, 100]
+	alphas = [0.0001, 0.0003, 0.0005, 0.001, 0.003, 0.005, 0.01, 0.03, 0.05, 0.1, 0.3, 0.5, 1, 3, 5, 10, 30, 50, 100]
 	# First we identify the best l1 ratio and alpha with cross validation (hyperparameters tuning)
 	cv_elastic = [rmse_cv(linear_model.ElasticNet(alpha = alpha, l1_ratio=l1_ratio),xs,ys,kf).mean() 
             for (alpha, l1_ratio) in product(alphas, l1_ratios)]
@@ -478,9 +333,7 @@ def ElasticNetTraining(xs, ys, featuresArray, numFolds, fsFolder, predictedFeatu
 	best_pair = idx[best_idx]
 	best_alpha = best_pair[0]
 	best_l1_ratio = best_pair[1]
-	#estimator = linear_model.ElasticNetCV(l1_ratio=l1_ratios,alphas=alphas,cv=kf)
-	#estimator.fit(xs,ys)
-	print predictedFeature
+	print "[DONE]"
 	print "Best l1 ratio found is " + str(best_l1_ratio)
 	print "Best alpha found is " + str(best_alpha)
 	# Then we fit the estimator with the hyperparameters identified by cross validation
@@ -494,8 +347,10 @@ def ElasticNetTraining(xs, ys, featuresArray, numFolds, fsFolder, predictedFeatu
 	rsquareds = cross_val_score(estimator, xs, ys, cv=strategy, n_jobs = -1, scoring='r2')
 	return model, usedFeatures, mses.mean(), rsquareds.mean()	
 
-def KBestFeatureSelection(xs, ys, featuresArray, numFolds, n_features):
-	estimator = LinearRegression()
+def KBestFeatureSelection(xs, ys, featuresArray, numFolds, n_features, predictedFeature):
+	print "Computing F-regression feature selection model for "+predictedFeature+" with "+str(n_features)+" features...",
+	sys.stdout.flush()
+	estimator = linear_model.LinearRegression()
 	n_repeats = 100
 	# in order to properly perform feature selection, we must perform cross validation as the outer loop 
 	selected_features_per_fold = np.empty([n_repeats*numFolds,len(featuresArray)])
@@ -513,6 +368,7 @@ def KBestFeatureSelection(xs, ys, featuresArray, numFolds, n_features):
 			support = [1 if v else 0 for v in fs.get_support()]
 			np.copyto(selected_features_per_fold[i], support)
 			i+=1
+	print "[DONE]"
 	# now, we have to get the most voted k features
 	selected_features_total = np.sum(selected_features_per_fold,axis=0)
 	usedFeaturesIdx = np.argpartition(selected_features_total, -n_features)[-n_features:]
@@ -533,17 +389,19 @@ def ParametrizedKBestFeatureSelection(xs, ys, featuresArray, numFolds, fsFolder,
 	xp = np.arange(start=1,stop=n_features+1,step=1)
 	yp = np.empty(n_features)
 	for k in xp:
-		model, usedFeatures, rmse, r2 = KBestFeatureSelection(xs, ys, featuresArray, numFolds, k)
+		model, usedFeatures, rmse, r2 = KBestFeatureSelection(xs, ys, featuresArray, numFolds, k, predictedFeature)
 		models.append((model, usedFeatures, rmse, r2))
 		yp[k-1] = rmse
 	fig = plt.figure()
 	plt.xlabel("Number of features, in order of decreasing relevance")
 	plt.ylabel("RMSE")
 	plt.plot(xp,yp, 'b-')
+	if not exists(join(fsFolder,predictedFeature)):
+		makedirs(join(fsFolder,predictedFeature))
 	fig.savefig(join(fsFolder,predictedFeature,"krmse.png"))
 	plt.close(fig)
 	saveCVKFoldFile(join(fsFolder,predictedFeature),models, numFolds)
-	return getBestIndividualModel(models)
+	return getBestIndividualModel(models,hasFig=False)
 
 def saveCVKFoldFile(path, models, numFolds):
 	summaryFile = open(join(path, "summary.csv"), "w")
@@ -575,157 +433,32 @@ def performFeatureSelection(datasets,layoutFolder,fsFolder,predictedStats,predic
 						xs[i][k] = pLambda(d)
 				predictedFeature = eName+"."+aName+"."+sName
 				model, selectedFeatures, mse, r2 = function([xs, ys, featuresArray, numFolds, fsFolder, predictedFeature])
-				#model, selectedFeatures, mse, r2 = ParametrizedKBestFeatureSelection(estimator, xs, ys, featuresArray, numFolds, fsFolder, predictedFeature)
 				models[predictedFeature] = (model, selectedFeatures, mse, r2)
 	return models	
 
 def performIndividualFeatureTraining(datasets,layoutFolder,predictedStats,predictedStatsAttrs,numFolds,estimator,predictors):
 	attrStats = getAttrStats()
+	totalPredictors = len(predictors.iteritems())
 	# error stats
 	models = {}
 	for eName, eLambda in predictedStats.iteritems():
 		for aName, aLambda in predictedStatsAttrs.iteritems():
 			for sName, sLambda in attrStats.iteritems():
+				print "Computing predictors for "+eName+"."+aName+"."+sName+"...",
+				sys.stdout.flush()
+				idx = 0
 				models[eName+"."+aName+"."+sName] = []
 				for pName, pLambda in predictors.iteritems():
+					print str(round(idx/totalPredictors*100))+"%...",
+					sys.stdout.flush()
 					xs,ys = [], []
 					for d in datasets:			
 						if isdir(join(layoutFolder, d.name)):
 							xs.append(pLambda(d))
 							ys.append(sLambda(aLambda(eLambda(d))))
-					model, rmse, r2 = fitModel(estimator,xs,ys,numFolds)
-					models[eName+"."+aName+"."+sName].append((model, pName, rmse, r2))
-	return models
-
-def plotIterator(datasets,layoutFolder,plotFolder,corrStats,predictedStats,predictedStatsAttrs,numFolds,meanPerfStats):
-	attrStats = getAttrStats()
-	predictors = getPredictors()
-	meanErrorTypes = dict()
-	meanErrorTypes["transError"] = (lambda meanPerfStats: meanPerfStats.transError)
-	meanErrorTypes["rotError"] = (lambda meanPerfStats: meanPerfStats.rotError)
-	runErrorTypes = dict()
-	runErrorTypes["transError"] = (lambda run: run.transStats)
-	runErrorTypes["rotError"] = (lambda run: run.rotStats)
-	# error stats
-	models = {}
-	for eName, eLambda in predictedStats.iteritems():
-		for aName, aLambda in predictedStatsAttrs.iteritems():
-			for sName, sLambda in attrStats.iteritems():
-				bestModel = None
-				bestRMSE = float('inf')
-				for pName, pLambda in predictors.iteritems():
-					xs,ys,yc = [], [], []
-					allxs = np.asarray([])
-					allys = np.asarray([])
-					for d in datasets:			
-						if isdir(join(layoutFolder, d.name)):
-							xs.append(pLambda(d))
-							ys.append(sLambda(aLambda(eLambda(d))))
-							yc.append(sLambda(aLambda(meanErrorTypes[eName](meanPerfStats))))
-							runxs, runys = [], []
-							for r in d.runs:
-								runxs.append(pLambda(d))
-								runys.append(aLambda(runErrorTypes[eName](r)))
-							runxs = np.asarray(runxs)
-							runys = np.asarray(runys)
-							#m = 0.8
-							#d = np.abs(runys - np.median(runys))
-							#mdev = np.median(d)
-							#s = d/mdev if mdev else 0.
-							#runxs = runxs[s>m]
-							#runys = runys[s>m]
-							allxs = np.append(allxs,runxs)
-							allys = np.append(allys,runys)
-					xLabel = pName
-					yLabel = eName+"."+aName+"."+sName
-					name = pName+"-"+eName+"."+aName+"."+sName
-					model,avg_rmse = fitLinearModel(xs,ys,xLabel,yLabel,corrStats,plotFolder,name,numFolds,allxs,allys)
-					print "Constant baseline RMSE: "+str(np.sqrt(mean_squared_error(ys,yc)))
-					print "Avg 5-fold RMSE of this model: "+str(avg_rmse)
-					if avg_rmse < bestRMSE:
-						bestModel = model
-						bestRMSE = avg_rmse
-					#yp = model.predict(xs)
-					#print "Model RMSE: "+str(np.sqrt(mean_squared_error(ys,yp)))
-				models[eName+"."+aName+"."+sName] = (bestModel, bestRMSE)
-	return models
-
-
-def PCAAnalyzer(datasets,layoutFolder,plotFolder,corrStats,predictedStats,predictedStatsAttrs,numFolds,meanPerfStats):
-	attrStats = getAttrStats()
-	predictors = getPredictors()
-	meanErrorTypes = dict()
-	meanErrorTypes["transError"] = (lambda meanPerfStats: meanPerfStats.transError)
-	meanErrorTypes["rotError"] = (lambda meanPerfStats: meanPerfStats.rotError)
-	runErrorTypes = dict()
-	runErrorTypes["transError"] = (lambda run: run.transStats)
-	runErrorTypes["rotError"] = (lambda run: run.rotStats)
-	# error stats
-	nsamples = len(datasets)
-	X = []	
-	ys = np.empty([nsamples,1])
-	for pName, pLambda in predictors.iteritems():
-		print pName
-		xp = []
-		for i in range(0, nsamples):
-			d = datasets[i]
-			xp.append(pLambda(d))
-			ys[i][0] = d.perfStats.transError.mean.mean
-		xp = preprocessing.scale(xp)
-		X.append(xp)
-	X = np.transpose(np.array(X))
-	pca = PCA(n_components=5)
-	X_pca = pca.fit_transform(X)
-	print "PCA:"
-	print pca.explained_variance_ratio_ 
-	fs = SelectKBest(f_regression, k=3)
-	X_new = fs.fit_transform(X, ys)
-	print zip(fs.get_support(),predictors.iteritems())
-	# now we try to predict
-	cs = [0.00001, 0.0001, 0.001, 0.01, 0.1, 1, 10, 100]
-	gammas = [0.0000000001,0.000000001,0.00000001,0.0000001, 0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1, 1]
-	#degrees = [1, 2, 3, 4, 5]
-	degrees = [1]
-	#for al in range(1,11):
-	#	alpha = al*0.01
-		#print "Alpha: "+str(float(alpha))
-	for c in cs:
-		for g in gammas:
-			for d in degrees:
-				print "c = "+str(c)+", g = "+str(g)+", d = "+str(d)
-				#lm = linear_model.LinearRegression()#linear_model.Lasso(alpha=alpha)#LinearRegression()
-				lm = svm.SVR(kernel='rbf',max_iter=10000, degree = d, C=c, gamma=g)#linear_model.LinearRegression()
-				model = lm.fit(X_new,ys)
-				strategy = KFold(n_splits=5,shuffle=True)
-				rsquared = lm.score(X_new,ys)
-				print rsquared
-				all_mses = []
-				all_rsquareds = []
-				for i in range(0, 20):
-					mses = np.sqrt(np.abs(cross_val_score(lm, X_new, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
-					rsquareds = cross_val_score(lm, X_new, ys, cv=strategy, n_jobs = -1, scoring='r2')
-					all_mses += mses.tolist()
-					all_rsquareds += rsquareds.tolist()
-				print "Final average:"
-				print np.asarray(all_mses).mean()
-				print np.asarray(all_rsquareds).mean()
-	#print "Additional test:"
- 	#F, pval = feature_selection.f_regression(X, ys, center=False)
- 	#print F
- 	#print pval
-
-def plotGraphs(datasets,layoutFolder,plotFolder,meanPerfStats,numFolds):
-	corrStatsFile = open(join(plotFolder, "corrStats.csv"), "w")
-	corrStatsFile.write("x, y, r^2, avg "+str(numFolds)+"-fold RMSE, avg "+str(numFolds)+"-fold r^2 \n")
-	corrStats = []
-	errorTypes = getErrorTypes()
-	runStats = getRunStats()
-	errorAttrs = getErrorAttrs()
-	models = plotIterator(datasets,layoutFolder,plotFolder,corrStats,errorTypes,errorAttrs,numFolds,meanPerfStats)
-	corrStats.sort(key=lambda x:x[2], reverse=True)
-	for elem in corrStats:
-		corrStatsFile.write(elem[0]+','+elem[1]+','+str(elem[2])+','+str(elem[3])+','+str(elem[4])+'\n')
-	corrStatsFile.close()
+					model, rmse, r2, fig = fitModel(estimator,xs,ys,numFolds)
+					models[eName+"."+aName+"."+sName].append((model, pName, rmse, r2, fig))
+				print "[DONE]"
 	return models
 
 ''' Outline of the algorithm (TICK-TOCK mechanism):
@@ -748,19 +481,18 @@ def correct_angle(angle):
 
 ''' Retrieves all pixels that are within a certain range from the current pixel and that
 are within the simulated field of view of the laser scanner. '''
-def retrieveNearbyPixels(image, currentPixel, previousPixel, laserLength):
+def retrieveNearbyPixels(image, currentPixel, previousPixel, laserLength, laserFOV):
 	# Retrieve all black pixels (black = occupied)
 	black_pixels = np.argwhere(image == 0)
 	# Compute the orientation of the robot
-	ref_angle = correct_angle(math.atan2(currentPixel[0]-previousPixel[0], currentPixel[1]-previousPixel[1]))
+	ref_angle = math.atan2(currentPixel[0]-previousPixel[0], currentPixel[1]-previousPixel[1])
 	# Compute the distance between the current pixel and every other black pixel
 	distances = np.sqrt((black_pixels[:,0] - currentPixel[0]) ** 2 + (black_pixels[:,1] - currentPixel[1]) ** 2)
 	# Compute the relative orientation 
 	angles = np.arctan2(black_pixels[:,0] - currentPixel[0], black_pixels[:,1]-currentPixel[1])
-	angles = [correct_angle(a) for a in angles]
 	lgt = len(distances)
 	# Return only those pixels that are within the laser range and field of view
-	indices = [i for i in range(0, lgt) if distances[i] < laserLength and (np.pi - math.fabs(math.fabs(ref_angle - angles[i]) - np.pi))<=3.0/4.0*np.pi] 
+	indices = [i for i in range(0, lgt) if distances[i] < laserLength and math.fabs(math.atan2(math.sin(angles[i]-ref_angle),math.cos(angles[i]-ref_angle)))<=laserFOV/2] 
 	return black_pixels[indices]
 
 ''' Retrieves all pixels that are visible from the current robot location and orientation.
@@ -768,10 +500,10 @@ A pixel is considered to be visible if three conditions hold:
 - it is within the laser range
 - it is within the laser field of view
 - there are no other black pixels on the line connecting it to the current robot location '''
-def retrieveVisiblePixels(image, gtImage, totalNodes, currentPixel, previousPixel, laserLength):
+def retrieveVisiblePixels(image, gtImage, totalNodes, currentPixel, previousPixel, laserLength, laserFOV):
 	height, width = image.shape
 	# Retrieve candidate pixels 
-	nearbyPixels = retrieveNearbyPixels(image, currentPixel, previousPixel, laserLength)
+	nearbyPixels = retrieveNearbyPixels(image, currentPixel, previousPixel, laserLength, laserFOV)
 	visiblePixels = []
 	# If two black pixels are visible from each other, it means no other obstacle (black pixel) stands
 	# between them
@@ -802,9 +534,9 @@ def pixelsToNodes(pixels, voronoiNodesMap, height):
 
 ''' Retrieve pixels that are visible in line-of-sight given the current robot location and orientation;
 then, set them to gray, set the corresponding nodes as seen and return them.'''
-def lineOfSight(VG, image, gtImage, totalNodes, currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength):
+def lineOfSight(VG, image, gtImage, totalNodes, currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength, laserFOV):
 	height, width = image.shape
-	visiblePixels = retrieveVisiblePixels(image, gtImage, totalNodes, currentPixel, previousPixel, laserLength)
+	visiblePixels = retrieveVisiblePixels(image, gtImage, totalNodes, currentPixel, previousPixel, laserLength, laserFOV)
 	visibleNodes = pixelsToNodes(visiblePixels, voronoiNodesMap, height)
 	markVisiblePixelsAsVisited(image, visiblePixels)
 	nseen = markVisibleNodesAsVisited(VG, visibleNodes)
@@ -822,25 +554,27 @@ def initNodeVisitedStatus(VG):
 		VG.node[n]['seen'] = False
 		VG.node[n]['nvisits'] = 0
 
-def getTopVisitedNodes(G,num):
-	return sorted([G.node[n]['nvisits'] for n in G.nodes()],reverse=True)[:num]
-
 ''' Explore the voronoi graph; return the total amount of travelled distance and the sum of the visits
 of the top N visited nodes.''' 
-def exploreVoronoiGraph(VG, image, gtImage, start, voronoiNodesMap, voronoiNodesReverseMap, laserLength, scale, speed, topNVisitedNodes):
+def exploreVoronoiGraph(VG, image, gtImage, start, voronoiNodesMap, voronoiNodesReverseMap, laserLength, laserFOV, minRotDistance, scale):
+	laserLength *= scale
+	minRotDistance *= scale
 	# set every node as 'not seen' and with zero visits
 	initNodeVisitedStatus(VG)
 	# initialize counting variables
 	height, width = image.shape
 	totalNodes = len(VG.nodes())
 	currentPixel = start
+	currentAnglePixel = currentPixel
 	previousPixel = (currentPixel[0]+1,currentPixel[1])
-	numVisitedNodes, numSeenNodes, totalDistance, totalAngle = 0, 0, 0, 0
+	numSeenNodes, partialDistance, totalDistance, partialAngle, totalAngle, robotAngle = 0, 0, 0, 0, 0, 0
 	# line-of-sight: identify and mark as 'seen' the pixels that are visible from the current location
-	visibleNodes, nseen = lineOfSight(VG, image, gtImage, totalNodes, currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength)
+	visibleNodes, nseen = lineOfSight(VG, image, gtImage, totalNodes, currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength, laserFOV)
 	numSeenNodes += nseen
 	# we proceed until we've seen every single node of the graph 
 	while numSeenNodes < totalNodes:
+		print str(round(float(numSeenNodes)/totalNodes*100))+"%...",
+		sys.stdout.flush()
 		# and until then, we keep looking for the next frontier (shortest euclidean distance from current location)
 		nearestPixel = retrieveNearestFrontier(image, currentPixel)
 		nearestNode = voronoiNodesMap[height-nearestPixel[0], nearestPixel[1]]
@@ -851,27 +585,33 @@ def exploreVoronoiGraph(VG, image, gtImage, start, voronoiNodesMap, voronoiNodes
 			# each node of the path gets visited and its neighboring nodes in line-of-sight are marked as 'seen'
 			newPixel = (height-voronoiNodesReverseMap[n][0],voronoiNodesReverseMap[n][1])
 			newNode = n 
-			totalAngle += node_angle(previousPixel, currentPixel, newPixel)
+			# increase the total travelled distance by the amount joining two consecutive nodes on the path
+			travelledDistance = node_distance(VG,currentNode,newNode)
+			partialDistance += travelledDistance
+			totalDistance += travelledDistance
+			if partialDistance > minRotDistance:
+				partialAngle = math.atan2(newPixel[0]-currentAnglePixel[0], newPixel[1]-currentAnglePixel[1])
+				totalAngle += math.fabs(math.atan2(math.sin(partialAngle-robotAngle),math.cos(partialAngle-robotAngle)))
+				robotAngle = partialAngle
+				currentAnglePixel = newPixel
+				partialDistance = 0
 			previousPixel = currentPixel
 			previousNode = currentNode
 			currentPixel = newPixel
 			currentNode = newNode
-			visibleNodes, nseen = lineOfSight(VG, image, gtImage, totalNodes,currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength)
+			visibleNodes, nseen = lineOfSight(VG, image, gtImage, totalNodes,currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength, laserFOV)
 			# add to the number of seen nodes the new ones we have actually seen in line of sight
 			numSeenNodes += nseen
-			# and increase the number of times this current node has been visited
+			# and increase the number of times this current node has been visited (currently unused)
 			VG.node[n]['nvisits'] += 1
-			numVisitedNodes += 1
-			# finally, increase the total travelled distance by the amount joining two consecutive nodes on the path
-			totalDistance += node_distance(VG,previousNode,currentNode)
 		currentPixel = nearestPixel
-	return totalDistance/scale, sum(getTopVisitedNodes(VG,topNVisitedNodes)), totalAngle
+	return totalDistance/scale, totalAngle
 
 def createVoronoiGraphFromImage(imagePath, worldPath):
-	print imagePath
+	print "Computing Voronoi graph...",
+	sys.stdout.flush()
 	image = cv2.imread(imagePath,cv2.IMREAD_GRAYSCALE)
 	height, width = image.shape
-	# Invert
 	_,thresh = cv2.threshold(image,127,255,cv2.THRESH_BINARY_INV)
 	# Dilate
 	kernel = np.ones((5,5),np.uint8)
@@ -914,26 +654,11 @@ def createVoronoiGraphFromImage(imagePath, worldPath):
 	# set the nodes positions
 	for n, p in pos.iteritems():
 		G.node[n]['pos'] = p
+	print "[DONE]"
 	# Simplify graph by removing all 'passthrough' nodes
-	print len(G.nodes())
-	remove_flow_through(G)
-	print "After removal: "+str(len(G.nodes()))	
-	# Further simplify by aggregating together those nodes that are very very close to each other
-	close_nodes = lambda G,u,v: (u in G[v] and v in G[u] and node_distance(G,u,v)<scale*0.2)
-	updated = True
-	Gcred = G.copy()
-	while updated:
-		updated = False
-		for u in Gcred.nodes():
-			for v in Gcred.nodes():
-				if close_nodes(Gcred, u,v):
-					Gcred = nx.contracted_nodes(Gcred, u, v, self_loops=False)
-					updated = True
-					break
-			if updated:
-				break
-	G = Gcred
-	print "After further removal: "+str(len(G.nodes()))	
+	print "Nodes before pass-through removal: "+str(len(G.nodes()))
+	removeFlowThroughNodes(G, image)
+	print "Nodes after pass-through removal: "+str(len(G.nodes()))	
 	# necessary to filter out unreachable rooms
 	Gc = max(nx.connected_component_subgraphs(G), key=len)
 	return Gc
@@ -942,14 +667,16 @@ def loadVoronoiGraph(datasetName, voronoiPath, worldPath):
 	pickleFile = join(voronoiPath, "pickle",datasetName)+"_voronoi.pickle"
 	imageFile = join(voronoiPath, "images",datasetName)+"_voronoi.png"
 	if exists(pickleFile):
+		print "Loading Voronoi graph... [DONE]"
 		Gc = nx.read_gpickle(pickleFile)
 	else:
 		Gc = createVoronoiGraphFromImage(imageFile, worldPath)
 		nx.write_gpickle(Gc, pickleFile)
 	return Gc
 
-def processVoronoiGraph(datasetName, voronoiPath, worldPath, gtImagePath):
-	VG = loadVoronoiGraph(datasetName, voronoiPath, worldPath)
+def processVoronoiGraph(VG, worldPath, gtImagePath, laserRange, laserFOV, minRotDistance):
+	print "Processing...",
+	sys.stdout.flush()
 	gtImage = cv2.imread(gtImagePath,cv2.IMREAD_GRAYSCALE)
 	height, width = gtImage.shape
 	robotX, robotY, scale = retrieveExplorationStartingPoint(worldPath, width, height)
@@ -964,36 +691,11 @@ def processVoronoiGraph(datasetName, voronoiPath, worldPath, gtImagePath):
 	# we also need to figure out which node is the closest to the starting point of the exploration
 	nearestPixel = find_nearest_node(img, robotX, robotY)
 	voronoiCenter = voronoiNodesMap[height-nearestPixel[0],nearestPixel[1]]
-	speed = 0.85 # m/s
-	topNVisitedNodes = 40
-	laserRangeInMeters = 30
-	totalDistance, topVisits, totalAngle = exploreVoronoiGraph(VG, img, gtImage, nearestPixel, voronoiNodesMap, voronoiNodesReverseMap, laserRangeInMeters*scale, scale, speed*scale, topNVisitedNodes)
-	print "Voronoi Distance "+str(totalDistance)
-	print "Voronoi Angle "+str(totalAngle)
-	return VG, voronoiCenter, totalDistance, topVisits,totalAngle, GraphStats(VG)
-
-def computeDatasetEntropy(myDataset, gtImagePath):
-	gtImage = cv2.imread(gtImagePath,cv2.IMREAD_GRAYSCALE)
-	height, width = gtImage.shape
-	# Black is obstacle, white is free space
-	_,thresh = cv2.threshold(gtImage,127,255,cv2.THRESH_BINARY)
-	# Convert to zeros and ones
-	gtImage[gtImage == 255] = 1
-	# Apply kernel
-	densities = {}
-	total = 0
-	for r in range(0,height-1):
-		for c in range(0, width-1):
-			occupancy = (gtImage[r,c]+gtImage[r+1,c]+gtImage[r+1,c+1]+gtImage[r,c+1])/4
-			if not (occupancy in densities):
-				densities[occupancy] = 0
-			densities[occupancy] += 1
-			total += 1
-	entropy = 0
-	for occupancy, numTimes in densities.iteritems():
-		frequency = float(numTimes) / total
-		entropy += -frequency * np.log(frequency)
-	myDataset.entropy = entropy
+	totalDistance, totalAngle = exploreVoronoiGraph(VG, img, gtImage, nearestPixel, voronoiNodesMap, voronoiNodesReverseMap, laserRange, laserFOV, minRotDistance, scale)
+	print "[DONE]"
+	print "Voronoi traversal distance: "+str(totalDistance)
+	print "Voronoi traversal rotation: "+str(totalAngle)
+	return voronoiCenter, totalDistance ,totalAngle
 
 def node_distance(G,u,v): 
 	return np.sqrt((G.node[u]['pos'][0]-G.node[v]['pos'][0])**2+(G.node[u]['pos'][1]-G.node[v]['pos'][1])**2)
@@ -1050,60 +752,40 @@ def get_terminal_points(graph):
 			term.append(n)
 	return term
 
-def remove_flow_through(graph):
-	for n in graph.nodes():
-		neighbors = graph.neighbors(n)
-		if len(neighbors) == 2:
-			w1 = graph.get_edge_data(n,neighbors[0])['weight']
-			w2 = graph.get_edge_data(n,neighbors[1])['weight']
-			graph.remove_node(n)
-			graph.add_edge(neighbors[0], neighbors[1],weight=w1+w2)
+def lineBroken(p,delta,image):
+	height, width = image.shape
+	empty = True
+	x = p[0]-delta
+	while (x <= p[0]+delta) and empty:
+		y = p[1]-delta
+		while (y <= p[1]+delta) and empty:
+			if image[height-int(y),int(x)]==0:
+				empty = False
+			y+=1
+		x+=1
+	return empty
 
-def setVoronoiProperties(myDataset, voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiRotation, voronoiStats):
-	myDataset.voronoi = voronoi
+def removeFlowThroughNodes(G, image):
+	for n in G.nodes():
+		neighbors = G.neighbors(n)
+		if len(neighbors) == 2:
+			# let's also check the angle before removing
+			n1 = neighbors[0]
+			n2 = neighbors[1]
+			angle = correct_angle(math.atan2(G.node[n2]['pos'][1]-G.node[n1]['pos'][1], G.node[n2]['pos'][0]-G.node[n1]['pos'][0]))
+			nextp = [G.node[n2]['pos'][0]+5*math.cos(angle),G.node[n2]['pos'][1]+5*math.sin(angle)]
+			prevp = [G.node[n1]['pos'][0]-5*math.cos(angle),G.node[n1]['pos'][1]-5*math.sin(angle)]
+			if not lineBroken(nextp,1,image) and not lineBroken(prevp,1,image):
+				w1 = G.get_edge_data(n,n1)['weight']
+				w2 = G.get_edge_data(n,n2)['weight']
+				G.remove_node(n)
+				G.add_edge(n1, n2,weight=w1+w2)
+
+def setVoronoiTraversalProperties(myDataset, voronoiCenter, voronoiDistance, voronoiRotation):
 	myDataset.voronoiCenter = voronoiCenter
 	myDataset.voronoiDistance = voronoiDistance
-	myDataset.voronoiTopVisits = voronoiTopVisits
 	myDataset.voronoiRotation = voronoiRotation
 	myDataset.voronoiStats = voronoiStats	
-
-def analyzeDatasetsOld(runsFolder, layoutFolder, voronoiFolder, worldFolder, plotFolder):
-	datasets = []
-	runs = []
-	for f in listdir(runsFolder):
-		if isdir(join(runsFolder, f)):# and "furnitures" not in f:
-			datasets.append(loadDataset(f, runsFolder))
-	for d in datasets:
-		if isdir(join(layoutFolder, d.name)):
-			print d.name
-			runs += d.runs
-			loadGeometry(d, join(layoutFolder, d.name, d.name)+".xml")	
-			#if isfile(join(voronoiFolder, d.name)+"_voronoi.png"):
-			voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiRotation, voronoiStats = processVoronoiGraph(d.name, voronoiFolder, join(worldFolder, d.name)+".world", join(worldFolder, d.name)+".png")
-			setVoronoiProperties(d, voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiRotation, voronoiStats)
-			computeDatasetEntropy(d, join(worldFolder, d.name)+".png")
-			print len(d.runs)
-			#print d.geometry
-	meanPerfStats = computePerformanceStats(runs)
-	#multiCorrelate(datasets, layoutFolder)
-	models = plotGraphs(datasets,layoutFolder,plotFolder,meanPerfStats,numFolds=5)
-	return models
-
-# bisogna distinguere due modi d'uso: singola feature o multiple features (feature selection)
-# se singola feature, posso scegliere di far calcolare:
-# a) un modello per ogni feature individuale
-# b) un modello solo per alcune features (abilitate da sezioni True / False)
-# c) solo un modello (default)
-# in questo caso l'output e' dato da tanti modelli quanti se ne sono selezionati
-# se multiple features, allora viene fatta feature selection e in output salviamo UN solo modello
-# in cui indichiamo anche quali features sono state mantenute
-
-# tre scelte da fare:
-# 1) modello da usare (LinearRegression / ElasticNet / ...)
-# 2) singola feature / multiple features
-# 3) SE singola feature, posso scegliere se calcolare un default, un overrideAll, oppure un selectFromFile
-# 3) SE multiple features, posso scegliere se fare recursive feature elimination o specificare un goal
-# 4) per alcuni modelli e' possibile specificare parametri addizionali (es. elastic net vuole i parametri di penalty)
 
 def setupFeatureSelection(datasets,layoutFolder,fsFolder,numFolds,predictors):
 	errorTypes = getErrorTypes()
@@ -1113,10 +795,11 @@ def setupFeatureSelection(datasets,layoutFolder,fsFolder,numFolds,predictors):
 	models = performFeatureSelection(datasets,layoutFolder,fsFolder,errorTypes,errorAttrs,numFolds,predictors,function)
 	return models
 
-def setupIndividualFeatureTraining(datasets,layoutFolder,numFolds,estimator,predictors):
+def setupIndividualFeatureTraining(datasets,layoutFolder,numFolds,predictors):
 	errorTypes = getErrorTypes()
 	runStats = getRunStats()
 	errorAttrs = getErrorAttrs()
+	estimator = linear_model.LinearRegression()
 	models = performIndividualFeatureTraining(datasets,layoutFolder,errorTypes,errorAttrs,numFolds,estimator,predictors)
 	bestModels = getBestModels(models)
 	return models, bestModels
@@ -1132,66 +815,102 @@ def setupElasticNetTraining(datasets,layoutFolder,fsFolder,numFolds,predictors):
 def getBestModels(models):
 	bestModels = {}
 	for predictedFeature, availableModels in models.iteritems():
-		bestModel, bestName, bestRMSE, bestR2 = getBestIndividualModel(availableModels)
-		bestModels[predictedFeature] = (bestModel, bestName, bestRMSE, bestR2)
+		bestModel, bestName, bestRMSE, bestR2, fig = getBestIndividualModel(availableModels, hasFig=True)
+		bestModels[predictedFeature] = (bestModel, bestName, bestRMSE, bestR2, fig)
 	return bestModels
 
-def getBestIndividualModel(models):
+def getBestIndividualModel(models, hasFig=False):
 	bestModel = None
 	bestName = ''
 	bestRMSE = float('inf')
 	bestR2 = float('-inf')
-	for model, name, rmse, r2 in models:
-		if rmse < bestRMSE:
-			bestModel = model
-			bestName = name
-			bestRMSE = rmse
-			bestR2 = r2
-	return bestModel, bestName, bestRMSE, bestR2
+	bestFig = None
+	if hasFig:
+		for model, name, rmse, r2, fig in models:
+			if rmse < bestRMSE:
+				bestModel = model
+				bestName = name
+				bestRMSE = rmse
+				bestR2 = r2
+				bestFig = fig
+		return bestModel, bestName, bestRMSE, bestR2, bestFig
+	else:
+		for model, name, rmse, r2 in models:
+			if rmse < bestRMSE:
+				bestModel = model
+				bestName = name
+				bestRMSE = rmse
+				bestR2 = r2
+		return bestModel, bestName, bestRMSE, bestR2
 
-def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, plotFolder, modelsFolder, modelClass, useMode, featureString):
-	datasets = []
-	runs = []
-	for f in listdir(runsFolder):
-		if isdir(join(runsFolder, f)):# and "furnitures" not in f:
-			datasets.append(loadDataset(f, runsFolder))
+def saveVoronoiCSV(path, datasets):
+	if not exists(path):
+			makedirs(path)
+	summaryFile = open(join(path, "stats.csv"), "w")
+	summaryFile.write("dataset, Voronoi distance, Voronoi rotation, totalLen, totalRot, transError.mean.mean, transError.mean.std, rotError.mean.mean, rotError.mean.std\n")
 	for d in datasets:
-		if isdir(join(layoutFolder, d.name)):
-			print d.name
-			runs += d.runs
+		summaryFile.write(d.name+','+str(d.voronoiDistance)+','+str(d.voronoiRotation)+','+str(d.perfStats.totalLength.mean)+','+str(d.perfStats.totalRot.mean)+','+str(d.perfStats.transError.mean.mean)+','+str(d.perfStats.transError.mean.std)+','+str(d.perfStats.rotError.mean.mean)+','+str(d.perfStats.rotError.mean.std)+'\n')
+	summaryFile.close()
+
+def checkPredictors(predictorsList, usedPredictors):
+ 	isUsed = False
+ 	for predictor in predictorsList:
+ 	 	if predictor in usedPredictors.keys():
+ 	 	 	isUsed = True
+ 	return isUsed
+
+def getUsedPredictors(useMode,debugMode,featureString):
+	# select regressors to be used
+	if useMode=='linear_regression':
+		usedPredictors = selectFeaturesToUse(featureString, debugMode)
+	else:
+		usedPredictors = getPredictors(debugMode)
+	return usedPredictors
+
+def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, modelsFolder, useMode, featureString, numFolds, laserRange, laserFOV, minRotDistance, debugMode):
+	datasets = []
+	usedPredictors = getUsedPredictors(useMode,debugMode,featureString)
+	# load dataset runs
+	for f in listdir(runsFolder):
+		if isdir(join(runsFolder, f)):
+			datasets.append(loadDataset(f, runsFolder))
+	# load dataset properties (layout, voronoi graph...)
+	for d in datasets:
+		if checkPredictors(getGeometricalPredictors(), usedPredictors) or checkPredictors(getTopologicalPredictors(), usedPredictors):
+			print "Computing geometrical and topological features...",
+			sys.stdout.flush()
 			loadGeometry(d, join(layoutFolder, d.name, d.name)+".xml")	
-			#if isfile(join(voronoiFolder, d.name)+"_voronoi.png"):
-			voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiRotation, voronoiStats = processVoronoiGraph(d.name, voronoiFolder, join(worldFolder, d.name)+".world", join(worldFolder, d.name)+".png")
-			setVoronoiProperties(d, voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiRotation, voronoiStats)
-			computeDatasetEntropy(d, join(worldFolder, d.name)+".png")
-			print len(d.runs)
-			#print d.geometry
-	meanPerfStats = computePerformanceStats(runs)
-	# select which model class should be used (LinearRegression, ElasticNet, ...)
-	estimator = selectModelClass(modelClass)
-	# select whether we should perform feature selection or use single features 
+			print "[DONE]"
+		if checkPredictors(getVoronoiGraphPredictors(), usedPredictors) or checkPredictors(getVoronoiTraversalPredictors(), usedPredictors):
+			print "Processing Voronoi graph of "+d.name+"."
+			worldFile = join(worldFolder, d.name)+".world"
+			gtImageFile = join(worldFolder, d.name)+".png"
+			d.voronoi = loadVoronoiGraph(d.name, voronoiFolder, worldFile)
+			if checkPredictors(getVoronoiTraversalPredictors(), usedPredictors):
+				d.voronoiCenter, d.voronoiDistance, d.voronoiRotation = processVoronoiGraph(d.voronoi, worldFile, gtImageFile, laserRange, laserFOV, minRotDistance)
+			if checkPredictors(getVoronoiGraphPredictors(), usedPredictors):
+				print "Computing Voronoi graph stats...",
+				sys.stdout.flush()
+				d.voronoiStats = GraphStats(d.voronoi)
+				print "[DONE]"
+	# select whether we should perform feature selection or use single features 	
 	if useMode=='feature_selection':
 		# in this mode, we first identify, for each subset of k features, which are the k features that correlate
 		# best with our data; then we identify the best number of features k 
-		fsFolder = join(modelsFolder,modelClass,'models','fs')
-		models = setupFeatureSelection(datasets,layoutFolder,fsFolder,5,getPredictors())
-		saveFSModels(models,fsFolder,5)
+		fsFolder = join(modelsFolder,'LinearRegression','models','fs')
+		models = setupFeatureSelection(datasets,layoutFolder,fsFolder,numFolds,getPredictors(debugMode))
+		saveFSModels(models,fsFolder,numFolds)
 	elif useMode=='linear_regression':
 		# in this mode, we directly fit a simple non-penalized linear regression model on the given features
-		usedPredictors = selectFeaturesToUse(featureString)
-		models,bestModels = setupIndividualFeatureTraining(datasets,layoutFolder,5,estimator,usedPredictors)
-		saveIndividualModels(models, join(modelsFolder,modelClass,'models','individual'), 5)
-		saveBestModels(bestModels,join(modelsFolder,modelClass,'models','best_individual'), 5)
+		models,bestModels = setupIndividualFeatureTraining(datasets,layoutFolder,numFolds,usedPredictors)
+		saveVoronoiCSV(join(modelsFolder,'LinearRegression','models','individual'), datasets)
+		saveIndividualModels(models, join(modelsFolder,'LinearRegression','models','individual'), numFolds)
+		saveBestModels(bestModels,join(modelsFolder,'LinearRegression','models','best_individual'), numFolds)
 	elif useMode=='elastic_net':
 		# in this mode, we use cross validation to find the best hyperparameters of an elastic net model
 		fsFolder = join(modelsFolder,'ElasticNet','models','fs')
-		models = setupElasticNetTraining(datasets,layoutFolder,fsFolder,5,getPredictors())
-		saveFSModels(models,fsFolder,5)	
-
-
-	#multiCorrelate(datasets, layoutFolder)
-	
-	#models = plotGraphs(datasets,layoutFolder,plotFolder,meanPerfStats,numFolds=5)
+		models = setupElasticNetTraining(datasets,layoutFolder,fsFolder,numFolds,getPredictors(debugMode))
+		saveFSModels(models,fsFolder,numFolds)	
 
 def saveSummaryFile(path, corrStats, numFolds):
 	summaryFile = open(join(path, "summary.csv"), "w")
@@ -1203,23 +922,23 @@ def saveSummaryFile(path, corrStats, numFolds):
 
 def saveBestModels(models, path, numFolds):
 	corrStats = []
-	for predictedFeature, (model, name, rmse, r2) in models.iteritems():
+	for predictedFeature, (model, name, rmse, r2, fig) in models.iteritems():
 		if not exists(join(path,predictedFeature)):
 			makedirs(join(path,predictedFeature))
 		joblib.dump(model, join(path,predictedFeature,name)+'.mdl')
 		corrStats.append((predictedFeature,name,rmse,r2))
+		fig.savefig(join(path,predictedFeature,name)+".pdf", bbox_inches='tight')
 	saveSummaryFile(path,corrStats, numFolds)
-		# save somewhere name, rmse, r2
 
 def saveIndividualModels(models,path, numFolds):
 	corrStats = []
 	for predictedFeature, modelList in models.iteritems():
 		if not exists(join(path,predictedFeature)):
 			makedirs(join(path,predictedFeature))
-		for model, name, rmse, r2 in modelList:
+		for model, name, rmse, r2, fig in modelList:
 			joblib.dump(model, join(path,predictedFeature,name)+'.mdl')
 			corrStats.append((predictedFeature,name,rmse,r2))
-			# save somewhere names, rmse, r2
+			fig.savefig(join(path,predictedFeature,name)+".pdf", bbox_inches='tight')
 	saveSummaryFile(path,corrStats, numFolds)
 
 def saveFSModels(models, path, numFolds):
@@ -1229,15 +948,17 @@ def saveFSModels(models, path, numFolds):
 			makedirs(join(path,predictedFeature))
 		joblib.dump(model, join(path,predictedFeature,'model')+'.mdl')
 		corrStats.append((predictedFeature,';'.join(featuresArray),rmse,r2))
-		# save somewhere in a text file the featuresArray and also rmse, r2
 	saveSummaryFile(path,corrStats, numFolds)
 
 def loadModels(path):
 	models = {}
-	for f in listdir(path):
-		if isfile(join(path,f)) and f[-3:]=="mdl":
-			predictedFeature = f[:-4]
-			models[predictedFeature]=joblib.load(join(path,f))
+	for predictedFeature in listdir(path):
+		if isdir(join(path,predictedFeature)):
+			models[predictedFeature] = {}
+			for f in listdir(join(path,predictedFeature)):
+				if isfile(join(path,predictedFeature,f)) and f[-3:]=="mdl":
+					modelName = f[:-4]
+					models[predictedFeature][modelName]=joblib.load(join(path,predictedFeature,f))
 	return models	
 
 def createLineIterator(P1, P2, img):
@@ -1314,15 +1035,25 @@ def createLineIterator(P1, P2, img):
 	return itbuffer
 
 if __name__ == '__main__':
-	#buildcsv(sys.argv[1])
     parser = argparse.ArgumentParser(description='This is the main tool of the RPPF. Its task is to analyze the error data of the different runs of the training datasets, correlate it with properties extracted from such datasets, build a prediction model and use it to predict the error data of the desired test datasets. Please refer to the wiki for extended documentation.')
     parser.add_argument('runs_folder',help='the folder in which all the training datasets and their respective runs are stored')
     parser.add_argument('layouts_folder',help='the folder in which the layout information of each training dataset, as extracted by the Layout Extractor, is stored')
     parser.add_argument('voronoi_folder',help='the folder in which the data related to the voronoi graph of each training dataset, as extracted by the Voronoi Extractor, is stored')
     parser.add_argument('world_folder',help='the folder in which the Stage data of each training dataset, as used to perform the Stage simulations, is stored')
     parser.add_argument('models_folder',help='the output folder in which the tool stores the trained models')
-    parser.add_argument('plot_folder',help='the output folder in which the tool stores the results of the correlation analyses performed on the training dataset')
-    parser.add_argument('datasets_to_predict_folder',help='the folder in which all the data related to the datasets of the test set for which the tool must perform predictions is stored')
+    parser.add_argument('--n_folds', action='store', default=5, help='specifies the k number of folds of k-fold cross validation; default is 5')
+    parser.add_argument('--laser_range', action='store', default=30, help='specifies the maximum range in meters of the virtual laser; default is 30')
+    parser.add_argument('--laser_fov', action='store', default=270, help='specifies the field of view in degrees of the virtual laser; default is 270')
+    parser.add_argument('--min_rotation_distance', action='store', default=0.5, help='specifies the minimum distance between two nodes for the computation of the travelled rotation; default is 0.5')
+    parser.add_argument('--linear_regression', dest='regression_technique',action='store_const',const='linear_regression', help='uses the linear regression technique for learning')
+    parser.add_argument('--feature_selection', dest='regression_technique',action='store_const',const='feature_selection', help='uses the feature selection technique for learning')
+    parser.add_argument('--elastic_net', dest='regression_technique',action='store_const',const='elastic_net', help='uses the ElasticNet regularized regression technique for learning; this is the default behavior')
+    parser.add_argument('--predictor',action='store',default='overrideAll', help='specifies the predictor to be used with the linear regression machine learning technique; default is "overrideAll", which trains all possible predictors')
+    parser.add_argument('--debug_mode',action='store',default=0,help='specifies whether the true trajectory length and true trajectory rotation features should be used. 0 disables them, 1 enables them in addition to the other features, 2 enables them with all other features disabled (default is 0)')
     args = parser.parse_args()
-    analyzeDatasets(args.runs_folder,args.layouts_folder,args.voronoi_folder,args.world_folder,args.plot_folder,args.models_folder,'LinearRegression', 'elastic_net', 'overrideAll')
+    regression_technique = args.regression_technique
+    if regression_technique is None:
+        print 'You must specify a regression technique via --linear_regression, --feature_selection or --elastic_net. Exiting.'
+    else:
+        analyzeDatasets(args.runs_folder,args.layouts_folder,args.voronoi_folder,args.world_folder,args.models_folder, args.regression_technique, args.predictor, args.n_folds, args.laser_range, args.laser_fov*np.pi/180, args.min_rotation_distance, args.debug_mode)
     

@@ -80,11 +80,11 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 
 	gt.close()
 
-	if not exists(join(folder,"Relations/")):
-		makedirs(join(folder,"Relations/"))
+	if not exists(join(folder,"Relations/Original/")):
+		makedirs(join(folder,"Relations/Original/"))
 
 	#RE
-	relationsfileRE=open(folder+"Relations/"+output+"RE.relations","w")
+	relationsfileRE=open(folder+"Relations/Original/"+output+"RE.relations","w")
 
 	n_samples = 500
 	i=0
@@ -114,7 +114,7 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 		errorWeights = "{1.0,1.0,1.0,0.0,0.0,0.0}"
 	else:
 		errorWeights = "{0.0,0.0,0.0,1.0,1.0,1.0}"
-	p1=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w",errorWeights, "-e","summary.error"])
+	p1=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/Original/"+output+"RE.relations","-w",errorWeights, "-e","summary.error"])
 	p1.wait()
 	errorfile = open("summary.error", "r")
 	content = errorfile.readlines()
@@ -125,7 +125,7 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 	z_a_2 = t.ppf(alpha,n_samples-1)#2.58
 	delta = maxError
 	n_samples = math.pow(z_a_2,2)*var/math.pow(delta,2)
-	relationsfileRE=open(folder+"Relations/"+output+"RE.relations","w")
+	relationsfileRE=open(folder+"Relations/Original/"+output+"RE.relations","w")
 	#relationsfileRE.seek(0)
 	i=0
 	while i < n_samples:
@@ -147,18 +147,18 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 			relationsfileRE.write(str(firststamp)+" "+str(secondstamp)+" "+str(x)+" "+str(y)+" 0.000000 0.000000 0.000000 "+str(theta)+"\n")
 			i+=1 
 	relationsfileRE.close()
-	if not exists(join(folder,"Errors/RE/")):
-		makedirs(join(folder,"Errors/RE/"))
-	print folder+"Relations/"+output+"RE.relations"
-	p2=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/RE/T.errors","-eu",folder + "Errors/RE/T-unsorted.errors"])
+	if not exists(join(folder,"Errors/Original/RE/")):
+		makedirs(join(folder,"Errors/Original/RE/"))
+	print folder+"Relations/Original/"+output+"RE.relations"
+	p2=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/Original/"+output+"RE.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/Original/RE/T.errors","-eu",folder + "Errors/Original/RE/T-unsorted.errors"])
 	p2.wait()
-	p3=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"RE.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/RE/R.errors","-eu",folder + "Errors/RE/R-unsorted.errors"])
+	p3=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/Original/"+output+"RE.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/Original/RE/R.errors","-eu",folder + "Errors/Original/RE/R-unsorted.errors"])
 	p3.wait()
 
 
 	#ORDERED
 	if not(skipOrderedRecomputation):
-		relationsfileOrdered=open(folder+"Relations/"+output+"Ordered.relations","w")
+		relationsfileOrdered=open(folder+"Relations/Original/"+output+"Ordered.relations","w")
 		
 		groundSorted=sorted(ground)
 		idx = 1
@@ -184,11 +184,11 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 
 		relationsfileOrdered.close()
 
-		if not exists(join(folder,"Errors/Ordered/")):
-			makedirs(join(folder,"Errors/Ordered/"))
-		p4=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/Ordered/T.errors","-eu",folder + "Errors/Ordered/T-unsorted.errors"])
+		if not exists(join(folder,"Errors/Original/Ordered/")):
+			makedirs(join(folder,"Errors/Original/Ordered/"))
+		p4=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/Original/"+output+"Ordered.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e",folder + "Errors/Original/Ordered/T.errors","-eu",folder + "Errors/Original/Ordered/T-unsorted.errors"])
 		p4.wait()
-		p5=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/"+output+"Ordered.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/Ordered/R.errors","-eu",folder + "Errors/Ordered/R-unsorted.errors"])
+		p5=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/Original/"+output+"Ordered.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e",folder + "Errors/Original/Ordered/R.errors","-eu",folder + "Errors/Original/Ordered/R-unsorted.errors"])
 		p5.wait()
 
 def getMatrixDiff(p1,p2):

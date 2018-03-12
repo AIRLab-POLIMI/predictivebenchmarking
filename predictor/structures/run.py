@@ -7,11 +7,12 @@ standard deviation, min, max, number of samples) of the run, as computed by the 
 import copy
 
 class Run():
-	def __init__(self, tstats, rstats, totalTime=0, totalLength=0):
+	def __init__(self, tstats, rstats, totalTime=0, totalLength=0, totalRot=0):
 		self._transStats = tstats
 		self._rotStats = rstats
 		self._totalTime = totalTime
 		self._totalLength = totalLength
+		self._totalRot = totalRot
 
 	@property
 	def transStats(self):
@@ -32,6 +33,11 @@ class Run():
 	def totalLength(self):
 		""" Returns the total length travelled by the robot during the run. """
 		return self._totalLength
+
+	@property 
+	def totalRot(self):
+		""" Returns the total rotation performed by the robot during the run. """
+		return self._totalRot
 
 	def __repr__(self):
 		return "Printing run stats:"+"\n"+ \

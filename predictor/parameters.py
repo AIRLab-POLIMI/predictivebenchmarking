@@ -32,9 +32,9 @@ class Path_obj():
 		# base directory
 		self.filepath = './'
 		# dataset input folder
-		self.datasetInputFolder = './datasets'#'../../Dropbox/Runs/datasets'
+		self.datasetInputFolder = '../experiments/datasets'
  		# dataset output folder
-		self.parentOutputFolder = './outputs'
+		self.parentOutputFolder = '../experiments/layouts'
 		# subdirectory
 		self.actualOutputFolder = ''
 		#-----------------------------MAPPA METRICA--------------------------------

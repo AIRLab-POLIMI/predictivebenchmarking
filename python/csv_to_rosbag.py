@@ -100,7 +100,7 @@ def csv2bag(ground_truth_file,odometry_file,laser_file,output_folder):
     odom_x, odom_y, odom_theta = 0,0,0
     for timestamp, data in dataset:
         # we need to decide how to interpret this data
-        if iteration%20==0:
+        if True:#iteration%20==0:
             if data[0] == 'ground_truth':
                 line = data[1].strip()
                 tokens = line.split(',')

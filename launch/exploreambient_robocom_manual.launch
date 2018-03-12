@@ -2,20 +2,13 @@
 
 	<!-- This file launches:
 	 	* Stage
-	 	* nav2d
-	 		-Operator
-	 		-Navigator
-	 		-GetMap
-	 		-Explore
-	 		-SetGoal
-	 		-joystick
-	 		-Remote
-	 		-exploration
-	 	* rosbag record to record the /base_pose_ground_truth topic in a bag file
+	 	* Explorer
+	 	* rosbag record to record the /pose, /ground_pose, /odom and /scan topics in a bag file
 	 	* tf listener to write the gmapping tf
 	 	* gmapping
 	 	* RVIZ
-	 	params:
+	 	* optitrack node
+	 	Params:
 	 		-worldfile: the world file for stage
 	 		-bag: the name of the bag file to write the ground truth from stage
 	 		-output: the name of the file to write the gmapping log

@@ -66,11 +66,12 @@ Auxiliary class that acts as a container for the translational and rotational er
 over a series of runs.'''
 
 class PerfStats():
-	def __init__(self, tError, rError, totalTime=None, totalLength=None):
+	def __init__(self, tError, rError, totalTime=None, totalLength=None, totalRot=None):
 		self._transError = tError
 		self._rotError = rError
 		self._totalTime = totalTime
 		self._totalLength = totalLength
+		self._totalRot = totalRot
 
 	@property
 	def transError(self):
@@ -89,8 +90,13 @@ class PerfStats():
 
 	@property
 	def totalLength(self):
-		""" Return the stats (mean and standard deviation) of the total length that was explored by the robot. """
+		""" Return the stats (mean and standard deviation) of the total length that was travelled by the robot. """
 		return self._totalLength
+
+	@property
+	def totalRot(self):
+		""" Return the stats (mean and standard deviation) of the total rotation that was performed by the robot. """
+		return self._totalRot
 
 	def __repr__(self):
 		return "Transational error: "+"\n"+\

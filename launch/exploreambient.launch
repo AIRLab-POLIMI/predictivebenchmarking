@@ -2,16 +2,10 @@
 
 	<!-- This file launches:
 	 	* Stage
-	 	* nav2d
-	 		-Operator
-	 		-Navigator
-	 		-GetMap
-	 		-Explore
-	 		-SetGoal
-	 		-joystick
-	 		-Remote
-	 		-exploration
-	 	* rosbag record to record the /base_pose_ground_truth topic in a bag file
+	 	* Navigation stack
+	 	* Explorer
+	 	* Range proximity
+	 	* rosbag record to record the /base_pose_ground_truth, /odom and /base_scan topics in a bag file
 	 	* tf listener to write the gmapping tf
 	 	* gmapping
 	 	* RVIZ
@@ -110,12 +104,4 @@
     <remap from="scan" to="base_scan" />
     <remap from="cmd_vel" to="cmd_vel" />
   </node>
-
-    <rosparam command="load" file="$(find kinect_proximity_safety_controller)/config/kinect_proximity_safety_ctrl_param" />
-
-    <node name="kinect_proximity_safety_controller" type="kinect_proximity_safety_controller_node" pkg="kinect_proximity_safety_controller" output="screen" clear_params="true" respawn="true" >
-    <remap from="scan" to="base_scan" />
-    <remap from="cmd_vel" to="cmd_vel" />
-  </node>
-
 </launch>

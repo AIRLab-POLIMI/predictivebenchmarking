@@ -14,23 +14,9 @@ def adjustMetric(runsPath):
 			# for each run
 			for r in listdir(join(runsPath, d)):
 				if isdir(join(runsPath, d, r)):
-					try:
-						err = open(join(runsPath, d, r,"Errors/RE/T.errors"), "r")
-						first = True
-						for line in err:
-							words = line.split(', ')
-							# skip the very first line, which just contains the name of the fields
-							if first is True:
-								first = False
-							else:
-								mean = float(words[0])
-						err.close()
-					except IOError:
-						mean = 0
-					print join(runsPath, d, r,"Errors/RE/T.errors")
-					if not(isfile(join(runsPath, d, r, d)+".log.bak")): # recompute
-						shutil.copyfile(join(runsPath, d, r, d)+".log", join(runsPath, d, r, d)+".log.bak")
-					gtLog = open(join(runsPath, d, r, d)+".log.bak", "r")
+					#if not(isfile(join(runsPath, d, r, d)+"_filtered.log")): # recompute
+						#shutil.copyfile(join(runsPath, d, r, d)+".log", join(runsPath, d, r, d)+".log.bak")
+					gtLog = open(join(runsPath, d, r, d)+".log", "r")
 					print join(runsPath, d, r, d)+".log"
 					newContent = []
 					prev_line = ["", "", "", ""]
@@ -47,12 +33,12 @@ def adjustMetric(runsPath):
 					# TO REVERT THESE CHANGES IN THE FUTURE! IT ONLY OVERWRITES THE LOG FILE, WHICH CAN BE
 					# RECREATED! FOR THE SAME REASON, IT DOESN'T MODIFY THE SLAM OUTPUT!
 					gtLog.close()
-					gtLog = open(join(runsPath, d, r, d)+".log", "w")
+					gtLog = open(join(runsPath, d, r, d)+"_filtered.log", "w")
 					writeContent = reversed(newContent)
 					for item in writeContent:
   						gtLog.write("%s" % item)
   					gtLog.close()
-  					# recompute all metricEvaluator errors with the updated logs
+  					# recompute all metricEvaluator errors with the updated logs: NEEDS TO BE UPDATED TO _filtered
   					generateAll(join(runsPath, d, r)+'/', skipGroundTruthConversion=True, skipOrderedRecomputation=True)
 
 if __name__=='__main__':

@@ -1,0 +1,4830 @@
+<building id="3ad0e600-f87d-4d5c-9d65-9ee1104d7916">
+<name>./outputs/NW14-4/NW14-4.xml</name>
+<scale>
+<represented_distance>
+<value>1</value>
+<um>pixel</um>
+</represented_distance>
+<real_distance>
+<value>0.025</value>
+<um>m</um>
+</real_distance>
+</scale>
+<Info>Inserire informazioni sull'edificio</Info>
+<building_type>
+<main_type>SCHOOL</main_type>
+</building_type>
+<floor>
+<bounding_polygon>
+<point x="71" y="2637" />
+<point x="126" y="2634" />
+<point x="127" y="2619" />
+<point x="209" y="2614" />
+<point x="210" y="2630" />
+<point x="265" y="2627" />
+<point x="267" y="2451" />
+<point x="275" y="2451" />
+<point x="275" y="2625" />
+<point x="371" y="2621" />
+<point x="374" y="2606" />
+<point x="407" y="2602" />
+<point x="407" y="2336" />
+<point x="376" y="2335" />
+<point x="376" y="2328" />
+<point x="432" y="2328" />
+<point x="432" y="2335" />
+<point x="414" y="2336" />
+<point x="415" y="2429" />
+<point x="534" y="2429" />
+<point x="534" y="2435" />
+<point x="414" y="2436" />
+<point x="414" y="2618" />
+<point x="568" y="2611" />
+<point x="568" y="2436" />
+<point x="559" y="2435" />
+<point x="568" y="2428" />
+<point x="568" y="2336" />
+<point x="454" y="2335" />
+<point x="454" y="2328" />
+<point x="637" y="2328" />
+<point x="638" y="2259" />
+<point x="257" y="2258" />
+<point x="257" y="2250" />
+<point x="637" y="2250" />
+<point x="638" y="2239" />
+<point x="646" y="2239" />
+<point x="646" y="2327" />
+<point x="693" y="2328" />
+<point x="693" y="2335" />
+<point x="614" y="2336" />
+<point x="614" y="2610" />
+<point x="791" y="2600" />
+<point x="791" y="2469" />
+<point x="808" y="2463" />
+<point x="808" y="2336" />
+<point x="715" y="2335" />
+<point x="715" y="2328" />
+<point x="808" y="2328" />
+<point x="809" y="2306" />
+<point x="816" y="2306" />
+<point x="816" y="2598" />
+<point x="1003" y="2589" />
+<point x="1010" y="2257" />
+<point x="972" y="2256" />
+<point x="972" y="2250" />
+<point x="1011" y="2249" />
+<point x="1011" y="2135" />
+<point x="903" y="2134" />
+<point x="903" y="2249" />
+<point x="950" y="2250" />
+<point x="950" y="2256" />
+<point x="817" y="2256" />
+<point x="816" y="2284" />
+<point x="809" y="2284" />
+<point x="809" y="2250" />
+<point x="896" y="2249" />
+<point x="896" y="2101" />
+<point x="903" y="2101" />
+<point x="904" y="2127" />
+<point x="1011" y="2125" />
+<point x="1011" y="2022" />
+<point x="904" y="2021" />
+<point x="903" y="2049" />
+<point x="896" y="2049" />
+<point x="895" y="2021" />
+<point x="740" y="2021" />
+<point x="740" y="2013" />
+<point x="764" y="2012" />
+<point x="764" y="1896" />
+<point x="772" y="1896" />
+<point x="773" y="2015" />
+<point x="999" y="2015" />
+<point x="1000" y="1988" />
+<point x="1012" y="1984" />
+<point x="1012" y="1810" />
+<point x="1001" y="1809" />
+<point x="1000" y="1712" />
+<point x="834" y="1712" />
+<point x="833" y="1771" />
+<point x="773" y="1773" />
+<point x="772" y="1806" />
+<point x="764" y="1806" />
+<point x="764" y="1743" />
+<point x="771" y="1743" />
+<point x="772" y="1766" />
+<point x="827" y="1765" />
+<point x="827" y="1694" />
+<point x="772" y="1693" />
+<point x="771" y="1720" />
+<point x="764" y="1720" />
+<point x="764" y="1688" />
+<point x="828" y="1687" />
+<point x="828" y="1556" />
+<point x="834" y="1556" />
+<point x="835" y="1705" />
+<point x="983" y="1704" />
+<point x="983" y="1544" />
+<point x="896" y="1543" />
+<point x="896" y="1537" />
+<point x="1000" y="1537" />
+<point x="1001" y="1479" />
+<point x="1014" y="1475" />
+<point x="1014" y="1309" />
+<point x="999" y="1308" />
+<point x="998" y="1258" />
+<point x="778" y="1258" />
+<point x="777" y="1338" />
+<point x="771" y="1338" />
+<point x="771" y="1207" />
+<point x="777" y="1207" />
+<point x="778" y="1252" />
+<point x="999" y="1252" />
+<point x="1002" y="1238" />
+<point x="1015" y="1237" />
+<point x="1015" y="1109" />
+<point x="1001" y="1108" />
+<point x="1000" y="1048" />
+<point x="778" y="1048" />
+<point x="777" y="1147" />
+<point x="771" y="1147" />
+<point x="771" y="966" />
+<point x="777" y="966" />
+<point x="778" y="1042" />
+<point x="1000" y="1042" />
+<point x="1016" y="1033" />
+<point x="1016" y="906" />
+<point x="999" y="903" />
+<point x="998" y="843" />
+<point x="778" y="843" />
+<point x="771" y="864" />
+<point x="771" y="769" />
+<point x="777" y="769" />
+<point x="778" y="837" />
+<point x="998" y="837" />
+<point x="1017" y="830" />
+<point x="1017" y="687" />
+<point x="1001" y="684" />
+<point x="1000" y="629" />
+<point x="779" y="629" />
+<point x="778" y="661" />
+<point x="772" y="661" />
+<point x="772" y="532" />
+<point x="778" y="532" />
+<point x="779" y="623" />
+<point x="1000" y="623" />
+<point x="1003" y="613" />
+<point x="1018" y="611" />
+<point x="1018" y="447" />
+<point x="1002" y="444" />
+<point x="1001" y="385" />
+<point x="779" y="385" />
+<point x="778" y="434" />
+<point x="772" y="434" />
+<point x="772" y="376" />
+<point x="1001" y="379" />
+<point x="1002" y="366" />
+<point x="1019" y="365" />
+<point x="1019" y="185" />
+<point x="1006" y="182" />
+<point x="1005" y="168" />
+<point x="972" y="168" />
+<point x="971" y="154" />
+<point x="844" y="154" />
+<point x="843" y="169" />
+<point x="781" y="169" />
+<point x="781" y="284" />
+<point x="722" y="283" />
+<point x="722" y="275" />
+<point x="773" y="274" />
+<point x="772" y="151" />
+<point x="677" y="152" />
+<point x="677" y="274" />
+<point x="693" y="275" />
+<point x="693" y="283" />
+<point x="653" y="283" />
+<point x="654" y="275" />
+<point x="669" y="274" />
+<point x="668" y="151" />
+<point x="576" y="152" />
+<point x="576" y="273" />
+<point x="622" y="274" />
+<point x="622" y="282" />
+<point x="452" y="282" />
+<point x="452" y="274" />
+<point x="568" y="273" />
+<point x="567" y="151" />
+<point x="442" y="151" />
+<point x="440" y="168" />
+<point x="371" y="168" />
+<point x="371" y="151" />
+<point x="283" y="151" />
+<point x="283" y="274" />
+<point x="429" y="274" />
+<point x="429" y="282" />
+<point x="275" y="282" />
+<point x="275" y="152" />
+<point x="244" y="151" />
+<point x="244" y="127" />
+<point x="270" y="126" />
+<point x="270" y="27" />
+<point x="34" y="27" />
+<point x="35" y="127" />
+<point x="220" y="127" />
+<point x="220" y="151" />
+<point x="190" y="151" />
+<point x="189" y="181" />
+<point x="169" y="184" />
+<point x="170" y="374" />
+<point x="646" y="374" />
+<point x="646" y="477" />
+<point x="638" y="477" />
+<point x="637" y="381" />
+<point x="190" y="381" />
+<point x="189" y="445" />
+<point x="168" y="447" />
+<point x="168" y="614" />
+<point x="187" y="616" />
+<point x="187" y="687" />
+<point x="167" y="690" />
+<point x="167" y="833" />
+<point x="449" y="834" />
+<point x="452" y="780" />
+<point x="560" y="780" />
+<point x="560" y="787" />
+<point x="457" y="788" />
+<point x="457" y="890" />
+<point x="636" y="891" />
+<point x="637" y="843" />
+<point x="584" y="842" />
+<point x="584" y="835" />
+<point x="636" y="835" />
+<point x="637" y="788" />
+<point x="587" y="787" />
+<point x="587" y="780" />
+<point x="636" y="780" />
+<point x="637" y="768" />
+<point x="645" y="768" />
+<point x="645" y="956" />
+<point x="637" y="956" />
+<point x="636" y="898" />
+<point x="450" y="897" />
+<point x="449" y="841" />
+<point x="188" y="841" />
+<point x="187" y="904" />
+<point x="166" y="907" />
+<point x="166" y="1036" />
+<point x="189" y="1038" />
+<point x="189" y="1104" />
+<point x="165" y="1107" />
+<point x="165" y="1240" />
+<point x="189" y="1241" />
+<point x="190" y="1255" />
+<point x="637" y="1255" />
+<point x="638" y="1214" />
+<point x="646" y="1214" />
+<point x="646" y="1349" />
+<point x="638" y="1349" />
+<point x="637" y="1263" />
+<point x="190" y="1263" />
+<point x="189" y="1308" />
+<point x="164" y="1309" />
+<point x="164" y="1476" />
+<point x="187" y="1479" />
+<point x="188" y="1505" />
+<point x="637" y="1505" />
+<point x="638" y="1424" />
+<point x="646" y="1424" />
+<point x="646" y="1534" />
+<point x="638" y="1534" />
+<point x="637" y="1511" />
+<point x="188" y="1511" />
+<point x="187" y="1552" />
+<point x="163" y="1553" />
+<point x="163" y="1732" />
+<point x="187" y="1734" />
+<point x="188" y="1748" />
+<point x="637" y="1748" />
+<point x="638" y="1670" />
+<point x="646" y="1670" />
+<point x="646" y="1871" />
+<point x="638" y="1871" />
+<point x="637" y="1754" />
+<point x="188" y="1754" />
+<point x="187" y="1804" />
+<point x="161" y="1806" />
+<point x="161" y="2009" />
+<point x="637" y="2010" />
+<point x="638" y="1931" />
+<point x="646" y="1931" />
+<point x="646" y="2012" />
+<point x="670" y="2013" />
+<point x="670" y="2021" />
+<point x="646" y="2022" />
+<point x="646" y="2038" />
+<point x="638" y="2038" />
+<point x="637" y="2015" />
+<point x="30" y="2016" />
+<point x="30" y="2249" />
+<point x="234" y="2250" />
+<point x="234" y="2258" />
+<point x="189" y="2259" />
+<point x="190" y="2328" />
+<point x="315" y="2328" />
+<point x="315" y="2335" />
+<point x="275" y="2336" />
+<point x="275" y="2428" />
+<point x="267" y="2428" />
+<point x="267" y="2336" />
+<point x="182" y="2335" />
+<point x="181" y="2258" />
+<point x="30" y="2259" />
+<point x="30" y="2620" />
+<point x="66" y="2621" />
+</bounding_polygon>
+<spaces>
+<space id="0">
+<partial_room>False</partial_room>
+<centroid>
+<point x="547" y="547" />
+</centroid>
+<bounding_box>
+<point x="448" y="779" />
+<point x="448" y="899" />
+<point x="645" y="899" />
+<point x="645" y="779" />
+</bounding_box>
+<bounding_polygon>
+<point x="645" y="842" />
+<point x="645" y="779" />
+<point x="613" y="779" />
+<point x="566" y="780" />
+<point x="448" y="780" />
+<point x="448" y="843" />
+<point x="449" y="899" />
+<point x="566" y="898" />
+<point x="613" y="898" />
+<point x="645" y="898" />
+<point x="645" y="842" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="9e0678f3-f772-4d61-b610-9e15523000b7">
+<point x="645" y="842" />
+<point x="645" y="779" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="407569f2-88c8-4a4c-b555-a4f8afc82693">
+<point x="645" y="779" />
+<point x="613" y="779" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="84898c1a-83be-4c92-baa2-46ab7c41b320">
+<point x="613" y="779" />
+<point x="566" y="780" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="c564d318-5c6a-48bc-9d0f-1c45e652287b">
+<point x="566" y="780" />
+<point x="448" y="780" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="2fcda68a-03fb-4a9d-9e12-0621f6483dbf">
+<point x="448" y="780" />
+<point x="448" y="843" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="7e38d2f7-976e-4e29-8b92-8a0e9204406a">
+<point x="448" y="843" />
+<point x="449" y="899" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="855b3fca-f249-42c8-aa53-c689164eb283">
+<point x="449" y="899" />
+<point x="566" y="898" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="b89a9bca-8a0e-454c-a25e-0c27eaa3588e">
+<point x="566" y="898" />
+<point x="613" y="898" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="406f1b19-d3e4-4c1f-8cfe-69e3378f0a3a">
+<point x="613" y="898" />
+<point x="645" y="898" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="1dbf14bc-3723-48eb-91a5-e6a1641a2fa8">
+<point x="645" y="898" />
+<point x="645" y="842" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>0</id>
+<id>5</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="1">
+<partial_room>False</partial_room>
+<centroid>
+<point x="406" y="406" />
+</centroid>
+<bounding_box>
+<point x="168" y="1747" />
+<point x="168" y="2013" />
+<point x="645" y="2013" />
+<point x="645" y="1747" />
+</bounding_box>
+<bounding_polygon>
+<point x="645" y="1774" />
+<point x="645" y="1747" />
+<point x="613" y="1747" />
+<point x="566" y="1747" />
+<point x="449" y="1747" />
+<point x="413" y="1747" />
+<point x="274" y="1748" />
+<point x="243" y="1748" />
+<point x="215" y="1748" />
+<point x="168" y="1748" />
+<point x="168" y="1774" />
+<point x="168" y="1806" />
+<point x="168" y="2013" />
+<point x="215" y="2013" />
+<point x="243" y="2013" />
+<point x="274" y="2013" />
+<point x="413" y="2013" />
+<point x="449" y="2013" />
+<point x="566" y="2013" />
+<point x="613" y="2013" />
+<point x="645" y="2013" />
+<point x="645" y="1805" />
+<point x="645" y="1774" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="9571de24-0d50-405d-8382-4ee1d657a4a1">
+<point x="645" y="1774" />
+<point x="645" y="1747" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="fb8da168-c761-4218-8389-2c06e67f9204">
+<point x="645" y="1747" />
+<point x="613" y="1747" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="36c68f62-3e1c-41b4-a89e-0903d25fd678">
+<point x="613" y="1747" />
+<point x="566" y="1747" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="9109ff25-b207-4d07-8565-ff29bb6d29db">
+<point x="566" y="1747" />
+<point x="449" y="1747" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="9245e0c8-70a7-4460-991d-9106ecb6069d">
+<point x="449" y="1747" />
+<point x="413" y="1747" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="50c530a3-ae87-4568-83bb-4b9404690352">
+<point x="413" y="1747" />
+<point x="274" y="1748" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="6396f003-5ad5-4eeb-9fca-2ca2e23ba8cc">
+<point x="274" y="1748" />
+<point x="243" y="1748" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="2fe0ef2b-2a5a-437e-a55d-bec622d6ca7e">
+<point x="243" y="1748" />
+<point x="215" y="1748" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="9a714f8b-d0f9-4c5a-92ca-c326f1f97506">
+<point x="215" y="1748" />
+<point x="168" y="1748" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="444bfc62-3ff8-4f0f-9ddd-6a700969b6cb">
+<point x="168" y="1748" />
+<point x="168" y="1774" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4534a2ef-e5a7-460d-a34e-7183a940ef10">
+<point x="168" y="1774" />
+<point x="168" y="1806" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="40a15356-c064-4bd6-b61b-0734b14ebc1e">
+<point x="168" y="1806" />
+<point x="168" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="2678edfb-fcbe-48c3-9b48-5cc9c70e4500">
+<point x="168" y="2013" />
+<point x="215" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="3f3839e0-827f-4153-878f-1bdd3c6959e2">
+<point x="215" y="2013" />
+<point x="243" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="cc9bba78-f6b6-4a04-a018-3917eb6d1744">
+<point x="243" y="2013" />
+<point x="274" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4f74523d-21fa-429f-87f9-4bfcb31b1d28">
+<point x="274" y="2013" />
+<point x="413" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="98d8bd3a-879c-4914-a7b6-b883ca943274">
+<point x="413" y="2013" />
+<point x="449" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="5e845a6a-d385-4476-a3f0-ff27011c7d5d">
+<point x="449" y="2013" />
+<point x="566" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="fce96289-7ae6-4c43-8267-c971894c9cac">
+<point x="566" y="2013" />
+<point x="613" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="170b3a82-6f77-4592-a40c-e9e148dee4d1">
+<point x="613" y="2013" />
+<point x="645" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d4af3055-e6c3-4ac4-8c53-116276b375bd">
+<point x="645" y="2013" />
+<point x="645" y="1805" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="a259a9d9-a966-4cdf-8496-ee2d1ed734f3">
+<point x="645" y="1805" />
+<point x="645" y="1774" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>1</id>
+<id>3</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="2">
+<partial_room>False</partial_room>
+<centroid>
+<point x="406" y="406" />
+</centroid>
+<bounding_box>
+<point x="168" y="898" />
+<point x="168" y="1259" />
+<point x="645" y="1259" />
+<point x="645" y="898" />
+</bounding_box>
+<bounding_polygon>
+<point x="645" y="1042" />
+<point x="645" y="898" />
+<point x="613" y="898" />
+<point x="566" y="898" />
+<point x="449" y="899" />
+<point x="413" y="899" />
+<point x="274" y="899" />
+<point x="243" y="899" />
+<point x="215" y="899" />
+<point x="168" y="899" />
+<point x="168" y="1042" />
+<point x="168" y="1107" />
+<point x="168" y="1259" />
+<point x="215" y="1259" />
+<point x="243" y="1259" />
+<point x="274" y="1259" />
+<point x="413" y="1259" />
+<point x="449" y="1259" />
+<point x="566" y="1259" />
+<point x="613" y="1259" />
+<point x="645" y="1259" />
+<point x="645" y="1106" />
+<point x="645" y="1042" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="2640e9cf-c117-46f8-9315-38b3719aaa98">
+<point x="645" y="1042" />
+<point x="645" y="898" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="6ca45234-8ca7-4407-a80c-a05a3662e2bd">
+<point x="645" y="898" />
+<point x="613" y="898" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="e61d1a76-7b71-47fb-9a32-32daa4c94f3f">
+<point x="613" y="898" />
+<point x="566" y="898" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="84826581-c8e9-4224-8c87-f4a71e6497d0">
+<point x="566" y="898" />
+<point x="449" y="899" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="a8ef1779-fd2b-438a-beeb-745c88a06055">
+<point x="449" y="899" />
+<point x="413" y="899" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="e31c06d7-046b-4b8e-a6ff-aa7d49d203fd">
+<point x="413" y="899" />
+<point x="274" y="899" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="dc9ea16a-6b84-4491-9a69-c68282ca26d6">
+<point x="274" y="899" />
+<point x="243" y="899" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d93b3bd1-2933-4653-b61e-6d7427b818f6">
+<point x="243" y="899" />
+<point x="215" y="899" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="768d837c-053d-480d-aa18-d9b3e9881f29">
+<point x="215" y="899" />
+<point x="168" y="899" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="f7cf2ef3-ec50-466b-9e4e-fa64a7ddf11f">
+<point x="168" y="899" />
+<point x="168" y="1042" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="1d3b4eec-6372-4ec6-880f-360cb3587b4a">
+<point x="168" y="1042" />
+<point x="168" y="1107" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="8df41933-f59b-4c09-9ef8-ebae861a6297">
+<point x="168" y="1107" />
+<point x="168" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d9ba9ec7-b810-4bda-9219-bb80cadbaaf2">
+<point x="168" y="1259" />
+<point x="215" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="e29a7a83-0609-41ab-9812-6e1b1e0bc016">
+<point x="215" y="1259" />
+<point x="243" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="291d1d48-4260-447c-be58-e0ec50c65483">
+<point x="243" y="1259" />
+<point x="274" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="9ab61d88-ecf2-4ff8-8ce3-07b8a7889987">
+<point x="274" y="1259" />
+<point x="413" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="cecf72f1-c3eb-4266-acfc-f7cf7a8a12bc">
+<point x="413" y="1259" />
+<point x="449" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="59a477d9-713f-42fa-9531-ecb25768d538">
+<point x="449" y="1259" />
+<point x="566" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="92449b76-4194-408b-a4aa-384b1822a63d">
+<point x="566" y="1259" />
+<point x="613" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="cacada84-aa99-46d7-a5a1-1ef29a13302e">
+<point x="613" y="1259" />
+<point x="645" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="a94de71c-0219-4e7a-b7d4-0ac1408e906c">
+<point x="645" y="1259" />
+<point x="645" y="1106" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4b42a680-1b3e-4346-8961-830ad8ef8a44">
+<point x="645" y="1106" />
+<point x="645" y="1042" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>2</id>
+<id>3</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>2</id>
+<id>20</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="3">
+<partial_room>False</partial_room>
+<centroid>
+<point x="711" y="711" />
+</centroid>
+<bounding_box>
+<point x="644" y="282" />
+<point x="644" y="2013" />
+<point x="777" y="2013" />
+<point x="777" y="282" />
+</bounding_box>
+<bounding_polygon>
+<point x="776" y="446" />
+<point x="776" y="282" />
+<point x="668" y="282" />
+<point x="644" y="282" />
+<point x="644" y="446" />
+<point x="645" y="630" />
+<point x="645" y="779" />
+<point x="645" y="842" />
+<point x="645" y="898" />
+<point x="645" y="1042" />
+<point x="645" y="1106" />
+<point x="645" y="1259" />
+<point x="645" y="1308" />
+<point x="645" y="1457" />
+<point x="645" y="1483" />
+<point x="645" y="1511" />
+<point x="645" y="1544" />
+<point x="645" y="1688" />
+<point x="645" y="1713" />
+<point x="645" y="1747" />
+<point x="645" y="1774" />
+<point x="645" y="1805" />
+<point x="645" y="2013" />
+<point x="668" y="2013" />
+<point x="777" y="2012" />
+<point x="777" y="1805" />
+<point x="777" y="1774" />
+<point x="777" y="1747" />
+<point x="777" y="1713" />
+<point x="777" y="1688" />
+<point x="777" y="1544" />
+<point x="777" y="1511" />
+<point x="777" y="1483" />
+<point x="777" y="1457" />
+<point x="777" y="1308" />
+<point x="777" y="1259" />
+<point x="777" y="1106" />
+<point x="777" y="1042" />
+<point x="776" y="898" />
+<point x="776" y="842" />
+<point x="776" y="779" />
+<point x="776" y="630" />
+<point x="776" y="446" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="60858b82-a835-4a1b-bd2a-57148d9f660c">
+<point x="776" y="446" />
+<point x="776" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="fad35ef1-416c-4028-9a68-acf42890407a">
+<point x="776" y="282" />
+<point x="668" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="6f509616-6bde-4a19-8817-a2a86f962a8e">
+<point x="668" y="282" />
+<point x="644" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="bb56f329-899b-4c36-b89a-987a05f89232">
+<point x="644" y="282" />
+<point x="644" y="446" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="40ba01f6-d8b0-436b-a1b2-9a7a99063720">
+<point x="644" y="446" />
+<point x="645" y="630" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="20444186-39e5-48da-aaef-c5ea8fb4af31">
+<point x="645" y="630" />
+<point x="645" y="779" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="43bb18c1-0193-494e-b775-9bb4a1d2651a">
+<point x="645" y="779" />
+<point x="645" y="842" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="0be6debe-e392-425e-88b6-20a9e566024d">
+<point x="645" y="842" />
+<point x="645" y="898" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="7908c72e-1b69-48c9-a655-f90159836970">
+<point x="645" y="898" />
+<point x="645" y="1042" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="55ecceca-2cf2-400e-bb14-74069b9d5850">
+<point x="645" y="1042" />
+<point x="645" y="1106" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="17244eb7-36cb-4bf3-aa66-b187132446f2">
+<point x="645" y="1106" />
+<point x="645" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="664c0947-1831-4b40-ad85-0ec5bf481484">
+<point x="645" y="1259" />
+<point x="645" y="1308" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="1dcb1881-c2bc-4e37-ae65-5b6509b8890a">
+<point x="645" y="1308" />
+<point x="645" y="1457" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4a3817fd-718a-4e83-a804-651e8aa4128d">
+<point x="645" y="1457" />
+<point x="645" y="1483" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="334db33d-ffd4-42fa-b653-fe71de1d75b5">
+<point x="645" y="1483" />
+<point x="645" y="1511" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="6ec824e7-9064-4f84-b4e1-1c3f42100906">
+<point x="645" y="1511" />
+<point x="645" y="1544" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="a3c4d11a-c93e-4823-863b-bf2df10f2808">
+<point x="645" y="1544" />
+<point x="645" y="1688" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="e22945e5-795c-4618-9ea6-8e1946e476f4">
+<point x="645" y="1688" />
+<point x="645" y="1713" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d8f80d84-4e9d-472f-a6f4-574247a9cf6c">
+<point x="645" y="1713" />
+<point x="645" y="1747" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="fc967973-4e71-4cb2-a8cd-b8436ff5fdb4">
+<point x="645" y="1747" />
+<point x="645" y="1774" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="362cd965-2d32-4753-9a22-e6430f44e108">
+<point x="645" y="1774" />
+<point x="645" y="1805" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="740f6aac-8a95-4ef0-a984-c1d2700f56af">
+<point x="645" y="1805" />
+<point x="645" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="041eeba8-e0d7-4cd7-8b4a-a5681647109e">
+<point x="645" y="2013" />
+<point x="668" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="340460da-d03b-4acb-9584-a2e0a9e3f6b4">
+<point x="668" y="2013" />
+<point x="777" y="2012" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="14d26499-298f-4c60-91c5-0ffb109fb411">
+<point x="777" y="2012" />
+<point x="777" y="1805" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="0d4b52fd-17b0-46da-9f6b-53dd75f0f08c">
+<point x="777" y="1805" />
+<point x="777" y="1774" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="5e99b6c4-bc38-4b36-9c48-688dc866022b">
+<point x="777" y="1774" />
+<point x="777" y="1747" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="b7a16981-fdfd-495d-99f3-aa8cbd440a63">
+<point x="777" y="1747" />
+<point x="777" y="1713" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="c7929502-ba94-42f4-9ee3-e98961cf1c96">
+<point x="777" y="1713" />
+<point x="777" y="1688" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="96c156ec-5d9e-477b-9d25-23959e1b5e92">
+<point x="777" y="1688" />
+<point x="777" y="1544" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="fb777c20-fa91-4e7d-939a-606988eb6348">
+<point x="777" y="1544" />
+<point x="777" y="1511" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="cc22e5d9-9796-496b-a173-adcdd2e7e535">
+<point x="777" y="1511" />
+<point x="777" y="1483" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="7ccc7410-e471-4807-8152-c351e96f1aea">
+<point x="777" y="1483" />
+<point x="777" y="1457" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="39e0c6dc-8f80-4ebc-ad83-af4667b1893b">
+<point x="777" y="1457" />
+<point x="777" y="1308" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="364303c2-9940-450a-9846-e1738e58eabe">
+<point x="777" y="1308" />
+<point x="777" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="be02bf47-20a5-4699-9a2e-fe8269a1a374">
+<point x="777" y="1259" />
+<point x="777" y="1106" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="af4985a2-820c-49bd-9fad-64aea4e44f3b">
+<point x="777" y="1106" />
+<point x="777" y="1042" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="92e3dacd-d981-4b0c-97fd-ebecf19d63f0">
+<point x="777" y="1042" />
+<point x="776" y="898" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d2a2bbf3-5362-44e4-b054-51e10cc9731b">
+<point x="776" y="898" />
+<point x="776" y="842" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="2db61952-2742-449c-9ff0-5a66df68ddf5">
+<point x="776" y="842" />
+<point x="776" y="779" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="bc2e271c-c5cd-4604-a826-12e46d80e671">
+<point x="776" y="779" />
+<point x="776" y="630" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="c612120f-ff48-45e8-b4e0-f52ee365dea8">
+<point x="776" y="630" />
+<point x="776" y="446" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>1</id>
+<id>3</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>2</id>
+<id>3</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>9</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>31</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>18</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>5</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>14</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>8</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>17</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>15</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>6</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>11</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>27</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>16</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>21</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="4">
+<partial_room>False</partial_room>
+<centroid>
+<point x="145" y="145" />
+</centroid>
+<bounding_box>
+<point x="29" y="2259" />
+<point x="29" y="2615" />
+<point x="275" y="2615" />
+<point x="275" y="2259" />
+</bounding_box>
+<bounding_polygon>
+<point x="168" y="2336" />
+<point x="168" y="2259" />
+<point x="29" y="2259" />
+<point x="29" y="2336" />
+<point x="30" y="2429" />
+<point x="30" y="2615" />
+<point x="168" y="2615" />
+<point x="215" y="2615" />
+<point x="243" y="2615" />
+<point x="275" y="2615" />
+<point x="275" y="2429" />
+<point x="274" y="2336" />
+<point x="243" y="2336" />
+<point x="215" y="2336" />
+<point x="168" y="2336" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="7eeff3c5-efa3-4c01-9dcb-ef1732e6e03c">
+<point x="168" y="2336" />
+<point x="168" y="2259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="7727b6b3-f91b-4f74-87d4-0542931f02de">
+<point x="168" y="2259" />
+<point x="29" y="2259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="3a7f1875-b58e-4587-af98-6b8480a8058e">
+<point x="29" y="2259" />
+<point x="29" y="2336" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="8b30d7b3-7981-4276-aef7-7f7bf6f6773a">
+<point x="29" y="2336" />
+<point x="30" y="2429" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="54b68fb1-4c6d-469d-bcfb-366e500575ea">
+<point x="30" y="2429" />
+<point x="30" y="2615" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="42cb25cf-e339-42ab-a099-fdee584455a0">
+<point x="30" y="2615" />
+<point x="168" y="2615" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="05f08aff-5d93-447d-be11-4d8a6e14cb1b">
+<point x="168" y="2615" />
+<point x="215" y="2615" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="03a8d669-25ed-415a-80e0-c18a2cc04386">
+<point x="215" y="2615" />
+<point x="243" y="2615" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="92bf80a4-a19a-430e-8947-88b34ac6781e">
+<point x="243" y="2615" />
+<point x="275" y="2615" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="df7c2a68-e4ef-4596-8a3a-f736843c3dd4">
+<point x="275" y="2615" />
+<point x="275" y="2429" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="da84fa70-9871-49ea-8a3a-921cc44c192b">
+<point x="275" y="2429" />
+<point x="274" y="2336" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="ee7955cf-8305-4249-abdd-9588614d8a65">
+<point x="274" y="2336" />
+<point x="243" y="2336" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d93a992a-4950-4624-a428-3d9c9c630d22">
+<point x="243" y="2336" />
+<point x="215" y="2336" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="537356e8-cd8e-4014-96ee-4974407add67">
+<point x="215" y="2336" />
+<point x="168" y="2336" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>4</id>
+<id>32</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="5">
+<partial_room>False</partial_room>
+<centroid>
+<point x="391" y="391" />
+</centroid>
+<bounding_box>
+<point x="167" y="169" />
+<point x="167" y="843" />
+<point x="645" y="843" />
+<point x="645" y="169" />
+</bounding_box>
+<bounding_polygon>
+<point x="644" y="446" />
+<point x="644" y="282" />
+<point x="613" y="282" />
+<point x="566" y="282" />
+<point x="448" y="283" />
+<point x="413" y="283" />
+<point x="274" y="283" />
+<point x="274" y="169" />
+<point x="243" y="169" />
+<point x="215" y="169" />
+<point x="167" y="169" />
+<point x="167" y="283" />
+<point x="167" y="447" />
+<point x="168" y="630" />
+<point x="168" y="780" />
+<point x="168" y="843" />
+<point x="215" y="843" />
+<point x="243" y="843" />
+<point x="274" y="843" />
+<point x="413" y="843" />
+<point x="448" y="843" />
+<point x="448" y="780" />
+<point x="566" y="780" />
+<point x="613" y="779" />
+<point x="645" y="779" />
+<point x="645" y="630" />
+<point x="644" y="446" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="3f3b2bd9-8a2d-4a93-8c0a-95db390aaa91">
+<point x="644" y="446" />
+<point x="644" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="394f3aa1-b84e-41c9-b653-e7a13bd59ee9">
+<point x="644" y="282" />
+<point x="613" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="10fdf22a-79c4-4e2f-87ec-9ea50eb6f2a2">
+<point x="613" y="282" />
+<point x="566" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="59e5c81e-d802-4517-a355-228a996c1b92">
+<point x="566" y="282" />
+<point x="448" y="283" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="bfb00be0-5651-4ab4-94a5-01f68455c474">
+<point x="448" y="283" />
+<point x="413" y="283" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="02fbd2ff-9df2-49f6-9e88-520a516c3425">
+<point x="413" y="283" />
+<point x="274" y="283" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="da572358-3111-477a-bac5-98782dfb061b">
+<point x="274" y="283" />
+<point x="274" y="169" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="9072fefa-8fc6-4a14-9b57-60544d6c560f">
+<point x="274" y="169" />
+<point x="243" y="169" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="a6c28b97-61f4-4a61-8cdc-5fbfe95be295">
+<point x="243" y="169" />
+<point x="215" y="169" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="e450e317-e83f-47d7-9792-445a25d0655e">
+<point x="215" y="169" />
+<point x="167" y="169" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="bd69b3d1-17ec-4170-889b-d07afba334b0">
+<point x="167" y="169" />
+<point x="167" y="283" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="c1622163-0eed-465d-9774-09d1fa92f299">
+<point x="167" y="283" />
+<point x="167" y="447" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="1f1d2791-b984-4522-a6bc-371026548a41">
+<point x="167" y="447" />
+<point x="168" y="630" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="6cc54994-4aec-408e-8ff2-62430dde5ca8">
+<point x="168" y="630" />
+<point x="168" y="780" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="3a02ae71-69df-46c9-a4ed-7371914514b4">
+<point x="168" y="780" />
+<point x="168" y="843" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="a15d0909-4b7f-4c23-8c9a-988813743c65">
+<point x="168" y="843" />
+<point x="215" y="843" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="fa33f4ab-790c-4c70-8e86-df20644d48e8">
+<point x="215" y="843" />
+<point x="243" y="843" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="426f591a-eac7-4cb8-9dd1-77f1cdc88eba">
+<point x="243" y="843" />
+<point x="274" y="843" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="bffa10fe-9ab3-444d-a82c-c05cc7ffa42c">
+<point x="274" y="843" />
+<point x="413" y="843" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="b328f0e5-a8f7-456f-bc00-5a9e39065d6a">
+<point x="413" y="843" />
+<point x="448" y="843" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="47343713-59a2-46e9-9816-c15be2ab8109">
+<point x="448" y="843" />
+<point x="448" y="780" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="af8ff77a-b4a7-4d1c-a9d4-852a8002f6d7">
+<point x="448" y="780" />
+<point x="566" y="780" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="c5726d1b-ff41-4f2e-9785-c49d2ee1d753">
+<point x="566" y="780" />
+<point x="613" y="779" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="78b9722f-3346-4985-9cfc-8faf5780aa83">
+<point x="613" y="779" />
+<point x="645" y="779" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="e3e700d6-1503-427e-b05e-6f0f6d032f27">
+<point x="645" y="779" />
+<point x="645" y="630" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="091b7699-8299-4237-9c16-225e08e7fe8e">
+<point x="645" y="630" />
+<point x="644" y="446" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>0</id>
+<id>5</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>5</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="6">
+<partial_room>False</partial_room>
+<centroid>
+<point x="893" y="893" />
+</centroid>
+<bounding_box>
+<point x="777" y="1258" />
+<point x="777" y="1713" />
+<point x="1009" y="1713" />
+<point x="1009" y="1258" />
+</bounding_box>
+<bounding_polygon>
+<point x="1009" y="1308" />
+<point x="1009" y="1258" />
+<point x="902" y="1258" />
+<point x="777" y="1259" />
+<point x="777" y="1308" />
+<point x="777" y="1457" />
+<point x="777" y="1483" />
+<point x="777" y="1511" />
+<point x="777" y="1544" />
+<point x="777" y="1688" />
+<point x="777" y="1713" />
+<point x="902" y="1713" />
+<point x="1009" y="1712" />
+<point x="1009" y="1687" />
+<point x="1009" y="1543" />
+<point x="1009" y="1511" />
+<point x="1009" y="1483" />
+<point x="1009" y="1456" />
+<point x="1009" y="1308" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="0450f5e4-8723-4825-9c16-244de03cfa8a">
+<point x="1009" y="1308" />
+<point x="1009" y="1258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="deee9fe6-d080-429e-ae7e-cca1651cdb13">
+<point x="1009" y="1258" />
+<point x="902" y="1258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="e4ee2a91-e54f-445d-a8ef-68cd1291583c">
+<point x="902" y="1258" />
+<point x="777" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="b33a2980-91b7-446d-b4c7-acfcb088c12c">
+<point x="777" y="1259" />
+<point x="777" y="1308" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d9170796-0b9a-473a-86a3-2ed391a47a84">
+<point x="777" y="1308" />
+<point x="777" y="1457" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="ffb52baa-4423-4041-b121-83acdaf4aaf2">
+<point x="777" y="1457" />
+<point x="777" y="1483" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="662520d3-2bd3-4821-b2ff-fb29befedefa">
+<point x="777" y="1483" />
+<point x="777" y="1511" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="84a641d7-977f-4cf1-ac28-84936d74bad5">
+<point x="777" y="1511" />
+<point x="777" y="1544" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="48c3f66f-9631-48f4-9e43-66c7c5243f66">
+<point x="777" y="1544" />
+<point x="777" y="1688" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="e97de0e0-95cb-4b97-9f52-4074c8af55e5">
+<point x="777" y="1688" />
+<point x="777" y="1713" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="0fa6f12d-c4ce-450d-b77d-2d3aa5077666">
+<point x="777" y="1713" />
+<point x="902" y="1713" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="5eeb896c-0983-47e5-945a-b42072cb0399">
+<point x="902" y="1713" />
+<point x="1009" y="1712" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="02002f6b-8974-4bc1-babc-7e08fa5525d5">
+<point x="1009" y="1712" />
+<point x="1009" y="1687" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="26314bc6-5132-4bfe-b423-774ef627f8c3">
+<point x="1009" y="1687" />
+<point x="1009" y="1543" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="5b1599b8-3dee-44d4-8077-6158b22f7400">
+<point x="1009" y="1543" />
+<point x="1009" y="1511" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="b1840881-e3d1-46e1-ba2e-d7e265fb02cd">
+<point x="1009" y="1511" />
+<point x="1009" y="1483" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="bec73e98-f310-4fc4-a022-c0ed7d08bdb4">
+<point x="1009" y="1483" />
+<point x="1009" y="1456" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="b0ad243b-92d9-45d5-85b5-59f67160fe8f">
+<point x="1009" y="1456" />
+<point x="1009" y="1308" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>6</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="7">
+<partial_room>False</partial_room>
+<centroid>
+<point x="1027" y="1027" />
+</centroid>
+<bounding_box>
+<point x="1009" y="168" />
+<point x="1009" y="282" />
+<point x="1045" y="282" />
+<point x="1045" y="168" />
+</bounding_box>
+<bounding_polygon>
+<point x="1045" y="282" />
+<point x="1045" y="168" />
+<point x="1009" y="168" />
+<point x="1009" y="282" />
+<point x="1045" y="282" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="7f90299e-ab68-46ac-85c2-f0ca93f218c1">
+<point x="1045" y="282" />
+<point x="1045" y="168" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="61dcc65e-287f-4e4a-ad58-30fafd276ba0">
+<point x="1045" y="168" />
+<point x="1009" y="168" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="2b4e4de3-5775-4e4d-9871-a69f1548df28">
+<point x="1009" y="168" />
+<point x="1009" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="8d801e0e-52db-4273-a20a-dfd6c13b326e">
+<point x="1009" y="282" />
+<point x="1045" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+</space_representation>
+</space>
+<space id="8">
+<partial_room>False</partial_room>
+<centroid>
+<point x="406" y="406" />
+</centroid>
+<bounding_box>
+<point x="168" y="1511" />
+<point x="168" y="1748" />
+<point x="645" y="1748" />
+<point x="645" y="1511" />
+</bounding_box>
+<bounding_polygon>
+<point x="645" y="1544" />
+<point x="645" y="1511" />
+<point x="613" y="1511" />
+<point x="566" y="1511" />
+<point x="449" y="1511" />
+<point x="413" y="1511" />
+<point x="274" y="1512" />
+<point x="243" y="1512" />
+<point x="215" y="1512" />
+<point x="168" y="1512" />
+<point x="168" y="1544" />
+<point x="168" y="1688" />
+<point x="168" y="1713" />
+<point x="168" y="1748" />
+<point x="215" y="1748" />
+<point x="243" y="1748" />
+<point x="274" y="1748" />
+<point x="413" y="1747" />
+<point x="449" y="1747" />
+<point x="566" y="1747" />
+<point x="613" y="1747" />
+<point x="645" y="1747" />
+<point x="645" y="1713" />
+<point x="645" y="1688" />
+<point x="645" y="1544" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="fc59e1fd-677e-4f79-a966-6dd239e50104">
+<point x="645" y="1544" />
+<point x="645" y="1511" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="72cbadc2-811a-4d17-aed3-88adc97fd8bf">
+<point x="645" y="1511" />
+<point x="613" y="1511" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="55c5f8a3-f769-4f6f-be11-dc6aa2ccd813">
+<point x="613" y="1511" />
+<point x="566" y="1511" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="bf8c8b4b-c992-42b4-a6be-418ef105e3a3">
+<point x="566" y="1511" />
+<point x="449" y="1511" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="7c02d23b-ea33-41df-b1fb-542d59c3a1b9">
+<point x="449" y="1511" />
+<point x="413" y="1511" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="3955d3b9-932a-4135-aa6c-86b043192353">
+<point x="413" y="1511" />
+<point x="274" y="1512" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="acefe911-67fc-4c71-844a-bff2b88c0e0b">
+<point x="274" y="1512" />
+<point x="243" y="1512" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="165080c4-5a1a-47b0-8d1d-d288dbb89578">
+<point x="243" y="1512" />
+<point x="215" y="1512" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="08f68e31-c041-40ca-a1f2-c4b6e07998c5">
+<point x="215" y="1512" />
+<point x="168" y="1512" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="484cca4f-fe9b-4076-9112-10e81fc2324d">
+<point x="168" y="1512" />
+<point x="168" y="1544" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="32f8ac2f-f5c1-4c06-95a0-e050080e9c8f">
+<point x="168" y="1544" />
+<point x="168" y="1688" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="0ca17892-29ff-4d1c-ab2e-066abe9a550c">
+<point x="168" y="1688" />
+<point x="168" y="1713" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="21155a88-613c-442d-b8d8-333221525925">
+<point x="168" y="1713" />
+<point x="168" y="1748" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="8353a5ed-4b56-4f5e-addb-f0600c880f41">
+<point x="168" y="1748" />
+<point x="215" y="1748" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="de8d68bc-97e5-42c8-9dd3-9cb5f59e71fb">
+<point x="215" y="1748" />
+<point x="243" y="1748" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4daf0335-11f8-41da-b4f1-6590504f0f63">
+<point x="243" y="1748" />
+<point x="274" y="1748" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="6b07f443-c399-465a-9368-48dc9e6f57c1">
+<point x="274" y="1748" />
+<point x="413" y="1747" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="5b4630ad-d2aa-46f0-b352-c73ddc3ed53b">
+<point x="413" y="1747" />
+<point x="449" y="1747" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="26baf4d5-5b45-4375-9159-79931b3eb511">
+<point x="449" y="1747" />
+<point x="566" y="1747" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4924de1f-2186-4829-9374-a51497799f00">
+<point x="566" y="1747" />
+<point x="613" y="1747" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="50f60694-0573-470b-81b9-94a77866ce49">
+<point x="613" y="1747" />
+<point x="645" y="1747" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="f8d6f094-5351-4d46-af42-8d3413530d6f">
+<point x="645" y="1747" />
+<point x="645" y="1713" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4f695060-c8f7-45e8-b79f-ee6ea538cac2">
+<point x="645" y="1713" />
+<point x="645" y="1688" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="502c05b7-0c98-4c69-b3f9-5b84ca42fe78">
+<point x="645" y="1688" />
+<point x="645" y="1544" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>8</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="9">
+<partial_room>False</partial_room>
+<centroid>
+<point x="893" y="893" />
+</centroid>
+<bounding_box>
+<point x="776" y="168" />
+<point x="776" y="630" />
+<point x="1009" y="630" />
+<point x="1009" y="168" />
+</bounding_box>
+<bounding_polygon>
+<point x="1009" y="282" />
+<point x="1009" y="168" />
+<point x="902" y="168" />
+<point x="776" y="168" />
+<point x="776" y="282" />
+<point x="776" y="446" />
+<point x="776" y="630" />
+<point x="902" y="629" />
+<point x="1009" y="629" />
+<point x="1009" y="446" />
+<point x="1009" y="282" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="c1c47113-edcf-4d91-a490-c84061b6c48f">
+<point x="1009" y="282" />
+<point x="1009" y="168" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="96abefb3-3c0e-40b5-8b94-685a34b7697a">
+<point x="1009" y="168" />
+<point x="902" y="168" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4c7284f0-c7ce-40db-bad5-03ae8646d842">
+<point x="902" y="168" />
+<point x="776" y="168" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="e3b99477-3cfa-481a-a69c-c958b3f87282">
+<point x="776" y="168" />
+<point x="776" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="8f540368-c076-4de2-836f-5ce812c69e60">
+<point x="776" y="282" />
+<point x="776" y="446" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="21a79828-e2fb-448f-91fe-d4292882289c">
+<point x="776" y="446" />
+<point x="776" y="630" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="0e9d73a8-b04d-436c-aad2-845fd61933c0">
+<point x="776" y="630" />
+<point x="902" y="629" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="dd362591-fffe-4d84-bfb5-67c3bf02457e">
+<point x="902" y="629" />
+<point x="1009" y="629" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="2f7fb14f-90b6-4476-b986-37fb11b3c45c">
+<point x="1009" y="629" />
+<point x="1009" y="446" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="632de05d-c4f7-42a0-9051-0f51092928d4">
+<point x="1009" y="446" />
+<point x="1009" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>9</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="10">
+<partial_room>False</partial_room>
+<centroid>
+<point x="893" y="893" />
+</centroid>
+<bounding_box>
+<point x="777" y="2258" />
+<point x="777" y="2614" />
+<point x="1010" y="2614" />
+<point x="1010" y="2258" />
+</bounding_box>
+<bounding_polygon>
+<point x="1010" y="2335" />
+<point x="1010" y="2258" />
+<point x="903" y="2258" />
+<point x="777" y="2258" />
+<point x="777" y="2335" />
+<point x="777" y="2428" />
+<point x="777" y="2614" />
+<point x="903" y="2614" />
+<point x="1010" y="2614" />
+<point x="1010" y="2428" />
+<point x="1010" y="2335" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="e8cb80d8-eddd-434b-8a90-96a70bbc1f58">
+<point x="1010" y="2335" />
+<point x="1010" y="2258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="447c2458-bca3-4636-abc5-b1842169453c">
+<point x="1010" y="2258" />
+<point x="903" y="2258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="16c13071-a60e-4f4b-9e40-9b822307add9">
+<point x="903" y="2258" />
+<point x="777" y="2258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4e291b85-9316-41be-a412-15cc488daf77">
+<point x="777" y="2258" />
+<point x="777" y="2335" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="1b8107a2-1065-453e-a8df-7241ad610b6c">
+<point x="777" y="2335" />
+<point x="777" y="2428" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="9c7f2079-83cc-4731-8e90-d2c65ceb8aba">
+<point x="777" y="2428" />
+<point x="777" y="2614" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="9f08942f-51e5-4753-b7fe-8f370c5c98b9">
+<point x="777" y="2614" />
+<point x="903" y="2614" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="cdd107b3-0418-4814-baed-07ab63ca1356">
+<point x="903" y="2614" />
+<point x="1010" y="2614" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="095eacb8-9500-4447-aa03-547eb97b4729">
+<point x="1010" y="2614" />
+<point x="1010" y="2428" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="ffa5c0e0-473c-4442-95b9-fcfbb52e2038">
+<point x="1010" y="2428" />
+<point x="1010" y="2335" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>10</id>
+<id>24</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>10</id>
+<id>17</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="11">
+<partial_room>False</partial_room>
+<centroid>
+<point x="893" y="893" />
+</centroid>
+<bounding_box>
+<point x="777" y="1041" />
+<point x="777" y="1259" />
+<point x="1009" y="1259" />
+<point x="1009" y="1041" />
+</bounding_box>
+<bounding_polygon>
+<point x="1009" y="1106" />
+<point x="1009" y="1041" />
+<point x="902" y="1041" />
+<point x="777" y="1042" />
+<point x="777" y="1106" />
+<point x="777" y="1259" />
+<point x="902" y="1258" />
+<point x="1009" y="1258" />
+<point x="1009" y="1106" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="c93e5a22-479f-4b53-85af-0b051b0e6cd8">
+<point x="1009" y="1106" />
+<point x="1009" y="1041" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="070f75ab-6f53-4b99-8c79-88258ff0fba0">
+<point x="1009" y="1041" />
+<point x="902" y="1041" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="95845a35-4324-4731-93ff-174190976d10">
+<point x="902" y="1041" />
+<point x="777" y="1042" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="de0db11a-3f5b-4022-864e-a806a7df58f0">
+<point x="777" y="1042" />
+<point x="777" y="1106" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="bfc70be8-3917-4462-b188-e236fc026c8b">
+<point x="777" y="1106" />
+<point x="777" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="aa0e4b9b-84f1-48c6-8b40-fdde4c93a6dc">
+<point x="777" y="1259" />
+<point x="902" y="1258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="cdf319f0-9fdb-49ee-aaa8-d2ecb0a6ea22">
+<point x="902" y="1258" />
+<point x="1009" y="1258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="a5865527-2c99-403a-ba78-7b5025c564bc">
+<point x="1009" y="1258" />
+<point x="1009" y="1106" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>11</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="12">
+<partial_room>False</partial_room>
+<centroid>
+<point x="337" y="337" />
+</centroid>
+<bounding_box>
+<point x="29" y="2013" />
+<point x="29" y="2259" />
+<point x="645" y="2259" />
+<point x="645" y="2013" />
+</bounding_box>
+<bounding_polygon>
+<point x="645" y="2134" />
+<point x="645" y="2013" />
+<point x="613" y="2013" />
+<point x="566" y="2013" />
+<point x="449" y="2013" />
+<point x="413" y="2013" />
+<point x="274" y="2013" />
+<point x="243" y="2013" />
+<point x="215" y="2013" />
+<point x="168" y="2013" />
+<point x="29" y="2013" />
+<point x="29" y="2134" />
+<point x="29" y="2259" />
+<point x="168" y="2259" />
+<point x="215" y="2259" />
+<point x="243" y="2259" />
+<point x="274" y="2259" />
+<point x="413" y="2259" />
+<point x="449" y="2259" />
+<point x="566" y="2258" />
+<point x="613" y="2258" />
+<point x="645" y="2258" />
+<point x="645" y="2134" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="85cc6f78-85b8-415d-a5e7-964a4a7d03d3">
+<point x="645" y="2134" />
+<point x="645" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="7a0a7d25-1f29-4239-8fbb-db6c1e2a85e2">
+<point x="645" y="2013" />
+<point x="613" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="327d5c99-0267-4b39-b8a2-d90274404019">
+<point x="613" y="2013" />
+<point x="566" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4c1c6f2c-f272-4e5a-9938-8a89851faf08">
+<point x="566" y="2013" />
+<point x="449" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="ddcfb12e-43bf-4858-98ba-644c47224b85">
+<point x="449" y="2013" />
+<point x="413" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="1612de2d-bbfb-430e-bd07-1b7c72fff953">
+<point x="413" y="2013" />
+<point x="274" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="0e7ec608-6f03-477d-a2d9-4981977ee3ee">
+<point x="274" y="2013" />
+<point x="243" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="b089ae87-3555-4e0f-8f1f-b61e7fcd59cc">
+<point x="243" y="2013" />
+<point x="215" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="deb13e33-d285-4703-a50f-e218a94ebd88">
+<point x="215" y="2013" />
+<point x="168" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="36f39c4b-a06a-4ae1-9db5-24c1c0d54126">
+<point x="168" y="2013" />
+<point x="29" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="59f5a63d-60ee-450f-8276-c2c36979a1c2">
+<point x="29" y="2013" />
+<point x="29" y="2134" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="b6bd49b3-eff7-4cc6-9c61-f073257c869a">
+<point x="29" y="2134" />
+<point x="29" y="2259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="a3ca09e9-c914-49f4-b610-f404c43d8de3">
+<point x="29" y="2259" />
+<point x="168" y="2259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="8c9fb844-a6f5-4526-92e6-8333bba557c7">
+<point x="168" y="2259" />
+<point x="215" y="2259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="c0a293b0-b37f-429b-af6e-d407cece998a">
+<point x="215" y="2259" />
+<point x="243" y="2259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="39edba62-34f6-4364-a8d7-e56513d7d873">
+<point x="243" y="2259" />
+<point x="274" y="2259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="9a906893-fe8a-4cc7-b9c5-2552dc5d350d">
+<point x="274" y="2259" />
+<point x="413" y="2259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="cd00167b-a649-45fe-a611-e8c1240d9cc4">
+<point x="413" y="2259" />
+<point x="449" y="2259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="ec0d9003-8b6f-4aa5-9877-b3845b0ad8a8">
+<point x="449" y="2259" />
+<point x="566" y="2258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="dcae5b02-147c-4784-bd92-1233eafc0c55">
+<point x="566" y="2258" />
+<point x="613" y="2258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="96fe73c7-9a8e-4d8a-8230-0cb10db999c1">
+<point x="613" y="2258" />
+<point x="645" y="2258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="8283ff67-7a2d-4c3d-9691-d7488be78dcd">
+<point x="645" y="2258" />
+<point x="645" y="2134" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>12</id>
+<id>17</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>12</id>
+<id>13</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="13">
+<partial_room>False</partial_room>
+<centroid>
+<point x="406" y="406" />
+</centroid>
+<bounding_box>
+<point x="168" y="2258" />
+<point x="168" y="2336" />
+<point x="645" y="2336" />
+<point x="645" y="2258" />
+</bounding_box>
+<bounding_polygon>
+<point x="645" y="2335" />
+<point x="645" y="2258" />
+<point x="613" y="2258" />
+<point x="566" y="2258" />
+<point x="449" y="2259" />
+<point x="413" y="2259" />
+<point x="274" y="2259" />
+<point x="243" y="2259" />
+<point x="215" y="2259" />
+<point x="168" y="2259" />
+<point x="168" y="2336" />
+<point x="215" y="2336" />
+<point x="243" y="2336" />
+<point x="274" y="2336" />
+<point x="413" y="2336" />
+<point x="449" y="2335" />
+<point x="566" y="2335" />
+<point x="613" y="2335" />
+<point x="645" y="2335" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="cb317dcd-fea9-4349-9a22-becc16fbb112">
+<point x="645" y="2335" />
+<point x="645" y="2258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4365e009-9dbb-42a2-98cc-198d3b1c09e1">
+<point x="645" y="2258" />
+<point x="613" y="2258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="f9eba0ac-6109-4a0c-a379-342a7371b56d">
+<point x="613" y="2258" />
+<point x="566" y="2258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="26d0008b-0b5b-4450-a4be-3b7e9f3be5ac">
+<point x="566" y="2258" />
+<point x="449" y="2259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="6f6c93a6-82c7-4ee1-813b-4a311074369f">
+<point x="449" y="2259" />
+<point x="413" y="2259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="83db8e44-e98c-465e-a90c-182f45afcb2f">
+<point x="413" y="2259" />
+<point x="274" y="2259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="ab283fe2-ca6e-4818-8e7f-606a5317032e">
+<point x="274" y="2259" />
+<point x="243" y="2259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="86acd7f1-aaf8-45fd-9932-1d57bb0c3ad5">
+<point x="243" y="2259" />
+<point x="215" y="2259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="c895036a-abc4-44ab-a6ff-3f9b3a8a3e62">
+<point x="215" y="2259" />
+<point x="168" y="2259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="0c223dbd-a5bb-46b9-84d7-ee20ab131d48">
+<point x="168" y="2259" />
+<point x="168" y="2336" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="119d3863-9c31-443a-a391-ec27885b2efa">
+<point x="168" y="2336" />
+<point x="215" y="2336" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d6b0865c-03f3-4667-b195-6b0ccf2833d2">
+<point x="215" y="2336" />
+<point x="243" y="2336" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="b7b89f86-01f2-46b7-a7cc-cd694fab488d">
+<point x="243" y="2336" />
+<point x="274" y="2336" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="82647196-1155-46d3-890a-22d2125fb327">
+<point x="274" y="2336" />
+<point x="413" y="2336" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="f855039a-73b5-4e78-901f-babfeca464e9">
+<point x="413" y="2336" />
+<point x="449" y="2335" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4120d0c3-62bc-44e4-b8ec-d8118853c992">
+<point x="449" y="2335" />
+<point x="566" y="2335" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="a312858a-3174-45b2-bd9a-676244145f57">
+<point x="566" y="2335" />
+<point x="613" y="2335" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="5c3f2777-d8ab-4701-bfbe-0135a35f443a">
+<point x="613" y="2335" />
+<point x="645" y="2335" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>12</id>
+<id>13</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>13</id>
+<id>32</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>13</id>
+<id>26</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="14">
+<partial_room>False</partial_room>
+<centroid>
+<point x="406" y="406" />
+</centroid>
+<bounding_box>
+<point x="168" y="1259" />
+<point x="168" y="1512" />
+<point x="645" y="1512" />
+<point x="645" y="1259" />
+</bounding_box>
+<bounding_polygon>
+<point x="645" y="1308" />
+<point x="645" y="1259" />
+<point x="613" y="1259" />
+<point x="566" y="1259" />
+<point x="449" y="1259" />
+<point x="413" y="1259" />
+<point x="274" y="1259" />
+<point x="243" y="1259" />
+<point x="215" y="1259" />
+<point x="168" y="1259" />
+<point x="168" y="1309" />
+<point x="168" y="1457" />
+<point x="168" y="1484" />
+<point x="168" y="1512" />
+<point x="215" y="1512" />
+<point x="243" y="1512" />
+<point x="274" y="1512" />
+<point x="413" y="1511" />
+<point x="449" y="1511" />
+<point x="566" y="1511" />
+<point x="613" y="1511" />
+<point x="645" y="1511" />
+<point x="645" y="1483" />
+<point x="645" y="1457" />
+<point x="645" y="1308" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="9f650f0d-731b-4d8d-b16e-cf4362c40b91">
+<point x="645" y="1308" />
+<point x="645" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="20728011-8404-4770-988c-357ef48b87ae">
+<point x="645" y="1259" />
+<point x="613" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="87b8c077-acbc-400d-90c7-610598c267b1">
+<point x="613" y="1259" />
+<point x="566" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="19812bfc-73fb-43c0-8cb0-7097f265ef9f">
+<point x="566" y="1259" />
+<point x="449" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="9f7aba94-013e-4748-a868-b7186ab6bbb6">
+<point x="449" y="1259" />
+<point x="413" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="92c7ad1a-d389-40a5-898e-1ec9c2cc3d36">
+<point x="413" y="1259" />
+<point x="274" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="558f7de3-b097-4d14-b325-03aafbdf97ee">
+<point x="274" y="1259" />
+<point x="243" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="6990bca1-a3d9-4e90-8096-92f64cde5dbd">
+<point x="243" y="1259" />
+<point x="215" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="6d7fe5d1-d37e-47ab-9822-30b0eaf4b0d3">
+<point x="215" y="1259" />
+<point x="168" y="1259" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="86e4265d-86b9-46a1-8a48-bbdb68b16c5b">
+<point x="168" y="1259" />
+<point x="168" y="1309" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="5dee4c38-b07c-4797-9e47-7f4d0d325914">
+<point x="168" y="1309" />
+<point x="168" y="1457" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="f1ba2b8a-f6c8-4ef5-b7d0-3a2dae08df9e">
+<point x="168" y="1457" />
+<point x="168" y="1484" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="c1e65fa4-1606-4270-9cf1-b147651aad93">
+<point x="168" y="1484" />
+<point x="168" y="1512" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="1b41d3b1-18b9-4fa8-8374-9904ff715e5a">
+<point x="168" y="1512" />
+<point x="215" y="1512" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4cba0a0d-4772-4b1a-833c-7185c035b7af">
+<point x="215" y="1512" />
+<point x="243" y="1512" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="56ea9d71-17b0-4b50-a98d-f38bf19daf1c">
+<point x="243" y="1512" />
+<point x="274" y="1512" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="287c830e-c9fd-4bf2-9cd4-d975057cc856">
+<point x="274" y="1512" />
+<point x="413" y="1511" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="f38566ba-63d3-4cc0-9ec9-97b6a48e8d1a">
+<point x="413" y="1511" />
+<point x="449" y="1511" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="039afb7a-3aea-417b-8d2f-5fc80be16314">
+<point x="449" y="1511" />
+<point x="566" y="1511" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="917c6b32-4b31-4b0e-a7a2-d88d183a304c">
+<point x="566" y="1511" />
+<point x="613" y="1511" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="fd408cde-04f9-46bb-b2fa-890a554cef49">
+<point x="613" y="1511" />
+<point x="645" y="1511" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="64a3c67c-5466-4e67-8711-69071f68fbe9">
+<point x="645" y="1511" />
+<point x="645" y="1483" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="9130ef58-d5a9-465a-8a36-3eabe5768091">
+<point x="645" y="1483" />
+<point x="645" y="1457" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d501c44b-886e-4fe0-ace3-e26ce0e210fc">
+<point x="645" y="1457" />
+<point x="645" y="1308" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>14</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="15">
+<partial_room>False</partial_room>
+<centroid>
+<point x="893" y="893" />
+</centroid>
+<bounding_box>
+<point x="777" y="1712" />
+<point x="777" y="2012" />
+<point x="1009" y="2012" />
+<point x="1009" y="1712" />
+</bounding_box>
+<bounding_polygon>
+<point x="1009" y="1747" />
+<point x="1009" y="1712" />
+<point x="902" y="1713" />
+<point x="777" y="1713" />
+<point x="777" y="1747" />
+<point x="777" y="1774" />
+<point x="777" y="1805" />
+<point x="777" y="2012" />
+<point x="902" y="2012" />
+<point x="1009" y="2012" />
+<point x="1009" y="1805" />
+<point x="1009" y="1773" />
+<point x="1009" y="1747" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="f88d1466-a21c-4659-9ea6-68741d6a77b9">
+<point x="1009" y="1747" />
+<point x="1009" y="1712" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d0a33db1-9df5-4560-b63d-6c70e56af55c">
+<point x="1009" y="1712" />
+<point x="902" y="1713" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="2367b0e3-af70-4bf4-9624-34d0ab39bdcd">
+<point x="902" y="1713" />
+<point x="777" y="1713" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="7993a620-af31-4586-b4c1-29d98704f300">
+<point x="777" y="1713" />
+<point x="777" y="1747" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="6cf91120-fd88-4a96-b751-a667adeccdb6">
+<point x="777" y="1747" />
+<point x="777" y="1774" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="3ab388f7-3f9b-4e98-a423-f208bbc59355">
+<point x="777" y="1774" />
+<point x="777" y="1805" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="9f089b18-5a19-4b9d-9408-464aa9e08624">
+<point x="777" y="1805" />
+<point x="777" y="2012" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="153bc187-e65f-438d-b28a-c3c3214f2378">
+<point x="777" y="2012" />
+<point x="902" y="2012" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="f6b0829a-13a1-4ca1-aad1-b7c75d01baa9">
+<point x="902" y="2012" />
+<point x="1009" y="2012" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="cb522055-ff15-4dac-ae37-ec257076cd6b">
+<point x="1009" y="2012" />
+<point x="1009" y="1805" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="c6645a87-ed36-4987-bd0e-827cd9d7950e">
+<point x="1009" y="1805" />
+<point x="1009" y="1773" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="6451501e-24c8-4aea-80b7-8bb3b56e780f">
+<point x="1009" y="1773" />
+<point x="1009" y="1747" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>15</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="16">
+<partial_room>False</partial_room>
+<centroid>
+<point x="893" y="893" />
+</centroid>
+<bounding_box>
+<point x="776" y="842" />
+<point x="776" y="898" />
+<point x="1009" y="898" />
+<point x="1009" y="842" />
+</bounding_box>
+<bounding_polygon>
+<point x="1009" y="898" />
+<point x="1009" y="842" />
+<point x="902" y="842" />
+<point x="776" y="842" />
+<point x="776" y="898" />
+<point x="902" y="898" />
+<point x="1009" y="898" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="585ad378-2277-43c9-a7ab-64b17abab6f5">
+<point x="1009" y="898" />
+<point x="1009" y="842" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="b7559367-c5a4-492e-99c8-6686b326da91">
+<point x="1009" y="842" />
+<point x="902" y="842" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="5978f15d-88e9-484d-8122-c394ebbd68ac">
+<point x="902" y="842" />
+<point x="776" y="842" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="0f52d532-8446-4d35-b443-f693b2c5bf1c">
+<point x="776" y="842" />
+<point x="776" y="898" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="a7507f6c-e7b4-4d82-a8c3-e32eb61d2e51">
+<point x="776" y="898" />
+<point x="902" y="898" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="2cfa1a0b-e1e4-4a02-ac72-bc156ea701c0">
+<point x="902" y="898" />
+<point x="1009" y="898" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>16</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>16</id>
+<id>27</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="17">
+<partial_room>False</partial_room>
+<centroid>
+<point x="793" y="793" />
+</centroid>
+<bounding_box>
+<point x="645" y="2012" />
+<point x="645" y="2335" />
+<point x="1010" y="2335" />
+<point x="1010" y="2012" />
+</bounding_box>
+<bounding_polygon>
+<point x="1010" y="2133" />
+<point x="1009" y="2012" />
+<point x="902" y="2012" />
+<point x="777" y="2012" />
+<point x="668" y="2013" />
+<point x="645" y="2013" />
+<point x="645" y="2134" />
+<point x="645" y="2258" />
+<point x="645" y="2335" />
+<point x="668" y="2335" />
+<point x="777" y="2335" />
+<point x="777" y="2258" />
+<point x="903" y="2258" />
+<point x="902" y="2134" />
+<point x="1010" y="2133" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="321b300f-3336-46ff-996e-052f9fab37cc">
+<point x="1010" y="2133" />
+<point x="1009" y="2012" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="256b6d7b-36f8-4d58-afa0-c4e19e9e91cb">
+<point x="1009" y="2012" />
+<point x="902" y="2012" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="82a190c1-a348-4d49-a315-70e384e718d7">
+<point x="902" y="2012" />
+<point x="777" y="2012" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="8899321d-98b0-4711-b4d8-48f7aa1be840">
+<point x="777" y="2012" />
+<point x="668" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="bb15cff4-076a-4f92-9e54-9fa4a1fa985c">
+<point x="668" y="2013" />
+<point x="645" y="2013" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d6e42e07-5c82-4e11-8beb-fbacc659c0d5">
+<point x="645" y="2013" />
+<point x="645" y="2134" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="c8ac0888-a94f-4d00-a345-7669f321d4e2">
+<point x="645" y="2134" />
+<point x="645" y="2258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="1c240dd1-a3ea-491f-825e-f4caac322610">
+<point x="645" y="2258" />
+<point x="645" y="2335" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="accf214f-fcc4-4658-9e4f-0ca692f260d2">
+<point x="645" y="2335" />
+<point x="668" y="2335" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4c081a98-f65d-4284-a75f-9c72a4cc1a90">
+<point x="668" y="2335" />
+<point x="777" y="2335" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="961947df-72ab-4150-bcc7-97fc05107e5e">
+<point x="777" y="2335" />
+<point x="777" y="2258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d950ed3f-2930-40f3-b21f-258ba8bc6e91">
+<point x="777" y="2258" />
+<point x="903" y="2258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="0f82bce5-6f9c-4189-ad1a-48853bd620cd">
+<point x="903" y="2258" />
+<point x="902" y="2134" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d8133992-4a5f-4326-9d9f-353e3b4b5bf2">
+<point x="902" y="2134" />
+<point x="1010" y="2133" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>17</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>10</id>
+<id>17</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>12</id>
+<id>17</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>17</id>
+<id>19</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="18">
+<partial_room>False</partial_room>
+<centroid>
+<point x="617" y="617" />
+</centroid>
+<bounding_box>
+<point x="566" y="168" />
+<point x="566" y="282" />
+<point x="668" y="282" />
+<point x="668" y="168" />
+</bounding_box>
+<bounding_polygon>
+<point x="668" y="282" />
+<point x="667" y="168" />
+<point x="644" y="168" />
+<point x="613" y="168" />
+<point x="566" y="168" />
+<point x="566" y="282" />
+<point x="613" y="282" />
+<point x="644" y="282" />
+<point x="668" y="282" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="bfcaacf6-cf4d-4391-b934-500fc5d72a99">
+<point x="668" y="282" />
+<point x="667" y="168" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="5dd359bb-ba6d-4c71-88bb-f040fdfe4ba5">
+<point x="667" y="168" />
+<point x="644" y="168" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="ab386cd5-8607-43a1-990a-93bc8145a852">
+<point x="644" y="168" />
+<point x="613" y="168" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4081cd4f-0226-41ad-a207-42b31681586f">
+<point x="613" y="168" />
+<point x="566" y="168" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="1449e3ab-df05-4e57-8f8d-896f36f6b93f">
+<point x="566" y="168" />
+<point x="566" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="56bb52da-a6b9-4ef5-9b4e-f03b4101568f">
+<point x="566" y="282" />
+<point x="613" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="69a6e41a-65f7-404c-94b3-f2ad9fb38262">
+<point x="613" y="282" />
+<point x="644" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="1bb8cccf-a065-419c-b22c-92b4221eb3b6">
+<point x="644" y="282" />
+<point x="668" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>18</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="19">
+<partial_room>False</partial_room>
+<centroid>
+<point x="695" y="695" />
+</centroid>
+<bounding_box>
+<point x="613" y="2335" />
+<point x="613" y="2614" />
+<point x="777" y="2614" />
+<point x="777" y="2335" />
+</bounding_box>
+<bounding_polygon>
+<point x="777" y="2428" />
+<point x="777" y="2335" />
+<point x="668" y="2335" />
+<point x="645" y="2335" />
+<point x="613" y="2335" />
+<point x="613" y="2428" />
+<point x="614" y="2614" />
+<point x="645" y="2614" />
+<point x="668" y="2614" />
+<point x="777" y="2614" />
+<point x="777" y="2428" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="3e838455-a62c-4086-8fce-4dfa25965309">
+<point x="777" y="2428" />
+<point x="777" y="2335" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="31fd7999-bc71-4008-953a-85c2e1427263">
+<point x="777" y="2335" />
+<point x="668" y="2335" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d4eee522-dd08-4e6b-bfec-4a14c3875920">
+<point x="668" y="2335" />
+<point x="645" y="2335" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="62c1c1ba-0b26-488b-b4dd-542fb71462aa">
+<point x="645" y="2335" />
+<point x="613" y="2335" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="fbc7c64c-955a-4baa-be62-b40792fc1ab5">
+<point x="613" y="2335" />
+<point x="613" y="2428" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="005f1583-25e2-4f7a-b527-4dd296ccce2a">
+<point x="613" y="2428" />
+<point x="614" y="2614" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="b190aa0d-fd5f-4517-a11a-ae6faa3db4bb">
+<point x="614" y="2614" />
+<point x="645" y="2614" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="dec9fafe-e999-48ab-b700-825a9dece2ee">
+<point x="645" y="2614" />
+<point x="668" y="2614" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="820eb497-03f2-4558-bcfc-bed891128250">
+<point x="668" y="2614" />
+<point x="777" y="2614" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="7ed984a0-f2b4-412c-83bb-fc6ae9cac76a">
+<point x="777" y="2614" />
+<point x="777" y="2428" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>17</id>
+<id>19</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="20">
+<partial_room>False</partial_room>
+<centroid>
+<point x="308" y="308" />
+</centroid>
+<bounding_box>
+<point x="168" y="843" />
+<point x="168" y="899" />
+<point x="449" y="899" />
+<point x="449" y="843" />
+</bounding_box>
+<bounding_polygon>
+<point x="449" y="899" />
+<point x="448" y="843" />
+<point x="413" y="843" />
+<point x="274" y="843" />
+<point x="243" y="843" />
+<point x="215" y="843" />
+<point x="168" y="843" />
+<point x="168" y="899" />
+<point x="215" y="899" />
+<point x="243" y="899" />
+<point x="274" y="899" />
+<point x="413" y="899" />
+<point x="449" y="899" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="37f3ca7c-fea8-4144-9baf-81f48bf2c181">
+<point x="449" y="899" />
+<point x="448" y="843" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d5f0127e-f0e6-4155-aabb-1f99996af840">
+<point x="448" y="843" />
+<point x="413" y="843" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="e8186002-6de8-4b8e-ae7e-555e7309aba3">
+<point x="413" y="843" />
+<point x="274" y="843" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="32407219-bf19-4b27-922e-701f9498fa36">
+<point x="274" y="843" />
+<point x="243" y="843" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="0118e2fd-da7c-47c9-adfa-3d40e8953927">
+<point x="243" y="843" />
+<point x="215" y="843" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="f3cec56a-06db-418a-8238-bdf59405df9d">
+<point x="215" y="843" />
+<point x="168" y="843" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="ac69446d-17b3-42be-aeb7-3d44b59d91af">
+<point x="168" y="843" />
+<point x="168" y="899" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="21cb4635-a6b9-4560-bceb-4a7aba020a32">
+<point x="168" y="899" />
+<point x="215" y="899" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="74b52e65-77a9-4d98-9065-14272784ed91">
+<point x="215" y="899" />
+<point x="243" y="899" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="7ccd2397-ca48-4ab1-93eb-1156b02fd683">
+<point x="243" y="899" />
+<point x="274" y="899" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="9ae90d34-895a-4669-9e18-0ed4ade98f1a">
+<point x="274" y="899" />
+<point x="413" y="899" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="af6afe7c-6d62-4a06-a2bc-e6e5776d4400">
+<point x="413" y="899" />
+<point x="449" y="899" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>2</id>
+<id>20</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="21">
+<partial_room>False</partial_room>
+<centroid>
+<point x="893" y="893" />
+</centroid>
+<bounding_box>
+<point x="776" y="629" />
+<point x="776" y="842" />
+<point x="1009" y="842" />
+<point x="1009" y="629" />
+</bounding_box>
+<bounding_polygon>
+<point x="1009" y="779" />
+<point x="1009" y="629" />
+<point x="902" y="629" />
+<point x="776" y="630" />
+<point x="776" y="779" />
+<point x="776" y="842" />
+<point x="902" y="842" />
+<point x="1009" y="842" />
+<point x="1009" y="779" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="96d192a2-de4d-429c-ade7-aadfb5778a17">
+<point x="1009" y="779" />
+<point x="1009" y="629" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="a90a4719-4696-4e00-ae9c-62c394bd3c26">
+<point x="1009" y="629" />
+<point x="902" y="629" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="8704b9ff-8d0c-4cbc-bcaa-6c20727fcf36">
+<point x="902" y="629" />
+<point x="776" y="630" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="33ac6328-5b58-49e8-9ee2-c86e172077c5">
+<point x="776" y="630" />
+<point x="776" y="779" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="86165763-90f1-4f58-84bd-f1f5c969ccd5">
+<point x="776" y="779" />
+<point x="776" y="842" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="5d25d006-27f2-43ad-8095-81a2d8e17086">
+<point x="776" y="842" />
+<point x="902" y="842" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="f7f4afb7-4fa5-4b4e-84e2-349d95315729">
+<point x="902" y="842" />
+<point x="1009" y="842" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="7e02a925-c715-4f3c-972e-424f65cae896">
+<point x="1009" y="842" />
+<point x="1009" y="779" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>21</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="22">
+<partial_room>False</partial_room>
+<centroid>
+<point x="229" y="229" />
+</centroid>
+<bounding_box>
+<point x="215" y="2615" />
+<point x="215" y="2663" />
+<point x="243" y="2663" />
+<point x="243" y="2615" />
+</bounding_box>
+<bounding_polygon>
+<point x="243" y="2663" />
+<point x="243" y="2615" />
+<point x="215" y="2615" />
+<point x="215" y="2663" />
+<point x="243" y="2663" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="c7f7acdf-c67b-44b2-bbce-2c5c36320366">
+<point x="243" y="2663" />
+<point x="243" y="2615" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="48507c67-8343-4ac1-b89c-c52a973fe707">
+<point x="243" y="2615" />
+<point x="215" y="2615" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="404bde30-ae76-410d-b789-cac15bfccf20">
+<point x="215" y="2615" />
+<point x="215" y="2663" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="3f10244c-0ca1-44b8-9961-80adb020ab19">
+<point x="215" y="2663" />
+<point x="243" y="2663" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+</space_representation>
+</space>
+<space id="23">
+<partial_room>False</partial_room>
+<centroid>
+<point x="420" y="420" />
+</centroid>
+<bounding_box>
+<point x="274" y="168" />
+<point x="274" y="283" />
+<point x="566" y="283" />
+<point x="566" y="168" />
+</bounding_box>
+<bounding_polygon>
+<point x="566" y="282" />
+<point x="566" y="168" />
+<point x="448" y="168" />
+<point x="413" y="168" />
+<point x="274" y="169" />
+<point x="274" y="283" />
+<point x="413" y="283" />
+<point x="448" y="283" />
+<point x="566" y="282" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="a5dd734b-0a14-4793-8b4b-103af2dc6e9d">
+<point x="566" y="282" />
+<point x="566" y="168" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="dff77322-8d00-4b3f-9a31-dd813694b023">
+<point x="566" y="168" />
+<point x="448" y="168" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="6de6fe2c-41d5-496c-b25f-4cb83448015e">
+<point x="448" y="168" />
+<point x="413" y="168" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="bc5867bf-ba9b-4039-8c0d-2770b15af500">
+<point x="413" y="168" />
+<point x="274" y="169" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="5498c338-f474-4fae-928b-4bd3d585ccc1">
+<point x="274" y="169" />
+<point x="274" y="283" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="3887df8b-5322-477f-86f8-d63d0a5144c3">
+<point x="274" y="283" />
+<point x="413" y="283" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="90218f73-bc91-4436-987f-a599a8f882d8">
+<point x="413" y="283" />
+<point x="448" y="283" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="34b7f9f1-cf22-484e-ae68-4f1ebe2c9bd1">
+<point x="448" y="283" />
+<point x="566" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>23</id>
+<id>25</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="24">
+<partial_room>False</partial_room>
+<centroid>
+<point x="956" y="956" />
+</centroid>
+<bounding_box>
+<point x="902" y="2133" />
+<point x="902" y="2258" />
+<point x="1010" y="2258" />
+<point x="1010" y="2133" />
+</bounding_box>
+<bounding_polygon>
+<point x="1010" y="2258" />
+<point x="1010" y="2133" />
+<point x="902" y="2134" />
+<point x="903" y="2258" />
+<point x="1010" y="2258" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="39d3ca52-010c-4328-83f4-824b1de178cc">
+<point x="1010" y="2258" />
+<point x="1010" y="2133" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d659add2-baef-4522-ba76-fdd4dcc6e17b">
+<point x="1010" y="2133" />
+<point x="902" y="2134" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d18d4e2c-cb76-4ec3-a1fd-3088b60782a6">
+<point x="902" y="2134" />
+<point x="903" y="2258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="535d69fa-0922-465a-9b91-8e9fff125065">
+<point x="903" y="2258" />
+<point x="1010" y="2258" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>10</id>
+<id>24</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="25">
+<partial_room>False</partial_room>
+<centroid>
+<point x="152" y="152" />
+</centroid>
+<bounding_box>
+<point x="29" y="19" />
+<point x="29" y="169" />
+<point x="274" y="169" />
+<point x="274" y="19" />
+</bounding_box>
+<bounding_polygon>
+<point x="274" y="169" />
+<point x="274" y="19" />
+<point x="242" y="19" />
+<point x="214" y="19" />
+<point x="167" y="20" />
+<point x="29" y="20" />
+<point x="29" y="169" />
+<point x="167" y="169" />
+<point x="215" y="169" />
+<point x="243" y="169" />
+<point x="274" y="169" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="023d897e-fefd-4c4b-826d-cd966a0362f0">
+<point x="274" y="169" />
+<point x="274" y="19" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="7207fc7e-e572-449c-940b-5176a5f95734">
+<point x="274" y="19" />
+<point x="242" y="19" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="43c30fd6-7e8b-457b-8ba6-01fb6005bc26">
+<point x="242" y="19" />
+<point x="214" y="19" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="ec6e2446-1213-4880-b7ba-4e701caf0774">
+<point x="214" y="19" />
+<point x="167" y="20" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="c3096a50-5e58-47c8-872f-bb144ec13941">
+<point x="167" y="20" />
+<point x="29" y="20" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="c96a47a0-00f7-48b8-9a1e-fe388777e56e">
+<point x="29" y="20" />
+<point x="29" y="169" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="b32ad396-f347-4691-8ee5-7ffebcd79a9b">
+<point x="29" y="169" />
+<point x="167" y="169" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="39b24e4c-a7ba-4483-8606-33635de0d00e">
+<point x="167" y="169" />
+<point x="215" y="169" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="e596ae8d-b337-4daa-bded-6fa15ecb1cc0">
+<point x="215" y="169" />
+<point x="243" y="169" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="59b8b81b-f142-4c18-9933-f884394da03c">
+<point x="243" y="169" />
+<point x="274" y="169" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>23</id>
+<id>25</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="26">
+<partial_room>False</partial_room>
+<centroid>
+<point x="490" y="490" />
+</centroid>
+<bounding_box>
+<point x="413" y="2335" />
+<point x="413" y="2429" />
+<point x="566" y="2429" />
+<point x="566" y="2335" />
+</bounding_box>
+<bounding_polygon>
+<point x="566" y="2428" />
+<point x="566" y="2335" />
+<point x="449" y="2335" />
+<point x="413" y="2336" />
+<point x="414" y="2429" />
+<point x="449" y="2429" />
+<point x="566" y="2428" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="8b36e971-c3c6-48af-9dc0-5e1857a117d1">
+<point x="566" y="2428" />
+<point x="566" y="2335" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="7680bafd-4088-4b23-870c-0c9c79657576">
+<point x="566" y="2335" />
+<point x="449" y="2335" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="3a5e2c38-977e-4f68-befa-6717f5411dfc">
+<point x="449" y="2335" />
+<point x="413" y="2336" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="600922bf-5418-48fa-a6ab-97ded4950ce7">
+<point x="413" y="2336" />
+<point x="414" y="2429" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="9d93b10e-792f-4c89-9916-4f794b8948b2">
+<point x="414" y="2429" />
+<point x="449" y="2429" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="233ab9ec-7f00-487e-9825-422caf46062e">
+<point x="449" y="2429" />
+<point x="566" y="2428" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>13</id>
+<id>26</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>26</id>
+<id>29</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="27">
+<partial_room>False</partial_room>
+<centroid>
+<point x="893" y="893" />
+</centroid>
+<bounding_box>
+<point x="776" y="898" />
+<point x="776" y="1042" />
+<point x="1009" y="1042" />
+<point x="1009" y="898" />
+</bounding_box>
+<bounding_polygon>
+<point x="1009" y="1041" />
+<point x="1009" y="898" />
+<point x="902" y="898" />
+<point x="776" y="898" />
+<point x="777" y="1042" />
+<point x="902" y="1041" />
+<point x="1009" y="1041" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="6d15fc09-7b84-4d56-85bb-a097bbce9004">
+<point x="1009" y="1041" />
+<point x="1009" y="898" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="0dd1d134-7616-44a0-aa69-8fefcdd9bbb6">
+<point x="1009" y="898" />
+<point x="902" y="898" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="87bb373b-9a01-48d1-95da-9ca65a6955db">
+<point x="902" y="898" />
+<point x="776" y="898" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="4def84ac-cd59-4d74-b2d3-7a2ab45a85b9">
+<point x="776" y="898" />
+<point x="777" y="1042" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="5c3d473a-06ef-4baf-b9ac-e035abace279">
+<point x="777" y="1042" />
+<point x="902" y="1041" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="456e6259-272b-4ea3-8108-7286707e8bbf">
+<point x="902" y="1041" />
+<point x="1009" y="1041" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>27</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>16</id>
+<id>27</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="28">
+<partial_room>False</partial_room>
+<centroid>
+<point x="1027" y="1027" />
+</centroid>
+<bounding_box>
+<point x="1009" y="446" />
+<point x="1009" y="629" />
+<point x="1045" y="629" />
+<point x="1045" y="446" />
+</bounding_box>
+<bounding_polygon>
+<point x="1045" y="629" />
+<point x="1045" y="446" />
+<point x="1009" y="446" />
+<point x="1009" y="629" />
+<point x="1045" y="629" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="15c12b69-cada-408f-8819-998194b0ce06">
+<point x="1045" y="629" />
+<point x="1045" y="446" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="039b351d-578a-4010-9b6b-1c1416476af5">
+<point x="1045" y="446" />
+<point x="1009" y="446" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="94974093-a265-4c16-bd59-7b36d0f25f0d">
+<point x="1009" y="446" />
+<point x="1009" y="629" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="75bd3fd1-791f-4051-b90d-b848cd496743">
+<point x="1009" y="629" />
+<point x="1045" y="629" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+</space_representation>
+</space>
+<space id="29">
+<partial_room>False</partial_room>
+<centroid>
+<point x="490" y="490" />
+</centroid>
+<bounding_box>
+<point x="414" y="2428" />
+<point x="414" y="2615" />
+<point x="567" y="2615" />
+<point x="567" y="2428" />
+</bounding_box>
+<bounding_polygon>
+<point x="567" y="2614" />
+<point x="566" y="2428" />
+<point x="449" y="2429" />
+<point x="414" y="2429" />
+<point x="414" y="2615" />
+<point x="449" y="2615" />
+<point x="567" y="2614" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="606d7fc0-a41b-460c-b629-77635acb20c1">
+<point x="567" y="2614" />
+<point x="566" y="2428" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="78ab4af9-9f02-4cd3-97df-88f02066af47">
+<point x="566" y="2428" />
+<point x="449" y="2429" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="35e3255c-a6f2-462a-a739-5bd7475b6e4a">
+<point x="449" y="2429" />
+<point x="414" y="2429" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="c5ec2fac-e07e-43cf-8597-40ae3d540cb1">
+<point x="414" y="2429" />
+<point x="414" y="2615" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="39f5ce12-25bc-486c-8bf1-c4e7cbc674b7">
+<point x="414" y="2615" />
+<point x="449" y="2615" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="097a5684-1b7c-4acc-a257-838de1dde2fd">
+<point x="449" y="2615" />
+<point x="567" y="2614" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>26</id>
+<id>29</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="30">
+<partial_room>False</partial_room>
+<centroid>
+<point x="99" y="99" />
+</centroid>
+<bounding_box>
+<point x="30" y="2615" />
+<point x="30" y="2663" />
+<point x="168" y="2663" />
+<point x="168" y="2615" />
+</bounding_box>
+<bounding_polygon>
+<point x="168" y="2663" />
+<point x="168" y="2615" />
+<point x="30" y="2615" />
+<point x="30" y="2663" />
+<point x="168" y="2663" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="f2f42764-f18b-4441-99ff-08381086345d">
+<point x="168" y="2663" />
+<point x="168" y="2615" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="ab78a6a4-f4da-470a-953b-83429f4b2b02">
+<point x="168" y="2615" />
+<point x="30" y="2615" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="194abbf1-619e-4740-8976-91453aed9d5a">
+<point x="30" y="2615" />
+<point x="30" y="2663" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="fc7239fd-8f08-4e66-9f4d-c345c6f8f2ec">
+<point x="30" y="2663" />
+<point x="168" y="2663" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+</space_representation>
+</space>
+<space id="31">
+<partial_room>False</partial_room>
+<centroid>
+<point x="722" y="722" />
+</centroid>
+<bounding_box>
+<point x="667" y="168" />
+<point x="667" y="282" />
+<point x="776" y="282" />
+<point x="776" y="168" />
+</bounding_box>
+<bounding_polygon>
+<point x="776" y="282" />
+<point x="776" y="168" />
+<point x="667" y="168" />
+<point x="668" y="282" />
+<point x="776" y="282" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="f554d986-8a65-4c4d-a6fd-28e36f922735">
+<point x="776" y="282" />
+<point x="776" y="168" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="266313ad-6324-4a36-971c-806995dc21f1">
+<point x="776" y="168" />
+<point x="667" y="168" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="8628e86d-0ae3-4509-99fc-80a11a3783c2">
+<point x="667" y="168" />
+<point x="668" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="b9a72c9c-9569-4abf-af6b-4a2c195f5f08">
+<point x="668" y="282" />
+<point x="776" y="282" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>3</id>
+<id>31</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+<space id="32">
+<partial_room>False</partial_room>
+<centroid>
+<point x="344" y="344" />
+</centroid>
+<bounding_box>
+<point x="274" y="2336" />
+<point x="274" y="2615" />
+<point x="414" y="2615" />
+<point x="414" y="2336" />
+</bounding_box>
+<bounding_polygon>
+<point x="414" y="2429" />
+<point x="413" y="2336" />
+<point x="274" y="2336" />
+<point x="275" y="2429" />
+<point x="275" y="2615" />
+<point x="414" y="2615" />
+<point x="414" y="2429" />
+</bounding_polygon>
+<space_representation>
+<linesegment id="86925a41-b919-4682-bf1b-48193612704d">
+<point x="414" y="2429" />
+<point x="413" y="2336" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="cb0fd3e1-9506-49c8-93e0-d462593c58ae">
+<point x="413" y="2336" />
+<point x="274" y="2336" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="610fe052-b27b-4fb4-9fd9-e06dce505c9d">
+<point x="274" y="2336" />
+<point x="275" y="2429" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="d35173ba-37a5-47e0-9c58-aeb81f297d9c">
+<point x="275" y="2429" />
+<point x="275" y="2615" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="1b72dafd-4d01-4401-aefe-646518d3e576">
+<point x="275" y="2615" />
+<point x="414" y="2615" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<linesegment id="bb062df6-60c0-4650-91e9-99636e1fe738">
+<point x="414" y="2615" />
+<point x="414" y="2429" />
+<class>WALL</class>
+<type>EXPLICIT</type>
+<features>NORMAL</features>
+</linesegment>
+<portals>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>4</id>
+<id>32</id>
+</target>
+<features>NORMAL</features>
+</portal>
+<portal>
+<linesegment>UNKNOWN</linesegment>
+<class>UNKNOWN</class>
+<type>EXPLICIT</type>
+<direction>BOTH</direction>
+<target>
+<id>13</id>
+<id>32</id>
+</target>
+<features>NORMAL</features>
+</portal>
+</portals>
+</space_representation>
+</space>
+</spaces>
+</floor>
+</building>

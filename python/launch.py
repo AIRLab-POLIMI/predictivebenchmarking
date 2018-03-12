@@ -15,8 +15,8 @@ first_time=True
 seconds_mapsave=600
 maxmapsave=18
 count=0
-threshold=5
-num_runs=5
+threshold=10
+num_runs=10
 global project_path
 
 
