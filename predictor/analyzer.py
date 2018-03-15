@@ -153,17 +153,18 @@ def computePerformanceStats(runs):
 	totalTime, totalLength, totalRot = computeRunStats(runs)
 	return PerfStats(transErrorStats,rotErrorStats,totalTime,totalLength,totalRot)
 
-def loadGeometry(myDataset, xmlFile):
+def loadGeometry(xmlFile):
 	# load and parse the xml of the layout
 	rooms, connectedRooms, boundingPolygon, scalingFactor = xmlutil.loadXML(xmlFile)
 	datasetGeometry = Geometry(rooms, boundingPolygon, scalingFactor)
-	myDataset.geometry = datasetGeometry
+	#myDataset.geometry = datasetGeometry
 	# create the topological graph
 	G=nx.Graph()
 	G.add_edges_from(connectedRooms)
 	Gc = max(nx.connected_component_subgraphs(G), key=len)
-	myDataset.topology = Gc
-	myDataset.topologyStats = GraphStats(Gc)
+	#myDataset.topology = Gc
+	#myDataset.topologyStats = GraphStats(Gc)
+	return datasetGeometry, Gc, GraphStats(Gc)
 
 def loadDataset(datasetName, runsFolder):
 	# load the runs
@@ -339,7 +340,9 @@ def ElasticNetTraining(xs, ys, featuresArray, numFolds, fsFolder, predictedFeatu
 	# Then we fit the estimator with the hyperparameters identified by cross validation
 	estimator = linear_model.ElasticNet(l1_ratio=best_l1_ratio,alpha=best_alpha)
 	model = deepcopy(estimator.fit(xs,ys))
-	usedFeaturesIdx = [idx for idx,value in enumerate(estimator.coef_) if value > 0]
+	# UPDATE: better to use a != 0 option here to retain features with negative coeff.
+	# Also, we need to store ALL the features, because elasticnet uses all of them (even with zero coeff.), or we lose the order
+	usedFeaturesIdx = [idx for idx,value in enumerate(estimator.coef_) if value != 0]
 	usedFeatures = [feature for idx,feature in enumerate(featuresArray) if idx in usedFeaturesIdx]
 	# Finally, we validate keeping l1_ratio and alpha fixed (model validation)
 	strategy = KFold(n_splits=numFolds,shuffle=True)
@@ -371,7 +374,7 @@ def KBestFeatureSelection(xs, ys, featuresArray, numFolds, n_features, predicted
 	print "[DONE]"
 	# now, we have to get the most voted k features
 	selected_features_total = np.sum(selected_features_per_fold,axis=0)
-	usedFeaturesIdx = np.argpartition(selected_features_total, -n_features)[-n_features:]
+	usedFeaturesIdx = np.sort(np.argpartition(selected_features_total, -n_features)[-n_features:])
 	usedFeatures = [feature for idx,feature in enumerate(featuresArray) if idx in usedFeaturesIdx]
 	# now we can train the final model and get a cv estimate of its performance
 	xr = xs[:,usedFeaturesIdx]
@@ -434,7 +437,7 @@ def performFeatureSelection(datasets,layoutFolder,fsFolder,predictedStats,predic
 				predictedFeature = eName+"."+aName+"."+sName
 				model, selectedFeatures, mse, r2 = function([xs, ys, featuresArray, numFolds, fsFolder, predictedFeature])
 				models[predictedFeature] = (model, selectedFeatures, mse, r2)
-	return models	
+	return models, featuresArray	
 
 def performIndividualFeatureTraining(datasets,layoutFolder,predictedStats,predictedStatsAttrs,numFolds,estimator,predictors):
 	attrStats = getAttrStats()
@@ -792,7 +795,7 @@ def setupFeatureSelection(datasets,layoutFolder,fsFolder,numFolds,predictors):
 	runStats = getRunStats()
 	errorAttrs = getErrorAttrs()
 	function = (lambda paramList: ParametrizedKBestFeatureSelection(*paramList))
-	models = performFeatureSelection(datasets,layoutFolder,fsFolder,errorTypes,errorAttrs,numFolds,predictors,function)
+	models, _ = performFeatureSelection(datasets,layoutFolder,fsFolder,errorTypes,errorAttrs,numFolds,predictors,function)
 	return models
 
 def setupIndividualFeatureTraining(datasets,layoutFolder,numFolds,predictors):
@@ -809,8 +812,8 @@ def setupElasticNetTraining(datasets,layoutFolder,fsFolder,numFolds,predictors):
 	runStats = getRunStats()
 	errorAttrs = getErrorAttrs()
 	function = (lambda paramList: ElasticNetTraining(*paramList))
-	models = performFeatureSelection(datasets,layoutFolder,fsFolder,errorTypes,errorAttrs,numFolds,predictors,function)
-	return models
+	models, featuresArray = performFeatureSelection(datasets,layoutFolder,fsFolder,errorTypes,errorAttrs,numFolds,predictors,function)
+	return models, featuresArray
 
 def getBestModels(models):
 	bestModels = {}
@@ -855,7 +858,7 @@ def saveVoronoiCSV(path, datasets):
 def checkPredictors(predictorsList, usedPredictors):
  	isUsed = False
  	for predictor in predictorsList:
- 	 	if predictor in usedPredictors.keys():
+ 	 	if predictor in usedPredictors:
  	 	 	isUsed = True
  	return isUsed
 
@@ -876,19 +879,19 @@ def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, models
 			datasets.append(loadDataset(f, runsFolder))
 	# load dataset properties (layout, voronoi graph...)
 	for d in datasets:
-		if checkPredictors(getGeometricalPredictors(), usedPredictors) or checkPredictors(getTopologicalPredictors(), usedPredictors):
+		if checkPredictors(getGeometricalPredictors(), usedPredictors.keys()) or checkPredictors(getTopologicalPredictors(), usedPredictors.keys()):
 			print "Computing geometrical and topological features...",
 			sys.stdout.flush()
-			loadGeometry(d, join(layoutFolder, d.name, d.name)+".xml")	
+			d.geometry, d.topology, d.topologyStats = loadGeometry(join(layoutFolder, d.name, d.name)+".xml")	
 			print "[DONE]"
-		if checkPredictors(getVoronoiGraphPredictors(), usedPredictors) or checkPredictors(getVoronoiTraversalPredictors(), usedPredictors):
+		if checkPredictors(getVoronoiGraphPredictors(), usedPredictors.keys()) or checkPredictors(getVoronoiTraversalPredictors(), usedPredictors.keys()):
 			print "Processing Voronoi graph of "+d.name+"."
 			worldFile = join(worldFolder, d.name)+".world"
 			gtImageFile = join(worldFolder, d.name)+".png"
 			d.voronoi = loadVoronoiGraph(d.name, voronoiFolder, worldFile)
-			if checkPredictors(getVoronoiTraversalPredictors(), usedPredictors):
+			if checkPredictors(getVoronoiTraversalPredictors(), usedPredictors.keys()):
 				d.voronoiCenter, d.voronoiDistance, d.voronoiRotation = processVoronoiGraph(d.voronoi, worldFile, gtImageFile, laserRange, laserFOV, minRotDistance)
-			if checkPredictors(getVoronoiGraphPredictors(), usedPredictors):
+			if checkPredictors(getVoronoiGraphPredictors(), usedPredictors.keys()):
 				print "Computing Voronoi graph stats...",
 				sys.stdout.flush()
 				d.voronoiStats = GraphStats(d.voronoi)
@@ -909,8 +912,8 @@ def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, models
 	elif useMode=='elastic_net':
 		# in this mode, we use cross validation to find the best hyperparameters of an elastic net model
 		fsFolder = join(modelsFolder,'ElasticNet','models','fs')
-		models = setupElasticNetTraining(datasets,layoutFolder,fsFolder,numFolds,getPredictors(debugMode))
-		saveFSModels(models,fsFolder,numFolds)	
+		models, featuresArray = setupElasticNetTraining(datasets,layoutFolder,fsFolder,numFolds,getPredictors(debugMode))
+		saveElasticNetModels(models,fsFolder,numFolds, featuresArray)	
 
 def saveSummaryFile(path, corrStats, numFolds):
 	summaryFile = open(join(path, "summary.csv"), "w")
@@ -943,12 +946,23 @@ def saveIndividualModels(models,path, numFolds):
 
 def saveFSModels(models, path, numFolds):
 	corrStats = []
-	for predictedFeature, (model, featuresArray, rmse, r2) in models.iteritems():
+	for predictedFeature, (model, usedFeatures, rmse, r2) in models.iteritems():
 		if not exists(join(path,predictedFeature)):
 			makedirs(join(path,predictedFeature))
 		joblib.dump(model, join(path,predictedFeature,'model')+'.mdl')
-		corrStats.append((predictedFeature,';'.join(featuresArray),rmse,r2))
+		corrStats.append((predictedFeature,';'.join(usedFeatures),rmse,r2))
 	saveSummaryFile(path,corrStats, numFolds)
+
+def saveElasticNetModels(models, path, numFolds, allFeatures):
+	corrStats = []
+	for predictedFeature, (model, usedFeatures, rmse, r2) in models.iteritems():
+		if not exists(join(path,predictedFeature)):
+			makedirs(join(path,predictedFeature))
+		joblib.dump(model, join(path,predictedFeature,'model')+'.mdl')
+		corrStats.append((predictedFeature,';'.join(usedFeatures),rmse,r2))
+	corrStats.append(('allFeatures',';'.join(allFeatures),'',''))
+	saveSummaryFile(path,corrStats, numFolds)
+
 
 def loadModels(path):
 	models = {}

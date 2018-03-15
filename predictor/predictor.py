@@ -1,32 +1,180 @@
-import argparse
+import argparse, sys
 from os import listdir
-from os.path import join,exists, isdir,isfile
-from analyzer import loadModels,processVoronoiGraph
+from os.path import join, exists, isdir, isfile
+from analyzer import loadModels, processVoronoiGraph, checkPredictors, getGeometricalPredictors, getTopologicalPredictors, getVoronoiGraphPredictors, getVoronoiTraversalPredictors, getPredictors, createVoronoiGraphFromImage, loadGeometry
+from structures.dataset import Dataset
+from structures.statistics import GraphStats
+from structures.geometry import Geometry
+import networkx as nx
 
-def predictDatasets(predictFolder, models):
-	print "transError.mean.mean = "+str(models["transError.mean.mean"]["voronoi_traversal_distance"].coef_[0])+"*X+"+str(models["transError.mean.mean"]["voronoi_traversal_distance"].intercept_[0])
-	print "transError.mean.std = "+str(models["transError.mean.std"]["voronoi_traversal_distance"].coef_[0])+"*X+"+str(models["transError.mean.std"]["voronoi_traversal_distance"].intercept_[0])
-	print "rotError.mean.mean = "+str(models["rotError.mean.mean"]["voronoi_traversal_distance"].coef_[0])+"*X+"+str(models["rotError.mean.mean"]["voronoi_traversal_distance"].intercept_[0])
-	print "rotError.mean.std = "+str(models["rotError.mean.std"]["voronoi_traversal_distance"].coef_[0])+"*X+"+str(models["rotError.mean.std"]["voronoi_traversal_distance"].intercept_[0])
+def loadVoronoiGraph(datasetName, voronoiPath, worldPath):
+	pickleFile = join(voronoiPath, datasetName)+"_voronoi.pickle"
+	imageFile = join(voronoiPath, datasetName)+"_voronoi.png"
+	if exists(pickleFile):
+		print "Loading Voronoi graph... [DONE]"
+		Gc = nx.read_gpickle(pickleFile)
+	else:
+		if exists(imageFile):
+			Gc = createVoronoiGraphFromImage(imageFile, worldPath)
+			nx.write_gpickle(Gc, pickleFile)
+		else:
+			raise IOError("Missing bitmap Voronoi graph for "+datasetName+", did you run the Voronoi extractor?")
+	return Gc
+
+def setupPrediction(predictFolder, modelsFolder):
+	models = loadModels(args.models_folder)
+	component = selectComponentToPredict()
+	approach = selectPredictionApproach()
+	if approach == 1: # individual linear regression
+		predictor, model = selectPredictor(models, component)
+		print "Computing predictions..."
+		predictDatasetsWithSingleRegressor(predictFolder, [predictor], component, model)
+	elif approach == 2: # f-regression multiple feature regressions
+		predictors, model = predictDatasetsWithFRegression(predictFolder, modelsFolder, component)
+		print "Computing predictions..."
+		predictDatasetsWithSingleRegressor(predictFolder, predictors, component, model)
+	elif approach == 3: # ElasticNet
+		predictors, model = predictDatasetsWithElasticNet(predictFolder, modelsFolder, component)
+		print "Computing predictions..."
+		predictDatasetsWithSingleRegressor(predictFolder, predictors, component, model)
+
+def getFeatureListTerminator(tokens):
+	try:
+		idxOfFirstEmptyItem, _ = next((idx, obj) for idx, obj in enumerate(tokens) if obj == '')
+	except StopIteration:
+		idxOfFirstEmptyItem = len(tokens)
+	return idxOfFirstEmptyItem - 2
+
+def predictDatasetsWithFRegression(predictFolder, modelsFolder, component):
+	# we first need to identify which features are used by the FRegressor
+	summaryFile = open(join(modelsFolder, "summary.csv"), "r")
+	lines = summaryFile.readlines()
+	modelsFeatures = {}
+	for line in lines[1:]:
+		tokens = line.split(',')
+		modelsFeatures[tokens[0]] = tokens[1].split(';')
+	usedFeatures = modelsFeatures[component]
+	models = loadModels(args.models_folder)
+	print usedFeatures
+	return usedFeatures, models[component]['model']
+
+def predictDatasetsWithElasticNet(predictFolder, modelsFolder, component):
+	# we first need to identify which features are used by the FRegressor
+	summaryFile = open(join(modelsFolder, "summary.csv"), "r")
+	lines = summaryFile.readlines()
+	modelsFeatures = {}
+	for line in lines[1:]:
+		tokens = line.split(',')
+		modelsFeatures[tokens[0]] = tokens[1].split(';')
+	usedFeatures = modelsFeatures['allFeatures']
+	models = loadModels(args.models_folder)
+	print usedFeatures
+	return usedFeatures, models[component]['model']
+
+def selectComponentToPredict():
+	modeArray = ["transError.mean.mean", "transError.mean.std", "rotError.mean.mean", "rotError.mean.std"]
+	mode = 0
+	while mode <= 0 or mode >= 6:
+		print "Which component of the localization error you are interested in predicting?"
+		print "1) translational localization error mean"
+		print "2) translational localization error st.dev."
+		print "3) rotational localization error mean"
+		print "4) rotational localization error st.dev."
+		print "5) exit"
+		try:
+			mode = int(raw_input("Your choice:"))
+			if mode == 5:
+				exit()
+		except ValueError:
+			print "Invalid option!"
+			mode = 0
+	return modeArray[mode-1]
+
+def selectPredictionApproach():
+	mode = 0
+	while mode <= 0 or mode >= 5:
+		print "Which prediction approach would you like to use?"
+		print "1) individual linear regression"
+		print "2) F-regression multiple features model"
+		print "3) regularized ElasticNet model"
+		print "4) exit"
+		try:
+			mode = int(raw_input("Your choice:"))
+			if mode == 4:
+				exit()
+		except ValueError:
+			print "Invalid option!"
+			mode = 0
+	return mode
+
+def selectPredictor(models, component):
+	idxMap = []
+	idx = 0
+	for key, elem in models[component].iteritems():
+		idxMap.append(key)
+		idx += 1
+	mode = 0
+	while mode <= 0 or mode >= len(idxMap)+2:
+		print "Which model would you like to use?"
+		for idx in range(0, len(idxMap)):
+			print str(idx+1)+") "+idxMap[idx]
+		print str(len(idxMap)+1)+") use model with lowest RMSE"
+		print str(len(idxMap)+2)+") exit"
+		try:
+			mode = int(raw_input("Your choice:"))
+			if mode == len(idxMap)+1:
+				# look for model with minimum RMSE
+				pass
+			elif mode == len(idxMap)+2:
+				exit()
+		except ValueError:
+			print "Invalid option!"
+			mode = 0
+	return idxMap[mode-1],models[component][idxMap[mode-1]]	
+
+def predictDatasetsWithSingleRegressor(predictFolder, predictors, component, model):
+	allPredictors = getPredictors(0) # debug mode disabled
 	for f in listdir(predictFolder):
 		if isfile(join(predictFolder,f)) and f[-5:]=="world":
-			datasetName = f[:-6]
-			voronoi, voronoiCenter, voronoiDistance, voronoiTopVisits, voronoiRotation,voronoiStats = processVoronoiGraph(datasetName, join(predictFolder, "voronoi"), join(predictFolder, datasetName)+".world", join(predictFolder, datasetName)+".png")
-			print datasetName
-			print voronoiDistance
-			print models["transError.mean.mean"]["voronoi_traversal_distance"].predict(voronoiDistance)
-			print models["transError.mean.std"]["voronoi_traversal_distance"].predict(voronoiDistance)
-			print models["rotError.mean.mean"]["voronoi_traversal_distance"].predict(voronoiDistance)
-			print models["rotError.mean.std"]["voronoi_traversal_distance"].predict(voronoiDistance)
+			d = Dataset(f[:-6], None, None)
+			print "Predicting "+component+" for "+d.name+"."
+			# we need to be sure we have the necessary data to compute the prediction
+			if checkPredictors(predictors, getGeometricalPredictors()) or checkPredictors(predictors, getTopologicalPredictors()):
+				if exists(join(predictFolder, d.name)+".xml"):
+					print "Computing geometrical and topological features...",
+					sys.stdout.flush()
+					d.geometry, d.topology, d.topologyStats = loadGeometry(join(predictFolder, d.name)+".xml")
+					print "[DONE]"
+				else:
+					print "Layout file for "+d.name+" not found, did you run the Layout extractor?"
+					print "Skipping "+d.name+" due to missing data."
+			if checkPredictors(predictors, getVoronoiGraphPredictors()) or checkPredictors(predictors, getVoronoiTraversalPredictors()):
+				worldFile = join(predictFolder, d.name)+".world"
+				gtImageFile = join(predictFolder, d.name)+".png"
+				try:
+					d.voronoi = loadVoronoiGraph(d.name, predictFolder, worldFile)
+					if checkPredictors(predictors, getVoronoiTraversalPredictors()):
+						# rirordarsi di inserire o chiedere range, FOV, rot. distance, anche se sarebbe molto meglio salvarli nel modello
+						d.voronoiCenter, d.voronoiDistance, d.voronoiRotation = processVoronoiGraph(d.voronoi, worldFile, gtImageFile, 30, 270*3.14/180, 0.5)
+					if checkPredictors(predictors, getVoronoiGraphPredictors()):
+						print "Computing Voronoi graph stats...",
+						sys.stdout.flush()
+						d.voronoiStats = GraphStats(d.voronoi)
+						print "[DONE]"
+				except IOError, e:
+					print str(e)
+					print "Skipping "+d.name+" due to missing data."
+			# predict
+			print [key for key in predictors]
+			evaluatedFeatures = [[p(d) for p in [allPredictors.get(key) for key in predictors]]]
+			print evaluatedFeatures
+			print "Predicted "+component+" for "+d.name+": "+ str(model.predict(evaluatedFeatures))
 
 if __name__ == '__main__':
 	#buildcsv(sys.argv[1])
     parser = argparse.ArgumentParser(description='This is the main tool of the RPPF. Its task is to analyze the error data of the different runs of the training datasets, correlate it with properties extracted from such datasets, build a prediction model and use it to predict the error data of the desired test datasets. Please refer to the wiki for extended documentation.')
     #parser.add_argument('layouts_folder',help='the folder in which the layout information of each training dataset, as extracted by the Layout Extractor, is stored')
-    parser.add_argument('models_folder',help='the output folder in which the tool stores the trained models')
+    parser.add_argument('models_folder',help='the input folder from which the tool loads the trained models')
     parser.add_argument('datasets_to_predict_folder',help='the folder in which all the data related to the datasets of the test set for which the tool must perform predictions is stored')
     args = parser.parse_args()
-    #models = analyzeDatasets(args.runs_folder,args.layouts_folder,args.voronoi_folder,args.world_folder,args.plot_folder)
-    #saveModels(models,args.models_folder)
-    models = loadModels(args.models_folder)
-    predictDatasets(args.datasets_to_predict_folder, models)
+    setupPrediction(args.datasets_to_predict_folder, args.models_folder)

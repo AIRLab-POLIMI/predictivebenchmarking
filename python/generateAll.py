@@ -48,7 +48,7 @@ def writeGroundTruth(data,outputFile):
 				groundtruth.write(str(msg.header.stamp)[:-9]+"."+str(msg.header.stamp)[-9:]+" "+str(position.x+displacementx)+" "+str(position.y+displacementy)+" "+str(rot[2])+"\n")
 	groundtruth.close()
 
-def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T",alpha=0.99,maxError=0.02,skipOrderedRecomputation=False):
+def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,alpha=0.99,maxError=0.02,skipOrderedRecomputation=False):
 	'''
 	Generates the Ordered and the Random relations files
 	'''
@@ -110,21 +110,33 @@ def generateRelationsOandRE(folder,gtfile,seconds=0.5,SLAMFile=None,errorMode="T
 	relationsfileRE.close()
 	# now we invoke the metric evaluator on this relations file, we read the sample standard 
 	# deviation and we exploit it to rebuild a better sample
-	if errorMode=='T':
-		errorWeights = "{1.0,1.0,1.0,0.0,0.0,0.0}"
-	else:
-		errorWeights = "{0.0,0.0,0.0,1.0,1.0,1.0}"
-	p1=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/Original/"+output+"RE.relations","-w",errorWeights, "-e","summary.error"])
+	# compute translational sample size
+	p1=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/Original/"+output+"RE.relations","-w","{1.0,1.0,1.0,0.0,0.0,0.0}", "-e","summaryT.error"])
 	p1.wait()
-	errorfile = open("summary.error", "r")
+	errorfile = open("summaryT.error", "r")
 	content = errorfile.readlines()
 	words = content[1].split(", ")
 	std = float(words[1])
 	var = math.pow(std,2)
-	# now we can estimate the size of the 99% confidence sample
-	z_a_2 = t.ppf(alpha,n_samples-1)#2.58
+	z_a_2 = t.ppf(alpha,n_samples-1)
 	delta = maxError
-	n_samples = math.pow(z_a_2,2)*var/math.pow(delta,2)
+	n_samples_T = math.pow(z_a_2,2)*var/math.pow(delta,2)
+	# compute rotational sample size
+	p1=Popen([pathToMetricEvaluator, "-s",SLAMFile, "-r",folder+"Relations/Original/"+output+"RE.relations","-w","{0.0,0.0,0.0,1.0,1.0,1.0}", "-e","summaryR.error"])
+	p1.wait()
+	errorfile = open("summaryR.error", "r")
+	content = errorfile.readlines()
+	words = content[1].split(", ")
+	std = float(words[1])
+	var = math.pow(std,2)
+	z_a_2 = t.ppf(alpha,n_samples-1)
+	delta = maxError
+	n_samples_R = math.pow(z_a_2,2)*var/math.pow(delta,2)
+	# select the biggest of the two
+	n_samples = n_samples_T if (n_samples_T > n_samples_R) else n_samples_R
+	print n_samples_T
+	print n_samples_R
+	print n_samples
 	relationsfileRE=open(folder+"Relations/Original/"+output+"RE.relations","w")
 	#relationsfileRE.seek(0)
 	i=0
