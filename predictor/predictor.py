@@ -5,6 +5,7 @@ from analyzer import loadModels, processVoronoiGraph, checkPredictors, getGeomet
 from structures.dataset import Dataset
 from structures.statistics import GraphStats
 from structures.geometry import Geometry
+import numpy as np
 import networkx as nx
 
 def loadVoronoiGraph(datasetName, voronoiPath, worldPath):
@@ -22,20 +23,23 @@ def loadVoronoiGraph(datasetName, voronoiPath, worldPath):
 	return Gc
 
 def setupPrediction(predictFolder, modelsFolder):
-	models = loadModels(args.models_folder)
 	component = selectComponentToPredict()
-	approach = selectPredictionApproach()
+	manualOrAutomatic = selectManualOrAutomaticPrediction()
+	if manualOrAutomatic == 1: # automatic
+		approach = findBestRMSEPredictor(modelsFolder, component)
+	else: # manual:
+		approach = selectPredictionApproach()
 	if approach == 1: # individual linear regression
-		predictor, model = selectPredictor(models, component)
-		print "Computing predictions..."
+		predictor, model = selectPredictor(modelsFolder, component)
+		print "Computing predictions with Linear Regression model."
 		predictDatasetsWithSingleRegressor(predictFolder, [predictor], component, model)
 	elif approach == 2: # f-regression multiple feature regressions
 		predictors, model = predictDatasetsWithFRegression(predictFolder, modelsFolder, component)
-		print "Computing predictions..."
+		print "Computing predictions with F-regression model."
 		predictDatasetsWithSingleRegressor(predictFolder, predictors, component, model)
 	elif approach == 3: # ElasticNet
 		predictors, model = predictDatasetsWithElasticNet(predictFolder, modelsFolder, component)
-		print "Computing predictions..."
+		print "Computing predictions with ElasticNet model."
 		predictDatasetsWithSingleRegressor(predictFolder, predictors, component, model)
 
 def getFeatureListTerminator(tokens):
@@ -47,28 +51,26 @@ def getFeatureListTerminator(tokens):
 
 def predictDatasetsWithFRegression(predictFolder, modelsFolder, component):
 	# we first need to identify which features are used by the FRegressor
-	summaryFile = open(join(modelsFolder, "summary.csv"), "r")
+	summaryFile = open(join(modelsFolder,'LinearRegression','models','fs', "summary.csv"), "r")
 	lines = summaryFile.readlines()
 	modelsFeatures = {}
 	for line in lines[1:]:
 		tokens = line.split(',')
 		modelsFeatures[tokens[0]] = tokens[1].split(';')
 	usedFeatures = modelsFeatures[component]
-	models = loadModels(args.models_folder)
-	print usedFeatures
+	models = loadModels(join(modelsFolder,'LinearRegression','models','fs'))
 	return usedFeatures, models[component]['model']
 
 def predictDatasetsWithElasticNet(predictFolder, modelsFolder, component):
-	# we first need to identify which features are used by the FRegressor
-	summaryFile = open(join(modelsFolder, "summary.csv"), "r")
+	# we first need to identify which features are used by the ElasticNet
+	summaryFile = open(join(modelsFolder,'ElasticNet','models','fs', "summary.csv"), "r")
 	lines = summaryFile.readlines()
 	modelsFeatures = {}
 	for line in lines[1:]:
 		tokens = line.split(',')
 		modelsFeatures[tokens[0]] = tokens[1].split(';')
 	usedFeatures = modelsFeatures['allFeatures']
-	models = loadModels(args.models_folder)
-	print usedFeatures
+	models = loadModels(join(modelsFolder,'ElasticNet','models','fs'))
 	return usedFeatures, models[component]['model']
 
 def selectComponentToPredict():
@@ -93,7 +95,7 @@ def selectComponentToPredict():
 def selectPredictionApproach():
 	mode = 0
 	while mode <= 0 or mode >= 5:
-		print "Which prediction approach would you like to use?"
+		print "Which model type would you like to use?"
 		print "1) individual linear regression"
 		print "2) F-regression multiple features model"
 		print "3) regularized ElasticNet model"
@@ -107,7 +109,44 @@ def selectPredictionApproach():
 			mode = 0
 	return mode
 
-def selectPredictor(models, component):
+def selectManualOrAutomaticPrediction():
+	mode = 0
+	while mode <= 0 or mode >= 4:
+		print "Which prediction approach would you like to use?"
+		print "1) automatic (find model with lowest RMSE)"
+		print "2) manual (select desired model)"
+		print "3) exit"
+		try:
+			mode = int(raw_input("Your choice:"))
+			if mode == 3:
+				exit()
+		except ValueError:
+			print "Invalid option!"
+			mode = 0
+	return mode
+
+def retrieveRMSEOfModelClass(summaryPath, component):
+	summaryFile = open(summaryPath, "r")
+	lines = summaryFile.readlines()
+	modelsRMSE = {}
+	for line in lines[1:]:
+		tokens = line.split(',')
+		modelsRMSE[tokens[0]] = float(tokens[2]) if tokens[2]!='' else float('inf')
+	return modelsRMSE[component]
+
+def findBestRMSEPredictor(modelsFolder, component):
+	# three possibilities: it may be an individual linear regression model, an F-regression model, or an ElasticNet model
+	bestRMSE = np.zeros(3)
+	# linear model performance
+	bestRMSE[0] = retrieveRMSEOfModelClass(join(modelsFolder,'LinearRegression','models','best_individual', "summary.csv"), component)
+	# f-regression performance
+	bestRMSE[1] = retrieveRMSEOfModelClass(join(modelsFolder,'LinearRegression','models','fs', "summary.csv"), component)
+	# ElasticNet performance
+	bestRMSE[2] = retrieveRMSEOfModelClass(join(modelsFolder,'ElasticNet','models','fs', "summary.csv"), component)
+	return np.argmin(bestRMSE)+1
+
+def selectPredictor(modelsFolder, component):
+	models = loadModels(join(modelsFolder,'LinearRegression','models','individual'))
 	idxMap = []
 	idx = 0
 	for key, elem in models[component].iteritems():
@@ -165,9 +204,7 @@ def predictDatasetsWithSingleRegressor(predictFolder, predictors, component, mod
 					print str(e)
 					print "Skipping "+d.name+" due to missing data."
 			# predict
-			print [key for key in predictors]
 			evaluatedFeatures = [[p(d) for p in [allPredictors.get(key) for key in predictors]]]
-			print evaluatedFeatures
 			print "Predicted "+component+" for "+d.name+": "+ str(model.predict(evaluatedFeatures))
 
 if __name__ == '__main__':

@@ -441,7 +441,7 @@ def performFeatureSelection(datasets,layoutFolder,fsFolder,predictedStats,predic
 
 def performIndividualFeatureTraining(datasets,layoutFolder,predictedStats,predictedStatsAttrs,numFolds,estimator,predictors):
 	attrStats = getAttrStats()
-	totalPredictors = len(predictors.iteritems())
+	totalPredictors = len(predictors.keys())
 	# error stats
 	models = {}
 	for eName, eLambda in predictedStats.iteritems():
@@ -461,6 +461,7 @@ def performIndividualFeatureTraining(datasets,layoutFolder,predictedStats,predic
 							ys.append(sLambda(aLambda(eLambda(d))))
 					model, rmse, r2, fig = fitModel(estimator,xs,ys,numFolds)
 					models[eName+"."+aName+"."+sName].append((model, pName, rmse, r2, fig))
+					idx += 1
 				print "[DONE]"
 	return models
 
