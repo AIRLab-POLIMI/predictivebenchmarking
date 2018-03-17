@@ -1,0 +1,13 @@
+predictedFeature, predictor, avg 5-fold RMSE, avg 5-fold r^2 
+rotError.mean.mean,voronoi_traversal_distance,0.004094628409473315,0.7250283954474789
+rotError.mean.std,wallRatio,0.0019408016456121118,0.06969158379285054
+rotError.numSamples.mean,voronoi_traversal_distance,9146.8011219255,0.5173972156308964
+rotError.numSamples.std,voronoi_traversal_distance,2199.992980182924,0.6808170114540271
+rotError.std.mean,voronoi_traversal_distance,0.004257030066100207,0.7022183077503028
+rotError.std.std,wallRatio,0.001802359294038758,-0.013653597769591231
+transError.mean.mean,voronoi_traversal_distance,0.14489856660274963,0.8178487305322164
+transError.mean.std,voronoi_traversal_distance,0.012422154271783042,0.6769680625584247
+transError.numSamples.mean,voronoi_traversal_distance,9590.110461029259,0.49259129221743975
+transError.numSamples.std,voronoi_traversal_distance,2277.2641127553597,0.4654380122646815
+transError.std.mean,voronoi_traversal_distance,0.24298018819383793,0.723422786066474
+transError.std.std,voronoi_traversal_distance,0.023546996739326115,0.7135807906777536

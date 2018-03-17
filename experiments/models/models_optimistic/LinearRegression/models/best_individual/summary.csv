@@ -1,0 +1,13 @@
+predictedFeature, predictor, avg 5-fold RMSE, avg 5-fold r^2 
+rotError.mean.mean,voronoi_traversal_rotation,0.0021500739867850657,0.2872184622933761
+rotError.mean.std,area,0.0015872609181016646,0.08142262611295178
+rotError.numSamples.mean,voronoi_traversal_distance,1270.0669396760259,0.6563349870065558
+rotError.numSamples.std,voronoi_traversal_distance,1861.6485330104074,0.4277843904821255
+rotError.std.mean,voronoi_traversal_rotation,0.002429177231636637,0.3731377310704872
+rotError.std.std,roomPerimeter,0.003554747700206745,0.028084543624718107
+transError.mean.mean,voronoi_traversal_distance,0.06775822902061898,0.7953757575451557
+transError.mean.std,voronoi_traversal_distance,0.014730957072792997,0.6415551742069072
+transError.numSamples.mean,voronoi_traversal_distance,1319.2161273795607,0.5567814870612603
+transError.numSamples.std,voronoi_traversal_distance,1882.7070505283452,0.3793166867827477
+transError.std.mean,voronoi_traversal_distance,0.08119394986268243,0.7082985436766269
+transError.std.std,voronoi_traversal_distance,0.06501199137284398,0.4780303594870191
