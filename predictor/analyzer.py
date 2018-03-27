@@ -16,8 +16,8 @@ import datetime as dt
 from sklearn.externals import joblib
 from scipy.stats import pearsonr
 from sklearn import linear_model, svm
-from sklearn.model_selection import KFold, RepeatedKFold, RepeatedStratifiedKFold, cross_val_score
-from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import KFold, RepeatedKFold, RepeatedStratifiedKFold, cross_val_score, train_test_split
+from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.decomposition import PCA
 from sklearn import preprocessing, feature_selection
 from sklearn.feature_selection import SelectKBest, f_regression, mutual_info_regression, RFECV, RFE
@@ -28,12 +28,13 @@ from copy import deepcopy
 from itertools import product
 
 ''' Dataset Analyzer 
-This script essentially performs the following operations:
-1) collect, for each dataset, the SLAM performances as computed by the metricEvaluator over all the runs
-2) summarize them with several statistics (mean and std of mean, std, number of samples...)
-3) load the corresponding layout reconstruction XML and extract relevant features for the analysis
-4) compute the topological graph and extract relevant features for the analysis
-5) correlate 
+This script performs the following operations:
+1) collects, for each environment, the SLAM performances as computed by the metricEvaluator over all the runs
+2) computes the sample localization error
+3) loads the corresponding layout reconstruction XML and bitmap Voronoi graph
+4) computes the topological and Voronoi graphs
+5) extracts relevant features for the analysis
+6) correlates the extracted features with the localization error 
 '''
 
 def extractRunStatsFromErrorFile(errorFile):
@@ -324,10 +325,13 @@ def ElasticNetTraining(xs, ys, featuresArray, numFolds, fsFolder, predictedFeatu
 	print "Computing ElasticNet model for "+predictedFeature+"...",
 	sys.stdout.flush()
 	kf = RepeatedKFold(n_splits=numFolds, n_repeats=10)
+	# first split training from testing
+	x_train, x_test, y_train, y_test = train_test_split(xs,ys,test_size=0.2)
+	# perform hyperparameter selection
 	l1_ratios = [.1, .5, .7, .9, .95, .99, 1]
 	alphas = [0.0001, 0.0003, 0.0005, 0.001, 0.003, 0.005, 0.01, 0.03, 0.05, 0.1, 0.3, 0.5, 1, 3, 5, 10, 30, 50, 100]
 	# First we identify the best l1 ratio and alpha with cross validation (hyperparameters tuning)
-	cv_elastic = [rmse_cv(linear_model.ElasticNet(alpha = alpha, l1_ratio=l1_ratio),xs,ys,kf).mean() 
+	cv_elastic = [rmse_cv(linear_model.ElasticNet(alpha = alpha, l1_ratio=l1_ratio),x_train,y_train,kf).mean() 
             for (alpha, l1_ratio) in product(alphas, l1_ratios)]
 	idx = list(product(alphas, l1_ratios))
 	best_idx = np.argmin(cv_elastic)
@@ -337,36 +341,39 @@ def ElasticNetTraining(xs, ys, featuresArray, numFolds, fsFolder, predictedFeatu
 	print "[DONE]"
 	print "Best l1 ratio found is " + str(best_l1_ratio)
 	print "Best alpha found is " + str(best_alpha)
-	# Then we fit the estimator with the hyperparameters identified by cross validation
+	# Then we create the estimator with the hyperparameters identified by cross validation
 	estimator = linear_model.ElasticNet(l1_ratio=best_l1_ratio,alpha=best_alpha)
+	# We fit the final model on all data
 	model = deepcopy(estimator.fit(xs,ys))
-	# UPDATE: better to use a != 0 option here to retain features with negative coeff.
-	# Also, we need to store ALL the features, because elasticnet uses all of them (even with zero coeff.), or we lose the order
+	# We retrieve the actually used features; however, the actual model uses all of them
 	usedFeaturesIdx = [idx for idx,value in enumerate(estimator.coef_) if value != 0]
 	usedFeatures = [feature for idx,feature in enumerate(featuresArray) if idx in usedFeaturesIdx]
-	# Finally, we validate keeping l1_ratio and alpha fixed (model validation)
-	strategy = KFold(n_splits=numFolds,shuffle=True)
-	mses = np.sqrt(np.abs(cross_val_score(estimator, xs, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
-	rsquareds = cross_val_score(estimator, xs, ys, cv=strategy, n_jobs = -1, scoring='r2')
-	return model, usedFeatures, mses.mean(), rsquareds.mean()	
+	# We validate on the test set
+	estimator.fit(x_train,y_train)
+	y_test_pred = estimator.predict(x_test)
+	mse = mean_squared_error(y_test,y_test_pred)
+	rsquared = r2_score(y_test,y_test_pred)
+	return model, usedFeatures, mse, rsquared	
 
 def KBestFeatureSelection(xs, ys, featuresArray, numFolds, n_features, predictedFeature):
 	print "Computing F-regression feature selection model for "+predictedFeature+" with "+str(n_features)+" features...",
 	sys.stdout.flush()
 	estimator = linear_model.LinearRegression()
 	n_repeats = 100
+	# first split training from testing
+	x_train, x_test, y_train, y_test = train_test_split(xs,ys,test_size=0.2)
 	# in order to properly perform feature selection, we must perform cross validation as the outer loop 
 	selected_features_per_fold = np.empty([n_repeats*numFolds,len(featuresArray)])
 	kf = KFold(n_splits=numFolds, shuffle=True)
 	i = 0
 	for r in range(0,n_repeats):
-		for train, test in kf.split(xs):
-			x_train = xs[train]
-			y_train = ys[train]
-			x_test = xs[test]
-			y_test = ys[test]
+		for train_smaller, validation in kf.split(xs):
+			x_train_smaller = xs[train_smaller]
+			y_train_smaller = ys[train_smaller]
+			x_validation = xs[validation]
+			y_validation = ys[validation]
 			# perform feature selection
-			fs = SelectKBest(f_regression, k=n_features).fit(x_train, y_train)
+			fs = SelectKBest(f_regression, k=n_features).fit(x_train_smaller, y_train_smaller)
 			# take note of which features have been selected
 			support = [1 if v else 0 for v in fs.get_support()]
 			np.copyto(selected_features_per_fold[i], support)
@@ -378,12 +385,16 @@ def KBestFeatureSelection(xs, ys, featuresArray, numFolds, n_features, predicted
 	usedFeatures = [feature for idx,feature in enumerate(featuresArray) if idx in usedFeaturesIdx]
 	# now we can train the final model and get a cv estimate of its performance
 	xr = xs[:,usedFeaturesIdx]
+	x_train = x_train[:,usedFeaturesIdx]
+	x_test = x_test[:,usedFeaturesIdx]
+	# We validate on the test set
+	estimator.fit(x_train,y_train)
+	y_test_pred = estimator.predict(x_test)
+	mse = mean_squared_error(y_test,y_test_pred)
+	rsquared = r2_score(y_test,y_test_pred)
+	# Finally, we fit the final model on all data
 	model = deepcopy(estimator.fit(xr,ys))
-	# validate
-	strategy = KFold(n_splits=numFolds,shuffle=True)
-	mses = np.sqrt(np.abs(cross_val_score(estimator, xr, ys, cv=strategy, n_jobs = -1, scoring='neg_mean_squared_error')))
-	rsquareds = cross_val_score(estimator, xr, ys, cv=strategy, n_jobs = -1, scoring='r2')
-	return model, usedFeatures, mses.mean(), rsquareds.mean()
+	return model, usedFeatures, mse, rsquared
 
 def ParametrizedKBestFeatureSelection(xs, ys, featuresArray, numFolds, fsFolder, predictedFeature):
 	# I want to explore how the cross-validated RMSE varies when increasing the number of top k features
@@ -1070,5 +1081,5 @@ if __name__ == '__main__':
     if regression_technique is None:
         print 'You must specify a regression technique via --linear_regression, --feature_selection or --elastic_net. Exiting.'
     else:
-        analyzeDatasets(args.runs_folder,args.layouts_folder,args.voronoi_folder,args.world_folder,args.models_folder, args.regression_technique, args.predictor, args.n_folds, args.laser_range, args.laser_fov*np.pi/180, args.min_rotation_distance, args.debug_mode)
+        analyzeDatasets(args.runs_folder,args.layouts_folder,args.voronoi_folder,args.world_folder,args.models_folder, args.regression_technique, args.predictor, int(args.n_folds), args.laser_range, args.laser_fov*np.pi/180, args.min_rotation_distance, args.debug_mode)
     

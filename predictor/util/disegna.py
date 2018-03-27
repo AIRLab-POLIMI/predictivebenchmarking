@@ -1165,7 +1165,7 @@ def plot_nodi_e_stanze(colori,estremi, G, pos, spazi,stanze_collegate, savefig =
 		i2 = spazi[coppia[1]].spazio
 		p1 = i1.representative_point()
 		p2 = i2.representative_point()
-		plt.plot([p1.x,p2.x],[p1.y,p2.y],color='k',ls = 'dotted', lw=0.5)	
+		plt.plot([p1.x,p2.x],[p1.y,p2.y],color='k',ls = '--', lw=1.0, dashes=(2,2))	
 	
 		
 	if savefig :
