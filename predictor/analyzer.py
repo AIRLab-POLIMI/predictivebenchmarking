@@ -533,6 +533,17 @@ def markVisiblePixelsAsVisited(image, visiblePixels):
 	for p in visiblePixels:
 		image[p[0],p[1]] = 127
 
+def markVisiblePixelsAsVisitedProgress(image, visiblePixels, step, currentPixel, voronoiProgressFolder):
+	for p in visiblePixels:
+		image[p[0],p[1]] = 127
+	backtorgb = cv2.cvtColor(image, cv2.COLOR_GRAY2RGB)
+	backtorgb[np.where((backtorgb == [127,127,127]).all(axis=2))] = [0,0,255]
+	backtorgb[np.where((backtorgb == [0,0,0]).all(axis=2))] = [255,0,0]
+	for x in range(currentPixel[0]-3,currentPixel[0]+4):
+		for y in range(currentPixel[1]-3,currentPixel[1]+4):
+			backtorgb[x,y]=[0,255,0]
+	cv2.imwrite(join(voronoiProgressFolder, 'visit_'+str(step).zfill(3)+'.png'),backtorgb)
+
 def markVisibleNodesAsVisited(VG, visibleNodes):
 	nseen = 0 
 	for n in visibleNodes:
@@ -549,11 +560,14 @@ def pixelsToNodes(pixels, voronoiNodesMap, height):
 
 ''' Retrieve pixels that are visible in line-of-sight given the current robot location and orientation;
 then, set them to gray, set the corresponding nodes as seen and return them.'''
-def lineOfSight(VG, image, gtImage, totalNodes, currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength, laserFOV):
+def lineOfSight(VG, image, gtImage, totalNodes, currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength, laserFOV, step, voronoiImage, voronoiProgress, voronoiProgressFolder):
 	height, width = image.shape
 	visiblePixels = retrieveVisiblePixels(image, gtImage, totalNodes, currentPixel, previousPixel, laserLength, laserFOV)
 	visibleNodes = pixelsToNodes(visiblePixels, voronoiNodesMap, height)
 	markVisiblePixelsAsVisited(image, visiblePixels)
+	if voronoiProgress:
+		visiblePixelsVoronoiProgress = retrieveVisiblePixels(voronoiImage, gtImage, totalNodes, currentPixel, previousPixel, laserLength, laserFOV)
+		markVisiblePixelsAsVisitedProgress(voronoiImage, visiblePixelsVoronoiProgress, step, currentPixel, voronoiProgressFolder)
 	nseen = markVisibleNodesAsVisited(VG, visibleNodes)
 	return visibleNodes, nseen
 
@@ -571,7 +585,7 @@ def initNodeVisitedStatus(VG):
 
 ''' Explore the voronoi graph; return the total amount of travelled distance and the sum of the visits
 of the top N visited nodes.''' 
-def exploreVoronoiGraph(VG, image, gtImage, start, voronoiNodesMap, voronoiNodesReverseMap, laserLength, laserFOV, minRotDistance, scale):
+def exploreVoronoiGraph(VG, image, gtImage, start, voronoiNodesMap, voronoiNodesReverseMap, laserLength, laserFOV, minRotDistance, scale, voronoiImage, voronoiProgress, voronoiProgressFolder):
 	laserLength *= scale
 	minRotDistance *= scale
 	# set every node as 'not seen' and with zero visits
@@ -582,10 +596,11 @@ def exploreVoronoiGraph(VG, image, gtImage, start, voronoiNodesMap, voronoiNodes
 	currentPixel = start
 	currentAnglePixel = currentPixel
 	previousPixel = (currentPixel[0]+1,currentPixel[1])
-	numSeenNodes, partialDistance, totalDistance, partialAngle, totalAngle, robotAngle = 0, 0, 0, 0, 0, 0
+	numSeenNodes, partialDistance, totalDistance, partialAngle, totalAngle, robotAngle, step = 0, 0, 0, 0, 0, 0, 0
 	# line-of-sight: identify and mark as 'seen' the pixels that are visible from the current location
-	visibleNodes, nseen = lineOfSight(VG, image, gtImage, totalNodes, currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength, laserFOV)
+	visibleNodes, nseen = lineOfSight(VG, image, gtImage, totalNodes, currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength, laserFOV, step, voronoiImage, voronoiProgress, voronoiProgressFolder)
 	numSeenNodes += nseen
+	step+=1
 	# we proceed until we've seen every single node of the graph 
 	while numSeenNodes < totalNodes:
 		print str(round(float(numSeenNodes)/totalNodes*100))+"%...",
@@ -614,9 +629,10 @@ def exploreVoronoiGraph(VG, image, gtImage, start, voronoiNodesMap, voronoiNodes
 			previousNode = currentNode
 			currentPixel = newPixel
 			currentNode = newNode
-			visibleNodes, nseen = lineOfSight(VG, image, gtImage, totalNodes,currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength, laserFOV)
+			visibleNodes, nseen = lineOfSight(VG, image, gtImage, totalNodes,currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength, laserFOV, step, voronoiImage, voronoiProgress, voronoiProgressFolder)
 			# add to the number of seen nodes the new ones we have actually seen in line of sight
 			numSeenNodes += nseen
+			step += 1
 			# and increase the number of times this current node has been visited (currently unused)
 			VG.node[n]['nvisits'] += 1
 		currentPixel = nearestPixel
@@ -689,7 +705,7 @@ def loadVoronoiGraph(datasetName, voronoiPath, worldPath):
 		nx.write_gpickle(Gc, pickleFile)
 	return Gc
 
-def processVoronoiGraph(VG, worldPath, gtImagePath, laserRange, laserFOV, minRotDistance):
+def processVoronoiGraph(VG, worldPath, gtImagePath, laserRange, laserFOV, minRotDistance, voronoiPath, datasetName, voronoiProgress, voronoiProgressFolder):
 	print "Processing...",
 	sys.stdout.flush()
 	gtImage = cv2.imread(gtImagePath,cv2.IMREAD_GRAYSCALE)
@@ -706,7 +722,8 @@ def processVoronoiGraph(VG, worldPath, gtImagePath, laserRange, laserFOV, minRot
 	# we also need to figure out which node is the closest to the starting point of the exploration
 	nearestPixel = find_nearest_node(img, robotX, robotY)
 	voronoiCenter = voronoiNodesMap[height-nearestPixel[0],nearestPixel[1]]
-	totalDistance, totalAngle = exploreVoronoiGraph(VG, img, gtImage, nearestPixel, voronoiNodesMap, voronoiNodesReverseMap, laserRange, laserFOV, minRotDistance, scale)
+	voronoiImage = cv2.imread(join(voronoiPath, "images",datasetName)+"_voronoi.png",cv2.IMREAD_GRAYSCALE)
+	totalDistance, totalAngle = exploreVoronoiGraph(VG, img, gtImage, nearestPixel, voronoiNodesMap, voronoiNodesReverseMap, laserRange, laserFOV, minRotDistance, scale, voronoiImage, voronoiProgress, voronoiProgressFolder)
 	print "[DONE]"
 	print "Voronoi traversal distance: "+str(totalDistance)
 	print "Voronoi traversal rotation: "+str(totalAngle)
@@ -882,7 +899,7 @@ def getUsedPredictors(useMode,debugMode,featureString):
 		usedPredictors = getPredictors(debugMode)
 	return usedPredictors
 
-def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, modelsFolder, useMode, featureString, numFolds, laserRange, laserFOV, minRotDistance, debugMode):
+def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, modelsFolder, useMode, featureString, numFolds, laserRange, laserFOV, minRotDistance, debugMode, voronoiProgress, voronoiProgressFolder):
 	datasets = []
 	usedPredictors = getUsedPredictors(useMode,debugMode,featureString)
 	# load dataset runs
@@ -902,7 +919,7 @@ def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, models
 			gtImageFile = join(worldFolder, d.name)+".png"
 			d.voronoi = loadVoronoiGraph(d.name, voronoiFolder, worldFile)
 			if checkPredictors(getVoronoiTraversalPredictors(), usedPredictors.keys()):
-				d.voronoiCenter, d.voronoiDistance, d.voronoiRotation = processVoronoiGraph(d.voronoi, worldFile, gtImageFile, laserRange, laserFOV, minRotDistance)
+				d.voronoiCenter, d.voronoiDistance, d.voronoiRotation = processVoronoiGraph(d.voronoi, worldFile, gtImageFile, laserRange, laserFOV, minRotDistance, voronoiFolder, d.name, voronoiProgress, voronoiProgressFolder)
 			if checkPredictors(getVoronoiGraphPredictors(), usedPredictors.keys()):
 				print "Computing Voronoi graph stats...",
 				sys.stdout.flush()
@@ -1076,10 +1093,16 @@ if __name__ == '__main__':
     parser.add_argument('--elastic_net', dest='regression_technique',action='store_const',const='elastic_net', help='uses the ElasticNet regularized regression technique for learning; this is the default behavior')
     parser.add_argument('--predictor',action='store',default='overrideAll', help='specifies the predictor to be used with the linear regression machine learning technique; default is "overrideAll", which trains all possible predictors')
     parser.add_argument('--debug_mode',action='store',default=0,help='specifies whether the true trajectory length and true trajectory rotation features should be used. 0 disables them, 1 enables them in addition to the other features, 2 enables them with all other features disabled (default is 0)')
+    parser.add_argument('--voronoi_progress', action='store_true', help='if enabled, saves a snapshot of the Voronoi graph traversal process for each visited node. Note that this option considerably slows down the computation, and should be used for visualization and debugging purposes only')
+    parser.add_argument('--voronoi_progress_folder', action='store', help='specifies the location where to save the Voronoi graph traversal snapshots if the Voronoi progress option is enabled')
     args = parser.parse_args()
     regression_technique = args.regression_technique
+    voronoi_progress = args.voronoi_progress
+    if args.voronoi_progress and args.voronoi_progress_folder is None:
+        print 'WARNING: You have to specify a folder where to save the Voronoi graph traversal snapshots in order to use the Voronoi progress option. Continuing without progress saving.'
+        voronoi_progress = False
     if regression_technique is None:
         print 'You must specify a regression technique via --linear_regression, --feature_selection or --elastic_net. Exiting.'
     else:
-        analyzeDatasets(args.runs_folder,args.layouts_folder,args.voronoi_folder,args.world_folder,args.models_folder, args.regression_technique, args.predictor, int(args.n_folds), args.laser_range, args.laser_fov*np.pi/180, args.min_rotation_distance, args.debug_mode)
+        analyzeDatasets(args.runs_folder,args.layouts_folder,args.voronoi_folder,args.world_folder,args.models_folder, args.regression_technique, args.predictor, int(args.n_folds), args.laser_range, args.laser_fov*np.pi/180, args.min_rotation_distance, args.debug_mode, voronoi_progress, args.voronoi_progress_folder)
     
