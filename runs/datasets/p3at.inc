@@ -39,7 +39,7 @@ define pioneer3at position
 #		z [0 1]
 #	)
 
-	hokuyolaser( pose [0.0 0 -0.2 0 ])
+	hokuyolaser()
 )
 
 

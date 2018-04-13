@@ -9,6 +9,7 @@ from threading import Timer, Thread
 from generateAll import generateAll
 from compare_images import compare_images
 from PIL import Image
+import cv2
 
 minutes=0
 first_time=True
@@ -16,7 +17,8 @@ seconds_mapsave=600
 maxmapsave=18
 count=0
 threshold=10
-num_runs=10
+size_threshold = 5 # percentage of increased area
+num_runs=10 # expressed on a 4000x4000 pixel map
 global project_path
 
 
@@ -66,13 +68,47 @@ def getMap(dataset_name,p,folder):
 		print 'MAXMAPSAVE ' + str(maxmapsave)
 		diff=threshold
 
-		try:
-			diff = compare_images(folder+"Maps/"+str(minutes)+"Map.png",folder+"Maps/"+str(minutes-seconds_mapsave/60)+"Map.png")
-			print 'DIFFERENCE VALUE: '+ str(diff)
-		except ValueError:
-			print 'Compare images error'
+		firstSnap = cv2.imread(folder+"Maps/"+str(minutes-seconds_mapsave/60)+"Map.png")
+		secondSnap = cv2.imread(folder+"Maps/"+str(minutes)+"Map.png")
 
-		if diff < threshold or maxmapsave < count or exists(join(folder,"explorer/robot_0/exploration.log")):
+		sizeDiff = float(secondSnap.shape[0]*secondSnap.shape[1]-firstSnap.shape[0]*firstSnap.shape[1])/(secondSnap.shape[0]*secondSnap.shape[1])
+
+		if (sizeDiff*100 > size_threshold):
+			terminate = False
+		else:
+			if sizeDiff != 0: # increasing map size
+				# note: second image could be slightly smaller than the first due to small corrections
+				# we crop the first image to ensure it's always smaller than the second
+				minWidth = firstSnap.shape[1] if firstSnap.shape[1] < secondSnap.shape[1] else secondSnap.shape[1]
+				minHeight = firstSnap.shape[0] if firstSnap.shape[0] < secondSnap.shape[0] else secondSnap.shape[0]
+				firstSnap = firstSnap[0:minHeight,0:minWidth]
+				# find contained image
+				print 'Matching'
+				result = cv2.matchTemplate(secondSnap, firstSnap, cv2.TM_SQDIFF_NORMED)
+				print 'Matched, finding result'
+				mn,_,mnLoc,_ = cv2.minMaxLoc(result)
+				MPx,MPy = mnLoc
+				empty = cv2.imread('emptyMap.png')
+				empty = cv2.resize(empty, (secondSnap.shape[1], secondSnap.shape[0]))
+				empty[MPy:MPy+minHeight,MPx:MPx+minWidth] = firstSnap
+				# copy
+				firstSnap = empty
+				# fit in bigger image
+				empty = cv2.imread('emptyMap.png')
+				empty[0:firstSnap.shape[0],0:firstSnap.shape[1]] = firstSnap
+				firstSnap = empty
+				empty = cv2.imread('emptyMap.png')
+				empty[0:secondSnap.shape[0],0:secondSnap.shape[1]] = secondSnap
+				secondSnap = empty
+			# fixed map size
+			try:
+				diff = compare_images(secondSnap,firstSnap)
+				print 'DIFFERENCE VALUE: '+ str(diff)
+				terminate = (diff < threshold)
+			except ValueError:
+				print 'Compare images error'
+
+		if terminate or maxmapsave < count or exists(join(folder,"explorer/robot_0/exploration.log")):
 			print 'KILL PROCESS'
 			getmapString="rosrun map_server map_saver -f "+folder+"Maps/"+str(minutes)+"Map"
 			process=check_call(getmapString, shell=True, preexec_fn=setsid)
@@ -98,7 +134,7 @@ def launchNavigation(world,folder):
 	'''
 	try:
 		worldfile=basename(world)
-		launchString="roslaunch "+project_path+"/launch/exploreambient.launch worldfile:="+world+" \
+		launchString="roslaunch "+project_path+"/launch/exploreambient_gmapping.launch worldfile:="+world+" \
 			outputfile:="+folder+worldfile[:-6]+"Out.log \
 			bag:="+folder+worldfile[:-6]+".bag \
 			log_path:="+folder+""
