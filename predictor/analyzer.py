@@ -1078,7 +1078,7 @@ def createLineIterator(P1, P2, img):
 	return itbuffer
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='This is the main tool of the RPPF. Its task is to analyze the error data of the different runs of the training datasets, correlate it with properties extracted from such datasets, build a prediction model and use it to predict the error data of the desired test datasets. Please refer to the wiki for extended documentation.')
+    parser = argparse.ArgumentParser(description='This is the analysis tool of the framework. Its task is to analyze the error data of the different runs of the training datasets, correlate it with properties extracted from such datasets, build a prediction model and use it to predict the error data of the desired test datasets. Please refer to the wiki for extended documentation.')
     parser.add_argument('runs_folder',help='the folder in which all the training datasets and their respective runs are stored')
     parser.add_argument('layouts_folder',help='the folder in which the layout information of each training dataset, as extracted by the Layout Extractor, is stored')
     parser.add_argument('voronoi_folder',help='the folder in which the data related to the voronoi graph of each training dataset, as extracted by the Voronoi Extractor, is stored')

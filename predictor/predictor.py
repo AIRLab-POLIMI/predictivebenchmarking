@@ -209,7 +209,7 @@ def predictDatasetsWithSingleRegressor(predictFolder, predictors, component, mod
 
 if __name__ == '__main__':
 	#buildcsv(sys.argv[1])
-    parser = argparse.ArgumentParser(description='This is the main tool of the RPPF. Its task is to analyze the error data of the different runs of the training datasets, correlate it with properties extracted from such datasets, build a prediction model and use it to predict the error data of the desired test datasets. Please refer to the wiki for extended documentation.')
+    parser = argparse.ArgumentParser(description='This is the prediction tool of the framework. Its task is to use the models obtained by the analysis tool to predict the error data of the desired test datasets. Please refer to the wiki for extended documentation.')
     #parser.add_argument('layouts_folder',help='the folder in which the layout information of each training dataset, as extracted by the Layout Extractor, is stored')
     parser.add_argument('models_folder',help='the input folder from which the tool loads the trained models')
     parser.add_argument('datasets_to_predict_folder',help='the folder in which all the data related to the datasets of the test set for which the tool must perform predictions is stored')
