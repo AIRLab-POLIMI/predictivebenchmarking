@@ -5,7 +5,6 @@ import sys, argparse
 import shutil
 from os import listdir,makedirs
 from os.path import basename,join, exists, isfile, isdir, dirname
-from generateAll import generateAll
 
 def adjustMetric(runsPath):
 	# for each dataset found in the runsPath

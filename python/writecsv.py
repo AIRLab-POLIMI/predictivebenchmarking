@@ -10,8 +10,8 @@ def buildcsv(outputs):
 		if isdir(join(outputs,f)):
 			for r in listdir(join(outputs,f)):
 
-				if exists(join(join(outputs,f),r+'/Errors/RE/T.errors')):
-					file=open(join(join(outputs,f),r+'/Errors/RE/T.errors'),'r')
+				if exists(join(join(outputs,f),r+'/Errors/Original/RE/T.errors')):
+					file=open(join(join(outputs,f),r+'/Errors/Original/RE/T.errors'),'r')
 					first=True
 
 					for line in file:
@@ -23,8 +23,8 @@ def buildcsv(outputs):
 
 					file.close()
 
-				if exists(join(join(outputs,f),r+'/Errors/RE/R.errors')):
-					file=open(join(join(outputs,f),r+'/Errors/RE/R.errors'),'r')
+				if exists(join(join(outputs,f),r+'/Errors/Original/RE/R.errors')):
+					file=open(join(join(outputs,f),r+'/Errors/Original/RE/R.errors'),'r')
 					first=True
 
 					for line in file:
