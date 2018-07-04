@@ -194,6 +194,7 @@ def loadDatasetFromErrorFile(errorsFile, datasets):
 					perfStats = computePerformanceStats(runs)
 					myDataset = Dataset(datasetName, runs, perfStats)
 					datasets.append(myDataset)
+                                datasetName = words[0]
 				runs = []
 			tstats = RunStats(float(words[1]),float(words[2]),float(words[3]),float(words[4]),int(words[9]))
 			rstats = RunStats(float(words[5]),float(words[6]),float(words[7]),float(words[8]),int(words[9]))
