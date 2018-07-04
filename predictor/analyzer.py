@@ -1129,12 +1129,12 @@ if __name__ == '__main__':
     if args.voronoi_progress and args.voronoi_progress_folder is None:
         print 'WARNING: You have to specify a folder where to save the Voronoi graph traversal snapshots in order to use the Voronoi progress option. Continuing without progress saving.'
         voronoi_progress = False
-	use_runs = True
-	if args.runs_folder is None:
-		use_runs = False
-		if args.errors_file is None:
-			print 'You must either specify the runs folder or their summary error file. Exiting.'
-			exit()
+    use_runs = True
+    if args.runs_folder is None:
+        use_runs = False
+        if args.errors_file is None:
+            print 'You must either specify the runs folder or their summary error file. Exiting.'
+            exit()
     if regression_technique is None:
         print 'You must specify a regression technique via --linear_regression, --feature_selection or --elastic_net. Exiting.'
     else:
