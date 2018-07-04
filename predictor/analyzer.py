@@ -27,14 +27,14 @@ from skimage import img_as_ubyte
 from copy import deepcopy
 from itertools import product
 
-''' Dataset Analyzer 
+''' Dataset Analyzer
 This script performs the following operations:
 1) collects, for each environment, the SLAM performances as computed by the metricEvaluator over all the runs
 2) computes the sample localization error
 3) loads the corresponding layout reconstruction XML and bitmap Voronoi graph
 4) computes the topological and Voronoi graphs
 5) extracts relevant features for the analysis
-6) correlates the extracted features with the localization error 
+6) correlates the extracted features with the localization error
 '''
 
 def extractRunStatsFromErrorFile(errorFile):
@@ -122,7 +122,7 @@ def computeErrorStats(runs, errorType):
 	numSamplesArray = np.array(numSamplesList)
 	''' For each of them compute mean and standard deviation '''
 	mean = Stats(meansArray.mean(),meansArray.std())
-	std = Stats(stdsArray.mean(), stdsArray.std())	
+	std = Stats(stdsArray.mean(), stdsArray.std())
 	numSamples = Stats(numSamplesArray.mean(), numSamplesArray.std())
 	# build an errorStats object and return it
 	return ErrorStats(mean, std, numSamples)
@@ -178,6 +178,30 @@ def loadDataset(datasetName, runsFolder):
 	# create the dataset object
 	myDataset = Dataset(datasetName, runs, perfStats)
 	return myDataset
+
+def loadDatasetFromErrorFile(errorsFile, datasets):
+	file = open(errorsFile, 'r')
+	datasetName = ''
+	first = True
+	for line in file:
+		if first is True:
+			first = False
+		else:
+			words = line.split(', ')
+			if words[0]!=datasetName:
+				# changed dataset
+				if datasetName != '':
+					perfStats = computePerformanceStats(runs)
+					myDataset = Dataset(datasetName, runs, perfStats)
+					datasets.append(myDataset)
+				runs = []
+			tstats = RunStats(float(words[1]),float(words[2]),float(words[3]),float(words[4]),int(words[9]))
+			rstats = RunStats(float(words[5]),float(words[6]),float(words[7]),float(words[8]),int(words[9]))
+			runs.append(Run(tstats,rstats,0,0,0))
+	# process last environment
+	perfStats = computePerformanceStats(runs)
+	myDataset = Dataset(datasetName, runs, perfStats)
+	datasets.append(myDataset)
 
 def getRunStats():
 	runStats = dict()
@@ -315,7 +339,7 @@ def selectFeaturesToUse(featureString, debugMode):
 		print "The feature string you specified is neither an override option nor a valid predictor. Exiting."
 		exit()
 	return usedPredictors
-	# in the end, we have to build a dictionary of features 
+	# in the end, we have to build a dictionary of features
 
 def rmse_cv(model,xs,ys,kf):
     rmse= np.sqrt(-cross_val_score(model, xs, ys, scoring="neg_mean_squared_error", cv = kf))
@@ -331,7 +355,7 @@ def ElasticNetTraining(xs, ys, featuresArray, numFolds, fsFolder, predictedFeatu
 	l1_ratios = [.1, .5, .7, .9, .95, .99, 1]
 	alphas = [0.0001, 0.0003, 0.0005, 0.001, 0.003, 0.005, 0.01, 0.03, 0.05, 0.1, 0.3, 0.5, 1, 3, 5, 10, 30, 50, 100]
 	# First we identify the best l1 ratio and alpha with cross validation (hyperparameters tuning)
-	cv_elastic = [rmse_cv(linear_model.ElasticNet(alpha = alpha, l1_ratio=l1_ratio),x_train,y_train,kf).mean() 
+	cv_elastic = [rmse_cv(linear_model.ElasticNet(alpha = alpha, l1_ratio=l1_ratio),x_train,y_train,kf).mean()
             for (alpha, l1_ratio) in product(alphas, l1_ratios)]
 	idx = list(product(alphas, l1_ratios))
 	best_idx = np.argmin(cv_elastic)
@@ -353,7 +377,7 @@ def ElasticNetTraining(xs, ys, featuresArray, numFolds, fsFolder, predictedFeatu
 	y_test_pred = estimator.predict(x_test)
 	mse = mean_squared_error(y_test,y_test_pred)
 	rsquared = r2_score(y_test,y_test_pred)
-	return model, usedFeatures, mse, rsquared	
+	return model, usedFeatures, mse, rsquared
 
 def KBestFeatureSelection(xs, ys, featuresArray, numFolds, n_features, predictedFeature):
 	print "Computing F-regression feature selection model for "+predictedFeature+" with "+str(n_features)+" features...",
@@ -362,7 +386,7 @@ def KBestFeatureSelection(xs, ys, featuresArray, numFolds, n_features, predicted
 	n_repeats = 100
 	# first split training from testing
 	x_train, x_test, y_train, y_test = train_test_split(xs,ys,test_size=0.2)
-	# in order to properly perform feature selection, we must perform cross validation as the outer loop 
+	# in order to properly perform feature selection, we must perform cross validation as the outer loop
 	selected_features_per_fold = np.empty([n_repeats*numFolds,len(featuresArray)])
 	kf = KFold(n_splits=numFolds, shuffle=True)
 	i = 0
@@ -439,7 +463,7 @@ def performFeatureSelection(datasets,layoutFolder,fsFolder,predictedStats,predic
 				bestModel = None
 				bestRMSE = float('inf')
 				for i in range(0,nsamples):
-					d = datasets[i]			
+					d = datasets[i]
 					ys[i][0] = sLambda(aLambda(eLambda(d)))
 					for k in range(0,len(featuresArray)):
 						pName = featuresArray[k]
@@ -448,7 +472,7 @@ def performFeatureSelection(datasets,layoutFolder,fsFolder,predictedStats,predic
 				predictedFeature = eName+"."+aName+"."+sName
 				model, selectedFeatures, mse, r2 = function([xs, ys, featuresArray, numFolds, fsFolder, predictedFeature])
 				models[predictedFeature] = (model, selectedFeatures, mse, r2)
-	return models, featuresArray	
+	return models, featuresArray
 
 def performIndividualFeatureTraining(datasets,layoutFolder,predictedStats,predictedStatsAttrs,numFolds,estimator,predictors):
 	attrStats = getAttrStats()
@@ -466,7 +490,7 @@ def performIndividualFeatureTraining(datasets,layoutFolder,predictedStats,predic
 					print str(round(idx/totalPredictors*100))+"%...",
 					sys.stdout.flush()
 					xs,ys = [], []
-					for d in datasets:			
+					for d in datasets:
 						if isdir(join(layoutFolder, d.name)):
 							xs.append(pLambda(d))
 							ys.append(sLambda(aLambda(eLambda(d))))
@@ -479,10 +503,10 @@ def performIndividualFeatureTraining(datasets,layoutFolder,predictedStats,predic
 ''' Outline of the algorithm (TICK-TOCK mechanism):
 # black == occupied, white == free
 1) TICK phase: I "look around" the node where I'm currently standing with the find_nearest_node
-function, looking for the nearest (euclidean distance) black pixel as that's the nearest frontier. Then, 
+function, looking for the nearest (euclidean distance) black pixel as that's the nearest frontier. Then,
 I apply the shortest_path algorithm to identify a set of nodes on the voronoi graph that lead me towards
-the nearest frontier. 
-2) TOCK phase: For each node on the shortest path, I apply a "line-of-sight-visiting-algorithm". That is, 
+the nearest frontier.
+2) TOCK phase: For each node on the shortest path, I apply a "line-of-sight-visiting-algorithm". That is,
 I look around them to retrieve all the black pixels that are within a certain (laser) distance and that
 satisfy the constraints on the laser sensor field of view; for each of the identified black points, I ask
 whether there are no other black pixels (obstacles) on the line joining it with the current
@@ -503,11 +527,11 @@ def retrieveNearbyPixels(image, currentPixel, previousPixel, laserLength, laserF
 	ref_angle = math.atan2(currentPixel[0]-previousPixel[0], currentPixel[1]-previousPixel[1])
 	# Compute the distance between the current pixel and every other black pixel
 	distances = np.sqrt((black_pixels[:,0] - currentPixel[0]) ** 2 + (black_pixels[:,1] - currentPixel[1]) ** 2)
-	# Compute the relative orientation 
+	# Compute the relative orientation
 	angles = np.arctan2(black_pixels[:,0] - currentPixel[0], black_pixels[:,1]-currentPixel[1])
 	lgt = len(distances)
 	# Return only those pixels that are within the laser range and field of view
-	indices = [i for i in range(0, lgt) if distances[i] < laserLength and math.fabs(math.atan2(math.sin(angles[i]-ref_angle),math.cos(angles[i]-ref_angle)))<=laserFOV/2] 
+	indices = [i for i in range(0, lgt) if distances[i] < laserLength and math.fabs(math.atan2(math.sin(angles[i]-ref_angle),math.cos(angles[i]-ref_angle)))<=laserFOV/2]
 	return black_pixels[indices]
 
 ''' Retrieves all pixels that are visible from the current robot location and orientation.
@@ -517,7 +541,7 @@ A pixel is considered to be visible if three conditions hold:
 - there are no other black pixels on the line connecting it to the current robot location '''
 def retrieveVisiblePixels(image, gtImage, totalNodes, currentPixel, previousPixel, laserLength, laserFOV):
 	height, width = image.shape
-	# Retrieve candidate pixels 
+	# Retrieve candidate pixels
 	nearbyPixels = retrieveNearbyPixels(image, currentPixel, previousPixel, laserLength, laserFOV)
 	visiblePixels = []
 	# If two black pixels are visible from each other, it means no other obstacle (black pixel) stands
@@ -545,7 +569,7 @@ def markVisiblePixelsAsVisitedProgress(image, visiblePixels, step, currentPixel,
 	cv2.imwrite(join(voronoiProgressFolder, 'visit_'+str(step).zfill(3)+'.png'),backtorgb)
 
 def markVisibleNodesAsVisited(VG, visibleNodes):
-	nseen = 0 
+	nseen = 0
 	for n in visibleNodes:
 		if VG.node[n]['seen'] == False:
 			VG.node[n]['seen'] = True
@@ -571,7 +595,7 @@ def lineOfSight(VG, image, gtImage, totalNodes, currentPixel, previousPixel, vor
 	nseen = markVisibleNodesAsVisited(VG, visibleNodes)
 	return visibleNodes, nseen
 
-''' Return the nearest frontier, in euclidean distance, from the current robot location.''' 
+''' Return the nearest frontier, in euclidean distance, from the current robot location.'''
 def retrieveNearestFrontier(img, currentPixel):
     black_pixels = np.argwhere(img == 0)
     distances = np.sqrt((black_pixels[:,0] - currentPixel[0]) ** 2 + (black_pixels[:,1] - currentPixel[1]) ** 2)
@@ -584,7 +608,7 @@ def initNodeVisitedStatus(VG):
 		VG.node[n]['nvisits'] = 0
 
 ''' Explore the voronoi graph; return the total amount of travelled distance and the sum of the visits
-of the top N visited nodes.''' 
+of the top N visited nodes.'''
 def exploreVoronoiGraph(VG, image, gtImage, start, voronoiNodesMap, voronoiNodesReverseMap, laserLength, laserFOV, minRotDistance, scale, voronoiImage, voronoiProgress, voronoiProgressFolder):
 	laserLength *= scale
 	minRotDistance *= scale
@@ -601,7 +625,7 @@ def exploreVoronoiGraph(VG, image, gtImage, start, voronoiNodesMap, voronoiNodes
 	visibleNodes, nseen = lineOfSight(VG, image, gtImage, totalNodes, currentPixel, previousPixel, voronoiNodesMap, voronoiNodesReverseMap, laserLength, laserFOV, step, voronoiImage, voronoiProgress, voronoiProgressFolder)
 	numSeenNodes += nseen
 	step+=1
-	# we proceed until we've seen every single node of the graph 
+	# we proceed until we've seen every single node of the graph
 	while numSeenNodes < totalNodes:
 		print str(round(float(numSeenNodes)/totalNodes*100))+"%...",
 		sys.stdout.flush()
@@ -614,7 +638,7 @@ def exploreVoronoiGraph(VG, image, gtImage, start, voronoiNodesMap, voronoiNodes
 		for n in shortest_path:
 			# each node of the path gets visited and its neighboring nodes in line-of-sight are marked as 'seen'
 			newPixel = (height-voronoiNodesReverseMap[n][0],voronoiNodesReverseMap[n][1])
-			newNode = n 
+			newNode = n
 			# increase the total travelled distance by the amount joining two consecutive nodes on the path
 			travelledDistance = node_distance(VG,currentNode,newNode)
 			partialDistance += travelledDistance
@@ -689,7 +713,7 @@ def createVoronoiGraphFromImage(imagePath, worldPath):
 	# Simplify graph by removing all 'passthrough' nodes
 	print "Nodes before pass-through removal: "+str(len(G.nodes()))
 	removeFlowThroughNodes(G, image)
-	print "Nodes after pass-through removal: "+str(len(G.nodes()))	
+	print "Nodes after pass-through removal: "+str(len(G.nodes()))
 	# necessary to filter out unreachable rooms
 	Gc = max(nx.connected_component_subgraphs(G), key=len)
 	return Gc
@@ -729,7 +753,7 @@ def processVoronoiGraph(VG, worldPath, gtImagePath, laserRange, laserFOV, minRot
 	print "Voronoi traversal rotation: "+str(totalAngle)
 	return voronoiCenter, totalDistance ,totalAngle
 
-def node_distance(G,u,v): 
+def node_distance(G,u,v):
 	return np.sqrt((G.node[u]['pos'][0]-G.node[v]['pos'][0])**2+(G.node[u]['pos'][1]-G.node[v]['pos'][1])**2)
 
 def node_angle(previousPixel, currentPixel, newPixel):
@@ -737,9 +761,9 @@ def node_angle(previousPixel, currentPixel, newPixel):
 	ref_angle = correct_angle(math.atan2(currentPixel[0]-previousPixel[0], currentPixel[1]-previousPixel[1]))
 	# Compute the absolute orientation between the new pixel and the current pixel
 	angle = correct_angle(math.atan2(newPixel[0]-currentPixel[0], newPixel[1]-currentPixel[1]))
-	# Compute the relative orientation between the new pixel and the current pixel, accounting for 
+	# Compute the relative orientation between the new pixel and the current pixel, accounting for
 	# the initial orientation of the robot (between 0 and pi, always assume smallest rotation)
-	angle = (np.pi - math.fabs(math.fabs(ref_angle - angle) - np.pi))	
+	angle = (np.pi - math.fabs(math.fabs(ref_angle - angle) - np.pi))
 	return angle
 
 def find_nearest_node(img, robotX, robotY):
@@ -817,7 +841,7 @@ def setVoronoiTraversalProperties(myDataset, voronoiCenter, voronoiDistance, vor
 	myDataset.voronoiCenter = voronoiCenter
 	myDataset.voronoiDistance = voronoiDistance
 	myDataset.voronoiRotation = voronoiRotation
-	myDataset.voronoiStats = voronoiStats	
+	myDataset.voronoiStats = voronoiStats
 
 def setupFeatureSelection(datasets,layoutFolder,fsFolder,numFolds,predictors):
 	errorTypes = getErrorTypes()
@@ -899,19 +923,22 @@ def getUsedPredictors(useMode,debugMode,featureString):
 		usedPredictors = getPredictors(debugMode)
 	return usedPredictors
 
-def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, modelsFolder, useMode, featureString, numFolds, laserRange, laserFOV, minRotDistance, debugMode, voronoiProgress, voronoiProgressFolder):
+def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, modelsFolder, useMode, featureString, numFolds, laserRange, laserFOV, minRotDistance, debugMode, voronoiProgress, voronoiProgressFolder, errorsFile, useRuns):
 	datasets = []
 	usedPredictors = getUsedPredictors(useMode,debugMode,featureString)
-	# load dataset runs
-	for f in listdir(runsFolder):
-		if isdir(join(runsFolder, f)):
-			datasets.append(loadDataset(f, runsFolder))
+	if useRuns:
+		# load dataset runs
+		for f in listdir(runsFolder):
+			if isdir(join(runsFolder, f)):
+				datasets.append(loadDataset(f, runsFolder))
+	else:
+		loadDatasetFromErrorFile(errorsFile, datasets)
 	# load dataset properties (layout, voronoi graph...)
 	for d in datasets:
 		if checkPredictors(getGeometricalPredictors(), usedPredictors.keys()) or checkPredictors(getTopologicalPredictors(), usedPredictors.keys()):
 			print "Computing geometrical and topological features...",
 			sys.stdout.flush()
-			d.geometry, d.topology, d.topologyStats = loadGeometry(join(layoutFolder, d.name, d.name)+".xml")	
+			d.geometry, d.topology, d.topologyStats = loadGeometry(join(layoutFolder, d.name, d.name)+".xml")
 			print "[DONE]"
 		if checkPredictors(getVoronoiGraphPredictors(), usedPredictors.keys()) or checkPredictors(getVoronoiTraversalPredictors(), usedPredictors.keys()):
 			print "Processing Voronoi graph of "+d.name+"."
@@ -925,10 +952,10 @@ def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, models
 				sys.stdout.flush()
 				d.voronoiStats = GraphStats(d.voronoi)
 				print "[DONE]"
-	# select whether we should perform feature selection or use single features 	
+	# select whether we should perform feature selection or use single features
 	if useMode=='feature_selection':
 		# in this mode, we first identify, for each subset of k features, which are the k features that correlate
-		# best with our data; then we identify the best number of features k 
+		# best with our data; then we identify the best number of features k
 		fsFolder = join(modelsFolder,'LinearRegression','models','fs')
 		models = setupFeatureSelection(datasets,layoutFolder,fsFolder,numFolds,getPredictors(debugMode))
 		saveFSModels(models,fsFolder,numFolds)
@@ -942,7 +969,7 @@ def analyzeDatasets(runsFolder, layoutFolder, voronoiFolder, worldFolder, models
 		# in this mode, we use cross validation to find the best hyperparameters of an elastic net model
 		fsFolder = join(modelsFolder,'ElasticNet','models','fs')
 		models, featuresArray = setupElasticNetTraining(datasets,layoutFolder,fsFolder,numFolds,getPredictors(debugMode))
-		saveElasticNetModels(models,fsFolder,numFolds, featuresArray)	
+		saveElasticNetModels(models,fsFolder,numFolds, featuresArray)
 
 def saveSummaryFile(path, corrStats, numFolds):
 	summaryFile = open(join(path, "summary.csv"), "w")
@@ -1002,7 +1029,7 @@ def loadModels(path):
 				if isfile(join(path,predictedFeature,f)) and f[-3:]=="mdl":
 					modelName = f[:-4]
 					models[predictedFeature][modelName]=joblib.load(join(path,predictedFeature,f))
-	return models	
+	return models
 
 def createLineIterator(P1, P2, img):
 	"""
@@ -1014,7 +1041,7 @@ def createLineIterator(P1, P2, img):
 	-10-img: the image being processed
 
     Returns:
-	-10-it: a numpy array that consists of the coordinates and intensities of each pixel in the radii (shape: [numPixels, 3], row = [x,y,intensity])     
+	-10-it: a numpy array that consists of the coordinates and intensities of each pixel in the radii (shape: [numPixels, 3], row = [x,y,intensity])
 	"""
 	#define local variables for readability
 	imageH = img.shape[0]
@@ -1043,7 +1070,7 @@ def createLineIterator(P1, P2, img):
 		if negY:
 			itbuffer[:,1] = np.arange(P1Y - 1,P1Y - dYa - 1,-1)
 		else:
-			itbuffer[:,1] = np.arange(P1Y+1,P1Y+dYa+1)              
+			itbuffer[:,1] = np.arange(P1Y+1,P1Y+dYa+1)
 	elif P1Y == P2Y: #horizontal line segment
 		itbuffer[:,1] = P1Y
 		if negX:
@@ -1079,11 +1106,12 @@ def createLineIterator(P1, P2, img):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='This is the analysis tool of the framework. Its task is to analyze the error data of the different runs of the training datasets, correlate it with properties extracted from such datasets, build a prediction model and use it to predict the error data of the desired test datasets. Please refer to the wiki for extended documentation.')
-    parser.add_argument('runs_folder',help='the folder in which all the training datasets and their respective runs are stored')
     parser.add_argument('layouts_folder',help='the folder in which the layout information of each training dataset, as extracted by the Layout Extractor, is stored')
     parser.add_argument('voronoi_folder',help='the folder in which the data related to the voronoi graph of each training dataset, as extracted by the Voronoi Extractor, is stored')
     parser.add_argument('world_folder',help='the folder in which the Stage data of each training dataset, as used to perform the Stage simulations, is stored')
     parser.add_argument('models_folder',help='the output folder in which the tool stores the trained models')
+    parser.add_argument('--runs_folder', action='store', help='the folder in which all the training datasets and their respective runs are stored')
+    parser.add_argument('--errors_file', action='store', help='the csv file that contains the errors of all runs of all the environments')
     parser.add_argument('--n_folds', action='store', default=5, help='specifies the k number of folds of k-fold cross validation; default is 5')
     parser.add_argument('--laser_range', action='store', default=30, help='specifies the maximum range in meters of the virtual laser; default is 30')
     parser.add_argument('--laser_fov', action='store', default=270, help='specifies the field of view in degrees of the virtual laser; default is 270')
@@ -1101,8 +1129,13 @@ if __name__ == '__main__':
     if args.voronoi_progress and args.voronoi_progress_folder is None:
         print 'WARNING: You have to specify a folder where to save the Voronoi graph traversal snapshots in order to use the Voronoi progress option. Continuing without progress saving.'
         voronoi_progress = False
+	use_runs = True
+	if args.runs_folder is None:
+		use_runs = False
+		if args.errors_file is None:
+			print 'You must either specify the runs folder or their summary error file. Exiting.'
+			exit()
     if regression_technique is None:
         print 'You must specify a regression technique via --linear_regression, --feature_selection or --elastic_net. Exiting.'
     else:
-        analyzeDatasets(args.runs_folder,args.layouts_folder,args.voronoi_folder,args.world_folder,args.models_folder, args.regression_technique, args.predictor, int(args.n_folds), args.laser_range, args.laser_fov*np.pi/180, args.min_rotation_distance, args.debug_mode, voronoi_progress, args.voronoi_progress_folder)
-    
+        analyzeDatasets(args.runs_folder,args.layouts_folder,args.voronoi_folder,args.world_folder,args.models_folder, args.regression_technique, args.predictor, int(args.n_folds), args.laser_range, args.laser_fov*np.pi/180, args.min_rotation_distance, args.debug_mode, voronoi_progress, args.voronoi_progress_folder, args.errors_file, use_runs)
