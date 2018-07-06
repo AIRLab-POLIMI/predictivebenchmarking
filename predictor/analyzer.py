@@ -9,7 +9,9 @@ from structures.statistics import Stats, ErrorStats, RunStats, PerfStats, GraphS
 from structures.geometry import Geometry
 import numpy as np
 import util.util_XML as xmlutil
-import matplotlib.pyplot as plt
+import matplotlib as mpl
+mpl.use('Agg')
+import mpl.pyplot as plt
 import math
 import networkx as nx
 import datetime as dt
